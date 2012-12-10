@@ -1,0 +1,8 @@
+<project name="ios" url="http://ralcr.com/" license="BSD">
+    <user name="cristi.baluta"/>
+    <tag v="ios"/>
+    <tag v="objc"/>
+    <tag v="nme"/>
+    <description>Externs for the objc target for iOS development</description>
+    <version name="1.0.0">First commit</version>
+</project>
