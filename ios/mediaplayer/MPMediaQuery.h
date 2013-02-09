@@ -80,7 +80,7 @@ enum {
 };
 typedef NSInteger MPMediaPredicateComparison;
 
-MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPropertyPredicate : MPMediaPredicate
+MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPropertyPredicate extends MPMediaPredicate
 
 + (MPMediaPropertyPredicate *)predicateWithValue:(id)value forProperty:(NSString *)property; // comparisonType is MPMediaPredicateComparisonEqualTo
 + (MPMediaPropertyPredicate *)predicateWithValue:(id)value forProperty:(NSString *)property comparisonType:(MPMediaPredicateComparison)comparisonType;

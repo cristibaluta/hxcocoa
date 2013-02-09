@@ -12,7 +12,7 @@ package ios.ui;
 
 @class UIImageView, UIImage;
 
-extern class UISlider : UIControl, implements NSObject> {
+extern class UISlider extends UIControl, implements NSObject> {
   @package
     float _value;
     float _minValue;

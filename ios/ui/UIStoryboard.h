@@ -8,7 +8,7 @@ package ios.ui;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 
-@:require(ios_5_0) extern class UIStoryboard extends NSObject {
+@:require(ios5_0) extern class UIStoryboard extends NSObject {
 }
 
 + (UIStoryboard *)storyboardWithName:(NSString *)name bundle:(NSBundle *)storyboardBundleOrNil;

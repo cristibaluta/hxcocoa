@@ -11,7 +11,7 @@
 @class MKMapView;
 
 MK_CLASS_AVAILABLE(NA, 5_0)
-extern class MKUserTrackingBarButtonItem : UIBarButtonItem {
+extern class MKUserTrackingBarButtonItem extends UIBarButtonItem {
 
 }
 

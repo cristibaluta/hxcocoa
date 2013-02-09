@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, UIBarButtonSystemItem) {
 
 @class UIImage, UIView;
 
-extern class UIBarButtonItem : UIBarItem, implements NSObject> {
+extern class UIBarButtonItem extends UIBarItem, implements NSObject> {
   @private
     NSString     *_title;
     NSSet        *_possibleTitles;

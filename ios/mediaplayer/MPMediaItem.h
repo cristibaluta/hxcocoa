@@ -35,7 +35,7 @@ typedef NSInteger MPMediaType;
 // An MPMediaItem represents a single piece of media in an MPMediaLibrary.
 // Media items have a unique identifier which persists across application launches.
 
-MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaItem : MPMediaEntity
+MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaItem extends MPMediaEntity
 }
 
 //-----------------------------------------------------

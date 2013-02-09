@@ -11,7 +11,7 @@
 #import <CoreLocation/CLLocation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKPointAnnotation : MKShape {
+extern class MKPointAnnotation extends MKShape {
 @package
     CLLocationCoordinate2D _coordinate;
 }

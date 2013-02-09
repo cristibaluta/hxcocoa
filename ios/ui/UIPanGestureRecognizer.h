@@ -12,7 +12,7 @@ package ios.ui;
 // Changes: when a finger moves while at least minimumNumberOfTouches are down
 // Ends:    when all fingers have lifted
 
-extern class UIPanGestureRecognizer : UIGestureRecognizer {
+extern class UIPanGestureRecognizer extends UIGestureRecognizer {
   @package
     CGPoint         _firstScreenLocation;
     CGPoint         _lastScreenLocation;

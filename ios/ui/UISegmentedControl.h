@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, UISegmentedControlSegment) {
 
 @class UIImage, UIColor;
 
-extern class UISegmentedControl : UIControl, implements NSObject>
+extern class UISegmentedControl extends UIControl, implements NSObject>
 {
   @private
   // Note: all instance variables will become private in the future. Do not access directly.

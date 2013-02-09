@@ -11,7 +11,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKOverlayPathView : MKOverlayView {
+extern class MKOverlayPathView extends MKOverlayView {
 @package
     UIColor *_fillColor;
     UIColor *_strokeColor;

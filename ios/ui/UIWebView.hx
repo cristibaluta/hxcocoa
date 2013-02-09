@@ -1,13 +1,13 @@
 package ios.ui;
 
-/*extern enum UIWebViewNavigationType = {
+extern enum UIWebViewNavigationType {
     UIWebViewNavigationTypeLinkClicked;
     UIWebViewNavigationTypeFormSubmitted;
     UIWebViewNavigationTypeBackForward;
     UIWebViewNavigationTypeReload;
     UIWebViewNavigationTypeFormResubmitted;
     UIWebViewNavigationTypeOther;
-}*/
+}
 
 extern class UIWebView extends UIView {
 	
@@ -45,9 +45,10 @@ extern class UIWebView extends UIView {
 
 extern interface UIWebViewDelegate {
 
+#if display
 /*- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 	public function webViewDidStartLoad:(UIWebView *)webView;
 	public function webViewDidFinishLoad:(UIWebView *)webView;
 	public function webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;*/
-
+#end
 }

@@ -1,5 +1,8 @@
 package ios.ui;
 
+import objc.graphics.CGGeometry;
+
+
 extern class UILabel extends UIView {
 	
 	public var text :String;
@@ -14,7 +17,7 @@ extern class UILabel extends UIView {
 	
 	public var highlightedTextColor :UIColor;
 	public var highlighted :Bool;
-	public var userInteractionEnabled :Bool;
+	//public var userInteractionEnabled :Bool;// already defined
 	public var enabled :Bool;
 	
 	public var numberOfLines :Int;

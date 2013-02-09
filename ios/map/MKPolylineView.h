@@ -12,7 +12,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKPolylineView : MKOverlayPathView
+extern class MKPolylineView extends MKOverlayPathView
 
 - (id)initWithPolyline:(MKPolyline *)polyline;
 

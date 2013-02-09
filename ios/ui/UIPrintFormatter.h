@@ -43,7 +43,7 @@ NS_CLASS_AVAILABLE_IOS(4_2)extern class UIPrintFormatter extends NSObject, imple
 
 //______________________________
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UISimpleTextPrintFormatter : UIPrintFormatter {
+NS_CLASS_AVAILABLE_IOS(4_2)extern class UISimpleTextPrintFormatter extends UIPrintFormatter {
 }
 
 - (id)initWithText:(NSString *)text;
@@ -56,7 +56,7 @@ public var      NSString       *text;                   // cannot change once dr
 
 //______________________________
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UIMarkupTextPrintFormatter : UIPrintFormatter {
+NS_CLASS_AVAILABLE_IOS(4_2)extern class UIMarkupTextPrintFormatter extends UIPrintFormatter {
 }
 
 - (id)initWithMarkupText:(NSString *)markupText;
@@ -66,7 +66,7 @@ public var  NSString *markupText;                    // cannot change once drawi
 
 //______________________________
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UIViewPrintFormatter : UIPrintFormatter {
+NS_CLASS_AVAILABLE_IOS(4_2)extern class UIViewPrintFormatter extends UIPrintFormatter {
   @private
     UIView *_view;
 }

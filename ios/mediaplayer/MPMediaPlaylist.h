@@ -23,7 +23,7 @@ typedef NSInteger MPMediaPlaylistAttribute;
 // An MPMediaPlaylist is a collection of related MPMediaItems in an MPMediaLibrary.
 // Playlists have a unique identifier which persists across application launches.
 
-MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPlaylist : MPMediaItemCollection
+MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPlaylist extends MPMediaItemCollection
 }
 
 // Playlist properties can be used with -valueForProperty: to fetch metadata about an MPMediaPlaylist.

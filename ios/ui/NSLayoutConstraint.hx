@@ -55,7 +55,7 @@ enum {
 typedef UILayoutPriority = Float;
 	
 
-@:require(ios_6_0)extern class NSLayoutConstraint extends NSObject {
+@:require(ios6_0)extern class NSLayoutConstraint extends NSObject {
 	
 	public static function constraintsWithVisualFormat (format:String, options:NSLayoutFormatOptions, metrics:NSDictionary, views:NSDictionary) :Array<NSLayoutConstraint>;
 	public static function constraintWithItem (view1:Dynamic, attribute:NSLayoutAttribute, relatedBy:NSLayoutRelation, toItem:Dynamic, attribute:NSLayoutAttribute, multiplier:Float, constant:Float) :NSLayoutConstraint;

@@ -12,7 +12,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKPolygon : MKMultiPoint <MKOverlay> {
+extern class MKPolygon extends MKMultiPoint <MKOverlay> {
 @package
     CLLocationCoordinate2D _centroid;
     NSArray *_interiorPolygons;

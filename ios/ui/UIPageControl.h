@@ -9,7 +9,7 @@ package ios.ui;
 #import <UIKit/UIControl.h>
 #import <UIKit/UIKitDefines.h>
 
-extern class UIPageControl : UIControl {
+extern class UIPageControl extends UIControl {
   @private
     NSMutableArray* _indicators;
     NSInteger       _currentPage;

@@ -30,15 +30,15 @@ typedef NS_OPTIONS(NSUInteger, UIDocumentState) {
 
 UIKIT_EXTERN NSString *const UIDocumentStateChangedNotification NS_AVAILABLE_IOS(5_0);
 
-@:require(ios_5_0) extern class UIDocument extends NSObject <NSFilePresenter> {
+@:require(ios5_0) extern class UIDocument extends NSObject <NSFilePresenter> {
 
 - (id)initWithFileURL:(NSURL *)url;
 
-	public var  (default, null) : NSURL *fileURL;
+	public var  (default, null) extends NSURL *fileURL;
 	public var (default, null) NSString *localizedName;
 	public var (default, null) NSString *fileType; 
 	public var NSDate *fileModificationDate;
-	public var  (default, null) : UIDocumentState documentState;
+	public var  (default, null) extends UIDocumentState documentState;
 	public function openWithCompletionHandler:(void (^)(BOOL success))completionHandler;
 
 	public function closeWithCompletionHandler:(void (^)(BOOL success))completionHandler;

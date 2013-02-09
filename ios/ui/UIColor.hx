@@ -6,7 +6,7 @@ extern class UIColor extends NSObject {
 	public static function colorWithRed (red:Float, green:Float, blue:Float, alpha:Float) :UIColor;
 	//public static function colorWithCGColor (cgColor:CGColorRef) :UIColor;
 	public static function colorWithPatternImage (image:UIImage) :UIColor;
-	//@:require(ios_5_0) public static function colorWithCIColor (ciColor:CIColor) :UIColor;
+	//@:require(ios5_0) public static function colorWithCIColor (ciColor:CIColor) :UIColor;
 	public static function colorWithWhite (white:Float, alpha:Float) :UIColor;
 	public static function colorWithHue (hue:Float, saturation:Float, brightness:Float, alpha:Float) :UIColor;
 	
@@ -16,7 +16,7 @@ extern class UIColor extends NSObject {
 	public function initWithRed (red:Float, green:Float, blue:Float, alpha:Float) :UIColor;
 	//public function initWithCGColor (cgColor:CGColorRef) :UIColor;
 	public function initWithPatternImage (image:UIImage) :UIColor;
-	//@:require(ios_5_0) public function initWithCIColor (ciColor:CIColor) :UIColor;
+	//@:require(ios5_0) public function initWithCIColor (ciColor:CIColor) :UIColor;
 
 	public static function blackColor () : UIColor;      // 0.0 white 
 	public static function darkGrayColor () : UIColor;   // 0.333 white 
@@ -38,15 +38,15 @@ extern class UIColor extends NSObject {
 	public function setFill () :Void;
 	public function setStroke () :Void;
 
-	@:require(ios_5_0) public function getWhite (white:Float, alpha:Float) :Bool;
-	@:require(ios_5_0) public function getHue (hue:Float, saturation:Float, brightness:Float, alpha:Float) :Bool; 
-	@:require(ios_5_0) public function getRed (red:Float, green:Float, blue:Float, alpha:Float) :Bool;
+	@:require(ios5_0) public function getWhite (white:Float, alpha:Float) :Bool;
+	@:require(ios5_0) public function getHue (hue:Float, saturation:Float, brightness:Float, alpha:Float) :Bool; 
+	@:require(ios5_0) public function getRed (red:Float, green:Float, blue:Float, alpha:Float) :Bool;
 
 	public function colorWithAlphaComponent (alpha:Float) :UIColor;
 
 	//public var CGColorRef (default, null) :CGColor;
 	//public var CIColor (default, null) :CIColor;
 
-	@:require(ios_5_0) public function initWithColor (color:UIColor) :UIColor;
+	@:require(ios5_0) public function initWithColor (color:UIColor) :UIColor;
 
 }

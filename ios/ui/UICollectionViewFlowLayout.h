@@ -30,7 +30,7 @@ extern interface UICollectionViewDelegateFlowLayout <UICollectionViewDelegate>
 
 }
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewFlowLayout : UICollectionViewLayout
+NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewFlowLayout extends UICollectionViewLayout
 
 	public var Float minimumLineSpacing;
 	public var Float minimumInteritemSpacing;

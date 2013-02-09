@@ -56,7 +56,7 @@ UIKIT_EXTERN NSString *const UIImagePickerControllerMediaURL;       // an NSURL
 UIKIT_EXTERN NSString *const UIImagePickerControllerReferenceURL        NS_AVAILABLE_IOS(4_1);  // an NSURL that references an asset in the AssetsLibrary framework
 UIKIT_EXTERN NSString *const UIImagePickerControllerMediaMetadata       NS_AVAILABLE_IOS(4_1);  // an NSDictionary containing metadata from a captured photo
 
-extern class UIImagePickerController : UINavigationController, implements NSObject> {
+extern class UIImagePickerController extends UINavigationController, implements NSObject> {
   @private
     UIImagePickerControllerSourceType _sourceType;
     id                                _image;

@@ -33,41 +33,40 @@ import ios.ui.UIImageView;
  
 class Lib {
 	
-	public static function log (v : Dynamic) : Void {}
-	public static function print (v : Dynamic) : Void {
-		untyped __objc__ ("printf ( [[v description] cStringUsingEncoding:NSStringEncodingConversionAllowLossy] )");
-	}
-	public static function println (v : Dynamic) : Void {
-		Lib.print ( v );
-		untyped __objc__ ("printf ( \"\\n\" )");
-	}
 	public static function getURL (url :String, ?target : String) : Bool {
-		return untyped __objc__ ("AppDelegate applicationHandleOpenURL:UIApplication handleOpenURL:NSURL]");
+		return untyped __objc__ ("[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]]");
 	}
+	
 	public static function attach (name : String) :UIImageView {
 		return untyped __objc__ ("[[UIImageView alloc] initWithImage:[UIImage imageNamed:@\"name\"]]");
 	}
+	
 	public static function enumerateLibraryGroups () :Array<ALAssetsGroup> {
 		//library = [[ALAssetsLibrary alloc] init];
 		//[library enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:groupsEnumerator failureBlock:failHandler];
 		return null;
 	}
+	
 	public static function fetchCameraItemsInGroup (group:String) :Array<ALAsset> {
 		return null;
 	}
+	
 	public static function location () :CLLocation {
 		return null;
 	}
+	
 	public static function isIpad () :Bool {
 		var deviceType:String = UIDevice.currentDevice().model;
 		return deviceType == "iPad";
 		return untyped __objc__("UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad");
 	}
+	
 	public static function isIpod () :Bool {
 		var deviceType:String = UIDevice.currentDevice().model;
 		return deviceType == "iPod touch";
 		return untyped __objc__("UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad");
 	}
+	
 	public static function alert (title:String, message:String) :UIAlertView {
 		var a = new UIAlertView().initWithTitle (title, message, null, "Cancel", null);
 		a.show();

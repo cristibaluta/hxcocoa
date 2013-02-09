@@ -15,7 +15,7 @@ package ios.ui;
 //     locationInView:         location of the tap, from the first tap in the sequence if numberOfTapsRequired > 1. this is the centroid if numberOfTouchesRequired > 1
 //     locationOfTouch:inView: location of a particular touch, from the first tap in the sequence if numberOfTapsRequired > 1
 
-extern class UITapGestureRecognizer : UIGestureRecognizer {
+extern class UITapGestureRecognizer extends UIGestureRecognizer {
   @package
     CGPoint      _locationInView;
     id           _imp;

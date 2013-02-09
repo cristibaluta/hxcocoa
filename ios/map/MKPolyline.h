@@ -10,7 +10,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKPolyline : MKMultiPoint <MKOverlay>
+extern class MKPolyline extends MKMultiPoint <MKOverlay>
 
 + (MKPolyline *)polylineWithPoints:(MKMapPoint *)points count:(NSUInteger)count;
 + (MKPolyline *)polylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count;

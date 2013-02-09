@@ -1,7 +1,7 @@
 package ios.ui;
 
 
-@:require(ios_5_0) extern class UIStepper : UIControl 
+@:require(ios5_0) extern class UIStepper extends UIControl 
 
 	public var (nonatomic,getter=isContinuous) BOOL continuous; // if YES, value change events are sent any time the value changes during interaction. default = YES
 	public var  BOOL autorepeat;                     // if YES, press & hold repeatedly alters value. default = YES

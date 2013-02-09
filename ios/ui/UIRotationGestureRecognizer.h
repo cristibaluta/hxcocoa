@@ -12,7 +12,7 @@ package ios.ui;
 // Changes: when a finger moves while two fingers are down
 // Ends:    when both fingers have lifted
 
-extern class UIRotationGestureRecognizer : UIGestureRecognizer {
+extern class UIRotationGestureRecognizer extends UIGestureRecognizer {
   @package
     double            _initialTouchDistance;
     double            _initialTouchAngle;

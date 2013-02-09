@@ -17,8 +17,8 @@ NS_CLASS_AVAILABLE_IOS(4_2)extern class UIPrintPaper extends NSObject {
 
 + (UIPrintPaper *)bestPaperForPageSize:(CGSize)contentSize withPapersFromArray:(NSArray *)paperList; // for use by delegate. pass in list
 
-	public var  (default, null) : CGSize paperSize;
-	public var  (default, null) : CGRect printableRect;
+	public var  (default, null) extends CGSize paperSize;
+	public var  (default, null) extends CGRect printableRect;
 
 }
 

@@ -12,7 +12,7 @@
 #import <CoreLocation/CLPlacemark.h>
 
 MK_CLASS_AVAILABLE(NA, 3_0)
-extern class MKPlacemark : CLPlacemark <MKAnnotation> {
+extern class MKPlacemark extends CLPlacemark <MKAnnotation> {
     
 }
 

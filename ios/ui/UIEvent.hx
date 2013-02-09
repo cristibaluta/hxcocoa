@@ -1,14 +1,15 @@
 package ios.ui;
+
 import objc.foundation.NSObject;
 import objc.foundation.NSSet;
 
-enum UIEventType {
+extern enum UIEventType {
     UIEventTypeTouches;
     UIEventTypeMotion;
     UIEventTypeRemoteControl;
 }
 
-enum UIEventSubtype {
+extern enum UIEventSubtype {
     // available in iPhone OS 3.0
     UIEventSubtypeNone;
     

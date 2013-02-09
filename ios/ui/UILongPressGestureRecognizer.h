@@ -14,7 +14,7 @@ package ios.ui;
 // Changes: when a finger moves
 // Ends:    when a finger is lifted
 
-extern class UILongPressGestureRecognizer : UIGestureRecognizer {
+extern class UILongPressGestureRecognizer extends UIGestureRecognizer {
   @package
     NSArray          *_touches;
     NSMutableSet     *_activeTouches;

@@ -19,7 +19,7 @@ extern interface UIActivityItemSource <NSObject>
 
 }
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UIActivityItemProvider : NSOperation <UIActivityItemSource>
+NS_CLASS_AVAILABLE_IOS(6_0)extern class UIActivityItemProvider extends NSOperation <UIActivityItemSource>
 
 - (id)initWithPlaceholderItem:(id)placeholderItem;
 

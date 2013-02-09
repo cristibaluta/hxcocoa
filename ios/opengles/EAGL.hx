@@ -41,7 +41,7 @@ typedef EAGLRenderingAPI = Int;
 
 extern class EAGLSharegroup extends NSObject {
 
-	@:require(ios_6_0) public var debugLabel :String;
+	@:require(ios6_0) public var debugLabel :String;
 
 }
 
@@ -60,7 +60,7 @@ extern class EAGLContext extends NSObject {
 	public var API :EAGLRenderingAPI;
 	public var sharegroup :EAGLSharegroup;
 
-	@:require(ios_6_0) public var debugLabel :String;
+	@:require(ios6_0) public var debugLabel :String;
 
 }
 

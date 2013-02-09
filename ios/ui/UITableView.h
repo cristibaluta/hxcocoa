@@ -132,7 +132,7 @@ UIKIT_EXTERN NSString *const UITableViewSelectionDidChangeNotification;
 
 //_______________________________________________________________________________________________________________
 
-extern class UITableView : UIScrollView, implements NSObject> {
+extern class UITableView extends UIScrollView, implements NSObject> {
   @private
 //    UITableViewStyle            _style;
 

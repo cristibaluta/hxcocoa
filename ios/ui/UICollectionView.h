@@ -82,7 +82,7 @@ extern interface UICollectionViewDelegate <UIScrollViewDelegate>
 
 }
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionView : UIScrollView
+NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionView extends UIScrollView
 
 - (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout; // the designated initializer
 

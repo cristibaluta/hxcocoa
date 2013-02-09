@@ -10,7 +10,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKPolygonView : MKOverlayPathView
+extern class MKPolygonView extends MKOverlayPathView
 
 - (id)initWithPolygon:(MKPolygon *)polygon;
 	public var MKPolygon *polygon;

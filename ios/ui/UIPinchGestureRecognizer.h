@@ -12,7 +12,7 @@ package ios.ui;
 // Changes: when a finger moves while two fingers remain down
 // Ends:    when both fingers have lifted
 
-extern class UIPinchGestureRecognizer : UIGestureRecognizer {
+extern class UIPinchGestureRecognizer extends UIGestureRecognizer {
   @package
     Float           _initialTouchDistance;
     Float           _initialTouchScale;

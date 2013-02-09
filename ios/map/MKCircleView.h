@@ -11,7 +11,7 @@
 #import <MapKit/MKOverlayPathView.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKCircleView : MKOverlayPathView
+extern class MKCircleView extends MKOverlayPathView
 
 - (id)initWithCircle:(MKCircle *)circle;
 

@@ -23,7 +23,7 @@ typedef NS_OPTIONS(NSUInteger, UISwipeGestureRecognizerDirection) {
     UISwipeGestureRecognizerDirectionDown  = 1 << 3
 };
 
-extern class UISwipeGestureRecognizer : UIGestureRecognizer {
+extern class UISwipeGestureRecognizer extends UIGestureRecognizer {
   @package
     CFTimeInterval    _maximumDuration;
     Float           _minimumPrimaryMovement;

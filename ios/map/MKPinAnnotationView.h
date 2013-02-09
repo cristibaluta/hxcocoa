@@ -17,7 +17,7 @@ typedef NSUInteger MKPinAnnotationColor;
 @class MKPinAnnotationViewInternal;
 
 MK_CLASS_AVAILABLE(NA, 3_0)
-extern class MKPinAnnotationView : MKAnnotationView
+extern class MKPinAnnotationView extends MKAnnotationView
 {
 @private
     MKPinAnnotationViewInternal *_pinInternal;

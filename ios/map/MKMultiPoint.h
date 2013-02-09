@@ -12,7 +12,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKMultiPoint : MKShape {
+extern class MKMultiPoint extends MKShape {
 @package
     MKMapPoint *_points;
     NSUInteger _pointCount;

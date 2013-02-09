@@ -2,7 +2,7 @@ package ios.map;
 
 import ios.ui.UIView;
 
-enum MKMapType {
+extern enum MKMapType {
     MKMapTypeStandard;
     MKMapTypeSatellite;
     MKMapTypeHybrid;

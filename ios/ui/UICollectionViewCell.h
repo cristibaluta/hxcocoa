@@ -34,7 +34,7 @@ NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionReusableView extends UIView
 
 }
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewCell : UICollectionReusableView
+NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewCell extends UICollectionReusableView
 
 	public var UIView *contentView; // add custom subviews to the cell's contentView
 

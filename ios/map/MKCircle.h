@@ -11,7 +11,7 @@
 #import <MapKit/MKFoundation.h>
 
 MK_CLASS_AVAILABLE(NA, 4_0)
-extern class MKCircle : MKShape <MKOverlay> {
+extern class MKCircle extends MKShape <MKOverlay> {
 @package
     CLLocationCoordinate2D _coordinate;
     CLLocationDistance _radius;

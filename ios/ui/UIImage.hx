@@ -1,31 +1,24 @@
 package ios.ui;
 import objc.foundation.NSObject;
 
-/*#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <CoreImage/CoreImage.h>
-#import <UIKit/UIKitDefines.h>
-#import <UIKit/UIColor.h>
-#import <UIKit/UIGeometry.h>
-
-typedef NS_ENUM(NSInteger, UIImageOrientation) {
-    UIImageOrientationUp,            // default orientation
-    UIImageOrientationDown,          // 180 deg rotation
-    UIImageOrientationLeft,          // 90 deg CCW
-    UIImageOrientationRight,         // 90 deg CW
-    UIImageOrientationUpMirrored,    // as above but image mirrored along other axis. horizontal flip
-    UIImageOrientationDownMirrored,  // horizontal flip
-    UIImageOrientationLeftMirrored,  // vertical flip
-    UIImageOrientationRightMirrored, // vertical flip
-};
+extern enum UIImageOrientation {
+    UIImageOrientationUp;            // default orientation
+    UIImageOrientationDown;          // 180 deg rotation
+    UIImageOrientationLeft;          // 90 deg CCW
+    UIImageOrientationRight;         // 90 deg CW
+    UIImageOrientationUpMirrored;    // as above but image mirrored along other axis. horizontal flip
+    UIImageOrientationDownMirrored;  // horizontal flip
+    UIImageOrientationLeftMirrored;  // vertical flip
+    UIImageOrientationRightMirrored; // vertical flip
+}
 
 
-typedef NS_ENUM(NSInteger, UIImageResizingMode) {
-    UIImageResizingModeTile,
-    UIImageResizingModeStretch,
-};*/
+extern enum UIImageResizingMode {
+    UIImageResizingModeTile;
+    UIImageResizingModeStretch;
+}
 
-extern class UIImage extends NSObject, implements NSObject {
+extern class UIImage extends NSObject {
 	
 }
 
