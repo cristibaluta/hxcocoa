@@ -10,7 +10,7 @@ extern interface UIApplicationDelegate {
 
 	//public function applicationDidFinishLaunching (application:UIApplication) :Void;
 	//public function applicationWillFinishLaunchingWithOptions (application:UIApplication, willFinishLaunchingWithOptions:NSDictionary) :Bool;
-	public function applicationDidFinishLaunchingWithOptions (application:UIApplication, didFinishLaunchingWithOptions:NSDictionary) :Bool;
+	public function application (application:UIApplication, didFinishLaunchingWithOptions:NSDictionary) :Bool;
 
 	public function applicationDidBecomeActive (application:UIApplication) :Void;
 	public function applicationWillResignActive (application:UIApplication) :Void;

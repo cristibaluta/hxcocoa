@@ -1,6 +1,6 @@
 package ios.ui;
 
-extern enum UIViewAutoresizing {
+@:fakeEnum(Int) extern enum UIViewAutoresizing {
 	UIViewAutoresizingNone;
 	UIViewAutoresizingFlexibleLeftMargin;
 	UIViewAutoresizingFlexibleWidth;

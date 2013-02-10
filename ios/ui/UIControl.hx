@@ -3,7 +3,7 @@ package ios.ui;
 import objc.foundation.NSSet;
 import ios.ui.UIEvent;
 
-extern enum UIControlEvent {
+@:fakeEnum(Int) extern enum UIControlEvent {
 	UIControlEventTouchDown;
 	UIControlEventTouchDownRepeat;
 	UIControlEventTouchDragInside;
@@ -25,21 +25,21 @@ extern enum UIControlEvent {
 	UIControlEventAllEvents;
 }
 
-extern enum UIControlContentVerticalAlignment {
+@:fakeEnum(Int) extern enum UIControlContentVerticalAlignment {
 	UIControlContentVerticalAlignmentCenter;
 	UIControlContentVerticalAlignmentTop;
 	UIControlContentVerticalAlignmentBottom;
 	UIControlContentVerticalAlignmentFill;
 }
 
-extern enum UIControlContentHorizontalAlignment {
+@:fakeEnum(Int) extern enum UIControlContentHorizontalAlignment {
 	UIControlContentHorizontalAlignmentCenter;
 	UIControlContentHorizontalAlignmentLeft;
 	UIControlContentHorizontalAlignmentRight;
 	UIControlContentHorizontalAlignmentFill;
 }
 
-extern enum UIControlState {
+@:fakeEnum(Int) extern enum UIControlState {
 	UIControlStateNormal;
 	UIControlStateHighlighted;
 	UIControlStateDisabled;

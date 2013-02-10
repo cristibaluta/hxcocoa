@@ -2,6 +2,8 @@
 package ios.ui;
 
 import ios.ui.UIGeometry;
+import ios.ui.UIControl;
+import objc.graphics.CGGeometry;
 
 
 extern enum UIButtonType {

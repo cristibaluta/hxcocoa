@@ -1,27 +1,21 @@
-//
-//  MKOverlay.h
-//  MapKit
-//
-//  Copyright (c) 2010-2012, Apple Inc. All rights reserved.
-//
+package ios.map;
 
-#import <MapKit/MKAnnotation.h>
-#import <MapKit/MKTypes.h>
-#import <MapKit/MKGeometry.h>
+import objc.location.CLLocation;
+import ios.map.MKGeometry;
 
-@protocol MKOverlay <MKAnnotation>
-@required
+
+extern interface MKOverlay {
 
 // From MKAnnotation, for areas this should return the centroid of the area.
-	public var CLLocationCoordinate2D coordinate;
+	public var coordinate :CLLocationCoordinate2D;
 
 // boundingMapRect should be the smallest rectangle that completely contains the overlay.
 // For overlays that span the 180th meridian, boundingMapRect should have either a negative MinX or a MaxX that is greater than MKMapSizeWorld.width.
-	public var MKMapRect boundingMapRect;
+	public var boundingMapRect :MKMapRect;
 
-@optional
+#if display
 // Implement intersectsMapRect to provide more precise control over when the view for the overlay should be shown.
 // If omitted, MKMapRectIntersectsRect([overlay boundingRect], mapRect) will be used instead.
-- (BOOL)intersectsMapRect:(MKMapRect)mapRect;
-
+	public function intersectsMapRect (mapRect:MKMapRect) :Bool;
+#end
 }

@@ -57,31 +57,7 @@ typedef NS_ENUM(NSInteger, UIBarButtonSystemItem) {
 @class UIImage, UIView;
 
 extern class UIBarButtonItem extends UIBarItem, implements NSObject> {
-  @private
-    NSString     *_title;
-    NSSet        *_possibleTitles;
-    SEL           _action;
-    id            _target;
-    UIImage      *_image;
-    UIImage      *_landscapeImagePhone;
-    UIEdgeInsets  _imageInsets;
-    UIEdgeInsets  _landscapeImagePhoneInsets;
-    Float       _width;   
-    UIView       *_view;
-    NSInteger     _tag;
-    id            _appearanceStorage;
-    struct {
-        unsigned int enabled:1;
-        unsigned int style:3;
-        unsigned int isSystemItem:1;
-        unsigned int systemItem:7;
-        unsigned int viewIsCustom:1;
-        unsigned int isMinibarView:1;
-        unsigned int disableAutosizing:1;
-        unsigned int selected:1;
-        unsigned int imageHasEffects:1;
-    } _barButtonItemFlags;
-}
+
 
 - (id)initWithImage:(UIImage *)image style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action;
 - (id)initWithImage:(UIImage *)image landscapeImagePhone:(UIImage *)landscapeImagePhone style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action NS_AVAILABLE_IOS(5_0); // landscapeImagePhone will be used for the bar button image in landscape bars in UIUserInterfaceIdiomPhone only

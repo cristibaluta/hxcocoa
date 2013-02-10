@@ -8,16 +8,11 @@ import objc.foundation.NSCoder;
 import ios.ui.UIGeometry;
 import ios.ui.NSLayoutConstraint;
 
-typedef UIViewContentMode = Int;
-typedef UIViewAnimationCurve = Int;
-typedef UIViewAnimationTransition = Int;
-typedef UIViewAnimationOptions = Int;
 typedef UILayoutConstraintAxis = Int;
 
 
 extern class UIView extends UIResponder implements NSCoding/*, implements UIAppearance, implements UIAppearanceContainer*/ {
 	
-	function new() : Void;
 	public static function layerClass () :Class<CALayer>;
 	
 	public function initWithFrame (frame:CGRect) :UIView;
@@ -196,69 +191,69 @@ extern class UIView extends UIResponder implements NSCoding/*, implements UIAppe
 }
 
 
-/*typedef NS_ENUM(Int, UIViewAnimationCurve) {
-    UIViewAnimationCurveEaseInOut,         // slow at beginning and end
-    UIViewAnimationCurveEaseIn,            // slow at beginning
-    UIViewAnimationCurveEaseOut,           // slow at end
-    UIViewAnimationCurveLinear
-};
+extern enum UIViewAnimationCurve {
+    UIViewAnimationCurveEaseInOut;         // slow at beginning and end
+    UIViewAnimationCurveEaseIn;            // slow at beginning
+    UIViewAnimationCurveEaseOut;           // slow at end
+    UIViewAnimationCurveLinear;
+}
 
-typedef NS_ENUM(Int, UIViewContentMode) {
-    UIViewContentModeScaleToFill,
-    UIViewContentModeScaleAspectFit,      // contents scaled to fit with fixed aspect. remainder is transparent
-    UIViewContentModeScaleAspectFill,     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
-    UIViewContentModeRedraw,              // redraw on bounds change (calls -setNeedsDisplay)
-    UIViewContentModeCenter,              // contents remain same size. positioned adjusted.
-    UIViewContentModeTop,
-    UIViewContentModeBottom,
-    UIViewContentModeLeft,
-    UIViewContentModeRight,
-    UIViewContentModeTopLeft,
-    UIViewContentModeTopRight,
-    UIViewContentModeBottomLeft,
-    UIViewContentModeBottomRight,
-};
+extern enum UIViewContentMode {
+    UIViewContentModeScaleToFill;
+    UIViewContentModeScaleAspectFit;      // contents scaled to fit with fixed aspect. remainder is transparent
+    UIViewContentModeScaleAspectFill;     // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+    UIViewContentModeRedraw;              // redraw on bounds change (calls -setNeedsDisplay)
+    UIViewContentModeCenter;              // contents remain same size. positioned adjusted.
+    UIViewContentModeTop;
+    UIViewContentModeBottom;
+    UIViewContentModeLeft;
+    UIViewContentModeRight;
+    UIViewContentModeTopLeft;
+    UIViewContentModeTopRight;
+    UIViewContentModeBottomLeft;
+    UIViewContentModeBottomRight;
+}
 
-typedef NS_ENUM(Int, UIViewAnimationTransition) {
-    UIViewAnimationTransitionNone,
-    UIViewAnimationTransitionFlipFromLeft,
-    UIViewAnimationTransitionFlipFromRight,
-    UIViewAnimationTransitionCurlUp,
-    UIViewAnimationTransitionCurlDown,
-};
+extern enum UIViewAnimationTransition {
+    UIViewAnimationTransitionNone;
+    UIViewAnimationTransitionFlipFromLeft;
+    UIViewAnimationTransitionFlipFromRight;
+    UIViewAnimationTransitionCurlUp;
+    UIViewAnimationTransitionCurlDown;
+}
 
-typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
-    UIViewAutoresizingNone                 = 0,
-    UIViewAutoresizingFlexibleLeftMargin   = 1 << 0,
-    UIViewAutoresizingFlexibleWidth        = 1 << 1,
-    UIViewAutoresizingFlexibleRightMargin  = 1 << 2,
-    UIViewAutoresizingFlexibleTopMargin    = 1 << 3,
-    UIViewAutoresizingFlexibleHeight       = 1 << 4,
-    UIViewAutoresizingFlexibleBottomMargin = 1 << 5
-};
+extern enum UIViewAutoresizing {
+    UIViewAutoresizingNone;
+    UIViewAutoresizingFlexibleLeftMargin;
+    UIViewAutoresizingFlexibleWidth;
+    UIViewAutoresizingFlexibleRightMargin;
+    UIViewAutoresizingFlexibleTopMargin;
+    UIViewAutoresizingFlexibleHeight;
+    UIViewAutoresizingFlexibleBottomMargin;
+}
 
-typedef NS_OPTIONS(NSUInteger, UIViewAnimationOptions) {
-    UIViewAnimationOptionLayoutSubviews            = 1 <<  0,
-    UIViewAnimationOptionAllowUserInteraction      = 1 <<  1, // turn on user interaction while animating
-    UIViewAnimationOptionBeginFromCurrentState     = 1 <<  2, // start all views from current value, not initial value
-    UIViewAnimationOptionRepeat                    = 1 <<  3, // repeat animation indefinitely
-    UIViewAnimationOptionAutoreverse               = 1 <<  4, // if repeat, run animation back and forth
-    UIViewAnimationOptionOverrideInheritedDuration = 1 <<  5, // ignore nested duration
-    UIViewAnimationOptionOverrideInheritedCurve    = 1 <<  6, // ignore nested curve
-    UIViewAnimationOptionAllowAnimatedContent      = 1 <<  7, // animate contents (applies to transitions only)
-    UIViewAnimationOptionShowHideTransitionViews   = 1 <<  8, // flip to/from hidden state instead of adding/removing
+extern enum UIViewAnimationOptions {
+    UIViewAnimationOptionLayoutSubviews;
+    UIViewAnimationOptionAllowUserInteraction; // turn on user interaction while animating
+    UIViewAnimationOptionBeginFromCurrentState; // start all views from current value, not initial value
+    UIViewAnimationOptionRepeat; // repeat animation indefinitely
+    UIViewAnimationOptionAutoreverse; // if repeat, run animation back and forth
+    UIViewAnimationOptionOverrideInheritedDuration; // ignore nested duration
+    UIViewAnimationOptionOverrideInheritedCurve; // ignore nested curve
+    UIViewAnimationOptionAllowAnimatedContent; // animate contents (applies to transitions only)
+    UIViewAnimationOptionShowHideTransitionViews; // flip to/from hidden state instead of adding/removing
     
-    UIViewAnimationOptionCurveEaseInOut            = 0 << 16, // default
-    UIViewAnimationOptionCurveEaseIn               = 1 << 16,
-    UIViewAnimationOptionCurveEaseOut              = 2 << 16,
-    UIViewAnimationOptionCurveLinear               = 3 << 16,
+    UIViewAnimationOptionCurveEaseInOut;
+    UIViewAnimationOptionCurveEaseIn;
+    UIViewAnimationOptionCurveEaseOut;
+    UIViewAnimationOptionCurveLinear;
     
-    UIViewAnimationOptionTransitionNone            = 0 << 20, // default
-    UIViewAnimationOptionTransitionFlipFromLeft    = 1 << 20,
-    UIViewAnimationOptionTransitionFlipFromRight   = 2 << 20,
-    UIViewAnimationOptionTransitionCurlUp          = 3 << 20,
-    UIViewAnimationOptionTransitionCurlDown        = 4 << 20,
-    UIViewAnimationOptionTransitionCrossDissolve   = 5 << 20,
-    UIViewAnimationOptionTransitionFlipFromTop     = 6 << 20,
-    UIViewAnimationOptionTransitionFlipFromBottom  = 7 << 20,
-} NS_ENUM_AVAILABLE_IOS(4_0);*/
+    UIViewAnimationOptionTransitionNone;
+    UIViewAnimationOptionTransitionFlipFromLeft;
+    UIViewAnimationOptionTransitionFlipFromRight;
+    UIViewAnimationOptionTransitionCurlUp;
+    UIViewAnimationOptionTransitionCurlDown;
+    UIViewAnimationOptionTransitionCrossDissolve;
+    UIViewAnimationOptionTransitionFlipFromTop;
+    UIViewAnimationOptionTransitionFlipFromBottom;
+}
