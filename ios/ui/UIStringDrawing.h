@@ -25,7 +25,7 @@ UIKIT_EXTERN NSString *const UITextAttributeTextShadowColor NS_AVAILABLE_IOS(5_0
 UIKIT_EXTERN NSString *const UITextAttributeTextShadowOffset NS_AVAILABLE_IOS(5_0); 
 
 // Deprecated: use NSLineBreakMode instead (we will be adding deprecation tags soon!)
-enum {		
+enum {
     UILineBreakModeWordWrap = 0,            // Wrap at word boundaries
     UILineBreakModeCharacterWrap,           // Wrap at character boundaries
     UILineBreakModeClip,                    // Simply clip when it hits the end of the rect

@@ -1,6 +1,7 @@
 package ios.ui;
 
 import objc.graphics.CGGeometry;
+import ios.ui.NSText;
 
 
 extern class UILabel extends UIView {
@@ -10,9 +11,8 @@ extern class UILabel extends UIView {
 	public var textColor :UIColor;
 	public var shadowColor :UIColor;
 	public var shadowOffset :CGSize;
-/*	public var textAlignment :NSTextAlignment;*/
+	public var textAlignment :NSTextAlignment;
 /*	public var lineBreakMode :NSLineBreakMode;*/
-	
 /*	public var attributedString :NSAttributedString;*/
 	
 	public var highlightedTextColor :UIColor;
@@ -28,7 +28,6 @@ extern class UILabel extends UIView {
 	public var minimumScaleFactor :Float;
 	public var preferredMaxLayoutWidth :Float;
 	
-	function new() : Void;
 	public function textRectForBounds (bounds:CGRect, numberOfLines:Int) :CGRect;
 	public function drawTextInRect (rect:CGRect) :Void;
 }
