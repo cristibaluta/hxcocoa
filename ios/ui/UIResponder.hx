@@ -2,6 +2,8 @@
 package ios.ui;
 
 import objc.foundation.NSObject;
+import objc.foundation.NSSet;
+import ios.ui.UIEvent;
 
 
 extern class UIResponder extends NSObject {
@@ -18,13 +20,13 @@ extern class UIResponder extends NSObject {
 	public var inputView :UIView;
 	public var inputAccessoryView :UIView;
 	public function reloadInputViews () :Void;
-/*	
+
 	// Responding to Touch Events
 	public function touchesBegan (touches:NSSet, withEvent:UIEvent) :Void;
 	public function touchesMoved (touches:NSSet, withEvent:UIEvent) :Void;
 	public function touchesEnded (touches:NSSet, withEvent:UIEvent) :Void;
 	public function touchesCancelled (touches:NSSet, withEvent:UIEvent) :Void;
-	
+/*		
 	// Responding to Motion Events
 	public function motionBegan (motion:UIEventSubtype, withEvent:UIEvent) :Void;
 	public function motionEnded (motion:UIEventSubtype, withEvent:UIEvent) :Void;

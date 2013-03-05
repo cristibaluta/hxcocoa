@@ -1,5 +1,7 @@
 package ios.ui;
 import objc.foundation.NSObject;
+import objc.foundation.NSData;
+import objc.graphics.CGGeometry;
 
 extern enum UIImageOrientation {
     UIImageOrientationUp;            // default orientation
@@ -12,20 +14,23 @@ extern enum UIImageOrientation {
     UIImageOrientationRightMirrored; // vertical flip
 }
 
-
 extern enum UIImageResizingMode {
     UIImageResizingModeTile;
     UIImageResizingModeStretch;
 }
 
+
 extern class UIImage extends NSObject {
 	
+	public static function imageNamed (name:String) :UIImage;// load from main bundle
+	public static function imageWithContentsOfFile (name:String) :UIImage;// load from main bundle
+	public static function imageWithData (name:NSData) :UIImage;// load from main bundle
+	
+	public var size (default, null) :CGSize; // reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in pixels
 }
 
-/*+ (UIImage *)imageNamed:(NSString *)name;      // load from main bundle
+/*  
 
-+ (UIImage *)imageWithContentsOfFile:(NSString *)path;
-+ (UIImage *)imageWithData:(NSData *)data;
 + (UIImage *)imageWithData:(NSData *)data scale:(Float)scale NS_AVAILABLE_IOS(6_0);
 + (UIImage *)imageWithCGImage:(CGImageRef)cgImage;
 + (UIImage *)imageWithCGImage:(CGImageRef)cgImage scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(4_0);
@@ -40,7 +45,7 @@ extern class UIImage extends NSObject {
 - (id)initWithCIImage:(CIImage *)ciImage NS_AVAILABLE_IOS(5_0);
 - (id)initWithCIImage:(CIImage *)ciImage scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(6_0);
 
-	public var (default, null) CGSize             size;             // reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in pixels
+	
 	public var (default, null) CGImageRef         CGImage;          // returns underlying CGImageRef or nil if CIImage based
 	public var (default, null) CIImage           *CIImage NS_AVAILABLE_IOS(5_0); // returns underlying CIImage or nil if CGImageRef based
 	public var (default, null) UIImageOrientation imageOrientation; // this will affect how the image is composited

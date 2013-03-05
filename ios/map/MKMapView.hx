@@ -14,7 +14,7 @@ extern enum MKMapType {
 }
 typedef MKUserTrackingMode = Dynamic;//TODO:
 
-extern class MKMapView extends UIView {
+@:framework("MapKit") extern class MKMapView extends UIView {
 	
 	public var delegate :MKMapViewDelegate;
 	public var mapType :MKMapType;
