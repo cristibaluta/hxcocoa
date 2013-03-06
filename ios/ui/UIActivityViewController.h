@@ -11,7 +11,7 @@ package ios.ui;
 
 typedef void (^UIActivityViewControllerCompletionHandler)(NSString *activityType, BOOL completed);
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UIActivityViewController extends UIViewController
+@:require(6_0)extern class UIActivityViewController extends UIViewController
 
 - (id)initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray *)applicationActivities;
 

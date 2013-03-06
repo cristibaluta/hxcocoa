@@ -2,6 +2,7 @@ package ios.ui;
 
 /* Values for NSTextAlignment */
 //@:require(ios6_0)
+@:framework("UIKit")
 extern enum NSTextAlignment {
 
     NSTextAlignmentLeft;    // Visually left aligned
@@ -16,6 +17,7 @@ extern enum NSTextAlignment {
 
 /* Values for NSWritingDirection */
 //@:require(ios6_0)
+@:framework("UIKit")
 extern enum NSWritingDirection {
     NSWritingDirectionNatural;    // Determines direction using the Unicode Bidi Algorithm rules P2 and P3
     NSWritingDirectionLeftToRight;    // Left to right writing direction

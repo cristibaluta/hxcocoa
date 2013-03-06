@@ -1,5 +1,15 @@
 package ios.ui;
 
+
+@:framework("UIKit")
+extern enum UIScrollViewIndicatorStyle {
+    UIScrollViewIndicatorStyleDefault;     // black with white border. good against any background
+    UIScrollViewIndicatorStyleBlack;       // black only. smaller. good against a white background
+    UIScrollViewIndicatorStyleWhite;        // white only. smaller. good against a black background
+}
+
+
+@:framework("UIKit")
 extern class UIScrollView {
 
 
@@ -11,11 +21,7 @@ extern class UIScrollView {
 #import <UIKit/UIGeometry.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, UIScrollViewIndicatorStyle) {
-    UIScrollViewIndicatorStyleDefault,     // black with white border. good against any background
-    UIScrollViewIndicatorStyleBlack,       // black only. smaller. good against a white background
-    UIScrollViewIndicatorStyleWhite        // white only. smaller. good against a black background
-};
+typedef NS_ENUM(NSInteger, ;
 
 UIKIT_EXTERN const float UIScrollViewDecelerationRateNormal NS_AVAILABLE_IOS(3_0);
 UIKIT_EXTERN const float UIScrollViewDecelerationRateFast NS_AVAILABLE_IOS(3_0);

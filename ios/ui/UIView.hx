@@ -11,6 +11,7 @@ import ios.ui.NSLayoutConstraint;
 typedef UILayoutConstraintAxis = Int;
 
 
+@:framework("UIKit")
 extern class UIView extends UIResponder implements NSCoding/*, implements UIAppearance, implements UIAppearanceContainer*/ {
 	
 	public static function layerClass () :Class<CALayer>;

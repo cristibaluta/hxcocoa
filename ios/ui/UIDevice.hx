@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, UIUserInterfaceIdiom) {
 #define UIDeviceOrientationIsPortrait(orientation)  ((orientation) == UIDeviceOrientationPortrait || (orientation) == UIDeviceOrientationPortraitUpsideDown)
 #define UIDeviceOrientationIsLandscape(orientation) ((orientation) == UIDeviceOrientationLandscapeLeft || (orientation) == UIDeviceOrientationLandscapeRight)
 */
+@:framework("UIKit")
 extern class UIDevice extends NSObject {
 
 	public static function currentDevice () :UIDevice;

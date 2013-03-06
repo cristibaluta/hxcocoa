@@ -9,6 +9,7 @@ extern enum UIWebViewNavigationType {
     UIWebViewNavigationTypeOther;
 }
 
+@:framework("UIKit")
 extern class UIWebView extends UIView {
 	
 	function new () : Void;

@@ -1,13 +1,14 @@
 package ios.ui;
 
 
-typedef UIAlertViewStyle = Int;
-/*    UIAlertViewStyleDefault = 0,
-    UIAlertViewStyleSecureTextInput,
-    UIAlertViewStylePlainTextInput,
-    UIAlertViewStyleLoginAndPasswordInput
-};*/
+extern enum UIAlertViewStyle {
+    UIAlertViewStyleDefault;
+    UIAlertViewStyleSecureTextInput;
+    UIAlertViewStylePlainTextInput;
+    UIAlertViewStyleLoginAndPasswordInput;
+}
 
+@:framework("UIKit")
 extern class UIAlertView extends UIView {
 
 	public function initWithTitle (title:String, message:String, delegate:UIAlertViewDelegate, cancelButtonTitle:String, otherButtonTitles:String) :UIAlertView;

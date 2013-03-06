@@ -3,6 +3,7 @@ import objc.graphics.CGGeometry;
 
 typedef UIWindowLevel = Float;
 
+@:framework("UIKit")
 extern class UIWindow extends UIView {
 
 	public var screen :UIScreen;

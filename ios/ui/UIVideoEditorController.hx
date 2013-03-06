@@ -1,5 +1,6 @@
 package ios.ui;
 
+@:framework("UIKit")
 extern class UIVideoEditorController extends UINavigationController {
 
 + (BOOL)canEditVideoAtPath:(NSString *)videoPath NS_AVAILABLE_IOS(3_1);
@@ -11,6 +12,7 @@ extern class UIVideoEditorController extends UINavigationController {
 	public var            UIImagePickerControllerQualityType    videoQuality;
 }
 
+@:framework("UIKit")
 extern interface UIVideoEditorControllerDelegate {
 //@optional
 	public function videoEditorController:(UIVideoEditorController *)editor didSaveEditedVideoToPath:(NSString *)editedVideoPath;

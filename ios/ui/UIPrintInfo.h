@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, UIPrintInfoDuplex) {
     UIPrintInfoDuplexShortEdge,      // flip back page along short edge (flipped orientation for portrait, same in landscape)
 };
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UIPrintInfo extends NSObject, implements NSCopying, NSCoding> { 
+@:require(4_2)extern class UIPrintInfo extends NSObject, implements NSCopying, NSCoding> { 
   @private
     NSString                *_printerID;
     NSString                *_jobName;

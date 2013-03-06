@@ -1,6 +1,7 @@
 package ios.ui;
 import objc.foundation.NSObject;
 
+@:framework("UIKit")
 extern class UIColor extends NSObject {
 	
 	public static function colorWithRed (red:Float, green:Float, blue:Float, alpha:Float) :UIColor;

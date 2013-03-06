@@ -17,6 +17,7 @@ extern enum UIButtonType {
 typedef NSAttributedString = String;
 
 
+@:framework("UIKit")
 extern class UIButton extends UIControl {
 	
 	public static function buttonWithType (buttonType:UIButtonType) :UIButton;

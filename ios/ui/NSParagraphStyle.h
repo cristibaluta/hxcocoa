@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, NSLineBreakMode) {		/* What to do with long lines */
 }
 
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class NSMutableParagraphStyle extends NSParagraphStyle
+@:require(6_0)extern class NSMutableParagraphStyle extends NSParagraphStyle
 
 	public var  Float lineSpacing;
 	public var  Float paragraphSpacing;

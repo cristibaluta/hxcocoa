@@ -17,7 +17,7 @@ typedef void (^UIPrintInteractionCompletionHandler)(UIPrintInteractionController
 
 extern interface UIPrintInteractionControllerDelegate;
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UIPrintInteractionController extends NSObject {
+@:require(4_2)extern class UIPrintInteractionController extends NSObject {
   @private
     UIPrintInfo                             *_printInfo;
     id<UIPrintInteractionControllerDelegate> _delegate;

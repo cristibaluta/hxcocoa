@@ -9,7 +9,7 @@ package ios.ui;
 #import <UIKit/UIControl.h>
 #import <UIKit/UIKitDefines.h>
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UIRefreshControl extends UIControl
+@:require(6_0)extern class UIRefreshControl extends UIControl
 
 /* The designated initializer
  * This initializes a UIRefreshControl with a default height and width.

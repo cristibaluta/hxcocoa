@@ -8,7 +8,7 @@ package ios.ui;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 
-NS_CLASS_AVAILABLE_IOS(3_0)extern class UILocalizedIndexedCollation extends NSObject
+@:require(3_0)extern class UILocalizedIndexedCollation extends NSObject
 {
   @package
     NSLocale *_locale;

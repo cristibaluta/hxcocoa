@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, UITextGranularity) {
     UITextGranularityDocument
 };
 
-NS_CLASS_AVAILABLE_IOS(5_1)extern class UIDictationPhrase extends NSObject {
+@:require(5_1)extern class UIDictationPhrase extends NSObject {
     @private
         NSString *_text;
         NSArray *_alternativeInterpretations;
@@ -206,7 +206,7 @@ extern class UITextRange extends NSObject
 /* UITextSelectionRect defines an annotated selection rect used by the system to
  * offer rich text interaction experience.  It also serves as an abstract class
  * provided to be subclassed when adopting UITextInput */
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UITextSelectionRect extends NSObject
+@:require(6_0)extern class UITextSelectionRect extends NSObject
 
 	public var CGRect rect;
 	public var UITextWritingDirection writingDirection;
@@ -251,7 +251,7 @@ extern class UITextInputStringTokenizer extends NSObject <UITextInputTokenizer> 
 
 }
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UITextInputMode extends NSObject
+@:require(4_2)extern class UITextInputMode extends NSObject
 
 	public var (default, null) NSString *primaryLanguage; // The primary language, if any, of the input mode.  A BCP 47 language identifier such as en-US
 

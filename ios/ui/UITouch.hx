@@ -2,6 +2,7 @@ package ios.ui;
 
 import objc.graphics.CGGeometry;
 
+@:framework("UIKit")
 extern enum UITouchPhase {
     UITouchPhaseBegan;             // whenever a finger touches the surface.
     UITouchPhaseMoved;             // whenever a finger moves on the surface.
@@ -10,6 +11,7 @@ extern enum UITouchPhase {
     UITouchPhaseCancelled;         // whenever a touch doesn't end but we need to stop tracking (e.g. putting device to face)
 }
 
+@:framework("UIKit")
 extern class UITouch extends UIView {
 	
 	function new () : Void;
@@ -19,7 +21,7 @@ extern class UITouch extends UIView {
 	 public var tapCount : Int;   // touch down within a certain point within a certain amount of time
 
 	 //public var window : UIWindow;
-	 public var view : UIView;
+	 public var view :UIView;
 	 //public var gestureRecognizers : Array<Dynamic>;
 
 	 public function locationInView (view:UIView) :CGPoint;

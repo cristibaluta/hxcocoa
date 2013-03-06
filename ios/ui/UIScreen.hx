@@ -2,6 +2,7 @@ package ios.ui;
 import objc.foundation.NSObject;
 import objc.graphics.CGGeometry;
 
+@:framework("UIKit")
 extern class UIScreen extends NSObject {
 	
 	public static function screens () :Array<UIScreen>;

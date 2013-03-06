@@ -14,7 +14,7 @@ package ios.ui;
 @class UISearchBar, UITableView, UIViewController, UIPopoverController;
 extern interface UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate;
 
-NS_CLASS_AVAILABLE_IOS(3_0)extern class UISearchDisplayController extends NSObject {
+@:require(3_0)extern class UISearchDisplayController extends NSObject {
   @private
     UIViewController           *_viewController;
     UITableView                *_tableView;

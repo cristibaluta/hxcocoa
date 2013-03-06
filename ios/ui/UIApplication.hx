@@ -57,6 +57,7 @@ extern enum UIApplicationState {
 }
 
 
+@:framework("UIKit")
 extern class UIApplication extends UIResponder {
 	
 	public static function sharedApplication () :UIApplication;

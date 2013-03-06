@@ -1,5 +1,6 @@
 package ios.ui;
 
+@:framework("UIKit")
 extern class UIViewController extends UIResponder {
 	
 	public function loadView () :Void;

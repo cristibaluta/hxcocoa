@@ -13,7 +13,7 @@ UIKIT_EXTERN NSString *const UIPasteboardNameFind;
 
 @class UIColor, UIImage;
 
-NS_CLASS_AVAILABLE_IOS(3_0)extern class UIPasteboard extends NSObject { 
+@:require(3_0)extern class UIPasteboard extends NSObject { 
   @private
     NSString *_name;
 }

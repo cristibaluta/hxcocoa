@@ -2,6 +2,7 @@ package ios.ui;
 
 import objc.foundation.NSDictionary;
 
+@:framework("UIKit")
 extern interface UIApplicationDelegate {
 
 	//@optional

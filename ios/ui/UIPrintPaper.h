@@ -9,7 +9,7 @@ package ios.ui;
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKitDefines.h>
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UIPrintPaper extends NSObject {
+@:require(4_2)extern class UIPrintPaper extends NSObject {
   @private
     int _paperOrientation;
     id  _internal;

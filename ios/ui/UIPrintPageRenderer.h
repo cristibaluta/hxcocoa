@@ -11,7 +11,7 @@ package ios.ui;
 
 @class UIPrintFormatter;
 
-NS_CLASS_AVAILABLE_IOS(4_2)extern class UIPrintPageRenderer extends NSObject {
+@:require(4_2)extern class UIPrintPageRenderer extends NSObject {
   @private
     Float         _headerHeight;
     Float         _footerHeight;

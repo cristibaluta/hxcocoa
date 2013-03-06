@@ -7,6 +7,7 @@ import objc.foundation.NSDate;
 typedef UIDatePickerMode = Int;
 
 
+@:framework("UIKit")
 extern class UIDatePicker extends UIControl, implements NSObject {
 	
 	inline public static var UIDatePickerModeTime = 0;

@@ -10,7 +10,7 @@ package ios.ui;
 #import <UIKit/NSAttributedString.h>
 #import <UIKit/UIKitDefines.h>
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class NSStringDrawingContext extends NSObject {
+@:require(6_0)extern class NSStringDrawingContext extends NSObject {
 @private
 }
 

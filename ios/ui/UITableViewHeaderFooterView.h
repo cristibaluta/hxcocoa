@@ -9,7 +9,7 @@ package ios.ui;
 #import <UIKit/UITableView.h>
 
 // Either the header or footer for a section
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UITableViewHeaderFooterView extends UIView
+@:require(6_0)extern class UITableViewHeaderFooterView extends UIView
 
 	public var  UIColor *tintColor UI_APPEARANCE_SELECTOR;
 

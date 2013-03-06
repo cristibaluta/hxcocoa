@@ -15,7 +15,7 @@ typedef double UIAccelerationValue;
 
 extern interface UIAccelerometerDelegate;
 
-NS_CLASS_AVAILABLE_IOS(2_0)
+@:require(2_0)
 extern class UIAcceleration : NSObject {
   @private
     NSTimeInterval timestamp;
@@ -29,7 +29,7 @@ extern class UIAcceleration : NSObject {
 
 }
 
-NS_CLASS_AVAILABLE_IOS(2_0)
+@:require(2_0)
 extern class UIAccelerometer : NSObject {
   @private
     NSTimeInterval               _updateInterval;

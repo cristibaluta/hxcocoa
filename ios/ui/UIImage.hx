@@ -1,4 +1,5 @@
 package ios.ui;
+
 import objc.foundation.NSObject;
 import objc.foundation.NSData;
 import objc.graphics.CGGeometry;
@@ -20,6 +21,7 @@ extern enum UIImageResizingMode {
 }
 
 
+@:framework("UIKit")
 extern class UIImage extends NSObject {
 	
 	public static function imageNamed (name:String) :UIImage;// load from main bundle

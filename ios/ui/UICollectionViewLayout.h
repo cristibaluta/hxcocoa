@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, UICollectionElementCategory) {
 @class UICollectionView;
 @class UINib;
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewLayoutAttributes extends NSObject, implements NSCopying>
+@:require(6_0)extern class UICollectionViewLayoutAttributes extends NSObject, implements NSCopying>
 
 	public var CGRect frame;
 	public var CGPoint center;
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, UICollectionUpdateAction) {
     UICollectionUpdateActionNone
 };
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewUpdateItem extends NSObject
+@:require(6_0)extern class UICollectionViewUpdateItem extends NSObject
 
 	public var NSIndexPath *indexPathBeforeUpdate; // nil for UICollectionUpdateActionInsert
 	public var NSIndexPath *indexPathAfterUpdate; // nil for UICollectionUpdateActionDelete
@@ -59,7 +59,7 @@ NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewUpdateItem extends NSObj
 
 }
 
-NS_CLASS_AVAILABLE_IOS(6_0)extern class UICollectionViewLayout extends NSObject, implements NSObject>
+@:require(6_0)extern class UICollectionViewLayout extends NSObject, implements NSObject>
 
 // Methods in this class are meant to be overridden and will be called by its collection view to gather layout information.
 // To get the truth on the current state of the collection view, call methods on UICollectionView rather than these.

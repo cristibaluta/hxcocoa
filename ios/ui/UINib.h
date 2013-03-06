@@ -8,7 +8,7 @@ package ios.ui;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 
-NS_CLASS_AVAILABLE_IOS(4_0)extern class UINib extends NSObject {
+@:require(4_0)extern class UINib extends NSObject {
   @private
     id storage;
 }

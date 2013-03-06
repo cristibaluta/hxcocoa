@@ -49,6 +49,7 @@ import ios.ui.UIEvent;
 }
 	
 
+@:framework("UIKit")
 extern class UIControl extends UIView {
 	
 	public var enabled :Bool;

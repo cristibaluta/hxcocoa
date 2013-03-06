@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, UIMenuControllerArrowDirection) {
 
 @class UIView;
 
-NS_CLASS_AVAILABLE_IOS(3_0)extern class UIMenuController extends NSObject {
+@:require(3_0)extern class UIMenuController extends NSObject {
   @private
     CGRect _targetRect;
     UIMenuControllerArrowDirection _arrowDirection;

@@ -1,6 +1,7 @@
 package ios.ui;
 
 
+@:framework("UIKit")
 extern class UIEdgeInsets {
 	public var top :Float;
 	public var left :Float;
@@ -9,6 +10,7 @@ extern class UIEdgeInsets {
     public function new (top:Float, left:Float, bottom:Float, right:Float) :Void;
 }
 
+@:framework("UIKit")
 extern class UIOffset {
 	public var horizontal :Float;
 	public var vertical :Float;

@@ -29,6 +29,7 @@ extern enum UIEventSubtype {
     UIEventSubtypeRemoteControlEndSeekingForward;
 }
 
+@:framework("UIKit")
 extern class UIEvent extends NSObject {
 
 	public var type : UIEventType;

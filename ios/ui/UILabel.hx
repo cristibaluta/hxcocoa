@@ -4,6 +4,7 @@ import objc.graphics.CGGeometry;
 import ios.ui.NSText;
 
 
+@:framework("UIKit")
 extern class UILabel extends UIView {
 	
 	public var text :String;

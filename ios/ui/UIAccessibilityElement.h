@@ -17,7 +17,7 @@
  of UIAccessibilityElement to cover for user interface items that are not
  backed by a UIView (for example: painted text or icon).
  */
-NS_CLASS_AVAILABLE_IOS(3_0)extern class UIAccessibilityElement extends NSObject<UIAccessibilityIdentification>
+@:require(3_0)extern class UIAccessibilityElement extends NSObject<UIAccessibilityIdentification>
 
 // initialize with the accessibility container that contains this element
 - (id)initWithAccessibilityContainer:(id)container;
