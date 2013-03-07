@@ -1,8 +1,9 @@
-<project name="ios" url="http://ralcr.com/" license="BSD">
+<project name="cocoa" url="http://ralcr.com/" license="BSD">
     <user name="cristi.baluta"/>
     <tag v="ios"/>
+    <tag v="osx"/>
+    <tag v="commandline"/>
     <tag v="objc"/>
-    <tag v="nme"/>
-    <description>Externs for the objc target for iOS development</description>
+    <description>Externs for the objc target for iOS, OSX, and command line apps development</description>
     <version name="1.0.0">First commit</version>
 </project>
