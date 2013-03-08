@@ -1,6 +1,7 @@
 package ios.ui;
 import objc.foundation.NSObject;
 
+@:framework("UIKit")
 extern class UIFont extends NSObject {
 
 	public static function fontWithName (fontName:String, fontSize:Float) :UIFont;

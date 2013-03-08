@@ -42,25 +42,25 @@ extern class CGGeometry {
 
 /* The "zero" point -- equivalent to CGPointMake(0, 0). */ 
 
-	public static var CGPointZero :CGPoint;
+	@:c public static var CGPointZero :CGPoint;
 
 /* The "zero" size -- equivalent to CGSizeMake(0, 0). */ 
 
-	public static var CGSizeZero :CGSize;
+	@:c public static var CGSizeZero :CGSize;
 
 /* The "zero" rectangle -- equivalent to CGRectMake(0, 0, 0, 0). */ 
 
-	public static var CGRectZero :CGRect;
+	@:c public static var CGRectZero :CGRect;
 
 /* The "empty" rect. This is the rectangle returned when, for example, we
    intersect two disjoint rectangles. Note that the null rect is not the
    same as the zero rect. */
 
-	public static var CGRectNull :CGRect;
+	@:c public static var CGRectNull :CGRect;
 
 /* The infinite rectangle. */
 
-	public static var CGRectInfinite :CGRect;
+	@:c public static var CGRectInfinite :CGRect;
 
 /* Make a point from `(x, y)'. */
 

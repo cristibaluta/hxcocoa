@@ -5,7 +5,7 @@ import objc.foundation.NSObject;
 import objc.foundation.NSSet;
 import ios.ui.UIEvent;
 
-
+@:framework("UIKit")
 extern class UIResponder extends NSObject {
 	
 	// Managing the Responder Chain

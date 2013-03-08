@@ -1,5 +1,6 @@
 package ios.ui;
 
+@:framework("UIKit")
 extern class UIImageView extends UIView {
 
 	public function initWithImage (image:UIImage) :UIImageView;

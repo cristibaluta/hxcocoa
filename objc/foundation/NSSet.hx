@@ -5,6 +5,7 @@ private typedef NSEnumerationOptions = Dynamic;
 private typedef NSSortOptions = Dynamic;
 private typedef NSComparator = Dynamic;
 
+@:framework("Foundation")
 extern class NSSet extends NSObject implements NSCopying implements NSMutableCopying implements NSSecureCoding {
 
 //extern class NSSet (NSExtendedSet)
@@ -17,6 +18,7 @@ extern class NSSet extends NSObject implements NSCopying implements NSMutableCop
 	public function intersectsSet (otherSet:NSSet) :Bool;
 	public function isEqualToSet (otherSet:NSSet) :Bool;
 	public function isSubsetOfSet (otherSet:NSSet) :Bool;
+	public function count () :Int;
 
 	@:overload(function(aSelector:SEL, withObject:Dynamic) :Void {})
 	public function makeObjectsPerformSelector (aSelector:SEL) :Void;
@@ -50,6 +52,7 @@ extern class NSSet extends NSObject implements NSCopying implements NSMutableCop
 
 }
 
+@:framework("Foundation")
 extern class NSMutableSet extends NSSet {
 
 	public function addObject (object:Dynamic) :Void;
@@ -73,6 +76,7 @@ extern class NSMutableSet extends NSSet {
 }
 
 
+@:framework("Foundation")
 extern class NSCountedSet extends NSMutableSet {
 
 /*- (id)initWithCapacity:(NSUInteger)numItems; // designated initializer

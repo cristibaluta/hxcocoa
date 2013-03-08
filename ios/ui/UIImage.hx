@@ -4,6 +4,7 @@ import objc.foundation.NSObject;
 import objc.foundation.NSData;
 import objc.graphics.CGGeometry;
 
+@:framework("UIKit")
 extern enum UIImageOrientation {
     UIImageOrientationUp;            // default orientation
     UIImageOrientationDown;          // 180 deg rotation
@@ -15,6 +16,7 @@ extern enum UIImageOrientation {
     UIImageOrientationRightMirrored; // vertical flip
 }
 
+@:framework("UIKit")
 extern enum UIImageResizingMode {
     UIImageResizingModeTile;
     UIImageResizingModeStretch;

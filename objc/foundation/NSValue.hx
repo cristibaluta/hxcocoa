@@ -2,6 +2,7 @@ package objc.foundation;
 import objc.foundation.NSObject;
 
 
+@:framework("Foundation")
 extern class NSValue extends NSObject implements NSCopying implements NSSecureCoding {
 
 	public function getValue (value:Void) :Void;
@@ -25,6 +26,7 @@ extern class NSValue extends NSObject implements NSCopying implements NSSecureCo
 
 }
 
+@:framework("Foundation")
 extern class NSNumber extends NSValue {
 
 	public function charValue () :String;
@@ -45,9 +47,9 @@ extern class NSNumber extends NSValue {
 
 	public function stringValue () :String;
 
-	public function compare (otherNumber:NSNumber) :NSComparisonResult;
+	//public function compare (otherNumber:NSNumber) :NSComparisonResult;
 
-	public function isEqualToNumber (number:Number) :Bool;
+	public function isEqualToNumber (number:NSNumber) :Bool;
 
 	public function descriptionWithLocale (locale:Dynamic) :String;
 

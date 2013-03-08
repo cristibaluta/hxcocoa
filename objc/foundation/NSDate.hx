@@ -5,10 +5,7 @@ typedef NSComparisonResult = Int;
 
 @:framework("Foundation")
 extern class NSDate extends NSObject implements NSCopying implements NSSecureCoding {
-
-	//Constants
-
-	//Static Methods
+	
 	public static function timeIntervalSinceReferenceDate () :NSTimeInterval;
 	public static function dateWithTimeInterval( ti:NSTimeInterval,  date:Date):NSDate;
 	public static function dateWithTimeIntervalSinceReferenceDate( secs:NSTimeInterval):NSDate;

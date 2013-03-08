@@ -5,6 +5,7 @@ typedef NSComparator = Dynamic;
 typedef NSSortOptions = Dynamic;
 typedef NSEnumerationOptions = Dynamic;
 
+@:framework("Foundation")
 extern class NSDictionary extends NSObject implements NSCopying implements NSMutableCopying implements NSSecureCoding implements NSFastEnumeration {
 
 	public function count () :Int;
@@ -70,6 +71,7 @@ extern class NSDictionary extends NSObject implements NSCopying implements NSMut
 
 /****************	Mutable Dictionary	****************/
 
+@:framework("Foundation")
 extern class NSMutableDictionary extends NSDictionary {
 
 	public function removeObjectForKey (aKey:Dynamic) :Void;
