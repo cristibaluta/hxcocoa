@@ -1,42 +1,45 @@
 package objc.foundation;
 
-
+@:framework("Foundation")
 extern class NSRunLoop extends NSObject {
 
 	public static function currentRunLoop () :NSRunLoop;
 	public static function mainRunLoop () :NSRunLoop;
 
-- (NSString *)currentMode;
-- (CFRunLoopRef)getCFRunLoop;
+	public function currentMode () :String;
+//- (CFRunLoopRef)getCFRunLoop;
 
-- (void)addTimer:(NSTimer *)timer forMode:(NSString *)mode;
+	public function addTimer (timer:NSTimer, forMode:NSRunLoopMode) :Void;
 
-- (void)addPort:(NSPort *)aPort forMode:(NSString *)mode;
-- (void)removePort:(NSPort *)aPort forMode:(NSString *)mode;
+	//public function addPort (aPort:NSPort, forMode:String) :Void;
+	//public function removePort (aPort:NSPort, forMode:String) :Void;
 
-- (NSDate *)limitDateForMode:(NSString *)mode;
-- (void)acceptInputForMode:(NSString *)mode beforeDate:(NSDate *)limitDate;
+	public function limitDateForMode (mode:String) :Date;
+	public function acceptInputForMode (mode:String, beforeDate:Date) :Void;
 
-- (void)run; 
-- (void)runUntilDate:(NSDate *)limitDate;
-- (Bool)runMode:(NSString *)mode beforeDate:(NSDate *)limitDate;
+	public function run () :Void;
+	public function runUntilDate (limitDate:Date) :Void;
+	public function runMode (mode:String, beforeDate:Date) :Bool;
 
-#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
-- (void)configureAsServer NS_DEPRECATED(10_0, 10_5, 2_0, 2_0);
-#endif
 
-	- (void)performSelector:(SEL)aSelector target:(id)target argument:(id)arg order:(NSUInteger)order modes:(Array<> *)modes;
-	- (void)cancelPerformSelector:(SEL)aSelector target:(id)target argument:(id)arg;
-	- (void)cancelPerformSelectorsWithTarget:(id)target;
+	//public function performSelector (aSelector:SEL, target:Dynamic, argument:Dynamic, order:Int, modes:Array<String>) :Void;
+	//public function cancelPerformSelector (aSelector:SEL, target:Dynamic, argument:Dynamic) :Void;
+	//public function cancelPerformSelectorsWithTarget (target:Dynamic) :Void;
 }
 
 /**************** 	Delayed perform	 ******************/
 
-extern class NSObject (NSDelayedPerforming)
+/*extern class NSObject (NSDelayedPerforming)
 
 - (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(Array<> *)modes;
 - (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;
 + (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument;
 + (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget;
 
+}*/
+
+@:framework("Foundation")
+extern enum NSRunLoopMode {
+	NSDefaultRunLoopMode;
+	NSRunLoopCommonModes;
 }

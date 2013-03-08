@@ -5,6 +5,7 @@ import objc.foundation.NSObject;
 @:framework("Foundation")
 extern class NSNull extends NSObject implements NSCopying implements NSSecureCoding {
 
-	public static function _null () :NSNull;
+	@:sel("null")
+	public static function nil () :NSNull;
 	
 }

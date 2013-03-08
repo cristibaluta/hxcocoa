@@ -5,18 +5,17 @@ import objc.foundation.NSDictionary;
 @:framework("UIKit")
 extern interface UIApplicationDelegate {
 
-	//@optional
-
-	public var window : UIWindow;
-
-	//public function applicationDidFinishLaunching (application:UIApplication) :Void;
-	//public function applicationWillFinishLaunchingWithOptions (application:UIApplication, willFinishLaunchingWithOptions:NSDictionary) :Bool;
+	public var window :UIWindow;
+	
+	@:sel("application:didFinishLaunchingWithOptions:")
 	public function application (application:UIApplication, didFinishLaunchingWithOptions:NSDictionary) :Bool;
 
 	public function applicationDidBecomeActive (application:UIApplication) :Void;
 	public function applicationWillResignActive (application:UIApplication) :Void;
-/*	public function applicationHandleOpenURL (application:UIApplication, handleOpenURL:NSURL) :Bool;*/
-	/*public function applicationOpenURL (application:UIApplication, openURL:NSURL, sourceApplication:String, annotation:Dynamic) :Bool;
+
+#if dispaly
+	public function applicationHandleOpenURL (application:UIApplication, handleOpenURL:NSURL) :Bool;
+	public function applicationOpenURL (application:UIApplication, openURL:NSURL, sourceApplication:String, annotation:Dynamic) :Bool;
 
 	public function applicationDidReceiveMemoryWarning (application:UIApplication) :Void;
 	public function applicationWillTerminate (application:UIApplication) :Void;
@@ -38,14 +37,14 @@ extern interface UIApplicationDelegate {
 	public function applicationWillEnterForeground (application:UIApplication) :Void;
 
 	public function applicationProtectedDataWillBecomeUnavailable (application:UIApplication) :Void;
-	public function applicationProtectedDataDidBecomeAvailable (application:UIApplication) :Void;*/
+	public function applicationProtectedDataDidBecomeAvailable (application:UIApplication) :Void;
 
-	/*public function applicationSupportedInterfaceOrientationsForWindow (application:UIApplication, supportedInterfaceOrientationsForWindow:UIWindow) :Int;
+	public function applicationSupportedInterfaceOrientationsForWindow (application:UIApplication, supportedInterfaceOrientationsForWindow:UIWindow) :Int;
 
 	public function applicationViewControllerWithRestorationIdentifierPath (application:UIApplication, viewControllerWithRestorationIdentifierPath:NSArray, coder:NSCoder) :UIViewController;
 	public function applicationShouldSaveApplicationState (application:UIApplication, shouldSaveApplicationState:NSCoder) :Bool;
 	public function applicationShouldRestoreApplicationState (application:UIApplication, shouldRestoreApplicationState:NSCoder) :Bool;
 	public function applicationWillEncodeRestorableStateWithCoder (application:UIApplication, willEncodeRestorableStateWithCoder:NSCoder) :Void;
 	public function applicationDidDecodeRestorableStateWithCoder (application:UIApplication, didDecodeRestorableStateWithCoder:NSCoder) :Void;
-	*/
+#end
 }
