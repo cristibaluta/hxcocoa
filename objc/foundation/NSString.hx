@@ -1,9 +1,51 @@
 package objc.foundation;
-import objc.foundation.NSObject;
-private typedef NSComparisonResult = Int;
-private typedef NSStringCompareOptions = Int;
-private typedef NSStringEncoding = Int;
 
+import objc.foundation.NSObject;
+
+extern private enum NSComparisonResult {
+	
+}
+private typedef NSStringCompareOptions = Int;
+
+extern enum NSStringEncoding {
+	NSASCIIStringEncoding;
+	NSNEXTSTEPStringEncoding;
+	NSJapaneseEUCStringEncoding;
+	NSUTF8StringEncoding;
+	NSISOLatin1StringEncoding;
+	NSSymbolStringEncoding;
+	NSNonLossyASCIIStringEncoding;
+	NSShiftJISStringEncoding;
+	NSISOLatin2StringEncoding;
+	NSUnicodeStringEncoding;
+	NSWindowsCP1251StringEncoding;
+	NSWindowsCP1252StringEncoding;
+	NSWindowsCP1253StringEncoding;
+	NSWindowsCP1254StringEncoding;
+	NSWindowsCP1250StringEncoding;
+	NSISO2022JPStringEncoding;
+	NSMacOSRomanStringEncoding;
+	NSUTF16StringEncoding;
+	//NSUnicodeStringEncoding;
+	NSUTF16BigEndianStringEncoding;
+	NSUTF16LittleEndianStringEncoding;
+	NSUTF32StringEncoding;
+	NSUTF32BigEndianStringEncoding;
+	NSUTF32LittleEndianStringEncoding;
+}
+
+extern enum NSStringEnumeration {
+	NSStringEnumerationByLines;
+	NSStringEnumerationByParagraphs;
+	NSStringEnumerationByComposedCharacterSequences;
+	NSStringEnumerationByWords;
+	NSStringEnumerationBySentences;
+	NSStringEnumerationReverse;
+	NSStringEnumerationSubstringNotRequired;
+	NSStringEnumerationLocalized;
+}
+
+@:framework("Foundation")
 extern class NSString extends NSObject implements NSCopying implements NSMutableCopying implements NSSecureCoding {
 
 	inline public static var NSMaximumStringLength = 10000;//INT_MAX-1;
@@ -18,30 +60,6 @@ extern class NSString extends NSObject implements NSCopying implements NSMutable
 	inline public static var NSForcedOrderingSearch = 512;
 	inline public static var NSRegularExpressionSearch = 1024;
 	
-	inline public static var NSASCIIStringEncoding = 1;
-	inline public static var NSNEXTSTEPStringEncoding = 2;
-	inline public static var NSJapaneseEUCStringEncoding = 3;
-	inline public static var NSUTF8StringEncoding = 4;
-	inline public static var NSISOLatin1StringEncoding = 5;
-	inline public static var NSSymbolStringEncoding = 6;
-	inline public static var NSNonLossyASCIIStringEncoding = 7;
-	inline public static var NSShiftJISStringEncoding = 8;
-	inline public static var NSISOLatin2StringEncoding = 9;
-	inline public static var NSUnicodeStringEncoding = 10;
-	inline public static var NSWindowsCP1251StringEncoding = 11;
-	inline public static var NSWindowsCP1252StringEncoding = 12;
-	inline public static var NSWindowsCP1253StringEncoding = 13;
-	inline public static var NSWindowsCP1254StringEncoding = 14;
-	inline public static var NSWindowsCP1250StringEncoding = 15;
-	inline public static var NSISO2022JPStringEncoding = 21;
-	inline public static var NSMacOSRomanStringEncoding = 30;
-	inline public static var NSUTF16StringEncoding = NSUnicodeStringEncoding;
-	inline public static var NSUTF16BigEndianStringEncoding = 0x90000100;
-	inline public static var NSUTF16LittleEndianStringEncoding = 0x94000100;
-	inline public static var NSUTF32StringEncoding = 0x8c000100;
-	inline public static var NSUTF32BigEndianStringEncoding = 0x98000100;
-	inline public static var NSUTF32LittleEndianStringEncoding = 0x9c000100;
-
 	inline public static var NSStringEncodingConversionAllowLossy = 1;
 	inline public static var NSStringEncodingConversionExternalRepresentation = 2;
 	
@@ -110,14 +128,6 @@ extern class NSString extends NSObject implements NSCopying implements NSMutable
 	public function getParagraphStart (startPtr:Int, end:Int, contentsEnd:Int, forRange:NSRange) :Void;
 	public function paragraphRangeForRange (range:NSRange) :NSRange;
 
-	inline public static var NSStringEnumerationByLines = 0;
-	inline public static var NSStringEnumerationByParagraphs = 1;
-	inline public static var NSStringEnumerationByComposedCharacterSequences = 2;
-	inline public static var NSStringEnumerationByWords = 3;
-	inline public static var NSStringEnumerationBySentences = 4;
-	inline public static var NSStringEnumerationReverse = 1 << 8;//1 = 1UL
-	inline public static var NSStringEnumerationSubstringNotRequired = 1 << 9;
-	inline public static var NSStringEnumerationLocalized = 1 << 10;
 	#if (osx_10_6 || ios_4_0)
 	public function enumerateSubstringsInRange (range:NSRange, options:NSStringEnumerationOptions, usingBlock:NSString->NSRange->NSRange->Bool) :Void;
 	public function enumerateLinesUsingBlock (block:NSString->Bool) :Void;
@@ -171,7 +181,7 @@ extern class NSString extends NSObject implements NSCopying implements NSMutable
 	public static function stringWithString (string:String) :NSString;
 	public static function stringWithCharacters (characters:String, length:Int) :NSString;
 	public static function stringWithUTF8String (nullTerminatedCString:String) :NSString;
-	public static function stringWithFormat (format:String) :NSString;
+	public static function stringWithFormat (format:String, ?p1:Dynamic, ?p2:Dynamic, ?p3:Dynamic) :NSString;
 	public static function localizedStringWithFormat (format:String) :NSString;
 
 	public function initWithCString (nullTerminatedCString:String, encoding:NSStringEncoding) :NSString;
@@ -188,6 +198,7 @@ extern class NSString extends NSObject implements NSCopying implements NSMutable
 }
 
 
+@:framework("Foundation")
 extern class NSMutableString extends NSString {
 
 	public function replaceCharactersInRange (range:NSRange, withString:NSString) :Void;
