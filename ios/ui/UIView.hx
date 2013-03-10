@@ -192,6 +192,7 @@ extern class UIView extends UIResponder implements NSCoding/*, implements UIAppe
 }
 
 
+@:framework("UIKit")
 extern enum UIViewAnimationCurve {
     UIViewAnimationCurveEaseInOut;         // slow at beginning and end
     UIViewAnimationCurveEaseIn;            // slow at beginning
@@ -199,6 +200,7 @@ extern enum UIViewAnimationCurve {
     UIViewAnimationCurveLinear;
 }
 
+@:framework("UIKit")
 extern enum UIViewContentMode {
     UIViewContentModeScaleToFill;
     UIViewContentModeScaleAspectFit;      // contents scaled to fit with fixed aspect. remainder is transparent
@@ -215,6 +217,7 @@ extern enum UIViewContentMode {
     UIViewContentModeBottomRight;
 }
 
+@:framework("UIKit")
 extern enum UIViewAnimationTransition {
     UIViewAnimationTransitionNone;
     UIViewAnimationTransitionFlipFromLeft;
@@ -223,6 +226,7 @@ extern enum UIViewAnimationTransition {
     UIViewAnimationTransitionCurlDown;
 }
 
+@:framework("UIKit")
 extern enum UIViewAutoresizing {
     UIViewAutoresizingNone;
     UIViewAutoresizingFlexibleLeftMargin;
@@ -233,6 +237,7 @@ extern enum UIViewAutoresizing {
     UIViewAutoresizingFlexibleBottomMargin;
 }
 
+@:framework("UIKit")
 extern enum UIViewAnimationOptions {
     UIViewAnimationOptionLayoutSubviews;
     UIViewAnimationOptionAllowUserInteraction; // turn on user interaction while animating
