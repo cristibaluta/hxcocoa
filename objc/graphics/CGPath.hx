@@ -6,6 +6,7 @@ typedef CGPathRef = CGPath;
 
 /* Line join styles. */
 
+@:framework("CoreGraphics")
 extern enum CGLineJoin {
     kCGLineJoinMiter;
     kCGLineJoinRound;
@@ -14,6 +15,7 @@ extern enum CGLineJoin {
 
 /* Line cap styles. */
 
+@:framework("CoreGraphics")
 extern enum CGLineCap {
     kCGLineCapButt;
     kCGLineCapRound;
@@ -25,18 +27,15 @@ extern class CGPath {
 #if ddddddd
 /* Return the CFTypeID for CGPathRefs. */
 
-	@:c public static function CFTypeID CGPathGetTypeID(void)
-  CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0);
+	@:c public static function CGPathGetTypeID() :CFTypeID;
 
 /* Create a mutable path. */
 
-	@:c public static function CGMutablePathRef CGPathCreateMutable(void)
-  CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0);
+	@:c public static function CGPathCreateMutable() :CGMutablePathRef;
 
 /* Create a copy of `path'. */
 
-	@:c public static function CGPathRef CGPathCreateCopy(CGPathRef path)
-  CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0);
+	@:c public static function CGPathCreateCopy(path:CGPathRef) :CGPathRef
 
 /* Create a copy of `path' transformed by `transform'. */
 

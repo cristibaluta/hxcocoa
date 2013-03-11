@@ -1,7 +1,13 @@
 package objc.graphics;
 
-typedef CGImageRef = CGImage;
+import objc.graphics.CGColorSpace;
+import objc.graphics.CGGeometry;
 
+typedef CGImageRef = CGImage;
+typedef CGDataProviderRef = Dynamic;
+typedef CFTypeID = Dynamic;
+
+@:framework("CoreGraphics")
 extern enum CGImageAlphaInfo {
     kCGImageAlphaNone;               /* For example, RGB. */
     kCGImageAlphaPremultipliedLast;  /* For example, premultiplied RGBA */
@@ -13,6 +19,7 @@ extern enum CGImageAlphaInfo {
     kCGImageAlphaOnly;                /* No color data, alpha data only */
 }
 
+@:framework("CoreGraphics")
 extern enum CGBitmapInfo {
     kCGBitmapAlphaInfoMask;
     kCGBitmapFloatComponents;
@@ -29,22 +36,22 @@ extern enum CGBitmapInfo {
 @:framework("CoreGraphics")
 extern class CGImage {
 /* Return the CFTypeID for CGImageRefs. */
-#if dddddddd
+
 	@:c public static function CGImageGetTypeID() :CFTypeID;
 
 /* Create an image. */
 
-	@:c public static function CGImageCreate(size_t width, size_t height,
-    size_t bitsPerComponent, size_t bitsPerPixel, size_t bytesPerRow,
-    CGColorSpaceRef space, CGBitmapInfo bitmapInfo, CGDataProviderRef provider,
-    const Float decode[], bool shouldInterpolate,
-    CGColorRenderingIntent intent) :CGImageRef;
+	@:c public static function CGImageCreate(width:Int, height:Int,
+    bitsPerComponent:Int, bitsPerPixel:Int, bytesPerRow:Int,
+    space:CGColorSpaceRef, bitmapInfo:CGBitmapInfo, provider:CGDataProviderRef,
+    decode:Array<Float>, shouldInterpolate:Bool,
+    intent:CGColorRenderingIntent) :CGImageRef;
 
 /* Create an image mask. */
 
-	@:c public static function CGImageMaskCreate(size_t width, size_t height,
-    size_t bitsPerComponent, size_t bitsPerPixel, size_t bytesPerRow,
-    CGDataProviderRef provider, const Float decode[], bool shouldInterpolate) :CGImageRef;
+	@:c public static function CGImageMaskCreate(width:Int, height:Int,
+    bitsPerComponent:Int, bitsPerPixel:Int, bytesPerRow:Int,
+    provider:CGDataProviderRef, decode:Array<Float>, shouldInterpolate:Bool) :CGImageRef;
 
 /* Return a copy of `image'. Only the image structure itself is copied; the
    underlying data is not. */
@@ -53,14 +60,13 @@ extern class CGImage {
 
 /* Create an image from `source', a data provider of JPEG-encoded data. */
 
-	@:c public static function CGImageCreateWithJPEGDataProvider(CGDataProviderRef
-    source, const Float decode[], bool shouldInterpolate,
-    CGColorRenderingIntent intent) :CGImageRef;
+	@:c public static function CGImageCreateWithJPEGDataProvider(source:CGDataProviderRef, 
+		decode:Array<Float>, shouldInterpolate:Bool, intent:CGColorRenderingIntent) :CGImageRef;
 
 /* Create an image using `source', a data provider for PNG-encoded data. */
 
-	@:c public static function CGImageCreateWithPNGDataProvider(source:CGDataProviderRef,
-    const Float decode[], shouldInterpolate:Bool, intent:CGColorRenderingIntent) :CGImageRef;
+	@:c public static function CGImageCreateWithPNGDataProvider(source:CGDataProviderRef, 
+		decode:Array<Float>, shouldInterpolate:Bool, intent:CGColorRenderingIntent) :CGImageRef;
 
 /* Create an image using the data contained within the subrectangle `rect'
    of `image'.
@@ -152,23 +158,23 @@ extern class CGImage {
 
 /* Return the width of `image'. */
 
-	@:c public static function CGImageGetWidth(image:CGImageRef) :size_t;
+	@:c public static function CGImageGetWidth(image:CGImageRef) :Float;
 
 /* Return the height of `image'. */
 
-	@:c public static function CGImageGetHeight(image:CGImageRef) :size_t;
+	@:c public static function CGImageGetHeight(image:CGImageRef) :Float;
 
 /* Return the number of bits/component of `image'. */
 
-	@:c public static function CGImageGetBitsPerComponent(image:CGImageRef) :size_t;
+	@:c public static function CGImageGetBitsPerComponent(image:CGImageRef) :Int;
 
 /* Return the number of bits/pixel of `image'. */
 
-	@:c public static function CGImageGetBitsPerPixel(image:CGImageRef) :size_t;
+	@:c public static function CGImageGetBitsPerPixel(image:CGImageRef) :Int;
 
 /* Return the number of bytes/row of `image'. */
 
-	@:c public static function CGImageGetBytesPerRow(image:CGImageRef) :size_t;
+	@:c public static function CGImageGetBytesPerRow(image:CGImageRef) :Int;
 
 /* Return the color space of `image', or NULL if `image' is an image
    mask. */
@@ -198,5 +204,5 @@ extern class CGImage {
 /* Return the bitmap info of `image'. */
 
 	@:c public static function CGImageGetBitmapInfo(image:CGImageRef) :CGBitmapInfo;
-	#end
+
 }

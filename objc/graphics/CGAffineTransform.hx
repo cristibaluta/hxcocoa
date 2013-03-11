@@ -3,6 +3,7 @@ package objc.graphics;
 import objc.graphics.CGGeometry;
 
 @:framework("CoreGraphics")
+@:struct
 extern class CGAffineTransform {
     
 	public var a :Float;
@@ -17,26 +18,26 @@ extern class CGAffineTransform {
 
 // The identity transform: [ 1 0 0 1 0 0 ]. 
 
-	@:c @:struct public static function CGAffineTransformIdentity () :CGAffineTransform;
+	@:c public static function CGAffineTransformIdentity () :CGAffineTransform;
 
 // Return the transform [ a b c d tx ty ]. 
 
-	@:c @:struct public static function CGAffineTransformMake(a:Float, b:Float, c:Float, d:Float, tx:Float, ty:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformMake(a:Float, b:Float, c:Float, d:Float, tx:Float, ty:Float) :CGAffineTransform;
 
 // Return a transform which translates by `(tx, ty)':
 //     t' = [ 1 0 0 1 tx ty ] 
 
-	@:c @:struct public static function CGAffineTransformMakeTranslation(tx:Float, ty:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformMakeTranslation(tx:Float, ty:Float) :CGAffineTransform;
 
 // Return a transform which scales by `(sx, sy)':
 //     t' = [ sx 0 0 sy 0 0 ] 
 
-	@:c @:struct public static function CGAffineTransformMakeScale(sx:Float, sy:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformMakeScale(sx:Float, sy:Float) :CGAffineTransform;
 
 // Return a transform which rotates by `angle' radians:
 //     t' = [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] 
 
-	@:c @:struct public static function CGAffineTransformMakeRotation(angle:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformMakeRotation(angle:Float) :CGAffineTransform;
 
 // Return true if `t' is the identity transform, false otherwise. 
 
@@ -45,27 +46,27 @@ extern class CGAffineTransform {
 // Translate `t' by `(tx, ty)' and return the result:
 //     t' = [ 1 0 0 1 tx ty ] * t 
 
-	@:c @:struct public static function CGAffineTransformTranslate(t:CGAffineTransform, tx:Float, ty:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformTranslate(t:CGAffineTransform, tx:Float, ty:Float) :CGAffineTransform;
 
 // Scale `t' by `(sx, sy)' and return the result:
 //     t' = [ sx 0 0 sy 0 0 ] * t 
 
-	@:c @:struct public static function CGAffineTransformScale(t:CGAffineTransform, sx:Float, sy:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformScale(t:CGAffineTransform, sx:Float, sy:Float) :CGAffineTransform;
 
 // Rotate `t' by `angle' radians and return the result:
 //     t' =  [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] * t 
 
-	@:c @:struct public static function CGAffineTransformRotate(t:CGAffineTransform, angle:Float) :CGAffineTransform;
+	@:c public static function CGAffineTransformRotate(t:CGAffineTransform, angle:Float) :CGAffineTransform;
 
 // Invert `t' and return the result. If `t' has zero determinant, then `t'
 //   is returned unchanged. 
 
-	@:c @:struct public static function CGAffineTransformInvert(t:CGAffineTransform) :CGAffineTransform;
+	@:c public static function CGAffineTransformInvert(t:CGAffineTransform) :CGAffineTransform;
 
 // Concatenate `t2' to `t1' and return the result:
 //     t' = t1 * t2 
 
-	@:c @:struct public static function CGAffineTransformConcat(t1:CGAffineTransform, t2:CGAffineTransform) :CGAffineTransform;
+	@:c public static function CGAffineTransformConcat(t1:CGAffineTransform, t2:CGAffineTransform) :CGAffineTransform;
 
 // Return true if `t1' and `t2' are equal, false otherwise. 
 
@@ -75,13 +76,13 @@ extern class CGAffineTransform {
 //     p' = p * t
 //   where p = [ x y 1 ]. 
 
-	@:c @:struct public static function CGPointApplyAffineTransform(point:CGPoint, t:CGAffineTransform) :CGPoint;
+	@:c public static function CGPointApplyAffineTransform(point:CGPoint, t:CGAffineTransform) :CGPoint;
 
 // Transform `size' by `t' and return the result:
 //     s' = s * t
 //   where s = [ width height 0 ]. 
 
-	@:c @:struct public static function CGSizeApplyAffineTransform(size:CGSize, t:CGAffineTransform) :CGSize;
+	@:c public static function CGSizeApplyAffineTransform(size:CGSize, t:CGAffineTransform) :CGSize;
 
 /* Transform `rect' by `t' and return the result. Since affine transforms do
    not preserve rectangles in general, this function returns the smallest
@@ -90,7 +91,7 @@ extern class CGAffineTransform {
    rectangle coincides with the rectangle constructed from the four
    transformed corners. */
 
-	@:c @:struct public static function CGRectApplyAffineTransform(rect:CGRect, t:CGAffineTransform) :CGRect;
+	@:c public static function CGRectApplyAffineTransform(rect:CGRect, t:CGAffineTransform) :CGRect;
 
 }
 

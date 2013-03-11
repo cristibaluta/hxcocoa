@@ -16,7 +16,8 @@ typedef CGPatternRef = CGPattern;
    with kCGPatternTilingConstantSpacingMinimalDistortion, however the
    pattern cell may be distorted additionally to permit a more efficient
    implementation. */
-
+	   
+@:framework("CoreGraphics")
 enum CGPatternTiling {
   kCGPatternTilingNoDistortion;
   kCGPatternTilingConstantSpacingMinimalDistortion;
@@ -43,6 +44,7 @@ typedef CGPatternReleaseInfoCallback = Void->Void;
 /*typedef void (*CGPatternReleaseInfoCallback)(void *info);*/
 
 
+@:framework("CoreGraphics")
 class CGPattern {
 	#if ddddddddd
 /* Return the CFTypeID for CGPatternRefs. */

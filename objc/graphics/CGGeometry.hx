@@ -37,46 +37,48 @@ extern class CGRect {
 /* Rectangle edges. */
 
 @:framework("CoreGraphics")
+@:struct
 extern enum CGRectEdge {
 	CGRectMinXEdge; CGRectMinYEdge; CGRectMaxXEdge; CGRectMaxYEdge;
 }
 
 @:framework("CoreGraphics")
+@:struct
 extern class CGGeometry {
 
 /* The "zero" point -- equivalent to CGPointMake(0, 0). */ 
 
-	@:c @:struct public static var CGPointZero :CGPoint;
+	@:c public static var CGPointZero :CGPoint;
 
 /* The "zero" size -- equivalent to CGSizeMake(0, 0). */ 
 
-	@:c @:struct public static var CGSizeZero :CGSize;
+	@:c public static var CGSizeZero :CGSize;
 
 /* The "zero" rectangle -- equivalent to CGRectMake(0, 0, 0, 0). */ 
 
-	@:c @:struct public static var CGRectZero :CGRect;
+	@:c public static var CGRectZero :CGRect;
 
 /* The "empty" rect. This is the rectangle returned when, for example, we
    intersect two disjoint rectangles. Note that the null rect is not the
    same as the zero rect. */
 
-	@:c @:struct public static var CGRectNull :CGRect;
+	@:c public static var CGRectNull :CGRect;
 
 /* The infinite rectangle. */
 
-	@:c @:struct public static var CGRectInfinite :CGRect;
+	@:c public static var CGRectInfinite :CGRect;
 
 /* Make a point from `(x, y)'. */
 
-	@:c @:struct public static function CGPointMake(x:Float, y:Float) :CGPoint;
+	@:c public static function CGPointMake(x:Float, y:Float) :CGPoint;
 
 /* Make a size from `(width, height)'. */
 
-	@:c @:struct public static function CGSizeMake(width:Float, height:Float) :CGSize;
+	@:c public static function CGSizeMake(width:Float, height:Float) :CGSize;
 
 /* Make a rect from `(x, y; width, height)'. */
 
-	@:c @:struct public static function CGRectMake(x:Float, y:Float, width:Float, height:Float) :CGRect;
+	@:c public static function CGRectMake(x:Float, y:Float, width:Float, height:Float) :CGRect;
 
 /* Return the leftmost x-value of `rect'. */
 
@@ -125,7 +127,7 @@ extern class CGGeometry {
 /* Standardize `rect' -- i.e., convert it to an equivalent rect which has
    positive width and height. */
 
-	@:c @:struct public static function CGRectStandardize(rect:CGRect) :CGRect;
+	@:c public static function CGRectStandardize(rect:CGRect) :CGRect;
 
 /* Return true if `rect' is empty (that is, if it has zero width or height),
    false otherwise. A null rect is defined to be empty. */
@@ -143,24 +145,24 @@ extern class CGGeometry {
 /* Inset `rect' by `(dx, dy)' -- i.e., offset its origin by `(dx, dy)', and
    decrease its size by `(2*dx, 2*dy)'. */
 
-	@:c @:struct public static function CGRectInset(rect:CGRect, dx:Float, dy:Float) :CGRect;
+	@:c public static function CGRectInset(rect:CGRect, dx:Float, dy:Float) :CGRect;
 
 /* Expand `rect' to the smallest rect containing it with integral origin and
    size. */
 
-	@:c @:struct public static function CGRectIntegral(rect:CGRect) :CGRect;
+	@:c public static function CGRectIntegral(rect:CGRect) :CGRect;
 
 /* Return the union of `r1' and `r2'. */
 
-	@:c @:struct public static function CGRectUnion(r1:CGRect, r2:CGRect) :CGRect;
+	@:c public static function CGRectUnion(r1:CGRect, r2:CGRect) :CGRect;
 
 /* Return the intersection of `r1' and `r2'. This may return a null rect. */
 
-	@:c @:struct public static function CGRectIntersection(r1:CGRect, r2:CGRect) :CGRect;
+	@:c public static function CGRectIntersection(r1:CGRect, r2:CGRect) :CGRect;
 
 /* Offset `rect' by `(dx, dy)'. */
 
-	@:c @:struct public static function CGRectOffset(rect:CGRect, dx:Float, dy:Float) :CGRect;
+	@:c public static function CGRectOffset(rect:CGRect, dx:Float, dy:Float) :CGRect;
 
 /* Make two new rectangles, `slice' and `remainder', by dividing `rect' with
    a line that's parallel to one of its sides, specified by `edge' -- either

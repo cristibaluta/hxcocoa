@@ -1,5 +1,3 @@
-//
-//  UILocalNotification.h
 package ios.ui;
 
 import objc.foundation.NSObject;
@@ -10,6 +8,7 @@ typedef NSCalendarUnit = Int;
 typedef NSTimeZone = Int;
 
 
+@:framework("UIKit")
 extern class UILocalNotification extends NSObject implements NSCopying implements NSCoding {
 
 	public var fireDate :Date;

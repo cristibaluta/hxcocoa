@@ -1,8 +1,10 @@
 package objc.graphics;
+
 import objc.graphics.CGGeometry;
 
 typedef CGShadingRef = CGShading;
 
+@:framework("CoreGraphics")
 extern class CGShading {
 /* Return the CFTypeID for CGShadingRefs. */
 

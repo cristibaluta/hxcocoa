@@ -3,6 +3,7 @@ package objc.graphics;
 
 typedef CGPDFStringRef = CGPDFString;
 
+@:framework("CoreGraphics")
 extern class CGPDFString {
 /* Return the length of `string'. */
 

@@ -3,10 +3,12 @@ package objc.graphics;
 
 typedef CGPDFStreamRef = CGPDFStream;
 
+@:framework("CoreGraphics")
 extern enum CGPDFDataFormat {
     CGPDFDataFormatRaw; CGPDFDataFormatJPEGEncoded; CGPDFDataFormatJPEG2000;
 }
 
+@:framework("CoreGraphics")
 extern class CGPDFStream {
 /* Return the dictionary of `stream'. */
 
