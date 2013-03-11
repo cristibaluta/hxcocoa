@@ -22,12 +22,10 @@ define EAGL_EXTERN_CLASS __attribute__((visibility("default")))*/
 /************************************************************************/
 
 /* EAGL rendering API */
-enum
-{
-	kEAGLRenderingAPIOpenGLES1 = 1,
-	kEAGLRenderingAPIOpenGLES2 = 2
+extern enum EAGLRenderingAPI {
+	kEAGLRenderingAPIOpenGLES1;
+	kEAGLRenderingAPIOpenGLES2;
 }
-typedef EAGLRenderingAPI = Int;
 
 /************************************************************************/
 /* EAGL Functions                                                       */
@@ -54,7 +52,7 @@ extern class EAGLContext extends NSObject {
 	public function initWithAPI (api:EAGLRenderingAPI) :EAGLContext;
 	public function initWithAPI (api:EAGLRenderingAPI, sharegroup:EAGLSharegroup) :EAGLContext;
 
-	public static function setCurrentContext (context:EAGLContext*) :Bool;
+	public static function setCurrentContext (context:EAGLContext) :Bool;
 	public static function currentContext () :EAGLContext;
 
 	public var API :EAGLRenderingAPI;
