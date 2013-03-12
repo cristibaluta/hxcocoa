@@ -1,0 +1,8 @@
+-main HelloWorld
+-cp .
+-objc build
+-objc-version 6
+-objc-bundle-version 1.0
+-objc-identifier com.ralcr.hello
+-lib hxcocoa
+--times

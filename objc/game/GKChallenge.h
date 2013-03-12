@@ -9,12 +9,13 @@
 #import <GameKit/GKScore.h>
 #import <GameKit/GKAchievement.h>
 
-typedef NS_ENUM(NSInteger, GKChallengeState) {
-    GKChallengeStateInvalid = 0,
-    GKChallengeStatePending = 1, // The challenge has been issued, but neither completed nor declined
-    GKChallengeStateCompleted = 2, // The challenge has been completed by the receiving player
-    GKChallengeStateDeclined = 3, // The challenge has been declined by the receiving player
-};
+@:framework("GameKit")
+extern enum GKChallengeState {
+    GKChallengeStateInvalid;
+    GKChallengeStatePending; // The challenge has been issued, but neither completed nor declined
+    GKChallengeStateCompleted; // The challenge has been completed by the receiving player
+    GKChallengeStateDeclined; // The challenge has been declined by the receiving player
+}
 
 NS_CLASS_AVAILABLE(NA, 6_0)
 @:framework("GameKit")

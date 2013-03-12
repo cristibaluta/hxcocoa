@@ -16,7 +16,8 @@
 #endif
 
 NS_CLASS_AVAILABLE(10_8, 4_1)
-GK_EXTERN_CLASSextern class GKPlayer extends NSObject
+@:framework("GameKit")
+extern class GKPlayer extends NSObject
 
 // Load the players for the identifiers provided. Error will be nil on success.
 // Possible reasons for error:
