@@ -11,6 +11,10 @@ It should be used with the hxobjc target of the Haxe language
 
 : objc contains the Foundation framework and other frameworks that are compatible with ios and osx
 
+: SupportingFiles contains some default icons and launch images. You can specify a custom SupportingFiles folder in the compiler with 
+	
+	-supporting-files <path>
+
 
 ## Install
 
