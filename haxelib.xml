@@ -1,9 +1,10 @@
-<project name="cocoa" url="http://ralcr.com/" license="BSD">
+<project name="hxcocoa" url="http://ralcr.com/" license="MIT">
     <user name="cristi.baluta"/>
     <tag v="ios"/>
     <tag v="osx"/>
     <tag v="generic"/>
     <tag v="objc"/>
+    <tag v="hxobjc"/>
     <description>Cocoa and CocoaTouch externs for development of iOS, OSX, and generic apps with hxobjc</description>
     <version name="1.0.0">First commit</version>
 </project>
