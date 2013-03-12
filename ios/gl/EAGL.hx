@@ -2,13 +2,6 @@ package ios.opengles;
 
 import objc.foundation.NSObject;
 
-/*ifdef __cplusplus
-define EAGL_EXTERNextern "C" __attribute__((visibility ("default")))
-else
-define EAGL_EXTERNextern __attribute__((visibility ("default")))
-endif
-
-define EAGL_EXTERN_CLASS __attribute__((visibility("default")))*/
 
 /************************************************************************/
 /* EAGL API Version                                                     */
@@ -22,6 +15,7 @@ define EAGL_EXTERN_CLASS __attribute__((visibility("default")))*/
 /************************************************************************/
 
 /* EAGL rendering API */
+@:framework("OpenGLES")
 extern enum EAGLRenderingAPI {
 	kEAGLRenderingAPIOpenGLES1;
 	kEAGLRenderingAPIOpenGLES2;
@@ -37,6 +31,7 @@ extern enum EAGLRenderingAPI {
 /* EAGL Sharegroup                                                      */
 /************************************************************************/
 
+@:framework("OpenGLES")
 extern class EAGLSharegroup extends NSObject {
 
 	@:require(ios6_0) public var debugLabel :String;
@@ -47,10 +42,11 @@ extern class EAGLSharegroup extends NSObject {
 /* EAGL Context                                                         */
 /************************************************************************/
 
+@:framework("OpenGLES")
 extern class EAGLContext extends NSObject {
 
+	@:overload(function(api:EAGLRenderingAPI, sharegroup:EAGLSharegroup):EAGLContext{})
 	public function initWithAPI (api:EAGLRenderingAPI) :EAGLContext;
-	public function initWithAPI (api:EAGLRenderingAPI, sharegroup:EAGLSharegroup) :EAGLContext;
 
 	public static function setCurrentContext (context:EAGLContext) :Bool;
 	public static function currentContext () :EAGLContext;

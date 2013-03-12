@@ -2,8 +2,8 @@
     <user name="cristi.baluta"/>
     <tag v="ios"/>
     <tag v="osx"/>
-    <tag v="commandline"/>
+    <tag v="generic"/>
     <tag v="objc"/>
-    <description>Externs for the objc target for iOS, OSX, and command line apps development</description>
+    <description>Cocoa and CocoaTouch externs for development of iOS, OSX, and generic apps with hxobjc</description>
     <version name="1.0.0">First commit</version>
 </project>

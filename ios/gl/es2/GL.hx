@@ -1,4 +1,4 @@
-package ios.opengles.es2;
+package ios.gl.es2;
 
 
 /*
@@ -34,10 +34,6 @@ package ios.opengles.es2;
 ** published by SGI, but has not been independently verified as being
 ** compliant with the OpenGL(R) version 1.2.1 Specification.
 */
-
-
-/*define GL_APIENTRY
-define GL_APIextern*/
 
 
 /*-------------------------------------------------------------------------
@@ -575,7 +571,8 @@ extern enum GLFramebufferObject {
  * GL core functions.
  *-----------------------------------------------------------------------*/
 
-extern Class gl {
+@:framework("OpenGLES")
+extern Class GL {
 	
 	@:c public static function glActiveTexture (texture:GLTextureUnit) :Void;
 	@:c public static function glAttachShader (program:GLuint, shader:GLuint) :Void;
@@ -717,7 +714,7 @@ GL_API GLboolean    GL_APIENTRY glIsTexture (texture:GLuint);
 	@:c public static function glVertexAttrib3fv (indx:GLuint, const GLfloat* values) :Void;
 	@:c public static function glVertexAttrib4f (indx:GLuint, x:GLfloat, y:GLfloat, z:GLfloat, GLfloat w) :Void;
 	@:c public static function glVertexAttrib4fv (indx:GLuint, const GLfloat* values) :Void;
-	@:c public static function glVertexAttribPointer (indx:GLuint, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* ptr) :Void;
+	@:c public static function glVertexAttribPointer (indx:GLuint, GLint size, GLenum type, normalized:Bool, GLsizei stride, const GLvoid* ptr) :Void;
 	@:c public static function glViewport (x:GLint, y:GLint, width:GLsizei, height:GLsizei);
 
 }

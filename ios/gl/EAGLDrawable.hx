@@ -30,6 +30,7 @@ import objc.foundation.NSDictionary;
 /************************************************************************/
 /* EAGLDrawable Interface                                               */
 /************************************************************************/
+@:framework("OpenGLES")
 external interface EAGLDrawable {
 
 /* Contains keys from kEAGLDrawableProperty* above */
@@ -38,6 +39,7 @@ external interface EAGLDrawable {
 }
 
 /* Extends EAGLContext interface */
+@:framework("OpenGLES")
 extern class EAGLContext (EAGLContextDrawableAdditions)
 
 /* Attaches an EAGLDrawable as storage for the OpenGL ES renderbuffer object bound to <target> */

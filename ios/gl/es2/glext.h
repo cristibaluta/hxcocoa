@@ -1,14 +1,4 @@
-#ifndef __gl_es20ext_h_
-#define __gl_es20ext_h_
 
-#include <inttypes.h>
-
-#include <OpenGLES/ES2/gl.h>
-#include <Availability.h>
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /*
 ** License Applicability. Except to the extent portions of this file are
