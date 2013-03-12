@@ -5,9 +5,11 @@ It should be used with the hxobjc target of the Haxe language
 
 ## Packages
 
-Cocoa related frameworks are in the osx package
-CocoaTouch related frameworks are in the ios package
-objc contains the Foundation framework and other frameworks that are compatible with ios and osx
+: Cocoa related frameworks are in the osx package
+
+: CocoaTouch related frameworks are in the ios package
+
+: objc contains the Foundation framework and other frameworks that are compatible with ios and osx
 
 
 ## Install
