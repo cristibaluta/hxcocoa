@@ -5,14 +5,8 @@ import objc.foundation.NSTimeZone;
 import objc.foundation.NSString;
 import objc.foundation.NSRange;
 
-
-typedef NSCalendarUnit = Int;
-private typedef NSTimeInterval = Int;
-
-@:framework("Foundation")
-extern class NSCalendar extends NSObject/* implements NSCopying implements NSCoding*/ {
-	
-	inline public static var kCFCalendarUnitEra = 0;
+extern enum NSCalendarUnit {
+/*	inline public static var kCFCalendarUnitEra = 0;
 	inline public static var kCFCalendarUnitYear = 1;
 	inline public static var kCFCalendarUnitMonth = 2;
 	inline public static var kCFCalendarUnitDay = 3;
@@ -20,17 +14,20 @@ extern class NSCalendar extends NSObject/* implements NSCopying implements NSCod
 	inline public static var kCFCalendarUnitMinute = 5;
 	inline public static var kCFCalendarUnitSecond = 6;
 	inline public static var kCFCalendarUnitWeekday = 7;
-	inline public static var kCFCalendarUnitWeekdayOrdinal = 8;
-	inline public static var NSEraCalendarUnit = kCFCalendarUnitEra;
-	inline public static var NSYearCalendarUnit = kCFCalendarUnitYear;
-	inline public static var NSMonthCalendarUnit = kCFCalendarUnitMonth;
-	inline public static var NSDayCalendarUnit = kCFCalendarUnitDay;
-	inline public static var NSHourCalendarUnit = kCFCalendarUnitHour;
-	inline public static var NSMinuteCalendarUnit = kCFCalendarUnitMinute;
-	inline public static var NSSecondCalendarUnit = kCFCalendarUnitSecond;
-	inline public static var NSWeekdayCalendarUnit = kCFCalendarUnitWeekday;
-	inline public static var NSWeekdayOrdinalCalendarUnit = kCFCalendarUnitWeekdayOrdinal;
+	inline public static var kCFCalendarUnitWeekdayOrdinal = 8;*/
+	NSEraCalendarUnit;
+	NSYearCalendarUnit;
+	NSMonthCalendarUnit;
+	NSDayCalendarUnit;
+	NSHourCalendarUnit;
+	NSMinuteCalendarUnit;
+	NSSecondCalendarUnit;
+	NSWeekdayCalendarUnit;
+	NSWeekdayOrdinalCalendarUnit;
+}
 
+@:framework("Foundation")
+extern class NSCalendar extends NSObject/* implements NSCopying implements NSCoding*/ {
 						
 	public static function currentCalendar () :NSCalendar; // users preferred calendar, tracks changes
 	public static function autoupdatingCurrentCalendar () :NSCalendar;
@@ -43,7 +40,7 @@ extern class NSCalendar extends NSObject/* implements NSCopying implements NSCod
 	public function setLocale (locale:NSLocale) :Void;
 	public function locale () :NSLocale;
 
-	public function setTimeZone (tz:NSTimeZone) :Void;
+	public function setTimeZone (tz:Int) :Void;
 	public function timeZone () :NSTimeZone;
 
 	public function setFirstWeekday (weekday:Int) :Void;
@@ -72,6 +69,7 @@ extern class NSCalendar extends NSObject/* implements NSCopying implements NSCod
 
 typedef NSUndefinedDateComponent = Int;
 
+@:framework("Foundation")
 extern class NSDateComponents extends NSObject/* implements NSCopying implements NSCoding*/ {
 	
 	public function calendar () :NSCalendar;
