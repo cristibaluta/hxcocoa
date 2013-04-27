@@ -1,7 +1,7 @@
 package ios.ui;
 import objc.foundation.NSObject;
 
-/*typedef NS_ENUM(NSInteger, UIDeviceOrientation) {
+/*typedef NS_ENUM(Int, UIDeviceOrientation) {
     UIDeviceOrientationUnknown,
     UIDeviceOrientationPortrait,            // Device oriented vertically, home button on the bottom
     UIDeviceOrientationPortraitUpsideDown,  // Device oriented vertically, home button on the top
@@ -11,14 +11,14 @@ import objc.foundation.NSObject;
     UIDeviceOrientationFaceDown             // Device oriented flat, face down
 };
 
-typedef NS_ENUM(NSInteger, UIDeviceBatteryState) {
+typedef NS_ENUM(Int, UIDeviceBatteryState) {
     UIDeviceBatteryStateUnknown,
     UIDeviceBatteryStateUnplugged,   // on battery, discharging
     UIDeviceBatteryStateCharging,    // plugged in, less than 100%
     UIDeviceBatteryStateFull,        // plugged in, at 100%
 };              // available in iPhone 3.0
 
-typedef NS_ENUM(NSInteger, UIUserInterfaceIdiom) {
+typedef NS_ENUM(Int, UIUserInterfaceIdiom) {
 #if __IPHONE_3_2 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     UIUserInterfaceIdiomPhone,           // iPhone and iPod touch style UI
     UIUserInterfaceIdiomPad,             // iPad style UI

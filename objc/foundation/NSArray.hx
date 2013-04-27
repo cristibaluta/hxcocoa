@@ -40,7 +40,7 @@ extern class NSArray extends NSObject implements NSCopying implements NSMutableC
 	public function reverseObjectEnumerator() :NSEnumerator;
 	public function sortedArrayHint () :NSData;
 	public function sortedArrayUsingFunction (comparator:Dynamic->Dynamic->Void->Int, context:Void->Void) :NSArray;
-	//public function sortedArrayUsingFunction (NSInteger (*)(id, id, void *))comparator context (void *)context hint (NSData *) :NSArray;
+	//public function sortedArrayUsingFunction (Int (*)(id, id, void *))comparator context (void *)context hint (NSData *) :NSArray;
 	public function sortedArrayUsingSelector (comparator:SEL) :NSArray;
 	public function subarrayWithRange (range:NSRange) :NSArray;
 	public function writeToFile (path:String, atomically:Bool) :Bool;

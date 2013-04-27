@@ -65,7 +65,7 @@ extern class NSScanner (NSExtendedScanner)
 - (id)locale;
 
 - (Bool)scanInt:(int *)value;
-- (Bool)scanInteger:(NSInteger *)value NS_AVAILABLE(10_5, 2_0);
+- (Bool)scanInteger:(Int *)value NS_AVAILABLE(10_5, 2_0);
 - (Bool)scanHexLongLong:(unsigned long long *)result NS_AVAILABLE(10_5, 2_0);
 - (Bool)scanHexFloat:(float *)result NS_AVAILABLE(10_5, 2_0);		// Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix. 
 - (Bool)scanHexDouble:(double *)result NS_AVAILABLE(10_5, 2_0);		// Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix. 

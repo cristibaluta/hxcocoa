@@ -76,8 +76,8 @@ extern class NSSearchFieldCell extends NSTextFieldCell {
 - (BOOL) sendsWholeSearchString;
     // if clear, send action on each key stroke (after sufficient amount of time so we don't interfere with typing). if set, send only on return/enter or clicking magnifying search button
 
-- (void) setMaximumRecents:(NSInteger)maxRecents;
-- (NSInteger) maximumRecents;
+- (void) setMaximumRecents:(Int)maxRecents;
+- (Int) maximumRecents;
     // set/get limit max recents. allowable between 0 and 254. setting -1 will use default.
 
 - (void) setRecentSearches:(NSArray*)searches;

@@ -11,7 +11,7 @@ package ios.ui;
 
 @class UIImageView;
 
-typedef NS_ENUM(NSInteger, UIProgressViewStyle) {
+typedef NS_ENUM(Int, UIProgressViewStyle) {
     UIProgressViewStyleDefault,     // normal progress bar
     UIProgressViewStyleBar,         // for use in a toolbar
 };

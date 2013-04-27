@@ -73,7 +73,7 @@ extern class NSTabView extends NSView
 	/* Select */
 
 - (void)selectTabViewItem:(NSTabViewItem *)tabViewItem;
-- (void)selectTabViewItemAtIndex:(NSInteger)index;				// May raise an NSRangeException
+- (void)selectTabViewItemAtIndex:(Int)index;				// May raise an NSRangeException
 - (void)selectTabViewItemWithIdentifier:(id)identifier;			// May raise an NSRangeException if identifier not found
 - (void)takeSelectedTabViewItemFromSender:(id)sender;			// May raise an NSRangeException
 
@@ -108,7 +108,7 @@ extern class NSTabView extends NSView
 	/* Add/Remove tabs */
 
 - (void)addTabViewItem:(NSTabViewItem *)tabViewItem;				// Add tab at the end.
-- (void)insertTabViewItem:(NSTabViewItem *)tabViewItem atIndex:(NSInteger)index;	// May raise an NSRangeException
+- (void)insertTabViewItem:(NSTabViewItem *)tabViewItem atIndex:(Int)index;	// May raise an NSRangeException
 - (void)removeTabViewItem:(NSTabViewItem *)tabViewItem;				// tabViewItem must be an existing tabViewItem
 
 	/* Delegate */
@@ -126,10 +126,10 @@ extern class NSTabView extends NSView
 
 	/* Query */
 
-- (NSInteger)numberOfTabViewItems;
-- (NSInteger)indexOfTabViewItem:(NSTabViewItem *)tabViewItem;			// NSNotFound if not found
-- (NSTabViewItem *)tabViewItemAtIndex:(NSInteger)index;			// May raise an NSRangeException	
-- (NSInteger)indexOfTabViewItemWithIdentifier:(id)identifier;			// NSNotFound if not found
+- (Int)numberOfTabViewItems;
+- (Int)indexOfTabViewItem:(NSTabViewItem *)tabViewItem;			// NSNotFound if not found
+- (NSTabViewItem *)tabViewItemAtIndex:(Int)index;			// May raise an NSRangeException	
+- (Int)indexOfTabViewItemWithIdentifier:(id)identifier;			// NSNotFound if not found
 
 }
 

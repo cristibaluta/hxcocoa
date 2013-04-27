@@ -79,20 +79,20 @@ extern class NSMenu extends NSObject, implements NSCopying, NSCoding>
  - (void)setSupermenu:(NSMenu *)supermenu;
 
 /* Inserts a menu item at the given index, which must be at least zero and no more than the receiver's item count.  If newItem is nil, this raises an exception. */
-- (void)insertItem:(NSMenuItem *)newItem atIndex:(NSInteger)index;
+- (void)insertItem:(NSMenuItem *)newItem atIndex:(Int)index;
 
 /* Appends an item to the end of the menu.  A nil item will raise an exception. */
 - (void)addItem:(NSMenuItem *)newItem;
 
 /* Inserts a new menu item with the given title, action, and key equivalent, at the given index.  The index must be at least zero and no more than the receiver's item count.  The title and key equivalent must not be nil (pass the empty string to indicate no key equivalent). This returns the new item.
  */
-- (NSMenuItem *)insertItemWithTitle:(NSString *)aString action:(SEL)aSelector keyEquivalent:(NSString *)charCode atIndex:(NSInteger)index;
+- (NSMenuItem *)insertItemWithTitle:(NSString *)aString action:(SEL)aSelector keyEquivalent:(NSString *)charCode atIndex:(Int)index;
 
 /* Appends a new menu item with the given properties to the end of the menu. */
 - (NSMenuItem *)addItemWithTitle:(NSString *)aString action:(SEL)aSelector keyEquivalent:(NSString *)charCode;
 
 /* Removes the item at the given index, which must be at least zero and less than the number of items.  All subsequent items will shift down one index. */
-- (void)removeItemAtIndex:(NSInteger)index;
+- (void)removeItemAtIndex:(Int)index;
 
 /* Removes the item from the menu.  If the item is nil, or is not present in the receiver, an exception will be raised. */
 - (void)removeItem:(NSMenuItem *)item;
@@ -108,24 +108,24 @@ extern class NSMenu extends NSObject, implements NSCopying, NSCoding>
 - (NSArray *)itemArray;
 
 /* Returns the number of menu items in the menu. */
-- (NSInteger)numberOfItems;
+- (Int)numberOfItems;
 
 /* Returns the item at the given index, which must be at least zero and less than the number of items. */
- - (NSMenuItem *)itemAtIndex:(NSInteger)index;
+ - (NSMenuItem *)itemAtIndex:(Int)index;
 
 /* Returns the index of the item in the menu, or -1 if the item is not present in the menu */
-- (NSInteger)indexOfItem:(NSMenuItem *)index;
+- (Int)indexOfItem:(NSMenuItem *)index;
 
 /* Returns the first item in the menu that matches the given property, or -1 if no item in the menu matches. */
-- (NSInteger)indexOfItemWithTitle:(NSString *)aTitle;
-- (NSInteger)indexOfItemWithTag:(NSInteger)aTag;
-- (NSInteger)indexOfItemWithRepresentedObject:(id)object;
-- (NSInteger)indexOfItemWithSubmenu:(NSMenu *)submenu;
-- (NSInteger)indexOfItemWithTarget:(id)target andAction:(SEL)actionSelector;
+- (Int)indexOfItemWithTitle:(NSString *)aTitle;
+- (Int)indexOfItemWithTag:(Int)aTag;
+- (Int)indexOfItemWithRepresentedObject:(id)object;
+- (Int)indexOfItemWithSubmenu:(NSMenu *)submenu;
+- (Int)indexOfItemWithTarget:(id)target andAction:(SEL)actionSelector;
 
 /* Returns the first item in the menu with the given property, or nil if no item in the menu matches. */
 - (NSMenuItem *)itemWithTitle:(NSString *)aTitle;
-- (NSMenuItem *)itemWithTag:(NSInteger)tag;
+- (NSMenuItem *)itemWithTag:(Int)tag;
 
 /* Set and get whether the menu autoenables items.  If a menu autoenables items, then calls to -[NSMenuItem setEnabled:] are ignored, and the enabled state is computed via the NSMenuValidation informal protocol below.  Autoenabling is on by default. */
 - (void)setAutoenablesItems:(BOOL)flag;
@@ -144,7 +144,7 @@ extern class NSMenu extends NSObject, implements NSCopying, NSCoding>
 
 /* Triggers the action for the item at the given index in the receiver.  This is useful as both an override point and something you may call directly.  As an override point, this is called when the user chooses the item during normal menu tracking; subclassers can override it to take some different action.  If you call it directly, it triggers the action for that item.  In SnowLeopard and later, calling it directly will also highlight the menu (if present in the main menu) and trigger accessibility notifications, including VoiceOver speaking the title.
 */
-- (void)performActionForItemAtIndex:(NSInteger)index;
+- (void)performActionForItemAtIndex:(Int)index;
 
 /* Set and get the delegate for the menu.  See the NSMenuDelegate protocol for methods that the delegate may implement. */
 - (void)setDelegate:(id <NSMenuDelegate>)anObject;
@@ -209,8 +209,8 @@ extern class NSObject (NSMenuValidation)
 @optional
 - (void)menuNeedsUpdate:(NSMenu*)menu;
 
-- (NSInteger)numberOfItemsInMenu:(NSMenu*)menu;
-- (BOOL)menu:(NSMenu*)menu updateItem:(NSMenuItem*)item atIndex:(NSInteger)index shouldCancel:(BOOL)shouldCancel;
+- (Int)numberOfItemsInMenu:(NSMenu*)menu;
+- (BOOL)menu:(NSMenu*)menu updateItem:(NSMenuItem*)item atIndex:(Int)index shouldCancel:(BOOL)shouldCancel;
     // implement either the first one or the next two to populate the menu
 - (BOOL)menuHasKeyEquivalent:(NSMenu*)menu forEvent:(NSEvent*)event target:(id*)target action:(SEL*)action;
     // bypasses populating the menu for checking for key equivalents. set target and action on return

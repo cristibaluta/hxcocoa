@@ -31,8 +31,8 @@ APPKIT_EXTERN NSInteger NSRunCriticalAlertPanelRelativeToWindow(NSString *title,
 ** is dismissed, the didDismissSelector will be invoked. Typically, you will want to implement the didEndSelector but you may
 ** pass NULL for the didDismissSelector.
 ** The methods should have the following signatures:
-** - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
-** - (void)sheetDidDismiss:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
+** - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(Int)returnCode contextInfo:(void *)contextInfo;
+** - (void)sheetDidDismiss:(NSWindow *)sheet returnCode:(Int)returnCode contextInfo:(void *)contextInfo;
 **
 */
 APPKIT_EXTERN void NSBeginAlertSheet(NSString *title, NSString *defaultButton, NSString *alternateButton, NSString *otherButton, NSWindow *docWindow, id modalDelegate, SEL didEndSelector, SEL didDismissSelector, void *contextInfo, NSString *msgFormat, ...);

@@ -35,14 +35,14 @@ typedef NS_OPTIONS(NSUInteger, UICollectionViewScrollPosition) {
 extern interface UICollectionViewDataSource <NSObject>
 @required
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
+- (Int)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(Int)section;
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
+- (Int)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
 
 // The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
@@ -117,8 +117,8 @@ extern interface UICollectionViewDelegate <UIScrollViewDelegate>
 
 // Information about the current state of the collection view.
 
-- (NSInteger)numberOfSections;
-- (NSInteger)numberOfItemsInSection:(NSInteger)section;
+- (Int)numberOfSections;
+- (Int)numberOfItemsInSection:(Int)section;
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
@@ -138,7 +138,7 @@ extern interface UICollectionViewDelegate <UIScrollViewDelegate>
 	public function insertSections:(NSIndexSet *)sections;
 	public function deleteSections:(NSIndexSet *)sections;
 	public function reloadSections:(NSIndexSet *)sections;
-	public function moveSection:(NSInteger)section toSection:(NSInteger)newSection;
+	public function moveSection:(Int)section toSection:(Int)newSection;
 
 	public function insertItemsAtIndexPaths:(NSArray *)indexPaths;
 	public function deleteItemsAtIndexPaths:(NSArray *)indexPaths;
@@ -151,7 +151,7 @@ extern interface UICollectionViewDelegate <UIScrollViewDelegate>
 
 extern class NSIndexPath (UICollectionViewAdditions)
 
-+ (NSIndexPath *)indexPathForItem:(NSInteger)item inSection:(NSInteger)section;
++ (NSIndexPath *)indexPathForItem:(Int)item inSection:(Int)section;
 
 	public var NSInteger item;
 

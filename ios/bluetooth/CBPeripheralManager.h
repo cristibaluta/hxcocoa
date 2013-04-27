@@ -25,7 +25,7 @@
  *  @constant CBPeripheralManagerStatePoweredOn     Bluetooth is currently powered on and available to use.
  *
  */
-typedef NS_ENUM(NSInteger, CBPeripheralManagerState) {
+typedef NS_ENUM(Int, CBPeripheralManagerState) {
 	CBPeripheralManagerStateUnknown = 0,
 	CBPeripheralManagerStateResetting,
 	CBPeripheralManagerStateUnsupported,
@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, CBPeripheralManagerState) {
  *	@constant CBPeripheralManagerConnectionLatencyHigh      Prioritizes extending battery life over rapid communication.
  *
  */
-typedef NS_ENUM(NSInteger, CBPeripheralManagerConnectionLatency) {
+typedef NS_ENUM(Int, CBPeripheralManagerConnectionLatency) {
 	CBPeripheralManagerConnectionLatencyLow = 0,
 	CBPeripheralManagerConnectionLatencyMedium,
 	CBPeripheralManagerConnectionLatencyHigh

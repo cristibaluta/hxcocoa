@@ -31,36 +31,36 @@ extern class NSSegmentedControl extends NSControl {
     NSInteger _reserved4;
 }
 
-- (void)setSegmentCount:(NSInteger)count;
-- (NSInteger)segmentCount;
+- (void)setSegmentCount:(Int)count;
+- (Int)segmentCount;
 
-- (void)setSelectedSegment:(NSInteger)selectedSegment;
-- (NSInteger)selectedSegment;
+- (void)setSelectedSegment:(Int)selectedSegment;
+- (Int)selectedSegment;
 
-- (BOOL)selectSegmentWithTag:(NSInteger)tag;
+- (BOOL)selectSegmentWithTag:(Int)tag;
 
-- (void)setWidth:(Float)width forSegment:(NSInteger)segment;
-- (Float)widthForSegment:(NSInteger)segment;
+- (void)setWidth:(Float)width forSegment:(Int)segment;
+- (Float)widthForSegment:(Int)segment;
 
-- (void)setImage:(NSImage *)image forSegment:(NSInteger)segment;
-- (NSImage *)imageForSegment:(NSInteger)segment;
-
-
-- (void)setImageScaling:(NSImageScaling)scaling forSegment:(NSInteger)segment NS_AVAILABLE_MAC(10_5);
-- (NSImageScaling)imageScalingForSegment:(NSInteger)segment NS_AVAILABLE_MAC(10_5);
+- (void)setImage:(NSImage *)image forSegment:(Int)segment;
+- (NSImage *)imageForSegment:(Int)segment;
 
 
-- (void)setLabel:(NSString *)label forSegment:(NSInteger)segment;
-- (NSString *)labelForSegment:(NSInteger)segment;
+- (void)setImageScaling:(NSImageScaling)scaling forSegment:(Int)segment NS_AVAILABLE_MAC(10_5);
+- (NSImageScaling)imageScalingForSegment:(Int)segment NS_AVAILABLE_MAC(10_5);
 
-- (void)setMenu:(NSMenu *)menu forSegment:(NSInteger)segment;
-- (NSMenu *)menuForSegment:(NSInteger)segment;
 
-- (void)setSelected:(BOOL)selected forSegment:(NSInteger)segment;
-- (BOOL)isSelectedForSegment:(NSInteger)segment;
+- (void)setLabel:(NSString *)label forSegment:(Int)segment;
+- (NSString *)labelForSegment:(Int)segment;
 
-- (void)setEnabled:(BOOL)enabled forSegment:(NSInteger)segment;
-- (BOOL)isEnabledForSegment:(NSInteger)segment;
+- (void)setMenu:(NSMenu *)menu forSegment:(Int)segment;
+- (NSMenu *)menuForSegment:(Int)segment;
+
+- (void)setSelected:(BOOL)selected forSegment:(Int)segment;
+- (BOOL)isSelectedForSegment:(Int)segment;
+
+- (void)setEnabled:(BOOL)enabled forSegment:(Int)segment;
+- (BOOL)isEnabledForSegment:(Int)segment;
 
 - (void)setSegmentStyle:(NSSegmentStyle)segmentStyle NS_AVAILABLE_MAC(10_5);
 - (NSSegmentStyle)segmentStyle NS_AVAILABLE_MAC(10_5);

@@ -12,7 +12,7 @@ extern class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding>
 - (NSString *)name;
 - (NSData *)data;
 
-- (NSInteger)secondsFromGMTForDate:(NSDate *)aDate;
+- (Int)secondsFromGMTForDate:(NSDate *)aDate;
 - (NSString *)abbreviationForDate:(NSDate *)aDate;
 - (Bool)isDaylightSavingTimeForDate:(NSDate *)aDate;
 - (NSTimeInterval)daylightSavingTimeOffsetForDate:(NSDate *)aDate NS_AVAILABLE(10_5, 2_0);
@@ -37,7 +37,7 @@ extern class NSTimeZone (NSExtendedTimeZone)
 
 + (NSString *)timeZoneDataVersion NS_AVAILABLE(10_6, 4_0);
 
-- (NSInteger)secondsFromGMT;
+- (Int)secondsFromGMT;
 - (NSString *)abbreviation;
 - (Bool)isDaylightSavingTime;
 - (NSTimeInterval)daylightSavingTimeOffset NS_AVAILABLE(10_5, 2_0); // for current instant
@@ -47,7 +47,7 @@ extern class NSTimeZone (NSExtendedTimeZone)
 
 - (Bool)isEqualToTimeZone:(NSTimeZone *)aTimeZone;
 
-typedef NS_ENUM(NSInteger, NSTimeZoneNameStyle) {
+typedef NS_ENUM(Int, NSTimeZoneNameStyle) {
 	NSTimeZoneNameStyleStandard,		// Central Standard Time
 	NSTimeZoneNameStyleShortStandard,	// CST
 	NSTimeZoneNameStyleDaylightSaving,	// Central Daylight Time
@@ -74,7 +74,7 @@ extern class NSTimeZone (NSTimeZoneCreation)
 // Time zones created with this never have daylight savings and the
 // offset is constant no matter the date; the name and abbreviation
 // do NOT follow the POSIX convention (of minutes-west).
-+ (id)timeZoneForSecondsFromGMT:(NSInteger)seconds;
++ (id)timeZoneForSecondsFromGMT:(Int)seconds;
 
 + (id)timeZoneWithAbbreviation:(NSString *)abbreviation;
 

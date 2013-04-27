@@ -121,7 +121,7 @@ extern class NSMutableIndexSet extends NSIndexSet {
 
 /* For a positive delta, shifts the indexes in [index, INT_MAX] to the right, thereby inserting an "empty space" [index, delta], for a negative delta, shifts the indexes in [index, INT_MAX] to the left, thereby deleting the indexes in the range [index - delta, delta].
 */
-- (void)shiftIndexesStartingAtIndex:(NSUInteger)index by:(NSInteger)delta;   
+- (void)shiftIndexesStartingAtIndex:(NSUInteger)index by:(Int)delta;   
 
 }
 

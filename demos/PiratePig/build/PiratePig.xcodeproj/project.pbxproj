@@ -19,6 +19,8 @@
 		PIRATEPIGRES13A9510B2946 /* background_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF9510B2946; };
 		PIRATEPIGRESEBC97ECECF74 /* center_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF97ECECF74; };
 		PIRATEPIGRES963413CD60D4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF413CD60D4; };
+		PIRATEPIGRES8008C5F0B41A /* Default-landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF8C5F0B41A; };
+		PIRATEPIGRESBC9EA6704057 /* Default-portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREFEA6704057; };
 		PIRATEPIGRES6E7B686AAA68 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREFB686AAA68; };
 		PIRATEPIGRESBB17EB997C60 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF7EB997C60; };
 		PIRATEPIGRES5A3FC7F44495 /* game_bear.png in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREFFC7F44495; };
@@ -162,6 +164,8 @@
 				PIRATEPIGRESREF9510B2946 /* background_tile.png in Resoures */,
 				PIRATEPIGRESREF97ECECF74 /* center_bottom.png in Resoures */,
 				PIRATEPIGRESREF413CD60D4 /* Default-568h@2x.png in Resoures */,
+				PIRATEPIGRESREF8C5F0B41A /* Default-landscape~ipad.png in Resoures */,
+				PIRATEPIGRESREFEA6704057 /* Default-portrait~ipad.png in Resoures */,
 				PIRATEPIGRESREFB686AAA68 /* Default.png in Resoures */,
 				PIRATEPIGRESREF7EB997C60 /* Default@2x.png in Resoures */,
 				PIRATEPIGRESREFFC7F44495 /* game_bear.png in Resoures */,
@@ -276,6 +280,8 @@
 				PIRATEPIGRES13A9510B2946 /* background_tile.png in Resoures */,
 				PIRATEPIGRESEBC97ECECF74 /* center_bottom.png in Resoures */,
 				PIRATEPIGRES963413CD60D4 /* Default-568h@2x.png in Resoures */,
+				PIRATEPIGRES8008C5F0B41A /* Default-landscape~ipad.png in Resoures */,
+				PIRATEPIGRESBC9EA6704057 /* Default-portrait~ipad.png in Resoures */,
 				PIRATEPIGRES6E7B686AAA68 /* Default.png in Resoures */,
 				PIRATEPIGRESBB17EB997C60 /* Default@2x.png in Resoures */,
 				PIRATEPIGRES5A3FC7F44495 /* game_bear.png in Resoures */,

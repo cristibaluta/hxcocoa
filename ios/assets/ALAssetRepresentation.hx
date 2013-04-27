@@ -12,17 +12,9 @@
  *
  */
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <AssetsLibrary/AssetsLibrary.h>
 
-#if __IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
-
-NS_CLASS_AVAILABLE(NA, 4_0)
+@:framework("AssetsLibrary")
 @interface ALAssetRepresentation extends NSObject {
-@package
-    id _internal;
-}
 
 // Returns the representation's UTI.
 - (NSString *)UTI;

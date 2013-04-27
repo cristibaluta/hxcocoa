@@ -31,7 +31,7 @@ MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPlaylist extends MPMediaItemCo
 
 MP_EXTERN NSString *const MPMediaPlaylistPropertyPersistentID;       // @"playlistPersistentID",    NSNumber of uint64_t (unsigned long long),           filterable
 MP_EXTERN NSString *const MPMediaPlaylistPropertyName;               // @"name",                    NSString,                                            filterable
-MP_EXTERN NSString *const MPMediaPlaylistPropertyPlaylistAttributes; // @"playlistAttributes",      NSNumber of MPMediaPlaylistAttribute (NSInteger),    filterable
+MP_EXTERN NSString *const MPMediaPlaylistPropertyPlaylistAttributes; // @"playlistAttributes",      NSNumber of MPMediaPlaylistAttribute (Int),    filterable
 
 // For playlists with attribute MPMediaPlaylistAttributeGenius, the seedItems are the MPMediaItems which were used to the generate the playlist.
 // Returns nil for playlists without MPMediaPlaylistAttributeGenius set.

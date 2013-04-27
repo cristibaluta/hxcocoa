@@ -1,11 +1,10 @@
 package objc.graphics;
 
 
-typedef CGColorSpaceRef = CGColorSpace;
-
 /* Color rendering intents. */
 
-enum CGColorRenderingIntent {
+@:framework("CoreGraphics")
+extern enum CGColorRenderingIntent {
   kCGRenderingIntentDefault;
   kCGRenderingIntentAbsoluteColorimetric;
   kCGRenderingIntentRelativeColorimetric;
@@ -15,7 +14,8 @@ enum CGColorRenderingIntent {
 
 /* The model of a color space. */
 
-enum CGColorSpaceModel {
+@:framework("CoreGraphics")
+extern enum CGColorSpaceModel {
   kCGColorSpaceModelUnknown;
   kCGColorSpaceModelMonochrome;
   kCGColorSpaceModelRGB;
@@ -26,66 +26,33 @@ enum CGColorSpaceModel {
   kCGColorSpaceModelPattern;
 }
 
+@:framework("CoreGraphics")
+extern enum CGColorSpaceGeneric {
+  kCGColorSpaceGenericGray;
+  kCGColorSpaceGenericRGB;
+  kCGColorSpaceGenericCMYK;
+  kCGColorSpaceGenericRGBLinear;
+  kCGColorSpaceAdobeRGB1998;
+  kCGColorSpaceSRGB;
+  kCGColorSpaceGenericGrayGamma2_2;
+}
+
 
 @:framework("CoreGraphics")
-class CGColorSpace {
-#if ddddddddd
-/* The name of the "Generic" gray color space. */
-
-	@:c public static function const CFStringRef kCGColorSpaceGenericGray
-  CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
-
-/* The name of the "Generic" RGB color space. */
-
-	@:c public static function const CFStringRef kCGColorSpaceGenericRGB
-  CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
-
-/* The name of the "Generic" CMYK color space. */
-
-	@:c public static function const CFStringRef kCGColorSpaceGenericCMYK
-  CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
-
-/* The name of the "Generic" linear RGB color space. This is the same as
-   `kCGColorSpaceGenericRGB' but with a 1.0 gamma. */
-
-	@:c public static function const CFStringRef kCGColorSpaceGenericRGBLinear
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-
-/* The name of the Adobe RGB (1998) color space. For more information, see
-  "Adobe RGB (1998) Color Image Encoding", Version 2005-05, Adobe Systems
-  Inc. (http://www.adobe.com). */
-
-	@:c public static function const CFStringRef kCGColorSpaceAdobeRGB1998
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-
-/* The name of the sRGB color space. The capitalization in the name, while
-   strictly inaccurate, avoids interpretational ambiguity. For more
-   information, see IEC 61966-2-1 (1999-10): "Multimedia systems and
-   equipment - Colour measurement and management - Part 2-1: Colour
-   management - Default RGB colour space - sRGB". */
-
-	@:c public static function const CFStringRef kCGColorSpaceSRGB
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-
-/* The "Generic" gray color space with γ = 2.2. */
-
-	@:c public static function const CFStringRef kCGColorSpaceGenericGrayGamma2_2
-  CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
+extern class CGColorSpaceRef {
+#if display
 
 /* Create a DeviceGray color space. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceCreateDeviceGray(void)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceCreateDeviceGray() :CGColorSpaceRef;
 
 /* Create a DeviceRGB color space. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceCreateDeviceRGB(void)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceCreateDeviceRGB() :CGColorSpaceRef;
 
 /* Create a DeviceCMYK color space. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceCreateDeviceCMYK(void)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceCreateDeviceCMYK(void) :CGColorSpaceRef;
 
 /* Create a calibrated gray color space. `whitePoint' is an array of 3
    numbers specifying the tristimulus value, in the CIE 1931 XYZ-space, of
@@ -93,9 +60,8 @@ class CGColorSpace {
    the tristimulus value, in CIE 1931 XYZ-space, of the diffuse black point.
    `gamma' defines the gamma for the gray component. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceCreateCalibratedGray(const Float
-  whitePoint[3], const Float blackPoint[3], Float gamma)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceCreateCalibratedGray(const:Float
+  whitePoint[3], const Float blackPoint[3], gamma:Float) :CGColorSpaceRef;
 
 /* Create a calibrated RGB color space. `whitePoint' is an array of 3
    numbers specifying the tristimulus value, in the CIE 1931 XYZ-space, of
@@ -176,55 +142,46 @@ class CGColorSpace {
 /* Create a color space using `name' as the identifier for the color
    space. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceCreateWithName(CFStringRef name)
-  CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0);
+	@:c public static function CGColorSpaceCreateWithName(CFStringRef name) :CGColorSpaceRef;
 
 /* Equivalent to `CFRetain(space)', except it doesn't crash (as CFRetain
    does) if `space' is NULL. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceRetain(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceRetain(space:CGColorSpaceRef) :CGColorSpaceRef;
 
 /* Equivalent to `CFRelease(space)', except it doesn't crash (as CFRelease
    does) if `space' is NULL. */
 
-	@:c public static function void CGColorSpaceRelease(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceRelease(space:CGColorSpaceRef) :Void;
 
 /* Return the name used to create the color space `space', or NULL if the
    color space was not created using `CGColorSpaceCreateWithName'. */
 
-	@:c public static function CFStringRef CGColorSpaceCopyName(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
+	@:c public static function CGColorSpaceCopyName(space:CGColorSpaceRef) :CFStringRef;
 
 /* Return the CFTypeID for CGColorSpaces. */
 
-	@:c public static function CFTypeID CGColorSpaceGetTypeID(void)
-  CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0);
+	@:c public static function CGColorSpaceGetTypeID() :CFTypeID;
 
 /* Return the number of color components in the color space `space'. */
 
-	@:c public static function size_t CGColorSpaceGetNumberOfComponents(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
+	@:c public static function CGColorSpaceGetNumberOfComponents(space:CGColorSpaceRef) :Int;
 
 /* Return the color space model of `space'. */
 
-	@:c public static function CGColorSpaceModel CGColorSpaceGetModel(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
+	@:c public static function CGColorSpaceGetModel (space:CGColorSpaceRef) :CGColorSpaceModel;
 
 /* Return the base color space of `space' if `space' is a pattern or indexed
    color space; otherwise, return NULL. To determine whether a color space
    is an indexed or pattern color space, use `CGColorSpaceGetModel'. */
 
-	@:c public static function CGColorSpaceRef CGColorSpaceGetBaseColorSpace(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
+	@:c public static function CGColorSpaceGetBaseColorSpace (space:CGColorSpaceRef) :CGColorSpaceRef;
 
 /* Return the number of entries in the color table of `space' if `space' is
    an indexed color space; otherwise, return 0. To determine whether a color
    space is an indexed color space, use `CGColorSpaceGetModel'. */
 
-	@:c public static function size_t CGColorSpaceGetColorTableCount(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
+	@:c public static function CGColorSpaceGetColorTableCount(space:CGColorSpaceRef) :Int;
 
 /* Copy the entries in the color table of `space' to `table' if `space' is
    an indexed color space; otherwise, do nothing. The array pointed to by
@@ -233,14 +190,12 @@ class CGColorSpace {
    `CGColorSpaceCreateIndexed'. To determine whether a color space is an
    indexed color space, use `CGColorSpaceGetModel'. */
 
-	@:c public static function void CGColorSpaceGetColorTable(CGColorSpaceRef space, uint8_t *table)
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
+	@:c public static function CGColorSpaceGetColorTable(space:CGColorSpaceRef, uint8_t *table) :Void;
 
 /* Return a copy of the ICC profile of `space', or NULL if the color space
    doesn't have an ICC profile. */
 
-	@:c public static function CFDataRef CGColorSpaceCopyICCProfile(CGColorSpaceRef space)
-  CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+	@:c public static function CGColorSpaceCopyICCProfile(space:CGColorSpaceRef) :CFDataRef;
 
 #end
 }

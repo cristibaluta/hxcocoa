@@ -155,10 +155,10 @@ extern class NSButtonCell extends NSActionCell
 - (NSImageScaling)imageScaling NS_AVAILABLE_MAC(10_5);
 - (void)setImageScaling:(NSImageScaling)scaling NS_AVAILABLE_MAC(10_5);
 
-- (NSInteger)highlightsBy;
-- (void)setHighlightsBy:(NSInteger)aType;
-- (NSInteger)showsStateBy;
-- (void)setShowsStateBy:(NSInteger)aType;
+- (Int)highlightsBy;
+- (void)setHighlightsBy:(Int)aType;
+- (Int)showsStateBy;
+- (void)setShowsStateBy:(Int)aType;
 - (void)setButtonType:(NSButtonType)aType;
 - (BOOL)isOpaque;
 - (void)setFont:(NSFont *)fontObj;

@@ -19,7 +19,7 @@ package ios.ui;
 extern interface UIGestureRecognizerDelegate;
 @class UIView, UIEvent, UITouch;
 
-typedef NS_ENUM(NSInteger, UIGestureRecognizerState) {
+typedef NS_ENUM(Int, UIGestureRecognizerState) {
     UIGestureRecognizerStatePossible,   // the recognizer has not yet recognized its gesture, but may be evaluating touch events. this is the default state
     
     UIGestureRecognizerStateBegan,      // the recognizer has received touches recognized as the gesture. the action method will be called at the next turn of the run loop

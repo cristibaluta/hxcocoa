@@ -26,7 +26,7 @@
  *  @constant CBCentralManagerStatePoweredOn     Bluetooth is currently powered on and available to use.
  *
  */
-typedef NS_ENUM(NSInteger, CBCentralManagerState) {
+typedef NS_ENUM(Int, CBCentralManagerState) {
 	CBCentralManagerStateUnknown = 0,
 	CBCentralManagerStateResetting,
 	CBCentralManagerStateUnsupported,

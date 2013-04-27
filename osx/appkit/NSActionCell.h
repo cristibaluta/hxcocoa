@@ -20,7 +20,7 @@ extern class NSActionCell extends NSCell
 - (void)setTarget:(id)anObject;
 - (SEL)action;
 - (void)setAction:(SEL)aSelector;
-- (NSInteger)tag;
-- (void)setTag:(NSInteger)anInt;
+- (Int)tag;
+- (void)setTag:(Int)anInt;
 
 }

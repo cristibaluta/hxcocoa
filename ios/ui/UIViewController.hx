@@ -17,7 +17,7 @@ extern class UIViewController extends UIResponder {
 @class UIPopoverController;
 @class UIStoryboard, UIStoryboardSegue;
 
-typedef NS_ENUM(NSInteger, UIModalTransitionStyle) {
+typedef NS_ENUM(Int, UIModalTransitionStyle) {
     UIModalTransitionStyleCoverVertical = 0,
     UIModalTransitionStyleFlipHorizontal,
     UIModalTransitionStyleCrossDissolve,
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, UIModalTransitionStyle) {
 #endif
 };
 
-typedef NS_ENUM(NSInteger, UIModalPresentationStyle) {
+typedef NS_ENUM(Int, UIModalPresentationStyle) {
     UIModalPresentationFullScreen = 0,
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
     UIModalPresentationPageSheet,

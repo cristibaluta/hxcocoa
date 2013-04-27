@@ -19,7 +19,7 @@ CB_EXTERN NSString * const CBErrorDomain;
  *
  * @discussion The possible errors returned during LE transactions.
  */
-typedef NS_ENUM(NSInteger, CBError) {
+typedef NS_ENUM(Int, CBError) {
 	CBErrorUnknown												= 0,
 	CBErrorInvalidParameters NS_ENUM_AVAILABLE(NA, 6_0)			= 1,
 	CBErrorInvalidHandle NS_ENUM_AVAILABLE(NA, 6_0)				= 2,
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, CBError) {
 
 CB_EXTERN NSString * const CBATTErrorDomain;
 
-typedef NS_ENUM(NSInteger, CBATTError) {
+typedef NS_ENUM(Int, CBATTError) {
 	CBATTErrorSuccess NS_ENUM_AVAILABLE(NA, 6_0)	= 0x00,
 	CBATTErrorInvalidHandle							= 0x01,
 	CBATTErrorReadNotPermitted						= 0x02,

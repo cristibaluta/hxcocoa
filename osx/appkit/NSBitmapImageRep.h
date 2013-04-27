@@ -91,8 +91,8 @@ extern class NSBitmapImageRep extends NSImageRep {
 
 - (id)initWithFocusedViewRect:(NSRect)rect;
 
-- (id)initWithBitmapDataPlanes:(unsigned char **)planes pixelsWide:(NSInteger)width pixelsHigh:(NSInteger)height bitsPerSample:(NSInteger)bps samplesPerPixel:(NSInteger)spp hasAlpha:(BOOL)alpha isPlanar:(BOOL)isPlanar colorSpaceName:(NSString *)colorSpaceName bytesPerRow:(NSInteger)rBytes bitsPerPixel:(NSInteger)pBits;
-- (id)initWithBitmapDataPlanes:(unsigned char **)planes pixelsWide:(NSInteger)width pixelsHigh:(NSInteger)height bitsPerSample:(NSInteger)bps samplesPerPixel:(NSInteger)spp hasAlpha:(BOOL)alpha isPlanar:(BOOL)isPlanar colorSpaceName:(NSString *)colorSpaceName  bitmapFormat:(NSBitmapFormat)bitmapFormat bytesPerRow:(NSInteger)rBytes bitsPerPixel:(NSInteger)pBits;
+- (id)initWithBitmapDataPlanes:(unsigned char **)planes pixelsWide:(Int)width pixelsHigh:(Int)height bitsPerSample:(Int)bps samplesPerPixel:(Int)spp hasAlpha:(BOOL)alpha isPlanar:(BOOL)isPlanar colorSpaceName:(NSString *)colorSpaceName bytesPerRow:(Int)rBytes bitsPerPixel:(Int)pBits;
+- (id)initWithBitmapDataPlanes:(unsigned char **)planes pixelsWide:(Int)width pixelsHigh:(Int)height bitsPerSample:(Int)bps samplesPerPixel:(Int)spp hasAlpha:(BOOL)alpha isPlanar:(BOOL)isPlanar colorSpaceName:(NSString *)colorSpaceName  bitmapFormat:(NSBitmapFormat)bitmapFormat bytesPerRow:(Int)rBytes bitsPerPixel:(Int)pBits;
 - (id)initWithCGImage:(CGImageRef)cgImage NS_AVAILABLE_MAC(10_5);
 - (id)initWithCIImage:(CIImage *)ciImage NS_AVAILABLE_MAC(10_5);
 
@@ -104,11 +104,11 @@ extern class NSBitmapImageRep extends NSImageRep {
 - (unsigned char *)bitmapData;
 - (void)getBitmapDataPlanes:(unsigned char **)data;
 - (BOOL)isPlanar;
-- (NSInteger)samplesPerPixel;
-- (NSInteger)bitsPerPixel;
-- (NSInteger)bytesPerRow;
-- (NSInteger)bytesPerPlane;
-- (NSInteger)numberOfPlanes;
+- (Int)samplesPerPixel;
+- (Int)bitsPerPixel;
+- (Int)bytesPerRow;
+- (Int)bytesPerPlane;
+- (Int)numberOfPlanes;
 - (NSBitmapFormat)bitmapFormat;
 
 - (void)getCompression:(NSTIFFCompression *)compression factor:(float *)factor;
@@ -120,7 +120,7 @@ extern class NSBitmapImageRep extends NSImageRep {
 + (NSData *)TIFFRepresentationOfImageRepsInArray:(NSArray *)array;
 + (NSData *)TIFFRepresentationOfImageRepsInArray:(NSArray *)array usingCompression:(NSTIFFCompression)comp factor:(float)factor;
 
-+ (void)getTIFFCompressionTypes:(const NSTIFFCompression **)list count:(NSInteger *)numTypes;
++ (void)getTIFFCompressionTypes:(const NSTIFFCompression **)list count:(Int *)numTypes;
 + (NSString *)localizedNameForTIFFCompressionType:(NSTIFFCompression)compression;
 - (BOOL)canBeCompressedUsing:(NSTIFFCompression)compression;
 
@@ -131,13 +131,13 @@ Works on images with 8-bit SPP; thus either 8-bit gray or 24-bit color (with opt
 - (void)colorizeByMappingGray:(Float)midPoint toColor:(NSColor *)midPointColor blackMapping:(NSColor *)shadowColor whiteMapping:(NSColor *)lightColor;
 
 - (id)initForIncrementalLoad;
-- (NSInteger)incrementalLoadFromData:(NSData*)data complete:(BOOL)complete;
+- (Int)incrementalLoadFromData:(NSData*)data complete:(BOOL)complete;
 
-- (void)setColor:(NSColor*)color atX:(NSInteger)x y:(NSInteger)y;
-- (NSColor*)colorAtX:(NSInteger)x y:(NSInteger)y;
+- (void)setColor:(NSColor*)color atX:(Int)x y:(Int)y;
+- (NSColor*)colorAtX:(Int)x y:(Int)y;
 
-- (void)getPixel:(NSUInteger[])p atX:(NSInteger)x y:(NSInteger)y;
-- (void)setPixel:(NSUInteger[])p atX:(NSInteger)x y:(NSInteger)y;
+- (void)getPixel:(NSUInteger[])p atX:(Int)x y:(Int)y;
+- (void)setPixel:(NSUInteger[])p atX:(Int)x y:(Int)y;
 
 - (CGImageRef)CGImage NS_AVAILABLE_MAC(10_5);
 

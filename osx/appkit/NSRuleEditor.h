@@ -141,30 +141,30 @@ extern class NSRuleEditor extends NSControl {
 - (void)reloadPredicate;
 
 /* This method returns the predicate for a given row.  Clients should rarely have a need to call this directly, but it can be overridden to perform specialized predicate handling for certain criteria or display values. */
-- (NSPredicate *)predicateForRow:(NSInteger)row;
+- (NSPredicate *)predicateForRow:(Int)row;
 
 /* -- Obtaining row information -- */
 
 /* Clients can call this to determine the number of rows */
-- (NSInteger)numberOfRows;
+- (Int)numberOfRows;
 
 /* Clients can call this to determine the immediate subrows of the given row.  Pass -1 to get the top-level rows.  Rows are numbered starting at 0.  If rowIndex is less than -1 or greater than or equal to the number of rows, this raises an NSRangeException.  */
-- (NSIndexSet *)subrowIndexesForRow:(NSInteger)rowIndex;
+- (NSIndexSet *)subrowIndexesForRow:(Int)rowIndex;
 
 /* Clients call this to obtain all of the currently chosen items for the given row.  These are the same items that are returned from the delegate method - ruleEditor: child: forCriterion: withRowType: */
-- (NSArray *)criteriaForRow:(NSInteger)row;
+- (NSArray *)criteriaForRow:(Int)row;
 
 /* Clients call this to obtain all of the chosen values (strings, views, or menu items) for row.  These are the same values that are returned from the delegate method - ruleEditor: valueForItem: inRow: */
-- (NSArray *)displayValuesForRow:(NSInteger)row;
+- (NSArray *)displayValuesForRow:(Int)row;
 
 /* Clients call this to map from a display value (string, view, or menu item) back to a row.  This method searches each row via pointer equality for the given display value, which may be present as an alternative in a popup menu for that row.  It returns the index of the row containing the given value, or NSNotFound.  Raises NSInvalidArgumentException if displayValue is nil. */
-- (NSInteger)rowForDisplayValue:(id)displayValue;
+- (Int)rowForDisplayValue:(id)displayValue;
 
 /* Clients call this to determine the type of the row.  If rowIndex is less than 0 or greater than or equal to the number of rows, this raises an NSRangeException */
-- (NSRuleEditorRowType)rowTypeForRow:(NSInteger)rowIndex;
+- (NSRuleEditorRowType)rowTypeForRow:(Int)rowIndex;
 
 /* Clients call this to determine the parent row of rowIndex.  If rowIndex is a root row, this returns -1.  If rowIndex is less than 0 or greater than or equal to the number of rows, this raises an NSRangeException */
-- (NSInteger)parentRowForRow:(NSInteger)rowIndex;
+- (Int)parentRowForRow:(Int)rowIndex;
 
 /* -- Manipulating rows -- */
 
@@ -172,13 +172,13 @@ extern class NSRuleEditor extends NSControl {
 - (void)addRow:(id)sender;
 
 /* Clients call this to add a new row at the given index with the given type as a subrow of the parent row.  Pass -1 to indicate that it should be a root row.  If parentRow >= rowIndex, or if rowIndex would fall amongst the children of some other parent, or if the nesting mode forbids this configuration, an NSInvalidArgumentException is raised. */
-- (void)insertRowAtIndex:(NSInteger)rowIndex withType:(NSRuleEditorRowType)rowType asSubrowOfRow:(NSInteger)parentRow animate:(BOOL)shouldAnimate;
+- (void)insertRowAtIndex:(Int)rowIndex withType:(NSRuleEditorRowType)rowType asSubrowOfRow:(Int)parentRow animate:(BOOL)shouldAnimate;
 
 /* Clients call this to modify the row at a given index to contain the passed-in items and values.  It is your responsibility to ensure that each item in the array is a child of the previous item, and that the first item is a root item for the row type.  If the last item has child items, then the items array will be extended by querying the delegate for child items until a childless item is reached.  If the values array contains fewer objects than the (possibly extended) criteria array, then the delegate will be queried to construct the remaining display values. If you want the delegate to be queried for all the criteria or all the display values, pass empty arrays; do not pass nil.  Raises NSRangeException if rowIndex is equal to or larger than the number of rows, or less than 0. Raises an NSInvalidArgumentException if criteria or values is nil. */
-- (void)setCriteria:(NSArray *)criteria andDisplayValues:(NSArray *)values forRowAtIndex:(NSInteger)rowIndex;
+- (void)setCriteria:(NSArray *)criteria andDisplayValues:(NSArray *)values forRowAtIndex:(Int)rowIndex;
 
 /* Clients call this to remove the row at the given index.  Any subrows of the deleted row are adopted by the parent of the deleted row, or are made root rows. Raises NSRangeException if rowIndex is equal to or larger than the number of rows, or less than 0. */
-- (void)removeRowAtIndex:(NSInteger)rowIndex;
+- (void)removeRowAtIndex:(Int)rowIndex;
 
 /* Clients call this to delete rows at the given indexes.  If includeSubrows is YES, then the subrows of the deleted rows will be deleted as well; if includeSubrows is NO, then each subrow will be adopted by its first non-deleted ancestor, or will become a root row. Raises NSRangeException if any index in rowIndexes is equal to or larger than the number of rows, or less than 0. */
 - (void)removeRowsAtIndexes:(NSIndexSet *)rowIndexes includeSubrows:(BOOL)includeSubrows;
@@ -221,13 +221,13 @@ extern class NSRuleEditor extends NSControl {
 /* -- Required delegate methods -- */
 
 /* When called, you should return the number of child items of the given criterion.  If criterion is nil, you should return the number of root criteria for the given row type. Implementation of this method is required. */
-- (NSInteger)ruleEditor:(NSRuleEditor *)editor numberOfChildrenForCriterion:(id)criterion withRowType:(NSRuleEditorRowType)rowType;
+- (Int)ruleEditor:(NSRuleEditor *)editor numberOfChildrenForCriterion:(id)criterion withRowType:(NSRuleEditorRowType)rowType;
 
 /* When called, you should return the child of the given item at the given index.  If criterion is nil, return the root criterion for the given row type at the given index. Implementation of this method is required. */
-- (id)ruleEditor:(NSRuleEditor *)editor child:(NSInteger)index forCriterion:(id)criterion withRowType:(NSRuleEditorRowType)rowType;
+- (id)ruleEditor:(NSRuleEditor *)editor child:(Int)index forCriterion:(id)criterion withRowType:(NSRuleEditorRowType)rowType;
 
 /* When called, you should return a value for the given criterion.  The value should be an instance of NSString, NSView, or NSMenuItem.  If the value is an NSView or NSMenuItem, you must ensure it is unique for every invocation of this method; that is, do not return a particular instance of NSView or NSMenuItem more than once.  Implementation of this method is required. */
-- (id)ruleEditor:(NSRuleEditor *)editor displayValueForCriterion:(id)criterion inRow:(NSInteger)row;
+- (id)ruleEditor:(NSRuleEditor *)editor displayValueForCriterion:(id)criterion inRow:(Int)row;
 
 @optional
 
@@ -235,7 +235,7 @@ extern class NSRuleEditor extends NSControl {
 
 
 /* When called, you should return an NSDictionary representing the parts of the predicate determined by the given criterion and value.  The keys of the dictionary should be the strings shown above that begin with NSRuleEditorPredicate..., and the values should be as described in the comments adjacent to the keys.  Implementation of this method is optional. */
-- (NSDictionary *)ruleEditor:(NSRuleEditor *)editor predicatePartsForCriterion:(id)criterion withDisplayValue:(id)value inRow:(NSInteger)row;
+- (NSDictionary *)ruleEditor:(NSRuleEditor *)editor predicatePartsForCriterion:(id)criterion withDisplayValue:(id)value inRow:(Int)row;
 
 /* If ruleEditorRowsDidChange: is implemented, NSRuleEditor will automatically register its delegate to receive NSRuleEditorRowsDidChangeNotification notifications to this method. Implementation of this method is optional. */
 - (void)ruleEditorRowsDidChange:(NSNotification *)notification;

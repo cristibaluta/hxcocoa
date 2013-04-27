@@ -27,14 +27,14 @@ extern class NSLevelIndicator extends NSControl {
 - (NSTickMarkPosition)tickMarkPosition;
 - (void)setTickMarkPosition:(NSTickMarkPosition)position;
 
-- (NSInteger)numberOfTickMarks;
-- (void)setNumberOfTickMarks:(NSInteger)count;
+- (Int)numberOfTickMarks;
+- (void)setNumberOfTickMarks:(Int)count;
 
-- (NSInteger)numberOfMajorTickMarks;
-- (void)setNumberOfMajorTickMarks:(NSInteger)count;
+- (Int)numberOfMajorTickMarks;
+- (void)setNumberOfMajorTickMarks:(Int)count;
 
-- (double)tickMarkValueAtIndex:(NSInteger)index;
-- (NSRect)rectOfTickMarkAtIndex:(NSInteger)index;
+- (double)tickMarkValueAtIndex:(Int)index;
+- (NSRect)rectOfTickMarkAtIndex:(Int)index;
 
 }
 

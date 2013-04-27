@@ -89,9 +89,9 @@ extern class NSFontManager extends NSObject
 - (void)setFontMenu:(NSMenu *)newMenu;
 - (NSMenu *)fontMenu:(BOOL)create;
 - (NSFontPanel *)fontPanel:(BOOL)create;
-- (NSFont *)fontWithFamily:(NSString *)family traits:(NSFontTraitMask)traits weight:(NSInteger)weight size:(Float)size;
+- (NSFont *)fontWithFamily:(NSString *)family traits:(NSFontTraitMask)traits weight:(Int)weight size:(Float)size;
 - (NSFontTraitMask)traitsOfFont:(NSFont *)fontObj;
-- (NSInteger)weightOfFont:(NSFont *)fontObj;
+- (Int)weightOfFont:(NSFont *)fontObj;
 
 /* Three methods for supporting app font management.  The fonts and names used/returned by these functions are the same as those used by the NSFontPanel.  The third method below takes as input a name as returned by "availableFontFamilies" and returns an NSArray of NSArrays.  The elements of the "inner" arrays are: (0) the font's name, (1) non-family part of the name as used by NSFontPanel, (2) an NSNumber indicating the weight, and (3) an NSNumber indicating the traits.
 */
@@ -123,7 +123,7 @@ extern class NSFontManager extends NSObject
 
 - (NSArray *)collectionNames;
 - (NSArray *)fontDescriptorsInCollection:(NSString *)collectionNames;
-- (BOOL)addCollection:(NSString *)collectionName options:(NSInteger)collectionOptions;
+- (BOOL)addCollection:(NSString *)collectionName options:(Int)collectionOptions;
 - (BOOL)removeCollection:(NSString *)collectionName;
 
 - (void)addFontDescriptors:(NSArray *)descriptors  toCollection:(NSString *)collectionName;

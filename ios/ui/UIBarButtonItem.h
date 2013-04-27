@@ -12,18 +12,18 @@ package ios.ui;
 #import <UIKit/UIAppearance.h>
 #import <UIKit/UIApplication.h>
 
-typedef NS_ENUM(NSInteger, UIBarMetrics) {
+typedef NS_ENUM(Int, UIBarMetrics) {
     UIBarMetricsDefault,
     UIBarMetricsLandscapePhone,
 };
 
-typedef NS_ENUM(NSInteger, UIBarButtonItemStyle) {
+typedef NS_ENUM(Int, UIBarButtonItemStyle) {
     UIBarButtonItemStylePlain,    // shows glow when pressed
     UIBarButtonItemStyleBordered,
     UIBarButtonItemStyleDone,
 };
 
-typedef NS_ENUM(NSInteger, UIBarButtonSystemItem) {
+typedef NS_ENUM(Int, UIBarButtonSystemItem) {
     UIBarButtonSystemItemDone,
     UIBarButtonSystemItemCancel,
     UIBarButtonSystemItemEdit,  

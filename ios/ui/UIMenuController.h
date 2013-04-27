@@ -9,7 +9,7 @@ package ios.ui;
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, UIMenuControllerArrowDirection) {
+typedef NS_ENUM(Int, UIMenuControllerArrowDirection) {
     UIMenuControllerArrowDefault, // up or down based on screen location
 #if __IPHONE_3_2 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     UIMenuControllerArrowUp,

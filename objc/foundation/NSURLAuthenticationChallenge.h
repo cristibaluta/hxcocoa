@@ -78,7 +78,7 @@ extern class NSURLAuthenticationChallenge extends NSObject implements NSObject>
     @param error The NSError for the authentication failure, if applicable, else nil
     @result An authentication challenge initialized with the specified parameters
 */
-- (id)initWithProtectionSpace:(NSURLProtectionSpace *)space proposedCredential:(NSURLCredential *)credential previousFailureCount:(NSInteger)previousFailureCount failureResponse:(NSURLResponse *)response error:(NSError *)error sender:(id<NSURLAuthenticationChallengeSender>)sender;
+- (id)initWithProtectionSpace:(NSURLProtectionSpace *)space proposedCredential:(NSURLCredential *)credential previousFailureCount:(Int)previousFailureCount failureResponse:(NSURLResponse *)response error:(NSError *)error sender:(id<NSURLAuthenticationChallengeSender>)sender;
 
 /*!
     @method initWithAuthenticationChallenge:
@@ -116,7 +116,7 @@ extern class NSURLAuthenticationChallenge extends NSObject implements NSObject>
     @abstract Get count of previous failed authentication attempts
     @result The count of previous failures
 */
-- (NSInteger)previousFailureCount;
+- (Int)previousFailureCount;
 
 /*!
     @method failureResponse

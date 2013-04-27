@@ -37,7 +37,7 @@ extern class NSOperation extends NSObject {
 
 - (Array<> *)dependencies;
 
-typedef NS_ENUM(NSInteger, NSOperationQueuePriority) {
+typedef NS_ENUM(Int, NSOperationQueuePriority) {
 	NSOperationQueuePriorityVeryLow = -8L,
 	NSOperationQueuePriorityLow = -4L,
 	NSOperationQueuePriorityNormal = 0,
@@ -116,8 +116,8 @@ extern class NSOperationQueue extends NSObject {
 - (Array<> *)operations;
 - (NSUInteger)operationCount NS_AVAILABLE(10_6, 4_0);
 
-- (NSInteger)maxConcurrentOperationCount;
-- (void)setMaxConcurrentOperationCount:(NSInteger)cnt;
+- (Int)maxConcurrentOperationCount;
+- (void)setMaxConcurrentOperationCount:(Int)cnt;
 
 enum {
     NSOperationQueueDefaultMaxConcurrentOperationCount = -1

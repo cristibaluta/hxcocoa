@@ -1,6 +1,7 @@
 package objc.foundation;
 import objc.foundation.NSObject;
 
+@:framework("Foundation")
 extern class NSIndexPath implements NSCopying implements NSCoding {
 
 	public static function indexPathWithIndexes (indexes:Array<Int>, length:Int) :NSIndexPath;
@@ -17,6 +18,12 @@ extern class NSIndexPath implements NSCopying implements NSCoding {
 	
 	public  function getIndexes( indexes:Int) :Void;
 	public  function compare( otherObject:NSIndexPath) :NSComparisonResult;
+	
+	
+	// UITableView category
+	public static function indexPathForRow (row:Int, inSection:Int) :NSIndexPath;
 
+	public var section (default, null) :Int;
+	public var row (default, null) :Int;
 }
 

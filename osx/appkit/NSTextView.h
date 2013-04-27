@@ -192,10 +192,10 @@ extern class NSTextView (NSCompletion)
 - (NSRange)rangeForUserCompletion;
     // Usually returns the partial range from the most recent beginning of a word up to the insertion point.  May be overridden by subclassers to alter the range to be completed.  Returning (NSNotFound, 0) suppresses completion.
     
-- (NSArray *)completionsForPartialWordRange:(NSRange)charRange indexOfSelectedItem:(NSInteger *)index;
+- (NSArray *)completionsForPartialWordRange:(NSRange)charRange indexOfSelectedItem:(Int *)index;
     // Returns an array of potential completions, in the order to be presented, representing complete words that the user might be trying to type when starting by typing the partial word at the given range.  May be overridden by subclassers to modify or override this list.  Returning nil or a zero-length array suppresses completion.   The selected item index may optionally be set to indicate which completion should be initially selected; default is 0, and -1 indicates no selection.  This method should call the delegate method textView:completions:forPartialWordRange:indexOfSelectedItem: if implemented.
 
-- (void)insertCompletion:(NSString *)word forPartialWordRange:(NSRange)charRange movement:(NSInteger)movement isFinal:(BOOL)flag;
+- (void)insertCompletion:(NSString *)word forPartialWordRange:(NSRange)charRange movement:(Int)movement isFinal:(BOOL)flag;
     // Called with final == NO as the user moves through the potential completions, then with final == YES when a completion is definitively selected (or completion is cancelled and the original value is reinserted).  The default implementation inserts the completion into the text at the appropriate location.  The movement argument takes its values from the movement codes defined in NSText.h, and allows subclassers to distinguish between canceling completion and selection by arrow keys, by return, by tab, or by other means such as clicking.
 }
 
@@ -319,14 +319,14 @@ extern class NSTextView (NSSharing)
 - (BOOL)isContinuousSpellCheckingEnabled;
 - (void)toggleContinuousSpellChecking:(id)sender;
 
-- (NSInteger)spellCheckerDocumentTag;
+- (Int)spellCheckerDocumentTag;
 
 - (void)setGrammarCheckingEnabled:(BOOL)flag NS_AVAILABLE_MAC(10_5);
 - (BOOL)isGrammarCheckingEnabled NS_AVAILABLE_MAC(10_5);
 - (void)toggleGrammarChecking:(id)sender NS_AVAILABLE_MAC(10_5);
     // If grammar checking is enabled, then it is performed whenever spellchecking is performed, whether continuously or manually.  
 
-- (void)setSpellingState:(NSInteger)value range:(NSRange)charRange NS_AVAILABLE_MAC(10_5);
+- (void)setSpellingState:(Int)value range:(NSRange)charRange NS_AVAILABLE_MAC(10_5);
     // May be called or overridden to control setting of spelling and grammar indicators.  Values are those listed for NSSpellingStateAttributeName.  Calls the delegate method textView:shouldSetSpellingState:range:.
 
 - (NSDictionary *)typingAttributes;
@@ -434,7 +434,7 @@ extern class NSTextView (NSTextChecking)
     // These two are bulk methods for setting and getting many checking type settings at once.  They will call the individual methods as necessary.
 
 - (void)checkTextInRange:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options NS_AVAILABLE_MAC(10_6);
-- (void)handleTextCheckingResults:(NSArray *)results forRange:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options orthography:(NSOrthography *)orthography wordCount:(NSInteger)wordCount NS_AVAILABLE_MAC(10_6);
+- (void)handleTextCheckingResults:(NSArray *)results forRange:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options orthography:(NSOrthography *)orthography wordCount:(Int)wordCount NS_AVAILABLE_MAC(10_6);
     // These two methods usually would not be called directly, since NSTextView itself will call them as needed, but they can be overridden.
 
 - (void)orderFrontSubstitutionsPanel:(id)sender NS_AVAILABLE_MAC(10_6);
@@ -514,7 +514,7 @@ extern class NSTextView (NSDeprecated)
 - (NSString *)textView:(NSTextView *)textView willDisplayToolTip:(NSString *)tooltip forCharacterAtIndex:(NSUInteger)characterIndex;
     // Delegate only.  Allows delegate to modify the tooltip that will be displayed from that specified by the NSToolTipAttributeName, or to suppress display of the tooltip (by returning nil).
 
-- (NSArray *)textView:(NSTextView *)textView completions:(NSArray *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(NSInteger *)index;
+- (NSArray *)textView:(NSTextView *)textView completions:(NSArray *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(Int *)index;
     // Delegate only.  Allows delegate to modify the list of completions that will be presented for the partial word at the given range.  Returning nil or a zero-length array suppresses completion.  Optionally may specify the index of the initially selected completion; default is 0, and -1 indicates no selection.
 
 - (BOOL)textView:(NSTextView *)textView shouldChangeTextInRange:(NSRange)affectedCharRange replacementString:(NSString *)replacementString;
@@ -522,7 +522,7 @@ extern class NSTextView (NSDeprecated)
 
 - (BOOL)textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector;
 
-- (NSInteger)textView:(NSTextView *)textView shouldSetSpellingState:(NSInteger)value range:(NSRange)affectedCharRange NS_AVAILABLE_MAC(10_5);
+- (Int)textView:(NSTextView *)textView shouldSetSpellingState:(Int)value range:(NSRange)affectedCharRange NS_AVAILABLE_MAC(10_5);
     // Delegate only.  Allows delegate to control the setting of spelling and grammar indicators.  Values are those listed for NSSpellingStateAttributeName. 
 
 - (NSMenu *)textView:(NSTextView *)view menu:(NSMenu *)menu forEvent:(NSEvent *)event atIndex:(NSUInteger)charIndex NS_AVAILABLE_MAC(10_5);
@@ -532,7 +532,7 @@ extern class NSTextView (NSDeprecated)
 - (NSDictionary *)textView:(NSTextView *)view willCheckTextInRange:(NSRange)range options:(NSDictionary *)options types:(NSTextCheckingTypes *)checkingTypes;
     // Delegate only.  Called by checkTextInRange:types:options:, this method allows control over text checking options (via the return value) or types (by modifying the flags pointed to by the inout parameter checkingTypes).
 
-- (NSArray *)textView:(NSTextView *)view didCheckTextInRange:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options results:(NSArray *)results orthography:(NSOrthography *)orthography wordCount:(NSInteger)wordCount;
+- (NSArray *)textView:(NSTextView *)view didCheckTextInRange:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options results:(NSArray *)results orthography:(NSOrthography *)orthography wordCount:(Int)wordCount;
     // Delegate only.  Called by handleTextCheckingResults:forRange:orthography:wordCount:, this method allows observation of text checking, or modification of the results (via the return value).
 #endif /* MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6 */
 

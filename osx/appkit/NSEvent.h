@@ -247,14 +247,14 @@ extern class NSEvent extends NSObject, implements NSCopying, NSCoding> {
 - (NSUInteger)modifierFlags;
 - (NSTimeInterval)timestamp;
 - (NSWindow *)window;
-- (NSInteger)windowNumber;
+- (Int)windowNumber;
 - (NSGraphicsContext*)context;
 
 /* these messages are valid for all mouse down/up/drag events */
-- (NSInteger)clickCount;
-- (NSInteger)buttonNumber;    // for NSOtherMouse events, but will return valid constants for NSLeftMouse and NSRightMouse
+- (Int)clickCount;
+- (Int)buttonNumber;    // for NSOtherMouse events, but will return valid constants for NSLeftMouse and NSRightMouse
 /* these messages are valid for all mouse down/up/drag and enter/exit events */
-- (NSInteger)eventNumber;
+- (Int)eventNumber;
 
 /* -pressure is valid for all mouse down/up/drag events, and is also valid for NSTabletPoint events on 10.4 or later */
 - (float)pressure;
@@ -293,7 +293,7 @@ extern class NSEvent extends NSObject, implements NSCopying, NSCoding> {
 - (unsigned short)keyCode;        /* device-independent key number */
 
 /* these messages are valid for enter and exit events */
-- (NSInteger)trackingNumber;
+- (Int)trackingNumber;
 - (void *)userData;
 /* -trackingArea returns the NSTrackingArea that generated this event.  It is possible for there to be no trackingArea associated with the event in some cases where the event corresponds to a trackingRect installed with -[NSView addTrackingRect:owner:userData:assumeInside:], in which case nil is returned. */
 - (NSTrackingArea *)trackingArea NS_AVAILABLE_MAC(10_5); 
@@ -303,8 +303,8 @@ extern class NSEvent extends NSObject, implements NSCopying, NSCoding> {
 - (short)subtype;
 
 /* these messages are valid for kit, system, and app-defined events */
-- (NSInteger)data1;
-- (NSInteger)data2;
+- (Int)data1;
+- (Int)data2;
 
 
 /* -eventRef and +eventWithEventRef:  are valid for all events */
@@ -340,11 +340,11 @@ extern class NSEvent extends NSObject, implements NSCopying, NSCoding> {
 
 /* these messages are valid for mouse events with subtype NSTabletPointEventSubtype, and for NSTabletPoint events */
 /* absolute x coordinate in tablet space at full tablet resolution */
-- (NSInteger)absoluteX; 
+- (Int)absoluteX; 
 /* absolute y coordinate in tablet space at full tablet resolution */
-- (NSInteger)absoluteY;               
+- (Int)absoluteY;               
 /* absolute z coordinate in tablet space at full tablet resolution */
-- (NSInteger)absoluteZ;     
+- (Int)absoluteZ;     
 /* mask indicating which buttons are pressed.*/
 - (NSUInteger)buttonMask;  
 /* range is -1 to 1 for both axes */
@@ -407,10 +407,10 @@ extern class NSEvent extends NSObject, implements NSCopying, NSCoding> {
 + (void)stopPeriodicEvents;
 
 /* apps will rarely create these objects */
-+ (NSEvent *)mouseEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(NSGraphicsContext*)context eventNumber:(NSInteger)eNum clickCount:(NSInteger)cNum pressure:(float)pressure;
-+ (NSEvent *)keyEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(NSGraphicsContext*)context characters:(NSString *)keys charactersIgnoringModifiers:(NSString *)ukeys isARepeat:(BOOL)flag keyCode:(unsigned short)code;
-+ (NSEvent *)enterExitEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(NSGraphicsContext*)context eventNumber:(NSInteger)eNum trackingNumber:(NSInteger)tNum userData:(void *)data;
-+ (NSEvent *)otherEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(NSInteger)wNum context:(NSGraphicsContext*)context subtype:(short)subtype data1:(NSInteger)d1 data2:(NSInteger)d2;
++ (NSEvent *)mouseEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(Int)wNum context:(NSGraphicsContext*)context eventNumber:(Int)eNum clickCount:(Int)cNum pressure:(float)pressure;
++ (NSEvent *)keyEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(Int)wNum context:(NSGraphicsContext*)context characters:(NSString *)keys charactersIgnoringModifiers:(NSString *)ukeys isARepeat:(BOOL)flag keyCode:(unsigned short)code;
++ (NSEvent *)enterExitEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(Int)wNum context:(NSGraphicsContext*)context eventNumber:(Int)eNum trackingNumber:(Int)tNum userData:(void *)data;
++ (NSEvent *)otherEventWithType:(NSEventType)type location:(NSPoint)location modifierFlags:(NSUInteger)flags timestamp:(NSTimeInterval)time windowNumber:(Int)wNum context:(NSGraphicsContext*)context subtype:(short)subtype data1:(Int)d1 data2:(Int)d2;
 
 // global mouse coordinates
 + (NSPoint)mouseLocation;

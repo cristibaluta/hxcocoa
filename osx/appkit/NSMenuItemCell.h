@@ -63,6 +63,6 @@ extern class NSMenuItemCell extends NSButtonCell {
 - (void)drawKeyEquivalentWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
 - (void)drawBorderAndBackgroundWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
 
-- (NSInteger)tag;
+- (Int)tag;
 
 }

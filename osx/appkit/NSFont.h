@@ -211,7 +211,7 @@ extern class NSFont (NSFontDeprecated)
 
 // The context-sensitive inter-glyph spacing is now performed at the typesetting stage.
 - (NSPoint)positionOfGlyph:(NSGlyph)curGlyph precededByGlyph:(NSGlyph)prevGlyph isNominal:(BOOL *)nominal NS_DEPRECATED_MAC(10_0, 10_4);
-- (NSInteger)positionsForCompositeSequence:(NSGlyph *)someGlyphs numberOfGlyphs:(NSInteger)numGlyphs pointArray:(NSPointArray)points NS_DEPRECATED_MAC(10_0, 10_4);
+- (Int)positionsForCompositeSequence:(NSGlyph *)someGlyphs numberOfGlyphs:(Int)numGlyphs pointArray:(NSPointArray)points NS_DEPRECATED_MAC(10_0, 10_4);
 - (NSPoint)positionOfGlyph:(NSGlyph)curGlyph struckOverGlyph:(NSGlyph)prevGlyph metricsExist:(BOOL *)exist NS_DEPRECATED_MAC(10_0, 10_4);
 - (NSPoint)positionOfGlyph:(NSGlyph)aGlyph struckOverRect:(NSRect)aRect metricsExist:(BOOL *)exist NS_DEPRECATED_MAC(10_0, 10_4);
 - (NSPoint)positionOfGlyph:(NSGlyph)aGlyph forCharacter:(unichar)aChar struckOverRect:(NSRect)aRect NS_DEPRECATED_MAC(10_0, 10_4);

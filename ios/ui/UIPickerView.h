@@ -51,22 +51,22 @@ extern class UIPickerView extends UIView, implements NSObject, UITableViewDataSo
 
 // info that was fetched and cached from the data source and delegate
 	public var (default, null) NSInteger numberOfComponents;
-- (NSInteger)numberOfRowsInComponent:(NSInteger)component;
-- (CGSize)rowSizeForComponent:(NSInteger)component;
+- (Int)numberOfRowsInComponent:(Int)component;
+- (CGSize)rowSizeForComponent:(Int)component;
 
 // returns the view provided by the delegate via pickerView:viewForRow:forComponent:reusingView:
 // or nil if the row/component is not visible or the delegate does not implement 
 // pickerView:viewForRow:forComponent:reusingView:
-- (UIView *)viewForRow:(NSInteger)row forComponent:(NSInteger)component;
+- (UIView *)viewForRow:(Int)row forComponent:(Int)component;
 
 // Reloading whole view or single component
 	public function reloadAllComponents;
-	public function reloadComponent:(NSInteger)component;
+	public function reloadComponent:(Int)component;
 
 // selection. in this case, it means showing the appropriate row in the middle
-	public function selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated;  // scrolls the specified row to center.
+	public function selectRow:(Int)row inComponent:(Int)component animated:(BOOL)animated;  // scrolls the specified row to center.
 
-- (NSInteger)selectedRowInComponent:(NSInteger)component;                                   // returns selected row. -1 if nothing selected
+- (Int)selectedRowInComponent:(Int)component;                                   // returns selected row. -1 if nothing selected
 
 }
 
@@ -75,10 +75,10 @@ extern interface UIPickerViewDataSource<NSObject>
 @required
 
 // returns the number of 'columns' to display.
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+- (Int)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 
 // returns the # of rows in each component..
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (Int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(Int)component;
 }
 
 
@@ -86,16 +86,16 @@ extern interface UIPickerViewDelegate<NSObject>
 @optional
 
 // returns width of column and height of row for each component. 
-- (Float)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component;
-- (Float)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component;
+- (Float)pickerView:(UIPickerView *)pickerView widthForComponent:(Int)component;
+- (Float)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(Int)component;
 
 // these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
 // for the view versions, we cache any hidden and thus unused views and pass them back for reuse. 
 // If you return back a different object, the old one will be released. the view will be centered in the row rect  
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component;
-- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component NS_AVAILABLE_IOS(6_0); // attributed title is favored if both methods are implemented
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view;
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(Int)row forComponent:(Int)component;
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(Int)row forComponent:(Int)component NS_AVAILABLE_IOS(6_0); // attributed title is favored if both methods are implemented
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(Int)row forComponent:(Int)component reusingView:(UIView *)view;
 
-	public function pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+	public function pickerView:(UIPickerView *)pickerView didSelectRow:(Int)row inComponent:(Int)component;
 
 }

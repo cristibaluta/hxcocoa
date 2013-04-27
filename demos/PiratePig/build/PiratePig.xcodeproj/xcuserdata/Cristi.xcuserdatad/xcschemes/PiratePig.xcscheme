@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0450"
+   LastUpgradeVersion = "0460"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "PIRATEPIG97CDA0D4237F7D7"
+               BlueprintIdentifier = "PIRATEPIGRESREFD4237F7D7"
                BuildableName = "PiratePig.app"
                BlueprintName = "PiratePig"
                ReferencedContainer = "container:PiratePig.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "PIRATEPIG0145BEF20B58677"
+               BlueprintIdentifier = "PIRATEPIGRESREFF20B58677"
                BuildableName = "PiratePigTests.octest"
                BlueprintName = "PiratePigTests"
                ReferencedContainer = "container:PiratePig.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "PIRATEPIG97CDA0D4237F7D7"
+            BlueprintIdentifier = "PIRATEPIGRESREFD4237F7D7"
             BuildableName = "PiratePig.app"
             BlueprintName = "PiratePig"
             ReferencedContainer = "container:PiratePig.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "PIRATEPIG97CDA0D4237F7D7"
+            BlueprintIdentifier = "PIRATEPIGRESREFD4237F7D7"
             BuildableName = "PiratePig.app"
             BlueprintName = "PiratePig"
             ReferencedContainer = "container:PiratePig.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "PIRATEPIG97CDA0D4237F7D7"
+            BlueprintIdentifier = "PIRATEPIGRESREFD4237F7D7"
             BuildableName = "PiratePig.app"
             BlueprintName = "PiratePig"
             ReferencedContainer = "container:PiratePig.xcodeproj">

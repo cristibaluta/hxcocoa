@@ -19,7 +19,7 @@ enum {
 - (void)insertGlyphs:(const NSGlyph *)glyphs length:(NSUInteger)length forStartingGlyphAtIndex:(NSUInteger)glyphIndex characterIndex:(NSUInteger)charIndex;
 
 // sets glyph attribute defined in NSLayoutManager.h
-- (void)setIntAttribute:(NSInteger)attributeTag value:(NSInteger)val forGlyphAtIndex:(NSUInteger)glyphIndex;
+- (void)setIntAttribute:(Int)attributeTag value:(Int)val forGlyphAtIndex:(NSUInteger)glyphIndex;
 
 - (NSAttributedString *)attributedString;
 - (NSUInteger)layoutOptions;

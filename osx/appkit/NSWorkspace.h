@@ -140,7 +140,7 @@ If the operation succeeded for every file, the error parameter will be nil.  If 
 /* Performs the given file operation, blocking until complete.  source should be the directory containing the file(s).  For operations that require a destination, such as Move and Copy, destination should be the destination directory; otherwise it should be nil.  files is an array of file names that are in the source directory.
  A value is returned by reference in the tag parameter, either 0 for success, or -1 for failure.  tag may be NULL.
  */
-- (BOOL)performFileOperation:(NSString *)operation source:(NSString *)source destination:(NSString *)destination files:(NSArray *)files tag:(NSInteger *)tag;
+- (BOOL)performFileOperation:(NSString *)operation source:(NSString *)source destination:(NSString *)destination files:(NSArray *)files tag:(Int *)tag;
 
 /* Attempt to eject the volume mounted at the given path.  Returns YES if successful, NO if not, for example, if the volume is not ejectable. */
 - (BOOL)unmountAndEjectDeviceAtPath:(NSString *)path;
@@ -149,7 +149,7 @@ If the operation succeeded for every file, the error parameter will be nil.  If 
 - (BOOL)unmountAndEjectDeviceAtURL:(NSURL *)url error:(NSError **)error NS_AVAILABLE_MAC(10_6);
 
 /* extendPowerOffBy: is currently not implemented.  Do not use it. */
-- (NSInteger)extendPowerOffBy:(NSInteger)requested;
+- (Int)extendPowerOffBy:(Int)requested;
 
 /* Attempt to hide all other applications. */
 - (void)hideOtherApplications;

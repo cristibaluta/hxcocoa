@@ -157,8 +157,8 @@ extern class NSBrowser extends NSControl
 - (void)setMinColumnWidth:(Float)columnWidth;
 - (Float)minColumnWidth;
 
-- (void)setMaxVisibleColumns:(NSInteger)columnCount;
-- (NSInteger)maxVisibleColumns;
+- (void)setMaxVisibleColumns:(Int)columnCount;
+- (Int)maxVisibleColumns;
 
 - (void)setAllowsMultipleSelection:(BOOL)flag;
 - (BOOL)allowsMultipleSelection;
@@ -178,11 +178,11 @@ extern class NSBrowser extends NSControl
 
 /* Returns the item located at 'row' in 'column'.
  */
-- (id)itemAtRow:(NSInteger)row inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (id)itemAtRow:(Int)row inColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 /* Returns the index path of the item whose children are displayed in the given column. This method can only be used if the delegate implements the item data source methods.
  */
-- (NSIndexPath *)indexPathForColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (NSIndexPath *)indexPathForColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 /* Returns whether the given item is a leaf item. This method can only be used if the delegate implements the item data source methods.
  */
@@ -190,43 +190,43 @@ extern class NSBrowser extends NSControl
 
 /* Updates a particular set of rows in 'column'. For rows that are visible, appropriate dataSource and delegate methods will be called and the row will be redrawn. For browsers that support variable row heights, the row height will not be re-queried from the delegate. This method can only be used if the delegate implements the item data source methods.
 */
-- (void)reloadDataForRowIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (void)reloadDataForRowIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 /* Returns the item that contains all children located in 'column'. In other words, it is the parent item for that column.
  */
-- (id)parentForItemsInColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (id)parentForItemsInColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 /* Scrolls 'row' to be visible within 'column'. 'column' will not be scrolled visible. To scroll 'column' to visible, first call -[browser scrollColumnToVisible:column].
  */
-- (void)scrollRowToVisible:(NSInteger)row inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (void)scrollRowToVisible:(Int)row inColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
-- (void)setTitle:(NSString *)aString ofColumn:(NSInteger)column;
-- (NSString *)titleOfColumn:(NSInteger)column;
+- (void)setTitle:(NSString *)aString ofColumn:(Int)column;
+- (NSString *)titleOfColumn:(Int)column;
 - (void)setPathSeparator:(NSString *)newString;
 - (NSString *)pathSeparator;
 - (BOOL)setPath:(NSString *)path;
 - (NSString *)path;
-- (NSString *)pathToColumn:(NSInteger)column;
+- (NSString *)pathToColumn:(Int)column;
 
 /* Returns the column and row clicked on to display a context menu. These methods will return -1 when no menu is active.
  */
-- (NSInteger)clickedColumn NS_AVAILABLE_MAC(10_6);
-- (NSInteger)clickedRow NS_AVAILABLE_MAC(10_6);
+- (Int)clickedColumn NS_AVAILABLE_MAC(10_6);
+- (Int)clickedRow NS_AVAILABLE_MAC(10_6);
 
-- (NSInteger)selectedColumn;
+- (Int)selectedColumn;
 
 /* For the item based browser, selectedCell returns the prepared cell at the selected row in the selected column.
  */
 - (id)selectedCell;
-- (id)selectedCellInColumn:(NSInteger)column;
+- (id)selectedCellInColumn:(Int)column;
 
 /* For the item based browser, selectedCells returns a copy of all prepared cells in the selected row in the selected column
  */
 - (NSArray *)selectedCells;
 
-- (void)selectRow:(NSInteger)row inColumn:(NSInteger)column;
+- (void)selectRow:(Int)row inColumn:(Int)column;
 
-- (NSInteger)selectedRowInColumn:(NSInteger)column;
+- (Int)selectedRowInColumn:(Int)column;
 
 /* Returns the index path of the item selected in the browser, or nil if there is no selection.
  */
@@ -246,62 +246,62 @@ extern class NSBrowser extends NSControl
 
 /* Sets the selected row 'indexes' in the matrix located at 'column'. 
  */
-- (void)selectRowIndexes:(NSIndexSet *)indexes inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_5);
+- (void)selectRowIndexes:(NSIndexSet *)indexes inColumn:(Int)column NS_AVAILABLE_MAC(10_5);
 
 /* Returns the selected cell indexes in the matrix located at 'column'. 
  */
-- (NSIndexSet *)selectedRowIndexesInColumn:(NSInteger)column NS_AVAILABLE_MAC(10_5);
+- (NSIndexSet *)selectedRowIndexesInColumn:(Int)column NS_AVAILABLE_MAC(10_5);
 
-- (void)reloadColumn:(NSInteger)column;
+- (void)reloadColumn:(Int)column;
 - (void)validateVisibleColumns;
-- (void)scrollColumnsRightBy:(NSInteger)shiftAmount;
-- (void)scrollColumnsLeftBy:(NSInteger)shiftAmount;
-- (void)scrollColumnToVisible:(NSInteger)column;
+- (void)scrollColumnsRightBy:(Int)shiftAmount;
+- (void)scrollColumnsLeftBy:(Int)shiftAmount;
+- (void)scrollColumnToVisible:(Int)column;
 
 /* Returns the last loaded column. This is equal to the total number of columns minus 1.
  */
-- (NSInteger)lastColumn;
+- (Int)lastColumn;
 
 /* Sets the last loaded column. 'column' must be equal to or less than -lastColumn. To add more columns, use -addColumn.
  */
-- (void)setLastColumn:(NSInteger)column;
+- (void)setLastColumn:(Int)column;
 
 /* Adds a column at the end. To remove columns, use -setLastColumn:
  */
 - (void)addColumn;
 
-- (NSInteger)numberOfVisibleColumns;
-- (NSInteger)firstVisibleColumn;
-- (NSInteger)lastVisibleColumn;
+- (Int)numberOfVisibleColumns;
+- (Int)firstVisibleColumn;
+- (Int)lastVisibleColumn;
 
 /* Returns the column that matrix represents. This method will return -1 if the delegate does not implement the matrix data source methods.
  */
-- (NSInteger)columnOfMatrix:(NSMatrix *)matrix;
+- (Int)columnOfMatrix:(NSMatrix *)matrix;
 
 /* Return the matrix representing column. This method will return nil if the delegate does not implement the matrix data source methods.
  */
-- (NSMatrix *)matrixInColumn:(NSInteger)column;
+- (NSMatrix *)matrixInColumn:(Int)column;
 
-- (id)loadedCellAtRow:(NSInteger)row column:(NSInteger)col;
+- (id)loadedCellAtRow:(Int)row column:(Int)col;
 - (void)selectAll:(id)sender;
 - (void)tile;
 - (void)doClick:(id)sender;
 - (void)doDoubleClick:(id)sender;
 - (BOOL)sendAction;
 
-- (NSRect)titleFrameOfColumn:(NSInteger)column;
-- (void)drawTitleOfColumn:(NSInteger)column inRect:(NSRect)aRect;
+- (NSRect)titleFrameOfColumn:(Int)column;
+- (void)drawTitleOfColumn:(Int)column inRect:(NSRect)aRect;
 - (Float)titleHeight;
-- (NSRect)frameOfColumn:(NSInteger)column;
-- (NSRect)frameOfInsideOfColumn:(NSInteger)column;
+- (NSRect)frameOfColumn:(Int)column;
+- (NSRect)frameOfInsideOfColumn:(Int)column;
 
 /* Returns the frame of the row at 'row' / 'column' including the area for the expandable arrow. The returned NSRect is in the NSBrowser coordinate space.
 */
-- (NSRect)frameOfRow:(NSInteger)row inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (NSRect)frameOfRow:(Int)row inColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 /* Finds the row and column located at 'point', returning YES if both can be found. If a row does not exist at 'point', then -1 is set for the row. If a column does not exist at 'point', then -1 is set for the column. 'point' is expected to be in the NSBrowser's coordinate system.
 */
-- (BOOL)getRow:(NSInteger *)row column:(NSInteger *)column forPoint:(NSPoint)point NS_AVAILABLE_MAC(10_6);
+- (BOOL)getRow:(Int *)row column:(Int *)column forPoint:(NSPoint)point NS_AVAILABLE_MAC(10_6);
 
 /* These methods convert between column width (the column's scrollview), and the content width (the matrix in the scrollview).  For example, to guarantee that 16 pixels of your browser cell are always visible, call [browser setMinColumnWidth:[browser columnWidthForColumnContentWidth:16]] 
 */
@@ -320,8 +320,8 @@ extern class NSBrowser extends NSControl
 
 /* setWidth:ofColumn: does nothing if columnResizingType is NSBrowserAutoColumnResizing.  Otherwise, Sets the width of the specified column.  Due to binary compatibility constraints, you may still set the default width for new columns by passing a columnIndex of -1; you are encouraged to use -setDefaultColumnWidth: instead.  NSBrowserColumnConfigurationDidChangeNotification will be posted (not immediately) if necessary.  The receiver will autosave its column configuration if necessary. 
  */
-- (void)setWidth:(Float)columnWidth ofColumn:(NSInteger)columnIndex;
-- (Float)widthOfColumn:(NSInteger)column;
+- (void)setWidth:(Float)columnWidth ofColumn:(Int)columnIndex;
+- (Float)widthOfColumn:(Int)column;
 
 /* Get and set the rowHeight. The value must be greater than 0. Calling -setRowHeight: with a non-pixel aligning (fractional) value will be forced to a pixel aligning (integral) value. For variable row height browsers (ones that have the delegate implement -browser:heightOfRow:column:), -rowHeight will be used to draw alternating rows past the last row in each browser column. The default value is 17.0. Note: The rowHeight methods are only valid when using the item delegate methods introduced in Mac OS 10.6. (see NSObject(NSBrowserDelegate)). An exception is thrown if using the older matrix delegate methods 
  */
@@ -330,7 +330,7 @@ extern class NSBrowser extends NSControl
 
 /* If the delegate implements -browser:heightOfRow:inColumn:, this method immediately re-tiles the browser columns using row heights it provides.
 */
-- (void)noteHeightOfRowsWithIndexesChanged:(NSIndexSet *)indexSet inColumn:(NSInteger)columnIndex NS_AVAILABLE_MAC(10_6);
+- (void)noteHeightOfRowsWithIndexesChanged:(NSIndexSet *)indexSet inColumn:(Int)columnIndex NS_AVAILABLE_MAC(10_6);
 
 
 /* Persistently sets the default width for new columns which don't otherwise have initial width from either defaults or the delegate. This method replaces -setWidth:ofColumn: with a columnIndex of -1. 
@@ -353,11 +353,11 @@ extern class NSBrowser extends NSControl
 
 /* The return value indicates whether the receiver can attempt to initiate a drag for the given event. You can override this method and return NO to disallow initiating drags at the location in the given event. By default, the method will return YES if rowIndexes contains at least one item, and each item is enabled. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate. 
  */
-- (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_5);
+- (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column withEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_5);
 
 /* This method computes and returns an image to use for dragging. You can override this to return a custom drag image, or call it to get the default drag image from the delegate method. 'rowIndexes' are the indexes of the cells being dragged in matrix 'column'. 'event' is a reference to the mouse down event that began the drag. 'dragImageOffset' is an in/out parameter. This method will be called with dragImageOffset set to NSZeroPoint, but it can be modified to re-position the returned image. A dragImageOffset of NSZeroPoint will cause the image to be centered under the mouse. By default, an image will be created that contain the visible cells within 'rowIndexes'. If the equivalent delegate method is present, it will be preferred over this method, and you can safely call this method from your delegate. 
  */
-- (NSImage *)draggingImageForRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event offset:(NSPointPointer)dragImageOffset NS_AVAILABLE_MAC(10_5);
+- (NSImage *)draggingImageForRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column withEvent:(NSEvent *)event offset:(NSPointPointer)dragImageOffset NS_AVAILABLE_MAC(10_5);
 
 /* Configures the value returned from -draggingSourceOperationMaskForLocal:. An isLocal value of YES indicates that 'mask' applies when the destination object is in the same application. By default, NSDragOperationEvery will be returned. An isLocal value of NO indicates that 'mask' applies when the destination object in an application outside the receiver's application. By default, NSDragOperationNone is returned. NSBrowser will save the values you set for each isLocal setting. You typically will invoke this method, and not override it. 
  */
@@ -400,11 +400,11 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
  */
 /* Called by the browser to determine the number of rows in the given column. The delegate will be called with -browser:willDisplayCell:atRow:column: before displaying each cell, giving it a chance to fill in the NSBrowserCell properties.
  */
-- (NSInteger)browser:(NSBrowser *)sender numberOfRowsInColumn:(NSInteger)column;
+- (Int)browser:(NSBrowser *)sender numberOfRowsInColumn:(Int)column;
 
 /* Called by the browser to fill in the matrix with populated NSBrowserCells.
  */
-- (void)browser:(NSBrowser *)sender createRowsForColumn:(NSInteger)column inMatrix:(NSMatrix *)matrix;
+- (void)browser:(NSBrowser *)sender createRowsForColumn:(Int)column inMatrix:(NSMatrix *)matrix;
 
 #pragma mark -
 
@@ -412,11 +412,11 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 */
 
 /* Return the number of children of the given item. */
-- (NSInteger)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item NS_AVAILABLE_MAC(10_6);
+- (Int)browser:(NSBrowser *)browser numberOfChildrenOfItem:(id)item NS_AVAILABLE_MAC(10_6);
 
 /* Return the indexth child of item. You may expect that index is never equal to or greater to the number of children of item as reported by -browser:numberOfChildrenOfItem:.
  */
-- (id)browser:(NSBrowser *)browser child:(NSInteger)index ofItem:(id)item NS_AVAILABLE_MAC(10_6);
+- (id)browser:(NSBrowser *)browser child:(Int)index ofItem:(id)item NS_AVAILABLE_MAC(10_6);
 
 /* Return whether item should be shown as a leaf item; that is, an item that can not be expanded into another column. Returning NO does not prevent you from returning 0 from -browser:numberOfChildrenOfItem:.
  */
@@ -429,7 +429,7 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 /* Optional - Variable Row Heights
     Implement this method to support varying row heights per column.  The height returned by this method should not include intercell spacing and must be greater than zero.  NSBrowser may cache the values this method returns.  So if you would like to change a row's height make sure to invalidate the row height by calling -noteHeightOfRowsWithIndexesChanged:inColumn:.
 */
-- (Float)browser:(NSBrowser *)browser heightOfRow:(NSInteger)row inColumn:(NSInteger)columnIndex NS_AVAILABLE_MAC(10_6);
+- (Float)browser:(NSBrowser *)browser heightOfRow:(Int)row inColumn:(Int)columnIndex NS_AVAILABLE_MAC(10_6);
 
 #pragma mark -
 
@@ -453,21 +453,21 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 /* Optional - display support.
  Called by the browser before displaying a cell at the given location.
  */
-- (void)browser:(NSBrowser *)sender willDisplayCell:(id)cell atRow:(NSInteger)row column:(NSInteger)column;
+- (void)browser:(NSBrowser *)sender willDisplayCell:(id)cell atRow:(Int)row column:(Int)column;
 
-- (NSString *)browser:(NSBrowser *)sender titleOfColumn:(NSInteger)column;
+- (NSString *)browser:(NSBrowser *)sender titleOfColumn:(Int)column;
 
 /* Called by the browser when selecting cells by title, either from -setPath:, or when recomputing the selection after -reloadColumn:. Return NO if a matching cell could not be found.
  */
-- (BOOL)browser:(NSBrowser *)sender selectCellWithString:(NSString *)title inColumn:(NSInteger)column;
+- (BOOL)browser:(NSBrowser *)sender selectCellWithString:(NSString *)title inColumn:(Int)column;
 
 /* Called by the browser when selecting a cell using -selectRow:inColumn:. Return NO if a matching cell could not be found.
  */
-- (BOOL)browser:(NSBrowser *)sender selectRow:(NSInteger)row inColumn:(NSInteger)column;
+- (BOOL)browser:(NSBrowser *)sender selectRow:(Int)row inColumn:(Int)column;
 
 /* Called by the browser from -validateVisibleColumns to determine whether the currently-displayed columns are valid. Returning NO will prompt the browser to call -reloadColumn:.
  */
-- (BOOL)browser:(NSBrowser *)sender isColumnValid:(NSInteger)column;
+- (BOOL)browser:(NSBrowser *)sender isColumnValid:(Int)column;
 
 - (void)browserWillScroll:(NSBrowser *)sender;
 - (void)browserDidScroll:(NSBrowser *)sender;
@@ -479,12 +479,12 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 /* Optional for browsers with resize type NSBrowserNoColumnResizing, and NSBrowserUserColumnResizing.
  This method is used for both constraining column resize, and determining a columns initial size.  If 'forUserResize' is NO, this method should return the initial width for a newly added column.  If 'forUserResize' is YES, this method can be used to constrain resizing on a per-column basis.  (Currently per-column constraining is not implemented, so forUserResize will always be NO).
  */
-- (Float)browser:(NSBrowser *)browser shouldSizeColumn:(NSInteger)columnIndex forUserResize:(BOOL)forUserResize toWidth:(Float)suggestedWidth;
+- (Float)browser:(NSBrowser *)browser shouldSizeColumn:(Int)columnIndex forUserResize:(BOOL)forUserResize toWidth:(Float)suggestedWidth;
 
 /* Optional for browsers with resize type NSBrowserUserColumnResizing only.
  This method returns the "ideal" width for a column.  This method is used when performing a "right-size-each" or "right-size-one" operation.  If columnIndex is -1, the result is used for a "right-size-all-simultaneous" operation.  In this case, you should return a best uniform right size for all column (every column will be set to this size).  You can opt out on a per column basis by returning -1 for that column. It is assumed that the implementation may be expensive, so it will be called only when necessary.  (See documentation for definitions of right-size one/each/all). 
  */
-- (Float)browser:(NSBrowser *)browser sizeToFitWidthOfColumn:(NSInteger)columnIndex;
+- (Float)browser:(NSBrowser *)browser sizeToFitWidthOfColumn:(Int)columnIndex;
 
 /* Optional and used for browsers with resize type NSBrowserUserColumnResizing only.
  This method is intended to be used by clients wishing to implement their own column width persistence.  It is called when the width of any browser columns has changed.  User column resizing will cause a single notification to be posted when the user is finished resizing.  (See NSBrowserColumnConfigurationDidChangeNotification for more information.)  
@@ -494,7 +494,7 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 /* Optional - Expansion ToolTip support.
     Implement this method and return NO to prevent an expansion tooltip from appearing for a particular cell at 'row' in 'column'. See NSCell.h for more information on expansion tool tips. 
  */
-- (BOOL)browser:(NSBrowser *)browser shouldShowCellExpansionForRow:(NSInteger)row column:(NSInteger)column NS_AVAILABLE_MAC(10_5);
+- (BOOL)browser:(NSBrowser *)browser shouldShowCellExpansionForRow:(Int)row column:(Int)column NS_AVAILABLE_MAC(10_5);
 
 
 #pragma mark -
@@ -504,19 +504,19 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 
 /* This method is called after it has been determined that a drag should begin, but before the drag has been started.  To refuse the drag, return NO. To start a drag, declared the pasteboard types that you support with [pasteboard declareTypes:owner:], place your data on the pasteboard, and return YES from the method. The drag image and other drag related information will be set up and provided by the view once this call returns with YES. You need to implement this method for your browser to be a drag source. 
  */
-- (BOOL)browser:(NSBrowser *)browser writeRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column toPasteboard:(NSPasteboard *)pasteboard NS_AVAILABLE_MAC(10_5);
+- (BOOL)browser:(NSBrowser *)browser writeRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column toPasteboard:(NSPasteboard *)pasteboard NS_AVAILABLE_MAC(10_5);
 
 /* The delegate can support file promise drags by adding NSFilesPromisePboardType to the pasteboard in browser:writeRowsWithIndexes:inColumn:toPasteboard:. NSBrowser implements -namesOfPromisedFilesDroppedAtDestination: to return the results of this data source method.  This method should returns an array of filenames for the created files (filenames only, not full paths).  The URL represents the drop location.  For more information on file promise dragging, see documentation on the NSDraggingSource protocol and -namesOfPromisedFilesDroppedAtDestination:. You do not need to implement this method for your browser to be a drag source.
  */
-- (NSArray *)browser:(NSBrowser *)browser namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_5);
+- (NSArray *)browser:(NSBrowser *)browser namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination forDraggedRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column NS_AVAILABLE_MAC(10_5);
 
 /* The delegate can control if some particular rows can be dragged or not for a particular event. You do not need to implement this method for your browser to be a drag source. 
  */
-- (BOOL)browser:(NSBrowser *)browser canDragRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_5);
+- (BOOL)browser:(NSBrowser *)browser canDragRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column withEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_5);
 
 /* Allows the delegate to compute a dragging image for the particular cells being dragged. 'rowIndexes' are the indexes of the cells being dragged in the matrix in 'column'. 'event' is a reference to the mouse down event that began the drag. 'dragImageOffset' is an in/out parameter. This method will be called with dragImageOffset set to NSZeroPoint, but it can be modified to re-position the returned image.  A dragImageOffset of NSZeroPoint will cause the image to be centered under the mouse. You can safely call [browser dragImageForRowsWithIndexes:inColumn:withEvent:offset:] from inside this method. You do not need to implement this method for your browser to be a drag source. You can safely call the corresponding NSBrowser method.
  */
-- (NSImage *)browser:(NSBrowser *)browser draggingImageForRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(NSInteger)column withEvent:(NSEvent *)event offset:(NSPointPointer)dragImageOffset NS_AVAILABLE_MAC(10_5);
+- (NSImage *)browser:(NSBrowser *)browser draggingImageForRowsWithIndexes:(NSIndexSet *)rowIndexes inColumn:(Int)column withEvent:(NSEvent *)event offset:(NSPointPointer)dragImageOffset NS_AVAILABLE_MAC(10_5);
 
 #pragma mark ** Dragging Destination Methods **
 
@@ -526,11 +526,11 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 
     Note: to receive drag messages, you must first call [NSBrowser registerForDraggedTypes:] for the drag types you want to support (typically this is done in awakeFromNib). You must implement this method for your browser to be a drag destination. 
 */
-- (NSDragOperation)browser:(NSBrowser *)browser validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger *)row column:(NSInteger *)column  dropOperation:(NSBrowserDropOperation *)dropOperation NS_AVAILABLE_MAC(10_5);
+- (NSDragOperation)browser:(NSBrowser *)browser validateDrop:(id <NSDraggingInfo>)info proposedRow:(Int *)row column:(Int *)column  dropOperation:(NSBrowserDropOperation *)dropOperation NS_AVAILABLE_MAC(10_5);
 
 /* This method is called when the mouse is released over a browser that previously decided to allow a drop via the above validateDrop method.  The delegate should incorporate the data from the dragging pasteboard at this time. You must implement this method for your browser to be a drag destination.
 */
-- (BOOL)browser:(NSBrowser *)browser acceptDrop:(id <NSDraggingInfo>)info atRow:(NSInteger)row column:(NSInteger)column dropOperation:(NSBrowserDropOperation)dropOperation NS_AVAILABLE_MAC(10_5);
+- (BOOL)browser:(NSBrowser *)browser acceptDrop:(id <NSDraggingInfo>)info atRow:(Int)row column:(Int)column dropOperation:(NSBrowserDropOperation)dropOperation NS_AVAILABLE_MAC(10_5);
 
 #pragma mark -
 
@@ -539,7 +539,7 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 /* Optional - Type select support
     Implement this method if you want to control the string that is used for type selection. You may want to change what is searched for based on what is displayed, or simply return an empty string for that row and/or column to not be searched. You can also return 'nil' if the cell does not contain any text. By default, all cells with text in them are searched. The default value when this delegate method is not implemented is the stringValue for the cell at that location.
  */
-- (NSString *)browser:(NSBrowser *)browser typeSelectStringForRow:(NSInteger)row inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_5);
+- (NSString *)browser:(NSBrowser *)browser typeSelectStringForRow:(Int)row inColumn:(Int)column NS_AVAILABLE_MAC(10_5);
 
 /* Optional - Type select support
     Implement this method if you would like to prevent a type select from happening based on the current event and current search string. Generally, this will be called from keyDown: and the event will be a key event. The search string will be nil if no type select has began. 
@@ -549,7 +549,7 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 /* Optional - Type select support
     Implement this method if you want to control how type selection works. Return the first row that matches searchString from within the range of startRow to endRow. It is possible for endRow to be less than startRow if the search will wrap. Return -1 when there is no match. Include startRow as a possible match, but do not include endRow. It is not necessary to implement this method in order to support type select.
  */
-- (NSInteger)browser:(NSBrowser *)browser nextTypeSelectMatchFromRow:(NSInteger)startRow toRow:(NSInteger)endRow inColumn:(NSInteger)column forString:(NSString *)searchString NS_AVAILABLE_MAC(10_5);
+- (Int)browser:(NSBrowser *)browser nextTypeSelectMatchFromRow:(Int)startRow toRow:(Int)endRow inColumn:(Int)column forString:(NSString *)searchString NS_AVAILABLE_MAC(10_5);
 
 #pragma mark -
 
@@ -565,11 +565,11 @@ APPKIT_EXTERN NSString *NSBrowserColumnConfigurationDidChangeNotification;
 
 /* Optional - Notification when the lastColumn changes.
  */
-- (void)browser:(NSBrowser *)browser didChangeLastColumn:(NSInteger)oldLastColumn toColumn:(NSInteger)column;
+- (void)browser:(NSBrowser *)browser didChangeLastColumn:(Int)oldLastColumn toColumn:(Int)column;
 
 /* Optional - Return a set of new indexes to select when the user changes the selection with the keyboard or mouse. This method may be called multiple times with one new index added to the existing selection to find out if a particular index can be selected when the user is extending the selection with the keyboard or mouse. Note that 'proposedSelectionIndexes' will contain the entire newly suggested selection, and you can return the exsiting selection to avoid changing the selection. This method only works for item-based NSBrowsers.
  */
-- (NSIndexSet *)browser:(NSBrowser *)browser selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes inColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (NSIndexSet *)browser:(NSBrowser *)browser selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes inColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 }
 
@@ -585,7 +585,7 @@ extern class NSBrowser(NSDeprecated)
 
 /* Use of -displayColumn: is deprecated in 10.3.  Use setNeedsDisplayInRect: instead.
  */
-- (void)displayColumn:(NSInteger)column NS_DEPRECATED_MAC(10_0, 10_3);
+- (void)displayColumn:(Int)column NS_DEPRECATED_MAC(10_0, 10_3);
 
 /* Use of -displayAllColumns; is deprecated in 10.3.  Use setNeedsDisplay/InRect: instead.
  */

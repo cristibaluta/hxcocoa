@@ -44,7 +44,7 @@ enum {
 } NS_DEPRECATED_IOS(2_0,6_0);
 typedef NSTextAlignment UITextAlignment;
 
-typedef NS_ENUM(NSInteger, UIBaselineAdjustment) {
+typedef NS_ENUM(Int, UIBaselineAdjustment) {
     UIBaselineAdjustmentAlignBaselines = 0, // default. used when shrinking text to position based on the original baseline
     UIBaselineAdjustmentAlignCenters,
     UIBaselineAdjustmentNone,

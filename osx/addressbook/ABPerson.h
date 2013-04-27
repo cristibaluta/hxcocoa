@@ -31,14 +31,14 @@ extern class ABPerson extends ABRecord
 
 extern class ABPerson (ABPerson_Properties)
 
-+ (NSInteger)addPropertiesAndTypes:(NSDictionary *)properties;
++ (Int)addPropertiesAndTypes:(NSDictionary *)properties;
     // Adds properties to all people records. The dictionary must be of the form:
     //          key: property name
     //          value: property type
     // Property name must be unique
     // Returns the number of properties successfully added (-1 if an error occurred)
 
-+ (NSInteger)removeProperties:(NSArray *)properties;
++ (Int)removeProperties:(NSArray *)properties;
     // Removes properties from all people
     // Returns the number of properties successfully removed (-1 if an error occurred)
 

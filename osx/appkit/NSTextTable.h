@@ -119,14 +119,14 @@ extern class NSTextTableBlock extends NSTextBlock {
     void *_tableBlockSecondary;
 }
 
-- (id)initWithTable:(NSTextTable *)table startingRow:(NSInteger)row rowSpan:(NSInteger)rowSpan startingColumn:(NSInteger)col columnSpan:(NSInteger)colSpan;     // Designated initializer
+- (id)initWithTable:(NSTextTable *)table startingRow:(Int)row rowSpan:(Int)rowSpan startingColumn:(Int)col columnSpan:(Int)colSpan;     // Designated initializer
 
 /* These methods determine the block's role in its enclosing table. */
 - (NSTextTable *)table;
-- (NSInteger)startingRow;
-- (NSInteger)rowSpan;
-- (NSInteger)startingColumn;
-- (NSInteger)columnSpan;
+- (Int)startingRow;
+- (Int)rowSpan;
+- (Int)startingColumn;
+- (Int)columnSpan;
 
 }
 

@@ -12,7 +12,7 @@ package ios.ui;
 #import <UIKit/UITextField.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, UISearchBarIcon) {
+typedef NS_ENUM(Int, UISearchBarIcon) {
     UISearchBarIconSearch, // The magnifying glass
     UISearchBarIconClear, // The circle with an x in it
     UISearchBarIconBookmark, // The open book icon
@@ -116,6 +116,6 @@ extern interface UISearchBarDelegate {
 	public function searchBarCancelButtonClicked:(UISearchBar *) searchBar;                    // called when cancel button pressed
 	public function searchBarResultsListButtonClicked:(UISearchBar *)searchBar NS_AVAILABLE_IOS(3_2); // called when search results button pressed
 
-	public function searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope NS_AVAILABLE_IOS(3_0);
+	public function searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(Int)selectedScope NS_AVAILABLE_IOS(3_0);
 
 }

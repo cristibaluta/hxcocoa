@@ -33,12 +33,12 @@ extern interface UIKeyInput <UITextInputTraits>
 extern interface UITextInputTokenizer;
 extern interface UITextInputDelegate;
 
-typedef NS_ENUM(NSInteger, UITextStorageDirection) {
+typedef NS_ENUM(Int, UITextStorageDirection) {
     UITextStorageDirectionForward = 0,
     UITextStorageDirectionBackward
 };
 
-typedef NS_ENUM(NSInteger, UITextLayoutDirection) {
+typedef NS_ENUM(Int, UITextLayoutDirection) {
     UITextLayoutDirectionRight = 2,
     UITextLayoutDirectionLeft,
     UITextLayoutDirectionUp,
@@ -47,13 +47,13 @@ typedef NS_ENUM(NSInteger, UITextLayoutDirection) {
 
 typedef NSInteger UITextDirection;
 
-typedef NS_ENUM(NSInteger, UITextWritingDirection) {
+typedef NS_ENUM(Int, UITextWritingDirection) {
     UITextWritingDirectionNatural = -1,
     UITextWritingDirectionLeftToRight = 0,
     UITextWritingDirectionRightToLeft,
 };
 
-typedef NS_ENUM(NSInteger, UITextGranularity) {
+typedef NS_ENUM(Int, UITextGranularity) {
     UITextGranularityCharacter,
     UITextGranularityWord,
     UITextGranularitySentence,
@@ -107,12 +107,12 @@ extern interface UITextInput <UIKeyInput>
 
 /* Methods for creating ranges and positions. */
 - (UITextRange *)textRangeFromPosition:(UITextPosition *)fromPosition toPosition:(UITextPosition *)toPosition;
-- (UITextPosition *)positionFromPosition:(UITextPosition *)position offset:(NSInteger)offset;
-- (UITextPosition *)positionFromPosition:(UITextPosition *)position inDirection:(UITextLayoutDirection)direction offset:(NSInteger)offset;
+- (UITextPosition *)positionFromPosition:(UITextPosition *)position offset:(Int)offset;
+- (UITextPosition *)positionFromPosition:(UITextPosition *)position inDirection:(UITextLayoutDirection)direction offset:(Int)offset;
 
 /* Simple evaluation of positions */
 - (NSComparisonResult)comparePosition:(UITextPosition *)position toPosition:(UITextPosition *)other;
-- (NSInteger)offsetFromPosition:(UITextPosition *)from toPosition:(UITextPosition *)toPosition;
+- (Int)offsetFromPosition:(UITextPosition *)from toPosition:(UITextPosition *)toPosition;
 
 /* A system-provied input delegate is assigned when the system is interested in input changes. */
 	public var id <UITextInputDelegate> inputDelegate;
@@ -146,8 +146,8 @@ extern interface UITextInput <UIKeyInput>
 - (NSDictionary *)textStylingAtPosition:(UITextPosition *)position inDirection:(UITextStorageDirection)direction;
 
 /* To be implemented if there is not a one-to-one correspondence between text positions within range and character offsets into the associated string. */
-- (UITextPosition *)positionWithinRange:(UITextRange *)range atCharacterOffset:(NSInteger)offset;
-- (NSInteger)characterOffsetOfPosition:(UITextPosition *)position withinRange:(UITextRange *)range;
+- (UITextPosition *)positionWithinRange:(UITextRange *)range atCharacterOffset:(Int)offset;
+- (Int)characterOffsetOfPosition:(UITextPosition *)position withinRange:(UITextRange *)range;
 
 /* An affiliated view that provides a coordinate system for all geometric values in this protocol.
  * If unimplmeented, the first view in the responder chain will be selected. */

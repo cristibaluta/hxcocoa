@@ -157,12 +157,12 @@ APPKIT_EXTERN void NSDrawButton(NSRect aRect, NSRect clipRect);
 APPKIT_EXTERN void NSEraseRect(NSRect aRect);
 APPKIT_EXTERN NSColor *NSReadPixel(NSPoint passedPoint);
 APPKIT_EXTERN void NSDrawBitmap(NSRect rect, NSInteger width, NSInteger height, NSInteger bps, NSInteger spp, NSInteger bpp, NSInteger bpr, BOOL isPlanar, BOOL hasAlpha, NSString *colorSpaceName, const unsigned char *const data[5]);
-APPKIT_EXTERN void NSCopyBits(NSInteger srcGState, NSRect srcRect, NSPoint destPoint);
+APPKIT_EXTERN void NSCopyBits(Int srcGState, NSRect srcRect, NSPoint destPoint);
 APPKIT_EXTERN void NSHighlightRect(NSRect aRect);
 APPKIT_EXTERN void NSBeep(void);
 
 /* gets performance stats about window server memory usage */
-APPKIT_EXTERN NSInteger NSGetWindowServerMemory(NSInteger context, NSInteger *virtualMemory, NSInteger *windowBackingMemory, NSString **windowDumpString);
+APPKIT_EXTERN NSInteger NSGetWindowServerMemory(Int context, NSInteger *virtualMemory, NSInteger *windowBackingMemory, NSString **windowDumpString);
 
 APPKIT_EXTERN NSRect NSDrawColorTiledRects(NSRect boundsRect, NSRect clipRect, const NSRectEdge *sides, NSColor **colors, NSInteger count);
 APPKIT_EXTERN void NSDrawDarkBezel(NSRect aRect, NSRect clipRect);
@@ -210,8 +210,8 @@ APPKIT_EXTERN void NSShowAnimationEffect(NSAnimationEffect animationEffect, NSPo
 
 
 /* NSCountWindows, NSWindowList, NSCountWindowsForContext, and NSWindowListForContext are deprecated on Mac OS 10.6 and later.  Use +[NSWindow windowNumbersWithOptions:] instead */
-APPKIT_EXTERN void NSCountWindows(NSInteger *count);
-APPKIT_EXTERN void NSWindowList(NSInteger size, NSInteger list[]);
-APPKIT_EXTERN void NSCountWindowsForContext(NSInteger context, NSInteger *count);
-APPKIT_EXTERN void NSWindowListForContext(NSInteger context, NSInteger size, NSInteger list[]);
+APPKIT_EXTERN void NSCountWindows(Int *count);
+APPKIT_EXTERN void NSWindowList(Int size, NSInteger list[]);
+APPKIT_EXTERN void NSCountWindowsForContext(Int context, NSInteger *count);
+APPKIT_EXTERN void NSWindowListForContext(Int context, NSInteger size, NSInteger list[]);
 

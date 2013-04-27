@@ -47,15 +47,15 @@ extern class NSSegmentedCell extends NSActionCell {
 
 /* Number of segments
 */
-- (void)setSegmentCount:(NSInteger)count;
-- (NSInteger)segmentCount;
+- (void)setSegmentCount:(Int)count;
+- (Int)segmentCount;
 
 /* Which button is active. May turn off other segments depending on mode.
 */
-- (void)setSelectedSegment:(NSInteger)selectedSegment;
-- (NSInteger)selectedSegment;
+- (void)setSelectedSegment:(Int)selectedSegment;
+- (Int)selectedSegment;
 
-- (BOOL)selectSegmentWithTag:(NSInteger)tag;
+- (BOOL)selectSegmentWithTag:(Int)tag;
 
 /* For keyboard UI. Wraps.
 */
@@ -70,34 +70,34 @@ extern class NSSegmentedCell extends NSActionCell {
 
 /* Width of 0 means autosize to fit
 */
-- (void)setWidth:(Float)width forSegment:(NSInteger)segment;
-- (Float)widthForSegment:(NSInteger)segment;
+- (void)setWidth:(Float)width forSegment:(Int)segment;
+- (Float)widthForSegment:(Int)segment;
 
-- (void)setImage:(NSImage *)image forSegment:(NSInteger)segment;
-- (NSImage *)imageForSegment:(NSInteger)segment;
-
-
-- (void)setImageScaling:(NSImageScaling)scaling forSegment:(NSInteger)segment NS_AVAILABLE_MAC(10_5);
-- (NSImageScaling)imageScalingForSegment:(NSInteger)segment NS_AVAILABLE_MAC(10_5);
+- (void)setImage:(NSImage *)image forSegment:(Int)segment;
+- (NSImage *)imageForSegment:(Int)segment;
 
 
-- (void)setLabel:(NSString *)label forSegment:(NSInteger)segment;
-- (NSString *)labelForSegment:(NSInteger)segment;
+- (void)setImageScaling:(NSImageScaling)scaling forSegment:(Int)segment NS_AVAILABLE_MAC(10_5);
+- (NSImageScaling)imageScalingForSegment:(Int)segment NS_AVAILABLE_MAC(10_5);
 
-- (void)setSelected:(BOOL)selected forSegment:(NSInteger)segment;
-- (BOOL)isSelectedForSegment:(NSInteger)segment;
 
-- (void)setEnabled:(BOOL)enabled forSegment:(NSInteger)segment;
-- (BOOL)isEnabledForSegment:(NSInteger)segment;
+- (void)setLabel:(NSString *)label forSegment:(Int)segment;
+- (NSString *)labelForSegment:(Int)segment;
 
-- (void)setMenu:(NSMenu *)menu forSegment:(NSInteger)segment;
-- (NSMenu *)menuForSegment:(NSInteger)segment;
+- (void)setSelected:(BOOL)selected forSegment:(Int)segment;
+- (BOOL)isSelectedForSegment:(Int)segment;
 
-- (void)setToolTip:(NSString *)toolTip forSegment:(NSInteger)segment;
-- (NSString *)toolTipForSegment:(NSInteger)segment;
+- (void)setEnabled:(BOOL)enabled forSegment:(Int)segment;
+- (BOOL)isEnabledForSegment:(Int)segment;
 
-- (void)setTag:(NSInteger)tag forSegment:(NSInteger)segment;
-- (NSInteger)tagForSegment:(NSInteger)segment;
+- (void)setMenu:(NSMenu *)menu forSegment:(Int)segment;
+- (NSMenu *)menuForSegment:(Int)segment;
+
+- (void)setToolTip:(NSString *)toolTip forSegment:(Int)segment;
+- (NSString *)toolTipForSegment:(Int)segment;
+
+- (void)setTag:(Int)tag forSegment:(Int)segment;
+- (Int)tagForSegment:(Int)segment;
 
 /* see NSSegmentedControl.h for segment style names and values */
 - (void)setSegmentStyle:(NSSegmentStyle)segmentStyle NS_AVAILABLE_MAC(10_5);
@@ -105,7 +105,7 @@ extern class NSSegmentedCell extends NSActionCell {
 
 /* For custom content drawing. frame has been adjusted to content area
 */
-- (void)drawSegment:(NSInteger)segment inFrame:(NSRect)frame withView:(NSView *)controlView;
+- (void)drawSegment:(Int)segment inFrame:(NSRect)frame withView:(NSView *)controlView;
 
 }
 
@@ -113,7 +113,7 @@ extern class NSSegmentedCell extends NSActionCell {
 extern class NSSegmentedCell (NSSegmentBackgroundStyle)
 /* Describes the surface drawn onto in -[NSCell drawSegment:inFrame:withView:]. That method draws a segment interior, not the segment bezel.  This is both an override point and a useful method to call. A segmented cell that draws a custom bezel would override this to describe that surface. A cell that has custom segment drawing might query this method to help pick an image that looks good on the cell. Calling this method gives you some independence from changes in framework art style.
 */
-- (NSBackgroundStyle)interiorBackgroundStyleForSegment:(NSInteger)segment NS_AVAILABLE_MAC(10_5);
+- (NSBackgroundStyle)interiorBackgroundStyleForSegment:(Int)segment NS_AVAILABLE_MAC(10_5);
 }
 
 

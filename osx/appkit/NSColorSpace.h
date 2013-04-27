@@ -56,7 +56,7 @@ extern class NSColorSpace extends NSObject, implements NSObject> {
 */
 - (CGColorSpaceRef)CGColorSpace  NS_AVAILABLE_MAC(10_5);
 
-- (NSInteger)numberOfColorComponents;		// Does not include alpha
+- (Int)numberOfColorComponents;		// Does not include alpha
 - (NSColorSpaceModel)colorSpaceModel;
 - (NSString *)localizedName;			// Will return nil if no localized name
 

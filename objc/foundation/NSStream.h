@@ -50,7 +50,7 @@ extern class NSStream extends NSObject
 // NSInputStream is an abstract class representing the base functionality of a read stream.
 // Subclassers are required to implement these methods.
 extern class NSInputStream extends NSStream
-- (NSInteger)read:(uint8_t *)buffer maxLength:(NSUInteger)len;
+- (Int)read:(uint8_t *)buffer maxLength:(NSUInteger)len;
     // reads up to length bytes into the supplied buffer, which must be at least of size len. Returns the actual number of bytes read.
 
 - (Bool)getBuffer:(uint8_t **)buffer length:(NSUInteger *)len;
@@ -63,7 +63,7 @@ extern class NSInputStream extends NSStream
 // NSOutputStream is an abstract class representing the base functionality of a write stream.
 // Subclassers are required to implement these methods.
 extern class NSOutputStream extends NSStream
-- (NSInteger)write:(const uint8_t *)buffer maxLength:(NSUInteger)len;
+- (Int)write:(const uint8_t *)buffer maxLength:(NSUInteger)len;
     // writes the bytes from the specified buffer to the stream up to len bytes. Returns the number of bytes actually written.
 
 - (Bool)hasSpaceAvailable;
@@ -72,7 +72,7 @@ extern class NSOutputStream extends NSStream
 
 #if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
 extern class NSStream (NSSocketStreamCreationExtensions)
-+ (void)getStreamsToHost:(NSHost *)host port:(NSInteger)port inputStream:(NSInputStream **)inputStream outputStream:(NSOutputStream **)outputStream;
++ (void)getStreamsToHost:(NSHost *)host port:(Int)port inputStream:(NSInputStream **)inputStream outputStream:(NSOutputStream **)outputStream;
 }
 #endif
 

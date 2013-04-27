@@ -377,7 +377,7 @@ extern class AVPlayerItem (AVPlayerItemTimeControl)
  @discussion
    The size of each step depends on the enabled AVPlayerItemTracks of the AVPlayerItem. 
  */
-- (void)stepByCount:(NSInteger)stepCount;
+- (void)stepByCount:(Int)stepCount;
 
 /*!
  	public var 		timebase

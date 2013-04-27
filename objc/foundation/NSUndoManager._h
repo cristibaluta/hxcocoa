@@ -38,7 +38,7 @@ extern class NSUndoManager : NSObject {
 - (void)endUndoGrouping;
     // These nest.
 
-- (NSInteger)groupingLevel;
+- (Int)groupingLevel;
     // Zero means no open group.
 
         /* Enable/Disable registration */

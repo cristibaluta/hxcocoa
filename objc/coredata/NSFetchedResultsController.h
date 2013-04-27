@@ -23,11 +23,11 @@ Typical use
 	After creating an instance, the performFetch: method should be called to actually perform the fetching. 
 	Once configured, this class can be a helper class when implementing the following methods from the UITableViewDataSource protocol
 
-- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section;
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView; 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section; 
+- (Int)tableView:(UITableView *)table numberOfRowsInSection:(Int)section;
+- (Int)numberOfSectionsInTableView:(UITableView *)tableView; 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(Int)section; 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView;   
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index; 
+- (Int)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(Int)index; 
 
 	The instance of NSFetchedResultsController also registers to receive change notifications on the managed object context that holds the fetched objects. Any change in the context that affects the result set or section information is properly processed. A delegate can be set on the class so that it's also notified when the result objects have changed. This would typically be used to update the display of the table view.  
 	WARNING: The controller only performs change tracking if a delegate is set and responds to any of the change tracking notification methods.  See the NSFetchedResultsControllerDelegate protocol for which delegate methods are change tracking.
@@ -175,18 +175,18 @@ extern class NSFetchedResultsController extends NSObject {
 /* Returns an array of objects that implement the NSFetchedResultsSectionInfo protocol.
    It's expected that developers use the returned array when implementing the following methods of the UITableViewDataSource protocol
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView; 
-- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section;
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section; 
+- (Int)numberOfSectionsInTableView:(UITableView *)tableView; 
+- (Int)tableView:(UITableView *)table numberOfRowsInSection:(Int)section;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(Int)section; 
 
 */
 	public var NSArray *sections;
 
 /* Returns the section number for a given section title and index in the section index.
     It's expected that developers call this method when executing UITableViewDataSource's
-	- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index;
+	- (Int)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(Int)index;
 */
-- (NSInteger)sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)sectionIndex;
+- (Int)sectionForSectionIndexTitle:(NSString *)title atIndex:(Int)sectionIndex;
 
 }
 

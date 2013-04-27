@@ -67,14 +67,14 @@ extern class NSPasteboard extends NSObject
 
 - (NSString *)name;
 
-- (NSInteger)changeCount;
+- (Int)changeCount;
 
 - (void)releaseGlobally;
 
 
 /* Clears the existing contents of the pasteboard, preparing it for new contents.  This is the first step in providing data on the pasteboard.  Returns the change count of the pasteboard.
 */
-- (NSInteger)clearContents NS_AVAILABLE_MAC(10_6);
+- (Int)clearContents NS_AVAILABLE_MAC(10_6);
 
 
 /* Writes the data of an array of objects that implement the NSPasteboardWriting protocol (including NSPasteboardItem instances).  Returns NO if the items were not successfully added to the pasteboard.
@@ -114,11 +114,11 @@ Example: there are five items on the pasteboard, two contain TIFF data, two cont
 
 /* This method is the equivalent of calling -clearContents, implicitly writing the first pasteboard item, and then calling -addTypes:owner: to promise types for the first pasteboard item.  In general, this method should not be used with -writeObjects: since -writeObjects: will always write additional items to the pasteboard, and will not affect items already on the pasteboard, including the item implicitly created by this method.
 */
-- (NSInteger)declareTypes:(NSArray *)newTypes owner:(id)newOwner;
+- (Int)declareTypes:(NSArray *)newTypes owner:(id)newOwner;
 
 /* This method adds promises for the specified types to the first pasteboard item.  If the data for those types is provided immediately, the owner can be nil.  If the data for the added types will be provided lazily when requested from the pasteboard, an owner object must be provided that implements the -pasteboard:provideDataForType: method of the NSPasteboardOwner informal protocol.
 */
-- (NSInteger)addTypes:(NSArray *)newTypes owner:(id)newOwner;
+- (Int)addTypes:(NSArray *)newTypes owner:(id)newOwner;
 
 /* These methods provide information about the types available from the entire pasteboard.
 */

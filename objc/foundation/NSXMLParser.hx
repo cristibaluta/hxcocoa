@@ -208,8 +208,8 @@ extern class NSXMLParser extends NSObject {
 extern class NSXMLParser (NSXMLParserLocatorAdditions)
 - (NSString *)publicID;
 - (NSString *)systemID;
-- (NSInteger)lineNumber;
-- (NSInteger)columnNumber;
+- (Int)lineNumber;
+- (Int)columnNumber;
 }
 
 /*
@@ -298,7 +298,7 @@ extern class NSXMLParser (NSXMLParserLocatorAdditions)
 FOUNDATION_EXPORT NSString * const NSXMLParserErrorDomain	NS_AVAILABLE(10_3, 2_0);  // for use with NSError.
 
 // Error reporting
-typedef NS_ENUM(NSInteger, NSXMLParserError) {
+typedef NS_ENUM(Int, NSXMLParserError) {
     NSXMLParserInternalError = 1,
     NSXMLParserOutOfMemoryError = 2,
     NSXMLParserDocumentStartError = 3,

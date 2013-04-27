@@ -118,7 +118,7 @@ extern class NSObject (WebResourceLoadDelegate)
     @param length The amount of new data received.  This is not the total amount, just the new amount received.
     @param dataSource The dataSource that initiated the load.
 */
-- (void)webView:(WebView *)sender resource:(id)identifier didReceiveContentLength:(NSInteger)length fromDataSource:(WebDataSource *)dataSource;
+- (void)webView:(WebView *)sender resource:(id)identifier didReceiveContentLength:(Int)length fromDataSource:(WebDataSource *)dataSource;
 
 /*!
     @method webView:resource:didFinishLoadingFromDataSource:

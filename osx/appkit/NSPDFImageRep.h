@@ -23,9 +23,9 @@ extern class NSPDFImageRep extends NSImageRep
 - (NSData*)PDFRepresentation;
 - (NSRect)bounds;			// for current page
 
-- (void) setCurrentPage:(NSInteger)page;	// 0 based
-- (NSInteger)  currentPage;
-- (NSInteger)  pageCount;
+- (void) setCurrentPage:(Int)page;	// 0 based
+- (Int)  currentPage;
+- (Int)  pageCount;
 
 }
 

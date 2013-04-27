@@ -76,7 +76,7 @@ typedef NSUInteger NSDraggingItemEnumerationOptions;
 - (NSImage *)draggedImage;
 - (NSPasteboard *)draggingPasteboard;
 - (id)draggingSource;
-- (NSInteger)draggingSequenceNumber;
+- (Int)draggingSequenceNumber;
 - (void)slideDraggedImageTo:(NSPoint)screenPoint;
 - (NSArray *)namesOfPromisedFilesDroppedAtDestination:(NSURL *)dropDestination;
 

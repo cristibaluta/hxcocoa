@@ -9,18 +9,18 @@ package ios.ui;
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, UIPrintInfoOutputType) {
+typedef NS_ENUM(Int, UIPrintInfoOutputType) {
     UIPrintInfoOutputGeneral,     // B&W or color, normal quality output for mixed text, graphics, and images
     UIPrintInfoOutputPhoto,       // B&W or color, best quality output for images
     UIPrintInfoOutputGrayscale,   // B&W content only
 };
 
-typedef NS_ENUM(NSInteger, UIPrintInfoOrientation) {
+typedef NS_ENUM(Int, UIPrintInfoOrientation) {
     UIPrintInfoOrientationPortrait,
     UIPrintInfoOrientationLandscape,
 };
 
-typedef NS_ENUM(NSInteger, UIPrintInfoDuplex) {
+typedef NS_ENUM(Int, UIPrintInfoDuplex) {
     UIPrintInfoDuplexNone,
     UIPrintInfoDuplexLongEdge,       // flip back page along long edge (same orientation in portrait, flipped for landscape)
     UIPrintInfoDuplexShortEdge,      // flip back page along short edge (flipped orientation for portrait, same in landscape)

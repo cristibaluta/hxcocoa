@@ -100,7 +100,7 @@ enum {
 };
 
 /* In order to customize a return value for a button:
-   setTag:(NSInteger)tag;	setting a tag on a button will cause that tag to be the button's return value
+   setTag:(Int)tag;	setting a tag on a button will cause that tag to be the button's return value
    
    Note that we reserve the use of the tag for this purpose.  We also reserve the use of the target and the action.
    
@@ -146,11 +146,11 @@ enum {
 
 /* Run the alert as an application-modal panel and return the result.
 */
-- (NSInteger)runModal;
+- (Int)runModal;
 
 /* Run the alert as a sheet.  didEndSelector will be invoked after the return value is known but before the sheet is dismissed.  Callers that want to dismiss the sheet themselves before carrying out an action in response to the return value should do so by calling orderOut: on [alert window].  The didEndSelector should have the following signature:
 
-- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(Int)returnCode contextInfo:(void *)contextInfo;
 */
 - (void)beginSheetModalForWindow:(NSWindow *)window modalDelegate:(id)delegate didEndSelector:(SEL)didEndSelector contextInfo:(void *)contextInfo;
 

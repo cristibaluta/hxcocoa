@@ -60,7 +60,7 @@ extern class NSPrinterextends NSObject<NSCopying, NSCoding> {
 
 /* Return the PostScript language level of the printer if it is a PostScript printer, or 0 if it is not a PostScript printer or for failure.
 */
-- (NSInteger)languageLevel;
+- (Int)languageLevel;
 
 /* Given a valid paper name, return the corresponding paper size in points, or NSZeroSize for failure.
 */

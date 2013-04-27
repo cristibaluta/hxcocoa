@@ -118,12 +118,12 @@ extern class GKMatchmaker extends NSObject {
 // Query the server for recent activity in the specified player group. A larger value indicates that a given group has seen more recent activity. Error will be nil on success.
 // Possible reasons for error:
 // 1. Communications failure
-- (void)queryPlayerGroupActivity:(NSUInteger)playerGroup withCompletionHandler:(void(^)(NSInteger activity, NSError *error))completionHandler;
+- (void)queryPlayerGroupActivity:(NSUInteger)playerGroup withCompletionHandler:(void(^)(Int activity, NSError *error))completionHandler;
 
 // Query the server for recent activity for all the player groups of that game. Error will be nil on success.
 // Possible reasons for error:
 // 1. Communications failure
-- (void)queryActivityWithCompletionHandler:(void(^)(NSInteger activity, NSError *error))completionHandler;
+- (void)queryActivityWithCompletionHandler:(void(^)(Int activity, NSError *error))completionHandler;
 
 
 // Start browsing for nearby players that can be invited to a match. The reachableHandler will be called for each player found with a compatible game. It may be called more than once for the same player if that player ever becomes unreachable (e.g. moves out of range). You should call stopBrowsingForNearbyPlayers when finished browsing.

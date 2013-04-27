@@ -50,7 +50,7 @@ extern class NSTextStorage extends NSMutableAttributedString {
 
 /* If there are no outstanding beginEditing calls, this method calls processEditing to cause post-editing stuff to happen. This method has to be called by the primitives after changes are made. The range argument to edited:... is the range in the original string (before the edit).
 */
-- (void)edited:(NSUInteger)editedMask range:(NSRange)range changeInLength:(NSInteger)delta;
+- (void)edited:(NSUInteger)editedMask range:(NSRange)range changeInLength:(Int)delta;
 
 /* This is called from edited:range:changeInLength: or endEditing. This method sends out NSTextStorageWillProcessEditing, then fixes the attributes, then sends out NSTextStorageDidProcessEditing, and finally notifies the layout managers of change with the textStorage:edited:range:changeInLength:invalidatedRange: method.
 */
@@ -70,7 +70,7 @@ extern class NSTextStorage extends NSMutableAttributedString {
 */       
 - (NSUInteger)editedMask;
 - (NSRange)editedRange;
-- (NSInteger)changeInLength;
+- (Int)changeInLength;
 
 /* Set/get the delegate
 */

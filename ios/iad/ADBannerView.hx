@@ -3,7 +3,7 @@ package ios.iad;
 #import <UIKit/UIKit.h>
 
 
-typedef NS_ENUM(NSInteger, ADError) {
+typedef NS_ENUM(Int, ADError) {
 #if __IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
     ADErrorUnknown = 0,
     ADErrorServerFailure = 1,
@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, ADError) {
 } NS_ENUM_AVAILABLE_IOS(4_0);
 
 // Supported ad sizes:
-typedef NS_ENUM(NSInteger, ADAdType) {
+typedef NS_ENUM(Int, ADAdType) {
     // iPhone { portrait : 320x50, landscape : 480x32 } , iPad { portrait : 768x66, landscape : 1024x66 }
     ADAdTypeBanner,
     // iPad : 300x250, based on IAB "Medium Rectangle" Ad Unit

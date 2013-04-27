@@ -33,11 +33,11 @@ package ios.ui;
 // Specifies the section that should be scrolled to for the title at the given index.
 // This method allows you to map between a given item in the index
 // and a given section where there isn't a one-to-one mapping.
-- (NSInteger)sectionForSectionIndexTitleAtIndex:(NSInteger)indexTitleIndex;
+- (Int)sectionForSectionIndexTitleAtIndex:(Int)indexTitleIndex;
 
 // Returns the index of the section that will contain the object.
 // selector must not take any arguments and return an NSString.
-- (NSInteger)sectionForObject:(id)object collationStringSelector:(SEL)selector;
+- (Int)sectionForObject:(id)object collationStringSelector:(SEL)selector;
 
 // Used for sorting objects within the same section.
 // selector must not take any arguments and return an NSString.

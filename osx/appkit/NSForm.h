@@ -11,7 +11,7 @@
 
 extern class  NSForm extends NSMatrix
 
-- (NSInteger)indexOfSelectedItem;
+- (Int)indexOfSelectedItem;
 - (void)setEntryWidth:(Float)width;
 - (void)setInterlineSpacing:(Float)spacing;
 - (void)setBordered:(BOOL)flag;
@@ -20,13 +20,13 @@ extern class  NSForm extends NSMatrix
 - (void)setTextAlignment:(NSTextAlignment)mode;
 - (void)setTitleFont:(NSFont *)fontObj;
 - (void)setTextFont:(NSFont *)fontObj;
-- (id)cellAtIndex:(NSInteger)index;
-- (void)drawCellAtIndex:(NSInteger)index;
+- (id)cellAtIndex:(Int)index;
+- (void)drawCellAtIndex:(Int)index;
 - (NSFormCell *)addEntry:(NSString *)title;
-- (NSFormCell *)insertEntry:(NSString *)title atIndex:(NSInteger)index;
-- (void)removeEntryAtIndex:(NSInteger)index;
-- (NSInteger)indexOfCellWithTag:(NSInteger)aTag;
-- (void)selectTextAtIndex:(NSInteger)index;
+- (NSFormCell *)insertEntry:(NSString *)title atIndex:(Int)index;
+- (void)removeEntryAtIndex:(Int)index;
+- (Int)indexOfCellWithTag:(Int)aTag;
+- (void)selectTextAtIndex:(Int)index;
 - (void)setFrameSize:(NSSize)newSize;
 - (void)setTitleBaseWritingDirection:(NSWritingDirection)writingDirection;
 - (void)setTextBaseWritingDirection:(NSWritingDirection)writingDirection;

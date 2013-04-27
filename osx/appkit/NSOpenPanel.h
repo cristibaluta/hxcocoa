@@ -58,11 +58,11 @@ extern class NSOpenPanel (NSDeprecated)
     Set the -directoryURL property instead of passing in a 'path'.
     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
  */
-- (NSInteger)runModalForDirectory:(NSString *)path file:(NSString *)name types:(NSArray *)fileTypes NS_DEPRECATED_MAC(10_0, 10_6);
+- (Int)runModalForDirectory:(NSString *)path file:(NSString *)name types:(NSArray *)fileTypes NS_DEPRECATED_MAC(10_0, 10_6);
 
 /* Use -runModal instead. 
     Set the -allowedFileTypes property instead of passing in the 'fileTypes'.
  */
-- (NSInteger)runModalForTypes:(NSArray *)fileTypes NS_DEPRECATED_MAC(10_0, 10_6);
+- (Int)runModalForTypes:(NSArray *)fileTypes NS_DEPRECATED_MAC(10_0, 10_6);
 
 }

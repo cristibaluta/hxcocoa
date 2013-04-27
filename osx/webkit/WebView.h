@@ -706,7 +706,7 @@ extern class WebView (WebViewEditing)
 - (BOOL)smartInsertDeleteEnabled;
 - (void)setContinuousSpellCheckingEnabled:(BOOL)flag;
 - (BOOL)isContinuousSpellCheckingEnabled;
-- (NSInteger)spellCheckerDocumentTag;
+- (Int)spellCheckerDocumentTag;
 - (NSUndoManager *)undoManager;
 - (void)setEditingDelegate:(id)delegate;
 - (id)editingDelegate;

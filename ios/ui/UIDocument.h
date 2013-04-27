@@ -8,14 +8,14 @@ package ios.ui;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, UIDocumentChangeKind) {
+typedef NS_ENUM(Int, UIDocumentChangeKind) {
     UIDocumentChangeDone,
     UIDocumentChangeUndone,
     UIDocumentChangeRedone,
     UIDocumentChangeCleared
 };
 
-typedef NS_ENUM(NSInteger, UIDocumentSaveOperation) {
+typedef NS_ENUM(Int, UIDocumentSaveOperation) {
     UIDocumentSaveForCreating,
     UIDocumentSaveForOverwriting
 };

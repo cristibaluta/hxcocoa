@@ -55,12 +55,12 @@ extern class NSImageRep extends NSObject, implements NSCopying, NSCoding> {
 - (BOOL)isOpaque;
 - (void)setColorSpaceName:(NSString *)string;
 - (NSString *)colorSpaceName;
-- (void)setBitsPerSample:(NSInteger)anInt;
-- (NSInteger)bitsPerSample;
-- (void)setPixelsWide:(NSInteger)anInt;
-- (NSInteger)pixelsWide;
-- (void)setPixelsHigh:(NSInteger)anInt;
-- (NSInteger)pixelsHigh;
+- (void)setBitsPerSample:(Int)anInt;
+- (Int)bitsPerSample;
+- (void)setPixelsWide:(Int)anInt;
+- (Int)pixelsWide;
+- (void)setPixelsHigh:(Int)anInt;
+- (Int)pixelsHigh;
 
 /* The rest of the methods all deal with subclassers which can read/write data in files or pasteboards. 
 */

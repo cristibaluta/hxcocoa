@@ -108,7 +108,7 @@ extern class NSTableRowView extends NSView {
 
 /* Provides access to the given view at a particular column. This is the only way to access cell views after the row view has been removed from the table. 
  */
-- (id)viewAtColumn:(NSInteger)column;
+- (id)viewAtColumn:(Int)column;
 
 /* Provides access to the number of columns represented by views in this NSTableRowView. This may not be equal to the number of columns in the enclosing NSTableView, if this row view is a group style and has a single view that spans the entire width of the row.
  */

@@ -271,7 +271,7 @@ extern class NSLayoutManager extends NSObject, implements NSObject, NSGlyphStora
 
 /************************** Invalidation **************************/
 
-- (void)invalidateGlyphsForCharacterRange:(NSRange)charRange changeInLength:(NSInteger)delta actualCharacterRange:(NSRangePointer)actualCharRange;
+- (void)invalidateGlyphsForCharacterRange:(NSRange)charRange changeInLength:(Int)delta actualCharacterRange:(NSRangePointer)actualCharRange;
     // This removes all glyphs for the old character range, adjusts the character indices of all the subsequent glyphs by the change in length, and invalidates the new character range.  If actualCharRange is non-NULL it will be set to the actual range invalidated after any necessary expansion.
 
 - (void)invalidateLayoutForCharacterRange:(NSRange)charRange actualCharacterRange:(NSRangePointer)actualCharRange NS_AVAILABLE_MAC(10_5);
@@ -282,7 +282,7 @@ extern class NSLayoutManager extends NSObject, implements NSObject, NSGlyphStora
 - (void)invalidateDisplayForGlyphRange:(NSRange)glyphRange;
     // Invalidates display for the glyph or character range given.  For the character range variant, unlaid parts of the range are remembered and will be redisplayed at some point later when the layout is available.  For the glyph range variant any part of the range that does not yet have glyphs generated is ignored.  Neither method actually causes layout.
 
-- (void)textStorage:(NSTextStorage *)str edited:(NSUInteger)editedMask range:(NSRange)newCharRange changeInLength:(NSInteger)delta invalidatedRange:(NSRange)invalidatedCharRange;
+- (void)textStorage:(NSTextStorage *)str edited:(NSUInteger)editedMask range:(NSRange)newCharRange changeInLength:(Int)delta invalidatedRange:(NSRange)invalidatedCharRange;
     // Sent from processEditing in NSTextStorage.  The newCharRange is the range in the final string which was explicitly edited.  The invalidatedRange includes portions that changed as a result of attribute fixing. invalidatedRange is either equal to newCharRange or larger.  Layout managers should not change the contents of the text storage during the execution of this message.
 
 /************************ Causing glyph generation and layout ************************/
@@ -314,7 +314,7 @@ extern class NSLayoutManager extends NSObject, implements NSObject, NSGlyphStora
 - (void)setCharacterIndex:(NSUInteger)charIndex forGlyphAtIndex:(NSUInteger)glyphIndex;
     // Sets the index of the corresponding character for the glyph at the given glyphIndex.  The glyph must already be present.  This is intended for use in the cases where the mapping between characters and glyphs is not one-to-one, and should not be called in the normal case.
 
-- (void)setIntAttribute:(NSInteger)attributeTag value:(NSInteger)val forGlyphAtIndex:(NSUInteger)glyphIndex;
+- (void)setIntAttribute:(Int)attributeTag value:(Int)val forGlyphAtIndex:(NSUInteger)glyphIndex;
     // Part of the NSGlyphStorage protocol, for use by the glyph generator.  Allows the glyph generator to set attributes.  It is not usually necessary for anyone but the glyph generator (and perhaps the typesetter) to call it.  It is provided as a public method so subclassers can extend it to accept other glyph attributes.  To add new glyph attributes to the text system you must do two things.  First, you need to arrange for the glyph generator and/or typesetter to generate and interpret it.  Second, you need to subclass NSLayoutManager to provide someplace to store the new attribute, overriding this method and -intAttribute:forGlyphAtIndex: to recognize the new attribute tags and respond to them, while passing any other attributes to the superclass's implementation.  NSLayoutManager's implementation understands the glyph attributes which it is prepared to store, as enumerated above.
 
 - (void)invalidateGlyphsOnLayoutInvalidationForGlyphRange:(NSRange)glyphRange NS_AVAILABLE_MAC(10_5);
@@ -336,7 +336,7 @@ extern class NSLayoutManager extends NSObject, implements NSObject, NSGlyphStora
 - (NSUInteger)glyphIndexForCharacterAtIndex:(NSUInteger)charIndex NS_AVAILABLE_MAC(10_5);
     // If non-contiguous layout is not enabled, this will cause generation of all glyphs up to and including those associated with the specified character.  It will return the glyph index for the first glyph associated with the character at the specified index.
 
-- (NSInteger)intAttribute:(NSInteger)attributeTag forGlyphAtIndex:(NSUInteger)glyphIndex;
+- (Int)intAttribute:(Int)attributeTag forGlyphAtIndex:(NSUInteger)glyphIndex;
     // If non-contiguous layout is not enabled, this will cause generation of all glyphs up to and including glyphIndex.  It will return the value for the given glyph attribute at the glyph index specified.  This is primarily for the use of the glyph generator and typesetter.  Clients may override this method to return any custom glyph attributes they wish to support.  
 
 - (NSUInteger)getGlyphsInRange:(NSRange)glyphRange glyphs:(NSGlyph *)glyphBuffer characterIndexes:(NSUInteger *)charIndexBuffer glyphInscriptions:(NSGlyphInscription *)inscribeBuffer elasticBits:(BOOL *)elasticBuffer;
@@ -536,12 +536,12 @@ extern class NSLayoutManager (NSTextViewSupport)
 - (void)fillBackgroundRectArray:(NSRectArray)rectArray count:(NSUInteger)rectCount forCharacterRange:(NSRange)charRange color:(NSColor *)color NS_AVAILABLE_MAC(10_6);
    // This is the primitive used by -drawBackgroundForGlyphRange:atPoint: for actually filling rects with a particular background color, whether due to a background color attribute, a selected or marked range highlight, a block decoration, or any other rect fill needed by that method.  As with -showPackedGlyphs:..., the character range and color are merely for informational purposes; the color will already be set in the graphics state.  If for any reason you modify it, you must restore it before returning from this method.  You should never call this method, but you might override it.  The default implementation will simply fill the specified rect array.
 
-- (void)drawUnderlineForGlyphRange:(NSRange)glyphRange underlineType:(NSInteger)underlineVal baselineOffset:(Float)baselineOffset lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
-- (void)underlineGlyphRange:(NSRange)glyphRange underlineType:(NSInteger)underlineVal lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
+- (void)drawUnderlineForGlyphRange:(NSRange)glyphRange underlineType:(Int)underlineVal baselineOffset:(Float)baselineOffset lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
+- (void)underlineGlyphRange:(NSRange)glyphRange underlineType:(Int)underlineVal lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
     // The first of these methods actually draws an appropriate underline for the glyph range given.  The second method potentially breaks the range it is given up into subranges and calls drawUnderline... for ranges that should actually have the underline drawn.  As examples of why there are two methods, consider two situations.  First, in all cases you don't want to underline the leading and trailing whitespace on a line.  The -underlineGlyphRange... method is passed glyph ranges that have underlining turned on, but it will then look for this leading and trailing white space and only pass the ranges that should actually be underlined to -drawUnderline...  Second, if the underlineType: indicates that only words, (i.e., no whitespace), should be underlined, then -underlineGlyphRange... will carve the range it is passed up into words and only pass word ranges to -drawUnderline.
 
-- (void)drawStrikethroughForGlyphRange:(NSRange)glyphRange strikethroughType:(NSInteger)strikethroughVal baselineOffset:(Float)baselineOffset lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
-- (void)strikethroughGlyphRange:(NSRange)glyphRange strikethroughType:(NSInteger)strikethroughVal lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
+- (void)drawStrikethroughForGlyphRange:(NSRange)glyphRange strikethroughType:(Int)strikethroughVal baselineOffset:(Float)baselineOffset lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
+- (void)strikethroughGlyphRange:(NSRange)glyphRange strikethroughType:(Int)strikethroughVal lineFragmentRect:(NSRect)lineRect lineFragmentGlyphRange:(NSRange)lineGlyphRange containerOrigin:(NSPoint)containerOrigin;
     // These two methods parallel the two corresponding underline methods, but draw strikethroughs instead of underlines.
 
 }

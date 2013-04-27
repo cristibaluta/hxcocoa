@@ -93,7 +93,7 @@ For backward binary compatibility with Mac OS 10.3 and earlier, the default impl
 
 /* Present the application-modal open panel to the user, specifying a list of UTIs (in Mac OS 10.5), file name extensions, and encoded HFS file types for openable files. Return NSOKButton or NSCancelButton depending on how the user dismisses the panel.
 */
-- (NSInteger)runModalOpenPanel:(NSOpenPanel *)openPanel forTypes:(NSArray *)types;
+- (Int)runModalOpenPanel:(NSOpenPanel *)openPanel forTypes:(NSArray *)types;
 
 #if NS_BLOCKS_AVAILABLE
 

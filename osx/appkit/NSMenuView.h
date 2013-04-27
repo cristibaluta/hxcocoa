@@ -73,12 +73,12 @@ extern class NSMenuView extends NSView {
 - (NSFont *)font;
 
 - (NSRect)innerRect; // inside the bezel (if any)
-- (NSRect)rectOfItemAtIndex:(NSInteger)index;
-- (NSInteger)indexOfItemAtPoint:(NSPoint)point;
-- (void)setNeedsDisplayForItemAtIndex:(NSInteger)index;
+- (NSRect)rectOfItemAtIndex:(Int)index;
+- (Int)indexOfItemAtPoint:(NSPoint)point;
+- (void)setNeedsDisplayForItemAtIndex:(Int)index;
 
-- (void)setHighlightedItemIndex:(NSInteger)index;
-- (NSInteger)highlightedItemIndex;
+- (void)setHighlightedItemIndex:(Int)index;
+- (Int)highlightedItemIndex;
 
 - (Float)stateImageOffset;
 - (Float)stateImageWidth;
@@ -87,8 +87,8 @@ extern class NSMenuView extends NSView {
 - (Float)keyEquivalentOffset;
 - (Float)keyEquivalentWidth;
 
-- (void)setMenuItemCell:(NSMenuItemCell *)cell forItemAtIndex:(NSInteger)index;
-- (NSMenuItemCell *)menuItemCellForItemAtIndex:(NSInteger)index;
+- (void)setMenuItemCell:(NSMenuItemCell *)cell forItemAtIndex:(Int)index;
+- (NSMenuItemCell *)menuItemCellForItemAtIndex:(Int)index;
 
 - (NSMenuView *)attachedMenuView;
 
@@ -101,11 +101,11 @@ extern class NSMenuView extends NSView {
 - (BOOL)isTornOff;
 - (NSPoint)locationForSubmenu:(NSMenu *)aSubmenu;
 
-- (void)setWindowFrameForAttachingToRect:(NSRect)screenRect onScreen:(NSScreen *)screen preferredEdge:(NSRectEdge)edge popUpSelectedItem:(NSInteger)selectedItemIndex;
+- (void)setWindowFrameForAttachingToRect:(NSRect)screenRect onScreen:(NSScreen *)screen preferredEdge:(NSRectEdge)edge popUpSelectedItem:(Int)selectedItemIndex;
 - (void)detachSubmenu;
-- (void)attachSubmenuForItemAtIndex:(NSInteger)index;
+- (void)attachSubmenuForItemAtIndex:(Int)index;
 
-- (void)performActionWithHighlightingForItemAtIndex:(NSInteger)index;
+- (void)performActionWithHighlightingForItemAtIndex:(Int)index;
 
 - (BOOL)trackWithEvent:(NSEvent *)event;
 

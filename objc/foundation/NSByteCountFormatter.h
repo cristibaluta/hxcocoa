@@ -21,7 +21,7 @@ typedef NS_OPTIONS(NSUInteger, NSByteCountFormatterUnits) {
     NSByteCountFormatterUseAll          = 0x0FFFFUL 
 };
 
-typedef NS_ENUM(NSInteger, NSByteCountFormatterCountStyle) {
+typedef NS_ENUM(Int, NSByteCountFormatterCountStyle) {
     // Specifies display of file or storage byte counts. The actual behavior for this is platform-specific; on OS X 10.8, this uses the decimal style, but that may change over time.
     NSByteCountFormatterCountStyleFile   = 0,        
     // Specifies display of memory byte counts. The actual behavior for this is platform-specific; on OS X 10.8, this uses the binary style, but that may change over time.

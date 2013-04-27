@@ -130,11 +130,11 @@ extern class NSGradient extends NSObject, implements NSCopying, NSCoding> {
 
 
 /* The number of color stops in the color gradient */
-- (NSInteger)numberOfColorStops;
+- (Int)numberOfColorStops;
 
 
 /* Returns the color and location at a particular index in the color gradient */
-- (void)getColor:(NSColor **)color location:(Float *)location atIndex:(NSInteger)index;
+- (void)getColor:(NSColor **)color location:(Float *)location atIndex:(Int)index;
 
 
 /* This method will return the interpolated gradient value at the given location.  For example, in a two color gradient with white at location 0.0 and black at location 1.0, the interpolated color at location 0.5 would be 50% gray.

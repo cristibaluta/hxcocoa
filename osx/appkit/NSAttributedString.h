@@ -204,7 +204,7 @@ extern class NSAttributedString (NSAttributedStringKitAdditions) <NSPasteboardRe
 - (NSRange)rangeOfTextBlock:(NSTextBlock *)block atIndex:(NSUInteger)location;
 - (NSRange)rangeOfTextTable:(NSTextTable *)table atIndex:(NSUInteger)location;
 - (NSRange)rangeOfTextList:(NSTextList *)list atIndex:(NSUInteger)location;
-- (NSInteger)itemNumberInTextList:(NSTextList *)list atIndex:(NSUInteger)location;
+- (Int)itemNumberInTextList:(NSTextList *)list atIndex:(NSUInteger)location;
 
 /* Methods to create an attributed string by loading text documents in various formats.  In all of these methods, if the document attributes dict is not NULL, it will return a dictionary with various document-wide attributes.  The various possible attributes are specified above, as NS...DocumentAttribute.  The attributes supported vary by document type; for RTF and RTFD, all are supported except CharacterEncoding.
 */

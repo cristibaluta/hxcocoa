@@ -13,7 +13,7 @@
 FOUNDATION_EXPORT NSString * const NSNetServicesErrorCode;
 FOUNDATION_EXPORT NSString * const NSNetServicesErrorDomain;
 
-typedef NS_ENUM(NSInteger, NSNetServicesError) {
+typedef NS_ENUM(Int, NSNetServicesError) {
     
 /* An unknown error occured during resolution or publication.
 */
@@ -101,7 +101,7 @@ If publish: is called on an NSNetService instance initialized with this method, 
 - (Array<> *)addresses;
 
 /* The port of a resolved service. This returns -1 if the service has not been resolved. */
-- (NSInteger)port NS_AVAILABLE(10_5, 2_0);
+- (Int)port NS_AVAILABLE(10_5, 2_0);
  
 /* Advertises a given service on the network. This method returns immediately. Success or failure is indicated by callbacks to the NSNetService instance's delegate.
  

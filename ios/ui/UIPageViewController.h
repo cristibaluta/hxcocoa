@@ -7,24 +7,24 @@ package ios.ui;
 
 #import <UIKit/UIViewController.h>
 
-typedef NS_ENUM(NSInteger, UIPageViewControllerNavigationOrientation) {
+typedef NS_ENUM(Int, UIPageViewControllerNavigationOrientation) {
     UIPageViewControllerNavigationOrientationHorizontal = 0,
     UIPageViewControllerNavigationOrientationVertical = 1
 };
 
-typedef NS_ENUM(NSInteger, UIPageViewControllerSpineLocation) {
+typedef NS_ENUM(Int, UIPageViewControllerSpineLocation) {
     UIPageViewControllerSpineLocationNone = 0, // Returned if 'spineLocation' is queried when 'transitionStyle' is not 'UIPageViewControllerTransitionStylePageCurl'.
     UIPageViewControllerSpineLocationMin = 1,  // Requires one view controller.
     UIPageViewControllerSpineLocationMid = 2,  // Requires two view controllers.
     UIPageViewControllerSpineLocationMax = 3   // Requires one view controller.
 };   // Only pertains to 'UIPageViewControllerTransitionStylePageCurl'.
 
-typedef NS_ENUM(NSInteger, UIPageViewControllerNavigationDirection) {
+typedef NS_ENUM(Int, UIPageViewControllerNavigationDirection) {
     UIPageViewControllerNavigationDirectionForward,
     UIPageViewControllerNavigationDirectionReverse
 };  // For 'UIPageViewControllerNavigationOrientationHorizontal', 'forward' is right-to-left, like pages in a book. For 'UIPageViewControllerNavigationOrientationVertical', bottom-to-top, like pages in a wall calendar.
 
-typedef NS_ENUM(NSInteger, UIPageViewControllerTransitionStyle) {
+typedef NS_ENUM(Int, UIPageViewControllerTransitionStyle) {
     UIPageViewControllerTransitionStylePageCurl = 0, // Navigate between views via a page curl transition.
     UIPageViewControllerTransitionStyleScroll = 1 // Navigate between views by scrolling.
 };
@@ -98,7 +98,7 @@ extern interface UIPageViewControllerDataSource <NSObject>
 
 // A page indicator will be visible if both methods are implemented, transition style is 'UIPageViewControllerTransitionStyleScroll', and navigation orientation is 'UIPageViewControllerNavigationOrientationHorizontal'.
 // Both methods are called in response to a 'setViewControllers:...' call, but the presentation index is updated automatically in the case of gesture-driven navigation.
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController NS_AVAILABLE_IOS(6_0); // The number of items reflected in the page indicator.
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController NS_AVAILABLE_IOS(6_0); // The selected item reflected in the page indicator.
+- (Int)presentationCountForPageViewController:(UIPageViewController *)pageViewController NS_AVAILABLE_IOS(6_0); // The number of items reflected in the page indicator.
+- (Int)presentationIndexForPageViewController:(UIPageViewController *)pageViewController NS_AVAILABLE_IOS(6_0); // The selected item reflected in the page indicator.
 
 }

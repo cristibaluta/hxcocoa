@@ -69,42 +69,42 @@ extern class NSPopUpButtonCell extends NSMenuItemCell {
 // Adding and removing items
 - (void)addItemWithTitle:(NSString *)title;
 - (void)addItemsWithTitles:(NSArray *)itemTitles;
-- (void)insertItemWithTitle:(NSString *)title atIndex:(NSInteger)index;
+- (void)insertItemWithTitle:(NSString *)title atIndex:(Int)index;
 
 - (void)removeItemWithTitle:(NSString *)title;
-- (void)removeItemAtIndex:(NSInteger)index;
+- (void)removeItemAtIndex:(Int)index;
 - (void)removeAllItems;
 
 
 // Accessing the items
 - (NSArray *)itemArray;
-- (NSInteger)numberOfItems;
+- (Int)numberOfItems;
 
-- (NSInteger)indexOfItem:(NSMenuItem *)item;
-- (NSInteger)indexOfItemWithTitle:(NSString *)title;
-- (NSInteger)indexOfItemWithTag:(NSInteger)tag;
-- (NSInteger)indexOfItemWithRepresentedObject:(id)obj;
-- (NSInteger)indexOfItemWithTarget:(id)target andAction:(SEL)actionSelector;
+- (Int)indexOfItem:(NSMenuItem *)item;
+- (Int)indexOfItemWithTitle:(NSString *)title;
+- (Int)indexOfItemWithTag:(Int)tag;
+- (Int)indexOfItemWithRepresentedObject:(id)obj;
+- (Int)indexOfItemWithTarget:(id)target andAction:(SEL)actionSelector;
 
-- (NSMenuItem *)itemAtIndex:(NSInteger)index;
+- (NSMenuItem *)itemAtIndex:(Int)index;
 - (NSMenuItem *)itemWithTitle:(NSString *)title;
 - (NSMenuItem *)lastItem;
 
 
 // Dealing with selection
 - (void)selectItem:(NSMenuItem *)item;
-- (void)selectItemAtIndex:(NSInteger)index;
+- (void)selectItemAtIndex:(Int)index;
 - (void)selectItemWithTitle:(NSString *)title;
-- (BOOL)selectItemWithTag:(NSInteger)tag;
+- (BOOL)selectItemWithTag:(Int)tag;
 - (void)setTitle:(NSString *)aString;
 
 - (NSMenuItem *)selectedItem;
-- (NSInteger)indexOfSelectedItem;
+- (Int)indexOfSelectedItem;
 - (void)synchronizeTitleAndSelectedItem;
 
 
 // Title conveniences
-- (NSString *)itemTitleAtIndex:(NSInteger)index;
+- (NSString *)itemTitleAtIndex:(Int)index;
 - (NSArray *)itemTitles;
 - (NSString *)titleOfSelectedItem;
 

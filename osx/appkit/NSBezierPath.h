@@ -130,8 +130,8 @@ extern class NSBezierPath extends NSObject, implements NSCopying, NSCoding>
 - (void)setMiterLimit:(Float)miterLimit;
 - (Float)flatness;
 - (void)setFlatness:(Float)flatness;
-- (void)getLineDash:(Float *)pattern count:(NSInteger *)count phase:(Float *)phase;
-- (void)setLineDash:(const Float *)pattern count:(NSInteger)count phase:(Float)phase;
+- (void)getLineDash:(Float *)pattern count:(Int *)count phase:(Float *)phase;
+- (void)setLineDash:(const Float *)pattern count:(Int)count phase:(Float)phase;
 
 // Path operations.
 
@@ -158,23 +158,23 @@ extern class NSBezierPath extends NSObject, implements NSCopying, NSCoding>
 
 // Elements.
 
-- (NSInteger)elementCount;
+- (Int)elementCount;
 
 // `points' should contain space for at least three points.  `points'
 // may be NULL.  In the case of NSCurveToBezierPathElement, the order
 // of the points is controlPoint1 (points[0]), controlPoint2 (points[1]),
 // endPoint (points[2]).
-- (NSBezierPathElement)elementAtIndex:(NSInteger)index
+- (NSBezierPathElement)elementAtIndex:(Int)index
 		     associatedPoints:(NSPointArray)points;
 // As above with points == NULL.
-- (NSBezierPathElement)elementAtIndex:(NSInteger)index;
-- (void)setAssociatedPoints:(NSPointArray)points atIndex:(NSInteger)index;
+- (NSBezierPathElement)elementAtIndex:(Int)index;
+- (void)setAssociatedPoints:(NSPointArray)points atIndex:(Int)index;
 
 // Appending common paths
 
 - (void)appendBezierPath:(NSBezierPath *)path;
 - (void)appendBezierPathWithRect:(NSRect)rect;
-- (void)appendBezierPathWithPoints:(NSPointArray)points count:(NSInteger)count;
+- (void)appendBezierPathWithPoints:(NSPointArray)points count:(Int)count;
 - (void)appendBezierPathWithOvalInRect:(NSRect)rect;
 - (void)appendBezierPathWithArcWithCenter:(NSPoint)center radius:(Float)radius
 			       startAngle:(Float)startAngle
@@ -188,7 +188,7 @@ extern class NSBezierPath extends NSObject, implements NSCopying, NSCoding>
 				 toPoint:(NSPoint)point2
 				  radius:(Float)radius;
 - (void)appendBezierPathWithGlyph:(NSGlyph)glyph inFont:(NSFont *)font;
-- (void)appendBezierPathWithGlyphs:(NSGlyph *)glyphs count:(NSInteger)count
+- (void)appendBezierPathWithGlyphs:(NSGlyph *)glyphs count:(Int)count
 			    inFont:(NSFont *)font;
 - (void)appendBezierPathWithPackedGlyphs:(const char *)packedGlyphs;
 // Appends paths for a rounded rectangle.

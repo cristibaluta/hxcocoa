@@ -75,7 +75,7 @@ extern class NSTableColumn extends NSObject, implements NSObject, NSUserInterfac
 
 /* Allows per-row customization of the cell used for this NSTableColumn. NSTableView will call -[tableColumn dataCellForRow:] when drawing 'row'. By default this just calls -dataCell. Subclassers can override -dataCellForRow: if they need to potentially use different cells for different rows. On Leopard and higher, the NSTableView delegate method -tableView:dataCellForTableColumn:row: can be used as a convience to avoid subclassing NSTableColumn. In both cases, the returned cell should properly implement -copyWithZone:, since NSTableView may make copies of the cells.
  */
-- (id)dataCellForRow:(NSInteger)row;
+- (id)dataCellForRow:(Int)row;
 
 /* Gets and sets the editability state of this NSTableColumn. The default value is YES. When an NSTableView wants to start editing a dataCell, the following happens: 1. Check [tableColumn isEditable]. If that returns YES, check the (optional) delegate method with tableView:shouldEditTableColumn:row:. If that returns YES, check the [dataCell isEnabled] and [isEnabled isSelectable] states before attempting to edit.
  */

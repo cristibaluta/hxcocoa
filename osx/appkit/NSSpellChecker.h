@@ -68,25 +68,25 @@ extern class NSSpellChecker extends NSObject  {
 + (BOOL)sharedSpellCheckerExists;
 
 /* Returns a guaranteed unique tag to use as the spell document tag for a document.  You should use this method to generate tags, if possible, to avoid collisions with other objects that can be spell checked. */
-+ (NSInteger)uniqueSpellDocumentTag;
++ (Int)uniqueSpellDocumentTag;
 
 /* Initiates a spell-check of a string.  Returns the range of the first misspelled word (and optionally the wordCount by reference). */
-- (NSRange)checkSpellingOfString:(NSString *)stringToCheck startingAt:(NSInteger)startingOffset language:(NSString *)language wrap:(BOOL)wrapFlag inSpellDocumentWithTag:(NSInteger)tag wordCount:(NSInteger *)wordCount;
+- (NSRange)checkSpellingOfString:(NSString *)stringToCheck startingAt:(Int)startingOffset language:(NSString *)language wrap:(BOOL)wrapFlag inSpellDocumentWithTag:(Int)tag wordCount:(Int *)wordCount;
 
-- (NSRange)checkSpellingOfString:(NSString *)stringToCheck startingAt:(NSInteger)startingOffset;
+- (NSRange)checkSpellingOfString:(NSString *)stringToCheck startingAt:(Int)startingOffset;
 
 /* Just counts the words without checking spelling.  Returns -1 if counting words isn't supported by the spell server selected. */
-- (NSInteger)countWordsInString:(NSString *)stringToCount language:(NSString *)language;
+- (Int)countWordsInString:(NSString *)stringToCount language:(NSString *)language;
 
 /* Initiates a grammar-check of a string.  Returns the range of the first flagged sentence (or similar grammatical unit), and optionally an array of dictionaries describing details within this sentence.  Keys in the details dictionaries are described in Foundation/NSSpellServer.h. */
-- (NSRange)checkGrammarOfString:(NSString *)stringToCheck startingAt:(NSInteger)startingOffset language:(NSString *)language wrap:(BOOL)wrapFlag inSpellDocumentWithTag:(NSInteger)tag details:(NSArray **)details NS_AVAILABLE_MAC(10_5);
+- (NSRange)checkGrammarOfString:(NSString *)stringToCheck startingAt:(Int)startingOffset language:(NSString *)language wrap:(BOOL)wrapFlag inSpellDocumentWithTag:(Int)tag details:(NSArray **)details NS_AVAILABLE_MAC(10_5);
 
 /* Requests unified text checking for the given range of the given string.  The checkingTypes should be a bitmask of checking types from NSTextCheckingResult.h, describing which types of checking are desired.  The options dictionary allows clients to pass in options for certain types of checking.  The orthography and wordCount arguments will return by reference these two attributes of the range as a whole, while the return value is an array of NSTextCheckingResult objects describing particular items found during checking and their individual ranges, sorted by range origin, then range end, then result type. */  
-- (NSArray *)checkString:(NSString *)stringToCheck range:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options inSpellDocumentWithTag:(NSInteger)tag orthography:(NSOrthography **)orthography wordCount:(NSInteger *)wordCount NS_AVAILABLE_MAC(10_6);
+- (NSArray *)checkString:(NSString *)stringToCheck range:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options inSpellDocumentWithTag:(Int)tag orthography:(NSOrthography **)orthography wordCount:(Int *)wordCount NS_AVAILABLE_MAC(10_6);
 
 #if NS_BLOCKS_AVAILABLE
 /* Requests unified text checking in the background.  The return value is a monotonically increasing sequence number that can be used to keep track of requests in flight.  The completion handler will be called (in an arbitrary context) when results are available, with the sequence number and results.  The arguments and results are otherwise the same as for the previous method. */
-- (NSInteger)requestCheckingOfString:(NSString *)stringToCheck range:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options inSpellDocumentWithTag:(NSInteger)tag completionHandler:(void (^)(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount))completionHandler NS_AVAILABLE_MAC(10_6);
+- (Int)requestCheckingOfString:(NSString *)stringToCheck range:(NSRange)range types:(NSTextCheckingTypes)checkingTypes options:(NSDictionary *)options inSpellDocumentWithTag:(Int)tag completionHandler:(void (^)(Int sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount))completionHandler NS_AVAILABLE_MAC(10_6);
 #endif /* NS_BLOCKS_AVAILABLE */
 
 /* Provides a menu containing contextual menu items suitable for certain kinds of detected results (notably date/time/address results).  The options dictionary allows clients to pass in information associated with the document.  */
@@ -127,22 +127,22 @@ APPKIT_EXTERN NSString *NSTextCheckingRegularExpressionsKey NS_AVAILABLE_MAC(10_
 - (void)updatePanels NS_AVAILABLE_MAC(10_6);
 
 /* This method should be called from the client's implementation of -ignoreSpelling: */
-- (void)ignoreWord:(NSString *)wordToIgnore inSpellDocumentWithTag:(NSInteger)tag;
+- (void)ignoreWord:(NSString *)wordToIgnore inSpellDocumentWithTag:(Int)tag;
 
-- (NSArray *)ignoredWordsInSpellDocumentWithTag:(NSInteger)tag;
-- (void)setIgnoredWords:(NSArray *)words inSpellDocumentWithTag:(NSInteger)tag;
+- (NSArray *)ignoredWordsInSpellDocumentWithTag:(Int)tag;
+- (void)setIgnoredWords:(NSArray *)words inSpellDocumentWithTag:(Int)tag;
 
 /* This method returns multiple proposed alternatives for a given word, whether it is misspelled or not, in the order in which they should be presented. */
-- (NSArray *)guessesForWordRange:(NSRange)range inString:(NSString *)string language:(NSString *)language inSpellDocumentWithTag:(NSInteger)tag NS_AVAILABLE_MAC(10_6);
+- (NSArray *)guessesForWordRange:(NSRange)range inString:(NSString *)string language:(NSString *)language inSpellDocumentWithTag:(Int)tag NS_AVAILABLE_MAC(10_6);
 
 /* If a word is misspelled, this will return a single proposed correction, if one is available.  Correction functionality is available starting in 10.6 as part of unified text checking, but for convenience this method makes it available separately starting in 10.7. */
-- (NSString *)correctionForWordRange:(NSRange)range inString:(NSString *)string language:(NSString *)language inSpellDocumentWithTag:(NSInteger)tag NS_AVAILABLE_MAC(10_7);
+- (NSString *)correctionForWordRange:(NSRange)range inString:(NSString *)string language:(NSString *)language inSpellDocumentWithTag:(Int)tag NS_AVAILABLE_MAC(10_7);
 
 /* Returns an array of strings, in the order in which they should be presented, representing complete words that the user might be trying to type when starting by typing the partial word at the given range in the given string. */
-- (NSArray *)completionsForPartialWordRange:(NSRange)range inString:(NSString *)string language:(NSString *)language inSpellDocumentWithTag:(NSInteger)tag;
+- (NSArray *)completionsForPartialWordRange:(NSRange)range inString:(NSString *)string language:(NSString *)language inSpellDocumentWithTag:(Int)tag;
 
 /* When a document closes, it should notify the NSSpellChecker via closeSpellDocumentWithTag: so that any associated data such as its ignored word list can be cleaned up. */
-- (void)closeSpellDocumentWithTag:(NSInteger)tag;
+- (void)closeSpellDocumentWithTag:(Int)tag;
 
 /* When a correction is automatically proposed, the user may respond in one of several ways.  Clients may report this to the spell checker so that it can learn from the user's response and adjust future correction behavior accordingly.  The tag, language, word, and correction should match those from the original correction result, so that the spellchecker can match them.  This implies that in order to record responses properly, clients must store the original word and original correction at least from the point at which the user accepts it until the user edits or reverts it. */
 enum {
@@ -155,7 +155,7 @@ enum {
 };
 typedef NSInteger NSCorrectionResponse;
 
-- (void)recordResponse:(NSCorrectionResponse)response toCorrection:(NSString *)correction forWord:(NSString *)word language:(NSString *)language inSpellDocumentWithTag:(NSInteger)tag NS_AVAILABLE_MAC(10_7);
+- (void)recordResponse:(NSCorrectionResponse)response toCorrection:(NSString *)correction forWord:(NSString *)word language:(NSString *)language inSpellDocumentWithTag:(Int)tag NS_AVAILABLE_MAC(10_7);
 
 /* Client views may use the NSCorrectionIndicator APIs to display a suitable user interface to indicate a correction intended to be made, and allowing the user to accept or reject it; or once a correction has been made, to indicate the original form, allowing the user to revert back to it; or to display multiple alternatives from which the user may choose one if desired.  The primaryString is the first string displayed, a correction or reversion according to the type of indicator; the alternativeStrings should be additional alternatives, if available.  Only one indicator at a time may be displayed for a given view, and the only thing a client may do with the indicator after displaying it is to dismiss it.  When an indicator is dismissed, whether by user action or by the view, the completion block will be called, with the acceptedString argument being either the replacement string accepted by the user, or nil if the user has not accepted a replacement. */
 enum {

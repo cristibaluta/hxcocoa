@@ -129,7 +129,7 @@ extern class NSURLProtectionSpace extends NSObject implements NSObject, NSCopyin
     valid values include nil (default method), @"digest" and @"form".
     @result The initialized object.
 */
-- (id)initWithHost:(NSString *)host port:(NSInteger)port protocol:(NSString *)protocol realm:(NSString *)realm authenticationMethod:(NSString *)authenticationMethod;
+- (id)initWithHost:(NSString *)host port:(Int)port protocol:(NSString *)protocol realm:(NSString *)realm authenticationMethod:(NSString *)authenticationMethod;
 
 /*!
     @method initWithProxyHost:port:type:realm:authenticationMethod:
@@ -145,7 +145,7 @@ extern class NSURLProtectionSpace extends NSObject implements NSObject, NSCopyin
     valid values include nil (default method) and @"digest"
     @result The initialized object.
 */
-- (id)initWithProxyHost:(NSString *)host port:(NSInteger)port type:(NSString *)type realm:(NSString *)realm  authenticationMethod:(NSString *)authenticationMethod;
+- (id)initWithProxyHost:(NSString *)host port:(Int)port type:(NSString *)type realm:(NSString *)realm  authenticationMethod:(NSString *)authenticationMethod;
 
 /*!
     @method realm
@@ -183,7 +183,7 @@ extern class NSURLProtectionSpace extends NSObject implements NSObject, NSCopyin
     @abstract Get the proxy port if this is a proxy authentication, or the port from the URL.
     @result The port for this protection space, or 0 if not set.
 */
-- (NSInteger)port;
+- (Int)port;
 
 /*!
     @method proxyType

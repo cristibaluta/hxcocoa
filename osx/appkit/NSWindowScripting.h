@@ -20,13 +20,13 @@ extern class NSWindow(NSScripting)
 - (BOOL)isModalPanel;
 - (BOOL)isResizable;
 - (BOOL)isZoomable;
-- (NSInteger)orderedIndex;
+- (Int)orderedIndex;
 
 // Key value coding compliant set-accessors for the like-named attributes declared in Cocoa's definition of the Standard Suite.  Attributes that don't have corresponding methods here are read-only.
 - (void)setIsMiniaturized:(BOOL)flag;
 - (void)setIsVisible:(BOOL)flag;
 - (void)setIsZoomed:(BOOL)flag;
-- (void)setOrderedIndex:(NSInteger)index;
+- (void)setOrderedIndex:(Int)index;
 
 // Handlers for script commands declared in Cocoa's definition of the Standard suite.
 - (id)handleCloseScriptCommand:(NSCloseCommand *)command;

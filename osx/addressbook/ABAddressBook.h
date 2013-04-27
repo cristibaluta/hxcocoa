@@ -161,7 +161,7 @@ extern class ABAddressBook extends NSObject
 - (NSString *)defaultCountryCode AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
     // Returns the default country code for records without specified codes.
 
-- (NSInteger)defaultNameOrdering AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+- (Int)defaultNameOrdering AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
     // Returns the default name ordering defined by the user in the Address Book preferences.
     // Possible values: kABFirstNameFirst or kABLastNameFirst
 

@@ -60,14 +60,14 @@ extern class NSLevelIndicatorCell extends NSActionCell {
 - (void)setTickMarkPosition:(NSTickMarkPosition)position;
 - (NSTickMarkPosition)tickMarkPosition;
 
-- (void)setNumberOfTickMarks:(NSInteger)count;
-- (NSInteger)numberOfTickMarks;
+- (void)setNumberOfTickMarks:(Int)count;
+- (Int)numberOfTickMarks;
 
-- (void)setNumberOfMajorTickMarks:(NSInteger)count;
-- (NSInteger)numberOfMajorTickMarks;
+- (void)setNumberOfMajorTickMarks:(Int)count;
+- (Int)numberOfMajorTickMarks;
 
-- (NSRect)rectOfTickMarkAtIndex:(NSInteger)index;
-- (double)tickMarkValueAtIndex:(NSInteger)index;
+- (NSRect)rectOfTickMarkAtIndex:(Int)index;
+- (double)tickMarkValueAtIndex:(Int)index;
 
 - (void)setImage:(NSImage*)image;
 

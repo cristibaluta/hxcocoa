@@ -46,8 +46,8 @@
 
 /* These methods are sent by input manager when the conversation within a particular sender changes.
 */
-- (void) activeConversationWillChange:(id)sender fromOldConversation:(NSInteger)oldConversation NS_DEPRECATED_MAC(10_0, 10_6);
-- (void) activeConversationChanged:(id)sender toNewConversation:(NSInteger)newConversation NS_DEPRECATED_MAC(10_0, 10_6);
+- (void) activeConversationWillChange:(id)sender fromOldConversation:(Int)oldConversation NS_DEPRECATED_MAC(10_0, 10_6);
+- (void) activeConversationChanged:(id)sender toNewConversation:(Int)newConversation NS_DEPRECATED_MAC(10_0, 10_6);
 
 }
 

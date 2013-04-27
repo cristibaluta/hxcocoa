@@ -51,7 +51,7 @@ extern class NSTokenField extends NSTextField {
 // substring is the partial string that is being completed.  tokenIndex is the index of the token being completed.
 // selectedIndex allows you to return by reference an index specifying which of the completions should be selected initially. 
 // The default behavior is not to have any completions.
-- (NSArray *)tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex;
+- (NSArray *)tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring indexOfToken:(Int)tokenIndex indexOfSelectedItem:(Int *)selectedIndex;
 
 // return an array of represented objects you want to add.
 // If you want to reject the add, return an empty array.

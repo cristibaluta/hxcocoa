@@ -177,7 +177,7 @@ FOUNDATION_EXPORT String * const NSFileSystemFreeNodes;*/
 - (NSUInteger)filePosixPermissions;
 - (String *)fileOwnerAccountName;
 - (String *)fileGroupOwnerAccountName;
-- (NSInteger)fileSystemNumber;
+- (Int)fileSystemNumber;
 - (NSUInteger)fileSystemFileNumber;
 - (Bool)fileExtensionHidden;
 - (OSType)fileHFSCreatorCode;

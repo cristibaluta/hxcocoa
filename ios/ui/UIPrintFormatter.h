@@ -36,8 +36,8 @@ package ios.ui;
 	public var           NSInteger startPage;           // default is NSNotFound
 	public var (default, null) NSInteger pageCount;           // calculated
 
-- (CGRect)rectForPageAtIndex:(NSInteger)pageIndex;                     // returns empty rect if index out of range
-	public function drawInRect:(CGRect)rect forPageAtIndex:(NSInteger)pageIndex;   // override point to add custom drawing 
+- (CGRect)rectForPageAtIndex:(Int)pageIndex;                     // returns empty rect if index out of range
+	public function drawInRect:(CGRect)rect forPageAtIndex:(Int)pageIndex;   // override point to add custom drawing 
 
 }
 

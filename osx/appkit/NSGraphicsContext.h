@@ -66,7 +66,7 @@ extern class NSGraphicsContext extends NSObject {
 // Pops a context from per-thread stack, makes it current, and calls -restoreGraphicsContext. It's functional equivalent of PSgrestore
 + (void)restoreGraphicsState;
 // Makes gState's context current, and resets graphics state. The gState must be created in the calling thread
-+ (void)setGraphicsState:(NSInteger)gState;
++ (void)setGraphicsState:(Int)gState;
 
 // Returns attributes used to create this instance
 - (NSDictionary *)attributes;

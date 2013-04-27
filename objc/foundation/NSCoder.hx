@@ -80,7 +80,7 @@ extern class NSCoder extends NSObject
 - (void)encodeDataObject:(NSData *)data;
 - (void)decodeValueOfObjCType:(const char *)type at:(void *)data;
 - (NSData *)decodeDataObject;
-- (NSInteger)versionForClassName:(NSString *)className;
+- (Int)versionForClassName:(NSString *)className;
 
 }
 
@@ -132,8 +132,8 @@ extern class NSCoder (NSExtendedCoder)
 - (double)decodeDoubleForKey:(NSString *)key;
 - (const uint8_t *)decodeBytesForKey:(NSString *)key returnedLength:(NSUInteger *)lengthp NS_RETURNS_INNER_POINTER;   // returned bytes immutable!
 
-- (void)encodeInteger:(NSInteger)intv forKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
-- (NSInteger)decodeIntegerForKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
+- (void)encodeInteger:(Int)intv forKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
+- (Int)decodeIntegerForKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
 
 // Returns YES if this coder requires secure coding. Secure coders check a list of allowed classes before decoding objects, and all objects must implement NSSecureCoding.
 - (Bool)requiresSecureCoding NS_AVAILABLE(10_8, 6_0);

@@ -12,7 +12,7 @@ package ios.ui;
 #import <UIKit/UIApplication.h>
 #import <UIKit/UIBarButtonItem.h>
 
-typedef NS_ENUM(NSInteger, UIToolbarPosition) {
+typedef NS_ENUM(Int, UIToolbarPosition) {
     UIToolbarPositionAny = 0,
     UIToolbarPositionBottom = 1,
     UIToolbarPositionTop = 2,

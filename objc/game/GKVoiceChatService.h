@@ -39,7 +39,7 @@
 
  *** B accepts the connection and calls:
  
- [hockeyClientB.vcService acceptCallID: (NSInteger) 123 error:NULL];
+ [hockeyClientB.vcService acceptCallID: (Int) 123 error:NULL];
 
  *** The GKVoiceChatService establishes a voice chat and informs the hockey client of a successful voice chat session***
  [clientA voiceChatService:self didStartWithParticipantID:@"B"];
@@ -118,10 +118,10 @@ GK_EXTERN_CLASSextern class GKVoiceChatService extends NSObject {
 - (void)stopVoiceChatWithParticipantID:(NSString *)participantID;
 
 //callID is returned by didReceiveInvitationFromParticipantID call. An error may occur if there can be no viable connection made to the remote participant.
-- (BOOL)acceptCallID:(NSInteger)callID error:(NSError **)error;
+- (BOOL)acceptCallID:(Int)callID error:(NSError **)error;
 
 //callID is returned by didReceiveInvitationFromParticipantID call.
-- (void)denyCallID:(NSInteger)callID;
+- (void)denyCallID:(Int)callID;
 
 // will only be called by the client if the client has a pre-established peer-to-peer UDP connection.  Used to receive audio.
 - (void)receivedRealTimeData:(NSData *)audio fromParticipantID:(NSString *)participantID;

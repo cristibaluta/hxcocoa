@@ -9,7 +9,7 @@ package ios.ui;
  Use to inform system Zoom that focus has changed to a new location. 
  The frame should be in the coordinate space of the view.
  */
-typedef NS_ENUM(NSInteger, UIAccessibilityZoomType) {
+typedef NS_ENUM(Int, UIAccessibilityZoomType) {
     UIAccessibilityZoomTypeInsertionPoint,      // Used when the text insertion point has moved
 } NS_ENUM_AVAILABLE_IOS(5_0);
 

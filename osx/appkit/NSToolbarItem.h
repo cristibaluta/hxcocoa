@@ -89,8 +89,8 @@ extern class NSToolbarItem extends NSObject, implements NSCopying, NSValidatedUs
 - (NSMenuItem *)menuFormRepresentation;
     /* The menu form of a toolbar item's purpose is twofold.  First, when the window is too small to display an item, it will be clipped but remain accessible from a "clipped items" menu containing the menu item returned here.  Second, in text only mode, the menu returned will be used to create the displayed items.  Singleton menu items will be clickable, while submenu items will be represented as a pull down.  For instance, say you want a button that allows you to switch between modes A, B, and C.  You could represent this as a menu by extends  a menu item "mode" with three submenu items "A", "B", and "C".   By default, this method returns a singleton menu item with item label as the title.  For standard items, the target, action is set.  */
 
-- (void)setTag:(NSInteger)tag;  
-- (NSInteger)tag;
+- (void)setTag:(Int)tag;  
+- (Int)tag;
     /* Tag for your own custom purpose. (forwards to -view if it responds) */
 
 - (void)setTarget:(id)target;
@@ -129,8 +129,8 @@ enum {
    NSToolbarItemVisibilityPriorityUser  = 2000  // Value assigned to an item the user wants to "keep visible". You should only use values less than this
 };
 
-- (void)setVisibilityPriority:(NSInteger)visibilityPriority;
-- (NSInteger)visibilityPriority;
+- (void)setVisibilityPriority:(Int)visibilityPriority;
+- (Int)visibilityPriority;
     /* When a toolbar does not have enough space to fit all its items, it must push some into the overflow menu.  Items with the highest visibility priority level are choosen last for the overflow menu.  The default visibilityPriority value is NSToolbarItemVisibilityPriorityStandard.  To suggest that an item always remain visible, give it a value greater than NSToolbarItemVisibilityPriorityStandard, but less than NSToolbarItemVisibilityPriorityUser.   In 10.7, users can no longer modify the toolbar item visibility priority. */
 
 

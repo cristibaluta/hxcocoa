@@ -164,7 +164,7 @@ extern class AVAudioSession (AVAudioSessionDeprecated)
 	public var (assign) id<AVAudioSessionDelegate> delegate NS_DEPRECATED_IOS(4_0, 6_0);
 
 
-- (BOOL)setActive:(BOOL)active withFlags:(NSInteger)flags error:(NSError **)outError NS_DEPRECATED_IOS(4_0, 6_0);
+- (BOOL)setActive:(BOOL)active withFlags:(Int)flags error:(NSError **)outError NS_DEPRECATED_IOS(4_0, 6_0);
 
 	public var  (default, null) extends BOOL inputIsAvailable NS_DEPRECATED_IOS(3_0, 6_0); /* is input hardware available or not? */
 

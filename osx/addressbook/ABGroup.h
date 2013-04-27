@@ -79,14 +79,14 @@ extern class ABGroup extends ABRecord
 
 extern class ABGroup (ABGroup_Properties)
 
-+ (NSInteger)addPropertiesAndTypes:(NSDictionary *)properties;
++ (Int)addPropertiesAndTypes:(NSDictionary *)properties;
     // Add properties to all groups. The dictionary must be of the form:
     //          key: propety name
     //          value: property type
     // Property name must be unique
     // Returns the number of properties successfuly added (-1 if an error occured)
 
-+ (NSInteger)removeProperties:(NSArray *)properties;
++ (Int)removeProperties:(NSArray *)properties;
     // Removes properties from all groups
     // Returns the number of properties successfuly removed (-1 if an error occured)
 

@@ -73,7 +73,7 @@ extern class NSDrawer extends NSResponder
 - (void)close:(id)sender;
 - (void)toggle:(id)sender;
 
-- (NSInteger)state;
+- (Int)state;
 - (NSRectEdge)edge;
 
 - (void)setContentSize:(NSSize)size;

@@ -134,7 +134,7 @@ extern class NSParagraphStyle extends NSObject, implements NSCopying, NSMutableC
 - (float)tighteningFactorForTruncation;
 
 /* Specifies whether the paragraph is to be treated as a header for purposes of HTML generation.  Should be set to 0 (the default value) if the paragraph is not a header, or from 1 through 6 if the paragraph is to be treated as a header. */
-- (NSInteger)headerLevel;
+- (Int)headerLevel;
 
 }
 
@@ -161,5 +161,5 @@ extern class NSMutableParagraphStyle extends NSParagraphStyle
 - (void)setTextLists:(NSArray *)array;
 - (void)setHyphenationFactor:(float)aFactor;
 - (void)setTighteningFactorForTruncation:(float)aFactor;
-- (void)setHeaderLevel:(NSInteger)level;
+- (void)setHeaderLevel:(Int)level;
 }

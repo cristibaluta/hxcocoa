@@ -731,7 +731,7 @@ extern class NSDocument(NSDeprecated)
 - (BOOL)readFromURL:(NSURL *)url ofType:(NSString *)type NS_DEPRECATED_MAC(10_0, 10_4);
 - (BOOL)revertToSavedFromFile:(NSString *)fileName ofType:(NSString *)type NS_DEPRECATED_MAC(10_0, 10_4);
 - (BOOL)revertToSavedFromURL:(NSURL *)url ofType:(NSString *)type NS_DEPRECATED_MAC(10_0, 10_4);
-- (NSInteger)runModalPageLayoutWithPrintInfo:(NSPrintInfo *)printInfo NS_DEPRECATED_MAC(10_0, 10_4);
+- (Int)runModalPageLayoutWithPrintInfo:(NSPrintInfo *)printInfo NS_DEPRECATED_MAC(10_0, 10_4);
 - (void)saveToFile:(NSString *)fileName saveOperation:(NSSaveOperationType)saveOperation delegate:(id)delegate didSaveSelector:(SEL)didSaveSelector contextInfo:(void *)contextInfo NS_DEPRECATED_MAC(10_0, 10_4);
 - (void)setFileName:(NSString *)fileName NS_DEPRECATED_MAC(10_0, 10_4);
 - (BOOL)writeToFile:(NSString *)fileName ofType:(NSString *)type NS_DEPRECATED_MAC(10_0, 10_4);

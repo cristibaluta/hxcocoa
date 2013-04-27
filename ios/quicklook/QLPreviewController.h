@@ -81,7 +81,7 @@ NS_CLASS_AVAILABLE(NA, 4_0)
  * @param controller The Preview Controller.
  * @result The number of items.
  */
-- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller;
+- (Int)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller;
 
 /*!
  * @abstract Returns the item that the preview controller should preview.
@@ -89,7 +89,7 @@ NS_CLASS_AVAILABLE(NA, 4_0)
  * @param index The index of the item to preview.
  * @result An item conforming to the QLPreviewItem protocol.
  */
-- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index;
+- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(Int)index;
 
 @end
 

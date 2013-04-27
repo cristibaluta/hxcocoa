@@ -12,7 +12,7 @@ package ios.ui;
 
 // for UINavigationBar and UIToolBar
 
-typedef NS_ENUM(NSInteger, UIBarStyle) {
+typedef NS_ENUM(Int, UIBarStyle) {
     UIBarStyleDefault          = 0,
     UIBarStyleBlack            = 1,
     

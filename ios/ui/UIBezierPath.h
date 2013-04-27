@@ -81,8 +81,8 @@ extern class UIBezierPath extends NSObject<NSCopying, NSCoding> {
 	public var  Float flatness;
 	public var  BOOL usesEvenOddFillRule; // Default is NO. When YES, the even-odd fill rule is used for drawing, clipping, and hit testing.
 
-	public function setLineDash:(const Float *)pattern count:(NSInteger)count phase:(Float)phase;
-	public function getLineDash:(Float *)pattern count:(NSInteger *)count phase:(Float *)phase;
+	public function setLineDash:(const Float *)pattern count:(Int)count phase:(Float)phase;
+	public function getLineDash:(Float *)pattern count:(Int *)count phase:(Float *)phase;
 
 // Path operations on the current graphics context
 

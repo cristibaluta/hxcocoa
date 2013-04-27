@@ -306,7 +306,7 @@ If the url represents a filename or other resource with a known icon, that icon 
 - (id)contentView;
 - (void)setDelegate:(id <NSWindowDelegate>)anObject;
 - (id <NSWindowDelegate>)delegate;
-- (NSInteger)windowNumber;
+- (Int)windowNumber;
 - (NSUInteger)styleMask;
 /* Valid styleMask settings have the same restrictions as the styleMask passed to -initWithContentRect:styleMask:backing:defer:.  Some styleMask changes will cause the view hierarchy to be rebuilt, since there is a different subclass for the top level view of a borderless window than for the top level view of a titled window. */
 - (void)setStyleMask:(NSUInteger)styleMask NS_AVAILABLE_MAC(10_6);
@@ -364,7 +364,7 @@ If the url represents a filename or other resource with a known icon, that icon 
 - (void)update;
 - (BOOL)makeFirstResponder:(NSResponder *)aResponder;
 - (NSResponder *)firstResponder;
-- (NSInteger)resizeFlags;
+- (Int)resizeFlags;
 - (void)keyDown:(NSEvent *)theEvent;
 - (void)close;
 - (void)setReleasedWhenClosed:(BOOL)flag;
@@ -404,7 +404,7 @@ If the url represents a filename or other resource with a known icon, that icon 
 - (void)orderFront:(id)sender;
 - (void)orderBack:(id)sender;
 - (void)orderOut:(id)sender;
-- (void)orderWindow:(NSWindowOrderingMode)place relativeTo:(NSInteger)otherWin;
+- (void)orderWindow:(NSWindowOrderingMode)place relativeTo:(Int)otherWin;
 - (void)orderFrontRegardless;
 
 - (void)setMiniwindowImage:(NSImage *)image;
@@ -455,7 +455,7 @@ If the url represents a filename or other resource with a known icon, that icon 
 - (void)performClose:(id)sender;
 - (void)performMiniaturize:(id)sender;
 - (void)performZoom:(id)sender;
-- (NSInteger)gState;
+- (Int)gState;
 - (void)setOneShot:(BOOL)flag;
 - (BOOL)isOneShot;
 - (NSData *)dataWithEPSInsideRect:(NSRect)rect;
@@ -477,8 +477,8 @@ If the url represents a filename or other resource with a known icon, that icon 
 
 - (void)setBackingType:(NSBackingStoreType)bufferingType;
 - (NSBackingStoreType)backingType;
-- (void)setLevel:(NSInteger)newLevel;
-- (NSInteger)level;
+- (void)setLevel:(Int)newLevel;
+- (Int)level;
 - (void)setDepthLimit:(NSWindowDepth)limit;
 - (NSWindowDepth)depthLimit;
 - (void)setDynamicDepthLimit:(BOOL)flag;
@@ -629,7 +629,7 @@ If the url represents a filename or other resource with a known icon, that icon 
 
 /* windowNumberAtPoint:belowWindowWithWindowNumber: returns the number of the frontmost window that would be hit by a mouseDown at the screen location "point".  "windowNum" can be specified to exclude a given window along with all windows above it, and may belong to any application.  If no windows are to be excluded, specify 0 for "windowNum".  The windowNumber returned may correspond to a window in another application.    
 */
-+ (NSInteger)windowNumberAtPoint:(NSPoint)point belowWindowWithWindowNumber:(NSInteger)windowNumber NS_AVAILABLE_MAC(10_6);
++ (Int)windowNumberAtPoint:(NSPoint)point belowWindowWithWindowNumber:(Int)windowNumber NS_AVAILABLE_MAC(10_6);
 
 }
 

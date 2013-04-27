@@ -35,11 +35,11 @@ extern class NSTableHeaderView extends NSView
 - (NSTableView *)tableView;
 
 // Returns -1 if there is no column being dragged
-- (NSInteger)draggedColumn;
+- (Int)draggedColumn;
 - (Float)draggedDistance;
 
-- (NSInteger)resizedColumn;
-- (NSRect)headerRectOfColumn:(NSInteger)column;
-- (NSInteger)columnAtPoint:(NSPoint)point;
+- (Int)resizedColumn;
+- (NSRect)headerRectOfColumn:(Int)column;
+- (Int)columnAtPoint:(NSPoint)point;
 
 }

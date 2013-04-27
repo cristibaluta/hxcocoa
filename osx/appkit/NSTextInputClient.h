@@ -73,7 +73,7 @@
 
 /* Returns the window level of the receiver. An NSTextInputClient can implement this interface to specify its window level if it is higher than NSFloatingWindowLevel.
 */
-- (NSInteger)windowLevel;
+- (Int)windowLevel;
 
 /* Returns if the marked text is in vertical layout.
  */

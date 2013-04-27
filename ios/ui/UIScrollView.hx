@@ -21,7 +21,7 @@ extern class UIScrollView {
 #import <UIKit/UIGeometry.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, ;
+typedef NS_ENUM(Int, ;
 
 UIKIT_EXTERN const float UIScrollViewDecelerationRateNormal NS_AVAILABLE_IOS(3_0);
 UIKIT_EXTERN const float UIScrollViewDecelerationRateFast NS_AVAILABLE_IOS(3_0);

@@ -39,12 +39,12 @@ extern class NSControl extends NSView
 - (void)setTarget:(id)anObject;
 - (SEL)action;
 - (void)setAction:(SEL)aSelector;
-- (NSInteger)tag;
-- (void)setTag:(NSInteger)anInt;
-- (NSInteger)selectedTag;
+- (Int)tag;
+- (void)setTag:(Int)anInt;
+- (Int)selectedTag;
 - (void)setIgnoresMultiClick:(BOOL)flag;
 - (BOOL)ignoresMultiClick;
-- (NSInteger)sendActionOn:(NSInteger)mask;
+- (Int)sendActionOn:(Int)mask;
 - (BOOL)isContinuous;
 - (void)setContinuous:(BOOL)flag;
 - (BOOL)isEnabled;
@@ -86,8 +86,8 @@ extern class NSControl extends NSView
 - (NSWritingDirection)baseWritingDirection;
 - (void)setBaseWritingDirection:(NSWritingDirection)writingDirection;
 
-- (NSInteger)integerValue NS_AVAILABLE_MAC(10_5);
-- (void)setIntegerValue:(NSInteger)anInteger NS_AVAILABLE_MAC(10_5);
+- (Int)integerValue NS_AVAILABLE_MAC(10_5);
+- (void)setIntegerValue:(Int)anInteger NS_AVAILABLE_MAC(10_5);
 - (void)takeIntegerValueFrom:(id)sender NS_AVAILABLE_MAC(10_5);
 
 }
@@ -120,7 +120,7 @@ extern class NSObject(NSControlSubclassNotifications)
 - (BOOL)control:(NSControl *)control isValidObject:(id)obj;
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector;
-- (NSArray *)control:(NSControl *)control textView:(NSTextView *)textView completions:(NSArray *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(NSInteger *)index;
+- (NSArray *)control:(NSControl *)control textView:(NSTextView *)textView completions:(NSArray *)words forPartialWordRange:(NSRange)charRange indexOfSelectedItem:(Int *)index;
 }
 
 								// userInfo keys:

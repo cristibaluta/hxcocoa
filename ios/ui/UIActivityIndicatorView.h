@@ -8,7 +8,7 @@ package ios.ui;
 #import <UIKit/UIView.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef NS_ENUM(NSInteger, UIActivityIndicatorViewStyle) {
+typedef NS_ENUM(Int, UIActivityIndicatorViewStyle) {
     UIActivityIndicatorViewStyleWhiteLarge,
     UIActivityIndicatorViewStyleWhite,
     UIActivityIndicatorViewStyleGray,

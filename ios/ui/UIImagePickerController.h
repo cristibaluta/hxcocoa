@@ -12,13 +12,13 @@ package ios.ui;
 @class UIImage;
 extern interface UIImagePickerControllerDelegate;
 
-typedef NS_ENUM(NSInteger, UIImagePickerControllerSourceType) {
+typedef NS_ENUM(Int, UIImagePickerControllerSourceType) {
     UIImagePickerControllerSourceTypePhotoLibrary,
     UIImagePickerControllerSourceTypeCamera,
     UIImagePickerControllerSourceTypeSavedPhotosAlbum
 };
 
-typedef NS_ENUM(NSInteger, UIImagePickerControllerQualityType) {
+typedef NS_ENUM(Int, UIImagePickerControllerQualityType) {
     UIImagePickerControllerQualityTypeHigh = 0,       // highest quality
     UIImagePickerControllerQualityTypeMedium = 1,     // medium quality, suitable for transmission via Wi-Fi 
     UIImagePickerControllerQualityTypeLow = 2,         // lowest quality, suitable for tranmission via cellular network
@@ -31,17 +31,17 @@ typedef NS_ENUM(NSInteger, UIImagePickerControllerQualityType) {
 #endif
 };
 
-typedef NS_ENUM(NSInteger, UIImagePickerControllerCameraCaptureMode) {
+typedef NS_ENUM(Int, UIImagePickerControllerCameraCaptureMode) {
     UIImagePickerControllerCameraCaptureModePhoto,
     UIImagePickerControllerCameraCaptureModeVideo
 };
 
-typedef NS_ENUM(NSInteger, UIImagePickerControllerCameraDevice) {
+typedef NS_ENUM(Int, UIImagePickerControllerCameraDevice) {
     UIImagePickerControllerCameraDeviceRear,
     UIImagePickerControllerCameraDeviceFront
 };
 
-typedef NS_ENUM(NSInteger, UIImagePickerControllerCameraFlashMode) {
+typedef NS_ENUM(Int, UIImagePickerControllerCameraFlashMode) {
     UIImagePickerControllerCameraFlashModeOff  = -1,
     UIImagePickerControllerCameraFlashModeAuto = 0,
     UIImagePickerControllerCameraFlashModeOn   = 1

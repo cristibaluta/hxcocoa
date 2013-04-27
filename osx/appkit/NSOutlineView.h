@@ -167,13 +167,13 @@ extern class NSOutlineView extends NSTableView {
 
 /* Item/Row translation
 */
-- (id)itemAtRow:(NSInteger)row;
-- (NSInteger)rowForItem:(id)item;
+- (id)itemAtRow:(Int)row;
+- (Int)rowForItem:(id)item;
 
 /* Indentation
 */
-- (NSInteger)levelForItem:(id)item;
-- (NSInteger)levelForRow:(NSInteger)row;
+- (Int)levelForItem:(id)item;
+- (Int)levelForRow:(Int)row;
 - (BOOL)isItemExpanded:(id)item;
 
 /* Controls the amount of indentation per level. Negative values are ignored, and only integral values are accepted. The default value is 16.0. An indentationPerLevel of 0 can be used to eliminate all indentation and make an NSOutlineView appear more like an NSTableView.
@@ -193,14 +193,14 @@ extern class NSOutlineView extends NSTableView {
 
 /* Returns the frame of the outline cell for a particular row, considering the current indentation and indentationMarkerFollowsCell value. If 'row' is not an expandable row, it will return NSZeroRect. This method can be overridden by subclassers to return a custom frame for the outline button cell. If an empty rect is returned, no outline cell will be drawn for that row.
 */
-- (NSRect)frameOfOutlineCellAtRow:(NSInteger)row NS_AVAILABLE_MAC(10_5); 
+- (NSRect)frameOfOutlineCellAtRow:(Int)row NS_AVAILABLE_MAC(10_5); 
 
 /* Drag and Drop
 */
 
 /* To be used from validateDrop: in order to "re-target" the proposed drop.  To specify a drop on an item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex.  To specify a drop between child 2 and 3 of an item I, on would specify item=I, and index=3 (children are zero-base indexed).  To specify a drop on an un-expandable item I, one would specify item=I, and index=NSOutlineViewDropOnItemIndex.
 */
-- (void)setDropItem:(id)item dropChildIndex:(NSInteger)index;
+- (void)setDropItem:(id)item dropChildIndex:(Int)index;
 
 /* This method returns YES to indicate that auto expanded items should return to their original collapsed state.  Override this method to provide custom behavior.  'deposited' tells wether or not the drop terminated due to a successful drop (as indicated by the return value from acceptDrop:).  Note that exiting the view will be treated the same as a failed drop.
 */
@@ -224,13 +224,13 @@ extern class NSOutlineView extends NSTableView {
 
 /* This method parallels TableView's -moveRowAtIndex:toIndex:. The item located at 'fromIndex' is moved from the existing 'oldParent' to the given index in 'newParent'. 'newParent' can be the same as 'oldParent' to reorder an item within the same parent. This method can be called multiple times within the same beginUpdates/endUpdates block. Moving from an invalid index, or to an invalid index will throw an exception.  The "Cell Based TableView" must first call -beginUpdates before calling this method. 
  */
-- (void)moveItemAtIndex:(NSInteger)fromIndex inParent:(id)oldParent toIndex:(NSInteger)toIndex inParent:(id)newParent NS_AVAILABLE_MAC(10_7);
+- (void)moveItemAtIndex:(Int)fromIndex inParent:(id)oldParent toIndex:(Int)toIndex inParent:(id)newParent NS_AVAILABLE_MAC(10_7);
 
 /* Modifications to an OutlineView should be done with the insertItems:/deleteItems:/moveItem: methods, and not the NSTableView primatives. Internally, these methods are used in the implementation, and while they are unavailable for callers they can be overridden by subclasses.
  */
 - (void)insertRowsAtIndexes:(NSIndexSet *)indexes withAnimation:(NSTableViewAnimationOptions)animationOptions UNAVAILABLE_ATTRIBUTE;
 - (void)removeRowsAtIndexes:(NSIndexSet *)indexes withAnimation:(NSTableViewAnimationOptions)animationOptions UNAVAILABLE_ATTRIBUTE;
-- (void)moveRowAtIndex:(NSInteger)oldIndex toIndex:(NSInteger)newIndex UNAVAILABLE_ATTRIBUTE;
+- (void)moveRowAtIndex:(Int)oldIndex toIndex:(Int)newIndex UNAVAILABLE_ATTRIBUTE;
 
 }
 
@@ -244,8 +244,8 @@ extern class NSOutlineView extends NSTableView {
 #pragma mark -
 #pragma mark ***** Required Methods (unless bindings is used) *****
 
-- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item;
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item;
+- (Int)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item;
+- (id)outlineView:(NSOutlineView *)outlineView child:(Int)index ofItem:(id)item;
 - (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item;
 
 /* NOTE: this method is optional for the View Based OutlineView.
@@ -292,11 +292,11 @@ extern class NSOutlineView extends NSTableView {
 
 /* Dragging Destination Support - This method is used by NSOutlineView to determine a valid drop target. Based on the mouse position, the outline view will suggest a proposed child 'index' for the drop to happen as a child of 'item'. This method must return a value that indicates which NSDragOperation the data source will perform. The data source may "re-target" a drop, if desired, by calling setDropItem:dropChildIndex: and returning something other than NSDragOperationNone. One may choose to re-target for various reasons (eg. for better visual feedback when inserting into a sorted position). On Leopard linked applications, this method is called only when the drag position changes or the dragOperation changes (ie: a modifier key is pressed). Prior to Leopard, it would be called constantly in a timer, regardless of attribute changes.
 */
-- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(NSInteger)index;
+- (NSDragOperation)outlineView:(NSOutlineView *)outlineView validateDrop:(id <NSDraggingInfo>)info proposedItem:(id)item proposedChildIndex:(Int)index;
 
 /* Dragging Destination Support - This method is called when the mouse is released over an outline view that previously decided to allow a drop via the validateDrop method. The data source should incorporate the data from the dragging pasteboard at this time. 'index' is the location to insert the data as a child of 'item', and are the values previously set in the validateDrop: method.
 */
-- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(NSInteger)index;
+- (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id <NSDraggingInfo>)info item:(id)item childIndex:(Int)index;
 
 /* Dragging Destination Support - NSOutlineView data source objects can support file promised drags via by adding  NSFilesPromisePboardType to the pasteboard in outlineView:writeItems:toPasteboard:.  NSOutlineView implements -namesOfPromisedFilesDroppedAtDestination: to return the results of this data source method.  This method should returns an array of filenames for the created files (filenames only, not full paths).  The URL represents the drop location.  For more information on file promise dragging, see documentation on the NSDraggingSource protocol and -namesOfPromisedFilesDroppedAtDestination:.
 */
@@ -322,11 +322,11 @@ extern class NSOutlineView extends NSTableView {
 
 /* View Based OutlineView: This delegate method can be used to know when a new 'rowView' has been added to the table. At this point, you can choose to add in extra views, or modify any properties on 'rowView'.
  */
-- (void)outlineView:(NSOutlineView *)outlineView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row NS_AVAILABLE_MAC(10_7);
+- (void)outlineView:(NSOutlineView *)outlineView didAddRowView:(NSTableRowView *)rowView forRow:(Int)row NS_AVAILABLE_MAC(10_7);
 
 /* View Based OutlineView: This delegate method can be used to know when 'rowView' has been removed from the table. The removed 'rowView' may be reused by the table so any additionally inserted views should be removed at this point. A 'row' parameter is included. 'row' will be '-1' for rows that are being deleted from the table and no longer have a valid row, otherwise it will be the valid row that is being removed due to it being moved off screen.
  */
-- (void)outlineView:(NSOutlineView *)outlineView didRemoveRowView:(NSTableRowView *)rowView forRow:(NSInteger)row NS_AVAILABLE_MAC(10_7);
+- (void)outlineView:(NSOutlineView *)outlineView didRemoveRowView:(NSTableRowView *)rowView forRow:(Int)row NS_AVAILABLE_MAC(10_7);
 
 #pragma mark -
 #pragma mark ***** Regular Delegate Methods *****
@@ -417,12 +417,12 @@ extern class NSOutlineView extends NSTableView {
  Implement this method if you want to control how wide a column is made when the user double clicks on the resize divider. By default, NSTableView iterates every row in the table, accesses a cell via preparedCellAtRow:column:, and requests the "cellSize" to find the appropriate largest width to use. For large row counts, a monte carlo simulation is done instead of interating every row. For accurate performance, it is recommended that this method is implemented when using large tables. 
 */
 
-- (Float)outlineView:(NSOutlineView *)outlineView sizeToFitWidthOfColumn:(NSInteger)column NS_AVAILABLE_MAC(10_6);
+- (Float)outlineView:(NSOutlineView *)outlineView sizeToFitWidthOfColumn:(Int)column NS_AVAILABLE_MAC(10_6);
 
 /*  Optional - Control of column reordering.
  Specifies if the column can be reordered to a new location, or not. 'columnIndex' is the column that is being dragged. The actual NSTableColumn instance can be retrieved from the [tableView tableColumns] array. 'newColumnIndex' is the new proposed target location for 'columnIndex'. When a column is initially dragged by the user, the delegate is first called with a 'newColumnIndex' of -1. Returning NO will disallow that column from being reordered at all. Returning YES allows it to be reordered, and the delegate will be called again when the column reaches a new location. If this method is not implemented, all columns are considered reorderable. 
  */
-- (BOOL)outlineView:(NSOutlineView *)outlineView shouldReorderColumn:(NSInteger)columnIndex toColumn:(NSInteger)newColumnIndex NS_AVAILABLE_MAC(10_6);
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldReorderColumn:(Int)columnIndex toColumn:(Int)newColumnIndex NS_AVAILABLE_MAC(10_6);
 
 /* Optional - Hiding the outline cell (disclosure triangle)
  Allows the delegate to decide if the outline cell (disclosure triangle) for 'item' should be displayed or not. This method will only be called for expandable rows. If 'NO' is returned,  -[outlineView frameOfOutlineCellAtRow:] will return NSZeroRect, causing the outline cell to be hidden. In addition, if 'NO' is returned, the row will not be collapsable by keyboard shortcuts.

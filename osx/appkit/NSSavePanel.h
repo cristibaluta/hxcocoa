@@ -201,17 +201,17 @@ extern class NSSavePanel extends NSPanel {
 
 /* NSSavePanel/NSOpenPanel: Presents the panel as a sheet modal to 'window' and returns immediately. Desired properties of the panel should be properly setup before calling this method. The completion handler block will be called after the user has closed the panel, however, the open/save panel sheet may still be on screen. If you require the sheet to be offscreen (for example, to show an alert), first call [savePanel orderOut:nil] to close it. The passed in 'result' will be NSFileHandlingPanelOKButton==1 or NSFileHandlingPanelCancelButton==0.
  */
-- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(NSInteger result))handler NS_AVAILABLE_MAC(10_6);
+- (void)beginSheetModalForWindow:(NSWindow *)window completionHandler:(void (^)(Int result))handler NS_AVAILABLE_MAC(10_6);
 
 /* NSSavePanel/NSOpenPanel: Presents the panel as a modeless window and returns immediately. Desired properties of the panel should be properly setup before calling this method. The completion handler block will be called after the user has closed the panel. The passed in 'result' will be NSFileHandlingPanelOKButton==1 or NSFileHandlingPanelCancelButton==0.
 */
-- (void)beginWithCompletionHandler:(void (^)(NSInteger result))handler NS_AVAILABLE_MAC(10_6);
+- (void)beginWithCompletionHandler:(void (^)(Int result))handler NS_AVAILABLE_MAC(10_6);
 
 #endif
 
 /* NSSavePanel/NSOpenPanel: Presents the panel as an application modal window. It returns only after the user has closed the panel. The return value is NSFileHandlingPanelOKButton==1 or NSFileHandlingPanelCancelButton==0.
  */
-- (NSInteger)runModal;
+- (Int)runModal;
 
 }
 
@@ -291,7 +291,7 @@ extern class NSSavePanel(NSDeprecated)
 
 /* Use -runModal after setting up desired properties. The following parameters are replaced by properties: 'path' is replaced by 'directoryURL' and 'name' by 'nameFieldStringValue'.
  */
-- (NSInteger)runModalForDirectory:(NSString *)path file:(NSString *)name NS_DEPRECATED_MAC(10_0, 10_6);
+- (Int)runModalForDirectory:(NSString *)path file:(NSString *)name NS_DEPRECATED_MAC(10_0, 10_6);
 
 /* Deprecated in 10.3. -[NSSavePanel selectText:] does nothing.
  */

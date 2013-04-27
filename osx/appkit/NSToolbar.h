@@ -75,8 +75,8 @@ extern class NSToolbar extends NSObject {
 - (id)initWithIdentifier:(NSString *)identifier;
     /* The identifier is used to form the toolbar's autosave name.  Also, toolbars with the same identifier are implicitly synchronized so that they maintain the same state. */
 
-- (void)insertItemWithItemIdentifier:(NSString *)itemIdentifier atIndex:(NSInteger)index;
-- (void)removeItemAtIndex:(NSInteger)index;
+- (void)insertItemWithItemIdentifier:(NSString *)itemIdentifier atIndex:(Int)index;
+- (void)removeItemAtIndex:(Int)index;
     /* Primitives for explicitly adding and removing items.  Any change made will be propogated immediately to all other toolbars with the same identifier. */
 
 - (void)setDelegate:(id <NSToolbarDelegate>)delegate;

@@ -181,20 +181,20 @@ extern class NSCell extends NSObject, implements NSCopying, NSCoding, NSUserInte
 - (void)setControlView:(NSView*)view;
 - (NSCellType)type;
 - (void)setType:(NSCellType)aType;
-- (NSInteger)state;
-- (void)setState:(NSInteger)value;
+- (Int)state;
+- (void)setState:(Int)value;
 - (id)target;
 - (void)setTarget:(id)anObject;
 - (SEL)action;
 - (void)setAction:(SEL)aSelector;
-- (NSInteger)tag;
-- (void)setTag:(NSInteger)anInt;
+- (Int)tag;
+- (void)setTag:(Int)anInt;
 - (NSString*)title;
 - (void)setTitle:(NSString*)aString;
 - (BOOL)isOpaque;
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)flag;
-- (NSInteger)sendActionOn:(NSInteger)mask;
+- (Int)sendActionOn:(Int)mask;
 - (BOOL)isContinuous;
 - (void)setContinuous:(BOOL)flag;
 - (BOOL)isEditable;
@@ -243,8 +243,8 @@ extern class NSCell extends NSObject, implements NSCopying, NSCoding, NSUserInte
 - (NSControlSize)controlSize;
 - (id)representedObject;
 - (void)setRepresentedObject:(id)anObject;
-- (NSInteger)cellAttribute:(NSCellAttribute)aParameter;
-- (void)setCellAttribute:(NSCellAttribute)aParameter to:(NSInteger)value;
+- (Int)cellAttribute:(NSCellAttribute)aParameter;
+- (void)setCellAttribute:(NSCellAttribute)aParameter to:(Int)value;
 - (NSRect)imageRectForBounds:(NSRect)theRect;
 - (NSRect)titleRectForBounds:(NSRect)theRect;
 - (NSRect)drawingRectForBounds:(NSRect)theRect;
@@ -256,14 +256,14 @@ extern class NSCell extends NSObject, implements NSCopying, NSCoding, NSUserInte
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView;
 - (void)highlight:(BOOL)flag withFrame:(NSRect)cellFrame inView:(NSView *)controlView;
-- (NSInteger)mouseDownFlags;
+- (Int)mouseDownFlags;
 - (void)getPeriodicDelay:(float *)delay interval:(float *)interval;
 - (BOOL)startTrackingAt:(NSPoint)startPoint inView:(NSView *)controlView;
 - (BOOL)continueTracking:(NSPoint)lastPoint at:(NSPoint)currentPoint inView:(NSView *)controlView;
 - (void)stopTracking:(NSPoint)lastPoint at:(NSPoint)stopPoint inView:(NSView *)controlView mouseIsUp:(BOOL)flag;
 - (BOOL)trackMouse:(NSEvent *)theEvent inRect:(NSRect)cellFrame ofView:(NSView *)controlView untilMouseUp:(BOOL)flag;
 - (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent;
-- (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject start:(NSInteger)selStart length:(NSInteger)selLength;
+- (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject start:(Int)selStart length:(Int)selLength;
 - (void)endEditing:(NSText *)textObj;
 - (void)resetCursorRect:(NSRect)cellFrame inView:(NSView *)controlView;
 
@@ -284,8 +284,8 @@ extern class NSCell extends NSObject, implements NSCopying, NSCoding, NSUserInte
 - (void)setAllowsUndo:(BOOL)allowsUndo;
 - (BOOL)allowsUndo;
 
-- (NSInteger)integerValue NS_AVAILABLE_MAC(10_5);
-- (void)setIntegerValue:(NSInteger)anInteger NS_AVAILABLE_MAC(10_5);
+- (Int)integerValue NS_AVAILABLE_MAC(10_5);
+- (void)setIntegerValue:(Int)anInteger NS_AVAILABLE_MAC(10_5);
 - (void)takeIntegerValueFrom:(id)sender NS_AVAILABLE_MAC(10_5);
 
 /* Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the cell bounds. The setting is ignored if -lineBreakMode is neither NSLineBreakByWordWrapping nor NSLineBreakByCharWrapping.
@@ -348,7 +348,7 @@ extern class NSCell(NSCellAttributedStringMethods)
 extern class NSCell(NSCellMixedState)
 - (void)setAllowsMixedState:(BOOL)flag;	/* allow button to have mixed state value*/
 - (BOOL)allowsMixedState;
-- (NSInteger)nextState;			/* get next state state in cycle */
+- (Int)nextState;			/* get next state state in cycle */
 - (void)setNextState;			/* toggle/cycle through states */
 }
 
@@ -436,8 +436,8 @@ enum {
 };
 
 // Use formatters instead.  See -[NSCell formatter] and -[NSCell setFormatter:].
-- (NSInteger)entryType NS_DEPRECATED_MAC(10_0, 10_0);
-- (void)setEntryType:(NSInteger)aType NS_DEPRECATED_MAC(10_0, 10_0);
+- (Int)entryType NS_DEPRECATED_MAC(10_0, 10_0);
+- (void)setEntryType:(Int)aType NS_DEPRECATED_MAC(10_0, 10_0);
 - (BOOL)isEntryAcceptable:(NSString *)aString NS_DEPRECATED_MAC(10_0, 10_0);
 - (void)setFloatingPointFormat:(BOOL)autoRange left:(NSUInteger)leftDigits right:(NSUInteger)rightDigits NS_DEPRECATED_MAC(10_0, 10_0);
 

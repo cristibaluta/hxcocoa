@@ -24,9 +24,9 @@ extern class NSTextList extends NSObject, implements NSObject, NSCopying> {
 - (id)initWithMarkerFormat:(NSString *)format options:(NSUInteger)mask;
 - (NSString *)markerFormat;
 - (NSUInteger)listOptions;
-- (NSString *)markerForItemNumber:(NSInteger)itemNum;
-- (void)setStartingItemNumber:(NSInteger)itemNum NS_AVAILABLE_MAC(10_6);
-- (NSInteger)startingItemNumber NS_AVAILABLE_MAC(10_6);
+- (NSString *)markerForItemNumber:(Int)itemNum;
+- (void)setStartingItemNumber:(Int)itemNum NS_AVAILABLE_MAC(10_6);
+- (Int)startingItemNumber NS_AVAILABLE_MAC(10_6);
 
 }
 

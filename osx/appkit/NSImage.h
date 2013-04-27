@@ -209,7 +209,7 @@ APPKIT_EXTERN NSString *const NSImageHintInterpolation NS_AVAILABLE_MAC(10_6); /
 
 - (void)image:(NSImage*)image willLoadRepresentation:(NSImageRep*)rep;
 - (void)image:(NSImage*)image didLoadRepresentationHeader:(NSImageRep*)rep;
-- (void)image:(NSImage*)image didLoadPartOfRepresentation:(NSImageRep*)rep withValidRows:(NSInteger)rows; 
+- (void)image:(NSImage*)image didLoadPartOfRepresentation:(NSImageRep*)rep withValidRows:(Int)rows; 
 - (void)image:(NSImage*)image didLoadRepresentation:(NSImageRep*)rep withStatus:(NSImageLoadStatus)status;
 }
 

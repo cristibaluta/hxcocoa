@@ -82,7 +82,7 @@ extern class NSStatusItem (NSStatusItemCommon)
 - (void)setHighlightMode:(BOOL)highlightMode;
 - (BOOL)highlightMode;
 
-- (NSInteger)sendActionOn:(NSInteger)mask;
+- (Int)sendActionOn:(Int)mask;
 
 - (void)popUpStatusItemMenu:(NSMenu*)menu;
 - (void)drawStatusBarBackgroundInRect:(NSRect)rect withHighlight:(BOOL)highlight;

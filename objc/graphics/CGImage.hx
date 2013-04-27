@@ -3,7 +3,7 @@ package objc.graphics;
 import objc.graphics.CGColorSpace;
 import objc.graphics.CGGeometry;
 
-typedef CGImageRef = CGImage;
+//typedef CGImageRef = CGImage;
 typedef CGDataProviderRef = Dynamic;
 typedef CFTypeID = Dynamic;
 
@@ -16,7 +16,7 @@ extern enum CGImageAlphaInfo {
     kCGImageAlphaFirst;              /* For example, non-premultiplied ARGB */
     kCGImageAlphaNoneSkipLast;       /* For example, RBGX. */
     kCGImageAlphaNoneSkipFirst;      /* For example, XRGB. */
-    kCGImageAlphaOnly;                /* No color data, alpha data only */
+    kCGImageAlphaOnly;               /* No color data, alpha data only */
 }
 
 @:framework("CoreGraphics")
@@ -34,7 +34,7 @@ extern enum CGBitmapInfo {
 
 
 @:framework("CoreGraphics")
-extern class CGImage {
+extern class CGImageRef {
 /* Return the CFTypeID for CGImageRefs. */
 
 	@:c public static function CGImageGetTypeID() :CFTypeID;

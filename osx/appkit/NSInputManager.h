@@ -22,7 +22,7 @@
 
 - (void) unmarkText;
 - (BOOL) hasMarkedText;
-- (NSInteger) conversationIdentifier;
+- (Int) conversationIdentifier;
 
 /* Returns attributed string at the range.  This allows input mangers to query any range in backing-store.  May return nil.
 */

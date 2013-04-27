@@ -28,7 +28,7 @@ extern class NSSlider extends NSControl
 - (Float)knobThickness;
 - (void)setImage:(NSImage *)backgroundImage;
 - (NSImage *)image;
-- (NSInteger)isVertical;
+- (Int)isVertical;
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent;
 
 }
@@ -37,8 +37,8 @@ extern class NSSlider(NSTickMarkSupport)
 
 // For setting and retrieving the number of tick marks on a slider.
 //   0 indicates no tick marks are present, which is the default
-- (void)setNumberOfTickMarks:(NSInteger)count;
-- (NSInteger)numberOfTickMarks;
+- (void)setNumberOfTickMarks:(Int)count;
+- (Int)numberOfTickMarks;
 
 // For setting and retrieving the position tick marks will be displayed in.
 //   This has no effect if numberOfTickMarks is 0.
@@ -53,16 +53,16 @@ extern class NSSlider(NSTickMarkSupport)
 
 // Determine the slider value for a particular tick mark.
 //   An NSRangeException will be raised if the index is invalid.
-- (double)tickMarkValueAtIndex:(NSInteger)index;
+- (double)tickMarkValueAtIndex:(Int)index;
 
 // Determine the bounding rectangle of a particular tick mark.
 //   An NSRangeException will be raised if the index is invalid.
-- (NSRect)rectOfTickMarkAtIndex:(NSInteger)index;
+- (NSRect)rectOfTickMarkAtIndex:(Int)index;
 
 // Determine whether a particular point is "near" a tick mark and return its
 // index if so.  NSNotFound will be returned if no tick mark is close enough
 // to qualify.
-- (NSInteger)indexOfTickMarkAtPoint:(NSPoint)point;
+- (Int)indexOfTickMarkAtPoint:(NSPoint)point;
 
 - (double)closestTickMarkValueToValue:(double)value;
 

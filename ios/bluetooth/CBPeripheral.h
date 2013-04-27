@@ -17,7 +17,7 @@
  *  @discussion Specifies which type of write is to be performed on a CBCharacteristic.
  *
  */
-typedef NS_ENUM(NSInteger, CBCharacteristicWriteType) {
+typedef NS_ENUM(Int, CBCharacteristicWriteType) {
 	CBCharacteristicWriteWithResponse = 0,
 	CBCharacteristicWriteWithoutResponse,
 };

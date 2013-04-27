@@ -24,8 +24,8 @@ extern class NSButton extends NSControl <NSUserInterfaceValidations>
 - (NSCellImagePosition)imagePosition;
 - (void)setImagePosition:(NSCellImagePosition)aPosition;
 - (void)setButtonType:(NSButtonType)aType;
-- (NSInteger)state;
-- (void)setState:(NSInteger)value;
+- (Int)state;
+- (void)setState:(Int)value;
 - (BOOL)isBordered;
 - (void)setBordered:(BOOL)flag;
 - (BOOL)isTransparent;

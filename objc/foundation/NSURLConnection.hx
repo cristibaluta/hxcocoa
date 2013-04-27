@@ -299,9 +299,9 @@ extern class NSURLConnection extends NSObject
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 
 - (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request;
-- (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
-                                                 totalBytesWritten:(NSInteger)totalBytesWritten
-                                         totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite;
+- (void)connection:(NSURLConnection *)connection   didSendBodyData:(Int)bytesWritten
+                                                 totalBytesWritten:(Int)totalBytesWritten
+                                         totalBytesExpectedToWrite:(Int)totalBytesExpectedToWrite;
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse;
 

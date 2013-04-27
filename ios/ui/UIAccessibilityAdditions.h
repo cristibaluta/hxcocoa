@@ -18,8 +18,8 @@ package ios.ui;
 extern interface UIPickerViewAccessibilityDelegate <UIPickerViewDelegate>
 
 @optional
-- (NSString *)pickerView:(UIPickerView *)pickerView accessibilityLabelForComponent:(NSInteger)component;
-- (NSString *)pickerView:(UIPickerView *)pickerView accessibilityHintForComponent:(NSInteger)component;
+- (NSString *)pickerView:(UIPickerView *)pickerView accessibilityLabelForComponent:(Int)component;
+- (NSString *)pickerView:(UIPickerView *)pickerView accessibilityHintForComponent:(Int)component;
 
 }
 

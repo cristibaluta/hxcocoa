@@ -131,7 +131,7 @@ This can only be invoked once. Create a new NSPrintOperation instance for each o
 
 /* The current one-based page number of the operation as it's being previewed or printed.
 */
-- (NSInteger)currentPage;
+- (Int)currentPage;
 
 /* Methods that are invoked by the print operation itself as it proceeds. You should not invoke them.
 */

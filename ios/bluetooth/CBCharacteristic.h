@@ -29,7 +29,7 @@
  *	@constant CBCharacteristicPropertyIndicateEncryptionRequired	If set, only trusted devices can enable indications of the characteristic value.
  *
  */
-typedef NS_ENUM(NSInteger, CBCharacteristicProperties) {
+typedef NS_ENUM(Int, CBCharacteristicProperties) {
 	CBCharacteristicPropertyBroadcast												= 0x01,
 	CBCharacteristicPropertyRead													= 0x02,
 	CBCharacteristicPropertyWriteWithoutResponse									= 0x04,
@@ -143,7 +143,7 @@ CB_EXTERN_CLASS @interface CBCharacteristic extends NSObject
  *	@constant CBAttributePermissionsWriteEncryptionRequired		Writeable by trusted devices.
  *
  */
-typedef NS_ENUM(NSInteger, CBAttributePermissions) {
+typedef NS_ENUM(Int, CBAttributePermissions) {
 	CBAttributePermissionsReadable					= 0x01,
 	CBAttributePermissionsWriteable					= 0x02,
 	CBAttributePermissionsReadEncryptionRequired	= 0x04,

@@ -3,7 +3,7 @@
 package ios.ui;
 
 
-typedef NS_ENUM(NSInteger, NSLineBreakMode) {		/* What to do with long lines */
+typedef NS_ENUM(Int, NSLineBreakMode) {		/* What to do with long lines */
     NSLineBreakByWordWrapping = 0,     	/* Wrap at word boundaries, default */
     NSLineBreakByCharWrapping,		/* Wrap at character boundaries */
     NSLineBreakByClipping,		/* Simply clip */

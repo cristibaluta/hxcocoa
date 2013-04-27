@@ -152,7 +152,7 @@ extern class NSApplication extends NSResponder <NSUserInterfaceValidations>
 - (void)hide:(id)sender;
 - (void)unhide:(id)sender;
 - (void)unhideWithoutActivation;
-- (NSWindow *)windowWithWindowNumber:(NSInteger)windowNum;
+- (NSWindow *)windowWithWindowNumber:(Int)windowNum;
 - (NSWindow *)mainWindow;
 - (NSWindow *)keyWindow;
 - (BOOL)isActive;
@@ -166,14 +166,14 @@ extern class NSApplication extends NSResponder <NSUserInterfaceValidations>
 
 - (void)finishLaunching;
 - (void)run;
-- (NSInteger)runModalForWindow:(NSWindow *)theWindow;
+- (Int)runModalForWindow:(NSWindow *)theWindow;
 - (void)stop:(id)sender;
 - (void)stopModal;
-- (void)stopModalWithCode:(NSInteger)returnCode;
+- (void)stopModalWithCode:(Int)returnCode;
 - (void)abortModal;
 - (NSWindow *)modalWindow;
 - (NSModalSession)beginModalSessionForWindow:(NSWindow *)theWindow;
-- (NSInteger)runModalSession:(NSModalSession)session;
+- (Int)runModalSession:(NSModalSession)session;
 - (void)endModalSession:(NSModalSession)session;
 - (void)terminate:(id)sender;
 
@@ -184,20 +184,20 @@ enum {
 typedef NSUInteger NSRequestUserAttentionType;
 
 // inform the user that this application needs attention - call this method only if your application is not already active
-- (NSInteger)requestUserAttention:(NSRequestUserAttentionType)requestType;
-- (void)cancelUserAttentionRequest:(NSInteger)request;
+- (Int)requestUserAttention:(NSRequestUserAttentionType)requestType;
+- (void)cancelUserAttentionRequest:(Int)request;
 
 /*
 **  Present a sheet on the given window.  When the modal session is ended,
 ** the didEndSelector will be invoked in the modalDelegate.  The didEndSelector
 ** should have the following signature, and will be invoked when the modal session ends.
 ** This method should dismiss the sheet using orderOut:
-** - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
+** - (void)sheetDidEnd:(NSWindow *)sheet returnCode:(Int)returnCode contextInfo:(void *)contextInfo;
 **
 */
 - (void)beginSheet:(NSWindow *)sheet modalForWindow:(NSWindow *)docWindow modalDelegate:(id)modalDelegate didEndSelector:(SEL)didEndSelector contextInfo:(void *)contextInfo;
 - (void)endSheet:(NSWindow *)sheet;
-- (void)endSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode;
+- (void)endSheet:(NSWindow *)sheet returnCode:(Int)returnCode;
 
 - (NSEvent *)nextEventMatchingMask:(NSUInteger)mask untilDate:(NSDate *)expiration inMode:(NSString *)mode dequeue:(BOOL)deqFlag;
 - (void)discardEventsMatchingMask:(NSUInteger)mask beforeEvent:(NSEvent *)lastEvent;
@@ -500,7 +500,7 @@ extern class NSApplication (NSDeprecated)
  ** runModalForWindow:relativeToWindow: was deprecated in Mac OS 10.0.  
  ** Please use beginSheet:modalForWindow:modalDelegate:didEndSelector:contextInfo:
  */
-- (NSInteger)runModalForWindow:(NSWindow *)theWindow relativeToWindow:(NSWindow *)docWindow NS_DEPRECATED_MAC(10_0, 10_0);
+- (Int)runModalForWindow:(NSWindow *)theWindow relativeToWindow:(NSWindow *)docWindow NS_DEPRECATED_MAC(10_0, 10_0);
 
 /* 
  ** beginModalSessionForWindow:relativeToWindow: was deprecated in Mac OS 10.0.

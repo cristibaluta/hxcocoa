@@ -13,7 +13,7 @@ package ios.ui;
 #import <UIKit/UIGeometry.h>
 #import <UIKit/UIBarButtonItem.h>
 
-typedef NS_ENUM(NSInteger, UISegmentedControlStyle) {
+typedef NS_ENUM(Int, UISegmentedControlStyle) {
     UISegmentedControlStylePlain,     // large plain
     UISegmentedControlStyleBordered,  // large bordered
     UISegmentedControlStyleBar,       // small button/nav bar style. tintable
@@ -24,7 +24,7 @@ enum {
     UISegmentedControlNoSegment = -1   // segment index for no selected segment
 };
 
-typedef NS_ENUM(NSInteger, UISegmentedControlSegment) {
+typedef NS_ENUM(Int, UISegmentedControlSegment) {
     UISegmentedControlSegmentAny = 0,
     UISegmentedControlSegmentLeft = 1,   // The capped, leftmost segment. Only applies when numSegments > 1.
     UISegmentedControlSegmentCenter = 2, // Any segment between the left and rightmost segments. Only applies when numSegments > 2.

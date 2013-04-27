@@ -130,14 +130,14 @@ extern class NSPrintPanel extends NSObject {
 
 /* Present a print panel to the user, document-modally. When the user has dismissed it, send the message selected by didEndSelector to the delegate, with the contextInfo as the last argument. The method selected by didEndSelector must have the same signature as:
 
-    - (void)printPanelDidEnd:(NSPrintPanel *)printPanel returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo;
+    - (void)printPanelDidEnd:(NSPrintPanel *)printPanel returnCode:(Int)returnCode contextInfo:(void *)contextInfo;
 */
 - (void)beginSheetWithPrintInfo:(NSPrintInfo *)printInfo modalForWindow:(NSWindow *)docWindow delegate:(id)delegate didEndSelector:(SEL)didEndSelector contextInfo:(void *)contextInfo;
 
 /* Present a print panel to the user, application-modally, and return either NSOKButton or NSCancelButton. The default implementation of -runModal just invokes [self runModalWithPrintInfo:[[NSPrintOperation currentOperation] printInfo]].
 */
-- (NSInteger)runModalWithPrintInfo:(NSPrintInfo *)printInfo NS_AVAILABLE_MAC(10_5);
-- (NSInteger)runModal;
+- (Int)runModalWithPrintInfo:(NSPrintInfo *)printInfo NS_AVAILABLE_MAC(10_5);
+- (Int)runModal;
 
 
 /* A simple accessor. Your -beginSheetWithPrintInfo:... delegate can use this so it doesn't have to keep a pointer to the NSPrintInfo elsewhere while waiting for the user to dismiss the print panel.

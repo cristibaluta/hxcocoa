@@ -156,7 +156,7 @@ extern class NSView extends NSResponder <NSAnimatablePropertyContainer, NSUserIn
 - (BOOL)isHidden;
 - (BOOL)isHiddenOrHasHiddenAncestor;
 
-- (void)getRectsBeingDrawn:(const NSRect **)rects count:(NSInteger *)count;
+- (void)getRectsBeingDrawn:(const NSRect **)rects count:(Int *)count;
 - (BOOL)needsToDrawRect:(NSRect)aRect;
 - (BOOL)wantsDefaultClipping;
 - (void)viewDidHide NS_AVAILABLE_MAC(10_5);
@@ -280,7 +280,7 @@ extern class NSView extends NSResponder <NSAnimatablePropertyContainer, NSUserIn
 - (void)cacheDisplayInRect:(NSRect)rect toBitmapImageRep:(NSBitmapImageRep *)bitmapImageRep;
 - (void)viewWillDraw NS_AVAILABLE_MAC(10_5);
 
-- (NSInteger)gState;
+- (Int)gState;
 - (void)allocateGState;
 - (void)releaseGState;
 - (void)setUpGState;
@@ -295,8 +295,8 @@ extern class NSView extends NSResponder <NSAnimatablePropertyContainer, NSUserIn
 
 - (NSView *)hitTest:(NSPoint)aPoint;
 - (BOOL)mouse:(NSPoint)aPoint inRect:(NSRect)aRect;
-- (id)viewWithTag:(NSInteger)aTag;
-- (NSInteger)tag;
+- (id)viewWithTag:(Int)aTag;
+- (Int)tag;
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent;
 - (BOOL)acceptsFirstMouse:(NSEvent *)theEvent;
 - (BOOL)shouldDelayWindowOrderingForEvent:(NSEvent *)theEvent;
@@ -389,7 +389,7 @@ extern class NSView extends NSResponder <NSAnimatablePropertyContainer, NSUserIn
 /* -rectPreservedDuringLiveResize indicates the rect the view previously occupied, in the current coordinate system of the view */
 - (NSRect)rectPreservedDuringLiveResize;
 /* On return from -getRectsExposedDuringLiveResize, exposedRects indicates the parts of the view that are newly exposed (at most 4 rects).  *count indicates how many rects are in the exposedRects list */
-- (void)getRectsExposedDuringLiveResize:(NSRect[4])exposedRects count:(NSInteger *)count;
+- (void)getRectsExposedDuringLiveResize:(NSRect[4])exposedRects count:(Int *)count;
 
 /* Text Input */
 /* Returns NSTextInputContext object for the receiver. Returns nil if the receiver doesn't conform to NSTextInputClient protocol.
@@ -440,7 +440,7 @@ extern class NSView(NSPrinting)
 - (Float)widthAdjustLimit;
 - (void)adjustPageWidthNew:(Float *)newRight left:(Float)oldLeft right:(Float)oldRight limit:(Float)rightLimit;
 - (void)adjustPageHeightNew:(Float *)newBottom top:(Float)oldTop bottom:(Float)oldBottom limit:(Float)bottomLimit;
-- (NSRect)rectForPage:(NSInteger)page;
+- (NSRect)rectForPage:(Int)page;
 - (NSPoint)locationOfPrintRect:(NSRect)aRect;
 - (void)drawPageBorderWithSize:(NSSize)borderSize;
 - (NSAttributedString *)pageHeader;

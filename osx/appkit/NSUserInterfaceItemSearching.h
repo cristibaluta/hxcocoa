@@ -19,7 +19,7 @@
     The handleMatchedItems block can be invoked from any thread desired.  If it is called more than once the additional results will be appended after previous items until the maximum is reached.
  */
 #if NS_BLOCKS_AVAILABLE
-- (void)searchForItemsWithSearchString:(NSString *)searchString resultLimit:(NSInteger)resultLimit matchedItemHandler:(void (^)(NSArray *items))handleMatchedItems;
+- (void)searchForItemsWithSearchString:(NSString *)searchString resultLimit:(Int)resultLimit matchedItemHandler:(void (^)(NSArray *items))handleMatchedItems;
 #endif
 
 /* return an array of strings (localized for display in the menu) that will be combined with separators to form the menu item title

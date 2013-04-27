@@ -77,12 +77,12 @@ extern class NSSplitView extends NSView {
 
 /* Get the minimum or maximum possible position of a divider. The position is "possible" in that it is dictated by the bounds of this view and the current position of other dividers. ("Allowable" positions are those that result from letting the delegate apply constraints to the possible positions.) You can invoke these methods to determine the range of values that can be usefully passed to -setPosition:ofDividerAtIndex:. You can also invoke them from delegate methods like -splitView:constrainSplitPosition:ofSubviewAt: to implement relatively complex behaviors that depend on the current state of the split view. The results of invoking these methods when -adjustSubviews has not been invoked recently enough for the subview frames to be valid are undefined.
 */
-- (Float)minPossiblePositionOfDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
-- (Float)maxPossiblePositionOfDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (Float)minPossiblePositionOfDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (Float)maxPossiblePositionOfDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
 
 /* Set the position of a divider. The default implementation of this method behaves as if the user were attempting to drag the divider to the proposed position, so the constraints imposed by the delegate are applied and one of the views adjacent to the divider may be collapsed. This method is not invoked by NSSplitView itself, so there's probably not much point in overriding it.
 */
-- (void)setPosition:(Float)position ofDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (void)setPosition:(Float)position ofDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
 
 
 }
@@ -100,24 +100,24 @@ extern class NSSplitView extends NSView {
 
 /* Return YES if the subview should be collapsed because the user has double-clicked on an adjacent divider. If a split view has a delegate, and the delegate responds to this message, it will be sent once for the subview before a divider when the user double-clicks on that divider, and again for the subview after the divider, but only if the delegate returned YES when sent -splitView:canCollapseSubview: for the subview in question. When the delegate indicates that both subviews should be collapsed NSSplitView's behavior is undefined.
 */
-- (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (BOOL)splitView:(NSSplitView *)splitView shouldCollapseSubview:(NSView *)subview forDoubleClickOnDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
 
 
 /* Given a proposed minimum allowable position for one of the dividers of a split view, return the minimum allowable position for the divider. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that responds to this message by merely returning the proposed minimum. If a split view has a delegate, and the delegate responds to this message, it will be sent at least once when the user begins dragging one of the split view's dividers, and may be resent as the user continues to drag the divider.
 
 Delegates that respond to this message and return a number larger than the proposed minimum position effectively declare a minimum size for the subview above or to the left of the divider in question, the minimum size being the difference between the proposed and returned minimum positions. This minimum size is only effective for the divider-dragging operation during which the -splitView:constrainMinCoordinate:ofSubviewAt: message is sent. NSSplitView's behavior is undefined when a delegate responds to this message by returning a number smaller than the proposed minimum.
 */
-- (Float)splitView:(NSSplitView *)splitView constrainMinCoordinate:(Float)proposedMinimumPosition ofSubviewAt:(NSInteger)dividerIndex;
+- (Float)splitView:(NSSplitView *)splitView constrainMinCoordinate:(Float)proposedMinimumPosition ofSubviewAt:(Int)dividerIndex;
 
 /* Given a proposed maximum allowable position for one of the dividers of a split view, return the maximum allowable position for the divider. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that responds to this message by merely returning the proposed maximum. If a split view has a delegate, and the delegate responds to this message, it will be sent at least once when the user begins dragging one of the split view's dividers, and may be resent as the user continues to drag the divider.
 
 Delegates that respond to this message and return a number smaller than the proposed maximum position effectively declare a minimum size for the subview below or to the right of the divider in question, the minimum size being the difference between the proposed and returned maximum positions. This minimum size is only effective for the divider-dragging operation during which the -splitView:constrainMaxCoordinate:ofSubviewAt: message is sent. NSSplitView's behavior is undefined when a delegate responds to this message by returning a number larger than the proposed maximum.
 */
-- (Float)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(Float)proposedMaximumPosition ofSubviewAt:(NSInteger)dividerIndex;
+- (Float)splitView:(NSSplitView *)splitView constrainMaxCoordinate:(Float)proposedMaximumPosition ofSubviewAt:(Int)dividerIndex;
 
 /* Given a proposed position for one of the dividers of a split view, return a position at which the divider should be placed as the user drags it. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that responds to this message by merely returning the proposed position. If a split view has a delegate, and the delegate responds to this message, it will be sent repeatedly as the user drags one of the split view's dividers.
 */
-- (Float)splitView:(NSSplitView *)splitView constrainSplitPosition:(Float)proposedPosition ofSubviewAt:(NSInteger)dividerIndex;
+- (Float)splitView:(NSSplitView *)splitView constrainSplitPosition:(Float)proposedPosition ofSubviewAt:(Int)dividerIndex;
 
 /* Given that a split view has been resized but has not yet adjusted its subviews to accomodate the new size, and given the former size of the split view, adjust the subviews to accomodate the new size of the split view. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that responds to this message by merely sending the split view an -adjustSubviews message.
 
@@ -134,15 +134,15 @@ Delegates that respond to this message should adjust the frames of the uncollaps
 
 /* Given that a split view has been resized and is adjusting its subviews to accomodate the new size, or that the user is dragging a divider, return YES to allow the divider to be dragged or adjusted off the edge of the split view where it will not be visible. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that returns NO when sent this message.
 */
-- (BOOL)splitView:(NSSplitView *)splitView shouldHideDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (BOOL)splitView:(NSSplitView *)splitView shouldHideDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
 
 /* Given the drawn frame of a divider (in the coordinate system established by the split view's bounds), return the frame in which mouse clicks should initiate divider dragging. If a split view has no delegate, or if its delegate does not respond to this message, the split view behaves as if it has a delegate that returns proposedEffectiveRect when sent this message. A split view with thick dividers proposes the drawn frame as the effective frame. A split view with thin dividers proposes an effective frame that's a litte larger than the drawn frame, to make it easier for the user to actually grab the divider.
 */
-- (NSRect)splitView:(NSSplitView *)splitView effectiveRect:(NSRect)proposedEffectiveRect forDrawnRect:(NSRect)drawnRect ofDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (NSRect)splitView:(NSSplitView *)splitView effectiveRect:(NSRect)proposedEffectiveRect forDrawnRect:(NSRect)drawnRect ofDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
 
 /* Given a divider index, return an additional rectangular area (in the coordinate system established by the split view's bounds) in which mouse clicks should also initiate divider dragging, or NSZeroRect to not add one. If a split view has no delegate, or if its delegate does not respond to this message, only mouse clicks within the effective frame of a divider initiate divider dragging.
 */
-- (NSRect)splitView:(NSSplitView *)splitView additionalEffectiveRectOfDividerAtIndex:(NSInteger)dividerIndex NS_AVAILABLE_MAC(10_5);
+- (NSRect)splitView:(NSSplitView *)splitView additionalEffectiveRectOfDividerAtIndex:(Int)dividerIndex NS_AVAILABLE_MAC(10_5);
 
 
 /* Respond as if the delegate had registered for the NSSplitViewDidResizeSubviewsNotification or NSSplitViewWillResizeSubviewsNotification notification, described below. A split view's behavior is not explicitly affected by a delegate's ability or inability to respond to these messages, though the delegate may send messages to the split view in response to these messages.

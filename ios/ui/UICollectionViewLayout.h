@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, UICollectionElementCategory) {
 
 }
 
-typedef NS_ENUM(NSInteger, UICollectionUpdateAction) {
+typedef NS_ENUM(Int, UICollectionUpdateAction) {
     UICollectionUpdateActionInsert,
     UICollectionUpdateActionDelete,
     UICollectionUpdateActionReload,

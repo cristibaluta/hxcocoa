@@ -14,7 +14,7 @@ package ios.ui;
 // Note: Capitalization does not apply in all script systems. In such
 // cases, these values are ignored by the keyboard/input method implementation.
 //
-typedef NS_ENUM(NSInteger, UITextAutocapitalizationType) {
+typedef NS_ENUM(Int, UITextAutocapitalizationType) {
     UITextAutocapitalizationTypeNone,
     UITextAutocapitalizationTypeWords,
     UITextAutocapitalizationTypeSentences,
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, UITextAutocapitalizationType) {
 // instead use a conversion and/or candidate selection methodology. In such
 // cases, these values are ignored by the keyboard/input method implementation.
 //
-typedef NS_ENUM(NSInteger, UITextAutocorrectionType) {
+typedef NS_ENUM(Int, UITextAutocorrectionType) {
     UITextAutocorrectionTypeDefault,
     UITextAutocorrectionTypeNo,
     UITextAutocorrectionTypeYes,
@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, UITextAutocorrectionType) {
 //
 // Controls the annotation of misspelled words for a text widget.
 // Note: Some input methods do not support spell checking.
-typedef NS_ENUM(NSInteger, UITextSpellCheckingType) {
+typedef NS_ENUM(Int, UITextSpellCheckingType) {
     UITextSpellCheckingTypeDefault,
     UITextSpellCheckingTypeNo,
     UITextSpellCheckingTypeYes,
@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, UITextSpellCheckingType) {
 // match to the requested type (e.g. displaying UIKeyboardTypeNumbersAndPunctuation 
 // type if UIKeyboardTypeNumberPad is not supported).
 //
-typedef NS_ENUM(NSInteger, UIKeyboardType) {
+typedef NS_ENUM(Int, UIKeyboardType) {
     UIKeyboardTypeDefault,                // Default type for the current input method.
     UIKeyboardTypeASCIICapable,           // Displays a keyboard which can enter ASCII characters, non-ASCII keyboards remain active
     UIKeyboardTypeNumbersAndPunctuation,  // Numbers and assorted punctuation.
@@ -85,7 +85,7 @@ typedef NS_ENUM(NSInteger, UIKeyboardType) {
 // In such cases, the input method will make a best effort to find a close 
 // match to the requested type.
 //
-typedef NS_ENUM(NSInteger, UIKeyboardAppearance) {
+typedef NS_ENUM(Int, UIKeyboardAppearance) {
     UIKeyboardAppearanceDefault,          // Default apperance for the current input method.
     UIKeyboardAppearanceAlert             // Appearance suitable for use in "alert" scenarios.
 };
@@ -98,7 +98,7 @@ typedef NS_ENUM(NSInteger, UIKeyboardAppearance) {
 // Note: This enum is under discussion and may be replaced with a 
 // different implementation.
 //
-typedef NS_ENUM(NSInteger, UIReturnKeyType) {
+typedef NS_ENUM(Int, UIReturnKeyType) {
     UIReturnKeyDefault,
     UIReturnKeyGo,
     UIReturnKeyGoogle,

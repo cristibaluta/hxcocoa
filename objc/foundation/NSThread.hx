@@ -1,4 +1,5 @@
 package objc.foundation;
+
 import objc.foundation.NSObject;
 import objc.foundation.NSDictionary;
 

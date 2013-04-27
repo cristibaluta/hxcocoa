@@ -421,7 +421,7 @@ FOUNDATION_EXPORT const char *NSGetSizeAndAlignment(const char *typePtr, NSUInte
 FOUNDATION_EXPORT void NSLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 FOUNDATION_EXPORT void NSLogv(NSString *format, va_list args) NS_FORMAT_FUNCTION(1,0);
 
-typedef NS_ENUM(NSInteger, NSComparisonResult) {NSOrderedAscending = -1L, NSOrderedSame, NSOrderedDescending};
+typedef NS_ENUM(Int, NSComparisonResult) {NSOrderedAscending = -1L, NSOrderedSame, NSOrderedDescending};
 
 #if NS_BLOCKS_AVAILABLE
 typedef NSComparisonResult (^NSComparator)(id obj1, id obj2);

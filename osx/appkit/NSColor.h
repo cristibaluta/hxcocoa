@@ -69,7 +69,7 @@ extern class NSColor extends NSObject, implements NSCopying, NSCoding, NSPastebo
 
 /* Create colors with arbitrary colorspace. The number of components in the provided array should match the number dictated by the specified colorspace, plus one for alpha (supply 1.0 for opaque colors); otherwise an exception will be raised.  If the colorspace is one which cannot be used with NSColors, nil is returned.
 */
-+ (NSColor *)colorWithColorSpace:(NSColorSpace *)space components:(const Float *)components count:(NSInteger)numberOfComponents;
++ (NSColor *)colorWithColorSpace:(NSColorSpace *)space components:(const Float *)components count:(Int)numberOfComponents;
 
 
 /* Create NSCustomColorSpace colors in the sRGB or GenericGamma22Gray colorspaces.  
@@ -231,7 +231,7 @@ If colorSpace is nil, then the most appropriate color space is used.
 /* For colors with custom colorspace; get the colorspace and individual floating point components, including alpha. Note that all these methods will work for other NSColors which have floating point components. They will raise exceptions otherwise, like other existing colorspace-specific methods.
 */
 - (NSColorSpace *)colorSpace;
-- (NSInteger)numberOfComponents;
+- (Int)numberOfComponents;
 - (void)getComponents:(Float *)components;
 
 

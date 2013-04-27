@@ -67,7 +67,7 @@ You can extend this functionality by introducing a new set of protocols that are
 /* Protocol implemented by validated objects */
 @protocol NSValidatedUserInterfaceItem
 - (SEL)action;
-- (NSInteger)tag;
+- (Int)tag;
 }
 
 /* Protocol implemented by validator objects */

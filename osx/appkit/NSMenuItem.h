@@ -103,8 +103,8 @@ extern class NSMenuItem extends NSObject, implements NSCopying, NSCoding, NSVali
 - (void)setImage:(NSImage *)menuImage;
 - (NSImage *)image;
 
-- (void)setState:(NSInteger)state;
-- (NSInteger)state;
+- (void)setState:(Int)state;
+- (Int)state;
 - (void)setOnStateImage:(NSImage *)image;  // checkmark by default
 - (NSImage *)onStateImage;
 - (void)setOffStateImage:(NSImage *)image;  // none by default
@@ -119,16 +119,16 @@ extern class NSMenuItem extends NSObject, implements NSCopying, NSCoding, NSVali
 - (void)setAlternate:(BOOL)isAlternate;
 - (BOOL)isAlternate;
 
-- (void)setIndentationLevel:(NSInteger)indentationLevel;
-- (NSInteger)indentationLevel;
+- (void)setIndentationLevel:(Int)indentationLevel;
+- (Int)indentationLevel;
 
 - (void)setTarget:(id)anObject;
 - (id)target;
 - (void)setAction:(SEL)aSelector;
 - (SEL)action;
 
-- (void)setTag:(NSInteger)anInt;
-- (NSInteger)tag;
+- (void)setTag:(Int)anInt;
+- (Int)tag;
 
 - (void)setRepresentedObject:(id)anObject;
 - (id)representedObject;

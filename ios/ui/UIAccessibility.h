@@ -152,19 +152,19 @@ extern class NSObject (UIAccessibilityContainer)
 /*
  Returns the number of accessibility elements in the container.
  */
-- (NSInteger)accessibilityElementCount;
+- (Int)accessibilityElementCount;
 
 /*
  Returns the accessibility element in order, based on index.
  default == nil 
  */
-- (id)accessibilityElementAtIndex:(NSInteger)index;
+- (id)accessibilityElementAtIndex:(Int)index;
 
 /*
  Returns the ordered index for an accessibility element
  default == NSNotFound 
  */
-- (NSInteger)indexOfAccessibilityElement:(id)element;
+- (Int)indexOfAccessibilityElement:(id)element;
 
 }
 
@@ -209,7 +209,7 @@ extern class NSObject (UIAccessibilityAction)
  the scrolling completes.
  default == NO
  */
-typedef NS_ENUM(NSInteger, UIAccessibilityScrollDirection) {
+typedef NS_ENUM(Int, UIAccessibilityScrollDirection) {
     UIAccessibilityScrollDirectionRight = 1,
     UIAccessibilityScrollDirectionLeft,
     UIAccessibilityScrollDirectionUp,
@@ -251,13 +251,13 @@ extern interface UIAccessibilityReadingContent
 @required
 
 // Returns the line number given a point in the view's coordinate space.
-- (NSInteger)accessibilityLineNumberForPoint:(CGPoint)point NS_AVAILABLE_IOS(5_0);
+- (Int)accessibilityLineNumberForPoint:(CGPoint)point NS_AVAILABLE_IOS(5_0);
 
 // Returns the content associated with a line number as a string.
-- (NSString *)accessibilityContentForLineNumber:(NSInteger)lineNumber NS_AVAILABLE_IOS(5_0);
+- (NSString *)accessibilityContentForLineNumber:(Int)lineNumber NS_AVAILABLE_IOS(5_0);
 
 // Returns the on-screen rectangle for a line number.
-- (CGRect)accessibilityFrameForLineNumber:(NSInteger)lineNumber NS_AVAILABLE_IOS(5_0);
+- (CGRect)accessibilityFrameForLineNumber:(Int)lineNumber NS_AVAILABLE_IOS(5_0);
 
 // Returns a string representing the text displayed on the current page.
 - (NSString *)accessibilityPageContent NS_AVAILABLE_IOS(5_0);
