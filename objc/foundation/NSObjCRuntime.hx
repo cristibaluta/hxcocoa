@@ -1,5 +1,6 @@
 package objc.foundation;
 
+@:framework("Foundation")
 extern class NSObjCRuntime {}
 /*#include <TargetConditionals.h>
 
@@ -427,11 +428,10 @@ typedef NS_ENUM(Int, NSComparisonResult) {NSOrderedAscending = -1L, NSOrderedSam
 typedef NSComparisonResult (^NSComparator)(id obj1, id obj2);
 #endif
 
-enum {
-    NSEnumerationConcurrent = (1UL << 0),
-    NSEnumerationReverse = (1UL << 1),
-};
-typedef NSUInteger NSEnumerationOptions;
+enum NSEnumerationOptions {
+    NSEnumerationConcurrent;
+    NSEnumerationReverse;
+}
 
 enum {
     NSSortConcurrent = (1UL << 0),

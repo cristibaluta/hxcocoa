@@ -2,10 +2,16 @@ package objc.foundation;
 
 import objc.foundation.NSObject;
 
-private typedef NSEnumerationOptions = Dynamic;
 private typedef NSSortOptions = Dynamic;
 private typedef NSComparator = Dynamic;
 
+@:framework("Foundation")
+extern enum NSEnumerationOptions {
+    NSEnumerationConcurrent;
+    NSEnumerationReverse;
+}
+
+@:framework("Foundation")
 extern enum NSBinarySearchingOptions
 {
 	NSBinarySearchingFirstEqual;

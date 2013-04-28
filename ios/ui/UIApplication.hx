@@ -2,12 +2,14 @@ package ios.ui;
 import objc.foundation.NSURL;
 import objc.graphics.CGGeometry;
 
+@:framework("UIKit")
 extern enum UIStatusBarStyle {
     UIStatusBarStyleDefault;
     UIStatusBarStyleBlackTranslucent;
     UIStatusBarStyleBlackOpaque;
 }
 
+@:framework("UIKit")
 extern enum UIStatusBarAnimation {
     UIStatusBarAnimationNone;
     UIStatusBarAnimationFade;
@@ -16,6 +18,7 @@ extern enum UIStatusBarAnimation {
 
 // Note that UIInterfaceOrientationLandscapeLeft is equal to UIDeviceOrientationLandscapeRight (and vice versa).
 // This is because rotating the device to the left requires rotating the content to the right.
+@:framework("UIKit")
 extern enum UIInterfaceOrientation {
     UIInterfaceOrientationPortrait;
     UIInterfaceOrientationPortraitUpsideDown;
@@ -23,6 +26,7 @@ extern enum UIInterfaceOrientation {
     UIInterfaceOrientationLandscapeRight;
 }
 
+@:framework("UIKit")
 extern enum UIInterfaceOrientationMask {
     UIInterfaceOrientationMaskPortrait;
     UIInterfaceOrientationMaskLandscapeLeft;
@@ -37,6 +41,7 @@ extern enum UIInterfaceOrientationMask {
 define UIInterfaceOrientationIsPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait || (orientation) == UIInterfaceOrientationPortraitUpsideDown)
 define UIInterfaceOrientationIsLandscape(orientation) ((orientation) == UIInterfaceOrientationLandscapeLeft || (orientation) == UIInterfaceOrientationLandscapeRight)
 */
+@:framework("UIKit")
 extern enum UIRemoteNotificationType {
     UIRemoteNotificationTypeNone;
     UIRemoteNotificationTypeBadge;
@@ -45,12 +50,14 @@ extern enum UIRemoteNotificationType {
     UIRemoteNotificationTypeNewsstandContentAvailability;
 }
 
+@:framework("UIKit")
 extern enum UIApplicationState {
     UIApplicationStateActive;
     UIApplicationStateInactive;
     UIApplicationStateBackground;
 }
 
+@:framework("UIKit")
 @:require(ios5_0) extern enum UIUserInterfaceLayoutDirection {
     UIUserInterfaceLayoutDirectionLeftToRight;
     UIUserInterfaceLayoutDirectionRightToLeft;

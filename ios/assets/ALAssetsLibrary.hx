@@ -13,6 +13,13 @@
  */
 package ios.assets;
 
+import objc.foundation.NSError;
+import objc.foundation.NSURL;
+import objc.foundation.NSObject;
+import objc.foundation.NSDictionary;
+import objc.foundation.NSData;
+import objc.graphics.CGImage;
+
 @:framework("AssetsLibrary")
 extern enum ALAssetOrientation {
     ALAssetOrientationUp;            // default orientation
@@ -88,46 +95,48 @@ extern class ALAssetsLibrary extends NSObject {
 // When the enumeration is done, 'enumerationBlock' will be called with group set to nil.
 // When groups are enumerated, the user may be asked to confirm the application's access to the data. If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
 // If the data is currently unavailable, the failure block will be called.
-- (void)enumerateGroupsWithTypes:(ALAssetsGroupType)types usingBlock:(ALAssetsLibraryGroupsEnumerationResultsBlock)enumerationBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock;
+public function enumerateGroupsWithTypes (types:ALAssetsGroupType, usingBlock:ALAssetsLibraryGroupsEnumerationResultsBlock, failureBlock:ALAssetsLibraryAccessFailureBlock) :Void;
 
 // Returns an ALAsset object in the result block for a URL previously retrieved from an ALAsset object.
 // When the ALAsset is requested, the user may be asked to confirm the application's access to the data. If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
 // If the data is currently unavailable, the failure block will be called.
-- (void)assetForURL:(NSURL *)assetURL resultBlock:(ALAssetsLibraryAssetForURLResultBlock)resultBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock;
+public function assetForURL (assetURL:NSURL, resultBlock:ALAssetsLibraryAssetForURLResultBlock, failureBlock:ALAssetsLibraryAccessFailureBlock) :Void;
 
 // Returns an ALAssetsGroup object in the result block for a URL previously retrieved from an ALAssetsGroup object.
 // When the ALAssetsGroup is requested, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
 // If the data is currently unavailable, the failure block will be called.
-- (void)groupForURL:(NSURL *)groupURL resultBlock:(ALAssetsLibraryGroupResultBlock)resultBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
+@:require(ios5_0)
+public function groupForURL (groupURL:NSURL, resultBlock:ALAssetsLibraryGroupResultBlock, failureBlock:ALAssetsLibraryAccessFailureBlock) :Void;
 
 // Add a new ALAssetsGroup to the library.
 // The name of the ALAssetsGroup is name and the type is ALAssetsGroupAlbum.  The editable property of this ALAssetsGroup returns YES.
 // If name conflicts with another ALAssetsGroup with the same name, then the group is not created and the result block returns a nil group.
 // When the ALAssetsGroup is added, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
 // If the data is currently unavailable, the failure block will be called.
-- (void)addAssetsGroupAlbumWithName:(NSString *)name resultBlock:(ALAssetsLibraryGroupResultBlock)resultBlock failureBlock:(ALAssetsLibraryAccessFailureBlock)failureBlock __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
+@:require(ios5_0)
+public function addAssetsGroupAlbumWithName (name:String, resultBlock:ALAssetsLibraryGroupResultBlock, failureBlock:ALAssetsLibraryAccessFailureBlock) :Void;
 
 // These methods can be used to add photos or videos to the saved photos album.
 
 // With a UIImage, the API user can use -[UIImage CGImage] to get a CGImageRef, and cast -[UIImage imageOrientation] to ALAssetOrientation.
-- (void)writeImageToSavedPhotosAlbum:(CGImageRef)imageRef orientation:(ALAssetOrientation)orientation completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)completionBlock;
-
-// The API user will have to specify the orientation key in the metadata dictionary to preserve the orientation of the image
-- (void)writeImageToSavedPhotosAlbum:(CGImageRef)imageRef metadata:(NSDictionary *)metadata completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)completionBlock __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_1);
+@:overload(function(imageRef:CGImageRef, orientation:ALAssetOrientation, completionBlock:ALAssetsLibraryWriteImageCompletionBlock):Void{})
+public function writeImageToSavedPhotosAlbum (imageRef:CGImageRef, metadata:NSDictionary, completionBlock:ALAssetsLibraryWriteImageCompletionBlock) :Void;
 
 // If there is a conflict between the metadata in the image data and the metadata dictionary, the image data metadata values will be overwritten
-- (void)writeImageDataToSavedPhotosAlbum:(NSData *)imageData metadata:(NSDictionary *)metadata completionBlock:(ALAssetsLibraryWriteImageCompletionBlock)completionBlock __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_1);
+public function writeImageDataToSavedPhotosAlbum (imageData:NSData, metadata:NSDictionary, completionBlock:ALAssetsLibraryWriteImageCompletionBlock) :Void;
 
-- (void)writeVideoAtPathToSavedPhotosAlbum:(NSURL *)videoPathURL completionBlock:(ALAssetsLibraryWriteVideoCompletionBlock)completionBlock;
-- (BOOL)videoAtPathIsCompatibleWithSavedPhotosAlbum:(NSURL *)videoPathURL;
+public function writeVideoAtPathToSavedPhotosAlbum (videoPathURL:NSURL, completionBlock:ALAssetsLibraryWriteVideoCompletionBlock) :Void;
+public function videoAtPathIsCompatibleWithSavedPhotosAlbum (videoPathURL:NSURL) :Bool;
 
 // Returns photo data authorization status for this application
-+ (ALAuthorizationStatus)authorizationStatus __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0);
+//@:require(ios6_0)
+//public static function (authorizationStatus:ALAuthorizationStatus) :Void;
 
 // Disable retrieval and notifications for Shared Photo Streams
-+ (void)disableSharedPhotoStreamsSupport __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0);
+@:require(ios6_0)
+public static function disableSharedPhotoStreamsSupport () :Void;
 
-@end
+}
 
 // Notifications
 
@@ -136,20 +145,17 @@ extern class ALAssetsLibrary extends NSObject {
 // The userInfo may include the keys listed below, which identify specific ALAssets or ALAssetGroups that have become invalid and should be discarded. The values are NSSets of NSURLs which match the ALAssetPropertyURL and ALAssetsGroupPropertyURL properties. 
 // If the userInfo is nil, all ALAssets and ALAssetGroups should be considered invalid and discarded.
 // Modified ALAssets will be identified by the ALAssetLibraryUpdatedAssetsKey, but inserted or deleted ALAssets are identified by invalidating the containing ALAssetGroups.
-extern NSString *const ALAssetsLibraryChangedNotification __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0); 
 
-extern NSString *const ALAssetLibraryUpdatedAssetsKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0);
-extern NSString *const ALAssetLibraryInsertedAssetGroupsKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0);
-extern NSString *const ALAssetLibraryUpdatedAssetGroupsKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0);
-extern NSString *const ALAssetLibraryDeletedAssetGroupsKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0);
+@:framework("AssetsLibrary")
+@:require(ios6_0)
+extern enum ALAssetsLibraryOptions {
+	ALAssetsLibraryChangedNotification;
+	ALAssetLibraryUpdatedAssetsKey;
+	ALAssetLibraryInsertedAssetGroupsKey;
+	ALAssetLibraryUpdatedAssetGroupsKey;
+	ALAssetLibraryDeletedAssetGroupsKey;
 
-// Errors
-
-// Constant used by NSError to distinguish errors belonging to the AssetsLibrary domain
-extern NSString *const ALAssetsLibraryErrorDomain __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
-
-// AssetsLibrary-related error codes
-enum ALAssetsLibrary {
+	ALAssetsLibraryErrorDomain;
     ALAssetsLibraryUnknownError;      // Error (reason unknown)
     
     // These errors would be returned in the ALAssetsLibraryWriteImageCompletionBlock and ALAssetsLibraryWriteVideoCompletionBlock completion blocks,

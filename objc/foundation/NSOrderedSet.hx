@@ -1,5 +1,5 @@
 package objc.foundation;
-
+import objc.foundation.NSArray;//NSEnumerationOptions
 
 extern class NSOrderedSet implements NSCopying implements NSMutableCopying implements NSSecureCoding implements NSFastEnumeration
 {

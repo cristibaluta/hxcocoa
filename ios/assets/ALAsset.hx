@@ -1,5 +1,6 @@
 package ios.assets;
 
+import ios.assets.ALAssetsLibrary;
 import objc.foundation.NSObject;
 import objc.foundation.NSDictionary;
 import objc.foundation.NSData;

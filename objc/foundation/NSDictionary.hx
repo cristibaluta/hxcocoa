@@ -1,9 +1,10 @@
 package objc.foundation;
 import objc.foundation.NSObject;
+import objc.foundation.NSArray;//NSEnumerationOptions
+
 typedef NSFastEnumeration = Dynamic;
 typedef NSComparator = Dynamic;
 typedef NSSortOptions = Dynamic;
-typedef NSEnumerationOptions = Dynamic;
 
 @:framework("Foundation")
 extern class NSDictionary extends NSObject implements NSCopying implements NSMutableCopying implements NSSecureCoding implements NSFastEnumeration {

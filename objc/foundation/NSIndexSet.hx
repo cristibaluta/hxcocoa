@@ -1,10 +1,11 @@
 package objc.foundation;
 import objc.foundation.NSObject;
+import objc.foundation.NSArray;//NSEnumerationOptions
 
-private typedef NSEnumerationOptions = Dynamic;
 private typedef NSSortOptions = Dynamic;
 private typedef NSComparator = Dynamic;
 
+@:framework("Foundation")
 extern class NSIndexSet extends NSObject implements NSCopying implements NSMutableCopying implements NSCoding
 {
 
