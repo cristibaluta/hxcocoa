@@ -1,5 +1,10 @@
 package ios.ui;
 
+import objc.foundation.NSBundle;
+import ios.ui.UIResponder;
+import ios.ui.UIStoryboard;
+import ios.ui.UIStoryboardSegue;
+import ios.ui.UIApplication;
 
 @:framework("UIKit")
 extern enum UIModalTransitionStyle {
@@ -30,195 +35,155 @@ extern class UIViewController extends UIResponder {
 
 	public function initWithNibName (nibNameOrNil:String, bundle:NSBundle) :UIViewController;
 
-	public var nibName (default, null) :String;     // The name of the nib to be loaded to instantiate the view.
+	public var nibName (default, null) :String;// The name of the nib to be loaded to instantiate the view.
 	public var nibBundle (default, null) :NSBundle; // The bundle from which to load the nib.
 	@:require(ios5_0)public var storyboard (default, null) :UIStoryboard;
 
-	@:require(ios5_0)public function performSegueWithIdentifier (String *)identifier sender:(id)sender NS_AVAILABLE_IOS(5_0);
-	@:require(ios6_0)- (BOOL)shouldPerformSegueWithIdentifier:(identifier:String, sender:(id)sender NS_AVAILABLE_IOS(6_0);rior to initiating a segue. Return NO to prevent the segue from firing. The default implementation returns YES. This method is not invoked when -performSegueWithIdentifier:sender: is used.
-	@:require(ios5_0)public function prepareForSegue (UIStoryboardSegue *)segue sender:(id)sender NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function performSegueWithIdentifier (identifier:String, sender:Dynamic) :Void;
+	@:require(ios6_0)public function shouldPerformSegueWithIdentifier (identifier:String, sender:Dynamic) :Bool;
+	@:require(ios5_0)public function prepareForSegue (segue:UIStoryboardSegue, sender:Dynamic) :Void;
 
 // View controllers will receive this message during segue unwinding. The default implementation returns the result of -respondsToSelector: - controllers can override this to perform any ancillary checks, if necessary.
-- (BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function canPerformUnwindSegueAction (action:SEL, fromViewController:UIViewController, withSender:Dynamic) :Bool;
 
 // Custom containers should override this method and search their children for an action handler (using -canPerformUnwindSegueAction:fromViewController:sender:). If a handler is found, the controller should return it. Otherwise, the result of invoking super's implementation should be returned.
-- (UIViewController *)viewControllerForUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function viewControllerForUnwindSegueAction (action:SEL, fromViewController:UIViewController, withSender:Dynamic) :UIViewController;
 
 // Custom container view controllers should override this method and return segue instances that will perform the navigation portion of segue unwinding.
-- (UIStoryboardSegue *)segueForUnwindingToViewController:(UIViewController *)toViewController fromViewController:(UIViewController *)fromViewController identifier:(String *)identifier NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function segueForUnwindingToViewController (toViewController:UIViewController, fromViewController:UIViewController, identifier:String) :UIStoryboardSegue;
 
-	public function viewWillAppear:(BOOL)animated;    // Called when the view is about to made visible. Default does nothing
-	public function viewDidAppear:(BOOL)animated;     // Called when the view has been fully transitioned onto the screen. Default does nothing
-	public function viewWillDisappear:(BOOL)animated; // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
-	public function viewDidDisappear:(BOOL)animated;  // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
+	public function viewWillAppear (animated:Bool) :Void;    // Called when the view is about to made visible. Default does nothing
+	public function viewDidAppear (animated:Bool) :Void;     // Called when the view has been fully transitioned onto the screen. Default does nothing
+	public function viewWillDisappear (animated:Bool) :Void; // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
+	public function viewDidDisappear (animated:Bool) :Void;  // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
 
 // Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
-	public function viewWillLayoutSubviews NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function viewWillLayoutSubviews () :Void;
 // Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
-	public function viewDidLayoutSubviews NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function viewDidLayoutSubviews () :Void;
 
-public var  String *title;  // Localized title for use by a parent controller.
+	public var title :String;  // Localized title for use by a parent controller.
 
-	public function didReceiveMemoryWarning; // Called when the parent application receives a memory warning. On iOS 6.0 it will no longer clear the view by default.
+	public function didReceiveMemoryWarning () :Void; // Called when the parent application receives a memory warning. On iOS 6.0 it will no longer clear the view by default.
 
 
-	public var (default, null) UIViewController *parentViewController;
-
-// This property has been replaced by presentedViewController.
-	public var (default, null) UIViewController *modalViewController NS_DEPRECATED_IOS(2_0, 6_0);
+	public var parentViewController (default, null) :UIViewController;
 
 // The view controller that was presented by this view controller or its nearest ancestor.
-	public var (default, null) UIViewController *presentedViewController  NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public var presentedViewController (default, null) :UIViewController;
 
 // The view controller that presented this view controller (or its farthest ancestor.)
-	public var (default, null) UIViewController *presentingViewController NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public var presentingViewController (default, null) :UIViewController;
 
-	public var  BOOL definesPresentationContext NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public var definesPresentationContext :Bool;
 
 // A controller that defines the presentation context can also specify the modal transition style if this property is true.
-	public var  BOOL providesPresentationContextTransitionStyle NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public var providesPresentationContextTransitionStyle :Bool;
 
 
-- (BOOL)isBeingPresented NS_AVAILABLE_IOS(5_0);
-- (BOOL)isBeingDismissed NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function isBeingPresented () :Bool;
+	@:require(ios5_0)public function isBeingDismissed () :Bool;
 
-- (BOOL)isMovingToParentViewController NS_AVAILABLE_IOS(5_0);
-- (BOOL)isMovingFromParentViewController NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function isMovingToParentViewController () :Bool;
+	@:require(ios5_0)public function isMovingFromParentViewController () :Bool;
 
 
-	public function presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^)(void))completion NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function presentViewController (viewControllerToPresent:UIViewController, animated:Bool, completion:Void->Void) :Void;
 // The completion handler, if provided, will be invoked after the dismissed controller's viewDidDisappear: callback is invoked.
-	public function dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion NS_AVAILABLE_IOS(5_0);
-
-// Display another view controller as a modal child. Uses a vertical sheet transition if animated.This method has been replaced by presentViewController:animated:completion:
-	public function presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated NS_DEPRECATED_IOS(2_0, 6_0);
-
-// Dismiss the current modal child. Uses a vertical sheet transition if animated. This method has been replaced by dismissViewControllerAnimated:completion:
-	public function dismissModalViewControllerAnimated:(BOOL)animated NS_DEPRECATED_IOS(2_0, 6_0);
+	@:require(ios5_0)public function dismissViewControllerAnimated (flag:Bool, completion:Void->Void) :Void;
 
 
-	public var  UIModalTransitionStyle modalTransitionStyle NS_AVAILABLE_IOS(3_0);
-	public var  UIModalPresentationStyle modalPresentationStyle NS_AVAILABLE_IOS(3_2);
+	public var modalTransitionStyle :UIModalTransitionStyle;
+	public var modalPresentationStyle :UIModalPresentationStyle;
 
 // Presentation modes may keep the keyboard visible when not required. Default implementation affects UIModalPresentationFormSheet visibility.
-- (BOOL)disablesAutomaticKeyboardDismissal NS_AVAILABLE_IOS(4_3);
+	public function disablesAutomaticKeyboardDismissal () :Bool;
 
-	public var  BOOL wantsFullScreenLayout NS_AVAILABLE_IOS(3_0);
+	public var wantsFullScreenLayout :Bool;
 
-}
-
-// To make it more convenient for applications to adopt rotation, a view controller may implement the below methods. Your UIWindow's frame should use [UIScreen mainScreen].bounds as its frame.
-extern class UIViewController (UIViewControllerRotation)
+// (UIViewControllerRotation)
 
 // call this method when your return value from shouldAutorotateToInterfaceOrientation: changes
 // if the current interface orientation does not match the current device orientation, a rotation may occur provided all relevant view controllers now return YES from shouldAutorotateToInterfaceOrientation:
-+ (void)attemptRotationToDeviceOrientation NS_AVAILABLE_IOS(5_0);
-
-// Applications should use supportedInterfaceOrientations and/or shouldAutorotate..
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation NS_DEPRECATED_IOS(2_0, 6_0);
+	@:require(ios5_0)public static function attemptRotationToDeviceOrientation () :Void;
 
 // New Autorotation support.
-- (BOOL)shouldAutorotate NS_AVAILABLE_IOS(6_0);
-- (NSUInteger)supportedInterfaceOrientations NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function shouldAutorotate () :Bool;
+	@:require(ios6_0)public function supportedInterfaceOrientations () :Int;
 // Returns interface orientation masks.
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function preferredInterfaceOrientationForPresentation () :UIInterfaceOrientation;
 
 // The rotating header and footer views will slide out during the rotation and back in once it has completed.
-- (UIView *)rotatingHeaderView;     // Must be in the view hierarchy. Default returns nil.
-- (UIView *)rotatingFooterView;     // Must be in the view hierarchy. Default returns nil.
+	public function rotatingHeaderView () :UIView;     // Must be in the view hierarchy. Default returns nil.
+	public function rotatingFooterView () :UIView;     // Must be in the view hierarchy. Default returns nil.
 
-	public var (default, null) UIInterfaceOrientation interfaceOrientation;
+	public var interfaceOrientation (default, null) :UIInterfaceOrientation;
 
 // Notifies when rotation begins, reaches halfway point and ends.
-	public function willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
-	public function didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
+	public function willRotateToInterfaceOrientation (toInterfaceOrientation:UIInterfaceOrientation, duration:Int) :Void;
+	public function didRotateFromInterfaceOrientation (fromInterfaceOrientation:UIInterfaceOrientation) :Void;
 
 // Faster one-part variant, called from within a rotating animation block, for additional animations during rotation.
 // A subclass may override this method, or the two-part variants below, but not both.
-	public function willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(3_0);
-
-// Slower two-part variant, called from within a rotating animation block, for additional animations during rotation.
-// A subclass may override these methods, or the one-part variant above, but not both.
-	public function willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration NS_DEPRECATED_IOS(2_0, 5_0);
-	public function didAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation NS_DEPRECATED_IOS(2_0, 5_0); // The rotating header and footer views are offscreen.
-	public function willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration NS_DEPRECATED_IOS(2_0, 5_0); // A this point, our view orientation is set to the new orientation.
-
-}
+	public function willAnimateRotationToInterfaceOrientation (toInterfaceOrientation:UIInterfaceOrientation, duration:Float) :Void;
 
 // Many view controllers have a view that may be in an editing state or not- for example, a UITableView.  These view
 // controllers can track the editing state, and generate an Edit|Done button to be used in a navigation bar.
 // (UIViewControllerEditing)
 
-	public var (nonatomic,getter=isEditing) BOOL editing;
-	public function setEditing:(BOOL)editing animated:(BOOL)animated; // Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.
+	public var editing :Bool;
+	public function setEditing (editing:Bool, animated:Bool) :Void; // Updates the appearance of the Edit|Done button item as necessary. Clients who override it must call super first.
 
-- (UIBarButtonItem *)editButtonItem; // Return an Edit|Done button that can be used as a navigation item's custom view. Default action toggles the editing state with animation.
+	public var editButtonItem :UIBarButtonItem; // Return an Edit|Done button that can be used as a navigation item's custom view. Default action toggles the editing state with animation.
 
 
 // (UISearchDisplayControllerSupport)
 
-	public var (default, null) UISearchDisplayController *searchDisplayController;
-
-
-
-UIKIT_EXTERN String *const UIViewControllerHierarchyInconsistencyException NS_AVAILABLE_IOS(5_0);
+	public var searchDisplayController (default, null) :UISearchDisplayController;
 
 
 // (UIContainerViewControllerProtectedMethods)
 
 // An array of children view controllers. This array does not include any presented view controllers.
-	public var (default, null) NSArray *childViewControllers NS_AVAILABLE_IOS(5_0);
-
-
-	public function addChildViewController:(UIViewController *)childController NS_AVAILABLE_IOS(5_0);
-
-
-	public function  removeFromParentViewController NS_AVAILABLE_IOS(5_0);
-
-
-	public function transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public var childViewControllers (default, null) :Array<UIViewController>;
+	@:require(ios5_0)public function addChildViewController (childController:UIViewController) :Void;
+	@:require(ios5_0)public function removeFromParentViewController () :Void;
+	@:require(ios5_0)public function transitionFromViewController (fromViewController:UIViewController, toViewController:UIViewController, duration:Float, options:UIViewAnimationOptions, animations:Void->Void, completion:Bool->Void) :Void;
 
 // If a custom container controller manually forwards its appearance callbacks, then rather than calling
 // viewWillAppear:, viewDidAppear: viewWillDisappear:, or viewDidDisappear: on the children these methods
 // should be used instead. This will ensure that descendent child controllers appearance methods will be
 // invoked. It also enables more complex custom transitions to be implemented since the appearance callbacks are
 // now tied to the final matching invocation of endAppearanceTransition.
-	public function beginAppearanceTransition:(BOOL)isAppearing animated:(BOOL)animated __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_5_0);
-	public function endAppearanceTransition __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_5_0);
-
-}
+	@:require(ios5_0)public function beginAppearanceTransition (isAppearing:Bool, animated:Bool) :Void;
+	@:require(ios5_0)public function endAppearanceTransition () :Void;
 
 // (UIContainerViewControllerCallbacks)
 
 
-// This soon to be deprecated method
-- (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers NS_DEPRECATED_IOS(5_0,6_0);
-// is being replaced by these two methods.
-- (BOOL)shouldAutomaticallyForwardRotationMethods NS_AVAILABLE_IOS(6_0);
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function shouldAutomaticallyForwardRotationMethods () :Bool;
+	@:require(ios6_0)public function shouldAutomaticallyForwardAppearanceMethods () :Bool;
 
 
 
-	public function willMoveToParentViewController:(UIViewController *)parent NS_AVAILABLE_IOS(5_0);
-	public function didMoveToParentViewController:(UIViewController *)parent NS_AVAILABLE_IOS(5_0);
+	@:require(ios5_0)public function willMoveToParentViewController (parent:UIViewController) :Void;
+	@:require(ios5_0)public function didMoveToParentViewController (parent:UIViewController) :Void;
 
-}
 
 // (UIStateRestoration)
-	public var String *restorationIdentifier NS_AVAILABLE_IOS(6_0);
-	public var  (nonatomic, readwrite, assign) Class<UIViewControllerRestoration> restorationClass NS_AVAILABLE_IOS(6_0);
-	public function  encodeRestorableStateWithCoder:(NSCoder *)coder NS_AVAILABLE_IOS(6_0);
-	public function  decodeRestorableStateWithCoder:(NSCoder *)coder NS_AVAILABLE_IOS(6_0);
-}
+	@:require(ios6_0)public var restorationIdentifier :String;
+	//@:require(ios6_0)public var restorationClass :Class<UIViewControllerRestoration>;
+	@:require(ios6_0)public function encodeRestorableStateWithCoder (coder:NSCoder) :Void;
+	@:require(ios6_0)public function decodeRestorableStateWithCoder (coder:NSCoder) :Void;
 
 //UIConstraintBasedLayoutCoreMethods)
 
-	public function updateViewConstraints NS_AVAILABLE_IOS(6_0);
+	@:require(ios6_0)public function updateViewConstraints () :Void;
 
 
 //UINavigationControllerContextualToolbarItems)
 
-	public var toolbarItems :Array<>;
-	public function setToolbarItems (toolbarItems:Array<>, animated:Bool) :Void;
+	//public var toolbarItems :Array<>;
+	//public function setToolbarItems (toolbarItems:Array<>, animated:Bool) :Void;
 	
 }

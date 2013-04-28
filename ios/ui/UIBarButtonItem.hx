@@ -1,58 +1,48 @@
 //
 //  UIBarButtonItem.h
 package ios.ui;
-//
-//  Copyright (c) 2008-2012, Apple Inc. All rights reserved.
-//
 
-#import <CoreGraphics/CoreGraphics.h>
-#import <Foundation/Foundation.h>
-#import <UIKit/UIBarItem.h>
-#import <UIKit/UIKitDefines.h>
-#import <UIKit/UIAppearance.h>
-#import <UIKit/UIApplication.h>
 
-typedef NS_ENUM(Int, UIBarMetrics) {
-    UIBarMetricsDefault,
-    UIBarMetricsLandscapePhone,
-};
+@:framework("UIKit")
+extern enum UIBarMetrics {
+    UIBarMetricsDefault;
+    UIBarMetricsLandscapePhone;
+}
 
-typedef NS_ENUM(Int, UIBarButtonItemStyle) {
-    UIBarButtonItemStylePlain,    // shows glow when pressed
-    UIBarButtonItemStyleBordered,
-    UIBarButtonItemStyleDone,
-};
+@:framework("UIKit")
+extern enum UIBarButtonItemStyle {
+    UIBarButtonItemStylePlain;    // shows glow when pressed
+    UIBarButtonItemStyleBordered;
+    UIBarButtonItemStyleDone;
+}
 
-typedef NS_ENUM(Int, UIBarButtonSystemItem) {
-    UIBarButtonSystemItemDone,
-    UIBarButtonSystemItemCancel,
-    UIBarButtonSystemItemEdit,  
-    UIBarButtonSystemItemSave,  
-    UIBarButtonSystemItemAdd,
-    UIBarButtonSystemItemFlexibleSpace,
-    UIBarButtonSystemItemFixedSpace,
-    UIBarButtonSystemItemCompose,
-    UIBarButtonSystemItemReply,
-    UIBarButtonSystemItemAction,
-    UIBarButtonSystemItemOrganize,
-    UIBarButtonSystemItemBookmarks,
-    UIBarButtonSystemItemSearch,
-    UIBarButtonSystemItemRefresh,
-    UIBarButtonSystemItemStop,
-    UIBarButtonSystemItemCamera,
-    UIBarButtonSystemItemTrash,
-    UIBarButtonSystemItemPlay,
-    UIBarButtonSystemItemPause,
-    UIBarButtonSystemItemRewind,
-    UIBarButtonSystemItemFastForward,
-#if __IPHONE_3_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
-    UIBarButtonSystemItemUndo,
-    UIBarButtonSystemItemRedo,
-#endif
-#if __IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
-    UIBarButtonSystemItemPageCurl,
-#endif
-};
+@:framework("UIKit")
+extern enum UIBarButtonSystemItem {
+    UIBarButtonSystemItemDone;
+    UIBarButtonSystemItemCancel;
+    UIBarButtonSystemItemEdit;
+    UIBarButtonSystemItemSave;
+    UIBarButtonSystemItemAdd;
+    UIBarButtonSystemItemFlexibleSpace;
+    UIBarButtonSystemItemFixedSpace;
+    UIBarButtonSystemItemCompose;
+    UIBarButtonSystemItemReply;
+    UIBarButtonSystemItemAction;
+    UIBarButtonSystemItemOrganize;
+    UIBarButtonSystemItemBookmarks;
+    UIBarButtonSystemItemSearch;
+    UIBarButtonSystemItemRefresh;
+    UIBarButtonSystemItemStop;
+    UIBarButtonSystemItemCamera;
+    UIBarButtonSystemItemTrash;
+    UIBarButtonSystemItemPlay;
+    UIBarButtonSystemItemPause;
+    UIBarButtonSystemItemRewind;
+    UIBarButtonSystemItemFastForward;
+    UIBarButtonSystemItemUndo;
+    UIBarButtonSystemItemRedo;
+    UIBarButtonSystemItemPageCurl;
+}
 
 @class UIImage, UIView;
 

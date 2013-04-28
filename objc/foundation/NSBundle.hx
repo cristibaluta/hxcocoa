@@ -21,8 +21,8 @@ extern class NSBundle extends NSObject {
 	public function isLoaded () :Bool;
 	public function unload () :Bool;
 
-	public function preflightAndReturnError (error:NSError) :Bool
-	public function loadAndReturnError (error:NSError) :Bool
+	public function preflightAndReturnError (error:NSError) :Bool;
+	public function loadAndReturnError (error:NSError) :Bool;
 
 /* Methods for locating various components of a bundle. */
 	public function bundleURL () :NSURL;
