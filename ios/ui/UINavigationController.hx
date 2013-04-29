@@ -1,5 +1,5 @@
 package ios.ui;
-
+import ios.ui.UINavigationBar;
 
 /*!
  UINavigationController manages a stack of view controllers and a navigation bar.
@@ -22,9 +22,9 @@ extern class UINavigationController extends UIViewController {
    Passing nil for navigationBarClass will get you UINavigationBar, nil for toolbarClass gets UIToolbar.
    The arguments must otherwise be subclasses of the respective UIKit classes.
  */
-- (instancetype)initWithNavigationBarClass:(Class)navigationBarClass toolbarClass:(Class)toolbarClass NS_AVAILABLE_IOS(5_0);
+	public function initWithNavigationBarClass (navigationBarClass:Class<Dynamic>, toolbarClass:Class<Dynamic>) :UINavigationController;
 
-	public function initWithRootViewController (rootViewController:UIViewController) :UINavigationViewController; // Convenience method pushes the root view controller without animation.
+	public function initWithRootViewController (rootViewController:UIViewController) :UINavigationController; // Convenience method pushes the root view controller without animation.
 
 	public function pushViewController (viewController:UIViewController, animated:Bool) :Void;
 

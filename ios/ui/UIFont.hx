@@ -29,4 +29,9 @@ extern class UIFont extends NSObject {
 	 // Create a new font that is identical to the current font except the specified size
 	public function fontWithSize (fontSize:Float) :UIFont;
 
+//	(UIFontSystemFonts)
+	public static function labelFontSize () :Float;
+	public static function buttonFontSize () :Float;
+	public static function smallSystemFontSize () :Float;
+	public static function systemFontSize () :Float;
 }

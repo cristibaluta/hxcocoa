@@ -50,4 +50,13 @@ extern class UIColor extends NSObject {
 
 	@:require(ios5_0) public function initWithColor (color:UIColor) :UIColor;
 
+
+// (UIColorSystemColors)
+/*	+ (UIColor *)lightTextColor;                // for a dark background
+	+ (UIColor *)darkTextColor;                 // for a light background
+	+ (UIColor *)groupTableViewBackgroundColor; // This method will be deprecated during the 6.0 seed program
+
+	+ (UIColor *)viewFlipsideBackgroundColor;
+	+ (UIColor *)scrollViewTexturedBackgroundColor NS_AVAILABLE_IOS(3_2);
+	+ (UIColor *)underPageBackgroundColor NS_AVAILABLE_IOS(5_0);*/
 }

@@ -1,6 +1,8 @@
 //
 //  UIStoryboard.h
 package ios.ui;
+import objc.foundation.NSObject;
+import objc.foundation.NSBundle;
 
 @:framework("UIKit")
 @:require(ios5_0)

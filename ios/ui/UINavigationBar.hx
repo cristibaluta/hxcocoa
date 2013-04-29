@@ -1,69 +1,11 @@
 //
 //  UINavigationBar.h
 package ios.ui;
-//
-//  Copyright (c) 2005-2012, Apple Inc. All rights reserved.
-//
+import objc.foundation.NSObject;
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIView.h>
-#import <UIKit/UIInterface.h>
-#import <UIKit/UIFont.h>
-#import <UIKit/UIKitDefines.h>
-#import <UIKit/UIButton.h>
-#import <UIKit/UIBarButtonItem.h>
-
-@class UINavigationItem, UIBarButtonItem, UIImage, UIColor;
-extern interface UINavigationBarDelegate;
-
-extern class UINavigationBar extends UIView, implements NSObject> {
-  @private
-    NSMutableArray *_itemStack;
-    Float         _rightMargin;
-    unsigned        _state;
-    id              _delegate;
-    UIView         *_backgroundView;
-    UIView         *_titleView;
-    NSArray        *_leftViews;
-    NSArray        *_rightViews;
-    UIView         *_prompt;
-    UIView         *_accessoryView;
-    UIColor        *_tintColor;
-    id              _appearanceStorage;
-    id              _currentAlert;
-    struct {
-        unsigned int animate:1;
-        unsigned int animationDisabledCount:10;
-        unsigned int transitioningBarStyle:1;
-        unsigned int newBarStyle:3;
-        unsigned int transitioningToTranslucent:1;
-        unsigned int barStyle:3;
-        unsigned int isTranslucent:1;
-        unsigned int disableLayout:1;
-        unsigned int backPressed:1;
-        unsigned int animatePromptChange:1;
-        unsigned int pendingHideBackButton:1;
-        unsigned int titleAutosizesToFit:1;
-        unsigned int usingNewAPI:1;
-        unsigned int minibar:1;
-        unsigned int forceFullHeightInLandscape:1;
-        unsigned int isLocked:1;
-        unsigned int shouldUpdatePromptAfterTransition:1;
-        unsigned int crossfadeItems:1;
-        unsigned int autoAdjustTitle:1;
-        unsigned int isContainedInPopover:1;
-        unsigned int needsDrawRect:1;
-        unsigned int animationCleanupCancelled:1;
-        unsigned int forceLayout:1;
-        unsigned int layoutInProgress:1;
-        unsigned int dynamicDuration:1;
-        unsigned int isInteractive:1;
-        unsigned int cancelledTransition:1;
-        unsigned int animationCount:4;
-    } _navbarFlags;
-}
-
+@:framework("UIKit")
+extern class UINavigationBar extends UIView {
+#if display
 	public var  UIBarStyle barStyle;
 	public var  id delegate;
 	public var (nonatomic,assign,getter=isTranslucent) BOOL translucent NS_AVAILABLE_IOS(3_0); // Default is NO. Always YES if barStyle is set to UIBarStyleBlackTranslucent
@@ -103,48 +45,30 @@ public var  NSDictionary *titleTextAttributes NS_AVAILABLE_IOS(5_0) UI_APPEARANC
 
 	public function setTitleVerticalPositionAdjustment:(Float)adjustment forBarMetrics:(UIBarMetrics)barMetrics NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 - (Float)titleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
-
+#end
 }
 
-extern interface UINavigationBarDelegate <NSObject>
-
+extern interface UINavigationBarDelegate {
+#if display
 @optional
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item; // called to push. return NO not to.
 	public function navigationBar:(UINavigationBar *)navigationBar didPushItem:(UINavigationItem *)item;    // called at end of animation of push or immediately if not animated
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item;  // same as push methods
 	public function navigationBar:(UINavigationBar *)navigationBar didPopItem:(UINavigationItem *)item;
-
+#end
 }
 
-extern class UINavigationItem extends NSObject, implements NSObject> {
- @private
-    NSString        *_title;
-    NSString        *_backButtonTitle;
-    UIBarButtonItem *_backBarButtonItem;
-    NSString        *_prompt;
-    NSInteger        _tag;
-    id               _context;
-    UINavigationBar *_navigationBar;
-    UIView          *_defaultTitleView;
-    UIView          *_titleView;
-    UIView          *_backButtonView;
-    NSArray         *_leftBarButtonItems;
-    NSArray         *_rightBarButtonItems;
-    NSArray         *_customLeftViews;
-    NSArray         *_customRightViews;
-    BOOL             _hidesBackButton;
-    BOOL             _leftItemsSupplementBackButton;
-    UIImageView     *_frozenTitleView;
-}
-
+@:framework("UIKit")
+extern class UINavigationItem extends NSObject {
+	#if display
 - (id)initWithTitle:(NSString *)title;
 
-public var    NSString        *title;             // Title when topmost on the stack. default is nil
+	public var    NSString        *title;             // Title when topmost on the stack. default is nil
 	public var (nonatomic,retain) UIBarButtonItem *backBarButtonItem; // Bar button item to use for the back button in the child navigation item.
 	public var (nonatomic,retain) UIView          *titleView;         // Custom view to use in lieu of a title. May be sized horizontally. Only used when item is topmost on the stack.
 
-public var    NSString *prompt;     // Explanatory text to display above the navigation bar buttons.
+	public var    NSString *prompt;     // Explanatory text to display above the navigation bar buttons.
 
 	public var  BOOL hidesBackButton; // If YES, this navigation item will hide the back button when it's on top of the stack.
 	public function setHidesBackButton:(BOOL)hidesBackButton animated:(BOOL)animated;
@@ -161,8 +85,8 @@ public var    NSString *prompt;     // Explanatory text to display above the nav
    rightBarButtonItems are placed right to left with the first item in the list at
  the right outside edge and right aligned.
  */
-public var  NSArray *leftBarButtonItems NS_AVAILABLE_IOS(5_0);
-public var  NSArray *rightBarButtonItems NS_AVAILABLE_IOS(5_0);
+	public var  NSArray *leftBarButtonItems NS_AVAILABLE_IOS(5_0);
+	public var  NSArray *rightBarButtonItems NS_AVAILABLE_IOS(5_0);
 	public function setLeftBarButtonItems:(NSArray *)items animated:(BOOL)animated NS_AVAILABLE_IOS(5_0); 
 	public function setRightBarButtonItems:(NSArray *)items animated:(BOOL)animated NS_AVAILABLE_IOS(5_0);
 
@@ -180,5 +104,5 @@ public var  NSArray *rightBarButtonItems NS_AVAILABLE_IOS(5_0);
 	public var (nonatomic,retain) UIBarButtonItem *rightBarButtonItem;
 	public function setLeftBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;
 	public function setRightBarButtonItem:(UIBarButtonItem *)item animated:(BOOL)animated;
-
+#end
 }

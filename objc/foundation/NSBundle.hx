@@ -52,22 +52,22 @@ extern class NSBundle extends NSObject {
 	public static function URLForResource (name:String, withExtension:String, subdirectory:String, inBundleWithURL:NSURL) :NSURL;
 	public static function URLsForResourcesWithExtension (ext:String, subdirectory:String, inBundleWithURL:NSURL) :Array<NSURL>;
 
-	@:overload(function(name:String, withExtension:String, subdirectory:String):NSURL{})
-	@:overload(function(name:String, withExtension:String, subdirectory:String, localization:String):NSURL{})
-	public function URLForResource (name:String, withExtension:String) :NSURL;
+	//@:overload(function(name:String, withExtension:String, subdirectory:String):NSURL{})
+	//@:overload(function(name:String, withExtension:String, subdirectory:String, localization:String):NSURL{})
+	//public function URLForResource (name:String, withExtension:String) :NSURL;
 
-	@:overload(function(ext:String, subdirectory:String, localization:String):Array<NSURL>{})
-	public function URLsForResourcesWithExtension (ext:String, subdirectory:String) :Array<NSURL>;
+	//@:overload(function(ext:String, subdirectory:String, localization:String):Array<NSURL>{})
+	//public function URLsForResourcesWithExtension (ext:String, subdirectory:String) :Array<NSURL>;
 	
 	public static function pathForResource (name:String, ofType:String, inDirectory:String) :String;
 	public static function pathsForResourcesOfType (ext:String, inDirectory:String) :Array<String>;
 
-	@:overload(function(name:String, ofType:String, inDirectory:String):String{})
-	@:overload(function(name:String, ofType:String, inDirectory:String, forLocalization:String):String{})
-	public function pathForResource (name:String, ofType:String) :String;
+	//@:overload(function(name:String, ofType:String, inDirectory:String):String{})
+	//@:overload(function(name:String, ofType:String, inDirectory:String, forLocalization:String):String{})
+	//public function pathForResource (name:String, ofType:String) :String;
 	
-	public function pathsForResourcesOfType (ext:String, inDirectory:String) :Array<String>;
-	public function pathsForResourcesOfType (ext:String, inDirectory:String, forLocalization:String) :Array<String>;
+	//public function pathsForResourcesOfType (ext:String, inDirectory:String) :Array<String>;
+	//public function pathsForResourcesOfType (ext:String, inDirectory:String, forLocalization:String) :Array<String>;
 
 /* Method for retrieving localized strings. */
 	public function localizedStringForKey (key:String, value:String, table:String) :String;

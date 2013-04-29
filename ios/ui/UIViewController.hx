@@ -1,10 +1,13 @@
 package ios.ui;
 
 import objc.foundation.NSBundle;
+import objc.foundation.NSCoder;
 import ios.ui.UIResponder;
 import ios.ui.UIStoryboard;
 import ios.ui.UIStoryboardSegue;
 import ios.ui.UIApplication;
+import ios.ui.UIBarButtonItem;
+import ios.ui.UIView;
 
 @:framework("UIKit")
 extern enum UIModalTransitionStyle {
@@ -21,6 +24,7 @@ extern enum UIModalPresentationStyle {
     UIModalPresentationFormSheet;
     UIModalPresentationCurrentContext;
 }
+
 
 @:framework("UIKit")
 extern class UIViewController extends UIResponder {
@@ -139,7 +143,7 @@ extern class UIViewController extends UIResponder {
 
 // (UISearchDisplayControllerSupport)
 
-	public var searchDisplayController (default, null) :UISearchDisplayController;
+	//public var searchDisplayController (default, null) :UISearchDisplayController;
 
 
 // (UIContainerViewControllerProtectedMethods)
