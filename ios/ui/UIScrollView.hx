@@ -1,5 +1,7 @@
 package ios.ui;
 
+import objc.graphics.CGGeometry;
+import ios.ui.UIGeometry;
 
 @:framework("UIKit")
 extern enum UIScrollViewIndicatorStyle {
@@ -10,168 +12,21 @@ extern enum UIScrollViewIndicatorStyle {
 
 
 @:framework("UIKit")
-extern class UIScrollView {
+extern class UIScrollView extends UIView {
 
-
-}
-/*
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIView.h>
-#import <UIKit/UIGeometry.h>
-#import <UIKit/UIKitDefines.h>
-
-typedef NS_ENUM(Int, ;
-
-UIKIT_EXTERN const float UIScrollViewDecelerationRateNormal NS_AVAILABLE_IOS(3_0);
-UIKIT_EXTERN const float UIScrollViewDecelerationRateFast NS_AVAILABLE_IOS(3_0);
-
-@class UIEvent, UIImageView, UIPanGestureRecognizer, UIPinchGestureRecognizer;
-extern interface UIScrollViewDelegate;
-
-extern class UIScrollView extends UIView, implements NSObject> {
-  @package
-    CGSize       _contentSize;
-    UIEdgeInsets _contentInset;
-    id           _delegate;
-    UIImageView* _verticalScrollIndicator;
-    UIImageView* _horizontalScrollIndicator;
-    UIEdgeInsets _scrollIndicatorInset;
-    struct {
-        unsigned int tracking:1;
-        unsigned int dragging:1;
-        unsigned int verticalBounceEnabled:1;
-        unsigned int horizontalBounceEnabled:1;
-        unsigned int verticalBouncing:1;
-        unsigned int horizontalBouncing:1;
-        unsigned int bouncesZoom:1;
-        unsigned int zoomBouncing:1;
-        unsigned int alwaysBounceHorizontal:1;
-        unsigned int alwaysBounceVertical:1;
-        unsigned int preventScrollingContainer:1;
-        unsigned int canCancelContentTouches:1;
-        unsigned int delaysContentTouches:1;
-        unsigned int programmaticScrollDisabled:1;
-        unsigned int scrollDisabled:1;
-        unsigned int zoomDisabled:1;
-        unsigned int scrollTriggered:1;
-        unsigned int scrollDisabledOnTouchBegan:1;
-        unsigned int ignoreNextTouchesMoved:1;
-        unsigned int cancelNextContentTouchEnded:1;
-        unsigned int inContentViewCall:1;
-        unsigned int dontSelect:1;
-        unsigned int contentTouched:1;
-        unsigned int cantCancel:1;
-        unsigned int directionalLockEnabled:1;	
-        unsigned int directionalLockAutoEnabled:1;
-        unsigned int lockVertical:1;
-        unsigned int lockHorizontal:1;
-        unsigned int keepLocked:1;	
-        unsigned int showsHorizontalScrollIndicator:1;
-        unsigned int showsVerticalScrollIndicator:1;
-        unsigned int indicatorStyle:2;
-        unsigned int inZoom:1;
-        unsigned int hideIndicatorsInZoom:1;
-        unsigned int pushedTrackingMode:1;
-        unsigned int multipleDrag:1;
-        unsigned int displayingScrollIndicators:1;
-        unsigned int verticalIndicatorShrunk:1;
-        unsigned int horizontalIndicatorShrunk:1;
-        unsigned int contentFitDisableScrolling:1;
-        unsigned int pagingEnabled:1;
-        unsigned int pagingLeft:1;
-        unsigned int pagingRight:1;
-        unsigned int pagingUp:1;
-        unsigned int pagingDown:1;
-        unsigned int lastHorizontalDirection:1;
-        unsigned int lastVerticalDirection:1;
-        unsigned int dontScrollToTop:1;
-        unsigned int scrollingToTop:1;
-        unsigned int useGestureRecognizers:1;
-        unsigned int singleFingerPan:1;
-        unsigned int autoscrolling:1;
-        unsigned int automaticContentOffsetAdjustmentDisabled:1;
-        unsigned int skipStartOffsetAdjustment:1;
-        unsigned int delegateScrollViewDidScroll:1;
-        unsigned int delegateScrollViewDidZoom:1;
-        unsigned int delegateContentSizeForZoomScale:1;
-        unsigned int preserveCenterDuringRotation:1;
-        unsigned int delaysTrackingWhileDecelerating:1;
-        unsigned int pinnedZoomMin:1;
-        unsigned int pinnedXMin:1;
-        unsigned int pinnedYMin:1;
-        unsigned int pinnedXMax:1;
-        unsigned int pinnedYMax:1;
-        unsigned int skipLinkChecks:1;
-        unsigned int staysCenteredDuringPinch:1;
-        unsigned int wasDelayingPinchForSystemGestures:1;
-        unsigned int systemGesturesRecognitionPossible:1;
-        unsigned int disableContentOffsetRounding:1;
-        unsigned int adjustedDecelerationTargetX:1;
-        unsigned int adjustedDecelerationTargetY:1;
-        unsigned int hasScrolled:1;
-        unsigned int wantsConstrainedContentSize:1;
-    } _scrollViewFlags;
-    Float           _farthestDistance;
-    CGPoint           _initialTouchPosition;
-    CGPoint           _startTouchPosition;
-    CFTimeInterval    _startTouchTime;
-    double            _startOffsetX;
-    double            _startOffsetY;
-    double            _lastUpdateOffsetX;
-    double            _lastUpdateOffsetY;
-    CGPoint           _lastTouchPosition;
-    CFTimeInterval    _lastTouchTime;
-    CFTimeInterval    _lastUpdateTime;
-    UIView           *_contentView;
-    float             _minimumZoomScale;
-    float             _maximumZoomScale;
-    UIView           *_zoomView;
-    double            _horizontalVelocity;
-    double            _verticalVelocity;
-    double            _previousHorizontalVelocity;
-    double            _previousVerticalVelocity;
-    id                _scrollHeartbeat;
-    CGPoint           _pageDecelerationTarget;
-    CGSize            _decelerationFactor;
-    CGPoint           _adjustedDecelerationTarget;
-    CGSize            _adjustedDecelerationFactor;
-    double            _decelerationLnFactorH;
-    double            _decelerationLnFactorV;
-    NSArray*          _deferredBeginTouchesInfo;
-    UIImageView * __strong *_shadows;
-    id                _scrollNotificationViews;
-    CFTimeInterval    _contentOffsetAnimationDuration;
-    id                _animation;
-    id                _zoomAnimation;
-    id                _pinch;
-    id                _pan;
-    id                _swipe;
-    Float           _pagingSpringPull;
-    Float           _pagingFriction;
-    NSInteger         _fastScrollCount;
-    Float           _fastScrollMultiplier;
-    Float           _fastScrollStartMultiplier;
-    CFTimeInterval    _fastScrollEndTime;
-    CGPoint           _parentAdjustment;
-    CGPoint           _rotationCenterPoint;
-    Float           _accuracy;
-    Float           _hysteresis;
-    NSUInteger        _zoomAnimationCount;
-}
-
-	public var          CGPoint                      contentOffset;                  // default CGPointZero
-	public var          CGSize                       contentSize;                    // default CGSizeZero
-	public var          UIEdgeInsets                 contentInset;                   // default UIEdgeInsetsZero. add additional scroll area around content
-	public var  id<UIScrollViewDelegate>      delegate;                       // default nil. weak reference
-	public var (nonatomic,getter=isDirectionalLockEnabled) BOOL directionalLockEnabled;         // default NO. if YES, try to lock vertical or horizontal scrolling while dragging
-	public var          BOOL                         bounces;                        // default YES. if YES, bounces past edge of content and back again
-	public var          BOOL                         alwaysBounceVertical;           // default NO. if YES and bounces is YES, even if content is smaller than bounds, allow drag vertically
-	public var          BOOL                         alwaysBounceHorizontal;         // default NO. if YES and bounces is YES, even if content is smaller than bounds, allow drag horizontally
-	public var (nonatomic,getter=isPagingEnabled) BOOL          pagingEnabled;                  // default NO. if YES, stop on multiples of view bounds
-	public var (nonatomic,getter=isScrollEnabled) BOOL          scrollEnabled;                  // default YES. turn off any dragging temporarily
-	public var          BOOL                         showsHorizontalScrollIndicator; // default YES. show indicator while we are tracking. fades out after tracking
-	public var          BOOL                         showsVerticalScrollIndicator;   // default YES. show indicator while we are tracking. fades out after tracking
+	public var contentOffset :CGPoint;                  // default CGPointZero
+	public var contentSize :CGSize;                    // default CGSizeZero
+	public var contentInset :UIEdgeInsets;
+	public var delegate :Dynamic;//UIScrollViewDelegate;
+	public var directionalLockEnabled :Bool;
+	public var bounces :Bool;
+	public var alwaysBounceVertical :Bool;
+	public var alwaysBounceHorizontal :Bool;
+	public var pagingEnabled :Bool;
+	public var scrollEnabled :Bool;
+	public var showsHorizontalScrollIndicator :Bool;
+	public var showsVerticalScrollIndicator :Bool;
+	#if ddd
 	public var          UIEdgeInsets                 scrollIndicatorInsets;          // default is UIEdgeInsetsZero. adjust indicators inside of insets
 	public var          UIScrollViewIndicatorStyle   indicatorStyle;                 // default is UIScrollViewIndicatorStyleDefault
 	public var          float                        decelerationRate NS_AVAILABLE_IOS(3_0);
@@ -214,18 +69,19 @@ extern class UIScrollView extends UIView, implements NSObject> {
 
 // When the user taps the status bar, the scroll view beneath the touch which is closest to the status bar will be scrolled to top, but only if its `scrollsToTop` property is YES, its delegate does not return NO from `shouldScrollViewScrollToTop`, and it is not already at the top.
 // On iPhone, we execute this gesture only if there's one on-screen scroll view with `scrollsToTop` == YES. If more than one is found, none will be scrolled.
-	public var  BOOL  scrollsToTop;          // default is YES.
+	public var scrollsToTop :Bool;          // default is YES.
 
 // Use these accessors to configure the scroll view's built-in gesture recognizers.
 // Do not change the gestures' delegates or override the getters for these properties.
 	public var (default, null) UIPanGestureRecognizer *panGestureRecognizer NS_AVAILABLE_IOS(5_0);
 // `pinchGestureRecognizer` will return nil when zooming is disabled.
 	public var (default, null) UIPinchGestureRecognizer *pinchGestureRecognizer NS_AVAILABLE_IOS(5_0);
-
+	#end
 }
 
-extern interface UIScrollViewDelegate<NSObject>
-
+@:framework("UIKit")
+extern interface UIScrollViewDelegate {
+	#if ddd
 @optional
 
 	public function scrollViewDidScroll:(UIScrollView *)scrollView;                                               // any offset changes
@@ -249,7 +105,6 @@ extern interface UIScrollViewDelegate<NSObject>
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;   // return a yes if you want to scroll to the top. if not defined, assumes YES
 	public function scrollViewDidScrollToTop:(UIScrollView *)scrollView;      // called when scrolling animation finished. may be called immediately if already at top
-
+	#end
 }
-*/
 	

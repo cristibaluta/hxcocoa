@@ -1,8 +1,8 @@
 package objc.foundation;
 
 import objc.foundation.NSObject;
+import objc.foundation.NSString;
 
-typedef NSComparisonResult = Int;
 
 @:framework("Foundation")
 extern class NSDate extends NSObject implements NSCopying implements NSSecureCoding {

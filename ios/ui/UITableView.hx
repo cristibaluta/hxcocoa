@@ -1,5 +1,7 @@
 package ios.ui;
 
+import objc.graphics.CGGeometry;
+import objc.foundation.NSIndexPath;
 
 @:framework("UIKit")
 extern enum UITableViewStyle {
@@ -29,8 +31,6 @@ extern enum UITableViewRowAnimation {
 }
 
 
-//_______________________________________________________________________________________________________________
-// this represents the display and behaviour of the cells.
 @:framework("UIKit")
 extern interface UITableViewDelegate {
 
@@ -109,13 +109,15 @@ extern interface UITableViewDelegate {
 
 
 @:framework("UIKit")
-extern class UITableView extends UIScrollView implements NSObject {
-
-	public function initWithFrame (frame:CGRect, style:UITableViewStyle) :UITableView;
+extern class UITableView extends UIScrollView {
+	
+	//public function new () :Void;
+	
+	//public function initWithFrame (frame:CGRect, style:UITableViewStyle) :UITableView;
 
 	public var style (default, null) :UITableViewStyle;
-	public var dataSource :UITableViewDataSource;
-	public var delegate :UITableViewDelegate;
+	public var dataSource :Dynamic;//UITableViewDataSource;
+	//public var delegate :UITableViewDelegate;
 	public var rowHeight :Float;             // will return the default value if unset
 	public var sectionHeaderHeight :Float;   // will return the default value if unset
 	public var sectionFooterHeight :Float;   // will return the default value if unset
@@ -123,14 +125,14 @@ extern class UITableView extends UIScrollView implements NSObject {
 	public var backgroundView :UIView;
 // Data
 
-	public function reloadData (); // reloads everything from scratch. redisplays visible rows. because we only keep info about visible rows, this is cheap. will adjust offset if table shrinks
-	public function reloadSectionIndexTitles NS_AVAILABLE_IOS(3_0);   // reloads the index bar.
+	public function reloadData () :Void; // reloads everything from scratch. redisplays visible rows. because we only keep info about visible rows, this is cheap. will adjust offset if table shrinks
+	public function reloadSectionIndexTitles () :Void;
 
 // Info
 
-- (Int)numberOfSections;
-- (Int)numberOfRowsInSection:(Int)section;
-
+	public function numberOfSections () :Int;
+	public function numberOfRowsInSection (section:Int) :Int;
+	#if ddd
 - (CGRect)rectForSection:(Int)section;                                    // includes header, footer and all rows
 - (CGRect)rectForHeaderInSection:(Int)section;
 - (CGRect)rectForFooterInSection:(Int)section;
@@ -188,16 +190,18 @@ extern class UITableView extends UIScrollView implements NSObject {
 	public var  NSInteger sectionIndexMinimumDisplayRowCount;                                                      // show special section index list on right when row count reaches this value. default is NSInteger Max
 	public var  UIColor *sectionIndexColor NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR;                   // color used for text of the section index
 	public var  UIColor *sectionIndexTrackingBackgroundColor NS_AVAILABLE_IOS(6_0) UI_APPEARANCE_SELECTOR; // the background color of the section index while it is being touched
+	#end
+	//public var separatorStyle :UITableViewCellSeparatorStyle;
+	public var separatorColor :UIColor;
 
-	public var  UITableViewCellSeparatorStyle separatorStyle;              // default is UITableViewCellSeparatorStyleSingleLine
-	public var (nonatomic,retain) UIColor               *separatorColor;              // default is the standard separator gray
+	public var tableHeaderView :UIView;
+	public var tableFooterView :UIView;
 
-	public var (nonatomic,retain) UIView *tableHeaderView;                            // accessory view for above row content. default is nil. not to be confused with section header
-	public var (nonatomic,retain) UIView *tableFooterView;                            // accessory view below content. default is nil. not to be confused with section footer
-
-- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier;  // Used by the delegate to acquire an already allocated cell, in lieu of allocating a new one.
-- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0); // newer dequeue method guarantees a cell is returned and resized properly, assuming identifier is registered
-- (id)dequeueReusableHeaderFooterViewWithIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);  // like dequeueReusableCellWithIdentifier:, but for headers/footers
+	public function dequeueReusableCellWithIdentifier (identifier:String) :Dynamic;
+	// Used by the delegate to acquire an already allocated cell, in lieu of allocating a new one.
+	#if ffff
+	public function dequeueReusableCellWithIdentifier (identifier:String, forIndexPath:NSIndexPath) indexPath NS_AVAILABLE_IOS(6_0); // newer dequeue method guarantees a cell is returned and resized properly, assuming identifier is registered
+	public function dequeueReusableHeaderFooterViewWithIdentifier (identifier:String) NS_AVAILABLE_IOS(6_0);  // like dequeueReusableCellWithIdentifier:, but for headers/footers
 
 // Beginning in iOS 6, clients can register a nib or class for each cell.
 // If all reuse identifiers are registered, use the newer -dequeueReusableCellWithIdentifier:forIndexPath: to guarantee that a cell instance is returned.
@@ -207,7 +211,7 @@ extern class UITableView extends UIScrollView implements NSObject {
 
 	public function registerNib:(UINib *)nib forHeaderFooterViewReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);
 	public function registerClass:(Class)aClass forHeaderFooterViewReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);
-
+	#end
 }
 
 //_______________________________________________________________________________________________________________
@@ -215,22 +219,20 @@ extern class UITableView extends UIScrollView implements NSObject {
 
 @:framework("UIKit")
 extern interface UITableViewDataSource {
-
+	
 //@required
 
-	public function tableView (tableView:UITableView, numberOfRowsInSection:Int) :Int;
+	@:sel("tableView:numberOfRowsInSection:")
+	public function numberOfRowsInSection (tableView:UITableView, section:Int) :Int;
+	@:sel("tableView:cellForRowAtIndexPath:")
+	public function cellForRowAtIndexPath (tableView:UITableView, indexPath:NSIndexPath) :UITableViewCell;
+#if dddd
+//@optional
 
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+	public function numberOfSectionsInTableView (tableView:UITableView) :Int;// Default is 1 if not implemented
 
-- (UITableViewCell *)tableView (tableView:UITableView, cellForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-@optional
-
-- (Int)numberOfSectionsInTableView (tableView:UITableView,;              // Default is 1 if not implemented
-
-- (NSString *)tableView (tableView:UITableView, titleForHeaderInSection:(Int)section;
-- (NSString *)tableView (tableView:UITableView, titleForFooterInSection:(Int)section;
+	public function tableView (tableView:UITableView, titleForHeaderInSection:Int) :String;
+	public function tableView (tableView:UITableView, titleForFooterInSection:Int) :String;
 
 // Editing
 
@@ -255,6 +257,6 @@ extern interface UITableViewDataSource {
 // Data manipulation - reorder / moving support
 
 	public function tableView (tableView:UITableView, moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath;
-
+	#end
 }
 
