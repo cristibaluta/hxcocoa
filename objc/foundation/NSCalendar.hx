@@ -5,6 +5,7 @@ import objc.foundation.NSTimeZone;
 import objc.foundation.NSString;
 import objc.foundation.NSRange;
 
+@:framework("Foundation")
 extern enum NSCalendarUnit {
 /*	inline public static var kCFCalendarUnitEra = 0;
 	inline public static var kCFCalendarUnitYear = 1;

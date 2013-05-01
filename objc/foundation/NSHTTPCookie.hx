@@ -20,26 +20,26 @@ extern class NSHTTPCookie
 	static public inline var null:NSHTTPCookiePort;
 
 	//Static Methods
-	public  function cookieWithProperties( properties:NSDictionary):Dynamic;
-	public  function cookiesWithResponseHeaderFields( headerFields:NSDictionary,  URL:NSURL):Array<>;
-	public  function requestHeaderFieldsWithCookies( cookies:Array<>):NSDictionary;
+	public function cookieWithProperties( properties:NSDictionary):Dynamic;
+	public function cookiesWithResponseHeaderFields( headerFields:NSDictionary,  URL:NSURL):Array<>;
+	public function requestHeaderFieldsWithCookies( cookies:Array<>):NSDictionary;
 
 	//Properties
 
 	//Methods
-	public  function properties():NSDictionary;
-	public  function name():String;
-	public  function path():String;
-	public  function expiresDate():Date;
-	public  function isSessionOnly():Bool;
-	public  function isHTTPOnly():Bool;
-	public  function commentURL():NSURL;
-	public  function portList():Array<>;
-	public  function version():Int;
-	public  function isSecure():Bool;
-	public  function initWithProperties( properties:NSDictionary):Dynamic;
-	public  function domain():String;
-	public  function value():String;
-	public  function comment():String;
+	public function properties():NSDictionary;
+	public function name():String;
+	public function path():String;
+	public function expiresDate():Date;
+	public function isSessionOnly():Bool;
+	public function isHTTPOnly():Bool;
+	public function commentURL():NSURL;
+	public function portList():Array<>;
+	public function version():Int;
+	public function isSecure():Bool;
+	public function initWithProperties( properties:NSDictionary):Dynamic;
+	public function domain():String;
+	public function value():String;
+	public function comment():String;
 }
 

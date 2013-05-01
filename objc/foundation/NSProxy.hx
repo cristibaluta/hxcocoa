@@ -15,7 +15,7 @@ extern class NSProxy implements NSObject {
 	public function finalize():Void;
 	public function description():String;
 	
-	//public  function allowsWeakReference():Bool;
-	//public  function retainWeakReference():Bool;
+	//public function allowsWeakReference():Bool;
+	//public function retainWeakReference():Bool;
 }
 

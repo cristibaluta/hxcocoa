@@ -24,6 +24,22 @@ extern class NSValue extends NSObject implements NSCopying implements NSSecureCo
 
 	public function isEqualToValue (value:NSValue) :Bool;
 
+
+//	(NSValueUIGeometryExtensions)
+
+/*	+ (NSValue *)valueWithCGPoint:(CGPoint)point;
+	+ (NSValue *)valueWithCGSize:(CGSize)size;
+	+ (NSValue *)valueWithCGRect:(CGRect)rect;
+	+ (NSValue *)valueWithCGAffineTransform:(CGAffineTransform)transform;
+	+ (NSValue *)valueWithUIEdgeInsets:(UIEdgeInsets)insets;
+	+ (NSValue *)valueWithUIOffset:(UIOffset)insets NS_AVAILABLE_IOS(5_0);
+
+	- (CGPoint)CGPointValue;
+	- (CGSize)CGSizeValue;
+	- (CGRect)CGRectValue;
+	- (CGAffineTransform)CGAffineTransformValue;
+	- (UIEdgeInsets)UIEdgeInsetsValue;
+	- (UIOffset)UIOffsetValue NS_AVAILABLE_IOS(5_0);*/
 }
 
 @:framework("Foundation")

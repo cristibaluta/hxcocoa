@@ -85,6 +85,20 @@ extern class NSObject {
 	public function replacementObjectForCoder (aCoder:NSCoder) :NSObject;
 	public function awakeAfterUsingCoder (aDecoder:NSCoder) :NSObject;
 
+//	(UIResponderStandardEditActions)   // these methods are not implemented in NSObject
+
+/*		public function cut:(id)sender NS_AVAILABLE_IOS(3_0);
+		public function copy:(id)sender NS_AVAILABLE_IOS(3_0);
+		public function paste:(id)sender NS_AVAILABLE_IOS(3_0);
+		public function select:(id)sender NS_AVAILABLE_IOS(3_0);
+		public function selectAll:(id)sender NS_AVAILABLE_IOS(3_0);
+		public function delete:(id)sender NS_AVAILABLE_IOS(3_2);
+		public function makeTextWritingDirectionLeftToRight:(id)sender NS_AVAILABLE_IOS(5_0);
+		public function makeTextWritingDirectionRightToLeft:(id)sender NS_AVAILABLE_IOS(5_0);
+		public function toggleBoldface:(id)sender NS_AVAILABLE_IOS(6_0);
+		public function toggleItalics:(id)sender NS_AVAILABLE_IOS(6_0);
+		public function toggleUnderline:(id)sender NS_AVAILABLE_IOS(6_0);*/
+
 }
 
 

@@ -28,10 +28,10 @@ extern class NSLocale extends NSObject implements NSCopying implements NSSecureC
 	//Properties
 
 	//Methods
-	public  function objectForKey(key:String) :Dynamic;
-	public  function displayNameForKey( key:Dynamic, value:Dynamic):String;
-	public  function localeIdentifier():String;
-	public  function initWithLocaleIdentifier( string:String):Dynamic;
+	public function objectForKey(key:String) :Dynamic;
+	public function displayNameForKey( key:Dynamic, value:Dynamic):String;
+	public function localeIdentifier():String;
+	public function initWithLocaleIdentifier( string:String):Dynamic;
 }
 
 extern enum NSLocaleLanguageDirection

@@ -1,5 +1,6 @@
 package ios.ui;
-
+import objc.graphics.CGGeometry;
+import objc.graphics.CGAffineTransform;
 
 @:framework("UIKit")
 extern class UIEdgeInsets {
@@ -17,81 +18,34 @@ extern class UIOffset {
 	public function new (horizontal:Float, vertical:Float) :Void;
 }
 
-/*UIKIT_STATIC_INLINE UIEdgeInsets UIEdgeInsetsMake(Float top, Float left, Float bottom, Float right) {
-    UIEdgeInsets insets = {top, left, bottom, right};
-    return insets;
-}
+@:framework("UIKit")
+extern class UIGeometry {
+	
+@:c public static function UIEdgeInsetsMake(top:Float, left:Float, bottom:Float, right:Float) :UIEdgeInsets;
 
-UIKIT_STATIC_INLINE CGRect UIEdgeInsetsInsetRect(CGRect rect, UIEdgeInsets insets) {
-    rect.origin.x    += insets.left;
-    rect.origin.y    += insets.top;
-    rect.size.width  -= (insets.left + insets.right);
-    rect.size.height -= (insets.top  + insets.bottom);
-    return rect;
-}
+@:c public static function UIEdgeInsetsInsetRect(rect:CGRect, insets:UIEdgeInsets) :CGRect;
 
-UIKIT_STATIC_INLINE UIOffset UIOffsetMake(Float horizontal, Float vertical) {
-    UIOffset offset = {horizontal, vertical};
-    return offset;
-}
+@:c public static function UIOffsetMake(horizontal:Float, vertical:Float) :UIOffset;
 
-UIKIT_STATIC_INLINE BOOL UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsets insets1, UIEdgeInsets insets2) {
-    return insets1.left == insets2.left && insets1.top == insets2.top && insets1.right == insets2.right && insets1.bottom == insets2.bottom;
-}
+@:c public static function UIEdgeInsetsEqualToEdgeInsets(insets1:UIEdgeInsets, insets2:UIEdgeInsets) :Bool;
 
-UIKIT_STATIC_INLINE BOOL UIOffsetEqualToOffset(UIOffset offset1, UIOffset offset2) {
-    return offset1.horizontal == offset2.horizontal && offset1.vertical == offset2.vertical;
-}
+@:c public static function UIOffsetEqualToOffset(offset1:UIOffset, offset2:UIOffset) :Bool;
 
-UIKIT_EXTERN const UIEdgeInsets UIEdgeInsetsZero;
-UIKIT_EXTERN const UIOffset UIOffsetZero;
+@:c public static var UIEdgeInsetsZero :UIEdgeInsets;
+@:c public static var UIOffsetZero :UIOffset;
 
-UIKIT_EXTERN NSString *NSStringFromCGPoint(CGPoint point);
-UIKIT_EXTERN NSString *NSStringFromCGSize(CGSize size);
-UIKIT_EXTERN NSString *NSStringFromCGRect(CGRect rect);
-UIKIT_EXTERN NSString *NSStringFromCGAffineTransform(CGAffineTransform transform);
-UIKIT_EXTERN NSString *NSStringFromUIEdgeInsets(UIEdgeInsets insets);
-UIKIT_EXTERN NSString *NSStringFromUIOffset(UIOffset offset);
+@:c public static function NSStringFromCGPoint(point:CGPoint) :String;
+@:c public static function NSStringFromCGSize(size:CGSize) :String;
+@:c public static function NSStringFromCGRect(rect:CGRect) :String;
+@:c public static function NSStringFromCGAffineTransform(transform:CGAffineTransform) :String;
+@:c public static function NSStringFromUIEdgeInsets(insets:UIEdgeInsets) :String;
+@:c public static function NSStringFromUIOffset(offset:UIOffset) :String;
 
-UIKIT_EXTERN CGPoint CGPointFromString(NSString *string);
-UIKIT_EXTERN CGSize CGSizeFromString(NSString *string);
-UIKIT_EXTERN CGRect CGRectFromString(NSString *string);
-UIKIT_EXTERN CGAffineTransform CGAffineTransformFromString(NSString *string);
-UIKIT_EXTERN UIEdgeInsets UIEdgeInsetsFromString(NSString *string);
-UIKIT_EXTERN UIOffset UIOffsetFromString(NSString *string);*/
-
-/*extern class NSValue (NSValueUIGeometryExtensions)
-
-+ (NSValue *)valueWithCGPoint:(CGPoint)point;
-+ (NSValue *)valueWithCGSize:(CGSize)size;
-+ (NSValue *)valueWithCGRect:(CGRect)rect;
-+ (NSValue *)valueWithCGAffineTransform:(CGAffineTransform)transform;
-+ (NSValue *)valueWithUIEdgeInsets:(UIEdgeInsets)insets;
-+ (NSValue *)valueWithUIOffset:(UIOffset)insets NS_AVAILABLE_IOS(5_0);
-
-- (CGPoint)CGPointValue;
-- (CGSize)CGSizeValue;
-- (CGRect)CGRectValue;
-- (CGAffineTransform)CGAffineTransformValue;
-- (UIEdgeInsets)UIEdgeInsetsValue;
-- (UIOffset)UIOffsetValue NS_AVAILABLE_IOS(5_0);
+@:c public static function CGPointFromString(string:String) :CGPoint;
+@:c public static function CGSizeFromString(string:String) :CGSize;
+@:c public static function CGRectFromString(string:String) :CGRect;
+@:c public static function CGAffineTransformFromString(string:String) :CGAffineTransform;
+@:c public static function UIEdgeInsetsFromString(string:String) :UIEdgeInsets;
+@:c public static function UIOffsetFromString(string:String) :UIOffset;
 
 }
-    
-extern class NSCoder (UIGeometryKeyedCoding)
-
-	public function encodeCGPoint:(CGPoint)point forKey:(NSString *)key;
-	public function encodeCGSize:(CGSize)size forKey:(NSString *)key;
-	public function encodeCGRect:(CGRect)rect forKey:(NSString *)key;
-	public function encodeCGAffineTransform:(CGAffineTransform)transform forKey:(NSString *)key;
-	public function encodeUIEdgeInsets:(UIEdgeInsets)insets forKey:(NSString *)key;
-	public function encodeUIOffset:(UIOffset)offset forKey:(NSString *)key NS_AVAILABLE_IOS(5_0);
-
-- (CGPoint)decodeCGPointForKey:(NSString *)key;
-- (CGSize)decodeCGSizeForKey:(NSString *)key;
-- (CGRect)decodeCGRectForKey:(NSString *)key;
-- (CGAffineTransform)decodeCGAffineTransformForKey:(NSString *)key;
-- (UIEdgeInsets)decodeUIEdgeInsetsForKey:(NSString *)key;
-- (UIOffset)decodeUIOffsetForKey:(NSString *)key NS_AVAILABLE_IOS(5_0);
-
-}*/

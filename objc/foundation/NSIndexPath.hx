@@ -11,14 +11,14 @@ extern class NSIndexPath implements NSCopying implements NSCoding {
 	public function initWithIndexm(index:Int) :NSIndexPath;
 	public function initWithIndexes (indexes:Array<Int>, length:Int) :NSIndexPath;
 	
-	public  function indexPathByAddingIndex( index:Int):NSIndexPath;
-	public  function indexPathByRemovingLastIndex():NSIndexPath;
+	public function indexPathByAddingIndex( index:Int):NSIndexPath;
+	public function indexPathByRemovingLastIndex():NSIndexPath;
 	
-	public  function indexAtPosition( position:Int):Int;
-	public  function length():Int;
+	public function indexAtPosition( position:Int):Int;
+	public function length():Int;
 	
-	public  function getIndexes( indexes:Int) :Void;
-	//public  function compare( otherObject:NSIndexPath) :NSComparisonResult;
+	public function getIndexes( indexes:Int) :Void;
+	//public function compare( otherObject:NSIndexPath) :NSComparisonResult;
 	
 	
 	// UITableView category

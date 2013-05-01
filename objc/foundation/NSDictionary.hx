@@ -20,7 +20,7 @@ extern class NSDictionary extends NSObject implements NSCopying implements NSMut
 	public function description () :String;
 	public function descriptionInStringsFileFormat () :String;
 	public function descriptionWithLocale (locale:Dynamic) :String;
-	//public  function descriptionWithLocale1 (locale:Dynamic, indent:Int) :String;
+	//public function descriptionWithLocale1 (locale:Dynamic, indent:Int) :String;
 	public function isEqualToDictionary (otherDictionary:NSDictionary) :Bool;
 	public function objectEnumerator () :NSEnumerator;
 	public function objectsForKeys (keys:Array<String>, notFoundMarker:Dynamic) :Array<Dynamic>;

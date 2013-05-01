@@ -26,17 +26,17 @@ extern class NSURLProtectionSpace implements NSCoding implements NSCopying
 	//Properties
 
 	//Methods
-	public  function port():Int;
-	public  function protocol():String;
-	public  function initWithHost( host:String,  port:Int,  protocol:String,  realm:String,  authenticationMethod:String):Dynamic;
-	public  function realm():String;
-	public  function distinguishedNames():Array<>;
-	public  function initWithProxyHost( host:String,  port:Int,  type:String,  realm:String,  authenticationMethod:String):Dynamic;
-	public  function isProxy():Bool;
-	public  function host():String;
-	public  function authenticationMethod():String;
-	public  function receivesCredentialSecurely():Bool;
-	public  function proxyType():String;
-	public  function serverTrust():SecTrustRef;
+	public function port():Int;
+	public function protocol():String;
+	public function initWithHost( host:String,  port:Int,  protocol:String,  realm:String,  authenticationMethod:String):Dynamic;
+	public function realm():String;
+	public function distinguishedNames():Array<>;
+	public function initWithProxyHost( host:String,  port:Int,  type:String,  realm:String,  authenticationMethod:String):Dynamic;
+	public function isProxy():Bool;
+	public function host():String;
+	public function authenticationMethod():String;
+	public function receivesCredentialSecurely():Bool;
+	public function proxyType():String;
+	public function serverTrust():SecTrustRef;
 }
 

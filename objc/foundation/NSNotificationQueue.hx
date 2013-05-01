@@ -18,10 +18,10 @@ extern class NSNotificationQueue extends NSObject {
 	//Properties
 
 	//Methods
-	public  function enqueueNotification(notification:NSNotification, postingStyle:NSPostingStyle) :Void;
+	public function enqueueNotification(notification:NSNotification, postingStyle:NSPostingStyle) :Void;
 	//@:overload !!NEED CUSTOM META DATA !!
-	public  function enqueueNotification1( notification:NSNotification, postingStyle:NSPostingStyle, coalesceMask:Int, forModes:Array<>) :Void;
-	public  function dequeueNotificationsMatching(notification:NSNotification, coalesceMask:Int) :Void;
+	public function enqueueNotification1( notification:NSNotification, postingStyle:NSPostingStyle, coalesceMask:Int, forModes:Array<>) :Void;
+	public function dequeueNotificationsMatching(notification:NSNotification, coalesceMask:Int) :Void;
 	
-	public  function initWithNotificationCenter(notificationCenter:NSNotificationCenter) :NSNotificationQueue;
+	public function initWithNotificationCenter(notificationCenter:NSNotificationCenter) :NSNotificationQueue;
 }

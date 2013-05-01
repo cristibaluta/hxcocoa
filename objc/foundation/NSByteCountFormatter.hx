@@ -17,7 +17,7 @@ extern class NSByteCountFormatter extends NSFormatter {
 	public var zeroPadsFractionDigits(default, default):Bool;
 
 	//Methods
-	public  function stringFromByteCount( byteCount:longlong):String;
+	public function stringFromByteCount( byteCount:longlong):String;
 }
 
 extern enum NSByteCountFormatterUnits

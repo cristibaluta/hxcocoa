@@ -3,6 +3,7 @@ package ios.ui;
 import objc.foundation.NSSet;
 import ios.ui.UIEvent;
 
+@:framework("UIKit")
 @:fakeEnum(Int) extern enum UIControlEvent {
 	UIControlEventTouchDown;
 	UIControlEventTouchDownRepeat;
@@ -25,6 +26,7 @@ import ios.ui.UIEvent;
 	UIControlEventAllEvents;
 }
 
+@:framework("UIKit")
 @:fakeEnum(Int) extern enum UIControlContentVerticalAlignment {
 	UIControlContentVerticalAlignmentCenter;
 	UIControlContentVerticalAlignmentTop;
@@ -32,6 +34,7 @@ import ios.ui.UIEvent;
 	UIControlContentVerticalAlignmentFill;
 }
 
+@:framework("UIKit")
 @:fakeEnum(Int) extern enum UIControlContentHorizontalAlignment {
 	UIControlContentHorizontalAlignmentCenter;
 	UIControlContentHorizontalAlignmentLeft;
@@ -39,6 +42,7 @@ import ios.ui.UIEvent;
 	UIControlContentHorizontalAlignmentFill;
 }
 
+@:framework("UIKit")
 @:fakeEnum(Int) extern enum UIControlState {
 	UIControlStateNormal;
 	UIControlStateHighlighted;
@@ -57,7 +61,7 @@ extern class UIControl extends UIView {
 	public var highlighted :Bool;
 	public var contentVerticalAlignment :UIControlContentVerticalAlignment;
 	public var contentHorizontalAlignment :UIControlContentHorizontalAlignment;
-
+	
 	public var state (default, null) :UIControlState;
 	public var tracking (default, null) :Bool;
 	public var touchInside (default, null) :Bool;

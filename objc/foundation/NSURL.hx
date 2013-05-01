@@ -1,18 +1,18 @@
 package objc.foundation;
 
-/*enum {
-    NSURLBookmarkCreationPreferFileIDResolution = ( 1UL << 8 ), 
-    NSURLBookmarkCreationMinimalBookmark = ( 1UL << 9 ),
-    NSURLBookmarkCreationSuitableForBookmarkFile = ( 1UL << 10 ),
-};
+@:framework("Foundation")
+extern enum NSURLBookmarkCreationOptions {
+    NSURLBookmarkCreationPreferFileIDResolution;
+    NSURLBookmarkCreationMinimalBookmark;
+    NSURLBookmarkCreationSuitableForBookmarkFile;
+}
 
-enum {
-    NSURLBookmarkResolutionWithoutUI = ( 1UL << 8 ),
-    NSURLBookmarkResolutionWithoutMounting = ( 1UL << 9 ),	
-};*/
+@:framework("Foundation")
+extern enum NSURLBookmarkResolutionOptions {
+    NSURLBookmarkResolutionWithoutUI;
+    NSURLBookmarkResolutionWithoutMounting;
+}
 
-typedef NSURLBookmarkCreationOptions = Int;
-typedef NSURLBookmarkResolutionOptions = Int;
 typedef NSURLBookmarkFileCreationOptions = Int;
 
 @:framework("Foundation")

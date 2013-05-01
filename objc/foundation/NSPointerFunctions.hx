@@ -7,7 +7,7 @@ extern class NSPointerFunctions implements NSCopying
 	//Constants
 
 	//Static Methods
-	public  function pointerFunctionsWithOptions( options:NSPointerFunctionsOptions):Dynamic;
+	public function pointerFunctionsWithOptions( options:NSPointerFunctionsOptions):Dynamic;
 
 	//Properties
 	public var )(default, default):);
@@ -20,7 +20,7 @@ extern class NSPointerFunctions implements NSCopying
 	public var usesWeakReadAndWriteBarriers(default, default):Bool;
 
 	//Methods
-	public  function initWithOptions( options:NSPointerFunctionsOptions):Dynamic;
+	public function initWithOptions( options:NSPointerFunctionsOptions):Dynamic;
 }
 
 extern enum null

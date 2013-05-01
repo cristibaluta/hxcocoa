@@ -1,34 +1,16 @@
 //
 //  UIBezierPath.h
 package ios.ui;
-//
-//  Copyright (c) 2009-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIKitDefines.h>
-
-typedef NS_OPTIONS(NSUInteger, UIRectCorner) {
-    UIRectCornerTopLeft     = 1 << 0,
-    UIRectCornerTopRight    = 1 << 1,
-    UIRectCornerBottomLeft  = 1 << 2,
-    UIRectCornerBottomRight = 1 << 3,
-    UIRectCornerAllCorners  = ~0UL
-};
-
-extern class UIBezierPath extends NSObject<NSCopying, NSCoding> {
-@private
-    CGPathRef _path;
-    Float *_lineDashPattern;
-    NSUInteger _lineDashPatternCount;
-    Float _lineWidth, _miterLimit, _flatness, _lineDashPhase;
-    CGLineCap _lineCapStyle;
-    CGLineJoin _lineJoinStyle;
-    BOOL _usesEvenOddFillRule;
-    CGPathRef _immutablePath;
-    BOOL _immutablePathIsValid;
+extends enum UIRectCorner {
+    UIRectCornerTopLeft;
+    UIRectCornerTopRight;
+    UIRectCornerBottomLeft;
+    UIRectCornerBottomRight;
+    UIRectCornerAllCorners;
 }
+
+extern class UIBezierPath extends NSObject {
 
 + (UIBezierPath *)bezierPath;
 + (UIBezierPath *)bezierPathWithRect:(CGRect)rect;
