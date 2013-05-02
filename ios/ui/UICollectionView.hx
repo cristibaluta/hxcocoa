@@ -149,10 +149,4 @@ extern interface UICollectionViewDelegate <UIScrollViewDelegate>
 
 }
 
-extern class NSIndexPath (UICollectionViewAdditions)
 
-+ (NSIndexPath *)indexPathForItem:(Int)item inSection:(Int)section;
-
-	public var NSInteger item;
-
-}

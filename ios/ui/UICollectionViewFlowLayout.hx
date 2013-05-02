@@ -1,25 +1,22 @@
 //
 //  UICollectionViewFlowLayout.h
 package ios.ui;
-//
-//  Copyright (c) 2011 Apple Inc. All rights reserved.
-//
+import obj.graphics.CGGeometry;
 
-#import <UIKit/UICollectionViewLayout.h>
-#import <UIKit/UICollectionView.h>
-#import <UIKit/UIKitDefines.h>
-#import <Foundation/Foundation.h>
+//UIKIT_EXTERN NSString *const UICollectionElementKindSectionHeader;
+//UIKIT_EXTERN NSString *const UICollectionElementKindSectionFooter;
 
-UIKIT_EXTERN NSString *const UICollectionElementKindSectionHeader;
-UIKIT_EXTERN NSString *const UICollectionElementKindSectionFooter;
+@:framework("UIKit")
+@:require(ios6_0)
+extern enum UICollectionViewScrollDirection {
+    UICollectionViewScrollDirectionVertical;
+    UICollectionViewScrollDirectionHorizontal;
+}
 
-typedef NS_ENUM(Int, UICollectionViewScrollDirection) {
-    UICollectionViewScrollDirectionVertical,
-    UICollectionViewScrollDirectionHorizontal
-};
-
-extern interface UICollectionViewDelegateFlowLayout <UICollectionViewDelegate>
-@optional
+@:framework("UIKit")
+@:require(ios6_0)
+extern interface UICollectionViewDelegateFlowLayout {
+#if display
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(Int)section;
@@ -30,15 +27,17 @@ extern interface UICollectionViewDelegateFlowLayout <UICollectionViewDelegate>
 
 }
 
-@:require(6_0)extern class UICollectionViewFlowLayout extends UICollectionViewLayout
+@:framework("UIKit")
+@:require(ios6_0)
+extern class UICollectionViewFlowLayout extends UICollectionViewLayout {
 
-	public var Float minimumLineSpacing;
-	public var Float minimumInteritemSpacing;
-	public var CGSize itemSize;
-	public var UICollectionViewScrollDirection scrollDirection; // default is UICollectionViewScrollDirectionVertical
-	public var CGSize headerReferenceSize;
-	public var CGSize footerReferenceSize;
+	public var minimumLineSpacing :Float;
+	public var minimumInteritemSpacing :Float;
+	public var itemSize :CGSize;
+	public var scrollDirection :UICollectionViewScrollDirection; // default is UICollectionViewScrollDirectionVertical
+	public var headerReferenceSize :CGSize;
+	public var footerReferenceSize :CGSize;
 
-	public var UIEdgeInsets sectionInset;
+	public var sectionInset :UIEdgeInsets;
 
 }

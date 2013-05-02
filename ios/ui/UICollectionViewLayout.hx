@@ -1,29 +1,18 @@
 //
 //  UICollectionViewLayout.h
 package ios.ui;
-//
-//  Copyright (c) 2011 Apple Inc. All rights reserved.
-//
 
-#import <UIKit/UIKitDefines.h>
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <QuartzCore/CATransform3D.h>
+@:framework("UIKit")
+@:require(ios6_0)
+extern enum UICollectionElementCategory {
+    UICollectionElementCategoryCell;
+    UICollectionElementCategorySupplementaryView;
+    UICollectionElementCategoryDecorationView;
+}
 
-// The UICollectionViewLayout class is provided as an abstract class for subclassing to define custom collection layouts.
-// Defining a custom layout is an advanced operation intended for applications with complex needs.
-
-typedef NS_ENUM(NSUInteger, UICollectionElementCategory) {
-    UICollectionElementCategoryCell,
-    UICollectionElementCategorySupplementaryView,
-    UICollectionElementCategoryDecorationView
-};
-
-@class UICollectionViewLayoutAttributes;
-@class UICollectionView;
-@class UINib;
-
-@:require(6_0)extern class UICollectionViewLayoutAttributes extends NSObject, implements NSCopying>
+@:framework("UIKit")
+@:require(ios6_0)
+extern class UICollectionViewLayoutAttributes extends NSObject {
 
 	public var CGRect frame;
 	public var CGPoint center;
@@ -43,15 +32,21 @@ typedef NS_ENUM(NSUInteger, UICollectionElementCategory) {
 
 }
 
-typedef NS_ENUM(Int, UICollectionUpdateAction) {
-    UICollectionUpdateActionInsert,
-    UICollectionUpdateActionDelete,
-    UICollectionUpdateActionReload,
-    UICollectionUpdateActionMove,
-    UICollectionUpdateActionNone
-};
 
-@:require(6_0)extern class UICollectionViewUpdateItem extends NSObject
+@:framework("UIKit")
+@:require(ios6_0)
+extern enum UICollectionUpdateAction {
+    UICollectionUpdateActionInsert;
+    UICollectionUpdateActionDelete;
+    UICollectionUpdateActionReload;
+    UICollectionUpdateActionMove;
+    UICollectionUpdateActionNone;
+}
+
+
+@:framework("UIKit")
+@:require(ios6_0)
+extern class UICollectionViewUpdateItem extends NSObject
 
 	public var NSIndexPath *indexPathBeforeUpdate; // nil for UICollectionUpdateActionInsert
 	public var NSIndexPath *indexPathAfterUpdate; // nil for UICollectionUpdateActionDelete
@@ -59,7 +54,10 @@ typedef NS_ENUM(Int, UICollectionUpdateAction) {
 
 }
 
-@:require(6_0)extern class UICollectionViewLayout extends NSObject, implements NSObject>
+
+@:framework("UIKit")
+@:require(ios6_0)
+extern class UICollectionViewLayout extends NSObject, implements NSObject>
 
 // Methods in this class are meant to be overridden and will be called by its collection view to gather layout information.
 // To get the truth on the current state of the collection view, call methods on UICollectionView rather than these.

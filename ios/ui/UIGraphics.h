@@ -1,15 +1,8 @@
 //
 //  UIGraphics.h
 package ios.ui;
-//
-//  Copyright (c) 2005-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIKitDefines.h>
 
-@class UIImage;
 
 UIKIT_EXTERN CGContextRef UIGraphicsGetCurrentContext(void);
 UIKIT_EXTERN void UIGraphicsPushContext(CGContextRef context);

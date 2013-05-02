@@ -26,5 +26,10 @@ extern class NSIndexPath implements NSCopying implements NSCoding {
 
 	public var section (default, null) :Int;
 	public var row (default, null) :Int;
+	
+	// (UICollectionViewAdditions)
+	public static function indexPathForItem (item:Int, inSection:Int) :NSIndexPath;
+	public var item :Int;
+	
 }
 
