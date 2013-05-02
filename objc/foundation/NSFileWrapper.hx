@@ -39,11 +39,11 @@ extern class NSFileWrapper extends NSObject implements NSObject {
 - (Bool)isDirectory;
 - (Bool)isRegularFile;
 - (Bool)isSymbolicLink;
-- (void)setPreferredFilename:(NSString *)fileName;
+public function setPreferredFilename:(NSString *)fileName;
 - (NSString *)preferredFilename;
-- (void)setFilename:(NSString *)fileName;
+public function setFilename:(NSString *)fileName;
 - (NSString *)filename;
-- (void)setFileAttributes:(NSDictionary *)fileAttributes;
+public function setFileAttributes:(NSDictionary *)fileAttributes;
 - (NSDictionary *)fileAttributes;
 
 - (Bool)matchesContentsOfURL:(NSURL *)url NS_AVAILABLE(10_6, 4_0);
@@ -55,7 +55,7 @@ extern class NSFileWrapper extends NSObject implements NSObject {
 
 - (NSString *)addFileWrapper:(NSFileWrapper *)child;
 - (NSString *)addRegularFileWithContents:(NSData *)data preferredFilename:(NSString *)fileName;
-- (void)removeFileWrapper:(NSFileWrapper *)child;
+public function removeFileWrapper:(NSFileWrapper *)child;
 - (NSDictionary *)fileWrappers;
 - (NSString *)keyForFileWrapper:(NSFileWrapper *)child;
 

@@ -41,31 +41,31 @@ extern class NSKeyedArchiver extends NSCoder {
 
 - (id)initForWritingWithMutableData:(NSMutableData *)data;
 
-- (void)setDelegate:(id <NSKeyedArchiverDelegate>)delegate;
+public function setDelegate:(id <NSKeyedArchiverDelegate>)delegate;
 - (id <NSKeyedArchiverDelegate>)delegate;
 
-- (void)setOutputFormat:(NSPropertyListFormat)format;
+public function setOutputFormat:(NSPropertyListFormat)format;
 - (NSPropertyListFormat)outputFormat;
 
-- (void)finishEncoding;
+public function finishEncoding;
 
 + (void)setClassName:(NSString *)codedName forClass:(Class)cls;
-- (void)setClassName:(NSString *)codedName forClass:(Class)cls;
+public function setClassName:(NSString *)codedName forClass:(Class)cls;
 	// During encoding, the coder first checks with the coder's
 	// own table, then if there was no mapping there, the class's.
 
 + (NSString *)classNameForClass:(Class)cls;
 - (NSString *)classNameForClass:(Class)cls;
 
-- (void)encodeObject:(id)objv forKey:(NSString *)key;
-- (void)encodeConditionalObject:(id)objv forKey:(NSString *)key;
-- (void)encodeBool:(Bool)boolv forKey:(NSString *)key;
-- (void)encodeInt:(int)intv forKey:(NSString *)key;	// native int
-- (void)encodeInt32:(int32_t)intv forKey:(NSString *)key;
-- (void)encodeInt64:(int64_t)intv forKey:(NSString *)key;
-- (void)encodeFloat:(float)realv forKey:(NSString *)key;
-- (void)encodeDouble:(double)realv forKey:(NSString *)key;
-- (void)encodeBytes:(const uint8_t *)bytesp length:(NSUInteger)lenv forKey:(NSString *)key;
+public function encodeObject:(id)objv forKey:(NSString *)key;
+public function encodeConditionalObject:(id)objv forKey:(NSString *)key;
+public function encodeBool:(Bool)boolv forKey:(NSString *)key;
+public function encodeInt:(int)intv forKey:(NSString *)key;	// native int
+public function encodeInt32:(int32_t)intv forKey:(NSString *)key;
+public function encodeInt64:(int64_t)intv forKey:(NSString *)key;
+public function encodeFloat:(float)realv forKey:(NSString *)key;
+public function encodeDouble:(double)realv forKey:(NSString *)key;
+public function encodeBytes:(const uint8_t *)bytesp length:(NSUInteger)lenv forKey:(NSString *)key;
 
 }
 
@@ -94,13 +94,13 @@ extern class NSKeyedUnarchiver extends NSCoder {
 
 - (id)initForReadingWithData:(NSData *)data;
 
-- (void)setDelegate:(id <NSKeyedUnarchiverDelegate>)delegate;
+public function setDelegate:(id <NSKeyedUnarchiverDelegate>)delegate;
 - (id <NSKeyedUnarchiverDelegate>)delegate;
 
-- (void)finishDecoding;
+public function finishDecoding;
 
 + (void)setClass:(Class)cls forClassName:(NSString *)codedName;
-- (void)setClass:(Class)cls forClassName:(NSString *)codedName;
+public function setClass:(Class)cls forClassName:(NSString *)codedName;
 	// During decoding, the coder first checks with the coder's
 	// own table, then if there was no mapping there, the class's.
 
@@ -135,23 +135,23 @@ extern class NSKeyedUnarchiver extends NSCoder {
         // been encoded).  This is also not called when nil is about to be encoded.
         // This method is called whether or not the object is being encoded conditionally.
 
-- (void)archiver:(NSKeyedArchiver *)archiver didEncodeObject:(id)object;
+public function archiver:(NSKeyedArchiver *)archiver didEncodeObject:(id)object;
 	// Informs the delegate that the given object has been encoded.  The delegate
 	// might restore some state it had fiddled previously, or use this to keep
 	// track of the objects which are encoded.  The object may be nil.  Not called
 	// for conditional objects until they are really encoded (if ever).
 
 // notification
-- (void)archiver:(NSKeyedArchiver *)archiver willReplaceObject:(id)object withObject:(id)newObject;
+public function archiver:(NSKeyedArchiver *)archiver willReplaceObject:(id)object withObject:(id)newObject;
 	// Informs the delegate that the newObject is being substituted for the
 	// object. This is also called when the delegate itself is doing/has done
 	// the substitution. The delegate may use this method if it is keeping track
 	// of the encoded or decoded objects.
 
-- (void)archiverWillFinish:(NSKeyedArchiver *)archiver;
+public function archiverWillFinish:(NSKeyedArchiver *)archiver;
 	// Notifies the delegate that encoding is about to finish.
 
-- (void)archiverDidFinish:(NSKeyedArchiver *)archiver;
+public function archiverDidFinish:(NSKeyedArchiver *)archiver;
 	// Notifies the delegate that encoding has finished.
 
 }
@@ -177,16 +177,16 @@ extern class NSKeyedUnarchiver extends NSCoder {
 	// may use this to keep track of the decoded objects.
 
 // notification
-- (void)unarchiver:(NSKeyedUnarchiver *)unarchiver willReplaceObject:(id)object withObject:(id)newObject;
+public function unarchiver:(NSKeyedUnarchiver *)unarchiver willReplaceObject:(id)object withObject:(id)newObject;
 	// Informs the delegate that the newObject is being substituted for the
 	// object. This is also called when the delegate itself is doing/has done
 	// the substitution. The delegate may use this method if it is keeping track
 	// of the encoded or decoded objects.
 
-- (void)unarchiverWillFinish:(NSKeyedUnarchiver *)unarchiver;
+public function unarchiverWillFinish:(NSKeyedUnarchiver *)unarchiver;
 	// Notifies the delegate that decoding is about to finish.
 
-- (void)unarchiverDidFinish:(NSKeyedUnarchiver *)unarchiver;
+public function unarchiverDidFinish:(NSKeyedUnarchiver *)unarchiver;
 	// Notifies the delegate that decoding has finished.
 
 }

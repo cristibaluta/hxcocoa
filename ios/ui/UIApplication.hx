@@ -2,6 +2,8 @@ package ios.ui;
 import objc.foundation.NSURL;
 import objc.graphics.CGGeometry;
 
+typedef UIBackgroundTaskIdentifier = Int;
+
 @:framework("UIKit")
 extern enum UIStatusBarStyle {
     UIStatusBarStyleDefault;
@@ -37,10 +39,6 @@ extern enum UIInterfaceOrientationMask {
     UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
-/*define UIDeviceOrientationIsValidInterfaceOrientation(orientation) ((orientation) == UIDeviceOrientationPortrait || (orientation) == UIDeviceOrientationPortraitUpsideDown || (orientation) == UIDeviceOrientationLandscapeLeft || (orientation) == UIDeviceOrientationLandscapeRight)
-define UIInterfaceOrientationIsPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait || (orientation) == UIInterfaceOrientationPortraitUpsideDown)
-define UIInterfaceOrientationIsLandscape(orientation) ((orientation) == UIInterfaceOrientationLandscapeLeft || (orientation) == UIInterfaceOrientationLandscapeRight)
-*/
 @:framework("UIKit")
 extern enum UIRemoteNotificationType {
     UIRemoteNotificationTypeNone;
@@ -117,17 +115,17 @@ extern class UIApplication extends UIResponder {
 	public var applicationState (default, null) :UIApplicationState;
 	public var backgroundTimeRemaining (default, null) :Float;
 
-//- (UIBackgroundTaskIdentifier)beginBackgroundTaskWithExpirationHandler:(void(^)(void))handler  NS_AVAILABLE_IOS(4_0);
-	//public function endBackgroundTask (identifier:UIBackgroundTaskIdentifier) :Void;
+	public function beginBackgroundTaskWithExpirationHandler (handler:Void->Void) :UIBackgroundTaskIdentifier;
+	public function endBackgroundTask (identifier:UIBackgroundTaskIdentifier) :Void;
 
-//- (BOOL)setKeepAliveTimeout:(NSTimeInterval)timeout handler:(void(^)(void))keepAliveHandler NS_AVAILABLE_IOS(4_0);
+	public function setKeepAliveTimeout (timeout:Float, handler:Void->Void) :Bool;
 	public function clearKeepAliveTimeout () :Void;
 
 	//public var (nonatomic,readonly,getter=isProtectedDataAvailable) BOOL protectedDataAvailable NS_AVAILABLE_IOS(4_0);
 
 	//public var userInterfaceLayoutDirection (default, null) :UIUserInterfaceLayoutDirection  NS_AVAILABLE_IOS(5_0);
 
-	// UIApplication (UIRemoteNotifications)
+// UIApplication (UIRemoteNotifications)
 
 	public function registerForRemoteNotificationTypes (types:UIRemoteNotificationType) :Void;
 	public function unregisterForRemoteNotifications () :Void; // calls -registerForRemoteNotificationTypes with UIRemoteNotificationTypeNone
@@ -135,7 +133,7 @@ extern class UIApplication extends UIResponder {
 // returns the enabled types, also taking into account any systemwide settings; doesn't relate to connectivity
 	public function enabledRemoteNotificationTypes () :UIRemoteNotificationType;
 
-	// UIApplication (UILocalNotifications)
+// UIApplication (UILocalNotifications)
 
 	public function presentLocalNotificationNow (notification:UILocalNotification) :Void;
 
@@ -155,5 +153,9 @@ extern class UIApplication extends UIResponder {
 // UIStateRestoration)
 	@:require(ios6_0) public function extendStateRestoration () :Void;
 	@:require(ios6_0) public function completeStateRestoration () :Void;
-
+	
+	@:c public static function UIDeviceOrientationIsValidInterfaceOrientation(orientation:UIInterfaceOrientation) :Void;
+	@:c public static function UIInterfaceOrientationIsPortrait(orientation:UIInterfaceOrientation) :Void;
+	@:c public static function UIInterfaceOrientationIsLandscape(orientation:UIInterfaceOrientation) :Void;
+	
 }

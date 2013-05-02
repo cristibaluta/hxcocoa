@@ -31,8 +31,8 @@ extern class NSRunLoop extends NSObject {
 
 /*extern class NSObject (NSDelayedPerforming)
 
-- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(Array<> *)modes;
-- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;
+public function performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(Array<> *)modes;
+public function performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;
 + (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument;
 + (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget;
 

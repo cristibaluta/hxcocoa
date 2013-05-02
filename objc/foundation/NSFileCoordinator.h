@@ -4,7 +4,7 @@
 	All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 
 @class Array<>, NSError, NSMutableDictionary, NSURL;
 
@@ -114,7 +114,7 @@ Coordinated reading of an item triggers the sending of messages to NSFilePresent
 
 If there are multiple NSFilePresenters involved then the order in which they are messaged is undefined. If an NSFilePresenter signals failure then waiting will fail and *outError will be set to an NSError describing the failure.
 */
-- (void)coordinateReadingItemAtURL:(NSURL *)url options:(NSFileCoordinatorReadingOptions)options error:(NSError **)outError byAccessor:(void (^)(NSURL *newURL))reader;
+public function coordinateReadingItemAtURL:(NSURL *)url options:(NSFileCoordinatorReadingOptions)options error:(NSError **)outError byAccessor:(void (^)(NSURL *newURL))reader;
 
 /* Writers wait for readers and other writers, and they also wait for NSFilePresenters that are messaged as part of the coordinated writing.
 
@@ -127,17 +127,17 @@ Coordinated writing of an item triggers the sending of messages to NSFilePresent
 
 If there are multiple NSFilePresenters involved then the order in which they are messaged is undefined. If an NSFilePresenter signals failure then waiting will fail and *outError will be set to an NSError describing the failure.
 */
-- (void)coordinateWritingItemAtURL:(NSURL *)url options:(NSFileCoordinatorWritingOptions)options error:(NSError **)outError byAccessor:(void (^)(NSURL *newURL))writer;
+public function coordinateWritingItemAtURL:(NSURL *)url options:(NSFileCoordinatorWritingOptions)options error:(NSError **)outError byAccessor:(void (^)(NSURL *newURL))writer;
 
 #pragma mark *** Multiple File Coordination ***
 
 /* Do the same thing that an invocation of -coordinateReadingItemAtURL:options:error:byAccessor: passed a block that invokes -coordinateWritingItemAtURL:options:error:byAccessor: would do, without the risk of deadlock that doing exactly that would introduce.
 */
-- (void)coordinateReadingItemAtURL:(NSURL *)readingURL options:(NSFileCoordinatorReadingOptions)readingOptions writingItemAtURL:(NSURL *)writingURL options:(NSFileCoordinatorWritingOptions)writingOptions error:(NSError **)outError byAccessor:(void (^)(NSURL *newReadingURL, NSURL *newWritingURL))readerWriter;
+public function coordinateReadingItemAtURL:(NSURL *)readingURL options:(NSFileCoordinatorReadingOptions)readingOptions writingItemAtURL:(NSURL *)writingURL options:(NSFileCoordinatorWritingOptions)writingOptions error:(NSError **)outError byAccessor:(void (^)(NSURL *newReadingURL, NSURL *newWritingURL))readerWriter;
 
 /* Do the same thing that an invocation of -coordinateWritingItemAtURL:options:error:byAccessor: passed a block that invokes -coordinateWritingItemAtURL:options:error:byAccessor: again would do, without the risk of deadlock that doing exactly that would introduce.
 */
-- (void)coordinateWritingItemAtURL:(NSURL *)url1 options:(NSFileCoordinatorWritingOptions)options1 writingItemAtURL:(NSURL *)url2 options:(NSFileCoordinatorWritingOptions)options2 error:(NSError **)outError byAccessor:(void (^)(NSURL *newURL1, NSURL *newURL2))writer;
+public function coordinateWritingItemAtURL:(NSURL *)url1 options:(NSFileCoordinatorWritingOptions)options1 writingItemAtURL:(NSURL *)url2 options:(NSFileCoordinatorWritingOptions)options2 error:(NSError **)outError byAccessor:(void (^)(NSURL *newURL1, NSURL *newURL2))writer;
 
 #pragma mark *** Batched File Coordination ***
 
@@ -147,7 +147,7 @@ The -coordinate... methods must use interprocess communication to message instan
 
 In most cases it is redundant to pass the same reading or writing options in an invocation of this method as are passed to individual invocations of the -coordinate... methods invoked by the block passed to an invocation of this method. For example, when Finder invokes this method during a copy operation it does not pass NSFileCoordinatorReadingWithoutChanges because it is appropriate to trigger the saving of document changes right away, but it does pass it when doing the nested invocations of -coordinate... methods because it is not necessary to trigger saving again, even if the user changes the document before the Finder proceeds far enough to actually copy that document's file.
 */
-- (void)prepareForReadingItemsAtURLs:(Array<> *)readingURLs options:(NSFileCoordinatorReadingOptions)readingOptions writingItemsAtURLs:(Array<> *)writingURLs options:(NSFileCoordinatorWritingOptions)writingOptions error:(NSError **)outError byAccessor:(void (^)(void (^completionHandler)(void)))batchAccessor;
+public function prepareForReadingItemsAtURLs:(Array<> *)readingURLs options:(NSFileCoordinatorReadingOptions)readingOptions writingItemsAtURLs:(Array<> *)writingURLs options:(NSFileCoordinatorWritingOptions)writingOptions error:(NSError **)outError byAccessor:(void (^)(void (^completionHandler)(void)))batchAccessor;
 
 #endif
 
@@ -159,7 +159,7 @@ Support for App Sandbox on OS X. Some applications can rename files while saving
 
 There is no reason to invoke this method from applications that do not use App Sandbox. Invoking it does nothing on iOS.
 */
-- (void)itemAtURL:(NSURL *)oldURL willMoveToURL:(NSURL *)newURL NS_AVAILABLE(10_8, 6_0);
+public function itemAtURL:(NSURL *)oldURL willMoveToURL:(NSURL *)newURL NS_AVAILABLE(10_8, 6_0);
 
 /* Announce that the item located by a URL is now located by another URL.
 
@@ -172,7 +172,7 @@ This also balances invocations of -itemAtURL:willMoveToURL:, as described above.
 
 Useless invocations of this method are harmless, so you don't have to write code that compares NSURLs for equality, which is not straightforward. This method must be invoked from within the block passed to an invocation of -coordinateWritingItemAtURL:options:error:byAccessor: or -coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:.
 */
-- (void)itemAtURL:(NSURL *)oldURL didMoveToURL:(NSURL *)newURL;
+public function itemAtURL:(NSURL *)oldURL didMoveToURL:(NSURL *)newURL;
 
 #pragma mark *** Cancellation ***
 
@@ -180,6 +180,6 @@ Useless invocations of this method are harmless, so you don't have to write code
 
 This method this can be invoked from any thread. It always returns immediately, without waiting for anything. Cancellation is racy; you usually cannot assume that no block passed into a -coordinate... or -prepare... method is already being invoked, so the code inside those blocks typically still has to check for cancellation, whatever that means in your application.
 */
-- (void)cancel;
+public function cancel;
 
 }

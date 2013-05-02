@@ -39,16 +39,16 @@ extern class NSCalendar extends NSObject implements NSCopying, NSSecureCoding>
 - (NSString *)calendarIdentifier;
 
 
-- (void)setLocale:(NSLocale *)locale;
+public function setLocale:(NSLocale *)locale;
 - (NSLocale *)locale;
 
-- (void)setTimeZone:(NSTimeZone *)tz;
+public function setTimeZone:(NSTimeZone *)tz;
 - (NSTimeZone *)timeZone;
 
-- (void)setFirstWeekday:(NSUInteger)weekday;
+public function setFirstWeekday:(NSUInteger)weekday;
 - (NSUInteger)firstWeekday;
 
-- (void)setMinimumDaysInFirstWeek:(NSUInteger)mdw;
+public function setMinimumDaysInFirstWeek:(NSUInteger)mdw;
 - (NSUInteger)minimumDaysInFirstWeek;
 
 
@@ -115,23 +115,23 @@ extern class NSDateComponents extends NSObject implements NSCopying, NSSecureCod
 - (Int)yearForWeekOfYear NS_AVAILABLE(10_7, 5_0);
 - (Bool)isLeapMonth NS_AVAILABLE(10_8, 6_0);
 
-- (void)setCalendar:(NSCalendar *)cal NS_AVAILABLE(10_7, 4_0);
-- (void)setTimeZone:(NSTimeZone *)tz NS_AVAILABLE(10_7, 4_0);
-- (void)setEra:(Int)v;
-- (void)setYear:(Int)v;
-- (void)setMonth:(Int)v;
-- (void)setDay:(Int)v;
-- (void)setHour:(Int)v;
-- (void)setMinute:(Int)v;
-- (void)setSecond:(Int)v;
-- (void)setWeek:(Int)v;
-- (void)setWeekday:(Int)v;
-- (void)setWeekdayOrdinal:(Int)v;
-- (void)setQuarter:(Int)v NS_AVAILABLE(10_6, 4_0);
-- (void)setWeekOfMonth:(Int)w NS_AVAILABLE(10_7, 5_0);
-- (void)setWeekOfYear:(Int)w NS_AVAILABLE(10_7, 5_0);
-- (void)setYearForWeekOfYear:(Int)y NS_AVAILABLE(10_7, 5_0);
-- (void)setLeapMonth:(Bool)lm NS_AVAILABLE(10_8, 6_0);
+public function setCalendar:(NSCalendar *)cal NS_AVAILABLE(10_7, 4_0);
+public function setTimeZone:(NSTimeZone *)tz NS_AVAILABLE(10_7, 4_0);
+public function setEra:(Int)v;
+public function setYear:(Int)v;
+public function setMonth:(Int)v;
+public function setDay:(Int)v;
+public function setHour:(Int)v;
+public function setMinute:(Int)v;
+public function setSecond:(Int)v;
+public function setWeek:(Int)v;
+public function setWeekday:(Int)v;
+public function setWeekdayOrdinal:(Int)v;
+public function setQuarter:(Int)v NS_AVAILABLE(10_6, 4_0);
+public function setWeekOfMonth:(Int)w NS_AVAILABLE(10_7, 5_0);
+public function setWeekOfYear:(Int)w NS_AVAILABLE(10_7, 5_0);
+public function setYearForWeekOfYear:(Int)y NS_AVAILABLE(10_7, 5_0);
+public function setLeapMonth:(Bool)lm NS_AVAILABLE(10_8, 6_0);
 
 - (NSDate *)date NS_AVAILABLE(10_7, 4_0);
 

@@ -23,7 +23,7 @@ The following code snippets can be used to enumerate over the indexes in an NSIn
 To enumerate without doing a call per index, you can use the method getIndexes:maxCount:inIndexRange:.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSRange.h>
 
 extern class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying, NSCoding> {
@@ -80,9 +80,9 @@ extern class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
 - (Bool)intersectsIndexesInRange:(NSRange)range;
 
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateIndexesUsingBlock:(void (^)(NSUInteger idx, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
-- (void)enumerateIndexesWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(NSUInteger idx, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
-- (void)enumerateIndexesInRange:(NSRange)range options:(NSEnumerationOptions)opts usingBlock:(void (^)(NSUInteger idx, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateIndexesUsingBlock:(void (^)(NSUInteger idx, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateIndexesWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(NSUInteger idx, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateIndexesInRange:(NSRange)range options:(NSEnumerationOptions)opts usingBlock:(void (^)(NSUInteger idx, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
 
 - (NSUInteger)indexPassingTest:(Bool (^)(NSUInteger idx, Bool *stop))predicate NS_AVAILABLE(10_6, 4_0);
 - (NSUInteger)indexWithOptions:(NSEnumerationOptions)opts passingTest:(Bool (^)(NSUInteger idx, Bool *stop))predicate NS_AVAILABLE(10_6, 4_0);
@@ -97,9 +97,9 @@ extern class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
  
  If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block will be invoked with the intersection of those two ranges.
 */
-- (void)enumerateRangesUsingBlock:(void (^)(NSRange range, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
-- (void)enumerateRangesWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(NSRange range, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
-- (void)enumerateRangesInRange:(NSRange)range options:(NSEnumerationOptions)opts usingBlock:(void (^)(NSRange range, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
+public function enumerateRangesUsingBlock:(void (^)(NSRange range, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
+public function enumerateRangesWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(NSRange range, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
+public function enumerateRangesInRange:(NSRange)range options:(NSEnumerationOptions)opts usingBlock:(void (^)(NSRange range, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
 
 
 #endif
@@ -111,17 +111,17 @@ extern class NSMutableIndexSet extends NSIndexSet {
     void *_reserved;
 }
 
-- (void)addIndexes:(NSIndexSet *)indexSet;
-- (void)removeIndexes:(NSIndexSet *)indexSet;
-- (void)removeAllIndexes;
-- (void)addIndex:(NSUInteger)value;
-- (void)removeIndex:(NSUInteger)value;
-- (void)addIndexesInRange:(NSRange)range;
-- (void)removeIndexesInRange:(NSRange)range;
+public function addIndexes:(NSIndexSet *)indexSet;
+public function removeIndexes:(NSIndexSet *)indexSet;
+public function removeAllIndexes;
+public function addIndex:(NSUInteger)value;
+public function removeIndex:(NSUInteger)value;
+public function addIndexesInRange:(NSRange)range;
+public function removeIndexesInRange:(NSRange)range;
 
 /* For a positive delta, shifts the indexes in [index, INT_MAX] to the right, thereby inserting an "empty space" [index, delta], for a negative delta, shifts the indexes in [index, INT_MAX] to the left, thereby deleting the indexes in the range [index - delta, delta].
 */
-- (void)shiftIndexesStartingAtIndex:(NSUInteger)index by:(Int)delta;   
+public function shiftIndexesStartingAtIndex:(NSUInteger)index by:(Int)delta;   
 
 }
 

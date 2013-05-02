@@ -87,13 +87,13 @@ extern class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
 extern class NSMutableCharacterSet extends NSCharacterSet <NSCopying, NSMutableCopying>
 
-- (void)addCharactersInRange:(NSRange)aRange;
-- (void)removeCharactersInRange:(NSRange)aRange;
-- (void)addCharactersInString:(NSString *)aString;
-- (void)removeCharactersInString:(NSString *)aString;
-- (void)formUnionWithCharacterSet:(NSCharacterSet *)otherSet;
-- (void)formIntersectionWithCharacterSet:(NSCharacterSet *)otherSet;
-- (void)invert;
+public function addCharactersInRange:(NSRange)aRange;
+public function removeCharactersInRange:(NSRange)aRange;
+public function addCharactersInString:(NSString *)aString;
+public function removeCharactersInString:(NSString *)aString;
+public function formUnionWithCharacterSet:(NSCharacterSet *)otherSet;
+public function formIntersectionWithCharacterSet:(NSCharacterSet *)otherSet;
+public function invert;
 
 }
 */

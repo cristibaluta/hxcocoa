@@ -8,34 +8,20 @@
 // callbacks to be invoked should an undo be requested.
 //
 
-#import <Foundation/NSObject.h>
-#include <stdint.h>
-
-@class Array<>;
-@class NSString;
+package objc.foundation;
 
 // used with NSRunLoop's performSelector:target:argument:order:modes:
 enum {
     NSUndoCloseGroupingRunLoopOrdering		= 350000
 };
 
-NS_CLASS_AVAILABLE(10_0, 3_0)
-extern class NSUndoManager : NSObject {
-    @private
-    id 			_undoStack;
-    id 			_redoStack;
-    Array<> 		*_runLoopModes;
-    uint64_t		_NSUndoManagerPrivate1;
-    id 			_target;
-    id			_proxy;
-    void		*_NSUndoManagerPrivate2;
-    void		*_NSUndoManagerPrivate3;
-}
+
+extern class NSUndoManager extends NSObject {
 
         /* Begin/End Grouping */
 
-- (void)beginUndoGrouping;
-- (void)endUndoGrouping;
+public function beginUndoGrouping;
+public function endUndoGrouping;
     // These nest.
 
 - (Int)groupingLevel;
@@ -43,21 +29,21 @@ extern class NSUndoManager : NSObject {
 
         /* Enable/Disable registration */
 
-- (void)disableUndoRegistration;
-- (void)enableUndoRegistration;
+public function disableUndoRegistration;
+public function enableUndoRegistration;
 - (Bool)isUndoRegistrationEnabled;
 
         /* Groups By Event */
 
 - (Bool)groupsByEvent;
-- (void)setGroupsByEvent:(Bool)groupsByEvent;
+public function setGroupsByEvent:(Bool)groupsByEvent;
     // If groupsByEvent is enabled, the undoManager automatically groups
     // all undos registered during a single NSRunLoop event together in
     // a single top-level group. This featured is enabled by default.
 
         /* Undo levels */
 
-- (void)setLevelsOfUndo:(NSUInteger)levels;
+public function setLevelsOfUndo:(NSUInteger)levels;
 - (NSUInteger)levelsOfUndo;
     // Sets the number of complete groups (not operations) that should
     // be kept my the manager.  When limit is reached, oldest undos are
@@ -65,19 +51,19 @@ extern class NSUndoManager : NSObject {
 
         /* Run Loop Modes */
 
-- (void)setRunLoopModes:(Array<> *)runLoopModes;
+public function setRunLoopModes:(Array<> *)runLoopModes;
 - (Array<> *)runLoopModes;
 
         /* Undo/Redo */
 
-- (void)undo;
+public function undo;
     // Undo until a matching begin. It terminates a top level undo if
     // necesary. Useful for undoing when groupByEvents is on (default is
     // on)
-- (void)redo;
+public function redo;
     // Will redo last top-level undo.
 
-- (void)undoNestedGroup;
+public function undoNestedGroup;
     // Undoes a nested grouping without first trying to close a top level
     // undo group.
 
@@ -92,13 +78,13 @@ extern class NSUndoManager : NSObject {
 
         /* remove */
 
-- (void)removeAllActions;
+public function removeAllActions;
 
-- (void)removeAllActionsWithTarget:(id)target;
+public function removeAllActionsWithTarget:(id)target;
 
         /* Object based Undo */
 
-- (void)registerUndoWithTarget:(id)target selector:(SEL)selector object:(id)anObject;
+public function registerUndoWithTarget:(id)target selector:(SEL)selector object:(id)anObject;
 
         /* Invocation based undo */
 
@@ -108,7 +94,7 @@ extern class NSUndoManager : NSObject {
    // When undo is called, the specified target will be called with
    // [target setFont:oldFont color:oldColor]
 
-- (void)setActionIsDiscardable:(Bool)discardable NS_AVAILABLE(10_7, 5_0);
+public function setActionIsDiscardable:(Bool)discardable NS_AVAILABLE(10_7, 5_0);
    // Set the latest undo action to discardable if it may be safely discarded when a document can not be saved for any reason. An example might be an undo action that changes the viewable area of a document. To find out if an undo group contains only discardable actions, look for the NSUndoManagerGroupIsDiscardableKey in the userInfo dictionary of the NSUndoManagerDidCloseUndoGroupNotification.
 
 // This key is set on the user info dictionary of the NSUndoManagerDidCloseUndoGroupNotification, with a NSNumber boolean value of YES, if the undo group as a whole is discardable.
@@ -125,7 +111,7 @@ FOUNDATION_EXPORT NSString * const NSUndoManagerGroupIsDiscardableKey NS_AVAILAB
     // Call undoActionName or redoActionName to get the name of the next action to be undone or redone.
     // Returns @"" if there is nothing to undo/redo or no action names were registered.
 
-- (void)setActionName:(NSString *)actionName;
+public function setActionName:(NSString *)actionName;
     // Call setActionName: to set the name of an action.
     // The actionName parameter can not be nil
 

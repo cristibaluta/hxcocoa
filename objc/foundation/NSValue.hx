@@ -40,6 +40,12 @@ extern class NSValue extends NSObject implements NSCopying implements NSSecureCo
 	- (CGAffineTransform)CGAffineTransformValue;
 	- (UIEdgeInsets)UIEdgeInsetsValue;
 	- (UIOffset)UIOffsetValue NS_AVAILABLE_IOS(5_0);*/
+
+/*(NSValueRangeExtensions)
+
++ (NSValue *)valueWithRange:(NSRange)range;
+- (NSRange)rangeValue;
+*/
 }
 
 @:framework("Foundation")

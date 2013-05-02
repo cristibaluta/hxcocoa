@@ -68,7 +68,7 @@ Compatibility notes:
     - The behavior described in step 2 is different from -takeValue:forKey:'s, in which the instance variable search order is <key>, _<key>.
     - For backward binary compatibility with -takeValue:forKey:'s behavior, -handleTakeValue:forUnboundKey: will be invoked instead of -setValue:forUndefinedKey: in step 3, if the implementation of -handleTakeValue:forUnboundKey: in the receiver's class is not NSObject's.
 */
-- (void)setValue:(id)value forKey:(NSString *)key;
+public function setValue:(id)value forKey:(NSString *)key;
 
 /* Given a pointer to a value pointer, a key that identifies an attribute or to-one relationship, and a pointer to an NSError pointer, return a value that is suitable for use in subsequent -setValue:forKey: messages sent to the same receiver. If no validation is necessary, return YES without altering *ioValue or *outError. If validation is necessary and possible, return YES after setting *ioValue to an object that is the validated version of the original value, but without altering *outError. If validation is necessary but not possible, return NO after setting *outError to an NSError that encapsulates the reason that validation was not possible, but without altering *ioValue. The sender of the message is never given responsibility for releasing ioValue or outError.
 
@@ -115,7 +115,7 @@ Performance note: the repetitive -set<Key>: messages implied by step 2's descrip
 /* Key-path-taking variants of like-named methods. The default implementation of each parses the key path enough to determine whether or not it has more than one component (key path components are separated by periods). If so, -valueForKey: is invoked with the first key path component as the argument, and the method being invoked is invoked recursively on the result, with the remainder of the key path passed as an argument. If not, the like-named non-key-path-taking method is invoked.
 */
 - (id)valueForKeyPath:(NSString *)keyPath;
-- (void)setValue:(id)value forKeyPath:(NSString *)keyPath;
+public function setValue:(id)value forKeyPath:(NSString *)keyPath;
 - (Bool)validateValue:(inout id *)ioValue forKeyPath:(NSString *)inKeyPath error:(out NSError **)outError;
 - (NSMutableArray *)mutableArrayValueForKeyPath:(NSString *)keyPath;
 - (NSMutableOrderedSet *)mutableOrderedSetValueForKeyPath:(NSString *)keyPath NS_AVAILABLE(10_7, 5_0);
@@ -127,11 +127,11 @@ Performance note: the repetitive -set<Key>: messages implied by step 2's descrip
 
 /* Given that an invocation of -setValue:forKey: would be unable to set the keyed value using its default mechanism, set the keyed value using some other mechanism. The default implementation of this method raises an NSUndefinedKeyException. You can override it to handle properties that are dynamically defined at run-time.
 */
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key;
+public function setValue:(id)value forUndefinedKey:(NSString *)key;
 
 /* Given that an invocation of -setValue:forKey: would be unable to set the keyed value because the type of the parameter of the corresponding accessor method is an NSNumber scalar type or NSValue structure type but the value is nil, set the keyed value using some other mechanism. The default implementation of this method raises an NSInvalidArgumentException. You can override it to map nil values to something meaningful in the context of your application.
 */
-- (void)setNilValueForKey:(NSString *)key;
+public function setNilValueForKey:(NSString *)key;
 
 /* Given an array of keys, return a dictionary containing the keyed attribute values, to-one-related objects, and/or collections of to-many-related objects. Entries for which -valueForKey: returns nil have NSNull as their value in the returned dictionary.
 */
@@ -139,7 +139,7 @@ Performance note: the repetitive -set<Key>: messages implied by step 2's descrip
 
 /* Given a dictionary containing keyed attribute values, to-one-related objects, and/or collections of to-many-related objects, set the keyed values. Dictionary entries whose values are NSNull result in -setValue:nil forKey:key messages being sent to the receiver.
 */
-- (void)setValuesForKeysWithDictionary:(NSDictionary *)keyedValues;
+public function setValuesForKeysWithDictionary:(NSDictionary *)keyedValues;
 
 }
 
@@ -151,7 +151,7 @@ extern class Array<>(NSKeyValueCoding)
 
 /* Invoke -setValue:forKey: on each of the receiver's elements.
 */
-- (void)setValue:(id)value forKey:(NSString *)key;
+public function setValue:(id)value forKey:(NSString *)key;
 
 }
 
@@ -167,7 +167,7 @@ extern class NSMutableDictionary(NSKeyValueCoding)
 
 /* Send -setObject:forKey: to the receiver, unless the value is nil, in which case send -removeObject:forKey:.
 */
-- (void)setValue:(id)value forKey:(NSString *)key;
+public function setValue:(id)value forKey:(NSString *)key;
 
 }
 
@@ -179,7 +179,7 @@ extern class NSOrderedSet(NSKeyValueCoding)
 
 /* Invoke -setValue:forKey: on each of the receiver's members.
 */
-- (void)setValue:(id)value forKey:(NSString *)key NS_AVAILABLE(10_7, 5_0);
+public function setValue:(id)value forKey:(NSString *)key NS_AVAILABLE(10_7, 5_0);
 
 }
 
@@ -191,7 +191,7 @@ extern class NSSet(NSKeyValueCoding)
 
 /* Invoke -setValue:forKey: on each of the receiver's members.
 */
-- (void)setValue:(id)value forKey:(NSString *)key;
+public function setValue:(id)value forKey:(NSString *)key;
 
 }
 
@@ -203,17 +203,17 @@ extern class NSObject(NSDeprecatedKeyValueCoding)
 */
 + (Bool)useStoredAccessor NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
 - (id)storedValueForKey:(NSString *)key NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
-- (void)takeStoredValue:(id)value forKey:(NSString *)key NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
+public function takeStoredValue:(id)value forKey:(NSString *)key NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
 
 /* Methods that were deprecated in Mac OS 10.3. Use the new, more consistently named, methods declared above instead.
 */
-- (void)takeValue:(id)value forKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
-- (void)takeValue:(id)value forKeyPath:(NSString *)keyPath NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
+public function takeValue:(id)value forKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
+public function takeValue:(id)value forKeyPath:(NSString *)keyPath NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
 - (id)handleQueryWithUnboundKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
-- (void)handleTakeValue:(id)value forUnboundKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
-- (void)unableToSetNilForKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
+public function handleTakeValue:(id)value forUnboundKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
+public function unableToSetNilForKey:(NSString *)key NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
 - (NSDictionary *)valuesForKeys:(Array<> *)keys NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
-- (void)takeValuesFromDictionary:(NSDictionary *)properties NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
+public function takeValuesFromDictionary:(NSDictionary *)properties NS_DEPRECATED(10_0, 10_3, 2_0, 2_0);
 
 }
 

@@ -150,105 +150,105 @@ typedef NS_ENUM(NSUInteger, NSDateFormatterBehavior) {
 - (NSString *)dateFormat;
 
 - (NSDateFormatterStyle)dateStyle;
-- (void)setDateStyle:(NSDateFormatterStyle)style;
+public function setDateStyle:(NSDateFormatterStyle)style;
 
 - (NSDateFormatterStyle)timeStyle;
-- (void)setTimeStyle:(NSDateFormatterStyle)style;
+public function setTimeStyle:(NSDateFormatterStyle)style;
 
 - (NSLocale *)locale;
-- (void)setLocale:(NSLocale *)locale;
+public function setLocale:(NSLocale *)locale;
 
 - (Bool)generatesCalendarDates;
-- (void)setGeneratesCalendarDates:(Bool)b;
+public function setGeneratesCalendarDates:(Bool)b;
 
 - (NSDateFormatterBehavior)formatterBehavior;
-- (void)setFormatterBehavior:(NSDateFormatterBehavior)behavior;
+public function setFormatterBehavior:(NSDateFormatterBehavior)behavior;
 
 + (NSDateFormatterBehavior)defaultFormatterBehavior;
 + (void)setDefaultFormatterBehavior:(NSDateFormatterBehavior)behavior;
 
-- (void)setDateFormat:(NSString *)string;
+public function setDateFormat:(NSString *)string;
 
 - (NSTimeZone *)timeZone;
-- (void)setTimeZone:(NSTimeZone *)tz;
+public function setTimeZone:(NSTimeZone *)tz;
 
 - (NSCalendar *)calendar;
-- (void)setCalendar:(NSCalendar *)calendar;
+public function setCalendar:(NSCalendar *)calendar;
 
 - (Bool)isLenient;
-- (void)setLenient:(Bool)b;
+public function setLenient:(Bool)b;
 
 - (NSDate *)twoDigitStartDate;
-- (void)setTwoDigitStartDate:(NSDate *)date;
+public function setTwoDigitStartDate:(NSDate *)date;
 
 - (NSDate *)defaultDate;
-- (void)setDefaultDate:(NSDate *)date;
+public function setDefaultDate:(NSDate *)date;
 
 - (Array<> *)eraSymbols;
-- (void)setEraSymbols:(Array<> *)array;
+public function setEraSymbols:(Array<> *)array;
 
 - (Array<> *)monthSymbols;
-- (void)setMonthSymbols:(Array<> *)array;
+public function setMonthSymbols:(Array<> *)array;
 
 - (Array<> *)shortMonthSymbols;
-- (void)setShortMonthSymbols:(Array<> *)array;
+public function setShortMonthSymbols:(Array<> *)array;
 
 - (Array<> *)weekdaySymbols;
-- (void)setWeekdaySymbols:(Array<> *)array;
+public function setWeekdaySymbols:(Array<> *)array;
 
 - (Array<> *)shortWeekdaySymbols;
-- (void)setShortWeekdaySymbols:(Array<> *)array;
+public function setShortWeekdaySymbols:(Array<> *)array;
 
 - (NSString *)AMSymbol;
-- (void)setAMSymbol:(NSString *)string;
+public function setAMSymbol:(NSString *)string;
 
 - (NSString *)PMSymbol;
-- (void)setPMSymbol:(NSString *)string;
+public function setPMSymbol:(NSString *)string;
 
 - (Array<> *)longEraSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setLongEraSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setLongEraSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)veryShortMonthSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setVeryShortMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setVeryShortMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)standaloneMonthSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setStandaloneMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setStandaloneMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)shortStandaloneMonthSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setShortStandaloneMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setShortStandaloneMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)veryShortStandaloneMonthSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setVeryShortStandaloneMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setVeryShortStandaloneMonthSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)veryShortWeekdaySymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setVeryShortWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setVeryShortWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)standaloneWeekdaySymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setStandaloneWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setStandaloneWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)shortStandaloneWeekdaySymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setShortStandaloneWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setShortStandaloneWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)veryShortStandaloneWeekdaySymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setVeryShortStandaloneWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setVeryShortStandaloneWeekdaySymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)quarterSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)shortQuarterSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setShortQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setShortQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)standaloneQuarterSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setStandaloneQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setStandaloneQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (Array<> *)shortStandaloneQuarterSymbols NS_AVAILABLE(10_5, 2_0);
-- (void)setShortStandaloneQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
+public function setShortStandaloneQuarterSymbols:(Array<> *)array NS_AVAILABLE(10_5, 2_0);
 
 - (NSDate *)gregorianStartDate NS_AVAILABLE(10_5, 2_0);
-- (void)setGregorianStartDate:(NSDate *)date NS_AVAILABLE(10_5, 2_0);
+public function setGregorianStartDate:(NSDate *)date NS_AVAILABLE(10_5, 2_0);
 
 - (Bool)doesRelativeDateFormatting NS_AVAILABLE(10_6, 4_0);
-- (void)setDoesRelativeDateFormatting:(Bool)b NS_AVAILABLE(10_6, 4_0);
+public function setDoesRelativeDateFormatting:(Bool)b NS_AVAILABLE(10_6, 4_0);
 
 }
 

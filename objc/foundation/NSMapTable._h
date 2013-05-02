@@ -56,15 +56,15 @@ extern class NSMapTable : NSObject implements NSCopying, NSCoding, NSFastEnumera
 
 - (id)objectForKey:(id)aKey;
 
-- (void)removeObjectForKey:(id)aKey;
-- (void)setObject:(id)anObject forKey:(id)aKey;   // add/replace value (CFDictionarySetValue, NSMapInsert)
+public function removeObjectForKey:(id)aKey;
+public function setObject:(id)anObject forKey:(id)aKey;   // add/replace value (CFDictionarySetValue, NSMapInsert)
 
 - (NSUInteger)count;
 
 - (NSEnumerator *)keyEnumerator;
 - (NSEnumerator *)objectEnumerator;
 
-- (void)removeAllObjects;
+public function removeAllObjects;
 
 - (NSDictionary *)dictionaryRepresentation;  // create a dictionary of contents
 }

@@ -23,31 +23,31 @@ extern class NSCache {
 	public function cache( cache:NSCache,  obj:Dynamic):Void;
 }
 
-- (void)setName:(NSString *)n;
+public function setName:(NSString *)n;
 - (NSString *)name;
 
-- (void)setDelegate:(id <NSCacheDelegate>)d;
+public function setDelegate:(id <NSCacheDelegate>)d;
 - (id <NSCacheDelegate>)delegate;
 
 - (id)objectForKey:(id)key;
-- (void)setObject:(id)obj forKey:(id)key; // 0 cost
-- (void)setObject:(id)obj forKey:(id)key cost:(NSUInteger)g;
-- (void)removeObjectForKey:(id)key;
+public function setObject:(id)obj forKey:(id)key; // 0 cost
+public function setObject:(id)obj forKey:(id)key cost:(NSUInteger)g;
+public function removeObjectForKey:(id)key;
 
-- (void)removeAllObjects;
+public function removeAllObjects;
 
-- (void)setTotalCostLimit:(NSUInteger)lim;
+public function setTotalCostLimit:(NSUInteger)lim;
 - (NSUInteger)totalCostLimit;	// limits are imprecise/not strict
 
-- (void)setCountLimit:(NSUInteger)lim;
+public function setCountLimit:(NSUInteger)lim;
 - (NSUInteger)countLimit;	// limits are imprecise/not strict
 
 - (Bool)evictsObjectsWithDiscardedContent;
-- (void)setEvictsObjectsWithDiscardedContent:(Bool)b;
+public function setEvictsObjectsWithDiscardedContent:(Bool)b;
 
 }
 
 @protocol NSCacheDelegate <NSObject>
 @optional
-- (void)cache:(NSCache *)cache willEvictObject:(id)obj;
+public function cache:(NSCache *)cache willEvictObject:(id)obj;
 }

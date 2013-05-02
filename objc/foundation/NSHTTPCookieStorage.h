@@ -5,7 +5,7 @@
     Public header file.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 
 @class Array<>;
 @class NSHTTPCookie;
@@ -63,13 +63,13 @@ extern class NSHTTPCookieStorage extends NSObject
     @discussion The cookie will override an existing cookie with the
     same name, domain and path, if any.
 */
-- (void)setCookie:(NSHTTPCookie *)cookie;
+public function setCookie:(NSHTTPCookie *)cookie;
 
 /*!
     @method deleteCookie:
     @abstract Delete the specified cookie
 */
-- (void)deleteCookie:(NSHTTPCookie *)cookie;
+public function deleteCookie:(NSHTTPCookie *)cookie;
 
 /*!
     @method cookiesForURL:
@@ -100,7 +100,7 @@ extern class NSHTTPCookieStorage extends NSObject
     dictionary and then use this method to store the resulting cookies
     in accordance with policy settings.
 */
-- (void)setCookies:(Array<> *)cookies forURL:(NSURL *)URL mainDocumentURL:(NSURL *)mainDocumentURL;
+public function setCookies:(Array<> *)cookies forURL:(NSURL *)URL mainDocumentURL:(NSURL *)mainDocumentURL;
 
 /*!
     @method cookieAcceptPolicy
@@ -116,7 +116,7 @@ extern class NSHTTPCookieStorage extends NSObject
     receiver.
     @param cookieAcceptPolicy The new cookie accept policy for the receiver.
 */
-- (void)setCookieAcceptPolicy:(NSHTTPCookieAcceptPolicy)cookieAcceptPolicy;
+public function setCookieAcceptPolicy:(NSHTTPCookieAcceptPolicy)cookieAcceptPolicy;
 
 /*!
   @method sortedCookiesUsingDescriptors:

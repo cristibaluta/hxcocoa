@@ -2,7 +2,7 @@
         Copyright (c) 2002-2012, Apple Inc. All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSDate.h>
 
 @class Array<>, NSData, NSDictionary, NSInputStream, NSOutputStream, NSRunLoop, NSString;
@@ -77,12 +77,12 @@ If publish: is called on an NSNetService instance initialized with this method, 
 - (id)initWithDomain:(NSString *)domain type:(NSString *)type name:(NSString *)name;
 
 - (id <NSNetServiceDelegate>)delegate;
-- (void)setDelegate:(id <NSNetServiceDelegate>)delegate;
+public function setDelegate:(id <NSNetServiceDelegate>)delegate;
 
 /* NSNetService instances may be scheduled on NSRunLoops to operate in different modes, or in other threads. It is generally not necessary to schedule NSNetServices in other threads. NSNetServices are scheduled in the current thread's NSRunLoop in the NSDefaultRunLoopMode when they are created.
 */
-- (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
-- (void)removeFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
+public function scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
+public function removeFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
 
 /* Returns the domain of the discovered or published service.
 */
@@ -107,22 +107,22 @@ If publish: is called on an NSNetService instance initialized with this method, 
  
     If the name of the service is the default name (@""), then the service will be renamed automatically. If the name of the service has been specified, then the service will not be renamed automatically. If more control over renaming is required, then -[NSNetService publishWithOptions:] is available.
 */
-- (void)publish;
+public function publish;
 
 /* Advertises a given service on the network. This method returns immediately. Success or failure is indicated by callbacks to the NSNetService instance's delegate.
  
     See the notes above for NSNetServiceNoAutoRename for information about controlling the auto-renaming behavior using this method.
 */
-- (void)publishWithOptions:(NSNetServiceOptions)options NS_AVAILABLE(10_5, 2_0);
+public function publishWithOptions:(NSNetServiceOptions)options NS_AVAILABLE(10_5, 2_0);
 
 
 /* Attempts to determine at least one address for the NSNetService instance. For applications linked on or after Mac OS X 10.4 "Tiger", this method calls -resolveWithTimeout: with a value of 5.0. Applications linked prior to Mac OS X 10.4 "Tiger" must call -stop on the instance after an appropriate (short) amount of time to avoid causing unnecessary network traffic.
 */
-- (void)resolve NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
+public function resolve NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
 
 /* Halts a service which is either publishing or resolving.
 */
-- (void)stop;
+public function stop;
 
 /* Returns an NSDictionary created from the provided NSData. The keys will be UTF8-encoded NSStrings. The values are NSDatas. The caller is responsible for interpreting these as types appropriate to the keys. If the NSData cannot be converted into an appropriate NSDictionary, this method will return nil. For applications linked on or after Mac OS X 10.5, this method will throw an NSInvalidException if it is passed nil as the argument.
 */
@@ -138,7 +138,7 @@ If publish: is called on an NSNetService instance initialized with this method, 
 
 /* Starts a resolve for the NSNetService instance of the specified duration. If the delegate's -netServiceDidResolveAddress: method is called before the timeout expires, the resolve is successful. If the timeout is reached, the delegate's -netService:didNotResolve: method will be called. The value of the NSNetServicesErrorCode key in the error dictionary will be NSNetServicesTimeoutError.
 */
-- (void)resolveWithTimeout:(NSTimeInterval)timeout;
+public function resolveWithTimeout:(NSTimeInterval)timeout;
 
 /* Retrieves streams from the NSNetService instance. The instance's delegate methods are not called. Returns YES if the streams requested are created successfully. Returns NO if or any reason the stream could not be created. If only one stream is desired, pass NULL for the address of the other stream. The streams that are created are not open, and are not scheduled in any run loop for any mode.
 */
@@ -154,11 +154,11 @@ If publish: is called on an NSNetService instance initialized with this method, 
 
 /* Starts monitoring the NSNetService instance for events. In Mac OS X 10.4 Tiger, monitored NSNetService instances inform their delegates of changes to the instance's TXT record by calling the delegate's -netService:didUpdateTXTRecordData: method.
 */
-- (void)startMonitoring;
+public function startMonitoring;
 
 /* Stops monitoring the NSNetService instance for events.
 */
-- (void)stopMonitoring;
+public function stopMonitoring;
 
 
 }
@@ -175,28 +175,28 @@ extern class NSNetServiceBrowser : NSObject {
 - (id)init;
 
 - (id <NSNetServiceBrowserDelegate>)delegate;
-- (void)setDelegate:(id <NSNetServiceBrowserDelegate>)delegate;
+public function setDelegate:(id <NSNetServiceBrowserDelegate>)delegate;
 
 /* NSNetServiceBrowser instances may be scheduled on NSRunLoops to operate in different modes, or in other threads. It is generally not necessary to schedule NSNetServiceBrowsers in other threads. NSNetServiceBrowsers are scheduled in the current thread's NSRunLoop in the NSDefaultRunLoopMode when they are created.
 */
-- (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
-- (void)removeFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
+public function scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
+public function removeFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode;
 
 /* Starts a search for domains that are browsable via Bonjour and the computer's network configuration. Discovered domains are reported to the delegate's -netServiceBrowser:didFindDomain:moreComing: method. There may be more than one browsable domain.
 */
-- (void)searchForBrowsableDomains;
+public function searchForBrowsableDomains;
 
 /* Starts a search for domains in which the network configuration allows registration (i.e. publishing). Most NSNetServiceBrowser clients do not need to use this API, as it is sufficient to publish an NSNetService instance with the empty string (see -[NSNetService initWithDomain:type:name:port:]). Discovered domains are reported to the delegate's -netServiceBrowser:didFindDomain:moreComing: method. There may be more than one registration domain.
 */
-- (void)searchForRegistrationDomains;
+public function searchForRegistrationDomains;
 
 /* Starts a search for services of the specified type in the domain indicated by domainString. For each service discovered, a -netServiceBrowser:foundService:moreComing: message is sent to the NSNetServiceBrowser instance's delegate.
 */
-- (void)searchForServicesOfType:(NSString *)type inDomain:(NSString *)domainString;
+public function searchForServicesOfType:(NSString *)type inDomain:(NSString *)domainString;
 
 /* Stops the currently running search.
 */
-- (void)stop;
+public function stop;
 
 }
 
@@ -207,35 +207,35 @@ extern class NSNetServiceBrowser : NSObject {
 
 /* Sent to the NSNetService instance's delegate prior to advertising the service on the network. If for some reason the service cannot be published, the delegate will not receive this message, and an error will be delivered to the delegate via the delegate's -netService:didNotPublish: method.
 */
-- (void)netServiceWillPublish:(NSNetService *)sender;
+public function netServiceWillPublish:(NSNetService *)sender;
 
 /* Sent to the NSNetService instance's delegate when the publication of the instance is complete and successful.
 */
-- (void)netServiceDidPublish:(NSNetService *)sender;
+public function netServiceDidPublish:(NSNetService *)sender;
 
 /* Sent to the NSNetService instance's delegate when an error in publishing the instance occurs. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a successful publication.
 */
-- (void)netService:(NSNetService *)sender didNotPublish:(NSDictionary *)errorDict;
+public function netService:(NSNetService *)sender didNotPublish:(NSDictionary *)errorDict;
 
 /* Sent to the NSNetService instance's delegate prior to resolving a service on the network. If for some reason the resolution cannot occur, the delegate will not receive this message, and an error will be delivered to the delegate via the delegate's -netService:didNotResolve: method.
 */
-- (void)netServiceWillResolve:(NSNetService *)sender;
+public function netServiceWillResolve:(NSNetService *)sender;
 
 /* Sent to the NSNetService instance's delegate when one or more addresses have been resolved for an NSNetService instance. Some NSNetService methods will return different results before and after a successful resolution. An NSNetService instance may get resolved more than once; truly robust clients may wish to resolve again after an error, or to resolve more than once.
 */
-- (void)netServiceDidResolveAddress:(NSNetService *)sender;
+public function netServiceDidResolveAddress:(NSNetService *)sender;
 
 /* Sent to the NSNetService instance's delegate when an error in resolving the instance occurs. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants).
 */
-- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict;
+public function netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict;
 
 /* Sent to the NSNetService instance's delegate when the instance's previously running publication or resolution request has stopped.
 */
-- (void)netServiceDidStop:(NSNetService *)sender;
+public function netServiceDidStop:(NSNetService *)sender;
 
 /* Sent to the NSNetService instance's delegate when the instance is being monitored and the instance's TXT record has been updated. The new record is contained in the data parameter.
 */
-- (void)netService:(NSNetService *)sender didUpdateTXTRecordData:(NSData *)data;
+public function netService:(NSNetService *)sender didUpdateTXTRecordData:(NSData *)data;
 
 }
 
@@ -246,31 +246,31 @@ extern class NSNetServiceBrowser : NSObject {
 
 /* Sent to the NSNetServiceBrowser instance's delegate before the instance begins a search. The delegate will not receive this message if the instance is unable to begin a search. Instead, the delegate will receive the -netServiceBrowser:didNotSearch: message.
 */
-- (void)netServiceBrowserWillSearch:(NSNetServiceBrowser *)aNetServiceBrowser;
+public function netServiceBrowserWillSearch:(NSNetServiceBrowser *)aNetServiceBrowser;
 
 /* Sent to the NSNetServiceBrowser instance's delegate when the instance's previous running search request has stopped.
 */
-- (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)aNetServiceBrowser;
+public function netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)aNetServiceBrowser;
 
 /* Sent to the NSNetServiceBrowser instance's delegate when an error in searching for domains or services has occurred. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a search has been started successfully.
 */
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didNotSearch:(NSDictionary *)errorDict;
+public function netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didNotSearch:(NSDictionary *)errorDict;
 
 /* Sent to the NSNetServiceBrowser instance's delegate for each domain discovered. If there are more domains, moreComing will be YES. If for some reason handling discovered domains requires significant processing, accumulating domains until moreComing is NO and then doing the processing in bulk fashion may be desirable.
 */
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindDomain:(NSString *)domainString moreComing:(Bool)moreComing;
+public function netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindDomain:(NSString *)domainString moreComing:(Bool)moreComing;
 
 /* Sent to the NSNetServiceBrowser instance's delegate for each service discovered. If there are more services, moreComing will be YES. If for some reason handling discovered services requires significant processing, accumulating services until moreComing is NO and then doing the processing in bulk fashion may be desirable.
 */
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(Bool)moreComing;
+public function netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didFindService:(NSNetService *)aNetService moreComing:(Bool)moreComing;
 
 /* Sent to the NSNetServiceBrowser instance's delegate when a previously discovered domain is no longer available.
 */
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveDomain:(NSString *)domainString moreComing:(Bool)moreComing;
+public function netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveDomain:(NSString *)domainString moreComing:(Bool)moreComing;
 
 /* Sent to the NSNetServiceBrowser instance's delegate when a previously discovered service is no longer published.
 */
-- (void)netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(Bool)moreComing;
+public function netServiceBrowser:(NSNetServiceBrowser *)aNetServiceBrowser didRemoveService:(NSNetService *)aNetService moreComing:(Bool)moreComing;
 
 }
 
@@ -294,7 +294,7 @@ This method is deprecated on Mac OS X 10.4 "Tiger" and later; use -TXTRecordData
 
 This method is deprecated on Mac OS X 10.4 "Tiger" and later; use -setTXTRecordData: instead.
 */
-- (void)setProtocolSpecificInformation:(NSString *)specificInformation NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
+public function setProtocolSpecificInformation:(NSString *)specificInformation NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
 
 }
 
@@ -304,7 +304,7 @@ extern class NSNetServiceBrowser (NSDeprecated)
 
 This method is deprecated on Mac OS X 10.4 "Tiger" and later; use -searchForBrowsableDomains or -searchForRegistrationDomains instead.
 */
-- (void)searchForAllDomains NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
+public function searchForAllDomains NS_DEPRECATED(10_0, 10_4, 2_0, 2_0);
 
 }
 

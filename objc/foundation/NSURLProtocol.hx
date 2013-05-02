@@ -48,7 +48,7 @@ extern class NSURLProtocol
     Public header file.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSURLCache.h>
 
 @class NSCachedURLResponse;
@@ -113,7 +113,7 @@ implementors.
  @param request the NSURLRequest to which the protocol implementation
  has redirected.
  */
-- (void)URLProtocol:(NSURLProtocol *)protocol wasRedirectedToRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse;
+public function URLProtocol:(NSURLProtocol *)protocol wasRedirectedToRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse;
 
     /*!
 @method URLProtocol:cachedResponseIsValid:
@@ -124,7 +124,7 @@ implementors.
      @param cachedResponse the NSCachedURLResponse object that has
      examined and is valid.
      */
-- (void)URLProtocol:(NSURLProtocol *)protocol cachedResponseIsValid:(NSCachedURLResponse *)cachedResponse;
+public function URLProtocol:(NSURLProtocol *)protocol cachedResponseIsValid:(NSCachedURLResponse *)cachedResponse;
 
     /*!
 @method URLProtocol:didReceiveResponse:
@@ -137,7 +137,7 @@ implementors.
      has determined should be used for the given response if the
      response is to be stored in a cache.
      */
-- (void)URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response cacheStoragePolicy:(NSURLCacheStoragePolicy)policy;
+public function URLProtocol:(NSURLProtocol *)protocol didReceiveResponse:(NSURLResponse *)response cacheStoragePolicy:(NSURLCacheStoragePolicy)policy;
 
     /*!
 @method URLProtocol:didLoadData:
@@ -149,7 +149,7 @@ implementors.
      @param URLProtocol the NSURLProtocol object sending the message.
      @param data URL load data being made available.
      */
-- (void)URLProtocol:(NSURLProtocol *)protocol didLoadData:(NSData *)data;
+public function URLProtocol:(NSURLProtocol *)protocol didLoadData:(NSData *)data;
 
     /*!
 @method URLProtocolDidFinishLoading:
@@ -157,7 +157,7 @@ implementors.
      implementation has finished loading successfully.
      @param URLProtocol the NSURLProtocol object sending the message.
      */
-- (void)URLProtocolDidFinishLoading:(NSURLProtocol *)protocol;
+public function URLProtocolDidFinishLoading:(NSURLProtocol *)protocol;
 
     /*!
                 @method URLProtocol:didFailWithError:
@@ -166,7 +166,7 @@ implementors.
      @param URLProtocol the NSURLProtocol object sending the message.
      @param error The error that caused the load to fail.
      */
-- (void)URLProtocol:(NSURLProtocol *)protocol didFailWithError:(NSError *)error;
+public function URLProtocol:(NSURLProtocol *)protocol didFailWithError:(NSError *)error;
 
     /*!
 @method URLProtocol:didReceiveAuthenticationChallenge:
@@ -178,7 +178,7 @@ implementors.
      default credential to the challenge it issues to the connection delegate,
      if the protocol did not provide one.
      */
-- (void)URLProtocol:(NSURLProtocol *)protocol didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+public function URLProtocol:(NSURLProtocol *)protocol didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
     /*!
 @method URLProtocol:didCancelAuthenticationChallenge:
@@ -186,7 +186,7 @@ implementors.
      @param protocol The protocol object cancelling authentication.
      @param challenge The authentication challenge.
      */
-- (void)URLProtocol:(NSURLProtocol *)protocol didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+public function URLProtocol:(NSURLProtocol *)protocol didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 }
 
@@ -299,7 +299,7 @@ extern class NSURLProtocol extends NSObject
     @discussion When this method is called, the protocol implementation
     should start loading a request.
 */
-- (void)startLoading;
+public function startLoading;
 
 /*! 
     @method stopLoading
@@ -309,7 +309,7 @@ extern class NSURLProtocol extends NSObject
     to a cancel operation, so protocol implementations must be able to
     handle this call while a load is in progress.
 */
-- (void)stopLoading;
+public function stopLoading;
 
 /*======================================================================
   End responsibilities for protocol implementors

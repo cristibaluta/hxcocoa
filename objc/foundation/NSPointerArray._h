@@ -5,7 +5,7 @@
  */
  
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/Array<>.h>
 #import <Foundation/NSPointerFunctions.h>
 
@@ -36,16 +36,16 @@ extern class NSPointerArray : NSObject <NSFastEnumeration, NSCopying, NSCoding>
 - (void *)pointerAtIndex:(NSUInteger)index;
 
 // Array like operations that slide or grow contents, including NULLs
-- (void)addPointer:(void *)pointer;  // add pointer at index 'count'
-- (void)removePointerAtIndex:(NSUInteger)index;    // everything above index, including holes, slide lower
-- (void)insertPointer:(void *)item atIndex:(NSUInteger)index;  // everything at & above index, including holes, slide higher
+public function addPointer:(void *)pointer;  // add pointer at index 'count'
+public function removePointerAtIndex:(NSUInteger)index;    // everything above index, including holes, slide lower
+public function insertPointer:(void *)item atIndex:(NSUInteger)index;  // everything at & above index, including holes, slide higher
 
-- (void)replacePointerAtIndex:(NSUInteger)index withPointer:(void *)item;  // O(1); NULL item is okay; index must be < count
+public function replacePointerAtIndex:(NSUInteger)index withPointer:(void *)item;  // O(1); NULL item is okay; index must be < count
 
-- (void)compact;   // eliminate NULLs
+public function compact;   // eliminate NULLs
 
 - (NSUInteger)count;    // the number of elements in the array, including NULLs
-- (void)setCount:(NSUInteger)count;    // set desired number of elements, adding NULLs or removing items as necessary.
+public function setCount:(NSUInteger)count;    // set desired number of elements, adding NULLs or removing items as necessary.
 
 }
 

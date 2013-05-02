@@ -2,7 +2,7 @@
 	Copyright (c) 2009-2012, Apple Inc. All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSString.h>
 
 @class Array<>, NSOrthography;
@@ -83,7 +83,7 @@ extern class NSLinguisticTagger : NSObject {
 */
 - (id)initWithTagSchemes:(Array<> *)tagSchemes options:(NSUInteger)opts NS_AVAILABLE(10_7, 5_0);
 - (Array<> *)tagSchemes NS_AVAILABLE(10_7, 5_0);
-- (void)setString:(NSString *)string NS_AVAILABLE(10_7, 5_0);
+public function setString:(NSString *)string NS_AVAILABLE(10_7, 5_0);
 - (NSString *)string NS_AVAILABLE(10_7, 5_0);
 
 /* Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular language may query them with this method.  The language should be specified using a standard abbreviation as with NSOrthography.
@@ -92,17 +92,17 @@ extern class NSLinguisticTagger : NSObject {
 
 /* If clients know the orthography for a given portion of the string, they may supply it to the tagger.  Otherwise, the tagger will infer the language from the contents of the text.  In each case, the charIndex or range passed in must not extend beyond the end of the tagger's string, or the methods will raise an exception.
 */
-- (void)setOrthography:(NSOrthography *)orthography range:(NSRange)range NS_AVAILABLE(10_7, 5_0);
+public function setOrthography:(NSOrthography *)orthography range:(NSRange)range NS_AVAILABLE(10_7, 5_0);
 - (NSOrthography *)orthographyAtIndex:(NSUInteger)charIndex effectiveRange:(NSRangePointer)effectiveRange NS_AVAILABLE(10_7, 5_0);
 
 /* If the string attached to the tagger is mutable, this method must be called to inform the tagger whenever the string changes.  The newRange is the range in the final string which was explicitly edited, and delta is the change in length from the previous version to the current version of the string.  Alternatively, the client may call setString: again to reset all information about the string, but this has the disadvantage of not preserving information about portions of the string that have not changed.
 */
-- (void)stringEditedInRange:(NSRange)newRange changeInLength:(Int)delta NS_AVAILABLE(10_7, 5_0);
+public function stringEditedInRange:(NSRange)newRange changeInLength:(Int)delta NS_AVAILABLE(10_7, 5_0);
 
 /* The tagger will segment the string as needed into sentences and tokens, and return those ranges along with a tag for any scheme in its array of tag schemes.  The fundamental tagging method on NSLinguisticTagger is a block iterator, that iterates over all tokens intersecting a given range, supplying tags and ranges.  There are several additional convenience methods, for obtaining a sentence range, information about a single token, or for obtaining information about all tokens intersecting a given range at once, in arrays.  In each case, the charIndex or range passed in must not extend beyond the end of the tagger's string, or the methods will raise an exception.  Note that a given instance of NSLinguisticTagger should not be used from more than one thread simultaneously.
 */
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateTagsInRange:(NSRange)range scheme:(NSString *)tagScheme options:(NSLinguisticTaggerOptions)opts usingBlock:(void (^)(NSString *tag, NSRange tokenRange, NSRange sentenceRange, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
+public function enumerateTagsInRange:(NSRange)range scheme:(NSString *)tagScheme options:(NSLinguisticTaggerOptions)opts usingBlock:(void (^)(NSString *tag, NSRange tokenRange, NSRange sentenceRange, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
 #endif /* NS_BLOCKS_AVAILABLE */
 
 - (NSRange)sentenceRangeForRange:(NSRange)range NS_AVAILABLE(10_7, 5_0);
@@ -118,7 +118,7 @@ extern class NSString (NSLinguisticAnalysis)
 */
 - (Array<> *)linguisticTagsInRange:(NSRange)range scheme:(NSString *)tagScheme options:(NSLinguisticTaggerOptions)opts orthography:(NSOrthography *)orthography tokenRanges:(Array<> **)tokenRanges NS_AVAILABLE(10_7, 5_0);
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateLinguisticTagsInRange:(NSRange)range scheme:(NSString *)tagScheme options:(NSLinguisticTaggerOptions)opts orthography:(NSOrthography *)orthography usingBlock:(void (^)(NSString *tag, NSRange tokenRange, NSRange sentenceRange, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
+public function enumerateLinguisticTagsInRange:(NSRange)range scheme:(NSString *)tagScheme options:(NSLinguisticTaggerOptions)opts orthography:(NSOrthography *)orthography usingBlock:(void (^)(NSString *tag, NSRange tokenRange, NSRange sentenceRange, Bool *stop))block NS_AVAILABLE(10_7, 5_0);
 #endif /* NS_BLOCKS_AVAILABLE */
 
 }

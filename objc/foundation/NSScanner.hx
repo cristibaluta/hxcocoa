@@ -43,7 +43,7 @@ extern class NSScanner implements NSCopying
 	Copyright (c) 1994-2012, Apple Inc. All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 
 @class NSString, NSCharacterSet, NSDictionary;
 
@@ -51,10 +51,10 @@ extern class NSScanner extends NSObject implements NSCopying>
 
 - (NSString *)string;
 - (NSUInteger)scanLocation;
-- (void)setScanLocation:(NSUInteger)pos;
-- (void)setCharactersToBeSkipped:(NSCharacterSet *)set;
-- (void)setCaseSensitive:(Bool)flag;
-- (void)setLocale:(id)locale;
+public function setScanLocation:(NSUInteger)pos;
+public function setCharactersToBeSkipped:(NSCharacterSet *)set;
+public function setCaseSensitive:(Bool)flag;
+public function setLocale:(id)locale;
 
 }
 

@@ -5,7 +5,7 @@
     Public header file.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 
 @class Array<>;
 @class NSURL;
@@ -118,12 +118,12 @@ extern class NSURLConnection extends NSObject
 - (NSURLRequest *)originalRequest NS_AVAILABLE_IOS(5_0);
 - (NSURLRequest *)currentRequest NS_AVAILABLE_IOS(5_0);
 
-- (void)start NS_AVAILABLE(10_5, 2_0);
-- (void)cancel;
+public function start NS_AVAILABLE(10_5, 2_0);
+public function cancel;
 
-- (void)scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode NS_AVAILABLE(10_5, 2_0);
-- (void)unscheduleFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode NS_AVAILABLE(10_5, 2_0);
-- (void)setDelegateQueue:(NSOperationQueue*) queue NS_AVAILABLE(10_7, 5_0);
+public function scheduleInRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode NS_AVAILABLE(10_5, 2_0);
+public function unscheduleFromRunLoop:(NSRunLoop *)aRunLoop forMode:(NSString *)mode NS_AVAILABLE(10_5, 2_0);
+public function setDelegateQueue:(NSOperationQueue*) queue NS_AVAILABLE(10_7, 5_0);
 
 
 /*! 
@@ -203,14 +203,14 @@ extern class NSURLConnection extends NSObject
 */
 @protocol NSURLConnectionDelegate <NSObject>
 @optional
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
+public function connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
 - (Bool)connectionShouldUseCredentialStorage:(NSURLConnection *)connection;
-- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+public function connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 
 // Deprecated authentication delegates.
 - (Bool)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace;
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
-- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+public function connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
+public function connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge;
 }
 
 /*!
@@ -294,18 +294,18 @@ extern class NSURLConnection extends NSObject
 @protocol NSURLConnectionDataDelegate <NSURLConnectionDelegate>
 @optional
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response;
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+public function connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+public function connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 
 - (NSInputStream *)connection:(NSURLConnection *)connection needNewBodyStream:(NSURLRequest *)request;
-- (void)connection:(NSURLConnection *)connection   didSendBodyData:(Int)bytesWritten
+public function connection:(NSURLConnection *)connection   didSendBodyData:(Int)bytesWritten
                                                  totalBytesWritten:(Int)totalBytesWritten
                                          totalBytesExpectedToWrite:(Int)totalBytesExpectedToWrite;
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse;
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
+public function connectionDidFinishLoading:(NSURLConnection *)connection;
 }
 
 /*!
@@ -347,11 +347,11 @@ extern class NSURLConnection extends NSObject
 
 @protocol NSURLConnectionDownloadDelegate <NSURLConnectionDelegate>
 @optional
-- (void)connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long) expectedTotalBytes;
-- (void)connectionDidResumeDownloading:(NSURLConnection *)connection totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long) expectedTotalBytes;
+public function connection:(NSURLConnection *)connection didWriteData:(long long)bytesWritten totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long) expectedTotalBytes;
+public function connectionDidResumeDownloading:(NSURLConnection *)connection totalBytesWritten:(long long)totalBytesWritten expectedTotalBytes:(long long) expectedTotalBytes;
 
 @required
-- (void)connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *) destinationURL;
+public function connectionDidFinishDownloading:(NSURLConnection *)connection destinationURL:(NSURL *) destinationURL;
 }
 
 /*!

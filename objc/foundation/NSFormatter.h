@@ -2,7 +2,7 @@
 	Copyright (c) 1995-2012, Apple Inc. All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSRange.h>
 
 @class NSString;

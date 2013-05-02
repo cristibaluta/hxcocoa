@@ -5,7 +5,7 @@
     Public header file.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 
 /*!
     @enum NSURLCacheStoragePolicy
@@ -194,7 +194,7 @@ extern class NSURLCache extends NSObject
     @param cachedResponse The cached response to store.
     @param request the NSURLRequest to use as a key for the storage.
 */
-- (void)storeCachedResponse:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request;
+public function storeCachedResponse:(NSCachedURLResponse *)cachedResponse forRequest:(NSURLRequest *)request;
 
 /*! 
     @method removeCachedResponseForRequest:
@@ -204,14 +204,14 @@ extern class NSURLCache extends NSObject
     stored with the given request.
     @param request the NSURLRequest to use as a key for the lookup.
 */
-- (void)removeCachedResponseForRequest:(NSURLRequest *)request;
+public function removeCachedResponseForRequest:(NSURLRequest *)request;
 
 /*! 
     @method removeAllCachedResponses
     @abstract Clears the given cache, removing all NSCachedURLResponse
     objects that it stores.
 */
-- (void)removeAllCachedResponses;
+public function removeAllCachedResponses;
 
 /*! 
     @method memoryCapacity
@@ -235,7 +235,7 @@ extern class NSURLCache extends NSObject
     @param memoryCapacity the new in-memory capacity, measured in
     bytes, for the receiver.
 */
-- (void)setMemoryCapacity:(NSUInteger)memoryCapacity;
+public function setMemoryCapacity:(NSUInteger)memoryCapacity;
 
 /*! 
     @method setDiskCapacity:
@@ -245,7 +245,7 @@ extern class NSURLCache extends NSObject
     @param diskCapacity the new on-disk capacity, measured in
     bytes, for the receiver.
 */
-- (void)setDiskCapacity:(NSUInteger)diskCapacity;
+public function setDiskCapacity:(NSUInteger)diskCapacity;
 
 /*! 
     @method currentMemoryUsage

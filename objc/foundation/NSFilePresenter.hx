@@ -11,21 +11,21 @@ extern interface NSFilePresenter {
 
 	public var primaryPresentedItemURL :NSURL;//NS_AVAILABLE(10_8, NA);
 
-- (void)relinquishPresentedItemToReader:(void (^)(void (^reacquirer)(void)))reader;
-- (void)relinquishPresentedItemToWriter:(void (^)(void (^reacquirer)(void)))writer;
-- (void)savePresentedItemChangesWithCompletionHandler:(void (^)(NSError *errorOrNil))completionHandler;
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(void (^)(NSError *errorOrNil))completionHandler;
-- (void)presentedItemDidMoveToURL:(NSURL *)newURL;
-- (void)presentedItemDidChange;
-- (void)presentedItemDidGainVersion:(NSFileVersion *)version;
-- (void)presentedItemDidLoseVersion:(NSFileVersion *)version;
-- (void)presentedItemDidResolveConflictVersion:(NSFileVersion *)version;
-- (void)accommodatePresentedSubitemDeletionAtURL:(NSURL *)url completionHandler:(void (^)(NSError *errorOrNil))completionHandler;
-- (void)presentedSubitemDidAppearAtURL:(NSURL *)url;
-- (void)presentedSubitemAtURL:(NSURL *)oldURL didMoveToURL:(NSURL *)newURL;
-- (void)presentedSubitemDidChangeAtURL:(NSURL *)url;
-- (void)presentedSubitemAtURL:(NSURL *)url didGainVersion:(NSFileVersion *)version;
-- (void)presentedSubitemAtURL:(NSURL *)url didLoseVersion:(NSFileVersion *)version;
-- (void)presentedSubitemAtURL:(NSURL *)url didResolveConflictVersion:(NSFileVersion *)version;
+public function relinquishPresentedItemToReader:(void (^)(void (^reacquirer)(void)))reader;
+public function relinquishPresentedItemToWriter:(void (^)(void (^reacquirer)(void)))writer;
+public function savePresentedItemChangesWithCompletionHandler:(void (^)(NSError *errorOrNil))completionHandler;
+public function accommodatePresentedItemDeletionWithCompletionHandler:(void (^)(NSError *errorOrNil))completionHandler;
+public function presentedItemDidMoveToURL:(NSURL *)newURL;
+public function presentedItemDidChange;
+public function presentedItemDidGainVersion:(NSFileVersion *)version;
+public function presentedItemDidLoseVersion:(NSFileVersion *)version;
+public function presentedItemDidResolveConflictVersion:(NSFileVersion *)version;
+public function accommodatePresentedSubitemDeletionAtURL:(NSURL *)url completionHandler:(void (^)(NSError *errorOrNil))completionHandler;
+public function presentedSubitemDidAppearAtURL:(NSURL *)url;
+public function presentedSubitemAtURL:(NSURL *)oldURL didMoveToURL:(NSURL *)newURL;
+public function presentedSubitemDidChangeAtURL:(NSURL *)url;
+public function presentedSubitemAtURL:(NSURL *)url didGainVersion:(NSFileVersion *)version;
+public function presentedSubitemAtURL:(NSURL *)url didLoseVersion:(NSFileVersion *)version;
+public function presentedSubitemAtURL:(NSURL *)url didResolveConflictVersion:(NSFileVersion *)version;
 
 }

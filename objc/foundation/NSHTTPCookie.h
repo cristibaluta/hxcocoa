@@ -5,7 +5,7 @@
     Public header file.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 
 @class Array<>;
 @class NSDate;

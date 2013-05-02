@@ -28,8 +28,8 @@ extern class NSSet extends NSObject implements NSCopying implements NSMutableCop
 	public function setByAddingObjectsFromArray (other:Array<Dynamic>) :NSSet;
 
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateObjectsUsingBlock:(void (^)(id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
-- (void)enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateObjectsUsingBlock:(void (^)(id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
 
 - (NSSet *)objectsPassingTest:(Bool (^)(id obj, Bool *stop))predicate NS_AVAILABLE(10_6, 4_0);
 - (NSSet *)objectsWithOptions:(NSEnumerationOptions)opts passingTest:(Bool (^)(id obj, Bool *stop))predicate NS_AVAILABLE(10_6, 4_0);

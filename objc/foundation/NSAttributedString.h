@@ -35,8 +35,8 @@ typedef NS_OPTIONS(NSUInteger, NSAttributedStringEnumerationOptions) {
 };
 
 #if NS_BLOCKS_AVAILABLE
-- (void)enumerateAttributesInRange:(NSRange)enumerationRange options:(NSAttributedStringEnumerationOptions)opts usingBlock:(void (^)(NSDictionary *attrs, NSRange range, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
-- (void)enumerateAttribute:(NSString *)attrName inRange:(NSRange)enumerationRange options:(NSAttributedStringEnumerationOptions)opts usingBlock:(void (^)(id value, NSRange range, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateAttributesInRange:(NSRange)enumerationRange options:(NSAttributedStringEnumerationOptions)opts usingBlock:(void (^)(NSDictionary *attrs, NSRange range, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateAttribute:(NSString *)attrName inRange:(NSRange)enumerationRange options:(NSAttributedStringEnumerationOptions)opts usingBlock:(void (^)(id value, NSRange range, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
 #endif
 
 }
@@ -44,8 +44,8 @@ typedef NS_OPTIONS(NSUInteger, NSAttributedStringEnumerationOptions) {
 NS_CLASS_AVAILABLE(10_0, 3_2)
 extern class NSMutableAttributedString extends NSAttributedString
 
-- (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;
-- (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range;
+public function replaceCharactersInRange:(NSRange)range withString:(NSString *)str;
+public function setAttributes:(NSDictionary *)attrs range:(NSRange)range;
 
 }
 
@@ -53,18 +53,18 @@ extern class NSMutableAttributedString (NSExtendedMutableAttributedString)
 
 - (NSMutableString *)mutableString;
 
-- (void)addAttribute:(NSString *)name value:(id)value range:(NSRange)range;
-- (void)addAttributes:(NSDictionary *)attrs range:(NSRange)range;
-- (void)removeAttribute:(NSString *)name range:(NSRange)range;
+public function addAttribute:(NSString *)name value:(id)value range:(NSRange)range;
+public function addAttributes:(NSDictionary *)attrs range:(NSRange)range;
+public function removeAttribute:(NSString *)name range:(NSRange)range;
 
-- (void)replaceCharactersInRange:(NSRange)range withAttributedString:(NSAttributedString *)attrString;
-- (void)insertAttributedString:(NSAttributedString *)attrString atIndex:(NSUInteger)loc;
-- (void)appendAttributedString:(NSAttributedString *)attrString;
-- (void)deleteCharactersInRange:(NSRange)range;
-- (void)setAttributedString:(NSAttributedString *)attrString;
+public function replaceCharactersInRange:(NSRange)range withAttributedString:(NSAttributedString *)attrString;
+public function insertAttributedString:(NSAttributedString *)attrString atIndex:(NSUInteger)loc;
+public function appendAttributedString:(NSAttributedString *)attrString;
+public function deleteCharactersInRange:(NSRange)range;
+public function setAttributedString:(NSAttributedString *)attrString;
 
-- (void)beginEditing;
-- (void)endEditing;
+public function beginEditing;
+public function endEditing;
 
 }
 

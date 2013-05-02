@@ -2,7 +2,7 @@
 	Copyright (c) 2004-2012, Apple Inc. All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSDate.h>
 
 @class NSString, Array<>, NSDictionary, NSPredicate;
@@ -21,25 +21,25 @@ extern class NSMetadataQuery extends NSObject {
 - (id)init;
 
 - (id <NSMetadataQueryDelegate>)delegate;
-- (void)setDelegate:(id <NSMetadataQueryDelegate>)delegate;
+public function setDelegate:(id <NSMetadataQueryDelegate>)delegate;
 
 - (NSPredicate *)predicate;
-- (void)setPredicate:(NSPredicate *)predicate;
+public function setPredicate:(NSPredicate *)predicate;
 
 - (Array<> *)sortDescriptors;
-- (void)setSortDescriptors:(Array<> *)descriptors;
+public function setSortDescriptors:(Array<> *)descriptors;
 
 - (Array<> *)valueListAttributes;
-- (void)setValueListAttributes:(Array<> *)attrs;
+public function setValueListAttributes:(Array<> *)attrs;
 
 - (Array<> *)groupingAttributes;
-- (void)setGroupingAttributes:(Array<> *)attrs;
+public function setGroupingAttributes:(Array<> *)attrs;
 
 - (NSTimeInterval)notificationBatchingInterval;
-- (void)setNotificationBatchingInterval:(NSTimeInterval)ti;
+public function setNotificationBatchingInterval:(NSTimeInterval)ti;
 
 - (Array<> *)searchScopes;
-- (void)setSearchScopes:(Array<> *)scopes;
+public function setSearchScopes:(Array<> *)scopes;
 // scopes is an Array<> of NSURL objects (file URLs only) and/or string
 // paths and/or the special string constants below, which specifies the
 // locations to which the search is limited; an empty array means no
@@ -47,14 +47,14 @@ extern class NSMetadataQuery extends NSObject {
 
 
 - (Bool)startQuery;
-- (void)stopQuery;
+public function stopQuery;
 
 - (Bool)isStarted;
 - (Bool)isGathering;
 - (Bool)isStopped;
 
-- (void)disableUpdates; // these nest
-- (void)enableUpdates;
+public function disableUpdates; // these nest
+public function enableUpdates;
 
 
 // Results are NSMetadataItems, or whatever the delegate replaces that with

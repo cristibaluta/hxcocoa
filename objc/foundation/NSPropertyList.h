@@ -2,7 +2,7 @@
 	Copyright (c) 2002-2012, Apple Inc. All rights reserved.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #include <CoreFoundation/CFPropertyList.h>
 
 @class NSData, NSString, NSError, NSInputStream, NSOutputStream;

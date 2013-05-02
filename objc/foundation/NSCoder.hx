@@ -76,9 +76,9 @@ import objc.foundation.NSObject;
 
 extern class NSCoder extends NSObject
 
-- (void)encodeValueOfObjCType:(const char *)type at:(const void *)addr;
-- (void)encodeDataObject:(NSData *)data;
-- (void)decodeValueOfObjCType:(const char *)type at:(void *)data;
+public function encodeValueOfObjCType:(const char *)type at:(const void *)addr;
+public function encodeDataObject:(NSData *)data;
+public function decodeValueOfObjCType:(const char *)type at:(void *)data;
 - (NSData *)decodeDataObject;
 - (Int)versionForClassName:(NSString *)className;
 
@@ -86,41 +86,41 @@ extern class NSCoder extends NSObject
 
 extern class NSCoder (NSExtendedCoder)
     
-- (void)encodeObject:(id)object;
-- (void)encodeRootObject:(id)rootObject;
-- (void)encodeBycopyObject:(id)anObject;
-- (void)encodeByrefObject:(id)anObject;
-- (void)encodeConditionalObject:(id)object;
-- (void)encodeValuesOfObjCTypes:(const char *)types, ...;
-- (void)encodeArrayOfObjCType:(const char *)type count:(NSUInteger)count at:(const void *)array;
-- (void)encodeBytes:(const void *)byteaddr length:(NSUInteger)length;
+public function encodeObject:(id)object;
+public function encodeRootObject:(id)rootObject;
+public function encodeBycopyObject:(id)anObject;
+public function encodeByrefObject:(id)anObject;
+public function encodeConditionalObject:(id)object;
+public function encodeValuesOfObjCTypes:(const char *)types, ...;
+public function encodeArrayOfObjCType:(const char *)type count:(NSUInteger)count at:(const void *)array;
+public function encodeBytes:(const void *)byteaddr length:(NSUInteger)length;
 
 - (id)decodeObject;
-- (void)decodeValuesOfObjCTypes:(const char *)types, ...;
-- (void)decodeArrayOfObjCType:(const char *)itemType count:(NSUInteger)count at:(void *)array;
+public function decodeValuesOfObjCTypes:(const char *)types, ...;
+public function decodeArrayOfObjCType:(const char *)itemType count:(NSUInteger)count at:(void *)array;
 - (void *)decodeBytesWithReturnedLength:(NSUInteger *)lengthp NS_RETURNS_INNER_POINTER;
 
 #if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE))
-- (void)encodePropertyList:(id)aPropertyList;
+public function encodePropertyList:(id)aPropertyList;
 - (id)decodePropertyList;
 #endif
 
-- (void)setObjectZone:(NSZone *)zone NS_AUTOMATED_REFCOUNT_UNAVAILABLE;
+public function setObjectZone:(NSZone *)zone NS_AUTOMATED_REFCOUNT_UNAVAILABLE;
 - (NSZone *)objectZone NS_AUTOMATED_REFCOUNT_UNAVAILABLE;
 
 - (unsigned)systemVersion;
 
 - (Bool)allowsKeyedCoding;
 
-- (void)encodeObject:(id)objv forKey:(NSString *)key;
-- (void)encodeConditionalObject:(id)objv forKey:(NSString *)key;
-- (void)encodeBool:(Bool)boolv forKey:(NSString *)key;
-- (void)encodeInt:(int)intv forKey:(NSString *)key;
-- (void)encodeInt32:(int32_t)intv forKey:(NSString *)key;
-- (void)encodeInt64:(int64_t)intv forKey:(NSString *)key;
-- (void)encodeFloat:(float)realv forKey:(NSString *)key;
-- (void)encodeDouble:(double)realv forKey:(NSString *)key;
-- (void)encodeBytes:(const uint8_t *)bytesp length:(NSUInteger)lenv forKey:(NSString *)key;
+public function encodeObject:(id)objv forKey:(NSString *)key;
+public function encodeConditionalObject:(id)objv forKey:(NSString *)key;
+public function encodeBool:(Bool)boolv forKey:(NSString *)key;
+public function encodeInt:(int)intv forKey:(NSString *)key;
+public function encodeInt32:(int32_t)intv forKey:(NSString *)key;
+public function encodeInt64:(int64_t)intv forKey:(NSString *)key;
+public function encodeFloat:(float)realv forKey:(NSString *)key;
+public function encodeDouble:(double)realv forKey:(NSString *)key;
+public function encodeBytes:(const uint8_t *)bytesp length:(NSUInteger)lenv forKey:(NSString *)key;
 
 - (Bool)containsValueForKey:(NSString *)key;
 - (id)decodeObjectForKey:(NSString *)key;
@@ -132,7 +132,7 @@ extern class NSCoder (NSExtendedCoder)
 - (double)decodeDoubleForKey:(NSString *)key;
 - (const uint8_t *)decodeBytesForKey:(NSString *)key returnedLength:(NSUInteger *)lengthp NS_RETURNS_INNER_POINTER;   // returned bytes immutable!
 
-- (void)encodeInteger:(Int)intv forKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
+public function encodeInteger:(Int)intv forKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
 - (Int)decodeIntegerForKey:(NSString *)key NS_AVAILABLE(10_5, 2_0);
 
 // Returns YES if this coder requires secure coding. Secure coders check a list of allowed classes before decoding objects, and all objects must implement NSSecureCoding.

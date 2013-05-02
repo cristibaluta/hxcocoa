@@ -52,11 +52,11 @@ extern class NSHashTable : NSObject implements NSCopying, NSCoding, NSFastEnumer
 - (id)member:(id)object;
 - (NSEnumerator *)objectEnumerator;
 
-- (void)addObject:(id)object;
-- (void)removeObject:(id)object;
+public function addObject:(id)object;
+public function removeObject:(id)object;
 
 
-- (void)removeAllObjects;
+public function removeAllObjects;
 
 - (Array<> *)allObjects;    // convenience
 
@@ -67,9 +67,9 @@ extern class NSHashTable : NSObject implements NSCopying, NSCoding, NSFastEnumer
 - (Bool)isEqualToHashTable:(NSHashTable *)other;
 - (Bool)isSubsetOfHashTable:(NSHashTable *)other;
 
-- (void)intersectHashTable:(NSHashTable *)other;
-- (void)unionHashTable:(NSHashTable *)other;
-- (void)minusHashTable:(NSHashTable *)other;
+public function intersectHashTable:(NSHashTable *)other;
+public function unionHashTable:(NSHashTable *)other;
+public function minusHashTable:(NSHashTable *)other;
 
 - (NSSet *)setRepresentation;  // create a set of the contents
 

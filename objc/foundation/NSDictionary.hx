@@ -42,8 +42,8 @@ extern class NSDictionary extends NSObject implements NSCopying implements NSMut
 	
 	
 /*#if NS_BLOCKS_AVAILABLE
-- (void)enumerateKeysAndObjectsUsingBlock:(void (^)(id key, id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
-- (void)enumerateKeysAndObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id key, id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateKeysAndObjectsUsingBlock:(void (^)(id key, id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
+public function enumerateKeysAndObjectsWithOptions:(NSEnumerationOptions)opts usingBlock:(void (^)(id key, id obj, Bool *stop))block NS_AVAILABLE(10_6, 4_0);
 
 - (Array<> *)keysSortedByValueUsingComparator:(NSComparator)cmptr NS_AVAILABLE(10_6, 4_0);
 - (Array<> *)keysSortedByValueWithOptions:(NSSortOptions)opts usingComparator:(NSComparator)cmptr NS_AVAILABLE(10_6, 4_0);

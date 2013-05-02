@@ -5,7 +5,7 @@
     Public header file.
 */
 
-#import <Foundation/NSObject.h>
+package objc.foundation;
 #import <Foundation/NSDate.h>
 
 @class NSData;
@@ -331,14 +331,14 @@ extern class NSMutableURLRequest : NSURLRequest
     @abstract Sets the URL of the receiver. 
     @param URL The new URL for the receiver. 
 */
-- (void)setURL:(NSURL *)URL;
+public function setURL:(NSURL *)URL;
 
 /*! 
     @method setCachePolicy:
     @abstract Sets the cache policy of the receiver. 
     @param policy The new NSURLRequestCachePolicy for the receiver. 
 */
-- (void)setCachePolicy:(NSURLRequestCachePolicy)policy;
+public function setCachePolicy:(NSURLRequestCachePolicy)policy;
 
 /*! 
     @method setTimeoutInterval:
@@ -355,7 +355,7 @@ extern class NSMutableURLRequest : NSURLRequest
     in seconds.
     @param seconds The new timeout interval of the receiver. 
 */
-- (void)setTimeoutInterval:(NSTimeInterval)seconds;
+public function setTimeoutInterval:(NSTimeInterval)seconds;
 
 /*!
     @method setMainDocumentURL:
@@ -371,7 +371,7 @@ extern class NSMutableURLRequest : NSURLRequest
     framework. A fully functional version of this method will be available 
     in the future. 
 */
-- (void)setMainDocumentURL:(NSURL *)URL;
+public function setMainDocumentURL:(NSURL *)URL;
 
 /*!
  @method setNetworkServiceType:
@@ -380,7 +380,7 @@ extern class NSMutableURLRequest : NSURLRequest
  @discussion This method is used to provide the network layers with a hint as to the purpose
  of the request.  Most clients should not need to use this method.
  */
-- (void)setNetworkServiceType:(NSURLRequestNetworkServiceType)networkServiceType NS_AVAILABLE(10_7, 4_0);
+public function setNetworkServiceType:(NSURLRequestNetworkServiceType)networkServiceType NS_AVAILABLE(10_7, 4_0);
 
 /*! 
  @method setAllowsCellularAccess
@@ -389,7 +389,7 @@ extern class NSMutableURLRequest : NSURLRequest
  @param allow NO if the receiver should not be allowed to use the built in
  cellular radios to satisfy the request, YES otherwise.  The default is YES.
  */
-- (void)setAllowsCellularAccess:(Bool)allow NS_AVAILABLE(10_8, 6_0);
+public function setAllowsCellularAccess:(Bool)allow NS_AVAILABLE(10_8, 6_0);
 
 }
 
@@ -487,7 +487,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     @abstract Sets the HTTP request method of the receiver. 
     @param method the new HTTP request method for the receiver.
 */
-- (void)setHTTPMethod:(NSString *)method;
+public function setHTTPMethod:(NSString *)method;
 
 /*! 
     @method setAllHTTPHeaderFields:
@@ -502,7 +502,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     message, the key-value pair is skipped.
     @param headerFields a dictionary containing HTTP header fields.
 */
-- (void)setAllHTTPHeaderFields:(NSDictionary *)headerFields;
+public function setAllHTTPHeaderFields:(NSDictionary *)headerFields;
 
 /*! 
     @method setValue:forHTTPHeaderField:
@@ -514,7 +514,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     @param value the header field value. 
     @param field the header field name (case-insensitive). 
 */
-- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+public function setValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
 
 /*! 
     @method addValue:forHTTPHeaderField:
@@ -530,7 +530,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     @param value the header field value. 
     @param field the header field name (case-insensitive). 
 */
-- (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+public function addValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
 
 /*! 
     @method setHTTPBody:
@@ -539,7 +539,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     in done in an HTTP POST request.
     @param data the new request body data for the receiver.
 */
-- (void)setHTTPBody:(NSData *)data;
+public function setHTTPBody:(NSData *)data;
 
 /*!
     @method setHTTPBodyStream:
@@ -551,7 +551,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     - setting one will clear the other. 
     @param inputStream the new input stream for use by the receiver
 */
-- (void)setHTTPBodyStream:(NSInputStream *)inputStream;
+public function setHTTPBodyStream:(NSInputStream *)inputStream;
 
 /*! 
     @method setHTTPShouldHandleCookies
@@ -563,7 +563,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
     stored to the cookie manager by default.
     NOTE: In releases prior to 10.3, this value is ignored
 */
-- (void)setHTTPShouldHandleCookies:(Bool)should;
+public function setHTTPShouldHandleCookies:(Bool)should;
 
 /*!
  @method setHTTPShouldUsePipelining
@@ -579,7 +579,7 @@ extern class NSMutableURLRequest (NSMutableHTTPURLRequest)
  with these servers, requests may have to wait for the previous response before 
  transmitting.
  */
-- (void)setHTTPShouldUsePipelining:(Bool)shouldUsePipelining NS_AVAILABLE(10_7, 4_0);
+public function setHTTPShouldUsePipelining:(Bool)shouldUsePipelining NS_AVAILABLE(10_7, 4_0);
 
 }
 
