@@ -3,6 +3,7 @@ package ios.ui;
 import objc.foundation.NSObject;
 import objc.foundation.NSData;
 import objc.graphics.CGGeometry;
+import objc.graphics.CGImage;
 
 @:framework("UIKit")
 extern enum UIImageOrientation {
@@ -29,20 +30,23 @@ extern class UIImage extends NSObject {
 	public static function imageNamed (name:String) :UIImage;// load from main bundle
 	public static function imageWithContentsOfFile (name:String) :UIImage;// load from main bundle
 	public static function imageWithData (name:NSData) :UIImage;// load from main bundle
+	public static function imageWithCGImage (cgImage:CGImageRef) :UIImage;// load from main bundle
 	
 	public var size (default, null) :CGSize; // reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in pixels
+	
+	public function initWithData (data:NSData) :UIImage;
 }
 
 /*  
 
 + (UIImage *)imageWithData:(NSData *)data scale:(Float)scale NS_AVAILABLE_IOS(6_0);
-+ (UIImage *)imageWithCGImage:(CGImageRef)cgImage;
++ (UIImage *)
 + (UIImage *)imageWithCGImage:(CGImageRef)cgImage scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(4_0);
 + (UIImage *)imageWithCIImage:(CIImage *)ciImage NS_AVAILABLE_IOS(5_0);
 + (UIImage *)imageWithCIImage:(CIImage *)ciImage scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(6_0);
 
 - (id)initWithContentsOfFile:(NSString *)path;
-- (id)initWithData:(NSData *)data;
+- (id)initWithData:(NSData *)data;.............
 - (id)initWithData:(NSData *)data scale:(Float)scale NS_AVAILABLE_IOS(6_0);
 - (id)initWithCGImage:(CGImageRef)cgImage;
 - (id)initWithCGImage:(CGImageRef)cgImage scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(4_0);

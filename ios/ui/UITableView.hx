@@ -132,25 +132,25 @@ extern class UITableView extends UIScrollView {
 
 	public function numberOfSections () :Int;
 	public function numberOfRowsInSection (section:Int) :Int;
-	#if ddd
-- (CGRect)rectForSection:(Int)section;                                    // includes header, footer and all rows
-- (CGRect)rectForHeaderInSection:(Int)section;
-- (CGRect)rectForFooterInSection:(Int)section;
-- (CGRect)rectForRowAtIndexPath:(NSIndexPath *)indexPath;
+	
+	public function rectForSection (section:Int) :CGRect; // includes header, footer and all rows
+	public function rectForHeaderInSection (section:Int) :CGRect;
+	public function rectForFooterInSection (section:Int) :CGRect;
+	public function rectForRowAtIndexPath (indexPath:NSIndexPath) :CGRect;
 
-- (NSIndexPath *)indexPathForRowAtPoint:(CGPoint)point;                         // returns nil if point is outside table
-- (NSIndexPath *)indexPathForCell:(UITableViewCell *)cell;                      // returns nil if cell is not visible
-- (NSArray *)indexPathsForRowsInRect:(CGRect)rect;                              // returns nil if rect not valid 
+	public function indexPathForRowAtPoint (point:CGPoint) :NSIndexPath;// returns nil if point is outside table
+	public function indexPathForCell (cell:UITableViewCell) :NSIndexPath;// returns nil if cell is not visible
+	public function indexPathsForRowsInRect (rect:CGRect) :Void;// returns nil if rect not valid 
 
-- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath;            // returns nil if cell is not visible or index path is out of range
-- (NSArray *)visibleCells;
-- (NSArray *)indexPathsForVisibleRows;
-- (UITableViewHeaderFooterView *)headerViewForSection:(Int)section NS_AVAILABLE_IOS(6_0);
-- (UITableViewHeaderFooterView *)footerViewForSection:(Int)section NS_AVAILABLE_IOS(6_0);
+	public function cellForRowAtIndexPath (indexPath:NSIndexPath) :UITableViewCell; // returns nil if cell is not visible or index path is out of range
+	public function visibleCells () :Array<UITableViewCell>;
+	public function indexPathsForVisibleRows () :Array<UITableViewCell>;
+//- (UITableViewHeaderFooterView *)headerViewForSection:(Int)section NS_AVAILABLE_IOS(6_0);
+//- (UITableViewHeaderFooterView *)footerViewForSection:(Int)section NS_AVAILABLE_IOS(6_0);
 
-	public function scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
-	public function scrollToNearestSelectedRowAtScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
-
+	public function scrollToRowAtIndexPath (indexPath:NSIndexPath, atScrollPosition:UITableViewScrollPosition, animated:Bool) :Void;
+	public function scrollToNearestSelectedRowAtScrollPosition (scrollPosition:UITableViewScrollPosition, animated:Bool) :Void;
+#if ddd
 // Row insertion/deletion/reloading.
 
 	public function beginUpdates;   // allow multiple insert/delete of rows and sections to be animated simultaneously. Nestable

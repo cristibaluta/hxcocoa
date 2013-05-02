@@ -97,6 +97,10 @@ extern class NSArray extends NSObject implements NSCopying implements NSMutableC
 	public function initWithContentsOfFile (path:NSString) :NSArray;
 	public function initWithContentsOfURL (url:NSURL) :NSArray;
 
+	// (PathExtensions)
+
+	//- (Array<> *)pathsMatchingExtensions:(Array<> *)filterTypes;
+
 }
 
 

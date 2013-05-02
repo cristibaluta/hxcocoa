@@ -1,26 +1,31 @@
 package objc.foundation;
 import objc.foundation.NSObject;
-
-typedef NSVolumeEnumerationOptions = Int;
-typedef NSDirectoryEnumerationOptions = Int;
-typedef NSFileManagerItemReplacementOptions = Int;
+import objc.foundation.NSPathUtilities;
 
 
-//extern String * const NSUbiquityIdentityDidChangeNotification NS_AVAILABLE(10_8, 6_0);
-
-extern class NSFileManager extends NSObject {
-
-/*	inline public static var NSFoundationVersionWithFileManagerResourceForkSupport = 412;
+@:framework("Foundation")
+extern enum NSVolumeEnumerationOptions {
+	NSVolumeEnumerationSkipHiddenVolumes;
+	NSVolumeEnumerationProduceFileReferenceURLs;
+}
+@:framework("Foundation")
+extern enum NSDirectoryEnumerationOptions {
+	NSDirectoryEnumerationSkipsSubdirectoryDescendants;
+	NSDirectoryEnumerationSkipsPackageDescendants;
+	NSDirectoryEnumerationSkipsHiddenFiles;
+}
+@:framework("Foundation")
+extern enum NSFileManagerItemReplacementOptions {
+	NSFileManagerItemReplacementUsingNewMetadataOnly;
+	NSFileManagerItemReplacementWithoutDeletingBackupItem;
+}
 	
-	inline public static var NSVolumeEnumerationSkipHiddenVolumes = 1UL << 1;
-	inline public static var NSVolumeEnumerationProduceFileReferenceURLs = 1UL << 2;
+	//@:require(ios6_0) NSUbiquityIdentityDidChangeNotification;
+	//NSFoundationVersionWithFileManagerResourceForkSupport;
 
-	inline public static var NSDirectoryEnumerationSkipsSubdirectoryDescendants = 1UL << 0;
-	inline public static var NSDirectoryEnumerationSkipsPackageDescendants      = 1UL << 1;
-	inline public static var NSDirectoryEnumerationSkipsHiddenFiles             = 1UL << 2;
 
-	inline public static var NSFileManagerItemReplacementUsingNewMetadataOnly = 1UL << 0;
-	inline public static var NSFileManagerItemReplacementWithoutDeletingBackupItem = 1UL << 1;*/
+@:framework("Foundation")
+extern class NSFileManager extends NSObject {
 	
 	
 	public static function defaultManager () :NSFileManager;
@@ -30,7 +35,7 @@ extern class NSFileManager extends NSObject {
 
 	public function URLForDirectory (directory:NSSearchPathDirectory, inDomain:NSSearchPathDomainMask, appropriateForURL:NSURL, create:Bool, error:NSError) :NSURL;
 	@:require(osx_7_0) @:require(ios5_0) public function createDirectoryAtURL (url:NSURL, withIntermediateDirectories:Bool, attributes:NSDictionary, error:NSError) :Bool;
-	@:require(osx_7_0) @:require(ios5_0) public function createSymbolicLinkAtURL (url:NSURL withDestinationURL:NSURL error:NSError) :Bool;
+	@:require(osx_7_0) @:require(ios5_0) public function createSymbolicLinkAtURL (url:NSURL, withDestinationURL:NSURL, error:NSError) :Bool;
 
 	public function setDelegate (delegate:Dynamic) :Void;
 	public function delegate () :Dynamic;
@@ -94,13 +99,14 @@ extern class NSFileManager extends NSObject {
 
 	@:require(osx_10_8, ios_6_0) public function ubiquityIdentityToken () :Dynamic;
 	
-	public function fileManager (fm:NSFileManager, shouldProceedAfterError:NSDictionary) :Bool;
+	//public function fileManager (fm:NSFileManager, shouldProceedAfterError:NSDictionary) :Bool;
 	public function fileManager (fm:NSFileManager, willProcessPath:String) :Void;
 }
 
 
+@:framework("Foundation")
 extern interface NSFileManagerDelegate {
-//@optional
+#if display
 
 /*	public function fileManager:(NSFileManager *)fileManager shouldCopyItemAtPath:(String *)srcPath toPath:(String *) :Bool;
 	public function fileManager:(NSFileManager *)fileManager shouldCopyItemAtURL:(NSURL *)srcURL toURL:(NSURL *) :Bool;
@@ -119,9 +125,11 @@ extern interface NSFileManagerDelegate {
 	public function fileManager:(NSFileManager *)fileManager shouldProceedAfterError:(NSError *)error removingItemAtPath:(String *) :Bool;
 	public function fileManager:(NSFileManager *)fileManager shouldProceedAfterError:(NSError *)error removingItemAtURL:(NSURL *) :Bool;
 */
+#end
 }
 
 
+@:framework("Foundation")
 extern class NSDirectoryEnumerator extends NSEnumerator {
 
 	public function fileAttributes () :NSDictionary;
@@ -132,6 +140,7 @@ extern class NSDirectoryEnumerator extends NSEnumerator {
 
 }
 
+@:framework("Foundation")
 /*FOUNDATION_EXPORT String * const NSFileType;
 FOUNDATION_EXPORT String * const NSFileTypeDirectory;
 FOUNDATION_EXPORT String * const NSFileTypeRegular;

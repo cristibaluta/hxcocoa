@@ -200,6 +200,35 @@ extern class NSString extends NSObject implements NSCopying implements NSMutable
 //- (Bool)writeToURL (NSURL *)url atomically:(Bool)useAuxiliaryFile encoding:(NSStringEncoding)enc error:(NSError **)error;
 //- (Bool)writeToFile (NSString *)path atomically:(Bool)useAuxiliaryFile encoding:(NSStringEncoding)enc error:(NSError **)error;
 
+//(NSStringPathExtensions)
+
+/*+ (NSString *)pathWithComponents:(Array<> *)components;
+- (Array<> *)pathComponents;
+
+- (Bool)isAbsolutePath;
+
+- (NSString *)lastPathComponent;
+- (NSString *)stringByDeletingLastPathComponent;
+- (NSString *)stringByAppendingPathComponent:(NSString *)str;
+
+- (NSString *)pathExtension;
+- (NSString *)stringByDeletingPathExtension;
+- (NSString *)stringByAppendingPathExtension:(NSString *)str;
+
+- (NSString *)stringByAbbreviatingWithTildeInPath;
+- (NSString *)stringByExpandingTildeInPath;
+
+- (NSString *)stringByStandardizingPath;
+
+- (NSString *)stringByResolvingSymlinksInPath;
+
+- (Array<> *)stringsByAppendingPaths:(Array<> *)paths;
+
+- (NSUInteger)completePathIntoString:(NSString **)outputName caseSensitive:(Bool)flag matchesIntoArray:(Array<> **)outputArray filterTypes:(Array<> *)filterTypes;
+
+- (__strong const char *)fileSystemRepresentation NS_RETURNS_INNER_POINTER;
+- (Bool)getFileSystemRepresentation:(char *)cname maxLength:(NSUInteger)max;*/
+
 }
 
 

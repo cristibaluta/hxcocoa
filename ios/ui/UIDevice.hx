@@ -44,14 +44,14 @@ extern class UIDevice extends NSObject {
 	public var orientation (default, null) :UIDeviceOrientation;
 	//public var uniqueIdentifier (default, null) :String;//  NS_DEPRECATED_IOS(2_0, 5_0);
 
-	@:require(ios6_0)public var (default, null) identifierForVendor :NSUUID;
+	@:require(ios6_0)public var identifierForVendor (default, null) :NSUUID;
 
 	public var generatesDeviceOrientationNotifications (default, null) :Bool;
 	public function beginGeneratingDeviceOrientationNotifications () :Void;      // nestable
 	public function endGeneratingDeviceOrientationNotifications () :Void;
 
 	public var batteryMonitoringEnabled :Bool;
-	public var batteryState (default, null) UIDeviceBatteryState;
+	public var batteryState (default, null) :UIDeviceBatteryState;
 	public var batteryLevel (default, null) :Float;
 	public var proximityMonitoringEnabled :Bool;
 	public var proximityState (default, null) :Bool;

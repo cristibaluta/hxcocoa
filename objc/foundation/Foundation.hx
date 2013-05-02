@@ -1,6 +1,13 @@
 package objc.foundation;
 
-typedef NSObjCRuntime = objc.foundation.NSObjCRuntime;
+typedef NSObject = objc.foundation.NSObject;
+
+import objc.foundation.NSObjCRuntime;
+import objc.foundation.NSData;
+import objc.foundation.NSURL;
+import objc.foundation.NSThread;
+
+/*typedef NSObjCRuntime = objc.foundation.NSObjCRuntime;
 
 typedef Array<> = objc.foundation.Array<>;
 typedef NSAutoreleasePool = objc.foundation.NSAutoreleasePool;
@@ -79,7 +86,7 @@ typedef NSValueTransformer = objc.foundation.NSValueTransformer;
 typedef NSXMLParser = objc.foundation.NSXMLParser;
 typedef NSZone = objc.foundation.NSZone;
 
-typedef FoundationErrors = objc.foundation.FoundationErrors;
+typedef FoundationErrors = objc.foundation.FoundationErrors;*/
 
 /*#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) || (TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 

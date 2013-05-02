@@ -26,11 +26,13 @@ extern class NSURL extends NSObject {
 
 	public static function fileURLWithPathIsDirectory (path:String, isDirectory:Bool) :Dynamic;
 	public static function fileURLWithPath (path:String) :Dynamic;
+	
+	public static function URLWithString (URLString:String) :NSURL;
 /*
 // These methods expect their string arguments to contain any percent escape codes that are necessary
 - initWithString:(NSString *)URLString;
 - initWithString:(NSString *)URLString relativeToURL:(NSURL *)baseURL; // It is an error for URLString to be nil
-+ (id)URLWithString:(NSString *)URLString;
+	
 + (id)URLWithString:(NSString *)URLString relativeToURL:(NSURL *)baseURL;
 
 - (NSString *)absoluteString;
