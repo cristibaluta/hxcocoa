@@ -44,7 +44,7 @@ public var placeholder :String;
 	public var  UITextSpellCheckingType      spellCheckingType;       // default is UITextSpellCheckingTypeDefault
 	public var  UIKeyboardType               keyboardType;            // default is UIKeyboardTypeDefault
 
-public var  NSArray   *scopeButtonTitles        NS_AVAILABLE_IOS(3_0); // array of NSStrings. no scope bar shown unless 2 or more items
+public var  NSArray   *scopeButtonTitles        NS_AVAILABLE_IOS(3_0); // array of Strings. no scope bar shown unless 2 or more items
 	public var       NSInteger  selectedScopeButtonIndex NS_AVAILABLE_IOS(3_0); // index into array of scope button titles. default is 0. ignored if out of range
 	public var       BOOL       showsScopeBar            NS_AVAILABLE_IOS(3_0); // default is NO. if YES, shows the scope bar. call sizeToFit: to update frame
 
@@ -108,8 +108,8 @@ extern interface UISearchBarDelegate {
 	public function searchBarTextDidBeginEditing:(UISearchBar *)searchBar;                     // called when text starts editing
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;                        // return NO to not resign first responder
 	public function searchBarTextDidEndEditing:(UISearchBar *)searchBar;                       // called when text ends editing
-	public function searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText;   // called when text changes (including clear)
-- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text NS_AVAILABLE_IOS(3_0); // called before text changes
+	public function searchBar:(UISearchBar *)searchBar textDidChange:(String *)searchText;   // called when text changes (including clear)
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(String *)text NS_AVAILABLE_IOS(3_0); // called before text changes
 
 	public function searchBarSearchButtonClicked:(UISearchBar *)searchBar;                     // called when keyboard search button pressed
 	public function searchBarBookmarkButtonClicked:(UISearchBar *)searchBar;                   // called when bookmark button pressed

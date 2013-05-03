@@ -69,7 +69,7 @@ extern interface UIInputViewAudioFeedback {
 #end
 }
 
-/*UIKIT_EXTERN NSString *const UIDeviceOrientationDidChangeNotification;
-UIKIT_EXTERN NSString *const UIDeviceBatteryStateDidChangeNotification   NS_AVAILABLE_IOS(3_0);
-UIKIT_EXTERN NSString *const UIDeviceBatteryLevelDidChangeNotification   NS_AVAILABLE_IOS(3_0);
-UIKIT_EXTERN NSString *const UIDeviceProximityStateDidChangeNotification NS_AVAILABLE_IOS(3_0);*/
+/*UIKIT_EXTERN String *const UIDeviceOrientationDidChangeNotification;
+UIKIT_EXTERN String *const UIDeviceBatteryStateDidChangeNotification   NS_AVAILABLE_IOS(3_0);
+UIKIT_EXTERN String *const UIDeviceBatteryLevelDidChangeNotification   NS_AVAILABLE_IOS(3_0);
+UIKIT_EXTERN String *const UIDeviceProximityStateDidChangeNotification NS_AVAILABLE_IOS(3_0);*/

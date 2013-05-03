@@ -46,8 +46,9 @@ extern class NSTimeZone extends NSObject implements NSCopying implements NSSecur
 	public function abbreviation():String;
 }
 
-extern enum NSTimeZoneNameStyle
-{
+@:framework("Foundation")
+extern enum NSTimeZoneNameStyle {
+	
 	NSTimeZoneNameStyleStandard;
 	NSTimeZoneNameStyleShortStandard;
 	NSTimeZoneNameStyleDaylightSaving;
@@ -57,8 +58,7 @@ extern enum NSTimeZoneNameStyle
 }
 
 /*	NSTimeZone.h
-	Copyright (c) 1994-2012, Apple Inc. All rights reserved.
-*/
+	
 
 package objc.foundation;
 #import <Foundation/NSDate.h>
@@ -140,3 +140,4 @@ extern class NSTimeZone (NSTimeZoneCreation)
 
 FOUNDATION_EXPORT NSString * const NSSystemTimeZoneDidChangeNotification NS_AVAILABLE(10_5, 2_0);
 
+*/

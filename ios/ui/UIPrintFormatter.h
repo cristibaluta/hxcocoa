@@ -46,8 +46,8 @@ package ios.ui;
 @:require(4_2)extern class UISimpleTextPrintFormatter extends UIPrintFormatter {
 }
 
-- (id)initWithText:(NSString *)text;
-public var      NSString       *text;                   // cannot change once drawing started
+- (id)initWithText:(String *)text;
+public var      String       *text;                   // cannot change once drawing started
 	public var (nonatomic,retain)   UIFont         *font;
 	public var (nonatomic,retain)   UIColor        *color;
 	public var           NSTextAlignment textAlignment;
@@ -59,8 +59,8 @@ public var      NSString       *text;                   // cannot change once dr
 @:require(4_2)extern class UIMarkupTextPrintFormatter extends UIPrintFormatter {
 }
 
-- (id)initWithMarkupText:(NSString *)markupText;
-public var  NSString *markupText;                    // cannot change once drawing started
+- (id)initWithMarkupText:(String *)markupText;
+public var  String *markupText;                    // cannot change once drawing started
 
 }
 

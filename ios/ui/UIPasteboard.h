@@ -8,23 +8,23 @@ package ios.ui;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 
-UIKIT_EXTERN NSString *const UIPasteboardNameGeneral;
-UIKIT_EXTERN NSString *const UIPasteboardNameFind;
+UIKIT_EXTERN String *const UIPasteboardNameGeneral;
+UIKIT_EXTERN String *const UIPasteboardNameFind;
 
 @class UIColor, UIImage;
 
 @:require(3_0)extern class UIPasteboard extends NSObject { 
   @private
-    NSString *_name;
+    String *_name;
 }
 
 + (UIPasteboard *)generalPasteboard;
-+ (UIPasteboard *)pasteboardWithName:(NSString *)pasteboardName create:(BOOL)create;
++ (UIPasteboard *)pasteboardWithName:(String *)pasteboardName create:(BOOL)create;
 + (UIPasteboard *)pasteboardWithUniqueName;
 
-	public var (default, null) NSString *name;
+	public var (default, null) String *name;
 
-+ (void)removePasteboardWithName:(NSString *)pasteboardName;
++ (void)removePasteboardWithName:(String *)pasteboardName;
 
 	public var (getter=isPersistent,nonatomic) BOOL persistent;
 	public var (default, null) NSInteger changeCount;
@@ -33,12 +33,12 @@ UIKIT_EXTERN NSString *const UIPasteboardNameFind;
 
 - (NSArray *)pasteboardTypes;
 - (BOOL)containsPasteboardTypes:(NSArray *)pasteboardTypes;
-- (NSData *)dataForPasteboardType:(NSString *)pasteboardType;
+- (NSData *)dataForPasteboardType:(String *)pasteboardType;
 
-- (id)valueForPasteboardType:(NSString *)pasteboardType;
+- (id)valueForPasteboardType:(String *)pasteboardType;
 
-	public function setValue:(id)value forPasteboardType:(NSString *)pasteboardType;
-	public function setData:(NSData *)data forPasteboardType:(NSString *)pasteboardType;
+	public function setValue:(id)value forPasteboardType:(String *)pasteboardType;
+	public function setData:(NSData *)data forPasteboardType:(String *)pasteboardType;
 
 // Multiple items
 
@@ -46,8 +46,8 @@ UIKIT_EXTERN NSString *const UIPasteboardNameFind;
 - (NSArray *)pasteboardTypesForItemSet:(NSIndexSet*)itemSet;		
 - (BOOL)containsPasteboardTypes:(NSArray *)pasteboardTypes inItemSet:(NSIndexSet *)itemSet;	
 - (NSIndexSet *)itemSetWithPasteboardTypes:(NSArray *)pasteboardTypes;
-- (NSArray *)valuesForPasteboardType:(NSString *)pasteboardType inItemSet:(NSIndexSet *)itemSet;	
-- (NSArray *)dataForPasteboardType:(NSString *)pasteboardType inItemSet:(NSIndexSet *)itemSet;
+- (NSArray *)valuesForPasteboardType:(String *)pasteboardType inItemSet:(NSIndexSet *)itemSet;	
+- (NSArray *)dataForPasteboardType:(String *)pasteboardType inItemSet:(NSIndexSet *)itemSet;
 
 // Direct access
 
@@ -58,11 +58,11 @@ public var  NSArray *items;
 
 // Notification
 
-UIKIT_EXTERN NSString *const UIPasteboardChangedNotification;
-UIKIT_EXTERN NSString *const    UIPasteboardChangedTypesAddedKey;
-UIKIT_EXTERN NSString *const    UIPasteboardChangedTypesRemovedKey;
+UIKIT_EXTERN String *const UIPasteboardChangedNotification;
+UIKIT_EXTERN String *const    UIPasteboardChangedTypesAddedKey;
+UIKIT_EXTERN String *const    UIPasteboardChangedTypesRemovedKey;
 
-UIKIT_EXTERN NSString *const UIPasteboardRemovedNotification;
+UIKIT_EXTERN String *const UIPasteboardRemovedNotification;
 
 // Extensions
 
@@ -73,7 +73,7 @@ UIKIT_EXTERN NSArray *UIPasteboardTypeListColor;
 
 extern class UIPasteboard(UIPasteboardDataExtensions)
 
-public var  NSString *string;
+public var  String *string;
 public var  NSArray *strings;
 
 public var  NSURL *URL;

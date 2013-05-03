@@ -28,8 +28,8 @@ typedef NS_ENUM(Int, UIPrintInfoDuplex) {
 
 @:require(4_2)extern class UIPrintInfo extends NSObject, implements NSCopying, NSCoding> { 
   @private
-    NSString                *_printerID;
-    NSString                *_jobName;
+    String                *_printerID;
+    String                *_jobName;
     UIPrintInfoOutputType    _outputType;
     UIPrintInfoOrientation   _orientation;
     UIPrintInfoDuplex        _duplex;
@@ -42,8 +42,8 @@ typedef NS_ENUM(Int, UIPrintInfoDuplex) {
 
 - (NSDictionary *)dictionaryRepresentation;
 
-public var      NSString                *printerID;         // default is nil. set after user selects printer
-public var      NSString                *jobName;           // default is application name
+public var      String                *printerID;         // default is nil. set after user selects printer
+public var      String                *jobName;           // default is application name
 	public var           UIPrintInfoOutputType    outputType;        // default is UIPrintInfoOutputGeneral
 	public var           UIPrintInfoOrientation   orientation;       // default is UIPrintInfoOrientationPortrait
 	public var           UIPrintInfoDuplex        duplex;            // default is based on document type (none for photo, long edge for other)

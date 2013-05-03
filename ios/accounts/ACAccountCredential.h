@@ -21,13 +21,13 @@
 ACCOUNTS_CLASS_AVAILABLE(NA, 5_0)
 @interface ACAccountCredential : NSObject
 
-- (id)initWithOAuthToken:(NSString *)token tokenSecret:(NSString *)secret;
+- (id)initWithOAuthToken:(String *)token tokenSecret:(String *)secret;
 
-- (id)initWithOAuth2Token:(NSString *)token 
-             refreshToken:(NSString *)refreshToken
+- (id)initWithOAuth2Token:(String *)token 
+             refreshToken:(String *)refreshToken
                expiryDate:(NSDate *)expiryDate;
 
 // This property is only valid for OAuth2 credentials
-@property (copy, NS_NONATOMIC_IOSONLY) NSString *oauthToken;
+@property (copy, NS_NONATOMIC_IOSONLY) String *oauthToken;
 
 @end

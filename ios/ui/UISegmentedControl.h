@@ -69,7 +69,7 @@ extern class UISegmentedControl extends UIControl, implements NSObject>
     } _segmentedControlFlags;
 }
 
-- (id)initWithItems:(NSArray *)items; // items can be NSStrings or UIImages. control is automatically sized to fit content
+- (id)initWithItems:(NSArray *)items; // items can be Strings or UIImages. control is automatically sized to fit content
 
 	public var  UISegmentedControlStyle segmentedControlStyle; // default is UISegmentedControlStylePlain
 	public var (nonatomic,getter=isMomentary) BOOL momentary;             // if set, then we don't keep showing selected state after tracking ends. default is NO
@@ -78,13 +78,13 @@ extern class UISegmentedControl extends UIControl, implements NSObject>
 // For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on their content widths. Default is NO.
 	public var  BOOL apportionsSegmentWidthsByContent NS_AVAILABLE_IOS(5_0);
 
-	public function insertSegmentWithTitle:(NSString *)title atIndex:(NSUInteger)segment animated:(BOOL)animated; // insert before segment number. 0..#segments. value pinned
+	public function insertSegmentWithTitle:(String *)title atIndex:(NSUInteger)segment animated:(BOOL)animated; // insert before segment number. 0..#segments. value pinned
 	public function insertSegmentWithImage:(UIImage *)image  atIndex:(NSUInteger)segment animated:(BOOL)animated;
 	public function removeSegmentAtIndex:(NSUInteger)segment animated:(BOOL)animated;
 	public function removeAllSegments;
 
-	public function setTitle:(NSString *)title forSegmentAtIndex:(NSUInteger)segment;      // can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
-- (NSString *)titleForSegmentAtIndex:(NSUInteger)segment;
+	public function setTitle:(String *)title forSegmentAtIndex:(NSUInteger)segment;      // can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+- (String *)titleForSegmentAtIndex:(NSUInteger)segment;
 
 	public function setImage:(UIImage *)image forSegmentAtIndex:(NSUInteger)segment;       // can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
 - (UIImage *)imageForSegmentAtIndex:(NSUInteger)segment;

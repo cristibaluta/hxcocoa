@@ -89,10 +89,10 @@ extern interface UIPickerViewDelegate<NSObject>
 - (Float)pickerView:(UIPickerView *)pickerView widthForComponent:(Int)component;
 - (Float)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(Int)component;
 
-// these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
+// these methods return either a plain String, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
 // for the view versions, we cache any hidden and thus unused views and pass them back for reuse. 
 // If you return back a different object, the old one will be released. the view will be centered in the row rect  
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(Int)row forComponent:(Int)component;
+- (String *)pickerView:(UIPickerView *)pickerView titleForRow:(Int)row forComponent:(Int)component;
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(Int)row forComponent:(Int)component NS_AVAILABLE_IOS(6_0); // attributed title is favored if both methods are implemented
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(Int)row forComponent:(Int)component reusingView:(UIView *)view;
 

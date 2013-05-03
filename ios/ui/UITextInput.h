@@ -17,7 +17,7 @@ package ios.ui;
 extern interface UIKeyInput <UITextInputTraits>
 
 - (BOOL)hasText;
-	public function insertText:(NSString *)text;
+	public function insertText:(String *)text;
 	public function deleteBackward;
 
 }
@@ -64,14 +64,14 @@ typedef NS_ENUM(Int, UITextGranularity) {
 
 @:require(5_1)extern class UIDictationPhrase extends NSObject {
     @private
-        NSString *_text;
+        String *_text;
         NSArray *_alternativeInterpretations;
 }
 
 /* -text returns the most likely interpretation for a phrase. If there are other 
  * interpretations, -alternativeInterpretations will return an array of them, with 
  * the first being most likely and the last being least likely. */
-	public var NSString *text;
+	public var String *text;
 	public var NSArray *alternativeInterpretations;
 
 }
@@ -80,8 +80,8 @@ extern interface UITextInput <UIKeyInput>
 @required
 
 /* Methods for manipulating text. */
-- (NSString *)textInRange:(UITextRange *)range;
-	public function replaceRange:(UITextRange *)range withText:(NSString *)text;
+- (String *)textInRange:(UITextRange *)range;
+	public function replaceRange:(UITextRange *)range withText:(String *)text;
 
 /* Text may have a selection, either zero-length (a caret) or ranged.  Editing operations are
  * always performed on the text from this selection.  nil corresponds to no selection. */
@@ -98,7 +98,7 @@ extern interface UITextInput <UIKeyInput>
 
 	public var UITextRange *markedTextRange;                       // Nil if no marked text.
 	public var NSDictionary *markedTextStyle;                          // Describes how the marked text should be drawn.
-	public function setMarkedText:(NSString *)markedText selectedRange:(NSRange)selectedRange;  // selectedRange is a range within the markedText
+	public function setMarkedText:(String *)markedText selectedRange:(NSRange)selectedRange;  // selectedRange is a range within the markedText
 	public function unmarkText;
 
 /* The end and beginning of the the text document. */
@@ -140,7 +140,7 @@ extern interface UITextInput <UIKeyInput>
 
 @optional
 
-- (BOOL)shouldChangeTextInRange:(UITextRange *)range replacementText:(NSString *)text NS_AVAILABLE_IOS(6_0);   // return NO to not change text
+- (BOOL)shouldChangeTextInRange:(UITextRange *)range replacementText:(String *)text NS_AVAILABLE_IOS(6_0);   // return NO to not change text
 
 /* Text styling information can affect, for example, the appearance of a correction rect. */
 - (NSDictionary *)textStylingAtPosition:(UITextPosition *)position inDirection:(UITextStorageDirection)direction;
@@ -182,9 +182,9 @@ extern interface UITextInput <UIKeyInput>
 //---------------------------------------------------------------------------------------------------
 
 /* Keys to style dictionaries. */
-UIKIT_EXTERN NSString *const UITextInputTextBackgroundColorKey; // Key to a UIColor
-UIKIT_EXTERN NSString *const UITextInputTextColorKey;           // Key to a UIColor
-UIKIT_EXTERN NSString *const UITextInputTextFontKey;            // Key to a UIFont
+UIKIT_EXTERN String *const UITextInputTextBackgroundColorKey; // Key to a UIColor
+UIKIT_EXTERN String *const UITextInputTextColorKey;           // Key to a UIColor
+UIKIT_EXTERN String *const UITextInputTextFontKey;            // Key to a UIFont
 
 
 /* To accommodate text entry in documents that contain nested elements, or in which supplying and
@@ -253,11 +253,11 @@ extern class UITextInputStringTokenizer extends NSObject <UITextInputTokenizer> 
 
 @:require(4_2)extern class UITextInputMode extends NSObject
 
-	public var (default, null) NSString *primaryLanguage; // The primary language, if any, of the input mode.  A BCP 47 language identifier such as en-US
+	public var (default, null) String *primaryLanguage; // The primary language, if any, of the input mode.  A BCP 47 language identifier such as en-US
 
 + (UITextInputMode *)currentInputMode; // The current input mode.  Nil if unset.
 + (NSArray *)activeInputModes; // The activate input modes.
 
 }
 
-UIKIT_EXTERN NSString *const UITextInputCurrentInputModeDidChangeNotification NS_AVAILABLE_IOS(4_2);
+UIKIT_EXTERN String *const UITextInputCurrentInputModeDidChangeNotification NS_AVAILABLE_IOS(4_2);

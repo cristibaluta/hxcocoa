@@ -16,7 +16,7 @@ extern interface UIAccessibilityIdentification <NSObject>
  A string that identifies the user interface element.
  default == nil
 */
-	public var  NSString *accessibilityIdentifier NS_AVAILABLE_IOS(5_0);
+	public var  String *accessibilityIdentifier NS_AVAILABLE_IOS(5_0);
 
 }
 

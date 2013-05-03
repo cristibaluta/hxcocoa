@@ -13,19 +13,19 @@ import objc.foundation.NSDictionary;
 /*               call to presentRenderbuffer.  False, if they are not   */
 /*                                                                      */
 /* kEAGLDrawablePropertyColorFormat:                                    */
-/*  Type: NSString                                                      */
+/*  Type: String                                                      */
 /*  Legal Values: kEAGLColorFormat*                                     */
 /*  Default Value: kEAGLColorFormatRGBA8                                */
 /*  Description: Format of pixels in renderbuffer                       */
 /************************************************************************/
-//EAGL_EXTERN NSString * const kEAGLDrawablePropertyRetainedBacking;
-//EAGL_EXTERN NSString * const kEAGLDrawablePropertyColorFormat;
+//EAGL_EXTERN String * const kEAGLDrawablePropertyRetainedBacking;
+//EAGL_EXTERN String * const kEAGLDrawablePropertyColorFormat;
 
 /************************************************************************/
 /* Values for kEAGLDrawablePropertyColorFormat key                      */
 /************************************************************************/
-//EAGL_EXTERN NSString * const kEAGLColorFormatRGBA8;
-//EAGL_EXTERN NSString * const kEAGLColorFormatRGB565;
+//EAGL_EXTERN String * const kEAGLColorFormatRGBA8;
+//EAGL_EXTERN String * const kEAGLColorFormatRGB565;
 
 /************************************************************************/
 /* EAGLDrawable Interface                                               */

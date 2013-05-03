@@ -15,16 +15,16 @@ enum {
 };
 typedef NSInteger EABluetoothAccessoryPickerErrorCode;
 
-EA_EXTERN NSString *const EABluetoothAccessoryPickerErrorDomain;
+EA_EXTERN String *const EABluetoothAccessoryPickerErrorDomain;
 
 typedef void(^EABluetoothAccessoryPickerCompletion)(NSError *error);
 
 // EAAccessoryManager Notifications
-EA_EXTERN NSString *const EAAccessoryDidConnectNotification __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
-EA_EXTERN NSString *const EAAccessoryDidDisconnectNotification __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
+EA_EXTERN String *const EAAccessoryDidConnectNotification __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
+EA_EXTERN String *const EAAccessoryDidDisconnectNotification __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0);
 // Keys in the EAAccessoryDidConnectNotification/EAAccessoryDidDisconnectNotification userInfo
-EA_EXTERN NSString *const EAAccessoryKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0); // EAAccessory
-EA_EXTERN NSString *const EAAccessorySelectedKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0); // EAAccessory
+EA_EXTERN String *const EAAccessoryKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_3_0); // EAAccessory
+EA_EXTERN String *const EAAccessorySelectedKey __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0); // EAAccessory
 
 @class EAAccessory;
 

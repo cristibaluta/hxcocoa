@@ -9,14 +9,14 @@
 #import <Accounts/AccountsDefines.h>
 
 // Options dictionary keys for Facebook access
-ACCOUNTS_EXTERN NSString * const ACFacebookAppIdKey;            // Your Facebook App ID, as it appears on the Facebook website.
-ACCOUNTS_EXTERN NSString * const ACFacebookPermissionsKey;      // An array of of the permissions you're requesting. Optional.
-ACCOUNTS_EXTERN NSString * const ACFacebookAudienceKey;         // Only required when posting permissions are requested.
+ACCOUNTS_EXTERN String * const ACFacebookAppIdKey;            // Your Facebook App ID, as it appears on the Facebook website.
+ACCOUNTS_EXTERN String * const ACFacebookPermissionsKey;      // An array of of the permissions you're requesting. Optional.
+ACCOUNTS_EXTERN String * const ACFacebookAudienceKey;         // Only required when posting permissions are requested.
 
 // Options dictionary values for Facebook access
-ACCOUNTS_EXTERN NSString * const ACFacebookAudienceEveryone;    // Posts from your app are visible to everyone.
-ACCOUNTS_EXTERN NSString * const ACFacebookAudienceFriends;     // Posts are visible only to friends.
-ACCOUNTS_EXTERN NSString * const ACFacebookAudienceOnlyMe;      // Posts are visible to the user only.
+ACCOUNTS_EXTERN String * const ACFacebookAudienceEveryone;    // Posts from your app are visible to everyone.
+ACCOUNTS_EXTERN String * const ACFacebookAudienceFriends;     // Posts are visible only to friends.
+ACCOUNTS_EXTERN String * const ACFacebookAudienceOnlyMe;      // Posts are visible to the user only.
 
 typedef NS_ENUM(Int, ACAccountCredentialRenewResult) {
     ACAccountCredentialRenewResultRenewed,  // A new credential was obtained and is now associated with the account.
@@ -42,11 +42,11 @@ ACCOUNTS_CLASS_AVAILABLE(NA, 5_0)
 @property (readonly, weak, NS_NONATOMIC_IOSONLY) NSArray *accounts;
 
 // Returns the account matching the given account identifier
-- (ACAccount *)accountWithIdentifier:(NSString *)identifier;
+- (ACAccount *)accountWithIdentifier:(String *)identifier;
 
 // Returns the account type object matching the account type identifier. See
 // ACAccountType.h for well known account type identifiers
-- (ACAccountType *)accountTypeWithAccountTypeIdentifier:(NSString *)typeIdentifier;
+- (ACAccountType *)accountTypeWithAccountTypeIdentifier:(String *)typeIdentifier;
 
 // Returns the accounts matching a given account type.
 - (NSArray *)accountsWithAccountType:(ACAccountType *)accountType;
@@ -89,4 +89,4 @@ ACCOUNTS_CLASS_AVAILABLE(NA, 5_0)
 // notification is received, you should consider all ACAccount instances you have to be invalid. Purge current
 // instances of ACAccount and obtain new instances using the account store. You may need to deal with accounts
 // being removed by an external process while you are using them.
-ACCOUNTS_EXTERN NSString * const ACAccountStoreDidChangeNotification NS_AVAILABLE(NA, 5_0);
+ACCOUNTS_EXTERN String * const ACAccountStoreDidChangeNotification NS_AVAILABLE(NA, 5_0);

@@ -20,7 +20,7 @@ ACCOUNTS_CLASS_AVAILABLE(NA, 5_0)
 - (id)initWithAccountType:(ACAccountType *)type;
 
 // This identifier can be used to look up the account using [ACAccountStore accountWithIdentifier:].
-@property (readonly, weak, NS_NONATOMIC_IOSONLY) NSString      *identifier;
+@property (readonly, weak, NS_NONATOMIC_IOSONLY) String      *identifier;
 
 // Accounts are stored with a particular account type. All available accounts of a particular type 
 // can be looked up using [ACAccountStore accountsWithAccountType:]. When creating new accounts
@@ -29,11 +29,11 @@ ACCOUNTS_CLASS_AVAILABLE(NA, 5_0)
 
 // A human readable description of the account.
 // This property is only available to applications that have been granted access to the account by the user.
-@property (copy, NS_NONATOMIC_IOSONLY)     NSString            *accountDescription;
+@property (copy, NS_NONATOMIC_IOSONLY)     String            *accountDescription;
 
 // The username for the account. This property can be set and saved during account creation. The username is
 // only available to applications that have been granted access to the account by the user.
-@property (copy, NS_NONATOMIC_IOSONLY)     NSString            *username;
+@property (copy, NS_NONATOMIC_IOSONLY)     String            *username;
 
 // The credential for the account. This property can be set and saved during account creation. It is 
 // inaccessible once the account has been saved.

@@ -16,13 +16,13 @@ package ios.ui;
 /* Keys for text attributes dictionaries.
  */
 // Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get the default font size for the situation.
-UIKIT_EXTERN NSString *const UITextAttributeFont NS_AVAILABLE_IOS(5_0); 
+UIKIT_EXTERN String *const UITextAttributeFont NS_AVAILABLE_IOS(5_0); 
 // Key to the text color in the text attributes dictionary. A UIColor instance is expected.
-UIKIT_EXTERN NSString *const UITextAttributeTextColor NS_AVAILABLE_IOS(5_0);
+UIKIT_EXTERN String *const UITextAttributeTextColor NS_AVAILABLE_IOS(5_0);
 // Key to the text shadow color in the text attributes dictionary.  A UIColor instance is expected.
-UIKIT_EXTERN NSString *const UITextAttributeTextShadowColor NS_AVAILABLE_IOS(5_0); 
+UIKIT_EXTERN String *const UITextAttributeTextShadowColor NS_AVAILABLE_IOS(5_0); 
 // Key to the offset used for the text shadow in the text attributes dictionary. An NSValue instance wrapping a UIOffset struct is expected.
-UIKIT_EXTERN NSString *const UITextAttributeTextShadowOffset NS_AVAILABLE_IOS(5_0); 
+UIKIT_EXTERN String *const UITextAttributeTextShadowOffset NS_AVAILABLE_IOS(5_0); 
 
 // Deprecated: use NSLineBreakMode instead (we will be adding deprecation tags soon!)
 enum {
@@ -54,7 +54,7 @@ typedef NS_ENUM(Int, UIBaselineAdjustment) {
 
 // these methods draw using a UIFont. draw methods return size of actual string. all draw in the current context using the current color
 
-extern class NSString(UIStringDrawing)
+extern class String(UIStringDrawing)
 
 // Single line, no wrapping. Truncation based on the NSLineBreakMode.
 - (CGSize)sizeWithFont:(UIFont *)font; // Uses NSLineBreakByWordWrapping

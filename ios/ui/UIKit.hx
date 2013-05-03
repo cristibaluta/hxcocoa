@@ -103,7 +103,7 @@ typedef NSAttributedString = ios.ui.NSAttributedString;
 typedef NSText = ios.ui.NSText;
 typedef NSParagraphStyle = ios.ui.NSParagraphStyle;
 typedef NSShadow = ios.ui.NSShadow;
-typedef NSStringDrawing = ios.ui.NSStringDrawing;
+typedef StringDrawing = ios.ui.StringDrawing;
 typedef NSLayoutConstraint = ios.ui.NSLayoutConstraint;
 typedef UIStateRestoration = ios.ui.UIStateRestoration;
 

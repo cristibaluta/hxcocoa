@@ -82,10 +82,10 @@ typedef NSInteger MPMediaPredicateComparison;
 
 MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPropertyPredicate extends MPMediaPredicate
 
-+ (MPMediaPropertyPredicate *)predicateWithValue:(id)value forProperty:(NSString *)property; // comparisonType is MPMediaPredicateComparisonEqualTo
-+ (MPMediaPropertyPredicate *)predicateWithValue:(id)value forProperty:(NSString *)property comparisonType:(MPMediaPredicateComparison)comparisonType;
++ (MPMediaPropertyPredicate *)predicateWithValue:(id)value forProperty:(String *)property; // comparisonType is MPMediaPredicateComparisonEqualTo
++ (MPMediaPropertyPredicate *)predicateWithValue:(id)value forProperty:(String *)property comparisonType:(MPMediaPredicateComparison)comparisonType;
 
-	public var (default, null) NSString *property;
+	public var (default, null) String *property;
 	public var (default, null) id value;
 	public var (default, null) MPMediaPredicateComparison comparisonType;
 
@@ -98,11 +98,11 @@ extern class MPMediaItem (MPMediaQueryAdditions)
 
 // Returns the item property for a given grouping type.
 // For example, [MPMediaItem persistentIDPropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumPersistentID.
-+ (NSString *)persistentIDPropertyForGroupingType:(MPMediaGrouping)groupingType NS_AVAILABLE_IOS(4_2);
++ (String *)persistentIDPropertyForGroupingType:(MPMediaGrouping)groupingType NS_AVAILABLE_IOS(4_2);
 
 // Returns the item property to determine a title for a given grouping type.
 // For example, [MPMediaItem titlePropertyForGroupingType:MPMediaGroupingAlbum] returns MPMediaItemPropertyAlbumTitle.
 // Note that distinct collections will not necessarily have unique titles, e.g. an album may exist with the title "Greatest Hits" for multiple artists.
-+ (NSString *)titlePropertyForGroupingType:(MPMediaGrouping)groupingType NS_AVAILABLE_IOS(4_2);
++ (String *)titlePropertyForGroupingType:(MPMediaGrouping)groupingType NS_AVAILABLE_IOS(4_2);
 
 }

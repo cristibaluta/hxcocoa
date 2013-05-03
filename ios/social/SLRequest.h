@@ -25,7 +25,7 @@ typedef void(^SLRequestHandler)(NSData *responseData, NSHTTPURLResponse *urlResp
 SOCIAL_CLASS_AVAILABLE(10_8, 6_0)
 @interface SLRequest : NSObject
 
-+ (SLRequest *)requestForServiceType:(NSString *)serviceType requestMethod:(SLRequestMethod)requestMethod URL:(NSURL *)url parameters:(NSDictionary *)parameters;
++ (SLRequest *)requestForServiceType:(String *)serviceType requestMethod:(SLRequestMethod)requestMethod URL:(NSURL *)url parameters:(NSDictionary *)parameters;
 
 // Optional account information used to authenticate the request. Defaults to nil.
 @property (retain, NS_NONATOMIC_IOSONLY) ACAccount *account;
@@ -43,13 +43,13 @@ SOCIAL_CLASS_AVAILABLE(10_8, 6_0)
 // Specify a named MIME multi-part value. As of iOS 6.0, if you set parameters,
 // the parameters will automatically be added as form data in the multi-part data.
 - (void)addMultipartData:(NSData *)data
-                withName:(NSString *)name
-                    type:(NSString *)type
-                filename:(NSString *)filename NS_AVAILABLE_IOS(6_0);
+                withName:(String *)name
+                    type:(String *)type
+                filename:(String *)filename NS_AVAILABLE_IOS(6_0);
 #else
 - (void)addMultipartData:(NSData *)data
-                withName:(NSString *)name
-                    type:(NSString*)type NS_AVAILABLE_MAC(10_8);
+                withName:(String *)name
+                    type:(String*)type NS_AVAILABLE_MAC(10_8);
 #endif
 
 // Returns a NSURLRequest for use with NSURLConnection.

@@ -52,23 +52,23 @@ MP_EXTERN_CLASS_AVAILABLE(5_0)extern class MPNowPlayingInfoCenter extends NSObje
 // Note the elapsed time will be automatically extrapolated from the previously 
 // provided elapsed time and playback rate, so updating this property frequently
 // is not required (or recommended.)
-MP_EXTERN NSString *const MPNowPlayingInfoPropertyElapsedPlaybackTime NS_AVAILABLE_IOS(5_0); // NSNumber (double)
+MP_EXTERN String *const MPNowPlayingInfoPropertyElapsedPlaybackTime NS_AVAILABLE_IOS(5_0); // NSNumber (double)
 
 // The playback rate of the now playing item, with 1.0 representing normal 
 // playback. For example, 2.0 would represent playback at twice the normal rate.
 // If not specified, assumed to be 1.0.
-MP_EXTERN NSString *const MPNowPlayingInfoPropertyPlaybackRate NS_AVAILABLE_IOS(5_0); // NSNumber (double)
+MP_EXTERN String *const MPNowPlayingInfoPropertyPlaybackRate NS_AVAILABLE_IOS(5_0); // NSNumber (double)
 
 // The index of the now playing item in the application's playback queue.
 // Note that the queue uses zero-based indexing, so the index of the first item 
 // would be 0 if the item should be displayed as "item 1 of 10".
-MP_EXTERN NSString *const MPNowPlayingInfoPropertyPlaybackQueueIndex NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
+MP_EXTERN String *const MPNowPlayingInfoPropertyPlaybackQueueIndex NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
 
 // The total number of items in the application's playback queue.
-MP_EXTERN NSString *const MPNowPlayingInfoPropertyPlaybackQueueCount NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
+MP_EXTERN String *const MPNowPlayingInfoPropertyPlaybackQueueCount NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
 
 // The chapter currently being played. Note that this is zero-based.
-MP_EXTERN NSString *const MPNowPlayingInfoPropertyChapterNumber NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
+MP_EXTERN String *const MPNowPlayingInfoPropertyChapterNumber NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
 
 // The total number of chapters in the now playing item.
-MP_EXTERN NSString *const MPNowPlayingInfoPropertyChapterCount NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)
+MP_EXTERN String *const MPNowPlayingInfoPropertyChapterCount NS_AVAILABLE_IOS(5_0); // NSNumber (NSUInteger)

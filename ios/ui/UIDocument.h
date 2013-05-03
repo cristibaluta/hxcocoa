@@ -28,15 +28,15 @@ typedef NS_OPTIONS(NSUInteger, UIDocumentState) {
     UIDocumentStateEditingDisabled = 1 << 3  // Set before calling -disableEditing. The document is is busy and it is not currently safe to allow user edits. -enableEditing will be called when it becomes safe to edit again.
 };
 
-UIKIT_EXTERN NSString *const UIDocumentStateChangedNotification NS_AVAILABLE_IOS(5_0);
+UIKIT_EXTERN String *const UIDocumentStateChangedNotification NS_AVAILABLE_IOS(5_0);
 
 @:require(ios5_0) extern class UIDocument extends NSObject <NSFilePresenter> {
 
 - (id)initWithFileURL:(NSURL *)url;
 
 	public var  (default, null) extends NSURL *fileURL;
-	public var (default, null) NSString *localizedName;
-	public var (default, null) NSString *fileType; 
+	public var (default, null) String *localizedName;
+	public var (default, null) String *fileType; 
 	public var NSDate *fileModificationDate;
 	public var  (default, null) extends UIDocumentState documentState;
 	public function openWithCompletionHandler:(void (^)(BOOL success))completionHandler;
@@ -44,9 +44,9 @@ UIKIT_EXTERN NSString *const UIDocumentStateChangedNotification NS_AVAILABLE_IOS
 	public function closeWithCompletionHandler:(void (^)(BOOL success))completionHandler;
 
 
-- (BOOL)loadFromContents:(id)contents ofType:(NSString *)typeName error:(NSError **)outError;
+- (BOOL)loadFromContents:(id)contents ofType:(String *)typeName error:(NSError **)outError;
 
-- (id)contentsForType:(NSString *)typeName error:(NSError **)outError;
+- (id)contentsForType:(String *)typeName error:(NSError **)outError;
 
 
 	public function disableEditing;
@@ -65,8 +65,8 @@ UIKIT_EXTERN NSString *const UIDocumentStateChangedNotification NS_AVAILABLE_IOS
 
 	public function autosaveWithCompletionHandler:(void (^)(BOOL success))completionHandler;
 
-- (NSString *)savingFileType;
-- (NSString *)fileNameExtensionForType:(NSString *)typeName saveOperation:(UIDocumentSaveOperation)saveOperation;
+- (String *)savingFileType;
+- (String *)fileNameExtensionForType:(String *)typeName saveOperation:(UIDocumentSaveOperation)saveOperation;
  - (BOOL)writeContents:(id)contents andAttributes:(NSDictionary *)additionalFileAttributes safelyToURL:(NSURL *)url forSaveOperation:(UIDocumentSaveOperation)saveOperation error:(NSError **)outError;
 
 - (BOOL)writeContents:(id)contents toURL:(NSURL *)url forSaveOperation:(UIDocumentSaveOperation)saveOperation originalContentsURL:(NSURL *)originalContentsURL error:(NSError **)outError;

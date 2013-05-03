@@ -8,7 +8,7 @@ package ios.ui;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKitDefines.h>
 
-UIKIT_EXTERN NSString *const UIPrintErrorDomain;
+UIKIT_EXTERN String *const UIPrintErrorDomain;
 
 enum {
     UIPrintingNotAvailableError = 1,  // cannot print at this time

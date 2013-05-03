@@ -9,9 +9,9 @@
 #import <Accounts/AccountsDefines.h>
 
 // The identifiers for supported system account types are listed here:
-ACCOUNTS_EXTERN NSString * const ACAccountTypeIdentifierTwitter NS_AVAILABLE(NA, 5_0);
-ACCOUNTS_EXTERN NSString * const ACAccountTypeIdentifierFacebook NS_AVAILABLE(NA, 6_0);
-ACCOUNTS_EXTERN NSString * const ACAccountTypeIdentifierSinaWeibo NS_AVAILABLE(NA, 6_0);
+ACCOUNTS_EXTERN String * const ACAccountTypeIdentifierTwitter NS_AVAILABLE(NA, 5_0);
+ACCOUNTS_EXTERN String * const ACAccountTypeIdentifierFacebook NS_AVAILABLE(NA, 6_0);
+ACCOUNTS_EXTERN String * const ACAccountTypeIdentifierSinaWeibo NS_AVAILABLE(NA, 6_0);
 
 // Each account has an associated account type, containing information relevant to all the accounts of that type.
 // ACAccountType objects are obtained by using the [ACAccountStore accountTypeWithIdentifier:] method
@@ -22,10 +22,10 @@ ACCOUNTS_CLASS_AVAILABLE(NA, 5_0)
 @interface ACAccountType : NSObject
 
 // A human readable description of the account type.
-@property (readonly, NS_NONATOMIC_IOSONLY) NSString *accountTypeDescription;
+@property (readonly, NS_NONATOMIC_IOSONLY) String *accountTypeDescription;
 
 // A unique identifier for the account type. Well known system account type identifiers are listed above.
-@property (readonly, NS_NONATOMIC_IOSONLY) NSString *identifier;
+@property (readonly, NS_NONATOMIC_IOSONLY) String *identifier;
 
 // A boolean indicating whether the user has granted access to accounts of this type for your application.
 @property (readonly, NS_NONATOMIC_IOSONLY) BOOL     accessGranted;

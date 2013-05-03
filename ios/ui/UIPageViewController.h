@@ -32,12 +32,12 @@ typedef NS_ENUM(Int, UIPageViewControllerTransitionStyle) {
 // Key for specifying spine location in options dictionary argument to initWithTransitionStyle:navigationOrientation:options:.
 // Value should be a 'UIPageViewControllerSpineLocation' wrapped in an NSNumber.
 // Only valid for use with page view controllers with transition style 'UIPageViewControllerTransitionStylePageCurl'.
-UIKIT_EXTERN NSString * const UIPageViewControllerOptionSpineLocationKey;
+UIKIT_EXTERN String * const UIPageViewControllerOptionSpineLocationKey;
 
 // Key for specifying spacing between pages in options dictionary argument to initWithTransitionStyle:navigationOrientation:options:.
 // Value should be a Float wrapped in an NSNumber. Default is '0'.
 // Only valid for use with page view controllers with transition style 'UIPageViewControllerTransitionStyleScroll'.
-UIKIT_EXTERN NSString * const UIPageViewControllerOptionInterPageSpacingKey NS_AVAILABLE_IOS(6_0);
+UIKIT_EXTERN String * const UIPageViewControllerOptionInterPageSpacingKey NS_AVAILABLE_IOS(6_0);
 
 extern interface UIPageViewControllerDelegate, UIPageViewControllerDataSource;
 

@@ -19,13 +19,13 @@ typedef UITextFieldViewMode = Int;
 extern class UITextField extends UIControl, implements UITextInput, implements NSCoding {
 
 
-public var    NSString               *text;                 // default is nil
+public var    String               *text;                 // default is nil
 public var    NSAttributedString     *attributedText NS_AVAILABLE_IOS(6_0); // default is nil
 	public var (nonatomic,retain) UIColor                *textColor;            // default is nil. use opaque black
 	public var (nonatomic,retain) UIFont                 *font;                 // default is nil. use system font 12 pt
 	public var         NSTextAlignment         textAlignment;        // default is NSLeftTextAlignment
 	public var         UITextBorderStyle       borderStyle;          // default is UITextBorderStyleNone. If set to UITextBorderStyleRoundedRect, custom background images are ignored.
-public var    NSString               *placeholder;          // default is nil. string is drawn 70% gray
+public var    String               *placeholder;          // default is nil. string is drawn 70% gray
 public var    NSAttributedString     *attributedPlaceholder NS_AVAILABLE_IOS(6_0); // default is nil
 	public var         BOOL                    clearsOnBeginEditing; // default is NO which moves cursor to location clicked. if YES, all text cleared
 	public var         BOOL                    adjustsFontSizeToFitWidth; // default is NO. if YES, text will shrink to minFontSize along baseline
@@ -82,14 +82,14 @@ extern interface UITextFieldDelegate {
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField;          // return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
 	public function textFieldDidEndEditing:(UITextField *)textField;             // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(String *)string;
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField;               // called when clear button pressed. return NO to ignore (no notifications)
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;              // called when 'return' key pressed. return NO to ignore.
 
 }
 
-//UIKIT_EXTERN NSString *const UITextFieldTextDidBeginEditingNotification;
-//UIKIT_EXTERN NSString *const UITextFieldTextDidEndEditingNotification;
-//UIKIT_EXTERN NSString *const UITextFieldTextDidChangeNotification;
+//UIKIT_EXTERN String *const UITextFieldTextDidBeginEditingNotification;
+//UIKIT_EXTERN String *const UITextFieldTextDidEndEditingNotification;
+//UIKIT_EXTERN String *const UITextFieldTextDidChangeNotification;
 

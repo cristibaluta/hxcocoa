@@ -16,8 +16,8 @@ extern class MKMapItem extends NSObject
 	public var (default, null) MKPlacemark *placemark;
 	public var BOOL isCurrentLocation;
 
-	public var NSString *name;
-	public var NSString *phoneNumber;
+	public var String *name;
+	public var String *phoneNumber;
 	public var NSURL *url;
 
 + (MKMapItem *)mapItemForCurrentLocation;
@@ -28,12 +28,12 @@ extern class MKMapItem extends NSObject
 
 }
 
-MK_EXTERN NSString * const MKLaunchOptionsDirectionsModeKey     NS_AVAILABLE_IOS(6_0); // Key to a directions mode
-MK_EXTERN NSString * const MKLaunchOptionsMapTypeKey            NS_AVAILABLE_IOS(6_0); // Key to an NSNumber corresponding to a MKMapType
-MK_EXTERN NSString * const MKLaunchOptionsMapCenterKey          NS_AVAILABLE_IOS(6_0); // Key to an NSValue-encoded MKCoordinate
-MK_EXTERN NSString * const MKLaunchOptionsMapSpanKey            NS_AVAILABLE_IOS(6_0); // Key to an NSValue-encoded MKCoordinateSpan
-MK_EXTERN NSString * const MKLaunchOptionsShowsTrafficKey       NS_AVAILABLE_IOS(6_0); // Key to a boolean NSNumber
+MK_EXTERN String * const MKLaunchOptionsDirectionsModeKey     NS_AVAILABLE_IOS(6_0); // Key to a directions mode
+MK_EXTERN String * const MKLaunchOptionsMapTypeKey            NS_AVAILABLE_IOS(6_0); // Key to an NSNumber corresponding to a MKMapType
+MK_EXTERN String * const MKLaunchOptionsMapCenterKey          NS_AVAILABLE_IOS(6_0); // Key to an NSValue-encoded MKCoordinate
+MK_EXTERN String * const MKLaunchOptionsMapSpanKey            NS_AVAILABLE_IOS(6_0); // Key to an NSValue-encoded MKCoordinateSpan
+MK_EXTERN String * const MKLaunchOptionsShowsTrafficKey       NS_AVAILABLE_IOS(6_0); // Key to a boolean NSNumber
 
 // Directions modes
-MK_EXTERN NSString * const MKLaunchOptionsDirectionsModeDriving NS_AVAILABLE_IOS(6_0);
-MK_EXTERN NSString * const MKLaunchOptionsDirectionsModeWalking NS_AVAILABLE_IOS(6_0);
+MK_EXTERN String * const MKLaunchOptionsDirectionsModeDriving NS_AVAILABLE_IOS(6_0);
+MK_EXTERN String * const MKLaunchOptionsDirectionsModeWalking NS_AVAILABLE_IOS(6_0);

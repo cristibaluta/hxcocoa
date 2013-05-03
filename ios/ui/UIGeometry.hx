@@ -34,12 +34,12 @@ extern class UIGeometry {
 @:c public static var UIEdgeInsetsZero :UIEdgeInsets;
 @:c public static var UIOffsetZero :UIOffset;
 
-@:c public static function NSStringFromCGPoint(point:CGPoint) :String;
-@:c public static function NSStringFromCGSize(size:CGSize) :String;
-@:c public static function NSStringFromCGRect(rect:CGRect) :String;
-@:c public static function NSStringFromCGAffineTransform(transform:CGAffineTransform) :String;
-@:c public static function NSStringFromUIEdgeInsets(insets:UIEdgeInsets) :String;
-@:c public static function NSStringFromUIOffset(offset:UIOffset) :String;
+@:c public static function StringFromCGPoint(point:CGPoint) :String;
+@:c public static function StringFromCGSize(size:CGSize) :String;
+@:c public static function StringFromCGRect(rect:CGRect) :String;
+@:c public static function StringFromCGAffineTransform(transform:CGAffineTransform) :String;
+@:c public static function StringFromUIEdgeInsets(insets:UIEdgeInsets) :String;
+@:c public static function StringFromUIOffset(offset:UIOffset) :String;
 
 @:c public static function CGPointFromString(string:String) :CGPoint;
 @:c public static function CGSizeFromString(string:String) :CGSize;

@@ -50,7 +50,7 @@ extern class NSObject (UIAccessibility)
  default on UIKit controls == derived from the title
  Setting the property will change the label that is returned to the accessibility client. 
  */
-	public var  NSString *accessibilityLabel;
+	public var  String *accessibilityLabel;
 
 /*
  Returns a localized string that describes the result of performing an action on the element, when the result is non-obvious.
@@ -59,7 +59,7 @@ extern class NSObject (UIAccessibility)
  default == nil
  Setting the property will change the hint that is returned to the accessibility client. 
  */
-	public var  NSString *accessibilityHint;
+	public var  String *accessibilityHint;
 
 /*
  Returns a localized string that represents the value of the element, such as the value 
@@ -69,7 +69,7 @@ extern class NSObject (UIAccessibility)
  default on UIKit controls == values for appropriate controls 
  Setting the property will change the value that is returned to the accessibility client.  
  */
-	public var  NSString *accessibilityValue;
+	public var  String *accessibilityValue;
 
 /*
  Returns a UIAccessibilityTraits mask that is the OR combination of
@@ -104,7 +104,7 @@ extern class NSObject (UIAccessibility)
  For example, en-US specifies U.S. English.
  default == nil
  */
-	public var  NSString *accessibilityLanguage;
+	public var  String *accessibilityLanguage;
 
 /*
  Marks all the accessible elements contained within as hidden.
@@ -254,13 +254,13 @@ extern interface UIAccessibilityReadingContent
 - (Int)accessibilityLineNumberForPoint:(CGPoint)point NS_AVAILABLE_IOS(5_0);
 
 // Returns the content associated with a line number as a string.
-- (NSString *)accessibilityContentForLineNumber:(Int)lineNumber NS_AVAILABLE_IOS(5_0);
+- (String *)accessibilityContentForLineNumber:(Int)lineNumber NS_AVAILABLE_IOS(5_0);
 
 // Returns the on-screen rectangle for a line number.
 - (CGRect)accessibilityFrameForLineNumber:(Int)lineNumber NS_AVAILABLE_IOS(5_0);
 
 // Returns a string representing the text displayed on the current page.
-- (NSString *)accessibilityPageContent NS_AVAILABLE_IOS(5_0);
+- (String *)accessibilityPageContent NS_AVAILABLE_IOS(5_0);
 
 }
 
@@ -282,22 +282,22 @@ UIKIT_EXTERN void UIAccessibilityPostNotification(UIAccessibilityNotifications n
  Listen for UIAccessibilityVoiceOverStatusChanged to know when VoiceOver starts or stops.
  */
 UIKIT_EXTERN BOOL UIAccessibilityIsVoiceOverRunning() NS_AVAILABLE_IOS(4_0);
-UIKIT_EXTERN NSString *const UIAccessibilityVoiceOverStatusChanged NS_AVAILABLE_IOS(4_0); 
+UIKIT_EXTERN String *const UIAccessibilityVoiceOverStatusChanged NS_AVAILABLE_IOS(4_0); 
 
 // Returns whether system audio is mixed down from stereo to mono.
 UIKIT_EXTERN BOOL UIAccessibilityIsMonoAudioEnabled() NS_AVAILABLE_IOS(5_0);
-UIKIT_EXTERN NSString *const UIAccessibilityMonoAudioStatusDidChangeNotification NS_AVAILABLE_IOS(5_0);
+UIKIT_EXTERN String *const UIAccessibilityMonoAudioStatusDidChangeNotification NS_AVAILABLE_IOS(5_0);
 
 // Returns whether the system preference for closed captioning is enabled.
 UIKIT_EXTERN BOOL UIAccessibilityIsClosedCaptioningEnabled() NS_AVAILABLE_IOS(5_0);
-UIKIT_EXTERN NSString *const UIAccessibilityClosedCaptioningStatusDidChangeNotification NS_AVAILABLE_IOS(5_0);
+UIKIT_EXTERN String *const UIAccessibilityClosedCaptioningStatusDidChangeNotification NS_AVAILABLE_IOS(5_0);
 
 // Returns whether the system preference for invert colors is enabled.
 UIKIT_EXTERN BOOL UIAccessibilityIsInvertColorsEnabled() NS_AVAILABLE_IOS(6_0);
-UIKIT_EXTERN NSString *const UIAccessibilityInvertColorsStatusDidChangeNotification NS_AVAILABLE_IOS(6_0);
+UIKIT_EXTERN String *const UIAccessibilityInvertColorsStatusDidChangeNotification NS_AVAILABLE_IOS(6_0);
 
 // Returns whether the app is running under Guided Access mode.
 UIKIT_EXTERN BOOL UIAccessibilityIsGuidedAccessEnabled() NS_AVAILABLE_IOS(6_0);
-UIKIT_EXTERN NSString *const UIAccessibilityGuidedAccessStatusDidChangeNotification NS_AVAILABLE_IOS(6_0);
+UIKIT_EXTERN String *const UIAccessibilityGuidedAccessStatusDidChangeNotification NS_AVAILABLE_IOS(6_0);
 
 

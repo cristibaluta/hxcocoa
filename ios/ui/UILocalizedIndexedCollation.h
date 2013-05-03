@@ -16,9 +16,9 @@ package ios.ui;
     NSArray *_sectionStartStrings;
     NSArray *_sectionIndexTitles;
     NSArray *_sectionIndexMapping;
-    NSString *_transform;
-    NSString *_firstSectionStartString;
-    NSString *_lastSectionStartString;
+    String *_transform;
+    String *_firstSectionStartString;
+    String *_lastSectionStartString;
     CFStringTokenizerRef _tokenizer;
 }
 
@@ -36,11 +36,11 @@ package ios.ui;
 - (Int)sectionForSectionIndexTitleAtIndex:(Int)indexTitleIndex;
 
 // Returns the index of the section that will contain the object.
-// selector must not take any arguments and return an NSString.
+// selector must not take any arguments and return an String.
 - (Int)sectionForObject:(id)object collationStringSelector:(SEL)selector;
 
 // Used for sorting objects within the same section.
-// selector must not take any arguments and return an NSString.
+// selector must not take any arguments and return an String.
 // In the process of sorting the array, each object may receive
 // selector multiple times, so this method should be fast.
 - (NSArray *)sortedArrayFromArray:(NSArray *)array collationStringSelector:(SEL)selector;

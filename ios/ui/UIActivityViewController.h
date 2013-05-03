@@ -9,7 +9,7 @@ package ios.ui;
 #import <UIKit/UIViewController.h>
 #import <UIKit/UIKitDefines.h>
 
-typedef void (^UIActivityViewControllerCompletionHandler)(NSString *activityType, BOOL completed);
+typedef void (^UIActivityViewControllerCompletionHandler)(String *activityType, BOOL completed);
 
 @:require(6_0)extern class UIActivityViewController extends UIViewController
 

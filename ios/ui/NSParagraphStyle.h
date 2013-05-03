@@ -16,7 +16,7 @@ typedef NS_ENUM(Int, NSLineBreakMode) {		/* What to do with long lines */
 
 + (NSParagraphStyle *)defaultParagraphStyle;
 
-+ (NSWritingDirection)defaultWritingDirectionForLanguage:(NSString *)languageName;  // languageName is in ISO lang region format
++ (NSWritingDirection)defaultWritingDirectionForLanguage:(String *)languageName;  // languageName is in ISO lang region format
 
 	public var  (default, null) extends Float lineSpacing; /* "Leading": distance between the bottom of one line fragment and top of next (applied between lines in the same container). Can't be negative. This value is included in the line fragment heights in layout manager. */
 	public var  (default, null) extends Float paragraphSpacing; /* Distance between the bottom of this paragraph and top of next (or the beginning of its paragraphSpacingBefore, if any). */

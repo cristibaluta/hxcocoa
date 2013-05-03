@@ -80,7 +80,7 @@ extern interface UITableViewDelegate {
 
 // Allows customization of the editingStyle for a particular cell located at 'indexPath'. If not implemented, all editable cells will have UITableViewCellEditingStyleDelete set for them when the table has editing property set to YES.
 - (UITableViewCellEditingStyle)tableView (tableView:UITableView, editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (NSString *)tableView (tableView:UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0);
+- (String *)tableView (tableView:UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0);
 
 // Controls whether the background is indented while editing.  If not implemented, the default is YES.  This is unrelated to the indentation level below.  This method only applies to grouped style table views.
 - (BOOL)tableView (tableView:UITableView, shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -206,11 +206,11 @@ extern class UITableView extends UIScrollView {
 // Beginning in iOS 6, clients can register a nib or class for each cell.
 // If all reuse identifiers are registered, use the newer -dequeueReusableCellWithIdentifier:forIndexPath: to guarantee that a cell instance is returned.
 // Instances returned from the new dequeue method will also be properly sized when they are returned.
-	public function registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(5_0);
-	public function registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);
+	public function registerNib:(UINib *)nib forCellReuseIdentifier:(String *)identifier NS_AVAILABLE_IOS(5_0);
+	public function registerClass:(Class)cellClass forCellReuseIdentifier:(String *)identifier NS_AVAILABLE_IOS(6_0);
 
-	public function registerNib:(UINib *)nib forHeaderFooterViewReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);
-	public function registerClass:(Class)aClass forHeaderFooterViewReuseIdentifier:(NSString *)identifier NS_AVAILABLE_IOS(6_0);
+	public function registerNib:(UINib *)nib forHeaderFooterViewReuseIdentifier:(String *)identifier NS_AVAILABLE_IOS(6_0);
+	public function registerClass:(Class)aClass forHeaderFooterViewReuseIdentifier:(String *)identifier NS_AVAILABLE_IOS(6_0);
 	#end
 }
 
@@ -247,7 +247,7 @@ extern interface UITableViewDataSource {
 // Index
 
 - (NSArray *)sectionIndexTitlesForTableView (tableView:UITableView,;                                                    // return list of section titles to display in section index view (e.g. "ABCD...Z#")
-- (Int)tableView (tableView:UITableView, sectionForSectionIndexTitle:(NSString *)title atIndex:(Int)index;  // tell table which section corresponds to section title/index (e.g. "B",1))
+- (Int)tableView (tableView:UITableView, sectionForSectionIndexTitle:(String *)title atIndex:(Int)index;  // tell table which section corresponds to section title/index (e.g. "B",1))
 
 // Data manipulation - insert and delete support
 

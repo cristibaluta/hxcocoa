@@ -62,13 +62,13 @@ extern interface UINavigationBarDelegate {
 @:framework("UIKit")
 extern class UINavigationItem extends NSObject {
 	#if display
-- (id)initWithTitle:(NSString *)title;
+- (id)initWithTitle:(String *)title;
 
-	public var    NSString        *title;             // Title when topmost on the stack. default is nil
+	public var    String        *title;             // Title when topmost on the stack. default is nil
 	public var (nonatomic,retain) UIBarButtonItem *backBarButtonItem; // Bar button item to use for the back button in the child navigation item.
 	public var (nonatomic,retain) UIView          *titleView;         // Custom view to use in lieu of a title. May be sized horizontally. Only used when item is topmost on the stack.
 
-	public var    NSString *prompt;     // Explanatory text to display above the navigation bar buttons.
+	public var    String *prompt;     // Explanatory text to display above the navigation bar buttons.
 
 	public var  BOOL hidesBackButton; // If YES, this navigation item will hide the back button when it's on top of the stack.
 	public function setHidesBackButton:(BOOL)hidesBackButton animated:(BOOL)animated;

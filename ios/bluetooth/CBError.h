@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 
 
-CB_EXTERN NSString * const CBErrorDomain;
+CB_EXTERN String * const CBErrorDomain;
 
 /*!
  * @enum CBError
@@ -32,7 +32,7 @@ typedef NS_ENUM(Int, CBError) {
     CBErrorAlreadyAdvertising NS_ENUM_AVAILABLE(NA, 6_0)		= 9
 };
 
-CB_EXTERN NSString * const CBATTErrorDomain;
+CB_EXTERN String * const CBATTErrorDomain;
 
 typedef NS_ENUM(Int, CBATTError) {
 	CBATTErrorSuccess NS_ENUM_AVAILABLE(NA, 6_0)	= 0x00,

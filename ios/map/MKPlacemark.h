@@ -24,6 +24,6 @@ extern class MKPlacemark extends CLPlacemark <MKAnnotation> {
 // To create an MKPlacemark from a CLPlacemark, call [MKPlacemark initWithPlacemark:] passing the CLPlacemark instance that is returned by CLGeocoder.
 // See CLGeocoder.h and CLPlacemark.h in CoreLocation for more information.
 
-	public var NSString *countryCode;
+	public var String *countryCode;
 
 }

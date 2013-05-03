@@ -39,14 +39,14 @@ CORE_IMAGE_EXPORT CIFormat kCIFormatRGBAh __OSX_AVAILABLE_STARTING(__MAC_10_4, _
 /* A CGColorSpaceRef defining the color space of the image. This value 
  * overrides the image's implicit color space. 
  * If [NSNull null] then dont color manage the image. */
-CORE_IMAGE_EXPORT NSString *kCIImageColorSpace;
+CORE_IMAGE_EXPORT String *kCIImageColorSpace;
 
 /* A NSDictionary of metadata properties to pass to CIImage initialization methods.
  * When used with imageWithCGImage:options:, initWithCGImage:options:, imageWithData:options:, initWithData:options:
  *   If this option is not specified, the properties will be set to CGImageSourceCopyPropertiesAtIndex.
  *   If this option is [NSNull null], the properties will be set to nil.
  */
-CORE_IMAGE_EXPORT NSString *kCIImageProperties __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+CORE_IMAGE_EXPORT String *kCIImageProperties __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 /* Creates a new image from the contents of 'image'. */
 + (CIImage *)imageWithCGImage:(CGImageRef)image;
@@ -170,18 +170,18 @@ format:(CIFormat)f colorSpace:(CGColorSpaceRef)c;
 /* If CFBoolean value is false then dont attempt to apply enhancement filters.
  * If not specified, the option is assumed to be present and true.
  */
-CORE_IMAGE_EXPORT NSString *kCIImageAutoAdjustEnhance __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+CORE_IMAGE_EXPORT String *kCIImageAutoAdjustEnhance __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 /* If CFBoolean value is false then dont attempt to apply red eye filter.
  * If not specified, the option is assumed to be present and true.
  */
-CORE_IMAGE_EXPORT NSString *kCIImageAutoAdjustRedEye __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+CORE_IMAGE_EXPORT String *kCIImageAutoAdjustRedEye __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 /* If value is an array of detected CIFeatures, then use these features
  * to determine the AutoAdjustEnhance and or AutoAdjustRedEye filters.
  * If not specified, reciever will call CIDetector.
  */
-CORE_IMAGE_EXPORT NSString *kCIImageAutoAdjustFeatures __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+CORE_IMAGE_EXPORT String *kCIImageAutoAdjustFeatures __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 
 /* Return an array of filters to apply to an image to improve its 

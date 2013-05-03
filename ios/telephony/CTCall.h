@@ -9,29 +9,29 @@
 #import <Foundation/Foundation.h>
 #import <CoreTelephony/CoreTelephonyDefines.h>
 
-CORETELEPHONY_EXTERN NSString * const CTCallStateDialing  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
-CORETELEPHONY_EXTERN NSString * const CTCallStateIncoming  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
-CORETELEPHONY_EXTERN NSString * const CTCallStateConnected  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
-CORETELEPHONY_EXTERN NSString * const CTCallStateDisconnected  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
+CORETELEPHONY_EXTERN String * const CTCallStateDialing  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
+CORETELEPHONY_EXTERN String * const CTCallStateIncoming  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
+CORETELEPHONY_EXTERN String * const CTCallStateConnected  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
+CORETELEPHONY_EXTERN String * const CTCallStateDisconnected  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
 
 CORETELEPHONY_CLASS_AVAILABLE(4_0)
 @interface CTCall extends NSObject
 {
 @private
-    NSString *_callState;
-    NSString *_callID;
+    String *_callState;
+    String *_callID;
 }
 
 /*
  * callState
  *
  * Description:
- *     An NSString constant that describes the state of this call. The initial state
+ *     An String constant that describes the state of this call. The initial state
  *     will be either CTCallStateDialing or CTCallStateIncoming, will transition
  *     to CTCallStateConnected when the call is established with all parties 
  *     involved and will move to CTCallStateDisconnected when this call is terminated.
  */
-@property(nonatomic, readonly, copy) NSString *callState  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
+@property(nonatomic, readonly, copy) String *callState  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
 
 /*
  * callID
@@ -40,6 +40,6 @@ CORETELEPHONY_CLASS_AVAILABLE(4_0)
  *     A unique identifier for this call to be used by clients to differentiate
  *     multiple active calls.
  */
-@property(nonatomic, readonly, copy) NSString *callID  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
+@property(nonatomic, readonly, copy) String *callID  __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_4_0);
 
 @end

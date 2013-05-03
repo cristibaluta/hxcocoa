@@ -16,7 +16,7 @@ extern class UIView extends UIResponder implements NSCoding/*, implements UIAppe
 	
 	public static function layerClass () :Class<CALayer>;
 	
-	public function initWithFrame (frame:CGRect) :UIView;
+	public function initWithFrame (frame:CGRect) :Dynamic;
 	
 	public var userInteractionEnabled :Bool;
 	public var tag :Int;
@@ -227,7 +227,7 @@ extern enum UIViewAnimationTransition {
 }
 
 @:framework("UIKit")
-@:fakeEnum(Int)
+/*@:fakeEnum(Int)*/
 extern enum UIViewAutoresizing {
     UIViewAutoresizingNone;
     UIViewAutoresizingFlexibleLeftMargin;

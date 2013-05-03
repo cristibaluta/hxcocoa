@@ -12,10 +12,10 @@ extern class UIReferenceLibraryViewController extends UIViewController {}
 
 /* Returns YES if any installed dictionary has a definition for the provided term.
  */
-+ (BOOL)dictionaryHasDefinitionForTerm:(NSString *)term;
++ (BOOL)dictionaryHasDefinitionForTerm:(String *)term;
 
 /* Initializes an instance of a UIReferenceLibraryViewController with the term provided.
  */
-- (id)initWithTerm:(NSString *)term;
+- (id)initWithTerm:(String *)term;
 
 }

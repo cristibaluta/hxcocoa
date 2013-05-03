@@ -1,57 +1,54 @@
 //
 //  UICollectionView.h
 package ios.ui;
-//
-//  Copyright (c) 2011 Apple Inc. All rights reserved.
-//
+import objc.foundation.NSIndexPath;
+import objc.foundation.NSIndexSet;
+import objc.graphics.CGGeometry;
+import ios.ui.UICollectionViewLayout;
 
-#import <UIKit/UIScrollView.h>
-#import <UIKit/UIKitDefines.h>
-#import <Foundation/Foundation.h>
-
-typedef NS_OPTIONS(NSUInteger, UICollectionViewScrollPosition) {
-    UICollectionViewScrollPositionNone                 = 0,
+@:framework("UIKit")
+@:require(ios6_0)
+extern enum UICollectionViewScrollPosition {
+    UICollectionViewScrollPositionNone;
     
     // The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll positions.
     // Combining positions from the same grouping (horizontal or vertical) will result in an NSInvalidArgumentException.
-    UICollectionViewScrollPositionTop                  = 1 << 0,
-    UICollectionViewScrollPositionCenteredVertically   = 1 << 1,
-    UICollectionViewScrollPositionBottom               = 1 << 2,
+    UICollectionViewScrollPositionTop;
+    UICollectionViewScrollPositionCenteredVertically;
+    UICollectionViewScrollPositionBottom;
     
     // Likewise, the horizontal positions are mutually exclusive to each other.
-    UICollectionViewScrollPositionLeft                 = 1 << 3,
-    UICollectionViewScrollPositionCenteredHorizontally = 1 << 4,
-    UICollectionViewScrollPositionRight                = 1 << 5
-};
-
-@class UICollectionView;
-@class UICollectionViewCell;
-@class UICollectionViewLayout;
-@class UICollectionViewLayoutAttributes;
-@class UITouch;
-@class UINib;
-@class UICollectionReusableView;
-
-extern interface UICollectionViewDataSource <NSObject>
-@required
-
-- (Int)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(Int)section;
-
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-
-@optional
-
-- (Int)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
-
-// The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
-
+    UICollectionViewScrollPositionLeft;
+    UICollectionViewScrollPositionCenteredHorizontally;
+    UICollectionViewScrollPositionRight;
 }
 
-extern interface UICollectionViewDelegate <UIScrollViewDelegate>
-@optional
+@:framework("UIKit")
+@:require(ios6_0)
+extern interface UICollectionViewDataSource {
+//@required
+	@:sel("collectionView:numberOfItemsInSection:")
+	public function numberOfItemsInSection (collectionView:UICollectionView, section:Int) :Int;
 
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+	@:sel("collectionView:cellForItemAtIndexPath:")
+	public function cellForItemAtIndexPath (collectionView:UICollectionView, indexPath:NSIndexPath) :UICollectionViewCell;
+
+//@optional
+#if display
+
+	public function numberOfSectionsInCollectionView (collectionView:UICollectionView) :Int;
+
+// The view that is returned must be retrieved from a call to -dequeueReusableSupplementaryViewOfKind:withReuseIdentifier:forIndexPath:
+- (UICollectionReusableView *)collectionView (UICollectionView *)collectionView viewForSupplementaryElementOfKind (String *)kind atIndexPath (indexPath: NSIndexPath,;
+#end
+}
+
+@:framework("UIKit")
+@:require(ios6_0)
+extern interface UICollectionViewDelegate {
+//@optional
+#if display
 // Methods for notification of selection/deselection and highlight/unhighlight events.
 // The sequence of calls leading to selection from a user touch is:
 //
@@ -63,90 +60,89 @@ extern interface UICollectionViewDelegate <UIScrollViewDelegate>
 // 3. -collectionView:shouldSelectItemAtIndexPath: or -collectionView:shouldDeselectItemAtIndexPath:
 // 4. -collectionView:didSelectItemAtIndexPath: or -collectionView:didDeselectItemAtIndexPath:
 // 5. -collectionView:didUnhighlightItemAtIndexPath:
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath;
-	public function collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath;
-	public function collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath;
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath; // called when the user taps on an already-selected item in multi-select mode
-	public function collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-	public function collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (BOOL)collectionView (UICollectionView *)collectionView shouldHighlightItemAtIndexPath (indexPath: NSIndexPath,;
+	public function collectionView (UICollectionView *)collectionView didHighlightItemAtIndexPath (indexPath: NSIndexPath,;
+	public function collectionView (UICollectionView *)collectionView didUnhighlightItemAtIndexPath (indexPath: NSIndexPath,;
+- (BOOL)collectionView (UICollectionView *)collectionView shouldSelectItemAtIndexPath (indexPath: NSIndexPath,;
+- (BOOL)collectionView (UICollectionView *)collectionView shouldDeselectItemAtIndexPath (indexPath: NSIndexPath,; // called when the user taps on an already-selected item in multi-select mode
+	public function collectionView (UICollectionView *)collectionView didSelectItemAtIndexPath (indexPath: NSIndexPath,;
+	public function collectionView (UICollectionView *)collectionView didDeselectItemAtIndexPath (indexPath: NSIndexPath,;
 
-	public function collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
-	public function collectionView:(UICollectionView *)collectionView didEndDisplayingSupplementaryView:(UICollectionReusableView *)view forElementOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath;
+	public function collectionView (UICollectionView *)collectionView didEndDisplayingCell (UICollectionViewCell *)cell forItemAtIndexPath (indexPath: NSIndexPath,;
+	public function collectionView (UICollectionView *)collectionView didEndDisplayingSupplementaryView (UICollectionReusableView *)view forElementOfKind (String *)elementKind atIndexPath (indexPath: NSIndexPath,;
 
 // These methods provide support for copy/paste actions on cells.
 // All three should be implemented if any are.
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath;
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender;
-	public function collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender;
-
+- (BOOL)collectionView (UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath (indexPath: NSIndexPath,;
+- (BOOL)collectionView (UICollectionView *)collectionView canPerformAction (SEL)action forItemAtIndexPath (indexPath: NSIndexPath, withSender (id)sender;
+	public function collectionView (UICollectionView *)collectionView performAction (SEL)action forItemAtIndexPath (indexPath: NSIndexPath, withSender (id)sender;
+#end
 }
 
-@:require(6_0)extern class UICollectionView extends UIScrollView
+@:framework("UIKit")
+@:require(ios6_0)
+extern class UICollectionView extends UIScrollView {
 
-- (id)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout; // the designated initializer
+	//public function initWithFrame (frame:CGRect, collectionViewLayout:UICollectionViewLayout) :UICollectionView;
 
-	public var UICollectionViewLayout *collectionViewLayout;
-	public var id <UICollectionViewDelegate> delegate;
-	public var id <UICollectionViewDataSource> dataSource;
-	public var UIView *backgroundView; // will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
+	public var collectionViewLayout :UICollectionViewLayout;
+	//public var delegate :UICollectionViewDelegate;
+	public var dataSource :UICollectionViewDataSource;
+	public var backgroundView :UIView; // will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
 
 // For each reuse identifier that the collection view will use, register either a class or a nib from which to instantiate a cell.
 // If a nib is registered, it must contain exactly 1 top level object which is a UICollectionViewCell.
 // If a class is registered, it will be instantiated via alloc/initWithFrame:
-	public function registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
-	public function registerNib:(UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
+	public function registerClass (cellClass:Class<Dynamic>, forCellWithReuseIdentifier:String) :Void;
+	public function registerNib (nib:UINib, forCellWithReuseIdentifier:String) :Void;
 
-	public function registerClass:(Class)viewClass forSupplementaryViewOfKind:(NSString *)elementKind withReuseIdentifier:(NSString *)identifier;
-	public function registerNib:(UINib *)nib forSupplementaryViewOfKind:(NSString *)kind withReuseIdentifier:(NSString *)identifier;
+	//public function registerClass (Class)viewClass forSupplementaryViewOfKind (String *)elementKind withReuseIdentifier (String *)identifier;
+	//public function registerNib (UINib *)nib forSupplementaryViewOfKind (String *)kind withReuseIdentifier (String *)identifier;
 
-- (id)dequeueReusableCellWithReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath*)indexPath;
-- (id)dequeueReusableSupplementaryViewOfKind:(NSString*)elementKind withReuseIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath*)indexPath;
+	public function dequeueReusableCellWithReuseIdentifier (identifier:String, forIndexPath:NSIndexPath) :Dynamic;
+	public function dequeueReusableSupplementaryViewOfKind (elementKind:String, withReuseIdentifier:String, forIndexPath:NSIndexPath) :Dynamic;
 
 // These properties control whether items can be selected, and if so, whether multiple items can be simultaneously selected.
-	public var BOOL allowsSelection; // default is YES
-	public var BOOL allowsMultipleSelection; // default is NO
+	public var allowsSelection :Bool; // default is YES
+	public var allowsMultipleSelection :Bool; // default is NO
 
-- (NSArray *)indexPathsForSelectedItems; // returns nil or an array of selected index paths
-	public function selectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UICollectionViewScrollPosition)scrollPosition;
-	public function deselectItemAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated;
+	public function indexPathsForSelectedItems () :Array<NSIndexPath>; // returns nil or an array of selected index paths
+	public function selectItemAtIndexPath (indexPath:NSIndexPath, animated:Bool, scrollPosition:UICollectionViewScrollPosition) :Void;
+	public function deselectItemAtIndexPath (indexPath:NSIndexPath, animated:Bool) :Void;
 
-	public function reloadData; // discard the dataSource and delegate data and requery as necessary
+	public function reloadData () :Void; // discard the dataSource and delegate data and requery as necessary
 
-	public function setCollectionViewLayout:(UICollectionViewLayout *)layout animated:(BOOL)animated; // transition from one layout to another
+	public function setCollectionViewLayout (layout:UICollectionViewLayout, animated:Bool) :Void;
 
 // Information about the current state of the collection view.
 
-- (Int)numberOfSections;
-- (Int)numberOfItemsInSection:(Int)section;
+	public function numberOfSections () :Int;
+	public function numberOfItemsInSection (section:Int) :Int;
 
-- (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath;
-- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
+	public function layoutAttributesForItemAtIndexPath (indexPath: NSIndexPath) :UICollectionViewLayoutAttributes;
+	public function layoutAttributesForSupplementaryElementOfKind (kind:String, atIndexPath:NSIndexPath) :UICollectionViewLayoutAttributes;
 
-- (NSIndexPath *)indexPathForItemAtPoint:(CGPoint)point;
-- (NSIndexPath *)indexPathForCell:(UICollectionViewCell *)cell;
+	public function indexPathForItemAtPoint (point:CGPoint) :NSIndexPath;
+	public function indexPathForCell (cell:UICollectionViewCell) :NSIndexPath;
 
-- (UICollectionViewCell *)cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-- (NSArray *)visibleCells;
-- (NSArray *)indexPathsForVisibleItems;
+	public function cellForItemAtIndexPath (indexPath:NSIndexPath) :UICollectionViewCell;
+	public function visibleCells () :Array<UICollectionViewCell>;
+	public function indexPathsForVisibleItems () :Array<NSIndexPath>;
 
 // Interacting with the collection view.
 
-	public function scrollToItemAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UICollectionViewScrollPosition)scrollPosition animated:(BOOL)animated;
+	public function scrollToItemAtIndexPath (indexPath:NSIndexPath, atScrollPosition:UICollectionViewScrollPosition, animated:Bool) :Void;
 
 // These methods allow dynamic modification of the current set of items in the collection view
-	public function insertSections:(NSIndexSet *)sections;
-	public function deleteSections:(NSIndexSet *)sections;
-	public function reloadSections:(NSIndexSet *)sections;
-	public function moveSection:(Int)section toSection:(Int)newSection;
+	public function insertSections(sections:NSIndexSet) :Void;
+	public function deleteSections(sections:NSIndexSet) :Void;
+	public function reloadSections(sections:NSIndexSet) :Void;
+	public function moveSection (section:Int, toSection:Int) :Void;
 
-	public function insertItemsAtIndexPaths:(NSArray *)indexPaths;
-	public function deleteItemsAtIndexPaths:(NSArray *)indexPaths;
-	public function reloadItemsAtIndexPaths:(NSArray *)indexPaths;
-	public function moveItemAtIndexPath:(NSIndexPath *)indexPath toIndexPath:(NSIndexPath *)newIndexPath;
+	public function insertItemsAtIndexPaths (indexPaths:Array<NSIndexPath>) :Void;
+	public function deleteItemsAtIndexPaths (indexPaths:Array<NSIndexPath>) :Void;
+	public function reloadItemsAtIndexPaths (indexPaths:Array<NSIndexPath>) :Void;
+	public function moveItemAtIndexPath (indexPath:NSIndexPath, toIndexPath:NSIndexPath) :Void;
 
-	public function performBatchUpdates:(void (^)(void))updates completion:(void (^)(BOOL finished))completion; // allows multiple insert/delete/reload/move calls to be animated simultaneously. Nestable.
-
+	public function performBatchUpdates (updates:Void->Void, completion:Bool->Void) :Void;
 }
-
-

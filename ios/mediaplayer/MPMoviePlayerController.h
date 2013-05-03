@@ -167,45 +167,45 @@ extern class MPMoviePlayerController (MPMovieProperties)
 // Movie Player Notifications
 
 // Posted when the scaling mode changes.
-MP_EXTERN NSString *const MPMoviePlayerScalingModeDidChangeNotification;
+MP_EXTERN String *const MPMoviePlayerScalingModeDidChangeNotification;
 
 // Posted when movie playback ends or a user exits playback.
-MP_EXTERN NSString *const MPMoviePlayerPlaybackDidFinishNotification;
+MP_EXTERN String *const MPMoviePlayerPlaybackDidFinishNotification;
 
-MP_EXTERN NSString *const MPMoviePlayerPlaybackDidFinishReasonUserInfoKey NS_AVAILABLE_IOS(3_2); // NSNumber (MPMovieFinishReason)
+MP_EXTERN String *const MPMoviePlayerPlaybackDidFinishReasonUserInfoKey NS_AVAILABLE_IOS(3_2); // NSNumber (MPMovieFinishReason)
 
 // Posted when the playback state changes, either programatically or by the user.
-MP_EXTERN NSString *const MPMoviePlayerPlaybackStateDidChangeNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerPlaybackStateDidChangeNotification NS_AVAILABLE_IOS(3_2);
 
 // Posted when the network load state changes.
-MP_EXTERN NSString *const MPMoviePlayerLoadStateDidChangeNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerLoadStateDidChangeNotification NS_AVAILABLE_IOS(3_2);
 
 // Posted when the currently playing movie changes.
-MP_EXTERN NSString *const MPMoviePlayerNowPlayingMovieDidChangeNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerNowPlayingMovieDidChangeNotification NS_AVAILABLE_IOS(3_2);
 
 // Posted when the movie player enters or exits fullscreen mode.
-MP_EXTERN NSString *const MPMoviePlayerWillEnterFullscreenNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMoviePlayerDidEnterFullscreenNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMoviePlayerWillExitFullscreenNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMoviePlayerDidExitFullscreenNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMoviePlayerFullscreenAnimationDurationUserInfoKey NS_AVAILABLE_IOS(3_2); // NSNumber of double (NSTimeInterval)
-MP_EXTERN NSString *const MPMoviePlayerFullscreenAnimationCurveUserInfoKey NS_AVAILABLE_IOS(3_2);     // NSNumber of NSUInteger (UIViewAnimationCurve)
+MP_EXTERN String *const MPMoviePlayerWillEnterFullscreenNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerDidEnterFullscreenNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerWillExitFullscreenNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerDidExitFullscreenNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerFullscreenAnimationDurationUserInfoKey NS_AVAILABLE_IOS(3_2); // NSNumber of double (NSTimeInterval)
+MP_EXTERN String *const MPMoviePlayerFullscreenAnimationCurveUserInfoKey NS_AVAILABLE_IOS(3_2);     // NSNumber of NSUInteger (UIViewAnimationCurve)
 
 // Posted when the movie player begins or ends playing video via AirPlay.
-MP_EXTERN NSString *const MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification NS_AVAILABLE_IOS(5_0);
+MP_EXTERN String *const MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification NS_AVAILABLE_IOS(5_0);
 
 // Posted when the ready for display state changes.
-MP_EXTERN NSString *const MPMoviePlayerReadyForDisplayDidChangeNotification NS_AVAILABLE_IOS(6_0);
+MP_EXTERN String *const MPMoviePlayerReadyForDisplayDidChangeNotification NS_AVAILABLE_IOS(6_0);
 
 // -----------------------------------------------------------------------------
 // Movie Property Notifications
 
 // Calling -prepareToPlay on the movie player will begin determining movie properties asynchronously.
 // These notifications are posted when the associated movie property becomes available.
-MP_EXTERN NSString *const MPMovieMediaTypesAvailableNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMovieSourceTypeAvailableNotification NS_AVAILABLE_IOS(3_2); // Posted if the movieSourceType is MPMovieSourceTypeUnknown when preparing for playback.
-MP_EXTERN NSString *const MPMovieDurationAvailableNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMovieNaturalSizeAvailableNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMovieMediaTypesAvailableNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMovieSourceTypeAvailableNotification NS_AVAILABLE_IOS(3_2); // Posted if the movieSourceType is MPMovieSourceTypeUnknown when preparing for playback.
+MP_EXTERN String *const MPMovieDurationAvailableNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMovieNaturalSizeAvailableNotification NS_AVAILABLE_IOS(3_2);
 
 // -----------------------------------------------------------------------------
 // Thumbnails
@@ -232,10 +232,10 @@ extern class MPMoviePlayerController (MPMoviePlayerThumbnailGeneration)
 }
 
 // Posted when each thumbnail image request is completed.
-MP_EXTERN NSString *const MPMoviePlayerThumbnailImageRequestDidFinishNotification NS_AVAILABLE_IOS(3_2);
-MP_EXTERN NSString *const MPMoviePlayerThumbnailImageKey NS_AVAILABLE_IOS(3_2); // UIImage, may be nil if an error occurred.
-MP_EXTERN NSString *const MPMoviePlayerThumbnailTimeKey NS_AVAILABLE_IOS(3_2);  // NSNumber (double)
-MP_EXTERN NSString *const MPMoviePlayerThumbnailErrorKey NS_AVAILABLE_IOS(3_2); // NSError
+MP_EXTERN String *const MPMoviePlayerThumbnailImageRequestDidFinishNotification NS_AVAILABLE_IOS(3_2);
+MP_EXTERN String *const MPMoviePlayerThumbnailImageKey NS_AVAILABLE_IOS(3_2); // UIImage, may be nil if an error occurred.
+MP_EXTERN String *const MPMoviePlayerThumbnailTimeKey NS_AVAILABLE_IOS(3_2);  // NSNumber (double)
+MP_EXTERN String *const MPMoviePlayerThumbnailErrorKey NS_AVAILABLE_IOS(3_2); // NSError
 
 // -----------------------------------------------------------------------------
 // Timed Metadata
@@ -253,10 +253,10 @@ MP_EXTERN_CLASS_AVAILABLE(4_0)extern class MPTimedMetadata extends NSObject {
 }
 
 // A key which identifies a piece of timed metadata.
-	public var (default, null) NSString *key;
+	public var (default, null) String *key;
 
 // The namespace of the identifying key.
-	public var (default, null) NSString *keyspace;
+	public var (default, null) String *keyspace;
 
 // The object value of the metadata.
 	public var (default, null) id value;
@@ -270,15 +270,15 @@ MP_EXTERN_CLASS_AVAILABLE(4_0)extern class MPTimedMetadata extends NSObject {
 }
 
 // Posted when new timed metadata arrives.
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataUpdatedNotification NS_AVAILABLE_IOS(4_0);
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataUserInfoKey NS_AVAILABLE_IOS(4_0);       // NSArray of the most recent MPTimedMetadata objects.
+MP_EXTERN String *const MPMoviePlayerTimedMetadataUpdatedNotification NS_AVAILABLE_IOS(4_0);
+MP_EXTERN String *const MPMoviePlayerTimedMetadataUserInfoKey NS_AVAILABLE_IOS(4_0);       // NSArray of the most recent MPTimedMetadata objects.
 
 // Additional dictionary keys for use with the 'allMetadata' property. All keys are optional.
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataKeyName NS_AVAILABLE_IOS(4_0);           // NSString
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataKeyInfo NS_AVAILABLE_IOS(4_0);           // NSString
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataKeyMIMEType NS_AVAILABLE_IOS(4_0);       // NSString
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataKeyDataType NS_AVAILABLE_IOS(4_0);       // NSString
-MP_EXTERN NSString *const MPMoviePlayerTimedMetadataKeyLanguageCode NS_AVAILABLE_IOS(4_0);   // NSString (ISO 639-2)
+MP_EXTERN String *const MPMoviePlayerTimedMetadataKeyName NS_AVAILABLE_IOS(4_0);           // String
+MP_EXTERN String *const MPMoviePlayerTimedMetadataKeyInfo NS_AVAILABLE_IOS(4_0);           // String
+MP_EXTERN String *const MPMoviePlayerTimedMetadataKeyMIMEType NS_AVAILABLE_IOS(4_0);       // String
+MP_EXTERN String *const MPMoviePlayerTimedMetadataKeyDataType NS_AVAILABLE_IOS(4_0);       // String
+MP_EXTERN String *const MPMoviePlayerTimedMetadataKeyLanguageCode NS_AVAILABLE_IOS(4_0);   // String (ISO 639-2)
 
 // -----------------------------------------------------------------------------
 
@@ -303,7 +303,7 @@ MP_EXTERN_CLASS_AVAILABLE(4_3)extern class MPMovieAccessLog extends NSObject, im
 	public var NSData *extendedLogData;
 
 // Returns the string encoding of the extendedLogData property.
-	public var NSStringEncoding extendedLogDataStringEncoding;
+	public var StringEncoding extendedLogDataStringEncoding;
 
 // An ordered collection of MPMovieAccessLogEvent instances that represent the chronological sequence of events contained in the access log.
 	public var NSArray *events;
@@ -320,7 +320,7 @@ MP_EXTERN_CLASS_AVAILABLE(4_3)extern class MPMovieErrorLog extends NSObject, imp
 	public var NSData *extendedLogData;
 
 // Returns the string encoding of the extendedLogData property.
-	public var NSStringEncoding extendedLogDataStringEncoding;
+	public var StringEncoding extendedLogDataStringEncoding;
 
 // An ordered collection of MPMovieErrorLogEvent instances that represent the chronological sequence of events contained in the error log.
 	public var NSArray *events;
@@ -339,16 +339,16 @@ MP_EXTERN_CLASS_AVAILABLE(4_3)extern class MPMovieAccessLogEvent extends NSObjec
 	public var NSDate *playbackStartDate;
 
 // The URI of the playback item.
-	public var NSString *URI;
+	public var String *URI;
 
 // The IP address of the server that was the source of the last delivered media segment. Can be either an IPv4 or IPv6 address.
-	public var NSString *serverAddress;
+	public var String *serverAddress;
 
 // A count of changes to the serverAddress property over the last uninterrupted period of playback.
 	public var NSUInteger numberOfServerAddressChanges;
 
 // A GUID that identifies the playback session. This value is used in HTTP requests.
-	public var NSString *playbackSessionID;
+	public var String *playbackSessionID;
 
 // An offset into the playlist where the last uninterrupted period of playback began, in seconds. The value is negative if unknown.
 	public var NSTimeInterval playbackStartOffset;
@@ -385,22 +385,22 @@ MP_EXTERN_CLASS_AVAILABLE(4_3)extern class MPMovieErrorLogEvent extends NSObject
 	public var NSDate *date;
 
 // The URI of the playback item.
-	public var NSString *URI;
+	public var String *URI;
 
 // The IP address of the server that was the source of the error.
-	public var NSString *serverAddress;
+	public var String *serverAddress;
 
 // A GUID that identifies the playback session. This value is used in HTTP requests.
-	public var NSString *playbackSessionID;
+	public var String *playbackSessionID;
 
 // A unique error code identifier. The value is negative if unknown.
 	public var NSInteger errorStatusCode;
 
 // The domain of the error.
-	public var NSString *errorDomain;
+	public var String *errorDomain;
 
 // A description of the error encountered.
-	public var NSString *errorComment;
+	public var String *errorComment;
 
 }
 
@@ -431,4 +431,4 @@ extern class MPMoviePlayerController (MPMoviePlayerDeprecated)
 }
 
 // This notification is superseded by MPMediaPlaybackIsPreparedToPlayDidChangeNotification.
-MP_EXTERN NSString *const MPMoviePlayerContentPreloadDidFinishNotification NS_DEPRECATED_IOS(2_0, 3_2);
+MP_EXTERN String *const MPMoviePlayerContentPreloadDidFinishNotification NS_DEPRECATED_IOS(2_0, 3_2);

@@ -32,7 +32,7 @@ MP_EXTERN_CLASS_AVAILABLE(3_0)extern class MPMediaPickerController extends UIVie
 
 	public var BOOL showsCloudItems NS_AVAILABLE_IOS(6_0); // default is YES
 
-	public var NSString *prompt; // displays a prompt for the user above the navigation bar buttons
+	public var String *prompt; // displays a prompt for the user above the navigation bar buttons
 
 }
 

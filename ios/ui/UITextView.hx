@@ -13,7 +13,7 @@ extern interface UITextViewDelegate <NSObject, UIScrollViewDelegate>
 	public function textViewDidBeginEditing:(UITextView *)textView;
 	public function textViewDidEndEditing:(UITextView *)textView;
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(String *)text;
 	public function textViewDidChange:(UITextView *)textView;
 
 	public function textViewDidChangeSelection:(UITextView *)textView;
@@ -50,6 +50,6 @@ public var  NSDictionary *typingAttributes NS_AVAILABLE_IOS(6_0); // automatical
 
 }
 
-UIKIT_EXTERN NSString * const UITextViewTextDidBeginEditingNotification;
-UIKIT_EXTERN NSString * const UITextViewTextDidChangeNotification;
-UIKIT_EXTERN NSString * const UITextViewTextDidEndEditingNotification;
+UIKIT_EXTERN String * const UITextViewTextDidBeginEditingNotification;
+UIKIT_EXTERN String * const UITextViewTextDidChangeNotification;
+UIKIT_EXTERN String * const UITextViewTextDidEndEditingNotification;

@@ -60,7 +60,7 @@ NS_CLASS_AVAILABLE(NA, 4_0)extern class ADBannerView extends UIView
 - (void)cancelBannerViewAction;
 
 // Reserved for future use.
-	public var NSString *advertisingSection;
+	public var String *advertisingSection;
 
 }
 
@@ -96,4 +96,4 @@ NS_CLASS_AVAILABLE(NA, 4_0)extern class ADBannerView extends UIView
 
 }
 
-extern NSString * const ADErrorDomain;
+extern String * const ADErrorDomain;

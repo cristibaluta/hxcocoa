@@ -21,8 +21,8 @@ extern class UIDocumentInteractionController extends NSObject <UIActionSheetDele
 	public var  id<UIDocumentInteractionControllerDelegate> delegate; // default is nil
 
 	public var   NSURL    *URL;             // default is nil. if set, updates UTI, icon and name
-public var      NSString *UTI;             // determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be determined automatically
-	public var               NSString *name;            // determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
+public var      String *UTI;             // determined from name if set, URL otherwise, override if the name or URL uses a custom scheme and the UTI can't be determined automatically
+	public var               String *name;            // determined from URL, override if the URL uses a custom scheme and the name can't be determined automatically
 	public var (default, null) NSArray  *icons;           // determined from name if set, URL otherwise. will return a generic document icon if an icon cannot be determined. returns an array of icons sorted from smallest to largest.
 	public var (nonatomic,retain)   id        annotation;      // additional plist information for application to pass to receiver (must be a plist object). default is nil.
 
@@ -85,8 +85,8 @@ extern interface UIDocumentInteractionControllerDelegate <NSObject>
 	public function documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller;
 
 // Synchronous.  May be called when inside preview.  Usually followed by app termination.  Can use willBegin... to set annotation.
-	public function documentInteractionController:(UIDocumentInteractionController *)controller willBeginSendingToApplication:(NSString *)application;	 // bundle ID
-	public function documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application;
+	public function documentInteractionController:(UIDocumentInteractionController *)controller willBeginSendingToApplication:(String *)application;	 // bundle ID
+	public function documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(String *)application;
 
 // Used to handle additional menu items that can be performed on the item specified by URL.  Currently only supports the "copy:", "print:" and "saveToCameraRoll:" actions.
 - (BOOL)documentInteractionController:(UIDocumentInteractionController *)controller canPerformAction:(SEL)action NS_DEPRECATED_IOS(3_2, 6_0);

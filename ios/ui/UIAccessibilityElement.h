@@ -24,9 +24,9 @@
 
 	public var id accessibilityContainer;
 	public var BOOL isAccessibilityElement;
-	public var NSString *accessibilityLabel;
-	public var NSString *accessibilityHint;
-	public var NSString *accessibilityValue;
+	public var String *accessibilityLabel;
+	public var String *accessibilityHint;
+	public var String *accessibilityValue;
 	public var CGRect accessibilityFrame;
 	public var UIAccessibilityTraits accessibilityTraits;
 

@@ -15,7 +15,7 @@ extern interface UIActivityItemSource <NSObject>
 @required
 
 - (id)activityViewControllerPlaceholderItem:(UIActivityViewController *)activityViewController;	// called to determine data type
-- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(NSString *)activityType;	// called to fetch data
+- (id)activityViewController:(UIActivityViewController *)activityViewController itemForActivityType:(String *)activityType;	// called to fetch data
 
 }
 
@@ -24,7 +24,7 @@ extern interface UIActivityItemSource <NSObject>
 - (id)initWithPlaceholderItem:(id)placeholderItem;
 
 	public var (nonatomic,retain,readonly) id        placeholderItem;  // return item from init
-	public var (default, null)        NSString *activityType;      // Activity type available when -item is called. nil at other times.
+	public var (default, null)        String *activityType;      // Activity type available when -item is called. nil at other times.
 
 - (id)item;                                    // called by -main when data is needed. default returns nil. Subclass to override and call status/progress. called on secondary thread
 

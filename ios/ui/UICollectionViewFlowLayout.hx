@@ -1,10 +1,11 @@
 //
 //  UICollectionViewFlowLayout.h
 package ios.ui;
-import obj.graphics.CGGeometry;
+import objc.graphics.CGGeometry;
+import ios.ui.UIGeometry;
 
-//UIKIT_EXTERN NSString *const UICollectionElementKindSectionHeader;
-//UIKIT_EXTERN NSString *const UICollectionElementKindSectionFooter;
+//UIKIT_EXTERN String *const UICollectionElementKindSectionHeader;
+//UIKIT_EXTERN String *const UICollectionElementKindSectionFooter;
 
 @:framework("UIKit")
 @:require(ios6_0)
@@ -24,7 +25,7 @@ extern interface UICollectionViewDelegateFlowLayout {
 - (Float)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(Int)section;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(Int)section;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(Int)section;
-
+#end
 }
 
 @:framework("UIKit")

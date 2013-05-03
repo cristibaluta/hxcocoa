@@ -27,15 +27,15 @@ CORE_IMAGE_CLASS_EXPORT
 
 /* A CGColorSpaceRef object defining the color space that images are
  * converted to before rendering into the context. */
-CORE_IMAGE_EXPORT NSString * const kCIContextOutputColorSpace;
+CORE_IMAGE_EXPORT String * const kCIContextOutputColorSpace;
 
 /* A CGColorSpaceRef object defining the color space in which all
  * intermediate operations are performed. */
-CORE_IMAGE_EXPORT NSString * const kCIContextWorkingColorSpace;
+CORE_IMAGE_EXPORT String * const kCIContextWorkingColorSpace;
 
 /* An NSNumber with a boolean value. In CICGContext, requires software
  * rendering when true. */
-CORE_IMAGE_EXPORT NSString * const kCIContextUseSoftwareRenderer;
+CORE_IMAGE_EXPORT String * const kCIContextUseSoftwareRenderer;
 
 /* Create a new CoreImage context object, all output will be drawn
  * into the surface attached to the OpenGL context 'ctx'. If 'pf' is

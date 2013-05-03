@@ -36,7 +36,7 @@ CORE_IMAGE_CLASS_EXPORT
 /* the CGAffineTransform's six values are stored in the first six values of the CIVector. */
 + (CIVector *)vectorWithCGAffineTransform:(CGAffineTransform)t __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
 
-+ (CIVector *)vectorWithString:(NSString *)representation;
++ (CIVector *)vectorWithString:(String *)representation;
 
 /* Initializers. */
 
@@ -50,7 +50,7 @@ CORE_IMAGE_CLASS_EXPORT
 - (id)initWithCGRect:(CGRect)r __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
 - (id)initWithCGAffineTransform:(CGAffineTransform)r __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
 
-- (id)initWithString:(NSString *)representation;
+- (id)initWithString:(String *)representation;
 
 /* Return the value from the vector at position 'index' (zero-based).
  * Any 'index' value is valid, if the component would otherwise be
@@ -72,6 +72,6 @@ CORE_IMAGE_CLASS_EXPORT
 
 /* Return a string representing the vector such that a similar vector
  * can be created by calling the vectorWithString: method. */
-- (NSString *)stringRepresentation;
+- (String *)stringRepresentation;
 
 @end

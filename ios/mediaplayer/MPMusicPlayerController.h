@@ -97,10 +97,10 @@ extern class MPMusicPlayerController (MPPlaybackControl)
 }
 
 // Posted when the playback state changes, either programatically or by the user.
-MP_EXTERN NSString *const MPMusicPlayerControllerPlaybackStateDidChangeNotification;
+MP_EXTERN String *const MPMusicPlayerControllerPlaybackStateDidChangeNotification;
 
 // Posted when the currently playing media item changes.
-MP_EXTERN NSString *const MPMusicPlayerControllerNowPlayingItemDidChangeNotification;
+MP_EXTERN String *const MPMusicPlayerControllerNowPlayingItemDidChangeNotification;
 
 // Posted when the current volume changes.
-MP_EXTERN NSString *const MPMusicPlayerControllerVolumeDidChangeNotification;
+MP_EXTERN String *const MPMusicPlayerControllerVolumeDidChangeNotification;

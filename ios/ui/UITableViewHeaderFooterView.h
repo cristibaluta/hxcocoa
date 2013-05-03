@@ -19,9 +19,9 @@ package ios.ui;
 	public var (default, null) UIView *contentView;
 	public var UIView *backgroundView;
 
-	public var (default, null) NSString *reuseIdentifier;
+	public var (default, null) String *reuseIdentifier;
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+- (id)initWithReuseIdentifier:(String *)reuseIdentifier;
 	public function prepareForReuse;  // if the view is reusable (has a reuse identifier), this is called just before the view is returned from the table view method dequeueReusableHeaderFooterViewWithIdentifier:.  If you override, you MUST call super.
 
 }

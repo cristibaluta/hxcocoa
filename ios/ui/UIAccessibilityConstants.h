@@ -121,7 +121,7 @@ UIKIT_EXTERN UIAccessibilityNotifications UIAccessibilityLayoutChangedNotificati
 /*
  Should be posted when an announcement needs to be conveyed to VoiceOver. 
  VoiceOver will output the announcement string that is used as the argument.
- The argument is a NSString.
+ The argument is a String.
  */
 UIKIT_EXTERN UIAccessibilityNotifications UIAccessibilityAnnouncementNotification NS_AVAILABLE_IOS(4_0);
 
@@ -129,20 +129,20 @@ UIKIT_EXTERN UIAccessibilityNotifications UIAccessibilityAnnouncementNotificatio
  Listen for this notification to know when VoiceOver finishes outputting an announcement. 
  The userInfo dictionary contains UIAccessibilityAnnouncementKeyString and UIAccessibilityAnnouncementKeyWasSuccessful.
  */
-UIKIT_EXTERN NSString *const UIAccessibilityAnnouncementDidFinishNotification NS_AVAILABLE_IOS(6_0);
+UIKIT_EXTERN String *const UIAccessibilityAnnouncementDidFinishNotification NS_AVAILABLE_IOS(6_0);
 
 // The corresponding value is the string that was used for the announcement.
-UIKIT_EXTERN NSString *const UIAccessibilityAnnouncementKeyStringValue NS_AVAILABLE_IOS(6_0);
+UIKIT_EXTERN String *const UIAccessibilityAnnouncementKeyStringValue NS_AVAILABLE_IOS(6_0);
 
 // The corresponding value is an NSNumber representing whether VoiceOver successfully outputted the announcement.
-UIKIT_EXTERN NSString *const UIAccessibilityAnnouncementKeyWasSuccessful NS_AVAILABLE_IOS(6_0);
+UIKIT_EXTERN String *const UIAccessibilityAnnouncementKeyWasSuccessful NS_AVAILABLE_IOS(6_0);
 
 /*
  Should be posted after accessibilityScroll: is called and the scrolling action has completed. 
  A string representing the status of the new scroll position should be used as the argument 
  (e.g. "Page 2 of 5"). If the same status is used repeatedly, the assistive technology will 
  indicate a border has been reached.
- The argument is a NSString.
+ The argument is a String.
  */
 UIKIT_EXTERN UIAccessibilityNotifications UIAccessibilityPageScrolledNotification NS_AVAILABLE_IOS(4_2);
 

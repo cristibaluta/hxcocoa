@@ -43,22 +43,22 @@ public var  NSArray *menuItems NS_AVAILABLE_IOS(3_2); // default is nil. these a
 
 }
 
-UIKIT_EXTERN NSString *const UIMenuControllerWillShowMenuNotification;
-UIKIT_EXTERN NSString *const UIMenuControllerDidShowMenuNotification;
-UIKIT_EXTERN NSString *const UIMenuControllerWillHideMenuNotification;
-UIKIT_EXTERN NSString *const UIMenuControllerDidHideMenuNotification;
-UIKIT_EXTERN NSString *const UIMenuControllerMenuFrameDidChangeNotification;
+UIKIT_EXTERN String *const UIMenuControllerWillShowMenuNotification;
+UIKIT_EXTERN String *const UIMenuControllerDidShowMenuNotification;
+UIKIT_EXTERN String *const UIMenuControllerWillHideMenuNotification;
+UIKIT_EXTERN String *const UIMenuControllerDidHideMenuNotification;
+UIKIT_EXTERN String *const UIMenuControllerMenuFrameDidChangeNotification;
 
 extern class UIMenuItem extends NSObject {
   @private
-    NSString *_title;
+    String *_title;
     SEL       _action;
     BOOL      _dontDismiss;
 }
 
-- (id)initWithTitle:(NSString *)title action:(SEL)action;
+- (id)initWithTitle:(String *)title action:(SEL)action;
 
-public var  NSString *title;     // default is nil
+public var  String *title;     // default is nil
 	public var       SEL       action;    // default is NULL
 
 }

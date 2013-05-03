@@ -45,7 +45,7 @@ typedef NS_ENUM(Int, CBCentralManagerState) {
  *  @see        scanForPeripheralsWithServices:options:
  *
  */
-CB_EXTERN NSString * const CBCentralManagerScanOptionAllowDuplicatesKey;
+CB_EXTERN String * const CBCentralManagerScanOptionAllowDuplicatesKey;
 
 
 
@@ -61,7 +61,7 @@ CB_EXTERN NSString * const CBCentralManagerScanOptionAllowDuplicatesKey;
  *  @see        connectPeripheral:
  *
  */
-CB_EXTERN NSString * const CBConnectPeripheralOptionNotifyOnConnectionKey NS_AVAILABLE(NA, 6_0);
+CB_EXTERN String * const CBConnectPeripheralOptionNotifyOnConnectionKey NS_AVAILABLE(NA, 6_0);
 
 /*!
  *  @const CBConnectPeripheralOptionNotifyOnDisconnectionKey
@@ -75,7 +75,7 @@ CB_EXTERN NSString * const CBConnectPeripheralOptionNotifyOnConnectionKey NS_AVA
  *  @see        connectPeripheral:
  *
  */
-CB_EXTERN NSString * const CBConnectPeripheralOptionNotifyOnDisconnectionKey;
+CB_EXTERN String * const CBConnectPeripheralOptionNotifyOnDisconnectionKey;
 
 /*!
  *  @const CBConnectPeripheralOptionNotifyOnNotificationKey
@@ -89,7 +89,7 @@ CB_EXTERN NSString * const CBConnectPeripheralOptionNotifyOnDisconnectionKey;
  *  @see        connectPeripheral:
  *
  */
-CB_EXTERN NSString * const CBConnectPeripheralOptionNotifyOnNotificationKey NS_AVAILABLE(NA, 6_0);
+CB_EXTERN String * const CBConnectPeripheralOptionNotifyOnNotificationKey NS_AVAILABLE(NA, 6_0);
 
 
 

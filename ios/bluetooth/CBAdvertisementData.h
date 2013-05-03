@@ -14,7 +14,7 @@
  *  @discussion A list of one or more <code>CBUUID</code> objects, representing <code>CBService</code> UUIDs.
  *
  */
-CB_EXTERN NSString * const CBAdvertisementDataServiceUUIDsKey;
+CB_EXTERN String * const CBAdvertisementDataServiceUUIDsKey;
 
 /*!
  *  @constant CBAdvertisementDataOverflowServiceUUIDsKey
@@ -26,15 +26,15 @@ CB_EXTERN NSString * const CBAdvertisementDataServiceUUIDsKey;
  *  @see        startAdvertising:
  *
  */
-CB_EXTERN NSString * const CBAdvertisementDataOverflowServiceUUIDsKey NS_AVAILABLE(NA, 6_0);
+CB_EXTERN String * const CBAdvertisementDataOverflowServiceUUIDsKey NS_AVAILABLE(NA, 6_0);
 
 /*!
  *  @constant CBAdvertisementDataLocalNameKey
  *
- *  @discussion A <code>NSString</code> containing the local name of a peripheral.
+ *  @discussion A <code>String</code> containing the local name of a peripheral.
  *
  */
-CB_EXTERN NSString * const CBAdvertisementDataLocalNameKey;
+CB_EXTERN String * const CBAdvertisementDataLocalNameKey;
 
 /*!
  *  @constant CBAdvertisementDataTxPowerLevelKey
@@ -42,7 +42,7 @@ CB_EXTERN NSString * const CBAdvertisementDataLocalNameKey;
  *  @discussion A <code>NSNumber</code> containing the transmit power of a peripheral.
  *
  */
-CB_EXTERN NSString * const CBAdvertisementDataTxPowerLevelKey;
+CB_EXTERN String * const CBAdvertisementDataTxPowerLevelKey;
 
 /*!
  *  @constant CBAdvertisementDataManufacturerDataKey
@@ -50,7 +50,7 @@ CB_EXTERN NSString * const CBAdvertisementDataTxPowerLevelKey;
  *  @discussion A <code>NSData</code> object containing the manufacturer data of a peripheral.
  *
  */
-CB_EXTERN NSString * const CBAdvertisementDataManufacturerDataKey;
+CB_EXTERN String * const CBAdvertisementDataManufacturerDataKey;
 
 /*!
  *  @constant CBAdvertisementDataServiceDataKey
@@ -59,4 +59,4 @@ CB_EXTERN NSString * const CBAdvertisementDataManufacturerDataKey;
  *              <code>CBService</code> UUIDs. Values are <code>NSData</code> objects.
  *
  */
-CB_EXTERN NSString * const CBAdvertisementDataServiceDataKey;
+CB_EXTERN String * const CBAdvertisementDataServiceDataKey;

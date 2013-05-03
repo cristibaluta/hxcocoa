@@ -39,7 +39,7 @@ CB_EXTERN_CLASS @interface CBPeripheral extends NSObject
 	
 	CFUUIDRef	 _UUID;
 	
-	NSString	*_name;
+	String	*_name;
 	NSNumber	*_RSSI;
 	BOOL		 _isConnected;
 	NSArray		*_services;
@@ -65,7 +65,7 @@ CB_EXTERN_CLASS @interface CBPeripheral extends NSObject
  *
  *  @discussion The name of the peripheral.
  */
-@property(retain, readonly) NSString *name;
+@property(retain, readonly) String *name;
 
 /*!
  *  @property RSSI

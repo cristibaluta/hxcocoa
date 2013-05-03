@@ -45,7 +45,7 @@ extern class UIImage extends NSObject {
 + (UIImage *)imageWithCIImage:(CIImage *)ciImage NS_AVAILABLE_IOS(5_0);
 + (UIImage *)imageWithCIImage:(CIImage *)ciImage scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(6_0);
 
-- (id)initWithContentsOfFile:(NSString *)path;
+- (id)initWithContentsOfFile:(String *)path;
 - (id)initWithData:(NSData *)data;.............
 - (id)initWithData:(NSData *)data scale:(Float)scale NS_AVAILABLE_IOS(6_0);
 - (id)initWithCGImage:(CGImageRef)cgImage;
@@ -61,9 +61,9 @@ extern class UIImage extends NSObject {
 
 // animated images. When set as UIImageView.image, animation will play in an infinite loop until removed. Drawing will render the first image
 
-+ (UIImage *)animatedImageNamed:(NSString *)name duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0);  // read sequence of files with suffix starting at 0 or 1
-+ (UIImage *)animatedResizableImageNamed:(NSString *)name capInsets:(UIEdgeInsets)capInsets duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0); // sequence of files
-+ (UIImage *)animatedResizableImageNamed:(NSString *)name capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(6_0);
++ (UIImage *)animatedImageNamed:(String *)name duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0);  // read sequence of files with suffix starting at 0 or 1
++ (UIImage *)animatedResizableImageNamed:(String *)name capInsets:(UIEdgeInsets)capInsets duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0); // sequence of files
++ (UIImage *)animatedResizableImageNamed:(String *)name capInsets:(UIEdgeInsets)capInsets resizingMode:(UIImageResizingMode)resizingMode duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(6_0);
 + (UIImage *)animatedImageWithImages:(NSArray *)images duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0);
 
 	public var (default, null) NSArray       *images   NS_AVAILABLE_IOS(5_0); // default is nil for non-animated images

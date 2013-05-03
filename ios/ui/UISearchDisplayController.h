@@ -21,8 +21,8 @@ extern interface UITableViewDataSource, UITableViewDelegate, UISearchDisplayDele
     UIView                     *_dimmingView;
     UISearchBar                *_searchBar;
     UILabel                    *_noResultsLabel;
-    NSString                   *_noResultsMessage;
-    NSString                   *_resultsTitle;
+    String                   *_noResultsMessage;
+    String                   *_resultsTitle;
     id<UISearchDisplayDelegate> _delegate;
     id<UITableViewDataSource>   _tableViewDataSource;
     id<UITableViewDelegate>     _tableViewDelegate;
@@ -61,7 +61,7 @@ extern interface UITableViewDataSource, UITableViewDelegate, UISearchDisplayDele
 	public var (default, null)                         UITableView                *searchResultsTableView;   // will return non-nil. create if requested
 	public var                            id<UITableViewDataSource>   searchResultsDataSource;  // default is nil. delegate can provide
 	public var                            id<UITableViewDelegate>     searchResultsDelegate;    // default is nil. delegate can provide
-public var                              NSString                   *searchResultsTitle NS_AVAILABLE_IOS(5_0); // default is nil. If nil, the controller uses the default title string
+public var                              String                   *searchResultsTitle NS_AVAILABLE_IOS(5_0); // default is nil. If nil, the controller uses the default title string
 
 }
 
@@ -86,7 +86,7 @@ extern interface UISearchDisplayDelegate <NSObject>
 	public function searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView;
 
 // return YES to reload table. called when search string/option changes. convenience methods on top UISearchBar delegate methods
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString;
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(String *)searchString;
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(Int)searchOption;
 
 }

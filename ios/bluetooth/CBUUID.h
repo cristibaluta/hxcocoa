@@ -17,36 +17,36 @@
  *  @discussion The string representation of the UUID for the extended properties descriptor.
  *				The corresponding value for this descriptor is an <code>NSNumber</code> object.
  */
-CB_EXTERN NSString * const CBUUIDCharacteristicExtendedPropertiesString;
+CB_EXTERN String * const CBUUIDCharacteristicExtendedPropertiesString;
 /*!
  *  @const CBUUIDCharacteristicUserDescriptionString
  *  @discussion The string representation of the UUID for the user description descriptor.
- *				The corresponding value for this descriptor is an <code>NSString</code> object.
+ *				The corresponding value for this descriptor is an <code>String</code> object.
  */
-CB_EXTERN NSString * const CBUUIDCharacteristicUserDescriptionString;
+CB_EXTERN String * const CBUUIDCharacteristicUserDescriptionString;
 /*!
  *  @const CBUUIDClientCharacteristicConfigurationString
  *  @discussion The string representation of the UUID for the client configuration descriptor.
  *				The corresponding value for this descriptor is an <code>NSNumber</code> object.
  */
-CB_EXTERN NSString * const CBUUIDClientCharacteristicConfigurationString;
+CB_EXTERN String * const CBUUIDClientCharacteristicConfigurationString;
 /*!
  *  @const CBUUIDServerCharacteristicConfigurationString
  *  @discussion The string representation of the UUID for the server configuration descriptor.
  *				The corresponding value for this descriptor is an <code>NSNumber</code> object.
  */
-CB_EXTERN NSString * const CBUUIDServerCharacteristicConfigurationString;
+CB_EXTERN String * const CBUUIDServerCharacteristicConfigurationString;
 /*!
  *  @const CBUUIDCharacteristicFormatString
  *  @discussion The string representation of the UUID for the presentation format descriptor.
  *				The corresponding value for this descriptor is an <code>NSData</code> object.
  */
-CB_EXTERN NSString * const CBUUIDCharacteristicFormatString;
+CB_EXTERN String * const CBUUIDCharacteristicFormatString;
 /*!
  *  @const CBUUIDCharacteristicAggregateFormatString
  *  @discussion The string representation of the UUID for the aggregate descriptor.
  */
-CB_EXTERN NSString * const CBUUIDCharacteristicAggregateFormatString;
+CB_EXTERN String * const CBUUIDCharacteristicAggregateFormatString;
 
 
 
@@ -54,43 +54,43 @@ CB_EXTERN NSString * const CBUUIDCharacteristicAggregateFormatString;
  *  @const CBUUIDGenericAccessProfileString
  *  @discussion The string representation of the GAP UUID.
  */
-CB_EXTERN NSString * const CBUUIDGenericAccessProfileString;
+CB_EXTERN String * const CBUUIDGenericAccessProfileString;
 /*!
  *  @const CBUUIDGenericAttributeProfileString
  *  @discussion The string representation of the GATT UUID.
  */
-CB_EXTERN NSString * const CBUUIDGenericAttributeProfileString;
+CB_EXTERN String * const CBUUIDGenericAttributeProfileString;
 
 /*!
  *  @const CBUUIDDeviceNameString
  *  @discussion The string representation of the GAP device name UUID.
  */
-CB_EXTERN NSString * const CBUUIDDeviceNameString;
+CB_EXTERN String * const CBUUIDDeviceNameString;
 /*!
  *  @const CBUUIDAppearanceString
  *  @discussion The string representation of the GAP appearance UUID.
  */
-CB_EXTERN NSString * const CBUUIDAppearanceString;
+CB_EXTERN String * const CBUUIDAppearanceString;
 /*!
  *  @const CBUUIDPeripheralPrivacyFlagString
  *  @discussion The string representation of the GAP privacy flag UUID.
  */
-CB_EXTERN NSString * const CBUUIDPeripheralPrivacyFlagString;
+CB_EXTERN String * const CBUUIDPeripheralPrivacyFlagString;
 /*!
  *  @const CBUUIDReconnectionAddressString
  *  @discussion The string representation of the GAP reconnection address UUID.
  */
-CB_EXTERN NSString * const CBUUIDReconnectionAddressString;
+CB_EXTERN String * const CBUUIDReconnectionAddressString;
 /*!
  *  @const CBUUIDPeripheralPreferredConnectionParametersString
  *  @discussion The string representation of the GAP preferred connection parameter UUID.
  */
-CB_EXTERN NSString * const CBUUIDPeripheralPreferredConnectionParametersString;
+CB_EXTERN String * const CBUUIDPeripheralPreferredConnectionParametersString;
 /*!
  *  @const CBUUIDServiceChangedString
  *  @discussion The string representation of the GATT service changed UUID.
  */
-CB_EXTERN NSString * const CBUUIDServiceChangedString;
+CB_EXTERN String * const CBUUIDServiceChangedString;
 
 
 
@@ -127,7 +127,7 @@ CB_EXTERN_CLASS @interface CBUUID extends NSObject <NSCopying>
  *      The expected format for 128-bit UUIDs is a string punctuated by hyphens, for example 68753A44-4D6F-1226-9C60-0050E4C00067.
  *
  */
-+ (CBUUID *)UUIDWithString:(NSString *)theString;
++ (CBUUID *)UUIDWithString:(String *)theString;
 
 /*!
  * @method UUIDWithData:

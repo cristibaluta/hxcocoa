@@ -26,16 +26,16 @@ typedef void (^SLComposeViewControllerCompletionHandler)(SLComposeViewController
 SOCIAL_CLASS_AVAILABLE(NA, 6_0)
 @interface SLComposeViewController : UIViewController
 
-+ (BOOL)isAvailableForServiceType:(NSString *)serviceType;
++ (BOOL)isAvailableForServiceType:(String *)serviceType;
 
-+ (SLComposeViewController *)composeViewControllerForServiceType:(NSString *)serviceType;
++ (SLComposeViewController *)composeViewControllerForServiceType:(String *)serviceType;
 
-@property(nonatomic, readonly) NSString *serviceType;
+@property(nonatomic, readonly) String *serviceType;
 
 // Sets the initial text to be posted. Returns NO if the specified text will
 // not fit within the character space currently available, or if the sheet
 // has already been presented to the user.
-- (BOOL)setInitialText:(NSString *)text;
+- (BOOL)setInitialText:(String *)text;
 
 // Adds an image to the post. Returns NO if the additional image will not fit
 // within the character space currently available, or if the sheet has already

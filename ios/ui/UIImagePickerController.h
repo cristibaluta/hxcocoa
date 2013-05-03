@@ -48,13 +48,13 @@ typedef NS_ENUM(Int, UIImagePickerControllerCameraFlashMode) {
 };
 
 // info dictionary keys
-UIKIT_EXTERN NSString *const UIImagePickerControllerMediaType;      // an NSString (UTI, i.e. kUTTypeImage)
-UIKIT_EXTERN NSString *const UIImagePickerControllerOriginalImage;  // a UIImage
-UIKIT_EXTERN NSString *const UIImagePickerControllerEditedImage;    // a UIImage
-UIKIT_EXTERN NSString *const UIImagePickerControllerCropRect;       // an NSValue (CGRect)
-UIKIT_EXTERN NSString *const UIImagePickerControllerMediaURL;       // an NSURL
-UIKIT_EXTERN NSString *const UIImagePickerControllerReferenceURL        NS_AVAILABLE_IOS(4_1);  // an NSURL that references an asset in the AssetsLibrary framework
-UIKIT_EXTERN NSString *const UIImagePickerControllerMediaMetadata       NS_AVAILABLE_IOS(4_1);  // an NSDictionary containing metadata from a captured photo
+UIKIT_EXTERN String *const UIImagePickerControllerMediaType;      // an String (UTI, i.e. kUTTypeImage)
+UIKIT_EXTERN String *const UIImagePickerControllerOriginalImage;  // a UIImage
+UIKIT_EXTERN String *const UIImagePickerControllerEditedImage;    // a UIImage
+UIKIT_EXTERN String *const UIImagePickerControllerCropRect;       // an NSValue (CGRect)
+UIKIT_EXTERN String *const UIImagePickerControllerMediaURL;       // an NSURL
+UIKIT_EXTERN String *const UIImagePickerControllerReferenceURL        NS_AVAILABLE_IOS(4_1);  // an NSURL that references an asset in the AssetsLibrary framework
+UIKIT_EXTERN String *const UIImagePickerControllerMediaMetadata       NS_AVAILABLE_IOS(4_1);  // an NSDictionary containing metadata from a captured photo
 
 extern class UIImagePickerController extends UINavigationController, implements NSObject> {
   @private
@@ -128,10 +128,10 @@ extern interface UIImagePickerControllerDelegate<NSObject>
 UIKIT_EXTERN void UIImageWriteToSavedPhotosAlbum(UIImage *image, id completionTarget, SEL completionSelector, void *contextInfo);
 
 // Is a specific video eligible to be saved to the saved photos album? 
-UIKIT_EXTERN BOOL UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(NSString *videoPath) NS_AVAILABLE_IOS(3_1);
+UIKIT_EXTERN BOOL UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(String *videoPath) NS_AVAILABLE_IOS(3_1);
 
 // Adds a video to the saved photos album. The optional completionSelector should have the form:
-//  	public function video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
-UIKIT_EXTERN void UISaveVideoAtPathToSavedPhotosAlbum(NSString *videoPath, id completionTarget, SEL completionSelector, void *contextInfo) NS_AVAILABLE_IOS(3_1);
+//  	public function video:(String *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+UIKIT_EXTERN void UISaveVideoAtPathToSavedPhotosAlbum(String *videoPath, id completionTarget, SEL completionSelector, void *contextInfo) NS_AVAILABLE_IOS(3_1);
 
 

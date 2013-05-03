@@ -27,7 +27,7 @@ package ios.ui;
 
 /* The name for the persistent store file inside the document's file wrapper.  When working with the Core Data APIs, this path component is appended to the document URL provided by the UIDocument APIs.  The default name is @"documentpersistentstore.db"
  */
-+ (NSString *)persistentStoreName;
++ (String *)persistentStoreName;
 
 /* Persistent documents always have a managed object context and a persistent store coordinator through that context.  The managed object context is required to be initialized with the concurrency type NSMainQueueConcurrencyType and it must have a parent context initialized with the concurrency type NSPrivateQueueConcurrencyType.
  */
@@ -43,15 +43,15 @@ package ios.ui;
 
 /* Optionally specify a model configuration name to be passed when configuring the persistent store
  */
-	public var NSString *modelConfiguration;
+	public var String *modelConfiguration;
 
 /* Customize the loading or creation of a persistent store to the coordinator.
  */
-- (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL *)storeURL ofType:(NSString *)fileType modelConfiguration:(NSString *)configuration storeOptions:(NSDictionary *)storeOptions error:(NSError **)error;
+- (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL *)storeURL ofType:(String *)fileType modelConfiguration:(String *)configuration storeOptions:(NSDictionary *)storeOptions error:(NSError **)error;
 
 /* Returns the Core Data store type string for the given document fileType. The default returns NSSQLiteStoreType. See NSPersistentStoreCoordinator.h for store type information. 
  */
-- (NSString *)persistentStoreTypeForFileType:(NSString *)fileType;
+- (String *)persistentStoreTypeForFileType:(String *)fileType;
 
 /* An optional call out by readFromURL:error: to handle non-Core Data content in the document's file wrapper.  It is not necessary to call super.
  */

@@ -18,7 +18,7 @@ extern class UIWebView extends UIView {
 	public var scrollView :UIScrollView;
 	
 /*	public function loadRequest (request:NSURLRequest) :Void;
-	public function loadHTMLString (string:NSString, baseURL:NSURL) :Void;
+	public function loadHTMLString (string:String, baseURL:NSURL) :Void;
 	public function loadData (data:NSData, MIMEType:String, textEncodingName:String, baseURL:NSURL) :Void;
 	
 	public var request :NSURLRequest;*/

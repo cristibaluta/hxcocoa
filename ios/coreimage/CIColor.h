@@ -23,7 +23,7 @@ CORE_IMAGE_CLASS_EXPORT
 
 /* Create a new color object, 'representation' should be a string in one of
  * the formats returned by the stringRepresentation method. */
-+ (CIColor *)colorWithString:(NSString *)representation;
++ (CIColor *)colorWithString:(String *)representation;
 
 /* Initializer. */
 
@@ -47,6 +47,6 @@ CORE_IMAGE_CLASS_EXPORT
 - (CGFloat)blue;
 
 /* Returns a formatted string with the components of the color. */
-- (NSString *)stringRepresentation;
+- (String *)stringRepresentation;
 
 @end

@@ -25,7 +25,7 @@ UIKIT_EXTERN void     UIGraphicsEndImageContext(void);
 
 // PDF context
 
-UIKIT_EXTERN BOOL UIGraphicsBeginPDFContextToFile(NSString *path, CGRect bounds, NSDictionary *documentInfo) NS_AVAILABLE_IOS(3_2);
+UIKIT_EXTERN BOOL UIGraphicsBeginPDFContextToFile(String *path, CGRect bounds, NSDictionary *documentInfo) NS_AVAILABLE_IOS(3_2);
 UIKIT_EXTERN void UIGraphicsBeginPDFContextToData(NSMutableData *data, CGRect bounds, NSDictionary *documentInfo) NS_AVAILABLE_IOS(3_2);
 UIKIT_EXTERN void UIGraphicsEndPDFContext(void) NS_AVAILABLE_IOS(3_2);
 
@@ -35,5 +35,5 @@ UIKIT_EXTERN void UIGraphicsBeginPDFPageWithInfo(CGRect bounds, NSDictionary *pa
 UIKIT_EXTERN CGRect UIGraphicsGetPDFContextBounds(void) NS_AVAILABLE_IOS(3_2);
 
 UIKIT_EXTERN void UIGraphicsSetPDFContextURLForRect(NSURL *url, CGRect rect) NS_AVAILABLE_IOS(3_2);
-UIKIT_EXTERN void UIGraphicsAddPDFContextDestinationAtPoint(NSString *name, CGPoint point) NS_AVAILABLE_IOS(3_2);
-UIKIT_EXTERN void UIGraphicsSetPDFContextDestinationForRect(NSString *name, CGRect rect) NS_AVAILABLE_IOS(3_2);
+UIKIT_EXTERN void UIGraphicsAddPDFContextDestinationAtPoint(String *name, CGPoint point) NS_AVAILABLE_IOS(3_2);
+UIKIT_EXTERN void UIGraphicsSetPDFContextDestinationForRect(String *name, CGRect rect) NS_AVAILABLE_IOS(3_2);
