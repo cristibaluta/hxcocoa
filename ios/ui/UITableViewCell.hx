@@ -48,9 +48,10 @@ extern enum UITableViewCellStateMask {
 @:framework("UIKit")
 extern class UITableViewCell extends UIView implements UIGestureRecognizerDelegate {
 	
+#if allow_multiple_inits
 // Designated initializer.  If the cell can be reused, you must pass in a reuse identifier.  You should use the same reuse identifier for all cells of the same form.  
 	public function initWithStyle (style:UITableViewCellStyle, reuseIdentifier:String) :UITableViewCell;
-
+#end
 // Content.  These properties provide direct access to the internal label and image views used by the table view cell.  These should be used instead of the content properties below.
 	public var imageView (default, null) :UIImageView;   // default is nil.  image view will be created if necessary.
 

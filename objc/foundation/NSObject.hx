@@ -5,6 +5,7 @@ import objc.foundation.NSObjCRuntime;
 typedef Protocol = Dynamic;
 typedef IMP = Dynamic;
 
+@:framework("Foundation")
 extern class NSObject {
 
 	public function new () :Void;// This is used by the compiler only, there's no 'new' method in objc
@@ -104,6 +105,7 @@ extern class NSObject {
 
 /***************	Basic protocols		***************/
 // Having an interface and a class with the same name causes problems
+@:framework("Foundation")
 extern interface NSObjectProtocol {
 
 	public function isEqual (object:Dynamic) :Bool;
@@ -130,7 +132,7 @@ extern interface NSObjectProtocol {
 }
 
 /***********	Discardable Content		***********/
-
+@:framework("Foundation")
 extern interface NSDiscardableContent {
 
 /*	public function beginContentAccess () :Bool;
@@ -140,18 +142,21 @@ extern interface NSDiscardableContent {
 
 }
 
+@:framework("Foundation")
 extern interface  NSCopying {
 #if display
 	public function copyWithZone (zone:NSZone) :NSObject;
 #end
 }
 
+@:framework("Foundation")
 extern interface  NSMutableCopying {
 
 	//public function mutableCopyWithZone (zone:NSZone) :NSObject;
 
 }
 
+@:framework("Foundation")
 extern interface NSCoding {
 
 	//public function encodeWithCoder (aCoder:NSCoder) :Void;
@@ -159,6 +164,7 @@ extern interface NSCoding {
 
 }
 
+@:framework("Foundation")
 extern interface NSSecureCoding {
 	
 	//public static function supportsSecureCoding () :Bool;

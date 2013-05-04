@@ -15,9 +15,9 @@ typedef UILayoutConstraintAxis = Int;
 extern class UIView extends UIResponder implements NSCoding/*, implements UIAppearance, implements UIAppearanceContainer*/ {
 	
 	public static function layerClass () :Class<CALayer>;
-	
+#if allow_multiple_inits
 	public function initWithFrame (frame:CGRect) :Dynamic;
-	
+#end
 	public var userInteractionEnabled :Bool;
 	public var tag :Int;
 	public var layer (default, null) :CALayer;
@@ -189,6 +189,8 @@ extern class UIView extends UIResponder implements NSCoding/*, implements UIAppe
 	@:require(ios6_0) public function encodeRestorableStateWithCoder (code:NSCoder) :Void;
 	@:require(ios6_0) public function decodeRestorableStateWithCoder (code:NSCoder) :Void;
 	
+//(UITextField)
+	public function endEditing (force:Bool) :Bool;    // use to make the view or any subview that is the first responder resign (optionally force)
 }
 
 

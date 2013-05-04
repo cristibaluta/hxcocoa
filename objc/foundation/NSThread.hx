@@ -3,7 +3,7 @@ package objc.foundation;
 import objc.foundation.NSObject;
 import objc.foundation.NSDictionary;
 
-
+@:framework("Foundation")
 extern class NSThread extends NSObject {
 
 	public static function currentThread () :NSThread;
