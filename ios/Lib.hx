@@ -30,7 +30,7 @@ import objc.location.CLLocation;
 import ios.ui.UIAlertView;
 import ios.ui.UIDevice;
 import ios.ui.UIImageView;
- 
+
 class Lib {
 	
 	public static function getURL (url :String, ?target : String) : Bool {
