@@ -65,8 +65,11 @@ extern interface UICollectionViewDelegate {
 	public function collectionView (UICollectionView *)collectionView didUnhighlightItemAtIndexPath (indexPath: NSIndexPath,;
 - (BOOL)collectionView (UICollectionView *)collectionView shouldSelectItemAtIndexPath (indexPath: NSIndexPath,;
 - (BOOL)collectionView (UICollectionView *)collectionView shouldDeselectItemAtIndexPath (indexPath: NSIndexPath,; // called when the user taps on an already-selected item in multi-select mode
-	public function collectionView (UICollectionView *)collectionView didSelectItemAtIndexPath (indexPath: NSIndexPath,;
-	public function collectionView (UICollectionView *)collectionView didDeselectItemAtIndexPath (indexPath: NSIndexPath,;
+
+	@:sel("collectionView:didSelectItemAtIndexPath:")
+	public function didSelectItemAtIndexPath (collectionView:UICollectionView, indexPath:NSIndexPath) :Void;
+	@:sel("collectionView:didDeselectItemAtIndexPath:")
+	public function didDeselectItemAtIndexPath (collectionView:UICollectionView, indexPath: NSIndexPath) :Void;
 
 	public function collectionView (UICollectionView *)collectionView didEndDisplayingCell (UICollectionViewCell *)cell forItemAtIndexPath (indexPath: NSIndexPath,;
 	public function collectionView (UICollectionView *)collectionView didEndDisplayingSupplementaryView (UICollectionReusableView *)view forElementOfKind (String *)elementKind atIndexPath (indexPath: NSIndexPath,;

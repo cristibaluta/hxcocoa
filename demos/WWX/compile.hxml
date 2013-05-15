@@ -1,0 +1,34 @@
+
+-main Wwx
+
+-cp .
+-cp Model
+-cp View
+-cp Controller
+
+-objc build
+-objc-platform universal
+-objc-version 6.0
+-objc-bundle-version 1.0
+-objc-identifier com.ralcr.wwx
+-objc-owner BalutaCristian
+-objc-bundle-name WWX
+-objc-supporting-files SupportingFiles
+-ios-orientation UIInterfaceOrientationPortrait
+-ios-orientation UIInterfaceOrientationLandscape
+
+# used for facebook
+-cp FacebookSDK
+-objc-linker-flag lsqlite3.0
+-objc-linker-flag ObjC
+-objc-lib ../../../../facebook-ios-sdk/build/FacebookSDK.framework
+# -objc-lib Ralcr.xcodeproj
+# add some native frameworks to the project.
+# this frameworks are required by facebook sdk
+# they are not used anywhere in your app so they are not imported by default
+-objc-framework Social
+-objc-framework AdSupport
+-objc-framework Accounts
+
+-lib hxcocoa
+--times

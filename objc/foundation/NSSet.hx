@@ -1,5 +1,6 @@
 package objc.foundation;
 import objc.foundation.NSObject;
+import ios.ui.UITouch;
 
 private typedef NSEnumerationOptions = Dynamic;
 private typedef NSSortOptions = Dynamic;
@@ -10,11 +11,11 @@ extern class NSSet extends NSObject implements NSCopying implements NSMutableCop
 
 //extern class NSSet (NSExtendedSet)
 
-	public function allObjects () :Array<Dynamic>;
-	public function anyObject () :Dynamic;
-	public function containsObject (anObject:Dynamic) :Bool;
+	public function allObjects () :Array<UITouch>;
+	public function anyObject () :UITouch;
+	public function containsObject (anObject:UITouch) :Bool;
 	public function description () :String;
-	public function descriptionWithLocale (locale:Dynamic) :String;
+	public function descriptionWithLocale (locale:UITouch) :String;
 	public function intersectsSet (otherSet:NSSet) :Bool;
 	public function isEqualToSet (otherSet:NSSet) :Bool;
 	public function isSubsetOfSet (otherSet:NSSet) :Bool;
@@ -55,8 +56,8 @@ public function enumerateObjectsWithOptions:(NSEnumerationOptions)opts usingBloc
 @:framework("Foundation")
 extern class NSMutableSet extends NSSet {
 
-	public function addObject (object:Dynamic) :Void;
-	public function removeObject (object:Dynamic) :Void;
+	public function addObject (object:UITouch) :Void;
+	public function removeObject (object:UITouch) :Void;
 
 //extern class NSMutableSet (NSExtendedMutableSet)
 
@@ -70,8 +71,8 @@ extern class NSMutableSet extends NSSet {
 
 //extern class NSMutableSet (NSMutableSetCreation)
 
-//+ (id)setWithCapacity:(NSUInteger)numItems;
-//- (id)initWithCapacity:(NSUInteger)numItems;
+	public static function setWithCapacity (numItems:Int) :NSMutableSet;
+	public function initWithCapacity (numItems:Int) :NSMutableSet;
     
 }
 

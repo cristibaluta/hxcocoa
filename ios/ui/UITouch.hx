@@ -16,15 +16,14 @@ extern class UITouch extends UIView {
 	
 	function new () : Void;
 
-	 public var timestamp : Float;
-	 public var phase : UITouchPhase;
-	 public var tapCount : Int;   // touch down within a certain point within a certain amount of time
+	public var timestamp : Float;
+	public var phase : UITouchPhase;
+	public var tapCount : Int;   // touch down within a certain point within a certain amount of time
 
-	 //public var window : UIWindow;
-	 public var view :UIView;
-	 //public var gestureRecognizers : Array<Dynamic>;
+	//public var window : UIWindow;
+	public var view :UIView;
+	//public var gestureRecognizers : Array<Dynamic>;
 
-	 public function locationInView (view:UIView) :CGPoint;
-	 public function previousLocationInView (view:UIView) :CGPoint;
-
+	public function locationInView (view:UIView) :CGPoint;
+	public function previousLocationInView (view:UIView) :CGPoint;
 }
