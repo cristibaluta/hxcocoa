@@ -7,7 +7,7 @@
 -objc-bundle-version 1.0
 -objc-identifier com.ralcr.piratepig
 -objc-owner BalutaCristian
--objc-bundle-name ThePiratePig
+-objc-bundle-name PiratePig
 -objc-supporting-files SupportingFiles
 -ios-orientation UIInterfaceOrientationPortrait
 -lib hxcocoa

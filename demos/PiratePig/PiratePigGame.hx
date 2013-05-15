@@ -1,11 +1,4 @@
-import ios.ui.UIImageView;
-import ios.ui.UIImage;
-import ios.ui.UILabel;
-import ios.ui.UIFont;
-import ios.ui.UIView;
-import ios.ui.UIColor;
-import ios.ui.NSText;
-import ios.ui.UIEvent;
+import ios.ui.*;
 import objc.foundation.NSDictionary;
 import objc.foundation.NSSet;
 import objc.foundation.NSValue;
@@ -90,11 +83,6 @@ class PiratePigGame extends UIView {
 		var defaultFormat = new TextFormat (font.fontName, 60, 0x000000);
 		defaultFormat.align = TextFormatAlign.RIGHT;*/
 		
-/*		#if js
-		// Right-aligned text is not supported in HTML5 yet
-		defaultFormat.align = TextFormatAlign.LEFT;
-		#end*/
-		
 		var contentWidth = 75 * NUM_COLUMNS;
 		
 		var rect:CGRect = Score.frame;
@@ -161,7 +149,7 @@ class PiratePigGame extends UIView {
 	}
 	
 	
-	private function findMatches (byRow:Bool, accumulateScore:Bool = true) :Array<Tile> {
+	function findMatches (byRow:Bool, accumulateScore:Bool = true) :Array<Tile> {
 		//trace("find matches");
 		var matchedTiles = new Array<Tile>();
 		
@@ -412,13 +400,13 @@ class PiratePigGame extends UIView {
 	
 	override public function touchesBegan (touches:NSSet, withEvent:UIEvent) :Void {
 		var touchesForView = withEvent.touchesForView(this);
-		var aTouch = touchesForView.anyObject();
+		var aTouch :UITouch = touchesForView.anyObject();
 		cacheMouse = aTouch.locationInView(this);
 		cacheMouse = CGGeometry.CGPointMake ( cacheMouse.x - 10, cacheMouse.y - 73 - 20);
 		trace(aTouch);
 		untyped __objc__("NSLog(@\"cacheMouse %.2fx%.2f\", cacheMouse.x, cacheMouse.y)");
 		
-		if (touches.count() == 1) {
+		if (untyped touches.count() == 1) {
 			for (i in 0...NUM_ROWS) {
 				for (j in 0...NUM_COLUMNS) {
 					var tile = tiles[i][j];

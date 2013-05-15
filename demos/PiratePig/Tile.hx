@@ -1,7 +1,4 @@
-import ios.ui.UIImageView;
-import ios.ui.UIImage;
-import ios.ui.UIView;
-import ios.ui.UIColor;
+import ios.ui.*;
 import objc.graphics.CGGeometry;
 
 
@@ -89,8 +86,9 @@ class Tile extends UIView {
 	
 	
 	// Event Handlers
-	//@:sel("animationDidStop:1:2:3:")
+	//@:sel("animationDidStop:finished:context:")
 	function animationDidStop (animationID:String, finished:Float, context:Dynamic) {
+		
 		if (untyped animationID.isEqualToString("fade_out")) {
 			this.removeFromSuperview();
 		}

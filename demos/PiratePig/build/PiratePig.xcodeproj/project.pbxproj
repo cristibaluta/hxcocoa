@@ -34,7 +34,6 @@
 		PIRATEPIGRESED824047C2FF /* Icon.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF24047C2FF; };
 		PIRATEPIGRES566C326C4BE6 /* Icon@2x.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREFC326C4BE6; };
 		PIRATEPIGRESE27B500A4BFC /* logo.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREFB500A4BFC; };
-		PIRATEPIGRESDD34C49C3F90 /* soundssounds in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF4C49C3F90; };
 		PIRATEPIGRESREF253914667 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF7309BAF6C /* InfoPlist.strings */; };
 		PIRATEPIGRESREFD52164E4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF34122B42F /* InfoPlist.strings */; };
 		PIRATEPIGRESREF422E28349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = PIRATEPIGRESREF9C989D672 /* main.m */; };
@@ -88,7 +87,6 @@
 		PIRATEPIGRESREF24047C2FF /* Icon.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon.png"; path = "../SupportingFiles/Icon.png"; sourceTree = SOURCE_ROOT; };
 		PIRATEPIGRESREFC326C4BE6 /* Icon@2x.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../SupportingFiles/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		PIRATEPIGRESREFB500A4BFC /* logo.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo.png"; path = "../SupportingFiles/logo.png"; sourceTree = SOURCE_ROOT; };
-		PIRATEPIGRESREF4C49C3F90 /* sounds in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.sounds; name = "sounds"; path = "../SupportingFiles/sounds"; sourceTree = SOURCE_ROOT; };
 		PIRATEPIGRESREF4972FE836 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		PIRATEPIGRESREFB0DE87B92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		PIRATEPIGRESREF1AA985FFE /* PiratePig-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PiratePig-Info.plist"; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				PIRATEPIGRESREF24047C2FF /* Icon.png in Resoures */,
 				PIRATEPIGRESREFC326C4BE6 /* Icon@2x.png in Resoures */,
 				PIRATEPIGRESREFB500A4BFC /* logo.png in Resoures */,
-				PIRATEPIGRESREF4C49C3F90 /* sounds in Resoures */,
 
 			);
 			name = "Supporting Files";
@@ -314,7 +311,6 @@
 				PIRATEPIGRESED824047C2FF /* Icon.png in Resoures */,
 				PIRATEPIGRES566C326C4BE6 /* Icon@2x.png in Resoures */,
 				PIRATEPIGRESE27B500A4BFC /* logo.png in Resoures */,
-				PIRATEPIGRESDD34C49C3F90 /* sounds in Resoures */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

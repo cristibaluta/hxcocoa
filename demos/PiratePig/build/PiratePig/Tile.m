@@ -60,7 +60,7 @@
 - (id) init:(NSMutableString*)imagePath{
 	
 	self = [super init];
-	[Log trace:[[@"crate new tile " mutableCopy] stringByAppendingString:imagePath] infos:@{@"fileName":@"Tile.hx", @"lineNumber":@"18", @"className":@"Tile", @"methodName":@"new"}];
+	[Log trace:[[@"crate new tile " mutableCopy] stringByAppendingString:imagePath] infos:@{@"fileName":@"Tile.hx", @"lineNumber":@"15", @"className":@"Tile", @"methodName":@"new"}];
 	
 	UIImageView *image = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:imagePath]];
 	[self addSubview:image];

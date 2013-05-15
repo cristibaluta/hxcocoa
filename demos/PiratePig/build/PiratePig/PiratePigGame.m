@@ -46,7 +46,7 @@ static NSMutableArray* tileImages;
 @synthesize usedTiles;
 - (void) initialize{
 	
-	[Log trace:[@"initialize" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"52", @"className":@"PiratePigGame", @"methodName":@"initialize"}];
+	[Log trace:[@"initialize" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"45", @"className":@"PiratePigGame", @"methodName":@"initialize"}];
 	self.currentScale = 1;
 	self.currentScore = 0;
 	self.tiles = [[NSMutableArray alloc] init];
@@ -86,7 +86,7 @@ static NSMutableArray* tileImages;
 }
 - (void) construct{
 	
-	[Log trace:[@"Construct" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"86", @"className":@"PiratePigGame", @"methodName":@"construct"}];
+	[Log trace:[@"Construct" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"79", @"className":@"PiratePigGame", @"methodName":@"construct"}];
 	[self addSubview:self.Logo];
 	int contentWidth = 75 * PiratePigGame.NUM_COLUMNS;
 	CGRect rect = self.Score.frame;
@@ -302,25 +302,25 @@ static NSMutableArray* tileImages;
 }
 - (void) swapTile:(Tile*)tile targetRow:(int)targetRow targetColumn:(int)targetColumn{
 	
-	[Log trace:[[@"swipe tile " mutableCopy] stringByAppendingString:[Std string:tile]] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"333", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+	[Log trace:[[@"swipe tile " mutableCopy] stringByAppendingString:[Std string:tile]] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"321", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
 	if (targetColumn >= 0 && targetColumn < PiratePigGame.NUM_COLUMNS && targetRow >= 0 && targetRow < PiratePigGame.NUM_ROWS) {
 		
-		[Log trace:[@"ok" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"335", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+		[Log trace:[@"ok" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"323", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
 		
 		Tile *targetTile = ((NSMutableArray*)[((NSMutableArray*)[self.tiles hx_objectAtIndex:targetRow]) hx_objectAtIndex:targetColumn]);
-		[Log trace:[[@"to tile " mutableCopy] stringByAppendingString:[Std string:targetTile]] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"337", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+		[Log trace:[[@"to tile " mutableCopy] stringByAppendingString:[Std string:targetTile]] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"325", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
 		if (targetTile != nil && !targetTile.moving) {
 			
-			[Log trace:[@"ok" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"339", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+			[Log trace:[@"ok" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"327", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
 			
 			NSMutableArray *t = ((NSMutableArray*)[self.tiles hx_objectAtIndex:targetRow]);
 			[t hx_replaceObjectAtIndex:targetColumn withObject:tile];
 			t = ((NSMutableArray*)[self.tiles hx_objectAtIndex:tile.row]);
 			[t hx_replaceObjectAtIndex:tile.column withObject:targetTile];
-			[Log trace:[@"CHECK FOR MATCHES" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"344", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
-			if ([[self hx_dyn_findMatches:YES accumulateScore:NO] count] > 0 || [[self hx_dyn_findMatches:NO accumulateScore:NO] count] > 0) {
+			[Log trace:[@"CHECK FOR MATCHES" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"332", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+			if ([[self findMatches:YES accumulateScore:NO] count] > 0 || [[self findMatches:NO accumulateScore:NO] count] > 0) {
 				
-				[Log trace:[@"found matches" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"346", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+				[Log trace:[@"found matches" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"334", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
 				targetTile.row = tile.row;
 				targetTile.column = tile.column;
 				tile.row = targetRow;
@@ -333,7 +333,7 @@ static NSMutableArray* tileImages;
 			}
 			else {
 				
-				[Log trace:[@"matches not found" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"360", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
+				[Log trace:[@"matches not found" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"348", @"className":@"PiratePigGame", @"methodName":@"swapTile"}];
 				
 				NSMutableArray *t1 = ((NSMutableArray*)[self.tiles hx_objectAtIndex:targetRow]);
 				[t1 hx_replaceObjectAtIndex:targetColumn withObject:targetTile];
@@ -394,9 +394,9 @@ static NSMutableArray* tileImages;
 	UITouch *aTouch = [touchesForView anyObject];
 	self.cacheMouse = [aTouch locationInView:self];
 	self.cacheMouse =  CGPointMake(self.cacheMouse.x - 10, self.cacheMouse.y - 73 - 20);
-	[Log trace:aTouch infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"418", @"className":@"PiratePigGame", @"methodName":@"touchesBegan"}];
+	[Log trace:aTouch infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"406", @"className":@"PiratePigGame", @"methodName":@"touchesBegan"}];
 	NSLog(@"cacheMouse %.2fx%.2f", cacheMouse.x, cacheMouse.y);
-	if ([touches hx_dyn_count] == 1) {
+	if ([touches count] == 1) {
 		
 		{
 			
@@ -414,7 +414,7 @@ static NSMutableArray* tileImages;
 						Tile *tile = ((NSMutableArray*)[((NSMutableArray*)[self.tiles hx_objectAtIndex:i]) hx_objectAtIndex:j]);
 						if ( CGRectContainsPoint(tile.frame, self.cacheMouse)) {
 							
-							[Log trace:[@"------------------touched something" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"427", @"className":@"PiratePigGame", @"methodName":@"touchesBegan"}];
+							[Log trace:[@"------------------touched something" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"415", @"className":@"PiratePigGame", @"methodName":@"touchesBegan"}];
 							NSLog(@"%ix%i %.2f,%.2f %.2fx%.2f", i, j, tile.frame.origin.x, tile.frame.origin.y, tile.frame.size.width, tile.frame.size.height);
 							self.selectedTile = tile;
 							self.selectedTile.transform =  CGAffineTransformScale(self.selectedTile.transform, 1.4, 1.4);
@@ -433,7 +433,7 @@ static NSMutableArray* tileImages;
 }
 - (void) touchesEnded:(NSSet*)touches withEvent:(UIEvent*)withEvent{
 	
-	[Log trace:[@"release finger" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"449", @"className":@"PiratePigGame", @"methodName":@"touchesEnded"}];
+	[Log trace:[@"release finger" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"437", @"className":@"PiratePigGame", @"methodName":@"touchesEnded"}];
 	self.selectedTile.transform =  CGAffineTransformScale(self.selectedTile.transform, 0.7, 0.7);
 	if (! CGPointEqualToPoint(self.cacheMouse, CGPointMake(0,0)) && self.selectedTile != nil && !self.selectedTile.moving) {
 		
@@ -507,7 +507,7 @@ static NSMutableArray* tileImages;
 - (id) init{
 	
 	self = [super init];
-	[Log trace:[@"start" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"45", @"className":@"PiratePigGame", @"methodName":@"new"}];
+	[Log trace:[@"start" mutableCopy] infos:@{@"fileName":@"PiratePigGame.hx", @"lineNumber":@"38", @"className":@"PiratePigGame", @"methodName":@"new"}];
 	[self initialize];
 	[self construct];
 	[self newGame];
