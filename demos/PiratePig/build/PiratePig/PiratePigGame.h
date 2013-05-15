@@ -15,7 +15,7 @@
 #import "haxe/Log.h"
 #import "PiratePigGame.h"
 #import "Std.h"
-#import "Math.h"
+#import "String.h"
 
 @interface PiratePigGame : UIView 
 

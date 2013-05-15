@@ -6,26 +6,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		HELLOWORLDSRCREFM3068626 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM8759688; };
-		HELLOWORLDSRCREFMFFC0AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM92BD138; };
-		HELLOWORLDSRCREFMEA0EB43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFMFAA49E8; };
-		HELLOWORLDSRCREFM71E663D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFMC92E445; };
+		HELLOWORLDSRCREFH3068626 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFH8759688; };
+		HELLOWORLDSRCREFHFFC0AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFH92BD138; };
+		HELLOWORLDSRCREFHEA0EB43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFHFAA49E8; };
+		HELLOWORLDSRCREFH71E663D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFHC92E445; };
 		HELLOWORLDSRCM7F893120CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM93120CF; };
 		HELLOWORLDSRCMA68100CA0C /* Array.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM100CA0C; };
 		HELLOWORLDSRCM56056A5C1F /* CustomMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM56A5C1F; };
 		HELLOWORLDSRCM2A15E05CC2 /* HelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM5E05CC2; };
 		HELLOWORLDSRCM29667A400A /* String.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM67A400A; };
 		HELLOWORLDSRCMFCE8490172 /* Log.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM8490172; };
-		HELLOWORLDSRCMF63C40E9B2 /* CGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFMC40E9B2; };
-		HELLOWORLDSRCMF2395A5286 /* CGColorSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM95A5286; };
-		HELLOWORLDSRCM91138756C2 /* CGPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDSRCREFM38756C2; };
-		HELLOWORLDRES63413CD60D4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF13CD60D4; };
-		HELLOWORLDRESE7B686AAA68 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF686AAA68; };
-		HELLOWORLDRESB17EB997C60 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFEB997C60; };
-		HELLOWORLDRESFF4ED3F396D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFED3F396D; };
-		HELLOWORLDRES61747389F57 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF47389F57; };
-		HELLOWORLDRESD824047C2FF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF4047C2FF; };
-		HELLOWORLDRES66C326C4BE6 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF326C4BE6; };
+		HELLOWORLDRES63413CD60D4 /* Default-568h@2x.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF13CD60D4; };
+		HELLOWORLDRES008C5F0B41A /* Default-landscape~ipad.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFC5F0B41A; };
+		HELLOWORLDRESC9EA6704057 /* Default-portrait~ipad.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFA6704057; };
+		HELLOWORLDRESE7B686AAA68 /* Default.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF686AAA68; };
+		HELLOWORLDRESB17EB997C60 /* Default@2x.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFEB997C60; };
+		HELLOWORLDRESFF4ED3F396D /* Icon-72.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFED3F396D; };
+		HELLOWORLDRES61747389F57 /* Icon-72@2x.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF47389F57; };
+		HELLOWORLDRESD824047C2FF /* Icon.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF4047C2FF; };
+		HELLOWORLDRES66C326C4BE6 /* Icon@2x.pngpng in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF326C4BE6; };
 		HELLOWORLDRESREF53914667 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF309BAF6C /* InfoPlist.strings */; };
 		HELLOWORLDRESREF52164E4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREF4122B42F /* InfoPlist.strings */; };
 		HELLOWORLDRESREF22E28349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = HELLOWORLDRESREFC989D672 /* main.m */; };
@@ -43,10 +42,10 @@
 
 
 /* Begin PBXFileReference section */
-		HELLOWORLDSRCREFM8759688 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		HELLOWORLDSRCREFM92BD138 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		HELLOWORLDSRCREFMFAA49E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		HELLOWORLDSRCREFMC92E445 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		HELLOWORLDSRCREFH8759688 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		HELLOWORLDSRCREFH92BD138 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		HELLOWORLDSRCREFHFAA49E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		HELLOWORLDSRCREFHC92E445 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		HELLOWORLDSRCREFM93120CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		HELLOWORLDSRCREFH93120CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		HELLOWORLDSRCREFM100CA0C /* Array.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Array.m; sourceTree = "<group>"; };
@@ -59,12 +58,16 @@
 		HELLOWORLDSRCREFH67A400A /* String.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
 		HELLOWORLDSRCREFM8490172 /* haxe/Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Log.m; path = HelloWorld/haxe/Log.m; sourceTree = SOURCE_ROOT; };
 		HELLOWORLDSRCREFH8490172 /* haxe/Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Log.h; path = HelloWorld/haxe/Log.h; sourceTree = SOURCE_ROOT; };
-		HELLOWORLDSRCREFMC40E9B2 /* objc/graphics/CGColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CGColor.m; path = HelloWorld/objc/graphics/CGColor.m; sourceTree = SOURCE_ROOT; };
-		HELLOWORLDSRCREFHC40E9B2 /* objc/graphics/CGColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CGColor.h; path = HelloWorld/objc/graphics/CGColor.h; sourceTree = SOURCE_ROOT; };
-		HELLOWORLDSRCREFM95A5286 /* objc/graphics/CGColorSpace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CGColorSpace.m; path = HelloWorld/objc/graphics/CGColorSpace.m; sourceTree = SOURCE_ROOT; };
-		HELLOWORLDSRCREFM38756C2 /* objc/graphics/CGPattern.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CGPattern.m; path = HelloWorld/objc/graphics/CGPattern.m; sourceTree = SOURCE_ROOT; };
 		HELLOWORLDSRCDIRREF96D37 /* haxe/ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = haxe; sourceTree = "<group>"; };
-		HELLOWORLDSRCDIRREF1C90A /* objc/graphics/ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = objc; sourceTree = "<group>"; };
+		HELLOWORLDRESREF13CD60D4 /* Default-568h@2x.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Default-568h@2x.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREFC5F0B41A /* Default-landscape~ipad.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-landscape~ipad.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Default-landscape~ipad.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREFA6704057 /* Default-portrait~ipad.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-portrait~ipad.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Default-portrait~ipad.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREF686AAA68 /* Default.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Default.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREFEB997C60 /* Default@2x.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Default@2x.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREFED3F396D /* Icon-72.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Icon-72.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREF47389F57 /* Icon-72@2x.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Icon-72@2x.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREF4047C2FF /* Icon.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Icon.png"; sourceTree = "<absolute>"; };
+		HELLOWORLDRESREF326C4BE6 /* Icon@2x.png in Resources */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "/Users/Cristi/Documents/haxecompiler/hxcocoa/SupportingFiles/Icon@2x.png"; sourceTree = "<absolute>"; };
 		HELLOWORLDRESREF972FE836 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		HELLOWORLDRESREF0DE87B92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		HELLOWORLDRESREFAA985FFE /* HelloWorld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HelloWorld-Info.plist"; sourceTree = "<group>"; };
@@ -80,10 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				HELLOWORLDSRCREFM3068626 /* UIKit.framework in Frameworks */,
-				HELLOWORLDSRCREFMFFC0AF9 /* Foundation.framework in Frameworks */,
-				HELLOWORLDSRCREFMEA0EB43 /* CoreGraphics.framework in Frameworks */,
-				HELLOWORLDSRCREFM71E663D /* MapKit.framework in Frameworks */,
+				HELLOWORLDSRCREFH3068626 /* UIKit.framework in Frameworks */,
+				HELLOWORLDSRCREFHFFC0AF9 /* Foundation.framework in Frameworks */,
+				HELLOWORLDSRCREFHEA0EB43 /* CoreGraphics.framework in Frameworks */,
+				HELLOWORLDSRCREFH71E663D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,10 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				HELLOWORLDSRCREFM3068626 /* UIKit.framework in Frameworks */,
-				HELLOWORLDSRCREFMFFC0AF9 /* Foundation.framework in Frameworks */,
-				HELLOWORLDSRCREFMEA0EB43 /* CoreGraphics.framework in Frameworks */,
-				HELLOWORLDSRCREFM71E663D /* MapKit.framework in Frameworks */,
+				HELLOWORLDSRCREFH3068626 /* UIKit.framework in Frameworks */,
+				HELLOWORLDSRCREFHFFC0AF9 /* Foundation.framework in Frameworks */,
+				HELLOWORLDSRCREFHEA0EB43 /* CoreGraphics.framework in Frameworks */,
+				HELLOWORLDSRCREFH71E663D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,10 +126,10 @@
 		HELLOWORLDRESREF8BB1F58C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				HELLOWORLDSRCREFM8759688 /* UIKit.framework in Frameworks */,
-				HELLOWORLDSRCREFM92BD138 /* Foundation.framework in Frameworks */,
-				HELLOWORLDSRCREFMFAA49E8 /* CoreGraphics.framework in Frameworks */,
-				HELLOWORLDSRCREFMC92E445 /* MapKit.framework in Frameworks */,
+				HELLOWORLDSRCREFH8759688 /* UIKit.framework in Frameworks */,
+				HELLOWORLDSRCREFH92BD138 /* Foundation.framework in Frameworks */,
+				HELLOWORLDSRCREFHFAA49E8 /* CoreGraphics.framework in Frameworks */,
+				HELLOWORLDSRCREFHC92E445 /* MapKit.framework in Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,7 +148,6 @@
 				HELLOWORLDSRCREFM67A400A /* String.m */,
 				HELLOWORLDSRCREFH67A400A /* String.h */,
 				HELLOWORLDSRCDIRREF96D37 /* haxe/ */,
-				HELLOWORLDSRCDIRREF1C90A /* objc/graphics/ */,
 				HELLOWORLDRESREF321C8F8F /* Supporting Files */,
 			);
 			path = HelloWorld;
@@ -159,6 +161,8 @@
 				HELLOWORLDRESREFC989D672 /* main.m */,
 				HELLOWORLDRESREF4480D760 /* HelloWorld-Prefix.pch */,
 				HELLOWORLDRESREF13CD60D4 /* Default-568h@2x.png in Resoures */,
+				HELLOWORLDRESREFC5F0B41A /* Default-landscape~ipad.png in Resoures */,
+				HELLOWORLDRESREFA6704057 /* Default-portrait~ipad.png in Resoures */,
 				HELLOWORLDRESREF686AAA68 /* Default.png in Resoures */,
 				HELLOWORLDRESREFEB997C60 /* Default@2x.png in Resoures */,
 				HELLOWORLDRESREFED3F396D /* Icon-72.png in Resoures */,
@@ -262,8 +266,9 @@
 			files = (
 				HELLOWORLDRESREF53914667 /* InfoPlist.strings in Resources */,
 				HELLOWORLDSRCDIRABA96D37 /* haxe/ in Resoures */,
-				HELLOWORLDSRCDIR5C11C90A /* objc/graphics/ in Resoures */,
 				HELLOWORLDRES63413CD60D4 /* Default-568h@2x.png in Resoures */,
+				HELLOWORLDRES008C5F0B41A /* Default-landscape~ipad.png in Resoures */,
+				HELLOWORLDRESC9EA6704057 /* Default-portrait~ipad.png in Resoures */,
 				HELLOWORLDRESE7B686AAA68 /* Default.png in Resoures */,
 				HELLOWORLDRESB17EB997C60 /* Default@2x.png in Resoures */,
 				HELLOWORLDRESFF4ED3F396D /* Icon-72.png in Resoures */,
@@ -313,9 +318,6 @@ HELLOWORLDRESREF22E28349 /* main.m in Sources */,
 				HELLOWORLDSRCM2A15E05CC2 /* HelloWorld.m in Sources */,
 				HELLOWORLDSRCM29667A400A /* String.m in Sources */,
 				HELLOWORLDSRCMFCE8490172 /* haxe/Log.m in Sources */,
-				HELLOWORLDSRCMF63C40E9B2 /* objc/graphics/CGColor.m in Sources */,
-				HELLOWORLDSRCMF2395A5286 /* objc/graphics/CGColorSpace.m in Sources */,
-				HELLOWORLDSRCM91138756C2 /* objc/graphics/CGPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +396,7 @@ HELLOWORLDRESREF22E28349 /* main.m in Sources */,
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -411,11 +413,17 @@ HELLOWORLDRESREF22E28349 /* main.m in Sources */,
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -423,10 +431,17 @@ HELLOWORLDRESREF22E28349 /* main.m in Sources */,
 		HELLOWORLDRESREF0AD029C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HelloWorld/HelloWorld-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "HelloWorld/HelloWorld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

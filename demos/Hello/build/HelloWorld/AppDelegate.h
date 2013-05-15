@@ -13,6 +13,7 @@
 #import "CustomMapView.h"
 #import "haxe/Log.h"
 #import "Array.h"
+#import "String.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

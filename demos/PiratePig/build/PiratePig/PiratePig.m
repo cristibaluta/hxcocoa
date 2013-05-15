@@ -17,7 +17,8 @@
 @synthesize footer;
 @synthesize game;
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions{
-	[Log trace:[NSMutableString stringWithString:@"Start"] infos:[NSDictionary dictionaryWithObjectsAndKeys:@"PiratePig.hx",@"fileName", @"31",@"lineNumber", @"PiratePig",@"className", @"application",@"methodName", nil]];
+	
+	[Log trace:[@"Start" mutableCopy] infos:@{@"fileName":@"PiratePig.hx", @"lineNumber":@"31", @"className":@"PiratePig", @"methodName":@"application"}];
 	self.window = [[UIWindow alloc] init];
 	
 	UIScreen *screen = [UIScreen mainScreen];
@@ -27,17 +28,17 @@
 	self.viewController.view = self.view;
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
-	self.view.frame = CGRectMake (0,20,self.window.frame.size.width * 2,self.window.frame.size.height * 2);
+	self.view.frame = CGRectMake(0,20,self.window.frame.size.width * 2,self.window.frame.size.height * 2);
 	self.view.autoresizesSubviews = YES;
-	self.view.autoresizingMask = ( UIViewAutoresizingFlexibleWidth |  UIViewAutoresizingFlexibleHeight);
+	self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	self.view.backgroundColor = [UIColor grayColor];
 	self.view.clipsToBounds = YES;
-	self.background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSMutableString stringWithString:@"background_tile.png"]]];
+	self.background = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:[@"background_tile.png" mutableCopy]]];
 	CGRect bs = self.background.frame;
 	bs.size.width = self.view.frame.size.width;
 	self.background.frame = bs;
 	[self.view addSubview:self.background];
-	self.footer = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSMutableString stringWithString:@"center_bottom.png"]]];
+	self.footer = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:[@"center_bottom.png" mutableCopy]]];
 	CGRect bs1 = self.footer.frame;
 	bs1.origin.x = self.view.frame.size.width / 2 - bs1.size.width / 2;
 	bs1.origin.y = self.view.frame.size.height - bs1.size.height;
@@ -52,12 +53,16 @@
 	return YES;
 }
 - (void) initialize{
+	
 }
 - (void) construct{
+	
 }
 - (void) applicationDidBecomeActive:(UIApplication*)application{
+	
 }
 - (void) applicationWillResignActive:(UIApplication*)application{
+	
 }
 
 @end

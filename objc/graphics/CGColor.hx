@@ -4,7 +4,7 @@ package objc.graphics;
 typedef CGColorRef = CGColor;
 
 @:framework("CoreGraphics")
-class CGColor {
+extern class CGColor {
 #if dddddddd
 /* Create a color in the color space `space' with color components
    (including alpha) specified by `components'. `space' may be any color

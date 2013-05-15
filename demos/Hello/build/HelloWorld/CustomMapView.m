@@ -10,12 +10,15 @@
 @implementation CustomMapView
 
 - (void) locateLondon{
+	
 	[self locate:51.4788 _long:0.0106 zoom:1.2];
 }
 - (void) locateMe{
+	
 	self.showsUserLocation = YES;
 }
 - (void) locate:(float)lat _long:(float)_long zoom:(float)zoom{
+	
 	CLLocationCoordinate2D zoomLocation;
 	zoomLocation.latitude = lat;
 	zoomLocation.longitude = _long;

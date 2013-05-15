@@ -10,23 +10,29 @@
 @implementation NSMutableString ( String )
 
 + (NSMutableString*) fromCharCode:(int)code{
-	return [NSString stringWithFormat:@"%C", code];
+	
+	return [NSMutableString stringWithFormat:@"%C", code];
 }
 // Please provide a getterBody for the property: length
 
 - (NSMutableString*) toUpperCase{
-	return [self uppercaseString];
+	
+	return [[self uppercaseString] mutableCopy];
 }
 - (NSMutableString*) toLowerCase{
-	return [self lowercaseString];
+	
+	return [[self lowercaseString] mutableCopy];
 }
 - (NSMutableString*) charAt:(int)index{
+	
 	return nil;
 }
 - (int) charCodeAt:(int)index{
+	
 	return [self characterAtIndex:index];
 }
 - (int) indexOf:(NSMutableString*)str startIndex:(int)startIndex{
+	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
 	
@@ -38,6 +44,7 @@
 	return -1;
 }
 - (int) lastIndexOf:(NSMutableString*)str startIndex:(int)startIndex{
+	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
 	
@@ -49,28 +56,31 @@
 	return -1;
 }
 - (NSMutableArray*) split:(NSMutableString*)delimiter{
+	
 	return [self componentsSeparatedByString:delimiter];
 }
 - (NSMutableString*) substr:(int)pos len:(int)len{
+	
 	// Optional arguments
 	if (!len) len = nil;
 	
-	if (len == 0) return [NSMutableString stringWithString:@""];
+	if (len == 0) return [@"" mutableCopy];
 	int sl = self.length;
 	if (len == nil) len = sl;
 	if (pos == nil) pos = 0;
-	if (pos != 0 && len < 0) return [NSMutableString stringWithString:@""];
+	if (pos != 0 && len < 0) return [@"" mutableCopy];
 	if (pos < 0) {
+		
 		pos = sl + pos;
 		if (pos < 0) pos = 0;
 	}
 	else if (len < 0) len = sl + len - pos;
 	if (pos + len > sl) len = sl - pos;
-	if (pos < 0 || len <= 0) return [NSMutableString stringWithString:@""];
-	return [self substringFromIndex:pos];
-	return [self substringWithRange:NSMakeRange(pos,len)];
+	if (pos < 0 || len <= 0) return [@"" mutableCopy];
+	return [[self substringFromIndex:pos] mutableCopy];
 }
 - (NSMutableString*) substring:(int)startIndex endIndex:(int)endIndex{
+	
 	// Optional arguments
 	if (!endIndex) endIndex = nil;
 	
@@ -80,6 +90,7 @@
 	if (startIndex < 0) startIndex = 0;
 	else if (startIndex > self.length) startIndex = self.length;
 	if (startIndex > endIndex) {
+		
 		int tmp = startIndex;
 		startIndex = endIndex;
 		endIndex = tmp;
@@ -87,9 +98,11 @@
 	return [self substr:startIndex len:endIndex - startIndex];
 }
 - (NSMutableString*) toString{
-	return [self description];
+	
+	return [[self description] mutableCopy];
 }
 - (id) init:(NSMutableString*)string{
+	
 	self = [super init];
 	return self;
 }

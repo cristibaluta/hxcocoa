@@ -5,4 +5,5 @@
 -objc-bundle-version 1.0
 -objc-identifier com.ralcr.hello
 -lib hxcocoa
+# -objc-supporting-files ../WWX/SupportingFiles
 --times

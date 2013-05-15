@@ -12,22 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>HELLOWORLD145BEF20B58677</key>
+		<key>HELLOWORLDRESREF20B58677</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>HELLOWORLD7CDA0D4237F7D7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>HelloWorld145bef20b58677</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>HelloWorld7cda0d4237f7d7</key>
+		<key>HELLOWORLDRESREF4237F7D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

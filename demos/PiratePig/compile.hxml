@@ -10,8 +10,5 @@
 -objc-bundle-name ThePiratePig
 -objc-supporting-files SupportingFiles
 -ios-orientation UIInterfaceOrientationPortrait
--ios-orientation UIInterfaceOrientationLandscape
-# -objc-lib Facebook.framework
-# -objc-lib Ralcr.xcodeproj
 -lib hxcocoa
 --times

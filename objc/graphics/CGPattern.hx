@@ -18,7 +18,7 @@ typedef CGPatternRef = CGPattern;
    implementation. */
 	   
 @:framework("CoreGraphics")
-enum CGPatternTiling {
+extern enum CGPatternTiling {
   kCGPatternTilingNoDistortion;
   kCGPatternTilingConstantSpacingMinimalDistortion;
   kCGPatternTilingConstantSpacing;
@@ -45,7 +45,7 @@ typedef CGPatternReleaseInfoCallback = Void->Void;
 
 
 @:framework("CoreGraphics")
-class CGPattern {
+extern class CGPattern {
 	#if ddddddddd
 /* Return the CFTypeID for CGPatternRefs. */
 
