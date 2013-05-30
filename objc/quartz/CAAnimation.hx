@@ -3,6 +3,7 @@ package objc.quartz;
 import objc.foundation.NSObject;
 private typedef CGPathRef = Dynamic;
 
+@:framework("Quartz")
 extern class CAAnimation extends NSObject implements NSCopying/*, CAMediaTiming, CAAction>*/{
 
 	public static function animation () :CAAnimation;
@@ -17,6 +18,7 @@ extern class CAAnimation extends NSObject implements NSCopying/*, CAMediaTiming,
 
 /* Delegate methods for CAAnimation. */
 
+@:framework("Quartz")
 extern interface CAAnimationDelegate {
 
 	public function animationDidStart (anim:CAAnimation) :Void;
@@ -27,6 +29,7 @@ extern interface CAAnimationDelegate {
 
 /** Subclass for property-based animations. **/
 
+@:framework("Quartz")
 extern class CAPropertyAnimation extends CAAnimation {
 
 	public static function animationWithKeyPath (path:String) :CAPropertyAnimation;
@@ -41,6 +44,7 @@ extern class CAPropertyAnimation extends CAAnimation {
 
 /** Subclass for basic (single-keyframe) animations. **/
 
+@:framework("Quartz")
 extern class CABasicAnimation extends CAPropertyAnimation {
 
 	public var fromValue :Dynamic;
@@ -52,6 +56,7 @@ extern class CABasicAnimation extends CAPropertyAnimation {
 
 /** General keyframe animation class. **/
 
+@:framework("Quartz")
 extern class CAKeyframeAnimation extends CAPropertyAnimation {
 
 	public var values :Array<Dynamic>;
@@ -87,6 +92,7 @@ CA_EXTERN NSString * const kCAAnimationRotateAutoReverse
 */
 /** Transition animation subclass. **/
 
+@:framework("Quartz")
 extern class CATransition extends CAAnimation {
 
 	public var type :String;
@@ -118,6 +124,7 @@ CA_EXTERN NSString * const kCATransitionFromBottom
     __OSX_AVAILABLE_STARTING (__MAC_10_5, __IPHONE_2_0);*/
 
 
+@:framework("Quartz")
 extern class CAAnimationGroup extends CAAnimation {
 
 	public var animations :Array<CAAnimation>;

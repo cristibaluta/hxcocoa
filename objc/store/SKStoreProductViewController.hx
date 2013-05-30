@@ -13,7 +13,7 @@ extern class SKStoreProductViewController extends UIViewController {
 
 }
 
-
+@:framework("StoreKit")
 extern interface SKStoreProductViewControllerDelegate {
 
 	//@optional

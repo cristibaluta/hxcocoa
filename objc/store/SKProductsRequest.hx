@@ -1,7 +1,8 @@
 package objc.store;
 import objc.store.SKRequest;
 
-interface SKProductsRequestDelegate extends SKRequestDelegate {
+@:framework("StoreKit")
+extern interface SKProductsRequestDelegate extends SKRequestDelegate {
 
 //@required
 // Sent immediately before -requestDidFinish:

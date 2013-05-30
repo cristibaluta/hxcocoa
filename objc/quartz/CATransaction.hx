@@ -2,7 +2,7 @@ package objc.quartz;
 
 import objc.Foundation.NSObject;
 
-
+@:framework("Quartz")
 extern class CATransaction extends NSObject {
 
 	public static function begin () :Void;

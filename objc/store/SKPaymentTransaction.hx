@@ -1,6 +1,7 @@
 package objc.store;
 import objc.foundation.NSObject;
 
+@:framework("StoreKit")
 extern enum SKPaymentTransactionState {
     SKPaymentTransactionStatePurchasing;    // Transaction is being added to the server queue.
     SKPaymentTransactionStatePurchased;     // Transaction is in queue, user has been charged.  Client should complete the transaction.

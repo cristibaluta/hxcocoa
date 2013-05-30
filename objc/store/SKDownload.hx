@@ -1,6 +1,7 @@
 package objc.store;
 import objc.foundation.NSObject;
 
+@:framework("StoreKit")
 extern enum SKDownloadState {
     SKDownloadStateWaiting;     // Download is inactive, waiting to be downloaded
     SKDownloadStateActive;      // Download is actively downloading
@@ -14,30 +15,30 @@ extern enum SKDownloadState {
 extern class SKDownload extends NSObject {
 
 // State of the download
-	public var (default, null) downloadState :SKDownloadState;
+	public var downloadState (default, null) :SKDownloadState;
 
 // Total size of the content, in bytes
-	public var (default, null) contentLength :Int;
+	public var contentLength (default, null) :Int;
 
 // Identifier for this content
-	public var (default, null) contentIdentifier :String;
+	public var contentIdentifier (default, null) :String;
 
 // Location of the content data, if downloadState is SKDownloadStateFinished
-	public var (default, null) contentURL :NSURL;
+	public var contentURL (default, null) :NSURL;
 
 // Content version
-	public var (default, null) contentVersion :String;
+	public var contentVersion (default, null) :String;
 
 // Failure error, if downloadState is SKDownloadStateFailed
-	public var (default, null) error :NSError;
+	public var error (default, null) :NSError;
 
 // Overall progress for the download [0..1]
-	public var (default, null) progress :Float;
+	public var progress (default, null) :Float;
 
 // Estimated time remaining to complete the download, in seconds.  Value is SKDownloadTimeRemainingUnknown if estimate is unknown.
-	public var (default, null) timeRemaining :Float;
+	public var timeRemaining (default, null) :Float;
 
 // Transaction for this download
-	public var (default, null) transaction :SKPaymentTransaction;
+	public var transaction (default, null) :SKPaymentTransaction;
 
 }

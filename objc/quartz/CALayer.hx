@@ -10,6 +10,7 @@ typedef CGColorRef = Dynamic;
 typedef CGPathRef = Dynamic;
 typedef CFTimeInterval = Float;
 
+@:framework("Quartz")
 extern enum CAEdgeAntialiasingMask {
 	kCALayerLeftEdge;//Minimum X edge. 
 	kCALayerRightEdge;//Maximum X edge. 
@@ -17,6 +18,7 @@ extern enum CAEdgeAntialiasingMask {
 	kCALayerTopEdge;//Maximum Y edge. 
 }
 
+@:framework("Quartz")
 extern class CALayer extends NSObject implements NSCoding/* implements CAMediaTiming*/ {
 
 	public static function layer () :CALayer;
@@ -141,6 +143,7 @@ extern class CALayer extends NSObject implements NSCoding/* implements CAMediaTi
 
 }
 
+@:framework("Quartz")
 extern interface CAAction {
 
 	public function runActionForKey (event:String, object:Dynamic, arguments:NSDictionary) :Void;
@@ -149,6 +152,7 @@ extern interface CAAction {
 
 //Delegate methods. 
 
+@:framework("Quartz")
 extern class CALayerDelegate {
 	// category for NSObject
 

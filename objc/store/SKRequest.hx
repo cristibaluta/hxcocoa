@@ -11,7 +11,7 @@ extern class SKRequest extends NSObject {
 	public function start () :Void;
 }
 
-
+@:framework("StoreKit")
 interface SKRequestDelegate {
 
 //@optional

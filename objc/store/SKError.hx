@@ -1,6 +1,7 @@
 package objc.store;
 
 // error codes for the SKErrorDomain
+@:framework("StoreKit")
 extern enum SKErrorDomain {
     SKErrorUnknown;
     SKErrorClientInvalid;               // client is not allowed to issue the request, etc.

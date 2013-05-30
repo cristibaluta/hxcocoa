@@ -2,6 +2,7 @@ package objc.quartz;
 
 import objc.foundation.NSObject;
 
+@:framework("Quartz")
 extern class CADisplayLink extends NSObject {
 
 	public static function displayLinkWithTarget (target:Dynamic, selector:SEL) :CADisplayLink;

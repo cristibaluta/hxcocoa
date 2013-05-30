@@ -35,7 +35,7 @@ extern class SKPaymentQueue extends NSObject {
 
 }
 
-
+@:framework("StoreKit")
 extern interface SKPaymentTransactionObserver {
 //@required
 // Sent when the transaction array has changed (additions or state changes).  Client should check state of transactions and finish as appropriate.

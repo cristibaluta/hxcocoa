@@ -5,12 +5,6 @@
     All rights reserved.
 */
 
-#import <Foundation/NSArray.h>
-#import <CoreData/NSPersistentStoreRequest.h>
-
-@class NSEntityDescription;
-@class NSManagedObjectModel;
-@class NSPredicate;
 
 /* Definition of the possible result types a fetch request can return. */
 
@@ -25,32 +19,7 @@ typedef NSUInteger NSFetchRequestResultType;
 
 
 NS_CLASS_AVAILABLE(10_4, 3_0)
-extern class NSFetchRequest extends NSPersistentStoreRequest implements NSObject> {
-@private
-	NSArray *_groupByProperties;
-	NSPredicate *_havingPredicate;
-	NSUInteger _offset;
-	NSArray *_valuesToFetch;
-    NSEntityDescription *_entity;
-    NSPredicate *_predicate;
-    NSArray *_sortDescriptors;
-    NSUInteger _batchSize;
-    unsigned long _fetchLimit;
-    NSArray *_relationshipKeyPathsForPrefetching;
-    struct _fetchRequestFlags {
-        unsigned int distinctValuesOnly:1;
-        unsigned int includesSubentities:1;
-        unsigned int includesPropertyValues:1;
-        unsigned int resultType:3;
-        unsigned int returnsObjectsAsFaults:1;
-        unsigned int excludePendingChanges:1;
-        unsigned int isInUse:1;
-        unsigned int entityIsName:1;
-        unsigned int refreshesRefetched:1;
-        unsigned int propertiesValidated:1;
-        unsigned int _RESERVED:20;
-    } _flags;
-}
+extern class NSFetchRequest extends NSPersistentStoreRequest {
 
 + (NSFetchRequest*)fetchRequestWithEntityName:(NSString*)entityName NS_AVAILABLE(10_7, 4_0);
 
