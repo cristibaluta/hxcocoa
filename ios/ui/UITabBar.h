@@ -1,39 +1,9 @@
 //
 //  UITabBar.h
 package ios.ui;
-//
-//  Copyright (c) 2008-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKitDefines.h>
-#import <UIKit/UIView.h>
-
-@class UITabBarItem;
-@class UIImageView;
-extern interface UITabBarDelegate;
-
+@:framework("UIKit")
 extern class UITabBar extends UIView {
-  @private
-    UIView                *_customizeView;
-    UIView                *_backgroundView;
-    UIImageView           *_shadowView;
-    id<UITabBarDelegate>   _delegate;
-    NSArray               *_items;
-    UITabBarItem          *_selectedItem;
-    NSArray               *_customizationItems;
-    struct {
-        unsigned int alertShown:1;
-        unsigned int wasEnabled:1;
-        unsigned int customized:1;
-        unsigned int downButtonSentAction:1;
-        unsigned int isLocked:1;
-        unsigned int backgroundIsPattern:1;
-    } _tabBarFlags;
-    NSArray               *_buttonItems;
-    CFMutableArrayRef      _hiddenItems;
-    id _appearanceStorage;
-}
 
 	public var  id<UITabBarDelegate> delegate;     // weak reference. default is nil
 public var    NSArray             *items;        // get/set visible UITabBarItems. default is nil. changes not animated. shown in order
@@ -74,7 +44,8 @@ public var    NSArray             *items;        // get/set visible UITabBarItem
 
 //___________________________________________________________________________________________________
 
-extern interface UITabBarDelegate<NSObject>
+@:framework("UIKit")
+extern interface UITabBarDelegate {
 @optional
 
 	public function tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item; // called when a new view is selected by the user (but not programatically)

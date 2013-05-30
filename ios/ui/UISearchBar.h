@@ -1,27 +1,17 @@
 //
 //  UISearchBar.h
 package ios.ui;
-//
-//  Copyright (c) 2008-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIView.h>
-#import <UIKit/UIInterface.h>
-#import <UIKit/UIGeometry.h>
-#import <UIKit/UITextField.h>
-#import <UIKit/UIKitDefines.h>
+@:framework("UIKit")
+extern enum UISearchBarIcon {
+    UISearchBarIconSearch; // The magnifying glass
+    UISearchBarIconClear; // The circle with an x in it
+    UISearchBarIconBookmark; // The open book icon
+    UISearchBarIconResultsList; // The list lozenge icon
+}
 
-typedef NS_ENUM(Int, UISearchBarIcon) {
-    UISearchBarIconSearch, // The magnifying glass
-    UISearchBarIconClear, // The circle with an x in it
-    UISearchBarIconBookmark, // The open book icon
-    UISearchBarIconResultsList, // The list lozenge icon
-};
 
-extern interface UISearchBarDelegate;
-@class UITextField, UILabel, UIButton, UIColor;
-
+@:framework("UIKit")
 extern class UISearchBar extends UIView {
 
 	public var         UIBarStyle              barStyle;              // default is UIBarStyleDefault (blue)
@@ -36,8 +26,7 @@ public var placeholder :String;
 	public function setShowsCancelButton:(BOOL)showsCancelButton animated:(BOOL)animated NS_AVAILABLE_IOS(3_0);
 
 	public var (nonatomic,retain) UIColor                *tintColor;             // default is nil
-	public var (nonatomic,assign,getter=isTranslucent) BOOL translucent NS_AVAILABLE_IOS(3_0); // Default is NO. Always YES if barStyle is set to UIBarStyleBlackTranslucent
-
+	public var (nonatomic,assign,getter=isTranslucent) BOOL translucent NS_AVAILABLE_IOS(3_0);
 // available text input traits
 	public var  UITextAutocapitalizationType autocapitalizationType;  // default is UITextAutocapitalizationTypeNone
 	public var  UITextAutocorrectionType     autocorrectionType;      // default is UITextAutocorrectionTypeDefault
@@ -100,22 +89,24 @@ public var  NSArray   *scopeButtonTitles        NS_AVAILABLE_IOS(3_0); // array 
 - (UIOffset)positionAdjustmentForSearchBarIcon:(UISearchBarIcon)icon NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
 }
 
+
+@:framework("UIKit")
 extern interface UISearchBarDelegate {
 
-@optional
+#if display
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar;                      // return NO to not become first responder
-	public function searchBarTextDidBeginEditing:(UISearchBar *)searchBar;                     // called when text starts editing
-- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;                        // return NO to not resign first responder
-	public function searchBarTextDidEndEditing:(UISearchBar *)searchBar;                       // called when text ends editing
-	public function searchBar:(UISearchBar *)searchBar textDidChange:(String *)searchText;   // called when text changes (including clear)
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar;
+	public function searchBarTextDidBeginEditing:(UISearchBar *)searchBar;
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar;
+	public function searchBarTextDidEndEditing:(UISearchBar *)searchBar;
+	public function searchBar:(UISearchBar *)searchBar textDidChange:(String *)searchText;
 - (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(String *)text NS_AVAILABLE_IOS(3_0); // called before text changes
 
-	public function searchBarSearchButtonClicked:(UISearchBar *)searchBar;                     // called when keyboard search button pressed
-	public function searchBarBookmarkButtonClicked:(UISearchBar *)searchBar;                   // called when bookmark button pressed
-	public function searchBarCancelButtonClicked:(UISearchBar *) searchBar;                    // called when cancel button pressed
+	public function searchBarSearchButtonClicked:(UISearchBar *)searchBar;
+	public function searchBarBookmarkButtonClicked:(UISearchBar *)searchBar;
+	public function searchBarCancelButtonClicked:(UISearchBar *) searchBar;
 	public function searchBarResultsListButtonClicked:(UISearchBar *)searchBar NS_AVAILABLE_IOS(3_2); // called when search results button pressed
 
 	public function searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(Int)selectedScope NS_AVAILABLE_IOS(3_0);
-
+#end
 }

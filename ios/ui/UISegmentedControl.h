@@ -1,73 +1,32 @@
 //
 //  UISegmentedControl.h
 package ios.ui;
-//
-//  Copyright (c) 2005-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIControl.h>
-#import <UIKit/UIKitDefines.h>
-#import <UIKit/UIApplication.h>
-#import <UIKit/UIGeometry.h>
-#import <UIKit/UIBarButtonItem.h>
-
-typedef NS_ENUM(Int, UISegmentedControlStyle) {
-    UISegmentedControlStylePlain,     // large plain
-    UISegmentedControlStyleBordered,  // large bordered
-    UISegmentedControlStyleBar,       // small button/nav bar style. tintable
-    UISegmentedControlStyleBezeled,   // DEPRECATED. Do not use this style.
-};
-
-enum {
-    UISegmentedControlNoSegment = -1   // segment index for no selected segment
-};
-
-typedef NS_ENUM(Int, UISegmentedControlSegment) {
-    UISegmentedControlSegmentAny = 0,
-    UISegmentedControlSegmentLeft = 1,   // The capped, leftmost segment. Only applies when numSegments > 1.
-    UISegmentedControlSegmentCenter = 2, // Any segment between the left and rightmost segments. Only applies when numSegments > 2.
-    UISegmentedControlSegmentRight = 3,  // The capped,rightmost segment. Only applies when numSegments > 1.
-    UISegmentedControlSegmentAlone = 4,  // The standalone segment, capped on both ends. Only applies when numSegments = 1.
-};
-
-@class UIImage, UIColor;
-
-extern class UISegmentedControl extends UIControl, implements NSObject>
-{
-  @private
-  // Note: all instance variables will become private in the future. Do not access directly.
-    NSMutableArray *_segments;
-    NSInteger       _selectedSegment;
-    NSInteger       _highlightedSegment;
-    UIView*         _removedSegment;
-    id              _delegate;
-    UIColor        *_tintColor;
-    UIBarStyle      _barStyle;
-    id              _appearanceStorage;
-    UIView         *_backgroundBarView;
-    Float         _enabledAlpha;
-    struct {
-        unsigned int style:3;
-        unsigned int size:2;
-        unsigned int showsDisclosure:1;
-        unsigned int delegateSelectedSegmentChanged:1;
-        unsigned int delegateDisclosureButtonClicked:1;
-        unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;
-        unsigned int momentaryClick:1;
-        unsigned int dontAlwaysToggleForTwoSegments:1;
-        unsigned int tracking:1;
-        unsigned int mouseInside:1;
-        unsigned int autosizeToFitSegments:1;
-        unsigned int isSizingToFit:1;
-        unsigned int autosizeText:1;
-        unsigned int transparentBackground:1;
-        unsigned int useProportionalWidthSegments:1;
-        unsigned int translucentBackground:1;
-        unsigned int appearanceNeedsUpdate:1;
-    } _segmentedControlFlags;
+@:framework("UIKit")
+extern enum UISegmentedControlStyle {
+    UISegmentedControlStylePlain;     // large plain
+    UISegmentedControlStyleBordered;  // large bordered
+    UISegmentedControlStyleBar;       // small button/nav bar style. tintable
+    UISegmentedControlStyleBezeled;   // DEPRECATED. Do not use this style.
 }
+
+extern enum {
+    UISegmentedControlNoSegment = -1   // segment index for no selected segment
+}
+
+
+@:framework("UIKit")
+extern enum UISegmentedControlSegment {
+    UISegmentedControlSegmentAny;
+    UISegmentedControlSegmentLeft;   // The capped, leftmost segment. Only applies when numSegments > 1.
+    UISegmentedControlSegmentCenter; // Any segment between the left and rightmost segments. Only applies when numSegments > 2.
+    UISegmentedControlSegmentRight;  // The capped,rightmost segment. Only applies when numSegments > 1.
+    UISegmentedControlSegmentAlone;  // The standalone segment, capped on both ends. Only applies when numSegments = 1.
+}
+
+
+@:framework("UIKit")
+extern class UISegmentedControl extends UIControl {
 
 - (id)initWithItems:(NSArray *)items; // items can be Strings or UIImages. control is automatically sized to fit content
 
@@ -83,16 +42,16 @@ extern class UISegmentedControl extends UIControl, implements NSObject>
 	public function removeSegmentAtIndex:(NSUInteger)segment animated:(BOOL)animated;
 	public function removeAllSegments;
 
-	public function setTitle:(String *)title forSegmentAtIndex:(NSUInteger)segment;      // can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+	public function setTitle:(String *)title forSegmentAtIndex:(NSUInteger)segment;
 - (String *)titleForSegmentAtIndex:(NSUInteger)segment;
 
-	public function setImage:(UIImage *)image forSegmentAtIndex:(NSUInteger)segment;       // can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil
+	public function setImage:(UIImage *)image forSegmentAtIndex:(NSUInteger)segment;
 - (UIImage *)imageForSegmentAtIndex:(NSUInteger)segment;
 
-	public function setWidth:(Float)width forSegmentAtIndex:(NSUInteger)segment;         // set to 0.0 width to autosize. default is 0.0
+	public function setWidth:(Float)width forSegmentAtIndex:(NSUInteger)segment;
 - (Float)widthForSegmentAtIndex:(NSUInteger)segment;
 
-	public function setContentOffset:(CGSize)offset forSegmentAtIndex:(NSUInteger)segment; // adjust offset of image or text inside the segment. default is (0,0)
+	public function setContentOffset:(CGSize)offset forSegmentAtIndex:(NSUInteger)segment;
 - (CGSize)contentOffsetForSegmentAtIndex:(NSUInteger)segment;
 
 	public function setEnabled:(BOOL)enabled forSegmentAtIndex:(NSUInteger)segment;        // default is YES

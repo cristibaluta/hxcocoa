@@ -1,53 +1,9 @@
 //
 //  UISearchDisplayController.h
 package ios.ui;
-//
-//  Copyright (c) 2009-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIView.h>
-#import <UIKit/UIKitDefines.h>
-#import <UIKit/UILabel.h>
-#import <UIKit/UITableView.h>
-
-@class UISearchBar, UITableView, UIViewController, UIPopoverController;
-extern interface UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate;
-
-@:require(3_0)extern class UISearchDisplayController extends NSObject {
-  @private
-    UIViewController           *_viewController;
-    UITableView                *_tableView;
-    UIView                     *_dimmingView;
-    UISearchBar                *_searchBar;
-    UILabel                    *_noResultsLabel;
-    String                   *_noResultsMessage;
-    String                   *_resultsTitle;
-    id<UISearchDisplayDelegate> _delegate;
-    id<UITableViewDataSource>   _tableViewDataSource;
-    id<UITableViewDelegate>     _tableViewDelegate;
-    CFMutableArrayRef           _containingScrollViews;
-    Float                     _lastKeyboardAdjustment;
-    Float                     _lastFooterAdjustment;
-    UIPopoverController        *_popoverController;
-    UITableViewStyle            _searchResultsTableViewStyle;
-    id                          _navigationControllerBookkeeper;
-    struct {
-        unsigned int visible:1;
-        unsigned int animating:1;
-        unsigned int hidIndexBar:1;
-        unsigned int hidNavigationBar:1;
-        unsigned int noResultsMessageVisible:1;
-        unsigned int noResultsMessageAutoDisplay:1;
-        unsigned int navigationBarHidingEnabled:1;
-        unsigned int dimTableViewOnEmptySearchString:1;
-        unsigned int isRotatingWithPopover:1;
-        unsigned int cancelButtonManagementDisabled:1;
-        unsigned int allowDisablingNavigationBarHiding:1;
-        unsigned int showsResultsForEmptyField:1;
-        unsigned int adjustsSearchBarContentInsetForIndexBar:1;
-    } _searchDisplayControllerFlags;
-}
+@:framework("UIKit")
+extern class UISearchDisplayController extends NSObject {
 
 - (id)initWithSearchBar:(UISearchBar *)searchBar contentsController:(UIViewController *)viewController;
 
@@ -65,7 +21,8 @@ public var                              String                   *searchResultsT
 
 }
 
-extern interface UISearchDisplayDelegate <NSObject>
+@:framework("UIKit")
+extern interface UISearchDisplayDelegate {
 
 @optional
 

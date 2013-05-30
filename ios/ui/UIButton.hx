@@ -6,6 +6,7 @@ import ios.ui.UIControl;
 import objc.graphics.CGGeometry;
 
 
+@:framework("UIKit")
 extern enum UIButtonType {
 	UIButtonTypeCustom;
 	UIButtonTypeRoundedRect;
@@ -14,7 +15,7 @@ extern enum UIButtonType {
 	UIButtonTypeInfoDark;
 	UIButtonTypeContactAdd;
 }
-typedef NSAttributedString = String;
+import ios.ui.NSAttributedString;
 
 
 @:framework("UIKit")

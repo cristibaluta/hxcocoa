@@ -1,31 +1,19 @@
 //
 //  UIMenuController.h
 package ios.ui;
-//
-//  Copyright (c) 2009-2012, Apple Inc. All rights reserved.
-//
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
-#import <UIKit/UIKitDefines.h>
-
-typedef NS_ENUM(Int, UIMenuControllerArrowDirection) {
-    UIMenuControllerArrowDefault, // up or down based on screen location
-#if __IPHONE_3_2 <= __IPHONE_OS_VERSION_MAX_ALLOWED
-    UIMenuControllerArrowUp,
-    UIMenuControllerArrowDown,
-    UIMenuControllerArrowLeft,
-    UIMenuControllerArrowRight,
-#endif
-};
-
-@class UIView;
-
-@:require(3_0)extern class UIMenuController extends NSObject {
-  @private
-    CGRect _targetRect;
-    UIMenuControllerArrowDirection _arrowDirection;
+@:framework("UIKit")
+extern enum UIMenuControllerArrowDirection {
+    UIMenuControllerArrowDefault;
+    UIMenuControllerArrowUp;
+    UIMenuControllerArrowDown;
+    UIMenuControllerArrowLeft;
+    UIMenuControllerArrowRight;
 }
+
+
+@:framework("UIKit")
+extern class UIMenuController extends NSObject {
 
 + (UIMenuController *)sharedMenuController;
 
@@ -49,16 +37,12 @@ UIKIT_EXTERN String *const UIMenuControllerWillHideMenuNotification;
 UIKIT_EXTERN String *const UIMenuControllerDidHideMenuNotification;
 UIKIT_EXTERN String *const UIMenuControllerMenuFrameDidChangeNotification;
 
+@:framework("UIKit")
 extern class UIMenuItem extends NSObject {
-  @private
-    String *_title;
-    SEL       _action;
-    BOOL      _dontDismiss;
-}
 
 - (id)initWithTitle:(String *)title action:(SEL)action;
 
-public var  String *title;     // default is nil
-	public var       SEL       action;    // default is NULL
+	public var title :String;     // default is nil
+	public var action :SEL;    // default is NULL
 
 }

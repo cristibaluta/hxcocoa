@@ -32,8 +32,9 @@ extern class UIAlertView extends UIView {
 	//@:require(ios5_0) public function textFieldAtIndex (textFieldIndex:Int) :UITextField;
 }
 
+@:framework("UIKit")
 extern interface UIAlertViewDelegate {
-	//@optional
+#if display
 /*	public function alertView (alertView:UIAlertView, clickedButtonAtIndex:Int) :Void;
 	public function alertViewCancel (alertView:UIAlertView) :Void;
 	public function willPresentAlertView (alertView:UIAlertView) :Void;
@@ -41,5 +42,5 @@ extern interface UIAlertViewDelegate {
 	public function alertView (alertView:UIAlertView, willDismissWithButtonIndex:Int) :Void;
 	public function alertView (alertView:UIAlertView, didDismissWithButtonIndex:Int) :Void;
 	public function alertViewShouldEnableFirstOtherButton (alertView:UIAlertView) :Bool;*/
-
+#end
 }

@@ -1,19 +1,13 @@
 //
 //  UITextInput.h
 package ios.ui;
-//
-//  Copyright (c) 2009-2012, Apple Inc. All rights reserved.
-//
 
-#import <CoreGraphics/CoreGraphics.h>
-
-#import <UIKit/UITextInputTraits.h>
-#import <UIKit/UIResponder.h>
 
 //===================================================================================================
 // Responders that implement the UIKeyInput protocol will be driven by the system-provided keyboard,
 // which will be made available whenever a conforming responder becomes first responder.
 
+@:framework("UIKit")
 extern interface UIKeyInput <UITextInputTraits>
 
 - (BOOL)hasText;
@@ -26,47 +20,46 @@ extern interface UIKeyInput <UITextInputTraits>
 // Responders that implement the UITextInput protocol allow the system-provided keyboard to
 // offer more sophisticated behaviors based on a current selection and context.
 
-@class UITextPosition;
-@class UITextRange;
-@class UITextSelectionRect;
 
-extern interface UITextInputTokenizer;
-extern interface UITextInputDelegate;
+@:framework("UIKit")
+extern enum UITextStorageDirection {
+    UITextStorageDirectionForward;
+    UITextStorageDirectionBackward;
+}
 
-typedef NS_ENUM(Int, UITextStorageDirection) {
-    UITextStorageDirectionForward = 0,
-    UITextStorageDirectionBackward
-};
 
-typedef NS_ENUM(Int, UITextLayoutDirection) {
-    UITextLayoutDirectionRight = 2,
-    UITextLayoutDirectionLeft,
-    UITextLayoutDirectionUp,
-    UITextLayoutDirectionDown
-};
+@:framework("UIKit")
+extern enum UITextLayoutDirection {
+    UITextLayoutDirectionRight;
+    UITextLayoutDirectionLeft;
+    UITextLayoutDirectionUp;
+    UITextLayoutDirectionDown;
+}
 
 typedef NSInteger UITextDirection;
 
-typedef NS_ENUM(Int, UITextWritingDirection) {
-    UITextWritingDirectionNatural = -1,
-    UITextWritingDirectionLeftToRight = 0,
-    UITextWritingDirectionRightToLeft,
-};
 
-typedef NS_ENUM(Int, UITextGranularity) {
-    UITextGranularityCharacter,
-    UITextGranularityWord,
-    UITextGranularitySentence,
-    UITextGranularityParagraph,
-    UITextGranularityLine,
-    UITextGranularityDocument
-};
-
-@:require(5_1)extern class UIDictationPhrase extends NSObject {
-    @private
-        String *_text;
-        NSArray *_alternativeInterpretations;
+@:framework("UIKit")
+extern enum UITextWritingDirection {
+    UITextWritingDirectionNatural;
+    UITextWritingDirectionLeftToRight;
+    UITextWritingDirectionRightToLeft;
 }
+
+
+@:framework("UIKit")
+extern enum UITextGranularity {
+    UITextGranularityCharacter;
+    UITextGranularityWord;
+    UITextGranularitySentence;
+    UITextGranularityParagraph;
+    UITextGranularityLine;
+    UITextGranularityDocument;
+}
+
+@:framework("UIKit")
+@:require(5_1)
+extern class UIDictationPhrase extends NSObject {
 
 /* -text returns the most likely interpretation for a phrase. If there are other 
  * interpretations, -alternativeInterpretations will return an array of them, with 
@@ -76,6 +69,7 @@ typedef NS_ENUM(Int, UITextGranularity) {
 
 }
 
+@:framework("UIKit")
 extern interface UITextInput <UIKeyInput>
 @required
 
@@ -191,11 +185,14 @@ UIKIT_EXTERN String *const UITextInputTextFontKey;            // Key to a UIFont
  * evaluating characters at indices is an expensive proposition, a position within a text input
  * document is represented as an object, not an integer.  UITextRange and UITextPosition are abstract
  * classes provided to be subclassed when adopting UITextInput */
+
+@:framework("UIKit")
 extern class UITextPosition extends NSObject
 
 }
 
-extern class UITextRange extends NSObject
+@:framework("UIKit")
+extern class UITextRange extends NSObject {
 
 	public var  (nonatomic, readonly, getter=isEmpty) BOOL empty;     //  Whether the range is zero-length.
 	public var UITextPosition *start;
@@ -206,7 +203,10 @@ extern class UITextRange extends NSObject
 /* UITextSelectionRect defines an annotated selection rect used by the system to
  * offer rich text interaction experience.  It also serves as an abstract class
  * provided to be subclassed when adopting UITextInput */
-@:require(6_0)extern class UITextSelectionRect extends NSObject
+
+@:framework("UIKit")
+@:require(6_0)
+extern class UITextSelectionRect extends NSObject
 
 	public var CGRect rect;
 	public var UITextWritingDirection writingDirection;
@@ -217,6 +217,8 @@ extern class UITextRange extends NSObject
 }
 
 /* The input delegate must be notified of changes to the selection and text. */
+
+@:framework("UIKit")
 extern interface UITextInputDelegate <NSObject>
 
 	public function selectionWillChange:(id <UITextInput>)textInput;
@@ -228,6 +230,8 @@ extern interface UITextInputDelegate <NSObject>
 
 
 /* A tokenizer allows the text input system to evaluate text units of varying granularity. */
+
+@:framework("UIKit")
 extern interface UITextInputTokenizer <NSObject>
 
 @required
@@ -242,6 +246,8 @@ extern interface UITextInputTokenizer <NSObject>
 
 /* A recommended base implementation of the tokenizer protocol. Subclasses are responsible
  * for handling directions and granularities affected by layout.*/
+
+@:framework("UIKit")
 extern class UITextInputStringTokenizer extends NSObject <UITextInputTokenizer> {
   @package
     UIResponder <UITextInput> *_textInput;
@@ -251,7 +257,10 @@ extern class UITextInputStringTokenizer extends NSObject <UITextInputTokenizer> 
 
 }
 
-@:require(4_2)extern class UITextInputMode extends NSObject
+
+@:framework("UIKit")
+@:require(4_2)
+extern class UITextInputMode extends NSObject
 
 	public var (default, null) String *primaryLanguage; // The primary language, if any, of the input mode.  A BCP 47 language identifier such as en-US
 

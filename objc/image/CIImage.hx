@@ -179,4 +179,9 @@ CORE_IMAGE_EXPORT NSString *kCIImageAutoAdjustFeatures __OSX_AVAILABLE_STARTING(
 	@:require(osx_10_8,ios_5_0) public function autoAdjustmentFilters () :Array<CIFilter>;
 	@:require(osx_10_8,ios_5_0) public function autoAdjustmentFiltersWithOptions (dict:NSDictionary) :Array<CIFilter>;
 
+	CIImage(UIKitAdditions)
+
+	- (id)initWithImage:(UIImage *)image NS_AVAILABLE_IOS(5_0);
+	- (id)initWithImage:(UIImage *)image options:(NSDictionary *)options NS_AVAILABLE_IOS(5_0);
+
 }
