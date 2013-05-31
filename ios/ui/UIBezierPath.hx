@@ -2,6 +2,7 @@
 //  UIBezierPath.h
 package ios.ui;
 import objc.graphics.CGGeometry;
+import objc.graphics.CGContext;
 
 @:framework("UIKit")
 extends enum UIRectCorner {

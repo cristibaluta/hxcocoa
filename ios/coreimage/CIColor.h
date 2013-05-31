@@ -1,12 +1,5 @@
-/* CoreImage - CIColor.h
+package ios.coreimage;
 
-   Copyright (c) 2011 Apple, Inc.
-   All rights reserved. */
-
-#import <CoreImage/CoreImageDefines.h>
-#import <Foundation/Foundation.h>
-
-CORE_IMAGE_CLASS_EXPORT
 @interface CIColor : NSObject <NSCoding, NSCopying>
 {
     void *_priv;

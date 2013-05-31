@@ -7,7 +7,7 @@ import objc.graphics.CGGeometry;
 import objc.location.CLLocation;
 import objc.foundation.NSSet;
 
-extern enum MKMapType {
+@:framework("MapKit") extern enum MKMapType {
     MKMapTypeStandard;
     MKMapTypeSatellite;
     MKMapTypeHybrid;
@@ -107,7 +107,7 @@ typedef MKUserTrackingMode = Dynamic;//TODO:
 
 }
 
-extern interface MKMapViewDelegate {
+@:framework("MapKit") extern interface MKMapViewDelegate {
 #if display
 
 	public function mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated;

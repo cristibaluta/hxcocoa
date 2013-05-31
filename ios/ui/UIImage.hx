@@ -4,6 +4,9 @@ import objc.foundation.NSObject;
 import objc.foundation.NSData;
 import objc.graphics.CGGeometry;
 import objc.graphics.CGImage;
+import objc.graphics.CGContext;
+import ios.coreimage.CIImage;
+import ios.ui.UIGeometry;
 
 @:framework("UIKit")
 extern enum UIImageOrientation {
@@ -37,10 +40,10 @@ extern class UIImage extends NSObject {
 	public function initWithData (data:NSData) :UIImage;
 
 
-	@:require(ios6_0)public static function imageWithData (data:NSData, scale:Float) :UIImage;
-	@:require(ios4_0)public static function imageWithCGImage (cgImage:CGImageRef, scale:Float, orientation:UIImageOrientation) :UIImage;
-	@:require(ios5_0)public static function imageWithCIImage (ciImage:CIImage) :UIImage;
-	@:require(ios6_0)public static function imageWithCIImage (ciImage:CIImage, scale:(Float)scale orientation:(UIImageOrientation)orientation NS_AVAILABLE_IOS(6_0);
+	//@:require(ios6_0)public static function imageWithData (data:NSData, scale:Float) :UIImage;
+	//@:require(ios4_0)public static function imageWithCGImage (cgImage:CGImageRef, scale:Float, orientation:UIImageOrientation) :UIImage;
+	//@:require(ios5_0)public static function imageWithCIImage (ciImage:CIImage) :UIImage;
+	//@:require(ios6_0)public static function imageWithCIImage (ciImage:CIImage, scale:Float, orientation:UIImageOrientation) :UIImage;
 
 /*- (id)initWithContentsOfFile:(String *)path;
 - (id)initWithData:(NSData *)data;.............
@@ -58,25 +61,25 @@ extern class UIImage extends NSObject {
 
 // animated images. When set as UIImageView.image, animation will play in an infinite loop until removed. Drawing will render the first image
 
-	@:require(ios5_0)public static function animatedImageNamed:(String *)name duration:(NSTimeInterval)duration NS_AVAILABLE_IOS(5_0);  // read sequence of files with suffix starting at 0 or 1
+	@:require(ios5_0)public static function animatedImageNamed (name:String, duration:Float) :UIImage;  // read sequence of files with suffix starting at 0 or 1
 	@:require(ios5_0)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, duration:Float) :UIImage; // sequence of files
-	@:require(ios6_0)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode, duration:Float) :UIImage;
+	//@:require(ios6_0)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode, duration:Float) :UIImage;
 	@:require(ios5_0)public static function animatedImageWithImages (images:Array<UIImage>, duration:Float) :UIImage;
 
-	@:require(ios5_0)public var images (default, null) Array<>; // default is nil for non-animated images
-	@:require(ios5_0)public var duration (default, null) Float; // total duration for all frames. default is 0 for non-animated images
+	@:require(ios5_0)public var images (default, null) :Array<UIImage>; // default is nil for non-animated images
+	@:require(ios5_0)public var duration (default, null) :Float; // total duration for all frames. default is 0 for non-animated images
 
 // the these draw the image 'right side up' in the usual coordinate system with 'point' being the top-left.
 
-	public function drawAtPoint (point:CGPoint) :Void;                                                        // mode = kCGBlendModeNormal, alpha = 1.0
-	public function drawAtPoint (point:CGPoint, blendMode:CGBlendMode, alpha:Float) :Void;
-	public function drawInRect (rect:CGRect) :Void;                                                           // mode = kCGBlendModeNormal, alpha = 1.0
-	public function drawInRect (rect:CGRect, blendMode:CGBlendMode, alpha:Float) :Void;
-
+	@:overload(function (point:CGPoint, blendMode:CGBlendMode, alpha:Float) :Void{})
+	public function drawAtPoint (point:CGPoint) :Void;// mode = kCGBlendModeNormal, alpha = 1.0
+	@:overload(function (rect:CGRect, blendMode:CGBlendMode, alpha:Float) :Void{})
+	public function drawInRect (rect:CGRect) :Void;// mode = kCGBlendModeNormal, alpha = 1.0
 	public function drawAsPatternInRect (rect:CGRect) :Void; // draws the image as a CGPattern
 
+	@:overload(function (capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode) :UIImage{})
 	@:require(ios5_0)public function resizableImageWithCapInsets (capInsets:UIEdgeInsets) :UIImage; // create a resizable version of this image. the interior is tiled when drawn.
-	@:require(ios6_0)public function resizableImageWithCapInsets (capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode) :UIImage; // the interior is resized according to the resizingMode
+	
 
 	@:require(ios5_0)public var capInsets (default, null) :UIEdgeInsets;   // default is UIEdgeInsetsZero for non resizable images
 	@:require(ios6_0)public var resizingMode (default, null) :UIImageResizingMode; // default is UIImageResizingModeTile

@@ -8,15 +8,7 @@
 
 CORE_IMAGE_CLASS_EXPORT
 @interface CIVector : NSObject <NSCopying, NSCoding>
-{
-    size_t _count;
-    
-    union {
-        CGFloat vec[4];
-        CGFloat *ptr;
-    }
-    _u;
-}
+
 
 /* Create a new vector object. */
 

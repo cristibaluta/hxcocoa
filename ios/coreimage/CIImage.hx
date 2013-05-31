@@ -1,25 +1,10 @@
-/* CoreImage - CIImage.h
+package ios.coreimage;
+import objc.foundation.NSObject;
 
-   Copyright (c) 2011 Apple, Inc.
-   All rights reserved. */
+@:framework("CoreImage")
+extern class CIImage extends NSObject {
 
-#import <Foundation/Foundation.h>
-#import <CoreImage/CoreImageDefines.h>
-#import <CoreVideo/CoreVideo.h>
-
-@class NSData, NSURL, NSDictionary;
-
-@class CIContext, CIFilter, CIFilterShape, CIColor;
-
-CORE_IMAGE_CLASS_EXPORT
-@interface CIImage : NSObject <NSCoding, NSCopying>
-{
-#if !TARGET_OS_IPHONE
-    __strong void *_state;
-#endif
-	void *_priv;
-}
-
+#if display
 /* Pixel formats. */
 
 typedef int CIFormat;
@@ -39,14 +24,14 @@ CORE_IMAGE_EXPORT CIFormat kCIFormatRGBAh __OSX_AVAILABLE_STARTING(__MAC_10_4, _
 /* A CGColorSpaceRef defining the color space of the image. This value 
  * overrides the image's implicit color space. 
  * If [NSNull null] then dont color manage the image. */
-CORE_IMAGE_EXPORT String *kCIImageColorSpace;
+kCIImageColorSpace;
 
 /* A NSDictionary of metadata properties to pass to CIImage initialization methods.
  * When used with imageWithCGImage:options:, initWithCGImage:options:, imageWithData:options:, initWithData:options:
  *   If this option is not specified, the properties will be set to CGImageSourceCopyPropertiesAtIndex.
  *   If this option is [NSNull null], the properties will be set to nil.
  */
-CORE_IMAGE_EXPORT String *kCIImageProperties __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+kCIImageProperties __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 /* Creates a new image from the contents of 'image'. */
 + (CIImage *)imageWithCGImage:(CGImageRef)image;
@@ -87,10 +72,8 @@ CORE_IMAGE_EXPORT String *kCIImageProperties __OSX_AVAILABLE_STARTING(__MAC_10_8
 + (CIImage *)imageWithCVPixelBuffer:(CVPixelBufferRef)buffer options:(NSDictionary *)dict __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
 
 /* Creates a new image from the contents of an IOSurface. */
-#if !TARGET_OS_IPHONE
 + (CIImage *)imageWithIOSurface:(IOSurfaceRef)surface __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
 + (CIImage *)imageWithIOSurface:(IOSurfaceRef)surface options:(NSDictionary *)d __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
-#endif
 
 /* Return or initialize a new image with an infinite amount of the color
  * 'color'. */
@@ -118,10 +101,9 @@ format:(CIFormat)f colorSpace:(CGColorSpaceRef)c;
 - (id)initWithContentsOfURL:(NSURL *)url;
 - (id)initWithContentsOfURL:(NSURL *)url options:(NSDictionary *)d;
 
-#if !TARGET_OS_IPHONE
 - (id)initWithIOSurface:(IOSurfaceRef)surface __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
 - (id)initWithIOSurface:(IOSurfaceRef)surface options:(NSDictionary *)d __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
-#endif
+
 
 - (id)initWithCVImageBuffer:(CVImageBufferRef)imageBuffer __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
 - (id)initWithCVImageBuffer:(CVImageBufferRef)imageBuffer options:(NSDictionary *)dict __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
@@ -157,9 +139,8 @@ format:(CIFormat)f colorSpace:(CGColorSpaceRef)c;
  * This method will return nil, if the color space cannot be determined. */
 - (CGColorSpaceRef)colorSpace __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
 
-@end
 
-@interface CIImage (AutoAdjustment)
+// CIImage (AutoAdjustment)
 
 /* Image auto adjustment keys. */
 
@@ -170,19 +151,20 @@ format:(CIFormat)f colorSpace:(CGColorSpaceRef)c;
 /* If CFBoolean value is false then dont attempt to apply enhancement filters.
  * If not specified, the option is assumed to be present and true.
  */
-CORE_IMAGE_EXPORT String *kCIImageAutoAdjustEnhance __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+extern enum CIImageAutoAdjust {
+kCIImageAutoAdjustEnhance __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 /* If CFBoolean value is false then dont attempt to apply red eye filter.
  * If not specified, the option is assumed to be present and true.
  */
-CORE_IMAGE_EXPORT String *kCIImageAutoAdjustRedEye __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+kCIImageAutoAdjustRedEye __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 
 /* If value is an array of detected CIFeatures, then use these features
  * to determine the AutoAdjustEnhance and or AutoAdjustRedEye filters.
  * If not specified, reciever will call CIDetector.
  */
-CORE_IMAGE_EXPORT String *kCIImageAutoAdjustFeatures __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
-
+kCIImageAutoAdjustFeatures __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
+}
 
 /* Return an array of filters to apply to an image to improve its 
  * skin tones, saturation, contrast, shadows and repair red-eyes or LED-eyes.
@@ -195,5 +177,5 @@ CORE_IMAGE_EXPORT String *kCIImageAutoAdjustFeatures __OSX_AVAILABLE_STARTING(__
  */
 - (NSArray *)autoAdjustmentFilters __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
 - (NSArray *)autoAdjustmentFiltersWithOptions:(NSDictionary *)dict __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_5_0);
-
-@end
+#end
+}

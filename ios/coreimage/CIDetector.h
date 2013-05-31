@@ -1,16 +1,4 @@
-/* CoreImage - CIDetector.h
-
-   Copyright (c) 2011 Apple, Inc.
-   All rights reserved. */
-
-
-#import <CoreImage/CoreImageDefines.h>
-#import <Foundation/Foundation.h>
-
-@class CIImage;
-@class CIContext;
-
-
+package ios.coreimage;
 
 /** Detects features in images.
  

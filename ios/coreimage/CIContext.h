@@ -1,23 +1,5 @@
-/* CoreImage - CIContext.h
+package ios.coreimage;
 
-   Copyright (c) 2011 Apple, Inc.
-   All rights reserved. */
-
-#import <CoreImage/CIImage.h>
-#import <CoreImage/CoreImageDefines.h>
-#import <CoreVideo/CoreVideo.h>
-
-#if TARGET_OS_IPHONE
- #import <OpenGLES/EAGL.h>
-#else
- #import <OpenGL/CGLTypes.h>
-#endif 
-
-struct CIContextInternal;
-
-@class CIFilter;
-
-CORE_IMAGE_CLASS_EXPORT
 @interface CIContext : NSObject
 {
     struct CIContextInternal *_priv;

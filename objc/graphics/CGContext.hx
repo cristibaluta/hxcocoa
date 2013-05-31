@@ -12,6 +12,7 @@ typedef CGContextRef = CGContext;
 
 /* Drawing modes for paths. */
 
+@:framework("CoreGraphics")
 extern enum CGPathDrawingMode {
     kCGPathFill;
     kCGPathEOFill;
@@ -22,6 +23,7 @@ extern enum CGPathDrawingMode {
 
 /* Drawing modes for text. */
 
+@:framework("CoreGraphics")
 extern enum CGTextDrawingMode {
     kCGTextFill;
     kCGTextStroke;
@@ -35,6 +37,7 @@ extern enum CGTextDrawingMode {
 
 /* Text encodings. */
 
+@:framework("CoreGraphics")
 extern enum CGTextEncoding {
     kCGEncodingFontSpecific;
     kCGEncodingMacRoman;
@@ -42,6 +45,7 @@ extern enum CGTextEncoding {
 
 /* Interpolation quality. */
 
+@:framework("CoreGraphics")
 extern enum CGInterpolationQuality {
     kCGInterpolationDefault;	/* Let the context decide. */
     kCGInterpolationNone;		/* Never interpolate. */
@@ -63,6 +67,7 @@ extern enum CGInterpolationQuality {
    is your responsibility to make sure that they do what you want when you
    use them in a CGContext. */
 
+@:framework("CoreGraphics")
 extern enum CGBlendMode {
     /* Available in Mac OS X 10.4 & later. */
     kCGBlendModeNormal;
@@ -107,6 +112,7 @@ extern enum CGBlendMode {
     kCGBlendModePlusLighter;		/* R = MIN(1, S + D) */
 }
 
+@:framework("CoreGraphics")
 extern class CGContext {
 /* Return the CFTypeID for CGContextRefs. */
 

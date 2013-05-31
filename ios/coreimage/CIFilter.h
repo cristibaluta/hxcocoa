@@ -1,178 +1,171 @@
-/* CoreImage - CIFilter.h
-
-   Copyright (c) 2011 Apple, Inc.
-   All rights reserved. */
-
-
-#import <Foundation/Foundation.h>
-#import <CoreImage/CoreImageDefines.h>
-
-@class NSURL;
-
+package ios.coreimage;
 
 
 /* Filter attribute strings. */
 
+extern enum CIFilterAttribute {
 /* Keys */
 
 /** Name of the filter */
-CORE_IMAGE_EXPORT String *kCIAttributeFilterName;
+kCIAttributeFilterName;
 
 /** Name of the filter intended for UI display (eg. localized) */
-CORE_IMAGE_EXPORT String *kCIAttributeFilterDisplayName;
+kCIAttributeFilterDisplayName;
 
 /** Description of the filter intended for UI display (eg. localized) - Available in Leopard onwards. */
-CORE_IMAGE_EXPORT String *kCIAttributeDescription __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIAttributeDescription __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /** URL for the reference documentation of the filter. See localizedReferenceDocumentationForFilterName - Available in Leopard onwards. */
-CORE_IMAGE_EXPORT String *kCIAttributeReferenceDocumentation __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIAttributeReferenceDocumentation __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /** Array of filter category names (see below) */
-CORE_IMAGE_EXPORT String *kCIAttributeFilterCategories;
+kCIAttributeFilterCategories;
 
 /** Class name of the filter. */
-CORE_IMAGE_EXPORT String *kCIAttributeClass;
+kCIAttributeClass;
 
 /** The type of the attribute e.g. scalar, time, distance, etc. */
-CORE_IMAGE_EXPORT String *kCIAttributeType;
+kCIAttributeType;
 
 /** Minimum value for the attribute. */
-CORE_IMAGE_EXPORT String *kCIAttributeMin;
+kCIAttributeMin;
 
 /** Maximum value for the attribute. */
-CORE_IMAGE_EXPORT String *kCIAttributeMax;
+kCIAttributeMax;
 
 /** Minimum value for the slider. */
-CORE_IMAGE_EXPORT String *kCIAttributeSliderMin;
+kCIAttributeSliderMin;
 
 /** Maximum value for the slider. */
-CORE_IMAGE_EXPORT String *kCIAttributeSliderMax;
+kCIAttributeSliderMax;
 
 /** Default value for the slider. */
-CORE_IMAGE_EXPORT String *kCIAttributeDefault;
+kCIAttributeDefault;
 
 /** The identity value is the value at which the filter has no effect. */
-CORE_IMAGE_EXPORT String *kCIAttributeIdentity;
+kCIAttributeIdentity;
 
 /** The non-localized name of the attribute. */
-CORE_IMAGE_EXPORT String *kCIAttributeName;
+kCIAttributeName;
 
 /** The localized name of the attribute to be used for display to the user. */
-CORE_IMAGE_EXPORT String *kCIAttributeDisplayName;
+kCIAttributeDisplayName;
 
 /** Key to request the desired set of controls in a filter UIView - defined values are CIUISetBasic, CIUISetIntermediate, CIUISetAdvanced and CIUISetDevelopment. */
-CORE_IMAGE_EXPORT String *kCIUIParameterSet __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIUIParameterSet __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /** Constant for requesting controls that are appropiate in an basic user scenario, meaning the bare minimum of settings to control the filter. */
-CORE_IMAGE_EXPORT String *kCIUISetBasic __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIUISetBasic __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /** Constant for requesting controls that are appropiate in an intermediate user scenario. */
-CORE_IMAGE_EXPORT String *kCIUISetIntermediate __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIUISetIntermediate __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /** Constant for requesting controls that are appropiate in an advanced user scenario. */
-CORE_IMAGE_EXPORT String *kCIUISetAdvanced __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIUISetAdvanced __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /** Constant for requesting controls that should only be visible for development purposes. */
-CORE_IMAGE_EXPORT String *kCIUISetDevelopment __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIUISetDevelopment __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 
 /* Types for numbers */
 
-CORE_IMAGE_EXPORT String *kCIAttributeTypeTime;
-CORE_IMAGE_EXPORT String *kCIAttributeTypeScalar;
-CORE_IMAGE_EXPORT String *kCIAttributeTypeDistance;
-CORE_IMAGE_EXPORT String *kCIAttributeTypeAngle;
-CORE_IMAGE_EXPORT String *kCIAttributeTypeBoolean;
+kCIAttributeTypeTime;
+kCIAttributeTypeScalar;
+kCIAttributeTypeDistance;
+kCIAttributeTypeAngle;
+kCIAttributeTypeBoolean;
 
 /** Indicates that the key uses integer values. */
-CORE_IMAGE_EXPORT String *kCIAttributeTypeInteger __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
+kCIAttributeTypeInteger __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
 
 
 /** Indicates that the key uses non negative integer values. */
-CORE_IMAGE_EXPORT String *kCIAttributeTypeCount __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
+kCIAttributeTypeCount __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
 
 /* Types for 2-element vectors */
-CORE_IMAGE_EXPORT String *kCIAttributeTypePosition;
-CORE_IMAGE_EXPORT String *kCIAttributeTypeOffset;
+kCIAttributeTypePosition;
+kCIAttributeTypeOffset;
 
 /* Types for 3-element vectors */
-CORE_IMAGE_EXPORT String *kCIAttributeTypePosition3;
+kCIAttributeTypePosition3;
 
 /* Types for 4-element vectors */
-CORE_IMAGE_EXPORT String *kCIAttributeTypeRectangle;
+kCIAttributeTypeRectangle;
 
 /* Types for colors */
-CORE_IMAGE_EXPORT String *kCIAttributeTypeColor;
+kCIAttributeTypeColor;
 
 /* Types for images */
-CORE_IMAGE_EXPORT String *kCIAttributeTypeGradient  __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIAttributeTypeImage __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
-CORE_IMAGE_EXPORT String *kCIAttributeTypeTransform __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
+kCIAttributeTypeGradient  __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_NA);
+kCIAttributeTypeImage __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
+kCIAttributeTypeTransform __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_5_0);
 
 /* Categories */
-CORE_IMAGE_EXPORT String *kCICategoryDistortionEffect;
-CORE_IMAGE_EXPORT String *kCICategoryGeometryAdjustment;
-CORE_IMAGE_EXPORT String *kCICategoryCompositeOperation;
-CORE_IMAGE_EXPORT String *kCICategoryHalftoneEffect;
-CORE_IMAGE_EXPORT String *kCICategoryColorAdjustment;
-CORE_IMAGE_EXPORT String *kCICategoryColorEffect;
-CORE_IMAGE_EXPORT String *kCICategoryTransition;
-CORE_IMAGE_EXPORT String *kCICategoryTileEffect;
-CORE_IMAGE_EXPORT String *kCICategoryGenerator;
-CORE_IMAGE_EXPORT String *kCICategoryReduction __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
-CORE_IMAGE_EXPORT String *kCICategoryGradient;
-CORE_IMAGE_EXPORT String *kCICategoryStylize;
-CORE_IMAGE_EXPORT String *kCICategorySharpen;
-CORE_IMAGE_EXPORT String *kCICategoryBlur;
+kCICategoryDistortionEffect;
+kCICategoryGeometryAdjustment;
+kCICategoryCompositeOperation;
+kCICategoryHalftoneEffect;
+kCICategoryColorAdjustment;
+kCICategoryColorEffect;
+kCICategoryTransition;
+kCICategoryTileEffect;
+kCICategoryGenerator;
+kCICategoryReduction __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
+kCICategoryGradient;
+kCICategoryStylize;
+kCICategorySharpen;
+kCICategoryBlur;
 
-CORE_IMAGE_EXPORT String *kCICategoryVideo;
-CORE_IMAGE_EXPORT String *kCICategoryStillImage;
-CORE_IMAGE_EXPORT String *kCICategoryInterlaced;
-CORE_IMAGE_EXPORT String *kCICategoryNonSquarePixels;
-CORE_IMAGE_EXPORT String *kCICategoryHighDynamicRange;
+kCICategoryVideo;
+kCICategoryStillImage;
+kCICategoryInterlaced;
+kCICategoryNonSquarePixels;
+kCICategoryHighDynamicRange;
 
-CORE_IMAGE_EXPORT String *kCICategoryApplePrivate;
-CORE_IMAGE_EXPORT String *kCICategoryBuiltIn;
-CORE_IMAGE_EXPORT String *kCICategoryFilterGenerator __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCICategoryApplePrivate;
+kCICategoryBuiltIn;
+kCICategoryFilterGenerator __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
 
 /* Keys for apply: method options. */
 
-CORE_IMAGE_EXPORT String *kCIApplyOptionExtent __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIApplyOptionDefinition __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIApplyOptionUserInfo __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
+kCIApplyOptionExtent __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
+kCIApplyOptionDefinition __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
+kCIApplyOptionUserInfo __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
 
 /* If used, the value of the kCIApplyOptionColorSpace key be must be an RGB CGColorSpaceRef.
  * Using this option specifies that the output of the kernel is in this color space. 
  * If not specified, the output of the kernel is in the working color space of the rendering CIContext. */
-CORE_IMAGE_EXPORT String *kCIApplyOptionColorSpace __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
+kCIApplyOptionColorSpace __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
 
 /* common filter parameter keys */
 
-CORE_IMAGE_EXPORT String *kCIOutputImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
-CORE_IMAGE_EXPORT String *kCIInputBackgroundImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
-CORE_IMAGE_EXPORT String *kCIInputImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
-CORE_IMAGE_EXPORT String *kCIInputTimeKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputTransformKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputScaleKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputAspectRatioKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputCenterKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputRadiusKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputAngleKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputRefractionKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputWidthKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputSharpnessKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputIntensityKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputEVKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputSaturationKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputColorKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputBrightnessKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputContrastKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputGradientImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputMaskImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputShadingImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputTargetImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputExtentKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
-CORE_IMAGE_EXPORT String *kCIInputVersionKey __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_6_0);
+kCIOutputImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
+kCIInputBackgroundImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
+kCIInputImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_5_0);
+kCIInputTimeKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputTransformKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputScaleKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputAspectRatioKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputCenterKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputRadiusKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputAngleKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputRefractionKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputWidthKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputSharpnessKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputIntensityKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputEVKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputSaturationKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputColorKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputBrightnessKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputContrastKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputGradientImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputMaskImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputShadingImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputTargetImageKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputExtentKey __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA);
+kCIInputVersionKey __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_6_0);
+
+}
 
 @class NSArray, NSDictionary;
 @class CIKernel, CIImage;
@@ -182,10 +175,7 @@ CORE_IMAGE_EXPORT String *kCIInputVersionKey __OSX_AVAILABLE_STARTING(__MAC_NA, 
  
  The CIFilter class produces a CIImage object as output. Typically, a filter takes one or more images as input. Some filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the CIImage, CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to create custom filters. */
 CORE_IMAGE_CLASS_EXPORT
-@interface CIFilter : NSObject <NSCoding, NSCopying>
-{
-    void *_priv[8];
-}
+@interface CIFilter : NSObject {
 
 @property (readonly, nonatomic) CIImage *outputImage;
 
