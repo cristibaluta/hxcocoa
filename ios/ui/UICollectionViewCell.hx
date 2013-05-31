@@ -4,7 +4,7 @@ package ios.ui;
 import ios.ui.UICollectionViewLayout;
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionReusableView extends UIView {
 
 	public var reuseIdentifier (default, null) :String;
@@ -26,7 +26,7 @@ extern class UICollectionReusableView extends UIView {
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionViewCell extends UICollectionReusableView {
 
 	public var contentView :UIView; // add custom subviews to the cell's contentView

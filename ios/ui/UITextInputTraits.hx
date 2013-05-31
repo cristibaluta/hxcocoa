@@ -41,7 +41,7 @@ extern enum UITextAutocorrectionType {
 // Note: Some input methods do not support spell checking.
 
 @:framework("UIKit")
-@:require(ios5_0)
+@:require(ios5)
 extern enum UITextSpellCheckingType {
     UITextSpellCheckingTypeDefault;
     UITextSpellCheckingTypeNo;
@@ -70,7 +70,7 @@ extern enum UIKeyboardType {
     UIKeyboardTypeNamePhonePad;           // A type optimized for entering a person's name or phone number.
     UIKeyboardTypeEmailAddress;           // A type optimized for multiple email address entry (shows space @ . prominently).
 	UIKeyboardTypeDecimalPad;             // A number pad with a decimal point.
-    @:require(ios5_0)UIKeyboardTypeTwitter;// A type optimized for twitter text entry (easy access to @ #)
+    @:require(ios5)UIKeyboardTypeTwitter;// A type optimized for twitter text entry (easy access to @ #)
 
     UIKeyboardTypeAlphabet;
 }

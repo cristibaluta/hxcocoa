@@ -35,13 +35,13 @@ CORE_IMAGE_EXPORT NSString * const kCIContextUseSoftwareRenderer;
  * into the CG context 'ctx'. */
 	public static function contextWithCGContext (tx:CGContextRef, options:NSDictionary) :CIContext;
 
-	@:require(ios5_0) public static function contextWithOptions (dict:NSDictionary) :CIContext;
+	@:require(ios5) public static function contextWithOptions (dict:NSDictionary) :CIContext;
 
 /* Create a new CoreImage context object using 'eaglContext' 
  * Calls to drawImage:atPoint:fromRect: and drawImage:inRect:fromRect:
  * will draw directly though the context. */
-	@:require(ios5_0) public static function contextWithEAGLContext (eaglContext:EAGLContext) :CIContext;
-	@:require(ios5_0) public static function contextWithEAGLContext (eaglContext:EAGLContext, options:NSDictionary) :CIContext;
+	@:require(ios5) public static function contextWithEAGLContext (eaglContext:EAGLContext) :CIContext;
+	@:require(ios5) public static function contextWithEAGLContext (eaglContext:EAGLContext, options:NSDictionary) :CIContext;
 
 /* DEPRECATED - use -drawImage:inRect:fromRect:
  * Render the subregion 'src' of 'im' to point 'p' in the context's
@@ -77,8 +77,8 @@ CORE_IMAGE_EXPORT NSString * const kCIContextUseSoftwareRenderer;
 	@:require(osx_10_6) public function render (im:CIImage, toIOSurface:IOSurfaceRef, bounds:CGRect, colorSpace:CGColorSpaceRef) :Void;
 
 /* Render 'image' into a CVPixelBuffer using the context. */
-	@:require(ios5_0) public function render (image:CIImage, toCVPixelBuffer:CVPixelBufferRef) :Void;
-	@:require(ios5_0) public function render (image:CIImage, toCVPixelBuffer:CVPixelBufferRef, bounds:CGRect, colorSpace:CGColorSpaceRef) :Void;
+	@:require(ios5) public function render (image:CIImage, toCVPixelBuffer:CVPixelBufferRef) :Void;
+	@:require(ios5) public function render (image:CIImage, toCVPixelBuffer:CVPixelBufferRef, bounds:CGRect, colorSpace:CGColorSpaceRef) :Void;
 
 /* Runs the context's garbage collector to reclaim any resources that
  * are no longer required (e.g. removes textures from the texture cache
@@ -92,10 +92,10 @@ CORE_IMAGE_EXPORT NSString * const kCIContextUseSoftwareRenderer;
 
 /* Returns the maximum dimension for input images that can be processed 
  * on the currect context. */
-	@:require(ios5_0) public function inputImageMaximumSize () :CGSize;
+	@:require(ios5) public function inputImageMaximumSize () :CGSize;
 
 /* Returns the maximum dimension for image that can be rendered 
  * on the currect context. */
-	@:require(ios5_0) public function outputImageMaximumSize () :CGSize;
+	@:require(ios5) public function outputImageMaximumSize () :CGSize;
 
 }

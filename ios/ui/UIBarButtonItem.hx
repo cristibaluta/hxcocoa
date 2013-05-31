@@ -65,41 +65,41 @@ extern class UIBarButtonItem extends UIBarItem {
 	public var action :SEL;           // default is NULL
 	public var target :Dynamic;           // default is nil
 	
-	@:require(ios5_0)public function setBackgroundImage (backgroundImage:UIImage, forState:UIControlState, barMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function backgroundImageForState (state:UIControlState, barMetrics:UIBarMetrics) :UIImage;
+	@:require(ios5)public function setBackgroundImage (backgroundImage:UIImage, forState:UIControlState, barMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function backgroundImageForState (state:UIControlState, barMetrics:UIBarMetrics) :UIImage;
 
 /* This sets the background image for buttons with a specific style. 
 	When calling this on a UIBarButtonItem instance, the style argument must match the button's style; when calling on the UIAppearance proxy, any style may be passed.
  */
-	//@:require(ios6_0)public function setBackgroundImage (backgroundImage:UIImage, forState:UIControlState, style:UIBarButtonItemStyle, barMetrics:UIBarMetrics) :Void;
-	//@:require(ios6_0)public function backgroundImageForState (state:UIControlState, style:UIBarButtonItemStyle, barMetrics:UIBarMetrics) :UIImage;
+	//@:require(ios6)public function setBackgroundImage (backgroundImage:UIImage, forState:UIControlState, style:UIBarButtonItemStyle, barMetrics:UIBarMetrics) :Void;
+	//@:require(ios6)public function backgroundImageForState (state:UIControlState, style:UIBarButtonItemStyle, barMetrics:UIBarMetrics) :UIImage;
 
-	@:require(ios5_0)public var tintColor :UIColor;
+	@:require(ios5)public var tintColor :UIColor;
 
 /* For adjusting the vertical centering of bordered bar buttons within the bar 
  */
-	@:require(ios5_0)public function setBackgroundVerticalPositionAdjustment (adjustment:Float, forBarMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function backgroundVerticalPositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :Float;
+	@:require(ios5)public function setBackgroundVerticalPositionAdjustment (adjustment:Float, forBarMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function backgroundVerticalPositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :Float;
 
 /* For adjusting the position of a title (if any) within a bordered bar button 
  */
-	@:require(ios5_0)public function setTitlePositionAdjustment (adjustment:UIOffset, forBarMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function titlePositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :UIOffset;
+	@:require(ios5)public function setTitlePositionAdjustment (adjustment:UIOffset, forBarMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function titlePositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :UIOffset;
 
 /* The remaining appearance modifiers apply solely to UINavigationBar back buttons and are ignored by other buttons.
  */
 /*
  backgroundImage must be a resizable image for good results.
  */
-	@:require(ios5_0)public function setBackButtonBackgroundImage (backgroundImage:UIImage, forState:UIControlState, barMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function backButtonBackgroundImageForState (state:UIControlState, barMetrics:UIBarMetrics) :UIImage;
+	@:require(ios5)public function setBackButtonBackgroundImage (backgroundImage:UIImage, forState:UIControlState, barMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function backButtonBackgroundImageForState (state:UIControlState, barMetrics:UIBarMetrics) :UIImage;
 
-	@:require(ios5_0)public function setBackButtonTitlePositionAdjustment (adjustment:UIOffset, forBarMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function backButtonTitlePositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :UIOffset;
+	@:require(ios5)public function setBackButtonTitlePositionAdjustment (adjustment:UIOffset, forBarMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function backButtonTitlePositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :UIOffset;
 
 /* For adjusting the vertical centering of bordered bar buttons within the bar 
  */
-	@:require(ios5_0)public function setBackButtonBackgroundVerticalPositionAdjustment (adjustment:Float, forBarMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function backButtonBackgroundVerticalPositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :Float;
+	@:require(ios5)public function setBackButtonBackgroundVerticalPositionAdjustment (adjustment:Float, forBarMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function backButtonBackgroundVerticalPositionAdjustmentForBarMetrics (barMetrics:UIBarMetrics) :Float;
 
 }

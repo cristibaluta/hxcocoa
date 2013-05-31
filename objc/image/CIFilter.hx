@@ -255,9 +255,9 @@ extern class CIFilter extends NSObject implements NSCopying {
    [CIImage autoAdjustmentFilters].  
    The parameters of other filter classes will not be serialized.
  */
-	@:require(ios6_0) public static function serializedXMPFromFilters (filters:Array<CIFilter>, inputImageExtent:CGRect) :NSData;
+	@:require(ios6) public static function serializedXMPFromFilters (filters:Array<CIFilter>, inputImageExtent:CGRect) :NSData;
 
 /* Return an array of CIFilters de-serialized from XMP data.
  */
-	@:require(ios6_0) public static function filterArrayFromSerializedXMP (xmpData:NSData, inputImageExtent:CGRect, error:NSError) :Array<CIFIlter>;
+	@:require(ios6) public static function filterArrayFromSerializedXMP (xmpData:NSData, inputImageExtent:CGRect, error:NSError) :Array<CIFIlter>;
 }

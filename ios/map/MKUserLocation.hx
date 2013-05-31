@@ -13,7 +13,7 @@ extern class MKUserLocation extends NSObject /*implements MKAnnotation*/ {
 	public var location (default, null) :CLLocation;
 
 // Returns nil if not in MKUserTrackingModeFollowWithHeading
-	@:require(ios5_0) public var heading (default, null) :CLHeading;
+	@:require(ios5) public var heading (default, null) :CLHeading;
 
 // The title to be displayed for the user location annotation.
 	public var title :String;

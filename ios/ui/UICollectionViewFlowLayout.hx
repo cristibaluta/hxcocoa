@@ -8,14 +8,14 @@ import ios.ui.UIGeometry;
 //UIKIT_EXTERN String *const UICollectionElementKindSectionFooter;
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum UICollectionViewScrollDirection {
     UICollectionViewScrollDirectionVertical;
     UICollectionViewScrollDirectionHorizontal;
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern interface UICollectionViewDelegateFlowLayout {
 #if display
 
@@ -29,7 +29,7 @@ extern interface UICollectionViewDelegateFlowLayout {
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionViewFlowLayout extends UICollectionViewLayout {
 
 	public var minimumLineSpacing :Float;

@@ -36,7 +36,7 @@ extern class GKLeaderboard extends NSObject {
 	public var (default, null) loading :Bool;// true if the leaderboard is currently loading
 
 	// set when leaderboards have been designated a game group; set when loadLeaderboardsWithCompletionHandler has been called for leaderboards that support game groups
-	@:require(ios6_0) @:require(osx10_8) public var (default, null) groupIdentifier :String;
+	@:require(ios6) @:require(osx10_8) public var (default, null) groupIdentifier :String;
 	
 
 // Designated initializer
@@ -60,15 +60,15 @@ extern class GKLeaderboard extends NSObject {
 // 2. Unauthenticated player
 // 3. Leaderboard not present
 #if ios
-	@:require(ios6_0) public static function loadCategoriesWithCompletionHandler (completionHandler:Array<String>->Array<String>->NSError->Void) :Void;
+	@:require(ios6) public static function loadCategoriesWithCompletionHandler (completionHandler:Array<String>->Array<String>->NSError->Void) :Void;
 #end
-	@:require(ios6_0) @:require(osx10_8) public static function loadLeaderboardsWithCompletionHandler (completionHandler:Array<GKLeaderboard>->NSError->Void) :Void;
+	@:require(ios6) @:require(osx10_8) public static function loadLeaderboardsWithCompletionHandler (completionHandler:Array<GKLeaderboard>->NSError->Void) :Void;
 
 // Set the default leaderboard for the local player per game
 // Possible reasons for error:
 // 1. Communications problem
 // 2. Unauthenticated player
 // 3. Leaderboard not present
-	@:require(ios5_0) @:require(osx10_8) public static function setDefaultLeaderboard (categoryID:String, withCompletionHandler:NSError->Void) :Void;
+	@:require(ios5) @:require(osx10_8) public static function setDefaultLeaderboard (categoryID:String, withCompletionHandler:NSError->Void) :Void;
 
 }

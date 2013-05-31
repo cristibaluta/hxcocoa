@@ -40,10 +40,10 @@ extern class UIImage extends NSObject {
 	public function initWithData (data:NSData) :UIImage;
 
 
-	//@:require(ios6_0)public static function imageWithData (data:NSData, scale:Float) :UIImage;
+	//@:require(ios6)public static function imageWithData (data:NSData, scale:Float) :UIImage;
 	//@:require(ios4_0)public static function imageWithCGImage (cgImage:CGImageRef, scale:Float, orientation:UIImageOrientation) :UIImage;
-	//@:require(ios5_0)public static function imageWithCIImage (ciImage:CIImage) :UIImage;
-	//@:require(ios6_0)public static function imageWithCIImage (ciImage:CIImage, scale:Float, orientation:UIImageOrientation) :UIImage;
+	//@:require(ios5)public static function imageWithCIImage (ciImage:CIImage) :UIImage;
+	//@:require(ios6)public static function imageWithCIImage (ciImage:CIImage, scale:Float, orientation:UIImageOrientation) :UIImage;
 
 /*- (id)initWithContentsOfFile:(String *)path;
 - (id)initWithData:(NSData *)data;.............
@@ -55,19 +55,19 @@ extern class UIImage extends NSObject {
 */
 	
 	public var CGImage (default, null) :CGImageRef;
-	@:require(ios5_0)public var CIImage (default, null) :CIImage;
+	@:require(ios5)public var CIImage (default, null) :CIImage;
 	public var imageOrientation (default, null) :UIImageOrientation; // this will affect how the image is composited
 	public var scale (default, null) :Float;
 
 // animated images. When set as UIImageView.image, animation will play in an infinite loop until removed. Drawing will render the first image
 
-	@:require(ios5_0)public static function animatedImageNamed (name:String, duration:Float) :UIImage;  // read sequence of files with suffix starting at 0 or 1
-	@:require(ios5_0)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, duration:Float) :UIImage; // sequence of files
-	//@:require(ios6_0)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode, duration:Float) :UIImage;
-	@:require(ios5_0)public static function animatedImageWithImages (images:Array<UIImage>, duration:Float) :UIImage;
+	@:require(ios5)public static function animatedImageNamed (name:String, duration:Float) :UIImage;  // read sequence of files with suffix starting at 0 or 1
+	@:require(ios5)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, duration:Float) :UIImage; // sequence of files
+	//@:require(ios6)public static function animatedResizableImageNamed (name:String, capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode, duration:Float) :UIImage;
+	@:require(ios5)public static function animatedImageWithImages (images:Array<UIImage>, duration:Float) :UIImage;
 
-	@:require(ios5_0)public var images (default, null) :Array<UIImage>; // default is nil for non-animated images
-	@:require(ios5_0)public var duration (default, null) :Float; // total duration for all frames. default is 0 for non-animated images
+	@:require(ios5)public var images (default, null) :Array<UIImage>; // default is nil for non-animated images
+	@:require(ios5)public var duration (default, null) :Float; // total duration for all frames. default is 0 for non-animated images
 
 // the these draw the image 'right side up' in the usual coordinate system with 'point' being the top-left.
 
@@ -78,19 +78,19 @@ extern class UIImage extends NSObject {
 	public function drawAsPatternInRect (rect:CGRect) :Void; // draws the image as a CGPattern
 
 	@:overload(function (capInsets:UIEdgeInsets, resizingMode:UIImageResizingMode) :UIImage{})
-	@:require(ios5_0)public function resizableImageWithCapInsets (capInsets:UIEdgeInsets) :UIImage; // create a resizable version of this image. the interior is tiled when drawn.
+	@:require(ios5)public function resizableImageWithCapInsets (capInsets:UIEdgeInsets) :UIImage; // create a resizable version of this image. the interior is tiled when drawn.
 	
 
-	@:require(ios5_0)public var capInsets (default, null) :UIEdgeInsets;   // default is UIEdgeInsetsZero for non resizable images
-	@:require(ios6_0)public var resizingMode (default, null) :UIImageResizingMode; // default is UIImageResizingModeTile
+	@:require(ios5)public var capInsets (default, null) :UIEdgeInsets;   // default is UIEdgeInsetsZero for non resizable images
+	@:require(ios6)public var resizingMode (default, null) :UIImageResizingMode; // default is UIImageResizingModeTile
 
 // Support for constraint-based layout (auto layout)
 // The alignmentRectInsets of a UIImage are used by UIImageView and other UIView and UIControl
 //  subclasses that take custom images to determine the view's alignment rect insets for
 //  constraint-based layout.
 // The default alignmentRectInsets are UIEdgeInsetsZero.
-	@:require(ios6_0)public function imageWithAlignmentRectInsets (alignmentInsets:UIEdgeInsets) :UIImage;
-	@:require(ios6_0)public var alignmentRectInsets (default, null) :UIEdgeInsets;
+	@:require(ios6)public function imageWithAlignmentRectInsets (alignmentInsets:UIEdgeInsets) :UIImage;
+	@:require(ios6)public var alignmentRectInsets (default, null) :UIEdgeInsets;
 
 }
 

@@ -4,7 +4,7 @@ package ios.ui;
 
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum NSAttributedString {
 	NSFontAttributeName;				// UIFont, default Helvetica(Neue) 12
 	NSParagraphStyleAttributeName;      // NSParagraphStyle, default defaultParagraphStyle
@@ -23,7 +23,7 @@ extern enum NSAttributedString {
 /* This defines currently supported values for NSUnderlineStyleAttributeName and NSStrikethroughStyleAttributeName, as of iOS 6.0.
  */
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum NSUnderlineStyleAttributeName {
     NSUnderlineStyleNone;
     NSUnderlineStyleSingle;

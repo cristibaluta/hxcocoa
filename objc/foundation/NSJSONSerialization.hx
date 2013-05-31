@@ -1,4 +1,5 @@
 package objc.foundation;
+
 import objc.foundation.NSObject;
 import objc.foundation.NSData;
 
@@ -13,7 +14,10 @@ typedef NSOutputStream = Dynamic;
     - All dictionary keys are NSStrings
     - NSNumbers are not NaN or infinity
 */
-@:require(ios5_0,osx_10_7) extern class NSJSONSerialization extends NSObject {
+@:framework("Foundation") 
+@:require(ios5)
+/*@:require(ios5,osx10_7)*/
+extern class NSJSONSerialization extends NSObject {
 	
 	/* Returns YES if the given object can be converted to JSON data, NO otherwise. The object must have the following properties:
 	    - Top level object is an Array<> or NSDictionary
@@ -43,6 +47,7 @@ typedef NSOutputStream = Dynamic;
 	
 }
 
+@:framework("Foundation")
 extern enum NSJSONReadingOptions
 {
 	NSJSONReadingMutableContainers;
@@ -50,6 +55,7 @@ extern enum NSJSONReadingOptions
 	NSJSONReadingAllowFragments;
 }
 
+@:framework("Foundation")
 extern enum NSJSONWritingOptions
 {
 	NSJSONWritingPrettyPrinted;

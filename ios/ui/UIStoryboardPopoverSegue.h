@@ -9,7 +9,7 @@ package ios.ui;
 
 @class UIPopoverController;
 
-@:require(ios5_0) extern class UIStoryboardPopoverSegue extends UIStoryboardSegue {
+@:require(ios5) extern class UIStoryboardPopoverSegue extends UIStoryboardSegue {
 }
 
 	public var (default, null) UIPopoverController *popoverController;

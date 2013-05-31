@@ -18,7 +18,7 @@ extern enum ALAssetsGroupProperty {
 	ALAssetsGroupPropertyName;
 	ALAssetsGroupPropertyType;
 	ALAssetsGroupPropertyPersistentID;
-	@:require(ios5_0) ALAssetsGroupPropertyURL;
+	@:require(ios5) ALAssetsGroupPropertyURL;
 }
 
 @:framework("AssetsLibrary")
@@ -50,11 +50,11 @@ public function enumerateAssetsWithOptions (options:NSEnumerationOptions, usingB
 public function enumerateAssetsAtIndexes (indexSet:NSIndexSet, options:NSEnumerationOptions, usingBlock:ALAssetsGroupEnumerationResultsBlock) :Void;
 
 // Returns YES if the application is able to edit the group.  Returns NO if the application is not able to edit the group.
-@:require(ios5_0) public var editable (default, null) :Bool;
+@:require(ios5) public var editable (default, null) :Bool;
 
 // Add an existing ALAsset to the group.  An asset can belong to multiple ALAssetsGroups.
 // The caller should check the editable property of the group to see if it is possible to add an asset to the group.
 // Returns YES if the asset was added successfully.  Returns NO if the group is not editable, or if the asset was not able to be added to the group.
-@:require(ios5_0) public function addAsset (asset:ALAsset) :Bool;
+@:require(ios5) public function addAsset (asset:ALAsset) :Bool;
 
 }

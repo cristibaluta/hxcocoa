@@ -10,6 +10,6 @@ extern class UITableViewController extends UIViewController implements UITableVi
 	public var tableView :UITableView;
 	public var clearsSelectionOnViewWillAppear :Bool;
 
-	@:require(ios6_0)public var refreshControl :UIRefreshControl;
+	@:require(ios6)public var refreshControl :UIRefreshControl;
 
 }

@@ -5,7 +5,7 @@ import objc.foundation.NSObject;
 /* Note: NSUUID is not toll-free bridged with CFUUID. Use UUID strings to convert between CFUUID and NSUUID, if needed. NSUUIDs are not guaranteed to be comparable by pointer value (as CFUUIDRef is); use isEqual: to compare two NSUUIDs. */
 
 @:require(osx10_8)
-@:require(ios6_0)
+@:require(ios6)
 @:framework("Foundation")
 extern class NSUUID extends NSObject implements NSCopying implements NSSecureCoding {
 

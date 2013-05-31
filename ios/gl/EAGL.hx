@@ -34,7 +34,7 @@ extern enum EAGLRenderingAPI {
 @:framework("OpenGLES")
 extern class EAGLSharegroup extends NSObject {
 
-	@:require(ios6_0) public var debugLabel :String;
+	@:require(ios6) public var debugLabel :String;
 
 }
 
@@ -54,7 +54,7 @@ extern class EAGLContext extends NSObject {
 	public var API :EAGLRenderingAPI;
 	public var sharegroup :EAGLSharegroup;
 
-	@:require(ios6_0) public var debugLabel :String;
+	@:require(ios6) public var debugLabel :String;
 
 }
 

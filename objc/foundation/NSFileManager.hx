@@ -20,7 +20,7 @@ extern enum NSFileManagerItemReplacementOptions {
 	NSFileManagerItemReplacementWithoutDeletingBackupItem;
 }
 	
-	//@:require(ios6_0) NSUbiquityIdentityDidChangeNotification;
+	//@:require(ios6) NSUbiquityIdentityDidChangeNotification;
 	//NSFoundationVersionWithFileManagerResourceForkSupport;
 
 
@@ -34,8 +34,8 @@ extern class NSFileManager extends NSObject {
 	public function URLsForDirectory (directory:NSSearchPathDirectory, inDomains:NSSearchPathDomainMask) :Array<NSURL>;
 
 	public function URLForDirectory (directory:NSSearchPathDirectory, inDomain:NSSearchPathDomainMask, appropriateForURL:NSURL, create:Bool, error:NSError) :NSURL;
-	@:require(osx_7_0) @:require(ios5_0) public function createDirectoryAtURL (url:NSURL, withIntermediateDirectories:Bool, attributes:NSDictionary, error:NSError) :Bool;
-	@:require(osx_7_0) @:require(ios5_0) public function createSymbolicLinkAtURL (url:NSURL, withDestinationURL:NSURL, error:NSError) :Bool;
+	@:require(osx_7_0) @:require(ios5) public function createDirectoryAtURL (url:NSURL, withIntermediateDirectories:Bool, attributes:NSDictionary, error:NSError) :Bool;
+	@:require(osx_7_0) @:require(ios5) public function createSymbolicLinkAtURL (url:NSURL, withDestinationURL:NSURL, error:NSError) :Bool;
 
 	public function setDelegate (delegate:Dynamic) :Void;
 	public function delegate () :Dynamic;

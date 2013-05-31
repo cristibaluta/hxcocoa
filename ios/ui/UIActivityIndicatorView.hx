@@ -17,7 +17,7 @@ extern class UIActivityIndicatorView extends UIView {
 	public var activityIndicatorViewStyle :UIActivityIndicatorViewStyle;
 	public var hidesWhenStopped :Bool;
 
-	@:require(ios5_0) public var color :UIColor;
+	@:require(ios5) public var color :UIColor;
 
 	public function startAnimating () :Void;
 	public function stopAnimating () :Void;

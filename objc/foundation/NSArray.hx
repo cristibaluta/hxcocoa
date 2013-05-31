@@ -57,7 +57,7 @@ extern class NSArray extends NSObject implements NSCopying implements NSMutableC
 
 	public function objectsAtIndexes (indexes:NSIndexSet) :NSArray;
 
-	@:require(ios6_0) @:require(osx10_8) public function objectAtIndexedSubscript (idx:Int) :Dynamic;
+	@:require(ios6) @:require(osx10_8) public function objectAtIndexedSubscript (idx:Int) :Dynamic;
 
 #if NS_BLOCKS_AVAILABLE
 	public function enumerateObjectsUsingBlock (void (^)(id obj, Int idx, Bool *stop))block  :NSArray;
@@ -136,7 +136,7 @@ extern class NSMutableArray extends NSArray {
 	public function removeObjectsAtIndexes (indexes:NSIndexSet) :Void;
 	public function replaceObjectsAtIndexes (indexes:NSIndexSet, withObjects:NSArray) :Void;
 
-	@:require(ios6_0) @:require(osx10_8) public function setObject (obj:Dynamic, atIndexedSubscript:Int) :Void;
+	@:require(ios6) @:require(osx10_8) public function setObject (obj:Dynamic, atIndexedSubscript:Int) :Void;
 
 #if NS_BLOCKS_AVAILABLE
 	public function sortUsingComparator (NSComparator)cmptr NS_AVAILABLE(10_6, 4_0);

@@ -30,7 +30,7 @@ extern class UIButton extends UIControl {
 	public var adjustsImageWhenHighlighted :Bool;
 	public var adjustsImageWhenDisabled :Bool;
 	public var showsTouchWhenHighlighted :Bool;
-	@:require(ios5_0) public var tintColor :UIColor;
+	@:require(ios5) public var tintColor :UIColor;
 	public var buttonType (default, null) :UIButtonType;
 	
 	public function setTitle (title:String, forState:UIControlState) :Void;
@@ -38,7 +38,7 @@ extern class UIButton extends UIControl {
 	public function setTitleShadowColor (color:UIColor, forState:UIControlState) :Void;
 	public function setImage (image:UIImage, forState:UIControlState) :Void;
 	public function setBackgroundImage (image:UIImage, forState:UIControlState) :Void;
-	@:require(ios6_0) public function setAttributedTitle (title:NSAttributedString, forState:UIControlState) :Void;
+	@:require(ios6) public function setAttributedTitle (title:NSAttributedString, forState:UIControlState) :Void;
 
 	public function titleForState (state:UIControlState) :String;
 	public function titleColorForState (state:UIControlState) :UIColor;
@@ -53,7 +53,7 @@ extern class UIButton extends UIControl {
 	public var currentTitleShadowColor (default, null) :UIColor;
 	public var currentImage (default, null) :UIImage;
 	public var currentBackgroundImage (default, null) :UIImage;
-	@:require(ios6_0) public var currentAttributedTitle (default, null) :NSAttributedString;
+	@:require(ios6) public var currentAttributedTitle (default, null) :NSAttributedString;
 	
 	public var titleLabel (default, null) :UILabel;
 	public var imageView (default, null) :UIImageView;

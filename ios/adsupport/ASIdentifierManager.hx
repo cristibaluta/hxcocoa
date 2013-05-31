@@ -1,7 +1,7 @@
 package ios.adsupport;
 
 @:framework("AdSupport")
-@:require(ios6_0)
+@:require(ios6)
 extern interface ASIdentifierManager {
 
 	 public static function sharedManager () :ASIdentifierManager;

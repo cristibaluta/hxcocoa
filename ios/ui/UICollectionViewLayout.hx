@@ -7,7 +7,7 @@ import objc.graphics.CGGeometry;
 import objc.foundation.NSIndexPath;
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum UICollectionElementCategory {
     UICollectionElementCategoryCell;
     UICollectionElementCategorySupplementaryView;
@@ -15,7 +15,7 @@ extern enum UICollectionElementCategory {
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionViewLayoutAttributes extends NSObject {
 
 	public var frame :CGRect;
@@ -38,7 +38,7 @@ extern class UICollectionViewLayoutAttributes extends NSObject {
 
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum UICollectionUpdateAction {
     UICollectionUpdateActionInsert;
     UICollectionUpdateActionDelete;
@@ -49,7 +49,7 @@ extern enum UICollectionUpdateAction {
 
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionViewUpdateItem extends NSObject {
 
 	public var indexPathBeforeUpdate :NSIndexPath; // nil for UICollectionUpdateActionInsert
@@ -60,7 +60,7 @@ extern class UICollectionViewUpdateItem extends NSObject {
 
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionViewLayout extends NSObject {
 
 // Methods in this class are meant to be overridden and will be called by its collection view to gather layout information.

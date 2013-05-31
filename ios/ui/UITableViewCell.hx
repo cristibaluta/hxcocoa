@@ -68,7 +68,7 @@ extern class UITableViewCell extends UIView implements UIGestureRecognizerDelega
 	public var selectedBackgroundView :UIView;
 
 // If not nil, takes the place of the selectedBackgroundView when using multiple selection.
-	@:require(ios5_0)public var multipleSelectionBackgroundView :UIView;
+	@:require(ios5)public var multipleSelectionBackgroundView :UIView;
 
 	public var reuseIdentifier (default, null) :String;
 	public function prepareForReuse () :Void;

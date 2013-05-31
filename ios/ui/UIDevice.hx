@@ -44,7 +44,7 @@ extern class UIDevice extends NSObject {
 	public var orientation (default, null) :UIDeviceOrientation;
 	//public var uniqueIdentifier (default, null) :String;//  NS_DEPRECATED_IOS(2_0, 5_0);
 
-	@:require(ios6_0)public var identifierForVendor (default, null) :NSUUID;
+	@:require(ios6)public var identifierForVendor (default, null) :NSUUID;
 
 	public var generatesDeviceOrientationNotifications (default, null) :Bool;
 	public function beginGeneratingDeviceOrientationNotifications () :Void;      // nestable

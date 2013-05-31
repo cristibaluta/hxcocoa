@@ -64,6 +64,6 @@ public function scale () :Float;
 
 // Returns a string representing the filename of the representation on disk.  
 // For representations synced from iTunes, this will be the filename of the represenation on the host.
-@:require(ios5_0) public function filename () :String;
+@:require(ios5) public function filename () :String;
 
 }

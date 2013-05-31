@@ -51,8 +51,8 @@ typedef MKUserTrackingMode = Dynamic;//TODO:
 // The annotation representing the user's location
 	public var userLocation :MKUserLocation;
 
-	@:require(ios5_0) public var userTrackingMode :MKUserTrackingMode;
-	@:require(ios5_0) public function setUserTrackingMode (mode:MKUserTrackingMode, animated:Bool) :Void;
+	@:require(ios5) public var userTrackingMode :MKUserTrackingMode;
+	@:require(ios5) public function setUserTrackingMode (mode:MKUserTrackingMode, animated:Bool) :Void;
 
 // Returns YES if the user's location is displayed within the currently visible map region.
 	public var userLocationVisible :Bool;

@@ -5,7 +5,7 @@ package ios.ui;
 
 // Either the header or footer for a section
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UITableViewHeaderFooterView extends UIView {
 
 	public var tintColor :UIColor;

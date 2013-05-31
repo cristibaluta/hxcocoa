@@ -68,8 +68,8 @@ CORE_IMAGE_EXPORT NSString *kCIImageProperties __OSX_AVAILABLE_STARTING(__MAC_10
 	@:require(osx_10_4) public static function imageWithCVImageBuffer (imageBuffer:CVImageBufferRef, options:NSDictionary) :CIImage;
 
 /* Creates a new image whose data is from the contents of a CVPixelBufferRef. */
-	@:require(ios5_0) public static function imageWithCVPixelBuffer (buffer:CVPixelBufferRef) :CIImage;
-	@:require(ios5_0) public static function imageWithCVPixelBuffer (buffer:CVPixelBufferRef, options:NSDictionary) :CIImage;
+	@:require(ios5) public static function imageWithCVPixelBuffer (buffer:CVPixelBufferRef) :CIImage;
+	@:require(ios5) public static function imageWithCVPixelBuffer (buffer:CVPixelBufferRef, options:NSDictionary) :CIImage;
 
 /* Creates a new image from the contents of an IOSurface. */
 #if !ios

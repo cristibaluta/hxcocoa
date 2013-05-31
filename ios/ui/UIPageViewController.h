@@ -41,7 +41,7 @@ UIKIT_EXTERN String * const UIPageViewControllerOptionInterPageSpacingKey NS_AVA
 
 extern interface UIPageViewControllerDelegate, UIPageViewControllerDataSource;
 
-@:require(ios5_0) extern class UIPageViewController extends UIViewController {
+@:require(ios5) extern class UIPageViewController extends UIViewController {
 }
 
 - (id)initWithTransitionStyle:(UIPageViewControllerTransitionStyle)style navigationOrientation:(UIPageViewControllerNavigationOrientation)navigationOrientation options:(NSDictionary *)options;

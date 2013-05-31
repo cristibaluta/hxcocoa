@@ -12,7 +12,7 @@ package ios.ui;
 @class NSManagedObjectContext;
 @class NSPersistentStoreCoordinator;
 
-@:require(ios5_0) extern class UIManagedDocument extends UIDocument {
+@:require(ios5) extern class UIManagedDocument extends UIDocument {
 @private
     NSManagedObjectContext *_managedObjectContext;
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;

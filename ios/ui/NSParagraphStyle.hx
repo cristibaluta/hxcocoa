@@ -4,7 +4,7 @@ package ios.ui;
 
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum NSLineBreakMode {		/* What to do with long lines */
     NSLineBreakByWordWrapping;     	/* Wrap at word boundaries, default */
     NSLineBreakByCharWrapping;		/* Wrap at character boundaries */

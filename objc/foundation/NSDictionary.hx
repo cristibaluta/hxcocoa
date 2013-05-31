@@ -30,7 +30,7 @@ extern class NSDictionary extends NSObject implements NSCopying implements NSMut
 	public function keysSortedByValueUsingSelector (comparator:SEL) :Array<Dynamic>;
 	public function getObjects (objects:Array<Dynamic>, andKeys:Array<Dynamic>) :Void;
 
-	@:require(osx_10_8) @:require(ios6_0) public function objectForKeyedSubscript (key:Dynamic) :Dynamic;
+	@:require(osx_10_8) @:require(ios6) public function objectForKeyedSubscript (key:Dynamic) :Dynamic;
 	
 	
 

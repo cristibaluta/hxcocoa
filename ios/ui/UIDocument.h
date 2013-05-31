@@ -30,7 +30,7 @@ typedef NS_OPTIONS(NSUInteger, UIDocumentState) {
 
 UIKIT_EXTERN String *const UIDocumentStateChangedNotification NS_AVAILABLE_IOS(5_0);
 
-@:require(ios5_0) extern class UIDocument extends NSObject <NSFilePresenter> {
+@:require(ios5) extern class UIDocument extends NSObject <NSFilePresenter> {
 
 - (id)initWithFileURL:(NSURL *)url;
 

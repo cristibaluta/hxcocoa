@@ -47,7 +47,7 @@ extern enum ALAssetsGroupType {
 
 
 @:framework("AssetsLibrary")
-@:require(ios6_0)
+@:require(ios6)
 extern enum ALAuthorizationStatus {
     ALAuthorizationStatusNotDetermined; // User has not yet made a choice with regards to this application
     ALAuthorizationStatusRestricted;        // This application is not authorized to access photo data.
@@ -72,7 +72,7 @@ typedef ALAssetsLibraryAssetForURLResultBlock = ALAsset->Void;
 // This block is executed if the user has granted access to the caller to access the data managed by the framework.
 // If the group is not found, group is nil.
 @:framework("AssetsLibrary")
-@:require(ios5_0)
+@:require(ios5)
 typedef ALAssetsLibraryGroupResultBlock = ALAssetsGroup->Void;
 
 // This block is executed if the user does not grant access to the caller to access the data managed by the framework or if the data is currently unavailable.
@@ -105,7 +105,7 @@ public function assetForURL (assetURL:NSURL, resultBlock:ALAssetsLibraryAssetFor
 // Returns an ALAssetsGroup object in the result block for a URL previously retrieved from an ALAssetsGroup object.
 // When the ALAssetsGroup is requested, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
 // If the data is currently unavailable, the failure block will be called.
-@:require(ios5_0)
+@:require(ios5)
 public function groupForURL (groupURL:NSURL, resultBlock:ALAssetsLibraryGroupResultBlock, failureBlock:ALAssetsLibraryAccessFailureBlock) :Void;
 
 // Add a new ALAssetsGroup to the library.
@@ -113,7 +113,7 @@ public function groupForURL (groupURL:NSURL, resultBlock:ALAssetsLibraryGroupRes
 // If name conflicts with another ALAssetsGroup with the same name, then the group is not created and the result block returns a nil group.
 // When the ALAssetsGroup is added, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
 // If the data is currently unavailable, the failure block will be called.
-@:require(ios5_0)
+@:require(ios5)
 public function addAssetsGroupAlbumWithName (name:String, resultBlock:ALAssetsLibraryGroupResultBlock, failureBlock:ALAssetsLibraryAccessFailureBlock) :Void;
 
 // These methods can be used to add photos or videos to the saved photos album.
@@ -129,11 +129,11 @@ public function writeVideoAtPathToSavedPhotosAlbum (videoPathURL:NSURL, completi
 public function videoAtPathIsCompatibleWithSavedPhotosAlbum (videoPathURL:NSURL) :Bool;
 
 // Returns photo data authorization status for this application
-//@:require(ios6_0)
+//@:require(ios6)
 //public static function (authorizationStatus:ALAuthorizationStatus) :Void;
 
 // Disable retrieval and notifications for Shared Photo Streams
-@:require(ios6_0)
+@:require(ios6)
 public static function disableSharedPhotoStreamsSupport () :Void;
 
 }
@@ -147,7 +147,7 @@ public static function disableSharedPhotoStreamsSupport () :Void;
 // Modified ALAssets will be identified by the ALAssetLibraryUpdatedAssetsKey, but inserted or deleted ALAssets are identified by invalidating the containing ALAssetGroups.
 
 @:framework("AssetsLibrary")
-@:require(ios6_0)
+@:require(ios6)
 extern enum ALAssetsLibraryOptions {
 	ALAssetsLibraryChangedNotification;
 	ALAssetLibraryUpdatedAssetsKey;

@@ -7,7 +7,7 @@ package ios.ui;
 
 #import <UIKit/UIViewController.h>
 
-@:require(ios5_0) 
+@:require(ios5) 
 extern class UIReferenceLibraryViewController extends UIViewController {}
 
 /* Returns YES if any installed dictionary has a definition for the provided term.

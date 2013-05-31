@@ -53,7 +53,7 @@ extern enum UILayoutPriority {
 	
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class NSLayoutConstraint extends NSObject {
 	
 	public static function constraintsWithVisualFormat (format:String, options:NSLayoutFormatOptions, metrics:NSDictionary, views:NSDictionary) :Array<NSLayoutConstraint>;

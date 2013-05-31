@@ -20,7 +20,7 @@ extern enum ALAssetProperty {
 // Properties related to multiple photo representations
 	ALAssetPropertyRepresentations;
 	ALAssetPropertyURLs;
-	@:require(ios6_0) ALAssetPropertyAssetURL;
+	@:require(ios6) ALAssetPropertyAssetURL;
 }
 // Asset types
 @:framework("AssetsLibrary")
@@ -31,7 +31,7 @@ extern enum ALAssetType {
 }
 
 @:framework("AssetsLibrary")
-@:require(ios5_0)
+@:require(ios5)
 extern class ALAsset extends NSObject {
 
 // Returns the value for a given property (as defined above). Calling it with an invalid property returns a ALErrorInvalidProperty error.

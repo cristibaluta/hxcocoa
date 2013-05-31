@@ -56,7 +56,7 @@ extern enum UIApplicationState {
 }
 
 @:framework("UIKit")
-@:require(ios5_0) extern enum UIUserInterfaceLayoutDirection {
+@:require(ios5) extern enum UIUserInterfaceLayoutDirection {
     UIUserInterfaceLayoutDirectionLeftToRight;
     UIUserInterfaceLayoutDirectionRightToLeft;
 }
@@ -151,8 +151,8 @@ extern class UIApplication extends UIResponder {
 	public function setNewsstandIconImage (image:UIImage) :Void;
 
 // UIStateRestoration)
-	@:require(ios6_0) public function extendStateRestoration () :Void;
-	@:require(ios6_0) public function completeStateRestoration () :Void;
+	@:require(ios6) public function extendStateRestoration () :Void;
+	@:require(ios6) public function completeStateRestoration () :Void;
 	
 	@:c public static function UIDeviceOrientationIsValidInterfaceOrientation(orientation:UIInterfaceOrientation) :Void;
 	@:c public static function UIInterfaceOrientationIsPortrait(orientation:UIInterfaceOrientation) :Void;

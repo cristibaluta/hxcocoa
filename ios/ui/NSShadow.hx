@@ -11,7 +11,7 @@ import objc.graphics.CGGeometry;
  */
 
 @:framework("UIKit")
-@:require(ios6_0) extern class NSShadow extends NSObject implements NSCopying implements NSCoding {
+@:require(ios6) extern class NSShadow extends NSObject implements NSCopying implements NSCoding {
 
 	public var shadowOffset :CGSize; // offset in user space of the shadow from the original drawing
 	public var shadowBlurRadius :Float; // blur radius of the shadow in default user space units

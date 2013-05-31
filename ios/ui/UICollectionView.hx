@@ -7,7 +7,7 @@ import objc.graphics.CGGeometry;
 import ios.ui.UICollectionViewLayout;
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern enum UICollectionViewScrollPosition {
     UICollectionViewScrollPositionNone;
     
@@ -24,7 +24,7 @@ extern enum UICollectionViewScrollPosition {
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern interface UICollectionViewDataSource {
 //@required
 	@:sel("collectionView:numberOfItemsInSection:")
@@ -45,7 +45,7 @@ extern interface UICollectionViewDataSource {
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern interface UICollectionViewDelegate {
 //@optional
 #if display
@@ -83,7 +83,7 @@ extern interface UICollectionViewDelegate {
 }
 
 @:framework("UIKit")
-@:require(ios6_0)
+@:require(ios6)
 extern class UICollectionView extends UIScrollView {
 
 	//public function initWithFrame (frame:CGRect, collectionViewLayout:UICollectionViewLayout) :UICollectionView;

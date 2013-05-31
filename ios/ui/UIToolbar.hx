@@ -27,10 +27,10 @@ extern class UIToolbar extends UIView {
 	public var tintColor :UIColor;
 
 
-	@:require(ios5_0)public function setBackgroundImage (backgroundImage:UIImage, forToolbarPosition:UIToolbarPosition, barMetrics:UIBarMetrics) :Void;
-	@:require(ios5_0)public function backgroundImageForToolbarPosition (topOrBottom:UIToolbarPosition, barMetrics:UIBarMetrics) :UIImage;
+	@:require(ios5)public function setBackgroundImage (backgroundImage:UIImage, forToolbarPosition:UIToolbarPosition, barMetrics:UIBarMetrics) :Void;
+	@:require(ios5)public function backgroundImageForToolbarPosition (topOrBottom:UIToolbarPosition, barMetrics:UIBarMetrics) :UIImage;
 
-	@:require(ios6_0)public function setShadowImage (shadowImage:UIImage, forToolbarPosition:UIToolbarPosition) :Void;
-	@:require(ios6_0)public function shadowImageForToolbarPosition (topOrBottom:UIToolbarPosition) :UIImage;
+	@:require(ios6)public function setShadowImage (shadowImage:UIImage, forToolbarPosition:UIToolbarPosition) :Void;
+	@:require(ios6)public function shadowImageForToolbarPosition (topOrBottom:UIToolbarPosition) :UIImage;
 
 }
