@@ -24,11 +24,9 @@
 - (void) preload{
 	
 	if (self.image != nil) {
-		{
-			
-			[self dispatchLoadingEvent];
-			return;
-		}
+		
+		[self dispatchLoadingEvent];
+		return;
 	}
 	
 	NSString *url = [[@"https://graph.facebook.com/" stringByAppendingString:self.albumId] stringByAppendingString:@"/picture"];

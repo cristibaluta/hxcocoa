@@ -71,12 +71,10 @@
 - (id) shift{
 	
 	if (self.length > 0) {
-		{
-			
-			id obj = [self objectAtIndex:0];
-			[self removeObjectAtIndex:0];
-			return obj;
-		}
+		
+		id obj = [self objectAtIndex:0];
+		[self removeObjectAtIndex:0];
+		return obj;
 	}
 	return nil;
 }

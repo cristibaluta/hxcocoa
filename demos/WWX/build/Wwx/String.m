@@ -88,12 +88,10 @@
 		return @"";
 	}
 	if (pos < 0) {
-		{
-			
-			pos = sl + pos;
-			if (pos < 0) {
-				pos = 0;
-			}
+		
+		pos = sl + pos;
+		if (pos < 0) {
+			pos = 0;
 		}
 	}
 	else {
@@ -136,12 +134,10 @@
 		}
 	}
 	if (startIndex > endIndex) {
-		{
-			
-			int tmp = startIndex;
-			startIndex = endIndex;
-			endIndex = tmp;
-		}
+		
+		int tmp = startIndex;
+		startIndex = endIndex;
+		endIndex = tmp;
 	}
 	return [self substr:startIndex len:endIndex - startIndex];
 }

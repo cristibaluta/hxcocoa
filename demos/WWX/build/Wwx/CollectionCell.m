@@ -31,14 +31,12 @@
 	
 	self.markImage.hidden = !sel;
 	if (sel) {
-		{
-			
-			[UIView beginAnimations:@"zoom" context:nil];
-			[UIView setAnimationDuration:0.2];
-			self.imageView.frame =  CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-			self.imageView.alpha = 1;
-			[UIView commitAnimations];
-		}
+		
+		[UIView beginAnimations:@"zoom" context:nil];
+		[UIView setAnimationDuration:0.2];
+		self.imageView.frame =  CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+		self.imageView.alpha = 1;
+		[UIView commitAnimations];
 	}
 	else {
 		{

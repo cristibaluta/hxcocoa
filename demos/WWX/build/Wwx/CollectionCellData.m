@@ -63,11 +63,9 @@
 - (void) loadFinished:(UIImage*)image{
 	
 	if (self.isLoading) {
-		{
-			
-			self.isLoading = NO;
-			self.image = image;
-		}
+		
+		self.isLoading = NO;
+		self.image = image;
 	}
 	[self loadFinishedForIndexPath:self.indexPath];
 }

@@ -69,24 +69,20 @@ static NSString* identif;
 	id groupEnumerator = ^(ALAsset *asset, int index, BOOL stop){
 		
 		if (asset != nil) {
-			{
+			
+			
+			NSDictionary *dict = [asset valueForProperty:ALAssetPropertyURLs];
+			
+			NSURL *url = [dict objectForKey:@"public.jpeg"];
+			if (url != nil) {
 				
 				
-				NSDictionary *dict = [asset valueForProperty:ALAssetPropertyURLs];
-				
-				NSURL *url = [dict objectForKey:@"public.jpeg"];
-				if (url != nil) {
-					{
-						
-						
-						CollectionCellData *cell = [[CollectionCellData alloc] init];
-						cell.localurl = url;
-						cell.selected = YES;
-						cell.type = Local;
-						cell.delegate = _g;
-						[_g.cells push:cell];
-					}
-				}
+				CollectionCellData *cell = [[CollectionCellData alloc] init];
+				cell.localurl = url;
+				cell.selected = YES;
+				cell.type = Local;
+				cell.delegate = _g;
+				[_g.cells push:cell];
 			}
 		}
 		else {
@@ -115,33 +111,31 @@ static NSString* identif;
 	[req startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 		
 		if (result != nil) {
+			
+			
+			NSMutableArray *data = [result objectForKey:@"data"];
 			{
 				
-				
-				NSMutableArray *data = [result objectForKey:@"data"];
-				{
+				int _g = 0;
+				while (_g < data.length) {
 					
-					int _g = 0;
-					while (_g < data.length) {
-						
-						id obj = ((id)[data hx_objectAtIndex:_g]);
-						++_g;
-						
-						CollectionCellData *cell = [[CollectionCellData alloc] init];
-						cell.thumbUrl = [obj objectForKey:@"picture"];
-						cell.sourceUrl = [obj objectForKey:@"source"];
-						cell.selected = YES;
-						cell.type = Facebook;
-						cell.delegate = _g1;
-						[_g1.cells push:cell];
-					}
+					id obj = ((id)[data hx_objectAtIndex:_g]);
+					++_g;
+					
+					CollectionCellData *cell = [[CollectionCellData alloc] init];
+					cell.thumbUrl = [obj objectForKey:@"picture"];
+					cell.sourceUrl = [obj objectForKey:@"source"];
+					cell.selected = YES;
+					cell.type = Facebook;
+					cell.delegate = _g1;
+					[_g1.cells push:cell];
 				}
-				[_g1.collectionView reloadData];
-				[_g1 printTime];
-				[_g1.activityView stopAnimating];
-				[_g1.activityView removeFromSuperview];
-				_g1.activityView = nil;
 			}
+			[_g1.collectionView reloadData];
+			[_g1 printTime];
+			[_g1.activityView stopAnimating];
+			[_g1.activityView removeFromSuperview];
+			_g1.activityView = nil;
 		}
 	}];
 }
@@ -194,15 +188,13 @@ static NSString* identif;
 			CollectionCellData *cell = ((CollectionCellData*)[_g1 hx_objectAtIndex:_g]);
 			++_g;
 			if (cell.selected) {
-				{
-					
-					if (cell.type == Local) {
-						[urls push:cell.localurl];
-					}
-					else {
-						if (cell.type == Facebook) {
-							[urls push:cell.sourceUrl];
-						}
+				
+				if (cell.type == Local) {
+					[urls push:cell.localurl];
+				}
+				else {
+					if (cell.type == Facebook) {
+						[urls push:cell.sourceUrl];
 					}
 				}
 			}
@@ -253,21 +245,19 @@ static NSString* identif;
 	celldata.indexPath = indexPath;
 	celldata.hx_dyn_loadFinishedForIndexPath = ^(NSIndexPath *indexPath){ [self loadFinishedForIndexPath:indexPath]; };
 	if (celldata.image == nil) {
-		{
+		
+		cell.imageView.image = nil;
+		 dispatch_async( dispatch_get_global_queue(0, 0), ^(){
 			
-			cell.imageView.image = nil;
-			 dispatch_async( dispatch_get_global_queue(0, 0), ^(){
-				
-				if (celldata.type == Local) {
-					[celldata loadImageFromLibrary:celldata.localurl];
+			if (celldata.type == Local) {
+				[celldata loadImageFromLibrary:celldata.localurl];
+			}
+			else {
+				if (celldata.type == Facebook) {
+					[celldata loadImageFromUrl:celldata.thumbUrl];
 				}
-				else {
-					if (celldata.type == Facebook) {
-						[celldata loadImageFromUrl:celldata.thumbUrl];
-					}
-				}
-			});
-		}
+			}
+		});
 	}
 	else {
 		cell.imageView.image = celldata.image;
@@ -280,13 +270,11 @@ static NSString* identif;
 	
 	CollectionCellData *celldata = ((CollectionCellData*)[self.cells hx_objectAtIndex:indexPath.item]);
 	if (celldata.selected) {
-		{
-			
-			
-			CollectionCell *cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-			[cell select:NO];
-			celldata.selected = NO;
-		}
+		
+		
+		CollectionCell *cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
+		[cell select:NO];
+		celldata.selected = NO;
 	}
 	else {
 		{
@@ -308,9 +296,7 @@ static NSString* identif;
 	
 	CollectionCellData *celldata = ((CollectionCellData*)[self.cells hx_objectAtIndex:indexPath.item]);
 	if (celldata.image == nil) {
-		{
-			
-		}
+		
 	}
 }
 - (void) loadFinishedForIndexPath:(NSIndexPath*)indexPath{

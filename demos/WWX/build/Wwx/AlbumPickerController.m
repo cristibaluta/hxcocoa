@@ -65,11 +65,9 @@
 	id groupsEnumerator = ^(ALAssetsGroup *group, BOOL stop){
 		
 		if (group != nil) {
-			{
-				
-				[Log trace:@"storing asset" infos:@{@"fileName":@"AlbumPickerController.hx", @"lineNumber":@"66", @"className":@"AlbumPickerController", @"methodName":@"viewDidLoad"}];
-				[_g.groups push:group];
-			}
+			
+			[Log trace:@"storing asset" infos:@{@"fileName":@"AlbumPickerController.hx", @"lineNumber":@"66", @"className":@"AlbumPickerController", @"methodName":@"viewDidLoad"}];
+			[_g.groups push:group];
 		}
 		else {
 			{
@@ -134,11 +132,9 @@
 	
 	AlbumTableViewCell *cell = (AlbumTableViewCell*)[tableView_ dequeueReusableCellWithIdentifier:identif];
 	if (cell == nil) {
-		{
-			
-			cell = [[AlbumTableViewCell alloc] init];
-			[cell _initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identif];
-		}
+		
+		cell = [[AlbumTableViewCell alloc] init];
+		[cell _initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identif];
 	}
 	int row = indexPath.row;
 	cell.customImageView.image = nil;
@@ -150,43 +146,35 @@
 		shift = 0;
 	}
 	if (indexPath.section == 0 && shift > 0) {
-		{
-			
-			cell.customTextLabel.text = ((NSString*)[self.movies hx_objectAtIndex:row]);
-			cell.customImageView.image = [UIImage imageNamed:@"SymbolCamera"];
-		}
+		
+		cell.customTextLabel.text = ((NSString*)[self.movies hx_objectAtIndex:row]);
+		cell.customImageView.image = [UIImage imageNamed:@"SymbolCamera"];
 	}
 	else {
 		if (indexPath.section == shift) {
-			{
-				
-				
-				ALAssetsGroup *group = ((ALAssetsGroup*)[self.groups hx_objectAtIndex:row]);
-				cell.customTextLabel.text = [group valueForProperty:ALAssetsGroupPropertyName];
-				[cell setLocalImage:[UIImage imageWithCGImage:[group posterImage]]];
-			}
+			
+			
+			ALAssetsGroup *group = ((ALAssetsGroup*)[self.groups hx_objectAtIndex:row]);
+			cell.customTextLabel.text = [group valueForProperty:ALAssetsGroupPropertyName];
+			[cell setLocalImage:[UIImage imageWithCGImage:[group posterImage]]];
 		}
 		else {
 			if (indexPath.section == 1 + shift) {
-				{
+				
+				if (self.fb_albums == nil) {
 					
-					if (self.fb_albums == nil) {
-						{
-							
-							cell.customTextLabel.text = @"Login to Facebook";
-							cell.customImageView.image = nil;
-						}
-					}
-					else {
-						{
-							
-							
-							FBAlbum *album = ((FBAlbum*)[self.fb_albums hx_objectAtIndex:row]);
-							cell.customTextLabel.text = [[[album.name stringByAppendingString:@" ( "] stringByAppendingString:album.albumId] stringByAppendingString:@" )"];
-							
-							NSString *url = [[[@"https://graph.facebook.com/" stringByAppendingString:album.albumId] stringByAppendingString:@"/picture?type=album&access_token="] stringByAppendingString:[FBSession activeSession].accessToken];
-							[cell loadFacebookImage:url];
-						}
+					cell.customTextLabel.text = @"Login to Facebook";
+					cell.customImageView.image = nil;
+				}
+				else {
+					{
+						
+						
+						FBAlbum *album = ((FBAlbum*)[self.fb_albums hx_objectAtIndex:row]);
+						cell.customTextLabel.text = [[[album.name stringByAppendingString:@" ( "] stringByAppendingString:album.albumId] stringByAppendingString:@" )"];
+						
+						NSString *url = [[[@"https://graph.facebook.com/" stringByAppendingString:album.albumId] stringByAppendingString:@"/picture?type=album&access_token="] stringByAppendingString:[FBSession activeSession].accessToken];
+						[cell loadFacebookImage:url];
 					}
 				}
 			}
@@ -211,18 +199,14 @@
 		shift = 0;
 	}
 	if (section == 0 && shift > 0) {
-		{
-			
-		}
+		
 	}
 	else {
 		if (section == shift) {
-			{
-				
-				
-				ALAssetsGroup *group = ((ALAssetsGroup*)[self.groups hx_objectAtIndex:row]);
-				[self localAlbumPicked:group];
-			}
+			
+			
+			ALAssetsGroup *group = ((ALAssetsGroup*)[self.groups hx_objectAtIndex:row]);
+			[self localAlbumPicked:group];
 		}
 		else {
 			if (self.fb_albums != nil) {
@@ -230,17 +214,15 @@
 			}
 			else {
 				if (!self.loadingFacebook) {
-					{
-						
-						self.activityView = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-						CGRect rect = self.activityView.frame;
-						rect.origin.x = 20;
-						rect.origin.y = 30;
-						self.activityView.frame = rect;
-						[[self.tableView cellForRowAtIndexPath:indexPath] addSubview:self.activityView];
-						[self.activityView startAnimating];
-						[self loginToFacebook];
-					}
+					
+					self.activityView = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+					CGRect rect = self.activityView.frame;
+					rect.origin.x = 20;
+					rect.origin.y = 30;
+					self.activityView.frame = rect;
+					[[self.tableView cellForRowAtIndexPath:indexPath] addSubview:self.activityView];
+					[self.activityView startAnimating];
+					[self loginToFacebook];
 				}
 			}
 		}
@@ -352,35 +334,33 @@
 	[req startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 		
 		if (result != nil) {
+			
+			_g.fb_albums = [[NSMutableArray alloc] init];
+			
+			NSMutableArray *a = [result objectForKey:@"data"];
 			{
 				
-				_g.fb_albums = [[NSMutableArray alloc] init];
-				
-				NSMutableArray *a = [result objectForKey:@"data"];
-				{
+				int _g1 = 0;
+				while (_g1 < a.length) {
 					
-					int _g1 = 0;
-					while (_g1 < a.length) {
-						
-						id obj = ((id)[a hx_objectAtIndex:_g1]);
-						++_g1;
-						if ([obj objectForKey:@"count"] == nil) {
-							continue;
-						}
-						
-						FBAlbum *album = [[FBAlbum alloc] init];
-						album.name = [obj objectForKey:@"name"];
-						album.nr = [obj objectForKey:@"count"];
-						album.coverPhoto = [obj objectForKey:@"cover_photo"];
-						album.albumId = [obj objectForKey:@"id"];
-						[_g.fb_albums push:album];
+					id obj = ((id)[a hx_objectAtIndex:_g1]);
+					++_g1;
+					if ([obj objectForKey:@"count"] == nil) {
+						continue;
 					}
+					
+					FBAlbum *album = [[FBAlbum alloc] init];
+					album.name = [obj objectForKey:@"name"];
+					album.nr = [obj objectForKey:@"count"];
+					album.coverPhoto = [obj objectForKey:@"cover_photo"];
+					album.albumId = [obj objectForKey:@"id"];
+					[_g.fb_albums push:album];
 				}
-				[_g.tableView reloadData];
-				[_g.activityView stopAnimating];
-				[_g.activityView removeFromSuperview];
-				_g.activityView = nil;
 			}
+			[_g.tableView reloadData];
+			[_g.activityView stopAnimating];
+			[_g.activityView removeFromSuperview];
+			_g.activityView = nil;
 		}
 	}];
 }

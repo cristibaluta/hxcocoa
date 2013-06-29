@@ -35,12 +35,10 @@
 - (void) select:(BOOL)v{
 	
 	if (v) {
-		{
-			
-			[UIView beginAnimations:@"fade" context:nil];
-			[UIView setAnimationDuration:0.2];
-			[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-		}
+		
+		[UIView beginAnimations:@"fade" context:nil];
+		[UIView setAnimationDuration:0.2];
+		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	}
 	if (v) {
 		self.background.backgroundColor = [UIColor whiteColor];
