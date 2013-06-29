@@ -1,23 +1,27 @@
 ## Overview
 
-This haxe library will contain almost all the Cocoa and CocoaTouch frameworks.
-It should be used with the hxobjc target of the Haxe language
+This haxelib contains the Cocoa and CocoaTouch frameworks externs.
+It should be used with the hxobjc target of the Haxe language.
 
 ## Packages
 
-: Cocoa related frameworks are in the osx package
+ 1. Cocoa related frameworks are in the osx package
 
-: CocoaTouch related frameworks are in the ios package
+ 2. CocoaTouch related frameworks are in the ios package
 
-: objc contains the Foundation framework and other frameworks that are compatible with ios and osx
+ 3. objc contains the Foundation framework and other frameworks that are compatible with ios and osx
 
-: SupportingFiles contains some default icons and launch images. You can specify a custom SupportingFiles folder in the compiler with 
+ 4. SupportingFiles contains default icons and launch images but this is the place to put all your resources like pngs. You can specify a custom SupportingFiles folder in the compiler with 
 	
 	-supporting-files <path>
 
 
 ## Install
 
-This lib will not be on haxelib till the hxobjc will be in the official compiler. To install you need to download it from github. Once you've done that zip it, then run:
+Zip the local copy then run:
 
-	haxelib test hxcocoa.zip
+	haxelib local hxcocoa.zip
+
+To keep in sync with git you can set the dev to your git copy:
+
+	haxelib dev hxcocoa <path>
