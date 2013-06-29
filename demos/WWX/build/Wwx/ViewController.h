@@ -25,13 +25,13 @@
 @property (nonatomic, strong) ALAssetsLibrary *assetslibrary;
 @property (nonatomic, strong) UINavigationController *navigationController;
 @property (nonatomic) int currentStep;
-@property (nonatomic, strong) NSMutableString *currentAlbumName;
+@property (nonatomic, strong) NSString *currentAlbumName;
 @property (nonatomic, strong) StepsView *stepsView;
 @property (nonatomic, strong) AlbumPickerController *albumPicker;
 @property (nonatomic, strong) PhotosPickerController *photosPicker;
 @property (nonatomic, strong) UISwipeGestureRecognizer *leftGesture;
 @property (nonatomic, strong) UISwipeGestureRecognizer *rightGesture;
-@property (nonatomic, strong) NSMutableString *currentPath;
+@property (nonatomic, strong) NSString *currentPath;
 - (void) loadView;
 - (void) viewDidLoad;
 - (void) leftGestureActioned;
@@ -42,7 +42,7 @@
 - (void) localAlbumPicked:(ALAssetsGroup*)album;
 - (void) facebookAlbumPicked:(FBAlbum*)album;
 - (void) photosPicked:(NSMutableArray*)urls;
-- (void) selectMovieAtPath:(NSMutableString*)path;
+- (void) selectMovieAtPath:(NSString*)path;
 - (NSMutableArray*) selectedImagesUrls;
 - (void) addExporter;
 - (BOOL) shouldAutorotate;

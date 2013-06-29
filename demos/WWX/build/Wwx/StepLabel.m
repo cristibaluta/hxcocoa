@@ -30,19 +30,33 @@
 - (void) setIndex:(int)i{
 	
 	self.i = i;
-	self.label.text = [@"1" mutableCopy];
+	self.label.text = @"1";
 }
 - (void) select:(BOOL)v{
 	
 	if (v) {
-		
-		[UIView beginAnimations:[@"fade" mutableCopy] context:nil];
-		[UIView setAnimationDuration:0.2];
-		[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		{
+			
+			[UIView beginAnimations:@"fade" context:nil];
+			[UIView setAnimationDuration:0.2];
+			[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+		}
 	}
-	self.background.backgroundColor = ( (v) ? [UIColor whiteColor] : [UIColor darkGrayColor]);
-	self.label.alpha = ( (v) ? 1 : 0.3);
-	if (v) [UIView commitAnimations];
+	if (v) {
+		self.background.backgroundColor = [UIColor whiteColor];
+	}
+	else {
+		self.background.backgroundColor = [UIColor darkGrayColor];
+	}
+	if (v) {
+		self.label.alpha = 1;
+	}
+	else {
+		self.label.alpha = 0.3;
+	}
+	if (v) {
+		[UIView commitAnimations];
+	}
 }
 
 @end

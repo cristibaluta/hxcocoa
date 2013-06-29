@@ -44,7 +44,8 @@
 	self.currentStep = j;
 	{
 		
-		int _g1 = 0; int _g = self.steps.length;
+		int _g1 = 0;
+		int _g = self.steps.length;
 		while (_g1 < _g) {
 			
 			int i = _g1++;
@@ -66,10 +67,14 @@
 	CGPoint p = [touch locationInView:self];
 	
 	StepLabel *s = ((StepLabel*)[self.steps hx_objectAtIndex:self.currentStep]);
-	if (p.x > s.frame.origin.x) [self.delegate stepTouched:self.currentStep + 1];
-	else [self.delegate stepTouched:self.currentStep - 1];
+	if (p.x > s.frame.origin.x) {
+		[self.delegate stepTouched:self.currentStep + 1];
+	}
+	else {
+		[self.delegate stepTouched:self.currentStep - 1];
+	}
 	
-	NSMutableString *s1 = [[@"a" mutableCopy] stringByAppendingString:[@"b" mutableCopy]];
+	NSString *s1 = [@"a" stringByAppendingString:@"b"];
 }
 
 @end

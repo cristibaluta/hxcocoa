@@ -41,18 +41,18 @@
 	};
 	id failureblock = ^(NSError *myerror){
 		
-		[Log trace:[[@"Cant get image - %@" mutableCopy] stringByAppendingString:[myerror localizedDescription]] infos:@{@"fileName":@"CollectionCellData.hx", @"lineNumber":@"39", @"className":@"CollectionCellData", @"methodName":@"loadImageCG"}];
+		[Log trace:[@"Cant get image - %@" stringByAppendingString:[myerror localizedDescription]] infos:@{@"fileName":@"CollectionCellData.hx", @"lineNumber":@"39", @"className":@"CollectionCellData", @"methodName":@"loadImageCG"}];
 	};
 	
 	ALAssetsLibrary *assetslibrary = [[ALAssetsLibrary alloc] init];
 	[assetslibrary assetForURL:url resultBlock:resultblock failureBlock:failureblock];
 }
-- (void) loadImageFromUrl:(NSMutableString*)url{
+- (void) loadImageFromUrl:(NSString*)url{
 	
 	self.isLoading = YES;
 	[NSThread detachNewThreadSelector:@selector(loadImageData:) toTarget:self withObject:url];
 }
-- (void) loadImageData:(NSMutableString*)url{
+- (void) loadImageData:(NSString*)url{
 	
 	
 	NSData *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
@@ -63,9 +63,11 @@
 - (void) loadFinished:(UIImage*)image{
 	
 	if (self.isLoading) {
-		
-		self.isLoading = NO;
-		self.image = image;
+		{
+			
+			self.isLoading = NO;
+			self.image = image;
+		}
 	}
 	[self loadFinishedForIndexPath:self.indexPath];
 }

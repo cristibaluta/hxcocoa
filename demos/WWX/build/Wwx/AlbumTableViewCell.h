@@ -17,10 +17,10 @@
 
 @property (nonatomic, strong) UIImageView *customImageView;
 @property (nonatomic, strong) UILabel *customTextLabel;
-- (void) _initWithStyle:(UITableViewCellStyle*)style reuseIdentifier:(NSMutableString*)reuseIdentifier;
+- (void) _initWithStyle:(UITableViewCellStyle*)style reuseIdentifier:(NSString*)reuseIdentifier;
 - (void) setLocalImage:(UIImage*)img;
-- (void) loadFacebookImage:(NSMutableString*)imageURL;
-- (void) loadImageData:(NSMutableString*)url;
+- (void) loadFacebookImage:(NSString*)imageURL;
+- (void) loadImageData:(NSString*)url;
 - (void) cacheImage:(NSData*)imageData;
 - (void) setSelected:(BOOL)selected animated:(BOOL)animated;
 - (void) dealloc;

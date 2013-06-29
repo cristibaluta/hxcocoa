@@ -9,6 +9,7 @@
 
 #import "Array.h"
 #import "String.h"
+#import "HxIterator.h"
 
 @interface NSMutableArray ( Array )
 
@@ -16,8 +17,8 @@
 - (NSMutableArray*) concat:(NSMutableArray*)a;
 - (NSMutableArray*) copy;
 - (void) insert:(int)pos x:(id)x;
-- (NSMutableString*) join:(NSMutableString*)sep;
-- (NSMutableString*) toString;
+- (NSString*) join:(NSString*)sep;
+- (NSString*) toString;
 - (id) pop;
 - (int) push:(id)x;
 - (void) unshift:(id)x;

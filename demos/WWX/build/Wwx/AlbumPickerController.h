@@ -37,8 +37,8 @@
 - (void) facebookAlbumPicked:(FBAlbum*)album;
 @property (nonatomic,copy) void(^hx_dyn_facebookAlbumPicked)(FBAlbum*);
 // Dynamic method defined with an objc method and a block property
-- (void) selectMovieAtPath:(NSMutableString*)path;
-@property (nonatomic,copy) void(^hx_dyn_selectMovieAtPath)(NSMutableString*);
+- (void) selectMovieAtPath:(NSString*)path;
+@property (nonatomic,copy) void(^hx_dyn_selectMovieAtPath)(NSString*);
 - (void) loadView;
 - (void) viewDidLoad;
 - (void) viewDidAppear:(BOOL)animated;

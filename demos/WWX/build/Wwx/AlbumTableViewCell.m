@@ -11,7 +11,7 @@
 
 @synthesize customImageView;
 @synthesize customTextLabel;
-- (void) _initWithStyle:(UITableViewCellStyle*)style reuseIdentifier:(NSMutableString*)reuseIdentifier{
+- (void) _initWithStyle:(UITableViewCellStyle*)style reuseIdentifier:(NSString*)reuseIdentifier{
 	
 	self.backgroundColor = [UIColor clearColor];
 	self.imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -37,11 +37,11 @@
 	
 	self.customImageView.image = img;
 }
-- (void) loadFacebookImage:(NSMutableString*)imageURL{
+- (void) loadFacebookImage:(NSString*)imageURL{
 	
 	[NSThread detachNewThreadSelector:@selector(loadImageData:) toTarget:self withObject:imageURL];
 }
-- (void) loadImageData:(NSMutableString*)url{
+- (void) loadImageData:(NSString*)url{
 	
 	
 	NSData *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
@@ -57,7 +57,7 @@
 }
 - (void) dealloc{
 	
-	[Log trace:[@"dealloc collection cell" mutableCopy] infos:@{@"fileName":@"AlbumTableViewCell.hx", @"lineNumber":@"70", @"className":@"AlbumTableViewCell", @"methodName":@"dealloc"}];
+	[Log trace:@"dealloc collection cell" infos:@{@"fileName":@"AlbumTableViewCell.hx", @"lineNumber":@"70", @"className":@"AlbumTableViewCell", @"methodName":@"dealloc"}];
 	[self.customImageView removeFromSuperview];
 	self.customImageView = nil;
 	[self.customTextLabel removeFromSuperview];

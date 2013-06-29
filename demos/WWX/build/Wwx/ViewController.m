@@ -25,7 +25,7 @@
 	self.view = [[UIView alloc] init];
 	self.view.frame = frame;
 	
-	UIImage *pattern = [UIImage imageNamed:[@"BackgroundPattern" mutableCopy]];
+	UIImage *pattern = [UIImage imageNamed:@"BackgroundPattern"];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
 }
 - (void) viewDidLoad{
@@ -60,22 +60,26 @@
 }
 - (void) leftGestureActioned{
 	
-	[Log trace:[@"swipe left" mutableCopy] infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"94", @"className":@"ViewController", @"methodName":@"leftGestureActioned"}];
+	[Log trace:@"swipe left" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"94", @"className":@"ViewController", @"methodName":@"leftGestureActioned"}];
 	{
 		
 		
 		ViewController *_g = self;
 		switch (_g.currentStep){
-			case 1:[self photosPicked:nil];
+			case 1:{
+				[self photosPicked:nil];
+			}
 			break;
-			case 2:[self addExporter];
+			case 2:{
+				[self addExporter];
+			}
 			break;
 		}
 	}
 }
 - (void) rightGestureActioned{
 	
-	[Log trace:[@"swipe right" mutableCopy] infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"108", @"className":@"ViewController", @"methodName":@"rightGestureActioned"}];
+	[Log trace:@"swipe right" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"108", @"className":@"ViewController", @"methodName":@"rightGestureActioned"}];
 	{
 		
 		
@@ -92,18 +96,28 @@
 }
 - (void) stepTouched:(int)i{
 	
-	[Log trace:[@">> touch step " mutableCopy] infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"127", @"className":@"ViewController", @"methodName":@"stepTouched"}];
-	if (i < self.currentStep) [self rightGestureActioned];
-	else if (i > self.currentStep) [self leftGestureActioned];
+	[Log trace:@">> touch step " infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"127", @"className":@"ViewController", @"methodName":@"stepTouched"}];
+	if (i < self.currentStep) {
+		[self rightGestureActioned];
+	}
+	else {
+		if (i > self.currentStep) {
+			[self leftGestureActioned];
+		}
+	}
 }
 - (void) enableSteps:(BOOL)b{
 	
-	if (b) [self.view addSubview:self.stepsView];
-	else [self.view insertSubview:self.stepsView atIndex:0];
+	if (b) {
+		[self.view addSubview:self.stepsView];
+	}
+	else {
+		[self.view insertSubview:self.stepsView atIndex:0];
+	}
 }
 - (void) localAlbumPicked:(ALAssetsGroup*)album{
 	
-	[Log trace:[@"local album picked" mutableCopy] infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"148", @"className":@"ViewController", @"methodName":@"localAlbumPicked"}];
+	[Log trace:@"local album picked" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"148", @"className":@"ViewController", @"methodName":@"localAlbumPicked"}];
 	self.photosPicker = [[PhotosPickerController alloc] init];
 	self.photosPicker.delegate = self;
 	[self.navigationController pushViewController:self.photosPicker animated:YES];
@@ -113,7 +127,7 @@
 }
 - (void) facebookAlbumPicked:(FBAlbum*)album{
 	
-	[Log trace:[@"facebook album picked" mutableCopy] infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"160", @"className":@"ViewController", @"methodName":@"facebookAlbumPicked"}];
+	[Log trace:@"facebook album picked" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"160", @"className":@"ViewController", @"methodName":@"facebookAlbumPicked"}];
 	self.photosPicker = [[PhotosPickerController alloc] init];
 	self.photosPicker.delegate = self;
 	[self.navigationController pushViewController:self.photosPicker animated:YES];
@@ -124,11 +138,11 @@
 - (void) photosPicked:(NSMutableArray*)urls{
 	
 }
-- (void) selectMovieAtPath:(NSMutableString*)path{
+- (void) selectMovieAtPath:(NSString*)path{
 	
 	self.currentPath = path;
 	
-	UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:[@"My Videos" mutableCopy] message:[@"You've selected a movie, what next?" mutableCopy] delegate:self cancelButtonTitle:[@"Cancel" mutableCopy] otherButtonTitles:[@"Play" mutableCopy]];
+	UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"My Videos" message:@"You've selected a movie, what next?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Play"];
 	[alert show];
 }
 - (NSMutableArray*) selectedImagesUrls{

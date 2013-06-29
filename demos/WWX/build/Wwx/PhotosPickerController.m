@@ -9,12 +9,12 @@
 
 @implementation PhotosPickerController
 
-static NSMutableString* identif;
-+ (NSMutableString*) identif {
-	if (identif == nil) identif = [@"CollectionCellIdentifier" mutableCopy];
+static NSString* identif;
++ (NSString*) identif {
+	if (identif == nil) identif = @"CollectionCellIdentifier";
 	return identif;
 }
-+ (void) setIdentif:(NSMutableString*)hx_val {
++ (void) setIdentif:(NSString*)hx_val {
 	identif = hx_val;
 }
 @synthesize library;
@@ -32,7 +32,7 @@ static NSMutableString* identif;
 }
 - (void) viewDidLoad{
 	
-	[Log trace:[@"photos create" mutableCopy] infos:@{@"fileName":@"PhotosPickerController.hx", @"lineNumber":@"38", @"className":@"PhotosPickerController", @"methodName":@"viewDidLoad"}];
+	[Log trace:@"photos create" infos:@{@"fileName":@"PhotosPickerController.hx", @"lineNumber":@"38", @"className":@"PhotosPickerController", @"methodName":@"viewDidLoad"}];
 	[super viewDidLoad];
 	self.cells = [[NSMutableArray alloc] init];
 	CGRect rect = CGRectMake(0,90,self.view.frame.size.width,self.view.frame.size.height - 90 - 50);
@@ -45,12 +45,12 @@ static NSMutableString* identif;
 	self.collectionView.dataSource = self;
 	self.collectionView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
 	self.collectionView.autoresizingMask = ((((UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight) | UIViewAutoresizingFlexibleRightMargin) | UIViewAutoresizingFlexibleLeftMargin) | UIViewAutoresizingFlexibleBottomMargin);
-	[self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:[@"CollectionCellIdentifier" mutableCopy]];
+	[self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCellIdentifier"];
 	[self.view addSubview:self.collectionView];
 	self.inverseButton = [[CustomButton alloc] init];
 	self.inverseButton.frame = CGRectMake(10,self.view.frame.size.height - 42,195,32);
-	self.inverseButton.label.text = [@"INVERSE" mutableCopy];
-	self.inverseButton.image.image = [UIImage imageNamed:[@"Checkmark" mutableCopy]];
+	self.inverseButton.label.text = @"INVERSE";
+	self.inverseButton.image.image = [UIImage imageNamed:@"Checkmark"];
 	self.inverseButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
 	[self.inverseButton addTarget:self action:@selector(inverseSelections) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:self.inverseButton];
@@ -59,7 +59,7 @@ static NSMutableString* identif;
 	self.timeLabel.backgroundColor = [UIColor clearColor];
 	self.timeLabel.textColor = [UIColor grayColor];
 	self.timeLabel.font = [UIFont systemFontOfSize:11];
-	self.timeLabel.text = [@"" mutableCopy];
+	self.timeLabel.text = @"";
 	[self.view addSubview:self.timeLabel];
 }
 - (void) loadLocalAlbum:(ALAssetsGroup*)album{
@@ -69,31 +69,37 @@ static NSMutableString* identif;
 	id groupEnumerator = ^(ALAsset *asset, int index, BOOL stop){
 		
 		if (asset != nil) {
-			
-			
-			NSDictionary *dict = [asset valueForProperty:ALAssetPropertyURLs];
-			
-			NSURL *url = [dict objectForKey:[@"public.jpeg" mutableCopy]];
-			if (url != nil) {
+			{
 				
 				
-				CollectionCellData *cell = [[CollectionCellData alloc] init];
-				cell.localurl = url;
-				cell.selected = YES;
-				cell.type = Local;
-				cell.delegate = _g;
-				[_g.cells push:cell];
+				NSDictionary *dict = [asset valueForProperty:ALAssetPropertyURLs];
+				
+				NSURL *url = [dict objectForKey:@"public.jpeg"];
+				if (url != nil) {
+					{
+						
+						
+						CollectionCellData *cell = [[CollectionCellData alloc] init];
+						cell.localurl = url;
+						cell.selected = YES;
+						cell.type = Local;
+						cell.delegate = _g;
+						[_g.cells push:cell];
+					}
+				}
 			}
 		}
-		else  dispatch_async( dispatch_get_main_queue(), ^(){
-			
-			[_g.collectionView reloadData];
-			[_g printTime];
-		});
+		else {
+			 dispatch_async( dispatch_get_main_queue(), ^(){
+				
+				[_g.collectionView reloadData];
+				[_g printTime];
+			});
+		}
 	};
 	[album enumerateAssetsUsingBlock:groupEnumerator];
 }
-- (void) loadFacebookAlbum:(NSMutableString*)albumId{
+- (void) loadFacebookAlbum:(NSString*)albumId{
 	
 	
 	PhotosPickerController *_g1 = self;
@@ -105,35 +111,37 @@ static NSMutableString* identif;
 	[self.collectionView addSubview:self.activityView];
 	[self.activityView startAnimating];
 	
-	FBRequest *req = [FBRequest requestForGraphPath:[albumId stringByAppendingString:[@"/photos?limit=500" mutableCopy]]];
+	FBRequest *req = [FBRequest requestForGraphPath:[albumId stringByAppendingString:@"/photos?limit=500"]];
 	[req startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error){
 		
 		if (result != nil) {
-			
-			
-			NSMutableArray *data = [result objectForKey:[@"data" mutableCopy]];
 			{
 				
-				int _g = 0;
-				while (_g < data.length) {
+				
+				NSMutableArray *data = [result objectForKey:@"data"];
+				{
 					
-					id obj = ((id)[data hx_objectAtIndex:_g]);
-					++_g;
-					
-					CollectionCellData *cell = [[CollectionCellData alloc] init];
-					cell.thumbUrl = [obj objectForKey:[@"picture" mutableCopy]];
-					cell.sourceUrl = [obj objectForKey:[@"source" mutableCopy]];
-					cell.selected = YES;
-					cell.type = Facebook;
-					cell.delegate = _g1;
-					[_g1.cells push:cell];
+					int _g = 0;
+					while (_g < data.length) {
+						
+						id obj = ((id)[data hx_objectAtIndex:_g]);
+						++_g;
+						
+						CollectionCellData *cell = [[CollectionCellData alloc] init];
+						cell.thumbUrl = [obj objectForKey:@"picture"];
+						cell.sourceUrl = [obj objectForKey:@"source"];
+						cell.selected = YES;
+						cell.type = Facebook;
+						cell.delegate = _g1;
+						[_g1.cells push:cell];
+					}
 				}
+				[_g1.collectionView reloadData];
+				[_g1 printTime];
+				[_g1.activityView stopAnimating];
+				[_g1.activityView removeFromSuperview];
+				_g1.activityView = nil;
 			}
-			[_g1.collectionView reloadData];
-			[_g1 printTime];
-			[_g1.activityView stopAnimating];
-			[_g1.activityView removeFromSuperview];
-			_g1.activityView = nil;
 		}
 	}];
 }
@@ -142,7 +150,8 @@ static NSMutableString* identif;
 	[self.inverseButton select:!self.inverseButton.selected];
 	{
 		
-		int _g = 0; 
+		int _g = 0;
+		
 		NSMutableArray *_g1 = self.cells;
 		while (_g < _g1.length) {
 			
@@ -176,7 +185,8 @@ static NSMutableString* identif;
 	NSMutableArray *urls = [[NSMutableArray alloc] init];
 	{
 		
-		int _g = 0; 
+		int _g = 0;
+		
 		NSMutableArray *_g1 = self.cells;
 		while (_g < _g1.length) {
 			
@@ -184,9 +194,17 @@ static NSMutableString* identif;
 			CollectionCellData *cell = ((CollectionCellData*)[_g1 hx_objectAtIndex:_g]);
 			++_g;
 			if (cell.selected) {
-				
-				if (cell.type == Local) [urls push:cell.localurl];
-				else if (cell.type == Facebook) [urls push:cell.sourceUrl];
+				{
+					
+					if (cell.type == Local) {
+						[urls push:cell.localurl];
+					}
+					else {
+						if (cell.type == Facebook) {
+							[urls push:cell.sourceUrl];
+						}
+					}
+				}
 			}
 		}
 	}
@@ -194,7 +212,9 @@ static NSMutableString* identif;
 }
 - (BOOL) isFacebook{
 	
-	if (self.cells.length > 0) return ((CollectionCellData*)[self.cells hx_objectAtIndex:0]).type == Facebook;
+	if (self.cells.length > 0) {
+		return ((CollectionCellData*)[self.cells hx_objectAtIndex:0]).type == Facebook;
+	}
 	return NO;
 }
 - (void) printTime{
@@ -202,14 +222,17 @@ static NSMutableString* identif;
 	int nr_of_active_cells = 0;
 	{
 		
-		int _g = 0; 
+		int _g = 0;
+		
 		NSMutableArray *_g1 = self.cells;
 		while (_g < _g1.length) {
 			
 			
 			CollectionCellData *cell = ((CollectionCellData*)[_g1 hx_objectAtIndex:_g]);
 			++_g;
-			if (cell.selected) nr_of_active_cells++;
+			if (cell.selected) {
+				nr_of_active_cells++;
+			}
 		}
 	}
 	int videoDuration = 7 * nr_of_active_cells;
@@ -223,22 +246,32 @@ static NSMutableString* identif;
 - (UICollectionViewCell*) collectionView:(UICollectionView*)collectionView_ cellForItemAtIndexPath:(NSIndexPath*)indexPath{
 	
 	
-	CollectionCell *cell = [collectionView_ dequeueReusableCellWithReuseIdentifier:[@"CollectionCellIdentifier" mutableCopy] forIndexPath:indexPath];
+	CollectionCell *cell = [collectionView_ dequeueReusableCellWithReuseIdentifier:@"CollectionCellIdentifier" forIndexPath:indexPath];
 	
 	CollectionCellData *celldata = ((CollectionCellData*)[self.cells hx_objectAtIndex:indexPath.item]);
 	cell.index = indexPath.item;
 	celldata.indexPath = indexPath;
 	celldata.hx_dyn_loadFinishedForIndexPath = ^(NSIndexPath *indexPath){ [self loadFinishedForIndexPath:indexPath]; };
 	if (celldata.image == nil) {
-		
-		cell.imageView.image = nil;
-		 dispatch_async( dispatch_get_global_queue(0, 0), ^(){
+		{
 			
-			if (celldata.type == Local) [celldata loadImageFromLibrary:celldata.localurl];
-			else if (celldata.type == Facebook) [celldata loadImageFromUrl:celldata.thumbUrl];
-		});
+			cell.imageView.image = nil;
+			 dispatch_async( dispatch_get_global_queue(0, 0), ^(){
+				
+				if (celldata.type == Local) {
+					[celldata loadImageFromLibrary:celldata.localurl];
+				}
+				else {
+					if (celldata.type == Facebook) {
+						[celldata loadImageFromUrl:celldata.thumbUrl];
+					}
+				}
+			});
+		}
 	}
-	else cell.imageView.image = celldata.image;
+	else {
+		cell.imageView.image = celldata.image;
+	}
 	[cell select:celldata.selected];
 	return cell;
 }
@@ -247,18 +280,22 @@ static NSMutableString* identif;
 	
 	CollectionCellData *celldata = ((CollectionCellData*)[self.cells hx_objectAtIndex:indexPath.item]);
 	if (celldata.selected) {
-		
-		
-		CollectionCell *cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-		[cell select:NO];
-		celldata.selected = NO;
+		{
+			
+			
+			CollectionCell *cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
+			[cell select:NO];
+			celldata.selected = NO;
+		}
 	}
 	else {
-		
-		
-		CollectionCell *cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-		[cell select:YES];
-		celldata.selected = YES;
+		{
+			
+			
+			CollectionCell *cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
+			[cell select:YES];
+			celldata.selected = YES;
+		}
 	}
 	[self printTime];
 }
@@ -271,7 +308,9 @@ static NSMutableString* identif;
 	
 	CollectionCellData *celldata = ((CollectionCellData*)[self.cells hx_objectAtIndex:indexPath.item]);
 	if (celldata.image == nil) {
-		
+		{
+			
+		}
 	}
 }
 - (void) loadFinishedForIndexPath:(NSIndexPath*)indexPath{
@@ -297,7 +336,7 @@ static NSMutableString* identif;
 }
 - (void) dealloc{
 	
-	[Log trace:[@"dealloc photos controller" mutableCopy] infos:@{@"fileName":@"PhotosPickerController.hx", @"lineNumber":@"314", @"className":@"PhotosPickerController", @"methodName":@"dealloc"}];
+	[Log trace:@"dealloc photos controller" infos:@{@"fileName":@"PhotosPickerController.hx", @"lineNumber":@"314", @"className":@"PhotosPickerController", @"methodName":@"dealloc"}];
 	[self.inverseButton removeFromSuperview];
 	self.inverseButton = nil;
 	[self.timeLabel removeFromSuperview];

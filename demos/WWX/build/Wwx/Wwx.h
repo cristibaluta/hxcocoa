@@ -20,10 +20,10 @@
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UIViewController *viewController;
 @property (nonatomic, strong) FBSession *session;
-@property (nonatomic, strong) NSMutableString *str2;
+@property (nonatomic, strong) NSString *str2;
 @property (nonatomic) int i;
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions;
-- (NSMutableString*) getGHI;
+- (NSString*) getGHI;
 - (void) applicationDidBecomeActive:(UIApplication*)application;
 - (void) applicationWillResignActive:(UIApplication*)application;
 - (id) init;

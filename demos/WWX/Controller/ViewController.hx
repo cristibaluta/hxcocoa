@@ -295,7 +295,7 @@ public function moviePlayBackDidFinish:(NSNotification*)notification {
 /*public function willRotateToInterfaceOrientation (toInterfaceOrientation:UIInterfaceOrientation, duration:Int) {
 	navigationController.willRotateToInterfaceOrientation(toInterfaceOrientation, duration);
 }*/
-public function shouldAutorotate():Bool {
+override public function shouldAutorotate():Bool {
     return true;
 }
 

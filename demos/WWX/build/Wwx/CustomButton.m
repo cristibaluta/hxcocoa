@@ -39,12 +39,27 @@
 - (void) select:(BOOL)v{
 	
 	self.selected = v;
-	[UIView beginAnimations:[@"fade" mutableCopy] context:nil];
+	[UIView beginAnimations:@"fade" context:nil];
 	[UIView setAnimationDuration:0.2];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-	self.background.backgroundColor = ( (v) ? [UIColor whiteColor] : [UIColor darkGrayColor]);
-	self.label.alpha = ( (v) ? 1 : 0.3);
-	self.image.alpha = ( (v) ? 1 : 0.6);
+	if (v) {
+		self.background.backgroundColor = [UIColor whiteColor];
+	}
+	else {
+		self.background.backgroundColor = [UIColor darkGrayColor];
+	}
+	if (v) {
+		self.label.alpha = 1;
+	}
+	else {
+		self.label.alpha = 0.3;
+	}
+	if (v) {
+		self.image.alpha = 1;
+	}
+	else {
+		self.image.alpha = 0.6;
+	}
 	[UIView commitAnimations];
 }
 - (void) dealloc{

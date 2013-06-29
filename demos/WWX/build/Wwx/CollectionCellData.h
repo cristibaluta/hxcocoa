@@ -25,8 +25,8 @@ typedef enum{
 @property (nonatomic) BOOL isLoading;
 @property (nonatomic) ImageSourceType *type;
 @property (nonatomic, strong) NSURL *localurl;
-@property (nonatomic, strong) NSMutableString *thumbUrl;
-@property (nonatomic, strong) NSMutableString *sourceUrl;
+@property (nonatomic, strong) NSString *thumbUrl;
+@property (nonatomic, strong) NSString *sourceUrl;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic) id delegate;
 // Dynamic method defined with an objc method and a block property
@@ -34,8 +34,8 @@ typedef enum{
 @property (nonatomic,copy) void(^hx_dyn_loadFinishedForIndexPath)(NSIndexPath*);
 - (void) loadImageFromLibrary:(NSURL*)url;
 - (void) loadImageCG:(NSURL*)url;
-- (void) loadImageFromUrl:(NSMutableString*)url;
-- (void) loadImageData:(NSMutableString*)url;
+- (void) loadImageFromUrl:(NSString*)url;
+- (void) loadImageData:(NSString*)url;
 - (void) loadFinished:(UIImage*)image;
 
 @end

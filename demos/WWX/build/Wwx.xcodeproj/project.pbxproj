@@ -21,6 +21,7 @@
 		WWXSRCM421A86E4BA8B136D8 /* CollectionCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFMA86E4BA8B136D8; };
 		WWXSRCM733F236E71BF7A304 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFMF236E71BF7A304; };
 		WWXSRCMB94E9990EA340471C /* FBAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFME9990EA340471C; };
+		WWXSRCM7EB69D2A492B2B7E0 /* HxIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFM69D2A492B2B7E0; };
 		WWXSRCM8652BCCB74A62AB1D /* PhotosPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFM2BCCB74A62AB1D; };
 		WWXSRCM0163BAF8FD881EB51 /* StepLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFM3BAF8FD881EB51; };
 		WWXSRCMC910F5AC334AFD2B9 /* StepsView.m in Sources */ = {isa = PBXBuildFile; fileRef = WWXSRCREFM0F5AC334AFD2B9; };
@@ -94,6 +95,8 @@
 		WWXSRCREFHF236E71BF7A304 /* CustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		WWXSRCREFME9990EA340471C /* FBAlbum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBAlbum.m; sourceTree = "<group>"; };
 		WWXSRCREFHE9990EA340471C /* FBAlbum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBAlbum.h; sourceTree = "<group>"; };
+		WWXSRCREFM69D2A492B2B7E0 /* HxIterator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HxIterator.m; sourceTree = "<group>"; };
+		WWXSRCREFH69D2A492B2B7E0 /* HxIterator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HxIterator.h; sourceTree = "<group>"; };
 		WWXSRCREFM2BCCB74A62AB1D /* PhotosPickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosPickerController.m; sourceTree = "<group>"; };
 		WWXSRCREFH2BCCB74A62AB1D /* PhotosPickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosPickerController.h; sourceTree = "<group>"; };
 		WWXSRCREFM3BAF8FD881EB51 /* StepLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StepLabel.m; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				WWXSRCREFHF236E71BF7A304 /* CustomButton.h */,
 				WWXSRCREFME9990EA340471C /* FBAlbum.m */,
 				WWXSRCREFHE9990EA340471C /* FBAlbum.h */,
+				WWXSRCREFM69D2A492B2B7E0 /* HxIterator.m */,
+				WWXSRCREFH69D2A492B2B7E0 /* HxIterator.h */,
 				WWXSRCREFM2BCCB74A62AB1D /* PhotosPickerController.m */,
 				WWXSRCREFH2BCCB74A62AB1D /* PhotosPickerController.h */,
 				WWXSRCREFM3BAF8FD881EB51 /* StepLabel.m */,
@@ -453,6 +458,7 @@ WWXRESREFE489B1422E28349 /* main.m in Sources */,
 				WWXSRCM421A86E4BA8B136D8 /* CollectionCellData.m in Sources */,
 				WWXSRCM733F236E71BF7A304 /* CustomButton.m in Sources */,
 				WWXSRCMB94E9990EA340471C /* FBAlbum.m in Sources */,
+				WWXSRCM7EB69D2A492B2B7E0 /* HxIterator.m in Sources */,
 				WWXSRCM8652BCCB74A62AB1D /* PhotosPickerController.m in Sources */,
 				WWXSRCM0163BAF8FD881EB51 /* StepLabel.m in Sources */,
 				WWXSRCMC910F5AC334AFD2B9 /* StepsView.m in Sources */,

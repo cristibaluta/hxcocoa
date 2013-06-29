@@ -7,23 +7,23 @@
 
 #import "String.h"
 
-@implementation NSMutableString ( String )
+@implementation NSString ( String )
 
-+ (NSMutableString*) fromCharCode:(int)code{
++ (NSString*) fromCharCode:(int)code{
 	
 	return [NSMutableString stringWithFormat:@"%C", code];
 }
 // Please provide a getterBody for the property: length
 
-- (NSMutableString*) toUpperCase{
+- (NSString*) toUpperCase{
 	
-	return [[self uppercaseString] mutableCopy];
+	return [self uppercaseString];
 }
-- (NSMutableString*) toLowerCase{
+- (NSString*) toLowerCase{
 	
-	return [[self lowercaseString] mutableCopy];
+	return [self lowercaseString];
 }
-- (NSMutableString*) charAt:(int)index{
+- (NSString*) charAt:(int)index{
 	
 	return nil;
 }
@@ -31,77 +31,125 @@
 	
 	return [self characterAtIndex:index];
 }
-- (int) indexOf:(NSMutableString*)str startIndex:(int)startIndex{
+- (int) indexOf:(NSString*)str startIndex:(int)startIndex{
 	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
 	
-	startIndex = ( (startIndex == nil) ? 0 : startIndex);
+	if (startIndex == nil) {
+		startIndex = 0;
+	}
+	else {
+		startIndex = startIndex;
+	}
 	NSRange range = [self rangeOfString:str options:NSLiteralSearch range:NSMakeRange(startIndex,self.length-startIndex)];
 	if ( range.location != NSNotFound ) {
 		return range.location;
 	};
 	return -1;
 }
-- (int) lastIndexOf:(NSMutableString*)str startIndex:(int)startIndex{
+- (int) lastIndexOf:(NSString*)str startIndex:(int)startIndex{
 	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
 	
-	startIndex = ( (startIndex == nil) ? 0 : startIndex);
+	if (startIndex == nil) {
+		startIndex = 0;
+	}
+	else {
+		startIndex = startIndex;
+	}
 	NSRange range = [self rangeOfString:str options:NSBackwardsSearch range:NSMakeRange(startIndex,self.length-startIndex)];
 	if ( range.location != NSNotFound ) {
 		return range.location;
 	};
 	return -1;
 }
-- (NSMutableArray*) split:(NSMutableString*)delimiter{
+- (NSMutableArray*) split:(NSString*)delimiter{
 	
 	return [self componentsSeparatedByString:delimiter];
 }
-- (NSMutableString*) substr:(int)pos len:(int)len{
+- (NSString*) substr:(int)pos len:(int)len{
 	
 	// Optional arguments
 	if (!len) len = nil;
 	
-	if (len == 0) return [@"" mutableCopy];
-	int sl = self.length;
-	if (len == nil) len = sl;
-	if (pos == nil) pos = 0;
-	if (pos != 0 && len < 0) return [@"" mutableCopy];
-	if (pos < 0) {
-		
-		pos = sl + pos;
-		if (pos < 0) pos = 0;
+	if (len == 0) {
+		return @"";
 	}
-	else if (len < 0) len = sl + len - pos;
-	if (pos + len > sl) len = sl - pos;
-	if (pos < 0 || len <= 0) return [@"" mutableCopy];
-	return [[self substringFromIndex:pos] mutableCopy];
+	int sl = self.length;
+	if (len == nil) {
+		len = sl;
+	}
+	if (pos == nil) {
+		pos = 0;
+	}
+	if (pos != 0 && len < 0) {
+		return @"";
+	}
+	if (pos < 0) {
+		{
+			
+			pos = sl + pos;
+			if (pos < 0) {
+				pos = 0;
+			}
+		}
+	}
+	else {
+		if (len < 0) {
+			len = sl + len - pos;
+		}
+	}
+	if (pos + len > sl) {
+		len = sl - pos;
+	}
+	if (pos < 0 || len <= 0) {
+		return @"";
+	}
+	return [self substringFromIndex:pos];
 }
-- (NSMutableString*) substring:(int)startIndex endIndex:(int)endIndex{
+- (NSString*) substring:(int)startIndex endIndex:(int)endIndex{
 	
 	// Optional arguments
 	if (!endIndex) endIndex = nil;
 	
-	if (endIndex == nil) endIndex = self.length;
-	else if (endIndex < 0) endIndex = 0;
-	else if (endIndex > self.length) endIndex = self.length;
-	if (startIndex < 0) startIndex = 0;
-	else if (startIndex > self.length) startIndex = self.length;
+	if (endIndex == nil) {
+		endIndex = self.length;
+	}
+	else {
+		if (endIndex < 0) {
+			endIndex = 0;
+		}
+		else {
+			if (endIndex > self.length) {
+				endIndex = self.length;
+			}
+		}
+	}
+	if (startIndex < 0) {
+		startIndex = 0;
+	}
+	else {
+		if (startIndex > self.length) {
+			startIndex = self.length;
+		}
+	}
 	if (startIndex > endIndex) {
-		
-		int tmp = startIndex;
-		startIndex = endIndex;
-		endIndex = tmp;
+		{
+			
+			int tmp = startIndex;
+			startIndex = endIndex;
+			endIndex = tmp;
+		}
 	}
 	return [self substr:startIndex len:endIndex - startIndex];
 }
-- (NSMutableString*) toString{
+- (NSString*) toString{
 	
-	return [[self description] mutableCopy];
+	return [self description];
 }
-- (id) init:(NSMutableString*)string{
+- (id) init:(NSString*)string{
 	
 	self = [super init];
 	return self;

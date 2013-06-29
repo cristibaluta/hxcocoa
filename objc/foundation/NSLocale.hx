@@ -1,7 +1,7 @@
 package objc.foundation;
 import objc.foundation.NSObject;
 
-
+@:framework("Foundation")
 extern class NSLocale extends NSObject implements NSCopying implements NSSecureCoding {
 
 	//Constants
@@ -20,7 +20,7 @@ extern class NSLocale extends NSObject implements NSCopying implements NSSecureC
 	public static function commonISOCurrencyCodes():Array<String>;
 	public static function ISOCurrencyCodes():Array<String>;
 	public static function canonicalLanguageIdentifierFromString(string:String) :String;
-	public static function currentLocale():Dynamic;
+	public static function currentLocale():NSLocale;
 	public static function canonicalLocaleIdentifierFromString(string:String) :String;
 	public static function ISOLanguageCodes():Array<String>;
 	public static function preferredLanguages():Array<String>;
@@ -34,6 +34,7 @@ extern class NSLocale extends NSObject implements NSCopying implements NSSecureC
 	public function initWithLocaleIdentifier( string:String):Dynamic;
 }
 
+@:framework("Foundation")
 extern enum NSLocaleLanguageDirection
 {
 	NSLocaleLanguageDirectionUnknown;

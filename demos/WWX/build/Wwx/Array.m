@@ -29,17 +29,19 @@
 	
 	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:pos];
 }
-- (NSMutableString*) join:(NSMutableString*)sep{
+- (NSString*) join:(NSString*)sep{
 	
 	return [NSMutableString stringWithString:[self componentsJoinedByString:sep]];
 }
-- (NSMutableString*) toString{
+- (NSString*) toString{
 	
 	return [NSMutableString stringWithString:[self description]];
 }
 - (id) pop{
 	
-	if ([self count] == 0) return nil;
+	if ([self count] == 0) {
+		return nil;
+	}
 	id theLastObject = [self lastObject];
 	if ([theLastObject isKindOfClass:[NSNull class]]) theLastObject = nil;
 	[self removeLastObject];
@@ -57,7 +59,9 @@
 - (BOOL) remove:(id)x{
 	
 	BOOL containsObject = [self containsObject:x];
-	if (containsObject) [self removeObject:x];
+	if (containsObject) {
+		[self removeObject:x];
+	}
 	return containsObject;
 }
 - (void) reverse{
@@ -67,10 +71,12 @@
 - (id) shift{
 	
 	if (self.length > 0) {
-		
-		id obj = [self objectAtIndex:0];
-		[self removeObjectAtIndex:0];
-		return obj;
+		{
+			
+			id obj = [self objectAtIndex:0];
+			[self removeObjectAtIndex:0];
+			return obj;
+		}
 	}
 	return nil;
 }
@@ -92,8 +98,11 @@
 }
 - (id) iterator{
 	
-	__block int p = 0;		return [NSMutableDictionary dictionaryWithObjectsAndKeys:			[^BOOL() { return p < [self count]; } copy], @"hasNext",			[^id() { id i = [self objectAtIndex:p]; p += 1; return i; } copy], @"next",			nil];
-	return nil;
+	
+	HxIterator *it = [[HxIterator alloc] init];
+	it.arr = self;
+	it.len = self.length;
+	return it;
 }
 - (NSMutableArray*) map:(id)f{
 	

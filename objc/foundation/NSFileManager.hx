@@ -1,7 +1,9 @@
 package objc.foundation;
 import objc.foundation.NSObject;
+import objc.foundation.NSValue;
 import objc.foundation.NSPathUtilities;
 
+typedef OSType = String;
 
 @:framework("Foundation")
 extern enum NSVolumeEnumerationOptions {
@@ -19,9 +21,6 @@ extern enum NSFileManagerItemReplacementOptions {
 	NSFileManagerItemReplacementUsingNewMetadataOnly;
 	NSFileManagerItemReplacementWithoutDeletingBackupItem;
 }
-	
-	//@:require(ios6) NSUbiquityIdentityDidChangeNotification;
-	//NSFoundationVersionWithFileManagerResourceForkSupport;
 
 
 @:framework("Foundation")
@@ -34,8 +33,8 @@ extern class NSFileManager extends NSObject {
 	public function URLsForDirectory (directory:NSSearchPathDirectory, inDomains:NSSearchPathDomainMask) :Array<NSURL>;
 
 	public function URLForDirectory (directory:NSSearchPathDirectory, inDomain:NSSearchPathDomainMask, appropriateForURL:NSURL, create:Bool, error:NSError) :NSURL;
-	@:require(osx_7_0) @:require(ios5) public function createDirectoryAtURL (url:NSURL, withIntermediateDirectories:Bool, attributes:NSDictionary, error:NSError) :Bool;
-	@:require(osx_7_0) @:require(ios5) public function createSymbolicLinkAtURL (url:NSURL, withDestinationURL:NSURL, error:NSError) :Bool;
+	@:require(osx10_7,ios5) public function createDirectoryAtURL (url:NSURL, withIntermediateDirectories:Bool, attributes:NSDictionary, error:NSError) :Bool;
+	@:require(osx10_7,ios5) public function createSymbolicLinkAtURL (url:NSURL, withDestinationURL:NSURL, error:NSError) :Bool;
 
 	public function setDelegate (delegate:Dynamic) :Void;
 	public function delegate () :Dynamic;
@@ -62,12 +61,12 @@ extern class NSFileManager extends NSObject {
 	public function linkItemAtURL (srcURL:NSURL, toURL:NSURL, error:NSError) :Bool;
 	public function removeItemAtURL (URL:NSURL, error:NSError) :Bool;
 
-	@:require(osx_10_8) public function trashItemAtURL (url:NSURL, resultingItemURL:NSURL, error:NSError) :Bool;
+	@:require(osx10_8) public function trashItemAtURL (url:NSURL, resultingItemURL:NSURL, error:NSError) :Bool;
 	
 
 	public function currentDirectoryPath () :String;
 	public function changeCurrentDirectoryPath (path:String) :Bool;
-	//public function fileExistsAtPath (path:String) :Bool;
+	@:overload(function(path:String) :Bool {})
 	public function fileExistsAtPath (path:String, isDirectory:Bool) :Bool;
 	public function isReadableFileAtPath (path:String) :Bool;
 	public function isWritableFileAtPath (path:String) :Bool;
@@ -90,17 +89,37 @@ extern class NSFileManager extends NSObject {
 	public function stringWithFileSystemRepresentation (str:String, length:Int) :String;
 
 	public function replaceItemAtURL (originalItemURL:NSURL, withItemAtURL:NSURL, backupItemName:String, options:NSFileManagerItemReplacementOptions, resultingItemURL:NSURL, error:NSError) :Bool;
-	@:require(osx_10_7, ios_5_0) public function setUbiquitous (flag:Bool, itemAtURL:NSURL, destinationURL:NSURL, error:NSError) :Bool;
-	@:require(osx_10_7, ios_5_0) public function isUbiquitousItemAtURL (url:NSURL) :Bool;
-	@:require(osx_10_7, ios_5_0) public function startDownloadingUbiquitousItemAtURL (url:NSURL, error:NSError) :Bool;
-	@:require(osx_10_7, ios_5_0) public function evictUbiquitousItemAtURL (url:NSURL, error:NSError) :Bool;
-	@:require(osx_10_7, ios_5_0) public function URLForUbiquityContainerIdentifier (containerIdentifier:String) :NSURL;
-	@:require(osx_10_7, ios_5_0) public function URLForPublishingUbiquitousItemAtURL (url:NSURL, expirationDate:NSDate, error:NSError) :NSURL;
+	@:require(osx10_7,ios5) public function setUbiquitous (flag:Bool, itemAtURL:NSURL, destinationURL:NSURL, error:NSError) :Bool;
+	@:require(osx10_7,ios5) public function isUbiquitousItemAtURL (url:NSURL) :Bool;
+	@:require(osx10_7,ios5) public function startDownloadingUbiquitousItemAtURL (url:NSURL, error:NSError) :Bool;
+	@:require(osx10_7,ios5) public function evictUbiquitousItemAtURL (url:NSURL, error:NSError) :Bool;
+	@:require(osx10_7,ios5) public function URLForUbiquityContainerIdentifier (containerIdentifier:String) :NSURL;
+	@:require(osx10_7,ios5) public function URLForPublishingUbiquitousItemAtURL (url:NSURL, expirationDate:NSDate, error:NSError) :NSURL;
 
-	@:require(osx_10_8, ios_6_0) public function ubiquityIdentityToken () :Dynamic;
+	@:require(osx10_8,ios6) public function ubiquityIdentityToken () :Dynamic;
 	
 	//public function fileManager (fm:NSFileManager, shouldProceedAfterError:NSDictionary) :Bool;
 	public function fileManager (fm:NSFileManager, willProcessPath:String) :Void;
+	
+
+	// NSDictionary (NSFileAttributes)
+
+	public function fileSize () :Float;
+	public function fileModificationDate () :NSDate;
+	public function fileType () :String;
+	public function filePosixPermissions () :Int;
+	public function fileOwnerAccountName () :String;
+	public function fileGroupOwnerAccountName () :String;
+	public function fileSystemNumber () :Int;
+	public function fileSystemFileNumber () :Int;
+	public function fileExtensionHidden () :Bool;
+	public function fileHFSCreatorCode () :OSType;
+	public function fileHFSTypeCode () :OSType;
+	public function fileIsImmutable () :Bool;
+	public function fileIsAppendOnly () :Bool;
+	public function fileCreationDate () :NSDate;
+	public function fileOwnerAccountID () :NSNumber;
+	public function fileGroupOwnerAccountID () :NSNumber;
 }
 
 
@@ -141,60 +160,41 @@ extern class NSDirectoryEnumerator extends NSEnumerator {
 }
 
 @:framework("Foundation")
-/*FOUNDATION_EXPORT String * const NSFileType;
-FOUNDATION_EXPORT String * const NSFileTypeDirectory;
-FOUNDATION_EXPORT String * const NSFileTypeRegular;
-FOUNDATION_EXPORT String * const NSFileTypeSymbolicLink;
-FOUNDATION_EXPORT String * const NSFileTypeSocket;
-FOUNDATION_EXPORT String * const NSFileTypeCharacterSpecial;
-FOUNDATION_EXPORT String * const NSFileTypeBlockSpecial;
-FOUNDATION_EXPORT String * const NSFileTypeUnknown;
-FOUNDATION_EXPORT String * const NSFileSize;
-FOUNDATION_EXPORT String * const NSFileModificationDate;
-FOUNDATION_EXPORT String * const NSFileReferenceCount;
-FOUNDATION_EXPORT String * const NSFileDeviceIdentifier;
-FOUNDATION_EXPORT String * const NSFileOwnerAccountName;
-FOUNDATION_EXPORT String * const NSFileGroupOwnerAccountName;
-FOUNDATION_EXPORT String * const NSFilePosixPermissions;
-FOUNDATION_EXPORT String * const NSFileSystemNumber;
-FOUNDATION_EXPORT String * const NSFileSystemFileNumber;
-FOUNDATION_EXPORT String * const NSFileExtensionHidden;
-FOUNDATION_EXPORT String * const NSFileHFSCreatorCode;
-FOUNDATION_EXPORT String * const NSFileHFSTypeCode;
-FOUNDATION_EXPORT String * const NSFileImmutable;
-FOUNDATION_EXPORT String * const NSFileAppendOnly;
-FOUNDATION_EXPORT String * const NSFileCreationDate;
-FOUNDATION_EXPORT String * const NSFileOwnerAccountID;
-FOUNDATION_EXPORT String * const NSFileGroupOwnerAccountID;
-FOUNDATION_EXPORT String * const NSFileBusy;
-FOUNDATION_EXPORT String * const NSFileProtectionKey NS_AVAILABLE_IOS(4_0);
-FOUNDATION_EXPORT String * const NSFileProtectionNone NS_AVAILABLE_IOS(4_0);
-FOUNDATION_EXPORT String * const NSFileProtectionComplete NS_AVAILABLE_IOS(4_0);
-FOUNDATION_EXPORT String * const NSFileProtectionCompleteUnlessOpen NS_AVAILABLE_IOS(5_0);
-FOUNDATION_EXPORT String * const NSFileProtectionCompleteUntilFirstUserAuthentication NS_AVAILABLE_IOS(5_0);
+extern enum NSFileAttributes {
+	NSFileType;
+	NSFileTypeDirectory;
+	NSFileTypeRegular;
+	NSFileTypeSymbolicLink;
+	NSFileTypeSocket;
+	NSFileTypeCharacterSpecial;
+	NSFileTypeBlockSpecial;
+	NSFileTypeUnknown;
+	NSFileSize;
+	NSFileModificationDate;
+	NSFileReferenceCount;
+	NSFileDeviceIdentifier;
+	NSFileOwnerAccountName;
+	NSFileGroupOwnerAccountName;
+	NSFilePosixPermissions;
+	NSFileSystemNumber;
+	NSFileSystemFileNumber;
+	NSFileExtensionHidden;
+	NSFileHFSCreatorCode;
+	NSFileHFSTypeCode;
+	NSFileImmutable;
+	NSFileAppendOnly;
+	NSFileCreationDate;
+	NSFileOwnerAccountID;
+	NSFileGroupOwnerAccountID;
+	NSFileBusy;
+	NSFileProtectionKey;
+	NSFileProtectionNone;
+	NSFileProtectionComplete;
+	@:require(ios5) NSFileProtectionCompleteUnlessOpen;
+	@:require(ios5) NSFileProtectionCompleteUntilFirstUserAuthentication;
 
-FOUNDATION_EXPORT String * const NSFileSystemSize;
-FOUNDATION_EXPORT String * const NSFileSystemFreeSize;
-FOUNDATION_EXPORT String * const NSFileSystemNodes;
-FOUNDATION_EXPORT String * const NSFileSystemFreeNodes;*/
-
-/*extern class NSDictionary (NSFileAttributes)
-
-- (unsigned long long)fileSize;
-- (NSDate *)fileModificationDate;
-- (String *)fileType;
-- (NSUInteger)filePosixPermissions;
-- (String *)fileOwnerAccountName;
-- (String *)fileGroupOwnerAccountName;
-- (Int)fileSystemNumber;
-- (NSUInteger)fileSystemFileNumber;
-- (Bool)fileExtensionHidden;
-- (OSType)fileHFSCreatorCode;
-- (OSType)fileHFSTypeCode;
-- (Bool)fileIsImmutable;
-- (Bool)fileIsAppendOnly;
-- (NSDate *)fileCreationDate;
-- (NSNumber *)fileOwnerAccountID;
-- (NSNumber *)fileGroupOwnerAccountID;
-}*/
-
+	NSFileSystemSize;
+	NSFileSystemFreeSize;
+	NSFileSystemNodes;
+	NSFileSystemFreeNodes;
+}

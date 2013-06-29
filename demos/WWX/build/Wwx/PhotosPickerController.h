@@ -19,11 +19,12 @@
 #import "CollectionCell.h"
 #import "PhotosPickerController.h"
 #import "CollectionCellData.h"
+#import "Math.h"
 
 @interface PhotosPickerController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
-+ (NSMutableString*) identif;
-+ (void) setIdentif:(NSMutableString*)val;
++ (NSString*) identif;
++ (void) setIdentif:(NSString*)val;
 @property (nonatomic, strong) ALAssetsLibrary *library;
 @property (nonatomic, strong) NSMutableArray *cells;
 @property (nonatomic, strong) CustomButton *inverseButton;
@@ -34,7 +35,7 @@
 - (void) loadView;
 - (void) viewDidLoad;
 - (void) loadLocalAlbum:(ALAssetsGroup*)album;
-- (void) loadFacebookAlbum:(NSMutableString*)albumId;
+- (void) loadFacebookAlbum:(NSString*)albumId;
 - (void) inverseSelections;
 - (void) ready;
 - (NSMutableArray*) selectedImagesUrls;

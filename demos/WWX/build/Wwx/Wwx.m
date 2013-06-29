@@ -17,7 +17,7 @@
 @synthesize i;
 - (BOOL) application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions{
 	
-	[Log trace:[@"Start" mutableCopy] infos:@{@"fileName":@"Wwx.hx", @"lineNumber":@"28", @"className":@"Wwx", @"methodName":@"application"}];
+	[Log trace:@"Start" infos:@{@"fileName":@"Wwx.hx", @"lineNumber":@"28", @"className":@"Wwx", @"methodName":@"application"}];
 	application.statusBarStyle = UIStatusBarStyleBlackTranslucent;
 	application.statusBarHidden = YES;
 	self.window = [[UIWindow alloc] init];
@@ -28,19 +28,19 @@
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
 	
-	NSMutableString *str = [@"abc" mutableCopy];
-	[str appendString:[@"def" mutableCopy]];
-	[str appendString:[self getGHI]];
-	self.str2 = [@"abc" mutableCopy];
-	[self.str2 appendString:[@"def" mutableCopy]];
-	[self.str2 appendString:[self getGHI]];
+	NSString *str = @"abc";
+	str = [NSString stringWithFormat:@"%@%@", str, @"def"];
+	str = [NSString stringWithFormat:@"%@%@", str, [self getGHI]];
+	self.str2 = @"abc";
+	self.str2 = [NSString stringWithFormat:@"%@%@", self.str2, @"def"];
+	self.str2 = [NSString stringWithFormat:@"%@%@", self.str2, [self getGHI]];
 	self.i += 1;
 	self.i++;
 	return YES;
 }
-- (NSMutableString*) getGHI{
+- (NSString*) getGHI{
 	
-	return [@"GHI" mutableCopy];
+	return @"GHI";
 }
 - (void) applicationDidBecomeActive:(UIApplication*)application{
 	

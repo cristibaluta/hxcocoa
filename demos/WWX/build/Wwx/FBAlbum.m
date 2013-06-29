@@ -24,15 +24,17 @@
 - (void) preload{
 	
 	if (self.image != nil) {
-		
-		[self dispatchLoadingEvent];
-		return;
+		{
+			
+			[self dispatchLoadingEvent];
+			return;
+		}
 	}
 	
-	NSMutableString *url = [[[@"https://graph.facebook.com/" mutableCopy] stringByAppendingString:self.albumId] stringByAppendingString:[@"/picture" mutableCopy]];
+	NSString *url = [[@"https://graph.facebook.com/" stringByAppendingString:self.albumId] stringByAppendingString:@"/picture"];
 	[NSThread detachNewThreadSelector:@selector(loadImageData:) toTarget:self withObject:url];
 }
-- (void) loadImageData:(NSMutableString*)url{
+- (void) loadImageData:(NSString*)url{
 	
 	
 	NSData *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
