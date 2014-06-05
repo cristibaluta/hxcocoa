@@ -10,9 +10,9 @@ import ios.ui.UIControl;
 import ios.ui.UIViewController;
 import ios.ui.UIApplication;
 import ios.ui.NSText;
-import objc.foundation.NSDictionary;
-import objc.graphics.CGGeometry;
-import objc.graphics.CGAffineTransform;
+import swift.foundation.NSDictionary;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGAffineTransform;
 
 
 class Wwx extends UIResponder implements UIApplicationDelegate {

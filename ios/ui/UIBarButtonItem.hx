@@ -2,7 +2,7 @@
 //  UIBarButtonItem.h
 package ios.ui;
 
-import objc.foundation.NSSet;
+import swift.foundation.NSSet;
 import ios.ui.UIControl;
 import ios.ui.UIGeometry;
 

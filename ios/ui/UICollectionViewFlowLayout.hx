@@ -1,7 +1,7 @@
 //
 //  UICollectionViewFlowLayout.h
 package ios.ui;
-import objc.graphics.CGGeometry;
+import swift.graphics.CGGeometry;
 import ios.ui.UIGeometry;
 
 //UIKIT_EXTERN String *const UICollectionElementKindSectionHeader;

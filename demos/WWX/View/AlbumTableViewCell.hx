@@ -1,6 +1,6 @@
 
-import objc.foundation.*;
-import objc.graphics.CGGeometry;
+import swift.foundation.*;
+import swift.graphics.CGGeometry;
 import ios.ui.*;
 import ios.ui.UITableViewCell;
 import ios.ui.UIView;

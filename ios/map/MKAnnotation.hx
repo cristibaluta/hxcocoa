@@ -1,7 +1,7 @@
 package ios.map;
 
-import objc.foundation.NSObject;
-import objc.location.CLLocation;
+import swift.foundation.NSObject;
+import swift.location.CLLocation;
 
 
 extern interface MKAnnotation {

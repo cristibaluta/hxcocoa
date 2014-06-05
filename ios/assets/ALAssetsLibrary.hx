@@ -13,12 +13,12 @@
  */
 package ios.assets;
 
-import objc.foundation.NSError;
-import objc.foundation.NSURL;
-import objc.foundation.NSObject;
-import objc.foundation.NSDictionary;
-import objc.foundation.NSData;
-import objc.graphics.CGImage;
+import swift.foundation.NSError;
+import swift.foundation.NSURL;
+import swift.foundation.NSObject;
+import swift.foundation.NSDictionary;
+import swift.foundation.NSData;
+import swift.graphics.CGImage;
 
 @:framework("AssetsLibrary")
 extern enum ALAssetOrientation {

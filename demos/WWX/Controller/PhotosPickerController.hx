@@ -5,8 +5,8 @@
 //  Created by Baluta Cristian on 09/04/2013.
 //  Copyright (c) 2013 Baluta Cristian. All rights reserved.
 //
-import objc.foundation.*;
-import objc.graphics.CGGeometry;
+import swift.foundation.*;
+import swift.graphics.CGGeometry;
 import ios.ui.*;
 import ios.ui.UIView;
 import ios.ui.UICollectionView;
@@ -50,7 +50,7 @@ override public function viewDidLoad () {
 /*	this.collectionView = new UICollectionView();
 	this.collectionView.frame = rect;
 	this.collectionView.collectionViewLayout = layout;*/
-	untyped __objc__("self.collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:layout];");
+	untyped __swift__("self.collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:layout];");
 	this.collectionView.delegate = this;
 	this.collectionView.dataSource = this;
 	this.collectionView.backgroundColor = UIColor.colorWithWhite (0.3, 0.5);

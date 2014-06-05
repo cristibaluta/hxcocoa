@@ -1,6 +1,6 @@
 package ios.opengles;
 
-import objc.foundation.NSObject;
+import swift.foundation.NSObject;
 
 
 /************************************************************************/

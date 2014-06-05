@@ -1,6 +1,6 @@
 package ios.ui;
 
-import objc.foundation.NSDictionary;
+import swift.foundation.NSDictionary;
 
 @:framework("UIKit")
 extern interface UIApplicationDelegate {

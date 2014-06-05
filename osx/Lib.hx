@@ -24,16 +24,16 @@
  */
 package osx;
 
-import objc.location.CLLocation;
+import swift.location.CLLocation;
 
 class Lib {
 	
 	static function log (v : Dynamic) : Void {}
 	static function getURL (url :String, ?target : String) : Bool {
-		return untyped __objc__ ("[UIApplication handleOpenURL:[NSURL urlWithString:url]]");
+		return untyped __swift__ ("[UIApplication handleOpenURL:[NSURL urlWithString:url]]");
 	}
 	static function attach (name : String) :UIImageView {
-		return untyped __objc__ ("[[NSImageView alloc] initWithImage:[NSImage imageNamed:@\"name\"]]");
+		return untyped __swift__ ("[[NSImageView alloc] initWithImage:[NSImage imageNamed:@\"name\"]]");
 	}
 	static function location () :CLLocation {
 		return null;

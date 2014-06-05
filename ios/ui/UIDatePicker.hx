@@ -1,8 +1,8 @@
 package ios.ui;
-import objc.foundation.NSObject;
-import objc.foundation.NSCalendar;
-import objc.foundation.NSTimeZone;
-import objc.foundation.NSDate;
+import swift.foundation.NSObject;
+import swift.foundation.NSCalendar;
+import swift.foundation.NSTimeZone;
+import swift.foundation.NSDate;
 
 @:framework("UIKit")
 extern enum UIDatePickerMode {

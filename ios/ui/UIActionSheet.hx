@@ -2,7 +2,7 @@
 //  UIActionSheet.h
 package ios.ui;
 
-import objc.foundation.NSObject;
+import swift.foundation.NSObject;
 
 typedef UIActionSheetStyle = Int;
 

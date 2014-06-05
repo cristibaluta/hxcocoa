@@ -3,7 +3,7 @@ package ios.ui;
 
 import ios.ui.UIGeometry;
 import ios.ui.UIControl;
-import objc.graphics.CGGeometry;
+import swift.graphics.CGGeometry;
 
 
 @:framework("UIKit")

@@ -3,8 +3,8 @@
 package ios.ui;
 import ios.ui.UIGeometry;
 import ios.ui.UIControl;
-import objc.foundation.NSObject;
-import objc.foundation.NSDictionary;
+import swift.foundation.NSObject;
+import swift.foundation.NSDictionary;
 
 
 @:framework("UIKit")

@@ -1,6 +1,6 @@
 package ios.ui;
-import objc.graphics.CGGeometry;
-import objc.graphics.CGAffineTransform;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGAffineTransform;
 
 @:framework("UIKit")
 extern class UIEdgeInsets {

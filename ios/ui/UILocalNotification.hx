@@ -1,8 +1,8 @@
 package ios.ui;
 
-import objc.foundation.NSObject;
-import objc.foundation.NSCalendar;
-import objc.foundation.NSDictionary;
+import swift.foundation.NSObject;
+import swift.foundation.NSCalendar;
+import swift.foundation.NSDictionary;
 
 typedef NSCalendarUnit = Int;
 typedef NSTimeZone = Int;

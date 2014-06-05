@@ -1,7 +1,7 @@
 //
 //  UIActivityItemProvider.h
 package ios.ui;
-import objc.foundation.NSOperation;
+import swift.foundation.NSOperation;
 
 @:framework("UIKit")
 extern interface UIActivityItemSource {

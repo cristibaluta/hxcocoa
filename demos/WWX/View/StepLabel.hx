@@ -3,7 +3,7 @@ import ios.ui.UILabel;
 import ios.ui.UIColor;
 import ios.ui.UIFont;
 import ios.ui.NSText;
-import objc.graphics.CGGeometry;
+import swift.graphics.CGGeometry;
 
 @:include("QuartzCore/QuartzCore.h")
 class StepLabel extends UIView {

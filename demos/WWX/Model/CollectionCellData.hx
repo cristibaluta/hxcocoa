@@ -1,4 +1,4 @@
-import objc.foundation.*;
+import swift.foundation.*;
 import ios.ui.UIImage;
 import ios.assets.ALAssetsLibrary;
 import ios.assets.ALAsset;

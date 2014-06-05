@@ -1,11 +1,11 @@
 package ios.assets;
 
 import ios.assets.ALAssetsLibrary;
-import objc.foundation.NSObject;
-import objc.foundation.NSDictionary;
-import objc.foundation.NSData;
-import objc.foundation.NSURL;
-import objc.graphics.CGImage;
+import swift.foundation.NSObject;
+import swift.foundation.NSDictionary;
+import swift.foundation.NSData;
+import swift.foundation.NSURL;
+import swift.graphics.CGImage;
 
 // Properties
 @:framework("AssetsLibrary")

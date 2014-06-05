@@ -6,29 +6,29 @@
 -cp View
 -cp Controller
 
--objc build
--objc-platform universal
--objc-version 6.0
--objc-bundle-version 1.0
--objc-identifier com.ralcr.wwx
--objc-owner BalutaCristian
--objc-bundle-name WWX
--objc-supporting-files SupportingFiles
+-swift build
+-swift-platform universal
+-swift-version 6.0
+-swift-bundle-version 1.0
+-swift-identifier com.ralcr.wwx
+-swift-owner BalutaCristian
+-swift-bundle-name WWX
+-swift-supporting-files SupportingFiles
 -ios-orientation UIInterfaceOrientationPortrait
 -ios-orientation UIInterfaceOrientationLandscape
 
 # used for facebook
 -cp FacebookSDK
--objc-linker-flag lsqlite3.0
--objc-linker-flag ObjC
--objc-lib ../../../../facebook-ios-sdk/build/FacebookSDK.framework
-# -objc-lib Ralcr.xcodeproj
+-swift-linker-flag lsqlite3.0
+-swift-linker-flag ObjC
+-swift-lib ../../../../facebook-ios-sdk/build/FacebookSDK.framework
+# -swift-lib Ralcr.xcodeproj
 # add some native frameworks to the project.
 # this frameworks are required by facebook sdk
 # they are not used anywhere in your app so they are not imported by default
--objc-framework Social
--objc-framework AdSupport
--objc-framework Accounts
+-swift-framework Social
+-swift-framework AdSupport
+-swift-framework Accounts
 
 -lib hxcocoa
 --times

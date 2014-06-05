@@ -1,10 +1,10 @@
 package ios.ui;
 
-import objc.foundation.NSObject;
-import objc.foundation.NSData;
-import objc.graphics.CGGeometry;
-import objc.graphics.CGImage;
-import objc.graphics.CGContext;
+import swift.foundation.NSObject;
+import swift.foundation.NSData;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGImage;
+import swift.graphics.CGContext;
 import ios.coreimage.CIImage;
 import ios.ui.UIGeometry;
 

@@ -1,6 +1,6 @@
 package ios.ui;
 
-import objc.graphics.CGGeometry;
+import swift.graphics.CGGeometry;
 
 @:framework("UIKit")
 extern enum UITouchPhase {

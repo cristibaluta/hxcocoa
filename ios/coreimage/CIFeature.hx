@@ -1,7 +1,7 @@
 package ios.coreimage;
 
-import objc.foundation.NSObject;
-import objc.graphics.CGGeometry;
+import swift.foundation.NSObject;
+import swift.graphics.CGGeometry;
 
 
 @:framework("CoreImage")

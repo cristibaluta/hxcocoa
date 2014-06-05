@@ -1,10 +1,10 @@
 package ios.ui;
 
-import objc.graphics.CGGeometry;
-import objc.graphics.CGAffineTransform;
-import objc.quartz.CALayer;
-import objc.foundation.NSObject;
-import objc.foundation.NSCoder;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGAffineTransform;
+import swift.quartz.CALayer;
+import swift.foundation.NSObject;
+import swift.foundation.NSCoder;
 import ios.ui.UIGeometry;
 import ios.ui.NSLayoutConstraint;
 

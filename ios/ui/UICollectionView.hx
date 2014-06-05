@@ -1,9 +1,9 @@
 //
 //  UICollectionView.h
 package ios.ui;
-import objc.foundation.NSIndexPath;
-import objc.foundation.NSIndexSet;
-import objc.graphics.CGGeometry;
+import swift.foundation.NSIndexPath;
+import swift.foundation.NSIndexSet;
+import swift.graphics.CGGeometry;
 import ios.ui.UICollectionViewLayout;
 
 @:framework("UIKit")

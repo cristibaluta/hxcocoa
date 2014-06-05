@@ -10,8 +10,8 @@ import ios.ui.UILabel;
 import ios.ui.UIColor;
 import ios.ui.UIFont;
 import ios.ui.UIEvent;
-import objc.graphics.CGGeometry;
-import objc.foundation.NSSet;
+import swift.graphics.CGGeometry;
+import swift.foundation.NSSet;
 
 
 class StepsView extends UIView {

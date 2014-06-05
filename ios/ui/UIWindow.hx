@@ -1,5 +1,5 @@
 package ios.ui;
-import objc.graphics.CGGeometry;
+import swift.graphics.CGGeometry;
 
 typedef UIWindowLevel = Float;
 

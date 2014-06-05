@@ -11,9 +11,9 @@ import ios.ui.UIViewController;
 import ios.ui.UIApplication;
 import ios.ui.UIColor;
 import ios.ui.NSText;
-import objc.foundation.NSDictionary;
-import objc.graphics.CGGeometry;
-import objc.graphics.CGAffineTransform;
+import swift.foundation.NSDictionary;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGAffineTransform;
 
 
 class PiratePig extends UIResponder implements UIApplicationDelegate {
@@ -30,8 +30,8 @@ class PiratePig extends UIResponder implements UIApplicationDelegate {
 		
 		trace("Start");
 		
-		//var n = objc.foundation.NSNull.__null();
-		//var c = objc.foundation.NSNull.__class();
+		//var n = swift.foundation.NSNull.__null();
+		//var c = swift.foundation.NSNull.__class();
 		
 		window = new UIWindow();
 		var screen = UIScreen.mainScreen();

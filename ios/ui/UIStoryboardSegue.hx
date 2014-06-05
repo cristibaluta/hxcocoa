@@ -1,7 +1,7 @@
 //
 //  UIStoryboardSegue.h
 package ios.ui;
-import objc.foundation.NSObject;
+import swift.foundation.NSObject;
 
 
 @:framework("UIKit")

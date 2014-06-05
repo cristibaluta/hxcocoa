@@ -14,11 +14,11 @@
 package ios.assets;
 
 import ios.assets.ALAssetsLibrary;
-import objc.foundation.NSObject;
-import objc.foundation.NSURL;
-import objc.foundation.NSDictionary;
-import objc.graphics.CGGeometry;
-import objc.graphics.CGImage;
+import swift.foundation.NSObject;
+import swift.foundation.NSURL;
+import swift.foundation.NSDictionary;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGImage;
 
 @:framework("AssetsLibrary")
 extern class ALAssetRepresentation extends NSObject {

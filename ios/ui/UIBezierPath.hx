@@ -1,8 +1,8 @@
 //
 //  UIBezierPath.h
 package ios.ui;
-import objc.graphics.CGGeometry;
-import objc.graphics.CGContext;
+import swift.graphics.CGGeometry;
+import swift.graphics.CGContext;
 
 @:framework("UIKit")
 extends enum UIRectCorner {

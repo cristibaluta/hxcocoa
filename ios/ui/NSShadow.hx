@@ -2,8 +2,8 @@
 //  NSShadow.h
 package ios.ui;
 
-import objc.foundation.Foundation;
-import objc.graphics.CGGeometry;
+import swift.foundation.Foundation;
+import swift.graphics.CGGeometry;
 
 /*
  NSShadow stores the properties of a drop shadow for drawing text.

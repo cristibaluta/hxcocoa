@@ -3,8 +3,8 @@
     <tag v="ios"/>
     <tag v="osx"/>
     <tag v="generic"/>
-    <tag v="objc"/>
-    <tag v="hxobjc"/>
-    <description>Cocoa and CocoaTouch externs for development of iOS, OSX, and generic apps with hxobjc</description>
+    <tag v="swift"/>
+    <tag v="hxswift"/>
+    <description>Cocoa and CocoaTouch externs for development of iOS, OSX, and generic apps with hxswift</description>
     <version name="1.0.0">First commit</version>
 </project>

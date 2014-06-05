@@ -2,9 +2,9 @@
 //  UICollectionViewLayout.h
 package ios.ui;
 
-import objc.foundation.NSObject;
-import objc.graphics.CGGeometry;
-import objc.foundation.NSIndexPath;
+import swift.foundation.NSObject;
+import swift.graphics.CGGeometry;
+import swift.foundation.NSIndexPath;
 
 @:framework("UIKit")
 @:require(ios6)

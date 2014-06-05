@@ -1,6 +1,6 @@
 package ios.map;
 
-import objc.foundation.NSObject;
+import swift.foundation.NSObject;
 
 
 extern class MKShape extends NSObject implements MKAnnotation {

@@ -10,8 +10,8 @@ import ios.assets.ALAssetsLibrary;
 import ios.ui.*;
 import ios.ui.UIApplication;
 import ios.ui.UITableView;
-import objc.foundation.*;
-import objc.graphics.CGGeometry;
+import swift.foundation.*;
+import swift.graphics.CGGeometry;
 import FBSession;
 
 

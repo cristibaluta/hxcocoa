@@ -1,7 +1,7 @@
 package ios.ui;
 
-import objc.graphics.CGGeometry;
-import objc.foundation.NSIndexPath;
+import swift.graphics.CGGeometry;
+import swift.foundation.NSIndexPath;
 
 @:framework("UIKit")
 extern enum UITableViewStyle {

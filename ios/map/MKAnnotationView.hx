@@ -2,8 +2,8 @@ package ios.map;
 
 import ios.ui.UIView;
 import ios.ui.UIImage;
-import objc.location.CLLocation;
-import objc.graphics.CGGeometry;
+import swift.location.CLLocation;
+import swift.graphics.CGGeometry;
 
 
 extern enum MKAnnotationViewDragState {

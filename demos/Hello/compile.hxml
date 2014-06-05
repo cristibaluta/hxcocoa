@@ -1,9 +1,9 @@
 -main HelloWorld
 -cp .
--objc build
--objc-version 6
--objc-bundle-version 1.0
--objc-identifier com.ralcr.hello
+-swift build
+-swift-version 6
+-swift-bundle-version 1.0
+-swift-identifier com.ralcr.hello
 -lib hxcocoa
-# -objc-supporting-files ../WWX/SupportingFiles
+# -swift-supporting-files ../WWX/SupportingFiles
 --times

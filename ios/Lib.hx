@@ -26,7 +26,7 @@ package ios;
 
 typedef ALAssetsGroup = Dynamic;
 typedef ALAsset = Dynamic;
-import objc.location.CLLocation;
+import swift.location.CLLocation;
 import ios.ui.UIAlertView;
 import ios.ui.UIDevice;
 import ios.ui.UIImageView;
@@ -34,11 +34,11 @@ import ios.ui.UIImageView;
 class Lib {
 	
 	public static function getURL (url :String, ?target : String) : Bool {
-		return untyped __objc__ ("[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]]");
+		return untyped __swift__ ("[[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]]");
 	}
 	
 	public static function attach (name : String) :UIImageView {
-		return untyped __objc__ ("[[UIImageView alloc] initWithImage:[UIImage imageNamed:@\"name\"]]");
+		return untyped __swift__ ("[[UIImageView alloc] initWithImage:[UIImage imageNamed:@\"name\"]]");
 	}
 	
 	public static function enumerateLibraryGroups () :Array<ALAssetsGroup> {
@@ -58,13 +58,13 @@ class Lib {
 	public static function isIpad () :Bool {
 		var deviceType:String = UIDevice.currentDevice().model;
 		return deviceType == "iPad";
-		return untyped __objc__("UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad");
+		return untyped __swift__("UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad");
 	}
 	
 	public static function isIpod () :Bool {
 		var deviceType:String = UIDevice.currentDevice().model;
 		return deviceType == "iPod touch";
-		return untyped __objc__("UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad");
+		return untyped __swift__("UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad");
 	}
 	
 	public static function alert (title:String, message:String) :UIAlertView {

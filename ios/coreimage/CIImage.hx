@@ -1,5 +1,5 @@
 package ios.coreimage;
-import objc.foundation.NSObject;
+import swift.foundation.NSObject;
 
 @:framework("CoreImage")
 extern class CIImage extends NSObject {
