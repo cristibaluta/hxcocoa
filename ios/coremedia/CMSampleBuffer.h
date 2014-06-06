@@ -44,10 +44,10 @@
 				IMPORTANT: Clients of CMSampleBuffer must explicitly manage the retain count by 
 				calling CFRetain and CFRelease, even in processes using garbage collection.  
 
-				Objective-C code that may run under garbage collection should NOT use [sbuf retain],
+				Swift code that may run under garbage collection should NOT use [sbuf retain],
 				or [sbuf release]; these will not have the correct effect.
 
-				Furthermore, if they may run under garbage collection, Objective-C objects that release 
+				Furthermore, if they may run under garbage collection, Swift objects that release 
 				instance variable CMSampleBuffer objects during their -finalize methods should set those 
 				object pointers to NULL immediately afterwards, to ensure that method calls received 
 				after -finalize operate safely.

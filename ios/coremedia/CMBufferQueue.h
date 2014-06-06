@@ -71,10 +71,10 @@
 				IMPORTANT: Clients of CMBufferQueue must explicitly manage the retain count by 
 				calling CFRetain and CFRelease, even in processes using garbage collection.
 
-				Objective-C code that may run under garbage collection should NOT use [bufq retain],
+				Swift code that may run under garbage collection should NOT use [bufq retain],
 				or [bufq release]; these will not have the correct effect.
 
-				Furthermore, if they may run under garbage collection, Objective-C objects that release 
+				Furthermore, if they may run under garbage collection, Swift objects that release 
 				instance variable CMBufferQueue objects during their -finalize methods should set those 
 				object pointers to NULL immediately afterwards, to ensure that method calls received 
 				after -finalize operate safely.

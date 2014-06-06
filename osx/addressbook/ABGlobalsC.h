@@ -13,7 +13,7 @@
 
 #include <CoreFoundation/CoreFoundation.h>
 
-// NOTE: This header is for C programmers. For Objective-C use ABGlobals.h
+// NOTE: This header is for C programmers. For Swift use ABGlobals.h
 
 // ================================================================
 //      Global Table properties

@@ -21,10 +21,10 @@
 	IMPORTANT: Clients of CMBlockBuffer must explicitly manage the retain count by 
 	calling CFRetain and CFRelease even in processes using garbage collection.  
 	<BR>
-	Objective-C code that may run under garbage collection should NOT use [bbuf retain],
+	Swift code that may run under garbage collection should NOT use [bbuf retain],
 	or [bbuf release]; these will not have the correct effect.
 	<BR>
-	Furthermore, if they may run under garbage collection, Objective-C objects that release 
+	Furthermore, if they may run under garbage collection, Swift objects that release 
 	instance variable CMBlockBuffer objects during their -finalize methods should set those 
 	object pointers to NULL immediately afterwards, to ensure that method calls received 
 	after -finalize operate safely.

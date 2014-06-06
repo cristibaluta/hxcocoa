@@ -64,10 +64,10 @@
     is being called within the scope of a script invocation.
 
     Not all methods are exposed. Only those methods whose parameters and return
-    type meets the export criteria are exposed. Valid types are Objective-C instances
+    type meets the export criteria are exposed. Valid types are Swift instances
     and scalars. Other types are not allowed.
 
-    Types will be converted automatically between JavaScript and Objective-C in 
+    Types will be converted automatically between JavaScript and Swift in 
     the following manner:
 
     JavaScript              ObjC
@@ -80,8 +80,8 @@
     object          =>      id
     
     The object => id conversion occurs as follows: if the object wraps an underlying
-    Objective-C object (i.e., if it was created by a previous ObjC => JavaScript conversion),
-    then the underlying Objective-C object is returned. Otherwise, a new WebScriptObject
+    Swift object (i.e., if it was created by a previous ObjC => JavaScript conversion),
+    then the underlying Swift object is returned. Otherwise, a new WebScriptObject
     is created and returned.
     
     The above conversions occur only if the declared ObjC type is an object type. 
@@ -111,10 +111,10 @@ extern class NSObject (WebScripting)
     uniqueness of the returned name. If nil is returned or this
     method is not implemented the default name for the selector will
     be used. The default name concatenates the components of the
-    Objective-C selector name and replaces ':' with '_'.  '_' characters
+    Swift selector name and replaces ':' with '_'.  '_' characters
     are escaped with an additional '$', i.e. '_' becomes "$_". '$' are
     also escaped, i.e.
-        Objective-C name        Default script name
+        Swift name        Default script name
         moveTo::                move__
         moveTo_                 moveTo$_
         moveTo$_                moveTo$$$_
@@ -195,7 +195,7 @@ extern class NSObject (WebScripting)
 /*!
     @class WebScriptObject
     @discussion WebScriptObjects are used to wrap script objects passed from
-    script environments to Objective-C. WebScriptObjects cannot be created
+    script environments to Swift. WebScriptObjects cannot be created
     directly. In normal uses of WebKit, you gain access to the script
     environment using the "windowScriptObject" method on WebView.
 

@@ -185,7 +185,7 @@ You can't really override this method when you add a computed property to an exi
 */
 + (Bool)automaticallyNotifiesObserversForKey:(NSString *)key;
 
-/* Take or return a pointer that identifies information about all of the observers that are registered with the receiver, the options that were used at registration-time, etc. The default implementation of these methods store observation info in a global dictionary keyed by the receivers' pointers. For improved performance, you can override these methods to store the opaque data pointer in an instance variable. Overrides of these methods must not attempt to send Objective-C messages to the passed-in observation info, including -retain and -release.
+/* Take or return a pointer that identifies information about all of the observers that are registered with the receiver, the options that were used at registration-time, etc. The default implementation of these methods store observation info in a global dictionary keyed by the receivers' pointers. For improved performance, you can override these methods to store the opaque data pointer in an instance variable. Overrides of these methods must not attempt to send Swift messages to the passed-in observation info, including -retain and -release.
 */
 public function setObservationInfo:(void *)observationInfo;
 - (void *)observationInfo;

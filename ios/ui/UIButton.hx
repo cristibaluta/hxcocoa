@@ -3,6 +3,7 @@ package ios.ui;
 
 import ios.ui.UIGeometry;
 import ios.ui.UIControl;
+import ios.ui.NSAttributedString;
 import swift.graphics.CGGeometry;
 
 
@@ -15,7 +16,6 @@ extern enum UIButtonType {
 	UIButtonTypeInfoDark;
 	UIButtonTypeContactAdd;
 }
-import ios.ui.NSAttributedString;
 
 
 @:framework("UIKit")
