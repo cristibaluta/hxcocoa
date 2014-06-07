@@ -7,24 +7,28 @@
 
 import CustomMapView
 
-class CustomMapView
+#import <MapKit/MapKit.h>
 
-	 func locate:(Float*)lat _long:(Float*)_long zoom:(Float*)zoom -> * {
+
+
+class CustomMapView : MKMapView 
+
+func locate (lat lat :Float?, _long _long :Float?, zoom zoom :Float?) -> * {
 	
-	CLLocationCoordinate2D zoomLocation;
-	zoomLocation.latitude = lat;
-	zoomLocation.longitude = _long;
-	MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance (zoomLocation, 40000, 40000);
-	MKCoordinateRegion adjustedRegion = [self regionThatFits:viewRegion];
-	self setRegion:adjustedRegion animated:true);
+	CLLocationCoordinate2D zoomLocation
+	zoomLocation.latitude = lat
+	zoomLocation.longitude = _long
+	MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance (zoomLocation, 40000, 40000)
+	MKCoordinateRegion adjustedRegion = [self regionThatFits:viewRegion]
+	self.setRegion(region:adjustedRegion, animated:true)
 }
-	 func locateMe -> * {
+func locateMe () -> * {
 	
-	self.showsUserLocation = true;
+	self.showsUserLocation = true
 }
-	 func locateLondon -> * {
+func locateLondon () -> * {
 	
-	self locate:51.4788 _long:0.0106 zoom:1.2);
+	self.locate(lat:51.4788, _long:0.0106, zoom:1.2)
 }
 
 }

@@ -7,10 +7,13 @@
 
 import HelloWorld
 
-class HelloWorld
 
 
-	static func unusedMain -> * {
+
+class HelloWorld : NSObject
+
+
+static func unusedMain () -> * {
 	
 }
 

@@ -7,148 +7,150 @@
 
 import String
 
-extension NSString ( String )
 
-	static func fromCharCode:(Int*)code -> * {
+
+
+class String : NSObject
+
+static func fromCharCode (code code :Int?) -> * {
 	
-	return [NSMutableString stringWithFormat:@"%C", code];
+	return [NSMutableString stringWithFormat:@"%C", code]
 }
-	 func toString -> * {
+func toString () -> * {
 	
-	return self description);
+	return self description)
 }
-	 func substring:(Int*)startIndex endIndex:(Int*)endIndex -> * {
+func substring (startIndex startIndex :Int?, endIndex endIndex :Int?) -> * {
 	
 	// Optional arguments
 	if (!endIndex) endIndex = nil;
 	
 	if (endIndex == nil) {
-		endIndex = self.length;
+		endIndex = self.length
 	}
 	else {
 		if (endIndex < 0) {
-			endIndex = 0;
+			endIndex = 0
 		}
 		else {
 			if (endIndex > self.length) {
-				endIndex = self.length;
+				endIndex = self.length
 			}
 		}
 	}
 	if (startIndex < 0) {
-		startIndex = 0;
+		startIndex = 0
 	}
 	else {
 		if (startIndex > self.length) {
-			startIndex = self.length;
+			startIndex = self.length
 		}
 	}
 	if (startIndex > endIndex) {
 		
-		;
-		startIndex = endIndex;
-		endIndex = tmp;
+		var tmp :Int?
+		startIndex = endIndex
+		endIndex = tmp
 	}
-	return self substr:startIndex len:endIndex - startIndex);
+	return self.substr(pos:startIndex, len:endIndex - startIndex)
 }
-	 func substr:(Int*)pos len:(Int*)len -> * {
+func substr (pos pos :Int?, len len :Int?) -> * {
 	
 	// Optional arguments
 	if (!len) len = nil;
 	
 	if (len == 0) {
-		return @"";
+		return ""
 	}
-	;
+	var sl :Int?
 	if (len == nil) {
-		len = sl;
+		len = sl
 	}
 	if (pos == nil) {
-		pos = 0;
+		pos = 0
 	}
 	if (pos != 0 && len < 0) {
-		return @"";
+		return ""
 	}
 	if (pos < 0) {
 		
-		pos = sl + pos;
+		pos = sl + pos
 		if (pos < 0) {
-			pos = 0;
+			pos = 0
 		}
 	}
 	else {
 		if (len < 0) {
-			len = sl + len - pos;
+			len = sl + len - pos
 		}
 	}
 	if (pos + len > sl) {
-		len = sl - pos;
+		len = sl - pos
 	}
 	if (pos < 0 || len <= 0) {
-		return @"";
+		return ""
 	}
-	return [self substringFromIndex:pos];
+	return [self substringFromIndex:pos]
 }
-	 func split:(String*)delimiter -> * {
+func split (delimiter delimiter :String?) -> * {
 	
-	return self componentsSeparatedByString:delimiter);
+	return self componentsSeparatedByString(:delimiter)
 }
-	 func lastIndexOf:(String*)str startIndex:(Int*)startIndex -> * {
+func lastIndexOf (str str :String?, startIndex startIndex :Int?) -> * {
 	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
 	
 	if (startIndex == nil) {
-		startIndex = 0;
+		startIndex = 0
 	}
 	else {
-		startIndex = startIndex;
+		startIndex = startIndex
 	}
 	NSRange range = [self rangeOfString:str options:NSBackwardsSearch range:NSMakeRange(startIndex,self.length-startIndex)];
 	if ( range.location != NSNotFound ) {
 		return range.location;
-	};
-	return -1;
+	}
+	return -1
 }
-	 func indexOf:(String*)str startIndex:(Int*)startIndex -> * {
+func indexOf (str str :String?, startIndex startIndex :Int?) -> * {
 	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
 	
 	if (startIndex == nil) {
-		startIndex = 0;
+		startIndex = 0
 	}
 	else {
-		startIndex = startIndex;
+		startIndex = startIndex
 	}
 	NSRange range = [self rangeOfString:str options:NSLiteralSearch range:NSMakeRange(startIndex,self.length-startIndex)];
 	if ( range.location != NSNotFound ) {
 		return range.location;
-	};
-	return -1;
+	}
+	return -1
 }
-	 func charCodeAt:(Int*)index -> * {
+func charCodeAt (index index :Int?) -> * {
 	
-	return self characterAtIndex:index);
+	return self characterAtIndex(:index)
 }
-	 func charAt:(Int*)index -> * {
+func charAt (index index :Int?) -> * {
 	
-	return nil;
+	return nil
 }
-	 func toLowerCase -> * {
+func toLowerCase () -> * {
 	
-	return self lowercaseString);
+	return self lowercaseString)
 }
-	 func toUpperCase -> * {
+func toUpperCase () -> * {
 	
-	return self uppercaseString);
+	return self uppercaseString)
 }
-// Please provide a getterBody for the property: length
-
-	 func init:(String*)string -> * {
+@synthesize length;
+func init (string string :String?) -> * {
 	
-	self = [super init];
-	return self;
+	super.init()
+	super.init()
 }
 
 }

@@ -7,137 +7,137 @@
 
 import Array
 
-extension NSMutableArray ( Array )
 
-	 func hx_objectAtIndex:(Int*)index -> * {
+
+
+class Array : NSObject
+
+func hx_objectAtIndex (index index :Int?) -> * {
 	
-	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]];
-	;
-	if ([obj isKindOfClass:[NSNull class]]) obj = nil;
-	return obj;
+	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]]
+	var obj :AnyObject?
+	if ([obj isKindOfClass:[NSNull class]]) obj = nil
+	return obj
 }
-	 func hx_replaceObjectAtIndex:(Int*)index withObject:(AnyObject*)withObject -> * {
+func hx_replaceObjectAtIndex (index index :Int?, withObject withObject :AnyObject?) -> * {
 	
-	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]];
-	[self replaceObjectAtIndex:index withObject:(withObject==nil?[NSNull null]:withObject)];
+	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]]
+	[self replaceObjectAtIndex:index withObject:(withObject==nil?[NSNull null]:withObject)]
 }
-	 func filter:(id)f -> * {
+func filter (f f :id?) -> * {
 	
-	return nil;
+	return nil
 }
-	 func map:(id)f -> * {
+func map (f f :id?) -> * {
 	
-	return nil;
+	return nil
 }
-	 func iterator -> * {
+func iterator () -> * {
 	
-	;
-	it.arr = self;
-	it.len = self.length;
-	return it;
+	var it :HxIterator?
+	it.arr = self
+	it.len = self.length
+	return it
 }
-	 func splice:(Int*)pos len:(Int*)len -> * {
+func splice (pos pos :Int?, len len :Int?) -> * {
 	
-	NSArray *newArray = [self subarrayWithRange:NSMakeRange(pos, len)];
-	self removeObjectsInArray:newArray);
-	return Array arrayWithArray:newArray);
+	NSArray *newArray = [self subarrayWithRange:NSMakeRange(pos, len)]
+	self removeObjectsInArray(:newArray)
+	return Array arrayWithArray(:newArray)
 }
-	 func sort:(id)f -> * {
+func sort (f f :id?) -> * {
 	
 }
-	 func slice:(Int*)pos end:(Int*)end -> * {
+func slice (pos pos :Int?, end end :Int?) -> * {
 	
 	// Optional arguments
 	if (!end) end = nil;
 	
-	return self splice:pos len:end - pos);
+	return self.splice(pos:pos, len:end - pos)
 }
-	 func shift ->  {
+func shift () ->  {
 	
 	if (self.length > 0) {
 		
-		;
-		self removeObjectAtIndex:0);
-		return obj;
+		var obj :id?
+		self removeObjectAtIndex(:0)
+		return obj
 	}
-	return nil;
+	return nil
 }
-	 func reverse -> * {
+func reverse () -> * {
 	
-	;
+	var reverseArray :AnyObject?
 }
-	 func remove:(id)x -> * {
+func remove (x x :id?) -> * {
 	
-	;
+	var containsObject :Bool?
 	if (containsObject) {
-		self removeObject:x);
+		self removeObject(:x)
 	}
-	return containsObject;
+	return containsObject
 }
-	 func unshift:(id)x -> * {
+func unshift (x x :id?) -> * {
 	
-	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:0];
+	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:0]
 }
-	 func push:(id)x -> * {
+func push (x x :id?) -> * {
 	
-	[self addObject:(x!=nil?x:[NSNull null])];
-	return self count);
+	[self addObject:(x!=nil?x:[NSNull null])]
+	return self count)
 }
-	 func pop ->  {
+func pop () ->  {
 	
 	if (self count) == 0) {
-		return nil;
+		return nil
 	}
-	;
-	if ([theLastObject isKindOfClass:[NSNull class]]) theLastObject = nil;
-	self removeLastObject);
-	return theLastObject;
+	var theLastObject :id?
+	if ([theLastObject isKindOfClass:[NSNull class]]) theLastObject = nil
+	self removeLastObject)
+	return theLastObject
 }
-	 func toString -> * {
+func toString () -> * {
 	
-	return NSMutableString stringWithString:self description));
+	return NSMutableString.stringWithString(:self description))
 }
-	 func join:(String*)sep -> * {
+func join (sep sep :String?) -> * {
 	
-	return NSMutableString stringWithString:self componentsJoinedByString:sep));
+	return NSMutableString.stringWithString(:self componentsJoinedByString(:sep))
 }
-	 func lastIndexOf:(id)x fromIndex:(Int*)fromIndex -> * {
+func lastIndexOf (x x :id?, fromIndex fromIndex :Int?) -> * {
 	
 	// Optional arguments
 	if (!fromIndex) fromIndex = nil;
 	
-	return 0;
+	return 0
 }
-	 func indexOf:(id)x fromIndex:(Int*)fromIndex -> * {
+func indexOf (x x :id?, fromIndex fromIndex :Int?) -> * {
 	
 	// Optional arguments
 	if (!fromIndex) fromIndex = nil;
 	
-	return 0;
+	return 0
 }
-	 func insert:(Int*)pos x:(id)x -> * {
+func insert (pos pos :Int?, x x :id?) -> * {
 	
-	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:pos];
+	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:pos]
 }
-	 func copy -> * {
+func copy () -> * {
 	
-	return Array arrayWithArray:self);
+	return Array arrayWithArray(:self)
 }
-	 func concat:(Array*)a -> * {
+func concat (a a :Array?) -> * {
 	
-	;
-	b addObjectsFromArray:self);
-	b addObjectsFromArray:a);
-	return b;
+	var b :Array?
+	b addObjectsFromArray(:self)
+	b addObjectsFromArray(:a)
+	return b
 }
-// Getters/setters for property: length
- func Int*) length { return [self count]; }
- func setLength:(Int*)val { nil; }
-
-	 func init -> * {
+@synthesize length;
+func init () -> * {
 	
-	self = [super init];
-	return self;
+	super.init()
+	super.init()
 }
 
 }
