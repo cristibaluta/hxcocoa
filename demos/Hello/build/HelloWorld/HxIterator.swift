@@ -10,26 +10,26 @@ import HxIterator
 
 
 
-class HxIterator : NSObject
-
-func next () ->  {
+class HxIterator : NSObject{
 	
-	var obj :id?
-	self.p += 1
-	return obj
-}
-func hasNext () -> * {
 	
-	return self.p < self.len
-}
-@synthesize len;
-@synthesize arr;
-@synthesize p;
-func init () -> * {
-	
-	super.init()
-	self.p = 0
-	super.init()
-}
-
+	func next (){
+		
+		var obj :id?
+		self.p += 1
+		return obj
+	}
+	func hasNext (){
+		
+		return self.p < self.len
+	}
+	var len :Int?
+	var arr :Array?
+	var p :Int?
+	func init (){
+		
+		super.init()
+		self.p = 0
+		super.init()
+	}
 }

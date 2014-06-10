@@ -10,147 +10,147 @@ import String
 
 
 
-class String : NSObject
-
-static func fromCharCode (code code :Int?) -> * {
+class String : NSObject{
 	
-	return [NSMutableString stringWithFormat:@"%C", code]
-}
-func toString () -> * {
 	
-	return self description)
-}
-func substring (startIndex startIndex :Int?, endIndex endIndex :Int?) -> * {
-	
-	// Optional arguments
-	if (!endIndex) endIndex = nil;
-	
-	if (endIndex == nil) {
-		endIndex = self.length
+	static func fromCharCode (code code :Int?){
+		
+		return [NSMutableString stringWithFormat:@"%C", code]
 	}
-	else {
-		if (endIndex < 0) {
-			endIndex = 0
+	func toString (){
+		
+		return self description)
+	}
+	func substring (startIndex startIndex :Int?, endIndex endIndex :Int?){
+		
+		// Optional arguments
+		if (!endIndex) endIndex = nil;
+		
+		if (endIndex == nil) {
+			endIndex = self.length
 		}
 		else {
-			if (endIndex > self.length) {
-				endIndex = self.length
+			if (endIndex < 0) {
+				endIndex = 0
+			}
+			else {
+				if (endIndex > self.length) {
+					endIndex = self.length
+				}
 			}
 		}
-	}
-	if (startIndex < 0) {
-		startIndex = 0
-	}
-	else {
-		if (startIndex > self.length) {
-			startIndex = self.length
+		if (startIndex < 0) {
+			startIndex = 0
 		}
+		else {
+			if (startIndex > self.length) {
+				startIndex = self.length
+			}
+		}
+		if (startIndex > endIndex) {
+			
+			var tmp :Int?
+			startIndex = endIndex
+			endIndex = tmp
+		}
+		return self.substr(pos:startIndex, len:endIndex - startIndex)
 	}
-	if (startIndex > endIndex) {
+	func substr (pos pos :Int?, len len :Int?){
 		
-		var tmp :Int?
-		startIndex = endIndex
-		endIndex = tmp
-	}
-	return self.substr(pos:startIndex, len:endIndex - startIndex)
-}
-func substr (pos pos :Int?, len len :Int?) -> * {
-	
-	// Optional arguments
-	if (!len) len = nil;
-	
-	if (len == 0) {
-		return ""
-	}
-	var sl :Int?
-	if (len == nil) {
-		len = sl
-	}
-	if (pos == nil) {
-		pos = 0
-	}
-	if (pos != 0 && len < 0) {
-		return ""
-	}
-	if (pos < 0) {
+		// Optional arguments
+		if (!len) len = nil;
 		
-		pos = sl + pos
-		if (pos < 0) {
+		if (len == 0) {
+			return ""
+		}
+		var sl :Int?
+		if (len == nil) {
+			len = sl
+		}
+		if (pos == nil) {
 			pos = 0
 		}
-	}
-	else {
-		if (len < 0) {
-			len = sl + len - pos
+		if (pos != 0 && len < 0) {
+			return ""
 		}
+		if (pos < 0) {
+			
+			pos = sl + pos
+			if (pos < 0) {
+				pos = 0
+			}
+		}
+		else {
+			if (len < 0) {
+				len = sl + len - pos
+			}
+		}
+		if (pos + len > sl) {
+			len = sl - pos
+		}
+		if (pos < 0 || len <= 0) {
+			return ""
+		}
+		return [self substringFromIndex:pos]
 	}
-	if (pos + len > sl) {
-		len = sl - pos
+	func split (delimiter delimiter :String?){
+		
+		return self componentsSeparatedByString(:delimiter)
 	}
-	if (pos < 0 || len <= 0) {
-		return ""
-	}
-	return [self substringFromIndex:pos]
-}
-func split (delimiter delimiter :String?) -> * {
-	
-	return self componentsSeparatedByString(:delimiter)
-}
-func lastIndexOf (str str :String?, startIndex startIndex :Int?) -> * {
-	
-	// Optional arguments
-	if (!startIndex) startIndex = nil;
-	
-	if (startIndex == nil) {
-		startIndex = 0
-	}
-	else {
-		startIndex = startIndex
-	}
-	NSRange range = [self rangeOfString:str options:NSBackwardsSearch range:NSMakeRange(startIndex,self.length-startIndex)];
+	func lastIndexOf (str str :String?, startIndex startIndex :Int?){
+		
+		// Optional arguments
+		if (!startIndex) startIndex = nil;
+		
+		if (startIndex == nil) {
+			startIndex = 0
+		}
+		else {
+			startIndex = startIndex
+		}
+		NSRange range = [self rangeOfString:str options:NSBackwardsSearch range:NSMakeRange(startIndex,self.length-startIndex)];
 	if ( range.location != NSNotFound ) {
 		return range.location;
 	}
-	return -1
-}
-func indexOf (str str :String?, startIndex startIndex :Int?) -> * {
-	
-	// Optional arguments
-	if (!startIndex) startIndex = nil;
-	
-	if (startIndex == nil) {
-		startIndex = 0
+		return -1
 	}
-	else {
-		startIndex = startIndex
-	}
-	NSRange range = [self rangeOfString:str options:NSLiteralSearch range:NSMakeRange(startIndex,self.length-startIndex)];
+	func indexOf (str str :String?, startIndex startIndex :Int?){
+		
+		// Optional arguments
+		if (!startIndex) startIndex = nil;
+		
+		if (startIndex == nil) {
+			startIndex = 0
+		}
+		else {
+			startIndex = startIndex
+		}
+		NSRange range = [self rangeOfString:str options:NSLiteralSearch range:NSMakeRange(startIndex,self.length-startIndex)];
 	if ( range.location != NSNotFound ) {
 		return range.location;
 	}
-	return -1
-}
-func charCodeAt (index index :Int?) -> * {
-	
-	return self characterAtIndex(:index)
-}
-func charAt (index index :Int?) -> * {
-	
-	return nil
-}
-func toLowerCase () -> * {
-	
-	return self lowercaseString)
-}
-func toUpperCase () -> * {
-	
-	return self uppercaseString)
-}
-@synthesize length;
-func init (string string :String?) -> * {
-	
-	super.init()
-	super.init()
-}
-
+		return -1
+	}
+	func charCodeAt (index index :Int?){
+		
+		return self characterAtIndex(:index)
+	}
+	func charAt (index index :Int?){
+		
+		return nil
+	}
+	func toLowerCase (){
+		
+		return self lowercaseString)
+	}
+	func toUpperCase (){
+		
+		return self uppercaseString)
+	}
+	var length :Int?
+	func init (string string :String?){
+		
+		super.init()
+		super.init()
+	}
 }

@@ -10,11 +10,11 @@ import HelloWorld
 
 
 
-class HelloWorld : NSObject
-
-
-static func unusedMain () -> * {
+class HelloWorld : NSObject{
 	
-}
-
+	
+	
+	static func unusedMain (){
+		
+	}
 }
