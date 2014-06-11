@@ -14,7 +14,7 @@ import CustomMapView
 class CustomMapView : MKMapView {
 	
 	
-	func locate (lat lat :Float?, _long _long :Float?, zoom zoom :Float?){
+	func locate (lat lat :Float?, _long _long :Float?, zoom zoom :Float?) {
 		
 		CLLocationCoordinate2D zoomLocation
 		zoomLocation.latitude = lat
@@ -23,11 +23,11 @@ class CustomMapView : MKMapView {
 		MKCoordinateRegion adjustedRegion = [self regionThatFits:viewRegion]
 		self.setRegion(region:adjustedRegion, animated:true)
 	}
-	func locateMe (){
+	func locateMe () {
 		
 		self.showsUserLocation = true
 	}
-	func locateLondon (){
+	func locateLondon () {
 		
 		self.locate(lat:51.4788, _long:0.0106, zoom:1.2)
 	}

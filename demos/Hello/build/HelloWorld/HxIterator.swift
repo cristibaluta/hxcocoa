@@ -10,23 +10,23 @@ import HxIterator
 
 
 
-class HxIterator : NSObject{
+class HxIterator {
 	
 	
-	func next (){
+	func next () -> id? {
 		
 		var obj :id?
 		self.p += 1
 		return obj
 	}
-	func hasNext (){
+	func hasNext () -> Bool? {
 		
 		return self.p < self.len
 	}
 	var len :Int?
 	var arr :Array?
 	var p :Int?
-	func init (){
+	func init () {
 		
 		super.init()
 		self.p = 0

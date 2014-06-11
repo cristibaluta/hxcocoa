@@ -10,18 +10,18 @@ import String
 
 
 
-class String : NSObject{
+class String {
 	
 	
-	static func fromCharCode (code code :Int?){
+	static func fromCharCode (code code :Int?) -> String? {
 		
 		return [NSMutableString stringWithFormat:@"%C", code]
 	}
-	func toString (){
+	func toString () -> String? {
 		
 		return self description)
 	}
-	func substring (startIndex startIndex :Int?, endIndex endIndex :Int?){
+	func substring (startIndex startIndex :Int?, endIndex endIndex :Int?) -> String? {
 		
 		// Optional arguments
 		if (!endIndex) endIndex = nil;
@@ -55,7 +55,7 @@ class String : NSObject{
 		}
 		return self.substr(pos:startIndex, len:endIndex - startIndex)
 	}
-	func substr (pos pos :Int?, len len :Int?){
+	func substr (pos pos :Int?, len len :Int?) -> String? {
 		
 		// Optional arguments
 		if (!len) len = nil;
@@ -93,11 +93,11 @@ class String : NSObject{
 		}
 		return [self substringFromIndex:pos]
 	}
-	func split (delimiter delimiter :String?){
+	func split (delimiter delimiter :String?) -> Array? {
 		
 		return self componentsSeparatedByString(:delimiter)
 	}
-	func lastIndexOf (str str :String?, startIndex startIndex :Int?){
+	func lastIndexOf (str str :String?, startIndex startIndex :Int?) -> Int? {
 		
 		// Optional arguments
 		if (!startIndex) startIndex = nil;
@@ -114,7 +114,7 @@ class String : NSObject{
 	}
 		return -1
 	}
-	func indexOf (str str :String?, startIndex startIndex :Int?){
+	func indexOf (str str :String?, startIndex startIndex :Int?) -> Int? {
 		
 		// Optional arguments
 		if (!startIndex) startIndex = nil;
@@ -131,24 +131,24 @@ class String : NSObject{
 	}
 		return -1
 	}
-	func charCodeAt (index index :Int?){
+	func charCodeAt (index index :Int?) -> Int? {
 		
 		return self characterAtIndex(:index)
 	}
-	func charAt (index index :Int?){
+	func charAt (index index :Int?) -> String? {
 		
 		return nil
 	}
-	func toLowerCase (){
+	func toLowerCase () -> String? {
 		
 		return self lowercaseString)
 	}
-	func toUpperCase (){
+	func toUpperCase () -> String? {
 		
 		return self uppercaseString)
 	}
 	var length :Int?
-	func init (string string :String?){
+	func init (string string :String?) {
 		
 		super.init()
 		super.init()

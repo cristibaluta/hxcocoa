@@ -14,27 +14,27 @@ import AppDelegate
 class AppDelegate : UIResponder UIApplicationDelegate{
 	
 	
-	func applicationWillResignActive (application application :UIApplication?){
+	func applicationWillResignActive (application application :UIApplication?) {
 		
 	}
-	func applicationDidBecomeActive (application application :UIApplication?){
+	func applicationDidBecomeActive (application application :UIApplication?) {
 		
 	}
-	func locateLondon (){
+	func locateLondon () {
 		
 		self.map.locateLondon)
 	}
-	func application (application application :UIApplication?, didFinishLaunchingWithOptions didFinishLaunchingWithOptions :NSDictionary?){
+	func application (application application :UIApplication?, didFinishLaunchingWithOptions didFinishLaunchingWithOptions :NSDictionary?) -> Bool? {
 		
-		self.window = UIWindow()]
+		self.window = UIWindow()
 		var screen :UIScreen?
 		self.window.frame = screen.bounds
-		self.view = UIView()]
+		self.view = UIView()
 		self.view.frame = CGRect(0,0,self.window.frame.size.width,self.window.frame.size.height)
 		self.view.autoresizesSubviews = true
 		self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)
 		self.view.backgroundColor = UIColor.darkGrayColor)
-		self.label = UILabel()]
+		self.label = UILabel()
 		self.label.frame = CGRect(0,350,self.view.frame.size.width,50)
 		self.label.textColor = UIColor.yellowColor)
 		self.label.backgroundColor = UIColor.clearColor)
@@ -42,16 +42,16 @@ class AppDelegate : UIResponder UIApplicationDelegate{
 		self.label.font = UIFont.boldSystemFontOfSize(fontSize:30)
 		self.label.text = "Hello world!"
 		self.view.addSubview(view:self.label)
-		self.map = CustomMapView()]
+		self.map = CustomMapView()
 		self.map.frame = CGRect(10,10,300,300)
 		self.view.addSubview(view:self.map)
 		self.map.locateLondon)
-		self.but = UIButton()]
+		self.but = UIButton()
 		self.but.frame = .CGRectMake(0, 430, 320, 30)
 		self.but.setTitle(title:"Locate London", forState:UIControlStateNormal)
 		self.but.setTitle(title:"...Locate London...", forState:UIControlStateHighlighted)
 		self.view.addSubview(view:self.but)
-		self.viewController = UIViewController()]
+		self.viewController = UIViewController()
 		self.viewController.view = self.view
 		self.window.rootViewController = self.viewController
 		self.window.makeKeyAndVisible)
