@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Baluta Cristian. All rights reserved.
 //
 import ios.ui.*;
-import swift.graphics.CGGeometry;
+import objc.graphics.CGGeometry;
 
 @:include("QuartzCore/QuartzCore.h")
 class CustomButton extends UIControl {

@@ -13,7 +13,7 @@ import ../haxe/Log
 class Log {
 	
 	
-	// Dynamic method defined with an swift method and a block property
+	// Dynamic method defined with an objc method and a block property
 static func trace (v v :AnyObject?, infos infos :AnyObject?) {
 		// Optional arguments
 		if (!infos) infos = nil;

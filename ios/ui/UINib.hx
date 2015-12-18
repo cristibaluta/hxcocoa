@@ -1,10 +1,10 @@
 //
 //  UINib.h
 package ios.ui;
-import swift.foundation.NSObject;
-import swift.foundation.NSBundle;
-import swift.foundation.NSData;
-import swift.foundation.NSDictionary;
+import objc.foundation.NSObject;
+import objc.foundation.NSBundle;
+import objc.foundation.NSData;
+import objc.foundation.NSDictionary;
 
 @:framework("UIKit")
 extern class UINib extends NSObject {

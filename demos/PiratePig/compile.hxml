@@ -1,14 +1,14 @@
 
 -main PiratePig
 -cp .
--swift build
--swift-platform ios
--swift-version 6
--swift-bundle-version 1.0
--swift-identifier com.ralcr.piratepig
--swift-owner BalutaCristian
--swift-bundle-name PiratePig
--swift-supporting-files SupportingFiles
+-objc build
+-objc-platform ios
+-objc-version 6
+-objc-bundle-version 1.0
+-objc-identifier com.ralcr.piratepig
+-objc-owner BalutaCristian
+-objc-bundle-name PiratePig
+-objc-supporting-files SupportingFiles
 -ios-orientation UIInterfaceOrientationPortrait
 -lib hxcocoa
 --times

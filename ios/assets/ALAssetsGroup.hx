@@ -1,9 +1,9 @@
 package ios.assets;
 
-import swift.foundation.NSArray;//NSEnumerationOptions
-import swift.foundation.NSIndexSet;
-import swift.foundation.NSObject;
-import swift.graphics.CGImage;
+import objc.foundation.NSArray;//NSEnumerationOptions
+import objc.foundation.NSIndexSet;
+import objc.foundation.NSObject;
+import objc.graphics.CGImage;
 
 // This block is executed when a result is found. The result argument passed into the block is an ALAsset that
 // matches the filter set by the caller.

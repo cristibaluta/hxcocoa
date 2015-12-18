@@ -1,5 +1,5 @@
 package ios.twitter;
-import swift.foundation.NSObject;
+import objc.foundation.NSObject;
 // #import <Social/SLRequest.h>
 
 enum TWRequestMethod {

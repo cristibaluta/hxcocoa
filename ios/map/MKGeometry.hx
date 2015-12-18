@@ -1,7 +1,7 @@
 package ios.map;
 
-import swift.graphics.CGGeometry;
-import swift.location.CLLocation;
+import objc.graphics.CGGeometry;
+import objc.location.CLLocation;
 
 
 typedef MKCoordinateSpan = {

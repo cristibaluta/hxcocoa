@@ -1,4 +1,4 @@
-import swift.foundation.NSError;
+import objc.foundation.NSError;
 
 @:framework("FacebookSDK")
 extern class FBRequest {

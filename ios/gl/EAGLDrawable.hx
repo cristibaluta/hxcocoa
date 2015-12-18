@@ -1,6 +1,6 @@
 package ios.opengles;
 
-import swift.foundation.NSDictionary;
+import objc.foundation.NSDictionary;
 
 /************************************************************************/
 /* Keys for EAGLDrawable drawableProperties dictionary                  */

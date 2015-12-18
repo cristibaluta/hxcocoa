@@ -1,6 +1,6 @@
 
 package ios.ui;
-import swift.foundation.NSObject;
+import objc.foundation.NSObject;
 
 extern class UISwitch extends UIControl, implements NSObject {
 

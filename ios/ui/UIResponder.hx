@@ -2,8 +2,8 @@
 //  UIResponder.h
 package ios.ui;
 
-import swift.foundation.NSObject;
-import swift.foundation.NSSet;
+import objc.foundation.NSObject;
+import objc.foundation.NSSet;
 import ios.ui.UIEvent;
 
 @:framework("UIKit")

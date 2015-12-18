@@ -1,7 +1,7 @@
 package ios.ui;
 
-import swift.foundation.NSBundle;
-import swift.foundation.NSCoder;
+import objc.foundation.NSBundle;
+import objc.foundation.NSCoder;
 import ios.ui.UIResponder;
 import ios.ui.UIStoryboard;
 import ios.ui.UIStoryboardSegue;

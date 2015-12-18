@@ -1,6 +1,6 @@
 package ios.ui;
 
-import swift.foundation.NSSet;
+import objc.foundation.NSSet;
 import ios.ui.UIEvent;
 
 @:framework("UIKit")

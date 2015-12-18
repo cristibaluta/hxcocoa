@@ -1,6 +1,6 @@
 import ios.ui.UIImageView;
-import swift.graphics.CGGeometry;
-import swift.graphics.CGImage;
+import objc.graphics.CGGeometry;
+import objc.graphics.CGImage;
 
 class IMImage {
 	

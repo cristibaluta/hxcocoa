@@ -13,8 +13,8 @@ import ios.ui.UIApplication;
 import ios.ui.UIColor;
 import ios.ui.UIFont;
 import ios.ui.NSText;
-import swift.foundation.NSDictionary;
-import swift.graphics.CGGeometry;
+import objc.foundation.NSDictionary;
+import objc.graphics.CGGeometry;
 
 
 class AppDelegate extends UIResponder implements UIApplicationDelegate {

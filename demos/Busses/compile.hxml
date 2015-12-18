@@ -1,9 +1,9 @@
 -main HelloWorld
 -cp .
--swift build
--swift-version 6
--swift-bundle-version 1.0
--swift-identifier com.ralcr.busses
+-objc build
+-objc-version 6
+-objc-bundle-version 1.0
+-objc-identifier com.ralcr.busses
 -lib hxcocoa
--swift-supporting-files SupportingFiles
+-objc-supporting-files SupportingFiles
 --times

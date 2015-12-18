@@ -3,9 +3,9 @@ package ios.map;
 import ios.ui.UIView;
 import ios.ui.UIGeometry;
 import ios.map.MKGeometry;
-import swift.graphics.CGGeometry;
-import swift.location.CLLocation;
-import swift.foundation.NSSet;
+import objc.graphics.CGGeometry;
+import objc.location.CLLocation;
+import objc.foundation.NSSet;
 
 @:framework("MapKit") extern enum MKMapType {
     MKMapTypeStandard;

@@ -1,6 +1,6 @@
 package ios.map;
 
-import swift.location.CLLocation;
+import objc.location.CLLocation;
 import ios.map.MKGeometry;
 
 

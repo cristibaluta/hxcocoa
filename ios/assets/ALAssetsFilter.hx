@@ -1,6 +1,6 @@
 package ios.assets;
 
-import swift.foundation.NSObject;
+import objc.foundation.NSObject;
 
 @:framework("AssetsLibrary")
 extern class ALAssetsFilter extends NSObject {

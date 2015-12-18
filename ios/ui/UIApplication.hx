@@ -1,6 +1,6 @@
 package ios.ui;
-import swift.foundation.NSURL;
-import swift.graphics.CGGeometry;
+import objc.foundation.NSURL;
+import objc.graphics.CGGeometry;
 
 typedef UIBackgroundTaskIdentifier = Int;
 

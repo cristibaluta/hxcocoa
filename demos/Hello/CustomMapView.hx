@@ -1,7 +1,7 @@
 
 import ios.map.MKMapView;
 import ios.map.MKGeometry;
-import swift.location.CLLocation;
+import objc.location.CLLocation;
 
 class CustomMapView extends MKMapView {
 	
@@ -14,14 +14,14 @@ class CustomMapView extends MKMapView {
 	public function locate (lat:Float, long:Float, zoom:Float) {
 		
 		//var zoomLocation = new CLLocationCoordinate2D(0,0);
-		untyped __swift__("CLLocationCoordinate2D zoomLocation");
-		untyped __swift__("zoomLocation.latitude = lat");
-		untyped __swift__("zoomLocation.longitude = _long");
+		untyped __objc__("CLLocationCoordinate2D zoomLocation");
+		untyped __objc__("zoomLocation.latitude = lat");
+		untyped __objc__("zoomLocation.longitude = _long");
 	    //untyped zoomLocation.latitude = lat;//TODO: dot notation instead space notation
 	    //untyped zoomLocation.longitude = long;
 		
-		untyped __swift__("MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance (zoomLocation, 40000, 40000)");
-		untyped __swift__("MKCoordinateRegion adjustedRegion = [self regionThatFits:viewRegion]");
+		untyped __objc__("MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance (zoomLocation, 40000, 40000)");
+		untyped __objc__("MKCoordinateRegion adjustedRegion = [self regionThatFits:viewRegion]");
 		//var viewRegion :MKCoordinateRegion = MKGeometry.MKCoordinateRegionMakeWithDistance (zoomLocation, 40000, 40000);
 	    //var adjustedRegion :MKCoordinateRegion = this.regionThatFits ( viewRegion );
 		untyped this.setRegion ( adjustedRegion, true );

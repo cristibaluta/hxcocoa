@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Baluta Cristian. All rights reserved.
 //
 import ios.ui.*;
-import swift.foundation.*;
-import swift.graphics.CGGeometry;
+import objc.foundation.*;
+import objc.graphics.CGGeometry;
 
 class CollectionCell extends UICollectionViewCell {
 
@@ -17,7 +17,7 @@ public var index :Int;
 
 @:sel(" initWithFrame:")
 public function initWithFrame (frame:CGRect) :Dynamic {
-	untyped __swift__("self = [super initWithFrame:frame];");
+	untyped __objc__("self = [super initWithFrame:frame];");
 	
 	imageView = new UIImageView();
 	imageView.frame = new CGRect(0, 0, frame.size.width, frame.size.height);

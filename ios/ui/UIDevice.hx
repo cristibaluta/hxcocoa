@@ -1,5 +1,5 @@
 package ios.ui;
-import swift.foundation.NSObject;
+import objc.foundation.NSObject;
 
 @:framework("UIKit")
 extern enum UIDeviceOrientation {

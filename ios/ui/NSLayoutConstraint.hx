@@ -1,8 +1,8 @@
 package ios.ui;
 
-import swift.foundation.NSObject;
-import swift.foundation.NSDictionary;
-import swift.graphics.CGGeometry;
+import objc.foundation.NSObject;
+import objc.foundation.NSDictionary;
+import objc.graphics.CGGeometry;
 
 extern enum NSLayoutRelation {
     NSLayoutRelationLessThanOrEqual;

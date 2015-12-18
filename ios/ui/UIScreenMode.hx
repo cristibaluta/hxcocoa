@@ -1,6 +1,6 @@
 package ios.ui;
-import swift.foundation.NSObject;
-import swift.graphics.CGGeometry;
+import objc.foundation.NSObject;
+import objc.graphics.CGGeometry;
 
 @:framework("UIKit")
 extern class UIScreenMode extends NSObject {

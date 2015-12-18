@@ -1,8 +1,8 @@
 package ios.map;
 
-import swift.foundation.NSObject;
-import swift.location.CLLocation;
-import swift.location.CLHeading;
+import objc.foundation.NSObject;
+import objc.location.CLLocation;
+import objc.location.CLHeading;
 
 extern class MKUserLocation extends NSObject /*implements MKAnnotation*/ {
 

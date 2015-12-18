@@ -1,11 +1,11 @@
 import ios.ui.*;
-import swift.foundation.NSDictionary;
-import swift.foundation.NSSet;
-import swift.foundation.NSValue;
-import swift.foundation.NSTimer;
-import swift.foundation.NSRunLoop;
-import swift.graphics.CGGeometry;
-import swift.graphics.CGAffineTransform;
+import objc.foundation.NSDictionary;
+import objc.foundation.NSSet;
+import objc.foundation.NSValue;
+import objc.foundation.NSTimer;
+import objc.foundation.NSRunLoop;
+import objc.graphics.CGGeometry;
+import objc.graphics.CGAffineTransform;
 
 class PiratePigGame extends UIView {
 	
@@ -404,7 +404,7 @@ class PiratePigGame extends UIView {
 		cacheMouse = aTouch.locationInView(this);
 		cacheMouse = CGGeometry.CGPointMake ( cacheMouse.x - 10, cacheMouse.y - 73 - 20);
 		trace(aTouch);
-		untyped __swift__("NSLog(@\"cacheMouse %.2fx%.2f\", cacheMouse.x, cacheMouse.y)");
+		untyped __objc__("NSLog(@\"cacheMouse %.2fx%.2f\", cacheMouse.x, cacheMouse.y)");
 		
 		if (untyped touches.count() == 1) {
 			for (i in 0...NUM_ROWS) {
@@ -413,7 +413,7 @@ class PiratePigGame extends UIView {
 					
 					if (CGGeometry.CGRectContainsPoint(tile.frame, cacheMouse)) {
 						trace("------------------touched something");
-						untyped __swift__("NSLog(@\"%ix%i %.2f,%.2f %.2fx%.2f\", i, j, tile.frame.origin.x, tile.frame.origin.y, tile.frame.size.width, tile.frame.size.height)");
+						untyped __objc__("NSLog(@\"%ix%i %.2f,%.2f %.2fx%.2f\", i, j, tile.frame.origin.x, tile.frame.origin.y, tile.frame.size.width, tile.frame.size.height)");
 						selectedTile = tile;
 						//selectedTile.alpha = 0.5;
 						selectedTile.transform = CGAffineTransform.CGAffineTransformScale(selectedTile.transform, 1.4, 1.4);
@@ -498,7 +498,7 @@ class PiratePigGame extends UIView {
 			}
 			
 			if (matchedTiles.length > 0) {
-				untyped __swift__("self.Score.text = [NSString stringWithFormat:@\"%i\", currentScore]");
+				untyped __objc__("self.Score.text = [NSString stringWithFormat:@\"%i\", currentScore]");
 				//Score.text = untyped NSNumber.numberWithInt(currentScore).description();//Std.string (currentScore);
 				dropTiles();
 			}

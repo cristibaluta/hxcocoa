@@ -8,7 +8,7 @@ import ios.ui.UIScreen;
 import ios.ui.UIApplication;
 import ios.ui.UIAlertView;
 import ios.assets.*;
-import swift.graphics.CGGeometry;
+import objc.graphics.CGGeometry;
 import AlbumPickerController;
 import PhotosPickerController;
 

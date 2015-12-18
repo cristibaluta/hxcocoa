@@ -1,9 +1,9 @@
 package ios.map;
 
-import swift.foundation.NSObject;
-import swift.location.CLLocation;
-import swift.graphics.CGGeometry;
-import swift.graphics.CGContext;
+import objc.foundation.NSObject;
+import objc.location.CLLocation;
+import objc.graphics.CGGeometry;
+import objc.graphics.CGContext;
 import ios.map.MKGeometry;
 import ios.ui.UIView;
 
