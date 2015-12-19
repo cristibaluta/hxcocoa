@@ -35,7 +35,7 @@
 				int _g1 = 0;
 				while (_g1 < a.length)  {
 					
-					id obj = ((id)[a hx_objectAtIndex:_g1]);
+					id obj = [a hx_objectAtIndex:_g1];
 					++_g1;
 					if ([obj objectForKey:@"count"] == nil)  {
 						continue;
@@ -172,12 +172,12 @@
 		if (section == shift)  {
 			
 			
-			ALAssetsGroup  *group = ((id)[self.groups hx_objectAtIndex:row]);
+			ALAssetsGroup  *group = [self.groups hx_objectAtIndex:row];
 			[self localAlbumPicked:group];
 		}
 		else  {
 			if (self.fb_albums != nil)  {
-				[self facebookAlbumPicked:((id)[self.fb_albums hx_objectAtIndex:row])];
+				[self facebookAlbumPicked:[self.fb_albums hx_objectAtIndex:row]];
 			}
 			else  {
 				if (!self.loadingFacebook)  {
@@ -222,14 +222,14 @@
 	}
 	if (indexPath.section == 0 && shift > 0)  {
 		
-		cell.customTextLabel.text = ((id)[self.movies hx_objectAtIndex:row]);
+		cell.customTextLabel.text = [self.movies hx_objectAtIndex:row];
 		cell.customImageView.image = [UIImage imageNamed:@"SymbolCamera"];
 	}
 	else  {
 		if (indexPath.section == shift)  {
 			
 			
-			ALAssetsGroup  *group = ((id)[self.groups hx_objectAtIndex:row]);
+			ALAssetsGroup  *group = [self.groups hx_objectAtIndex:row];
 			cell.customTextLabel.text = [group valueForProperty:ALAssetsGroupPropertyName];
 			[cell setLocalImage:[UIImage imageWithCGImage:[group posterImage]]];
 		}
@@ -245,7 +245,7 @@
 					 {
 						
 						
-						FBAlbum  *album = ((id)[self.fb_albums hx_objectAtIndex:row]);
+						FBAlbum  *album = [self.fb_albums hx_objectAtIndex:row];
 						cell.customTextLabel.text = [[[album.name stringByAppendingString:@" ( "] stringByAppendingString:album.albumId] stringByAppendingString:@" )"];
 						
 						NSString  *url = [[[@"https://graph.facebook.com/" stringByAppendingString:album.albumId] stringByAppendingString:@"/picture?type=album&access_token="] stringByAppendingString:[FBSession activeSession].accessToken];

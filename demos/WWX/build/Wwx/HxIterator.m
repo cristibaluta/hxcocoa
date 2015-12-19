@@ -11,7 +11,7 @@
 
 - (id)next {
 	
-	id obj = ((id)[self.arr hx_objectAtIndex:self.p]);
+	id obj = [self.arr hx_objectAtIndex:self.p];
 	self.p += 1;
 	return obj;
 }

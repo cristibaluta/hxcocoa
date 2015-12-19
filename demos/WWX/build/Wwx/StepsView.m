@@ -15,7 +15,7 @@
 	UITouch  *touch = [touches anyObject];
 	CGPoint p = [touch locationInView:self];
 	
-	StepLabel  *s = ((id)[self.steps hx_objectAtIndex:self.currentStep]);
+	StepLabel  *s = [self.steps hx_objectAtIndex:self.currentStep];
 	if (p.x > s.frame.origin.x)  {
 		[self.delegate stepTouched:self.currentStep + 1];
 	}
@@ -42,7 +42,7 @@
 		while (_g1 < _g)  {
 			
 			int i = _g1++;
-			[((id)[self.steps hx_objectAtIndex:i]) select:i == j];
+			[[self.steps hx_objectAtIndex:i] select:i == j];
 		}
 	}
 }
