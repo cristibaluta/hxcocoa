@@ -1,9 +1,0 @@
--main HelloWorld
--cp .
--objc build
--objc-version 6
--objc-bundle-version 1.0
--objc-identifier com.ralcr.busses
--lib hxcocoa
--objc-supporting-files SupportingFiles
---times

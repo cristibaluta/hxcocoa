@@ -40,8 +40,8 @@
 - (void)newGame;
 - (void)construct;
 - (void)initialize;
-@property (nonatomic, strong) NSMutableArray<id>  *usedTiles;
-@property (nonatomic, strong) NSMutableArray<id>  *tiles;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<Tile *> *>  *usedTiles;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<Tile *> *>  *tiles;
 @property (nonatomic, strong) Tile  *selectedTile;
 @property (nonatomic) BOOL needToCheckMatches;
 @property (nonatomic) CGPoint cacheMouse;
