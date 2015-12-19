@@ -21,11 +21,11 @@
 	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]];
 	[self replaceObjectAtIndex:index withObject:(withObject==nil?[NSNull null]:withObject)];
 }
-- (NSMutableArray *)filter:(id)f {
+- (NSMutableArray<id> *)filter:(id)f {
 	
 	return nil;
 }
-- (NSMutableArray *)map:(id)f {
+- (NSMutableArray<id> *)map:(id)f {
 	
 	return nil;
 }
@@ -37,16 +37,16 @@
 	it.len = self.length;
 	return it;
 }
-- (NSMutableArray *)splice:(int)pos len:(int)len {
+- (NSMutableArray<id> *)splice:(int)pos len:(int)len {
 	
 	NSArray *newArray = [self subarrayWithRange:NSMakeRange(pos, len)];
 	[self removeObjectsInArray:newArray];
-	return [NSMutableArray arrayWithArray:newArray];
+	return [NSMutableArray<id> arrayWithArray:newArray];
 }
 - (void)sort:(id)f {
 	
 }
-- (NSMutableArray *)slice:(int)pos end:(int)end {
+- (NSMutableArray<id> *)slice:(int)pos end:(int)end {
 	
 	// Optional arguments
 	if (!end) end = nil;
@@ -120,14 +120,14 @@
 	
 	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:pos];
 }
-- (NSMutableArray *)copy {
+- (NSMutableArray<id> *)copy {
 	
-	return [NSMutableArray arrayWithArray:self];
+	return [NSMutableArray<id> arrayWithArray:self];
 }
-- (NSMutableArray *)concat:(NSMutableArray *)a {
+- (NSMutableArray<id> *)concat:(NSMutableArray<id> *)a {
 	
 	
-	NSMutableArray  *b = [[NSMutableArray alloc] init];
+	NSMutableArray<id>  *b = [[NSMutableArray<id> alloc] init];
 	[b addObjectsFromArray:self];
 	[b addObjectsFromArray:a];
 	return b;

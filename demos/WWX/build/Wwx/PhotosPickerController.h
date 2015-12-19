@@ -36,7 +36,7 @@
 - (int)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(int)section;
 - (void)printTime;
 - (BOOL)isFacebook;
-- (NSMutableArray *)selectedImagesUrls;
+- (NSMutableArray<id> *)selectedImagesUrls;
 - (void)ready;
 - (void)inverseSelections;
 - (void)loadFacebookAlbum:(NSString *)albumId;
@@ -48,7 +48,7 @@
 @property (nonatomic, strong) UIActivityIndicatorView  *activityView;
 @property (nonatomic, strong) UILabel  *timeLabel;
 @property (nonatomic, strong) CustomButton  *inverseButton;
-@property (nonatomic, strong) NSMutableArray  *cells;
+@property (nonatomic, strong) NSMutableArray<id>  *cells;
 @property (nonatomic, strong) ALAssetsLibrary  *library;
 
 @end

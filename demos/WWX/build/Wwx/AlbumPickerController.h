@@ -48,9 +48,9 @@
 @property (nonatomic) id delegate;
 @property (nonatomic) BOOL loadingFacebook;
 @property (nonatomic, strong) UIActivityIndicatorView  *activityView;
-@property (nonatomic, strong) NSMutableArray  *movies;
-@property (nonatomic, strong) NSMutableArray  *fb_albums;
-@property (nonatomic, strong) NSMutableArray  *groups;
+@property (nonatomic, strong) NSMutableArray<id>  *movies;
+@property (nonatomic, strong) NSMutableArray<id>  *fb_albums;
+@property (nonatomic, strong) NSMutableArray<id>  *groups;
 @property (nonatomic, strong) ALAssetsLibrary  *library;
 @property (nonatomic, strong) UITableView  *tableView;
 

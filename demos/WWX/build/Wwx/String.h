@@ -16,7 +16,7 @@
 - (NSString *)toString;
 - (NSString *)substring:(int)startIndex endIndex:(int)endIndex;
 - (NSString *)substr:(int)pos len:(int)len;
-- (NSMutableArray *)split:(NSString *)delimiter;
+- (NSMutableArray<id> *)split:(NSString *)delimiter;
 - (int)lastIndexOf:(NSString *)str startIndex:(int)startIndex;
 - (int)indexOf:(NSString *)str startIndex:(int)startIndex;
 - (int)charCodeAt:(int)index;

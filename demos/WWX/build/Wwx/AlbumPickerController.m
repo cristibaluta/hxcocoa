@@ -27,9 +27,9 @@
 		
 		if (result != nil)  {
 			
-			_g.fb_albums = [[NSMutableArray alloc] init];
+			_g.fb_albums = [[NSMutableArray<id> alloc] init];
 			
-			NSMutableArray  *a = [result objectForKey:@"data"];
+			NSMutableArray<id>  *a = [result objectForKey:@"data"];
 			 {
 				
 				int _g1 = 0;
@@ -62,7 +62,7 @@
 	AlbumPickerController  *_g = self;
 	self.loadingFacebook = YES;
 	
-	NSMutableArray  *permissions = [@[@"user_photos"] mutableCopy];
+	NSMutableArray<id>  *permissions = [@[@"user_photos"] mutableCopy];
 	[FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession  *session, FBSessionState status, NSError  *error) {
 		
 		if (error == nil && status == FBSessionStateOpen)  {
@@ -172,12 +172,12 @@
 		if (section == shift)  {
 			
 			
-			ALAssetsGroup  *group = ((ALAssetsGroup*)[self.groups hx_objectAtIndex:row]);
+			ALAssetsGroup  *group = ((id)[self.groups hx_objectAtIndex:row]);
 			[self localAlbumPicked:group];
 		}
 		else  {
 			if (self.fb_albums != nil)  {
-				[self facebookAlbumPicked:((FBAlbum*)[self.fb_albums hx_objectAtIndex:row])];
+				[self facebookAlbumPicked:((id)[self.fb_albums hx_objectAtIndex:row])];
 			}
 			else  {
 				if (!self.loadingFacebook)  {
@@ -222,14 +222,14 @@
 	}
 	if (indexPath.section == 0 && shift > 0)  {
 		
-		cell.customTextLabel.text = ((NSString*)[self.movies hx_objectAtIndex:row]);
+		cell.customTextLabel.text = ((id)[self.movies hx_objectAtIndex:row]);
 		cell.customImageView.image = [UIImage imageNamed:@"SymbolCamera"];
 	}
 	else  {
 		if (indexPath.section == shift)  {
 			
 			
-			ALAssetsGroup  *group = ((ALAssetsGroup*)[self.groups hx_objectAtIndex:row]);
+			ALAssetsGroup  *group = ((id)[self.groups hx_objectAtIndex:row]);
 			cell.customTextLabel.text = [group valueForProperty:ALAssetsGroupPropertyName];
 			[cell setLocalImage:[UIImage imageWithCGImage:[group posterImage]]];
 		}
@@ -245,7 +245,7 @@
 					 {
 						
 						
-						FBAlbum  *album = ((FBAlbum*)[self.fb_albums hx_objectAtIndex:row]);
+						FBAlbum  *album = ((id)[self.fb_albums hx_objectAtIndex:row]);
 						cell.customTextLabel.text = [[[album.name stringByAppendingString:@" ( "] stringByAppendingString:album.albumId] stringByAppendingString:@" )"];
 						
 						NSString  *url = [[[@"https://graph.facebook.com/" stringByAppendingString:album.albumId] stringByAppendingString:@"/picture?type=album&access_token="] stringByAppendingString:[FBSession activeSession].accessToken];
@@ -308,7 +308,7 @@
 	AlbumPickerController  *_g = self;
 	[Log trace:@"album picker did load" infos:@{@"fileName":@"AlbumPickerController.hx", @"lineNumber":@"43", @"className":@"AlbumPickerController", @"methodName":@"viewDidLoad"}];
 	[super viewDidLoad];
-	self.groups = [[NSMutableArray alloc] init];
+	self.groups = [[NSMutableArray<id> alloc] init];
 	self.movies = [@[@"Movie 1", @"movie 2"] mutableCopy];
 	self.tableView = [[UITableView alloc] init];
 	self.tableView.frame = CGRectMake(20,80,self.view.frame.size.width - 40,self.view.frame.size.height - 80);

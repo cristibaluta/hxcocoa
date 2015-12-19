@@ -27,9 +27,9 @@
 - (void)pause;
 - (BOOL)shouldAutorotate;
 - (void)addExporter;
-- (NSMutableArray *)selectedImagesUrls;
+- (NSMutableArray<id> *)selectedImagesUrls;
 - (void)selectMovieAtPath:(NSString *)path;
-- (void)photosPicked:(NSMutableArray *)urls;
+- (void)photosPicked:(NSMutableArray<id> *)urls;
 - (void)facebookAlbumPicked:(FBAlbum *)album;
 - (void)localAlbumPicked:(ALAssetsGroup *)album;
 - (void)enableSteps:(BOOL)b;

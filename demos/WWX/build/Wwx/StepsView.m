@@ -15,7 +15,7 @@
 	UITouch  *touch = [touches anyObject];
 	CGPoint p = [touch locationInView:self];
 	
-	StepLabel  *s = ((StepLabel*)[self.steps hx_objectAtIndex:self.currentStep]);
+	StepLabel  *s = ((id)[self.steps hx_objectAtIndex:self.currentStep]);
 	if (p.x > s.frame.origin.x)  {
 		[self.delegate stepTouched:self.currentStep + 1];
 	}
@@ -42,7 +42,7 @@
 		while (_g1 < _g)  {
 			
 			int i = _g1++;
-			[((StepLabel*)[self.steps hx_objectAtIndex:i]) select:i == j];
+			[((id)[self.steps hx_objectAtIndex:i]) select:i == j];
 		}
 	}
 }
@@ -55,7 +55,7 @@
 	background.backgroundColor = [UIColor darkGrayColor];
 	background.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	[self addSubview:background];
-	self.steps = [[NSMutableArray alloc] init];
+	self.steps = [[NSMutableArray<id> alloc] init];
 	 {
 		
 		int _g = 0;

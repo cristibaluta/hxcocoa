@@ -89,7 +89,7 @@
 	}
 	return [self substringFromIndex:pos];
 }
-- (NSMutableArray *)split:(NSString *)delimiter {
+- (NSMutableArray<id> *)split:(NSString *)delimiter {
 	
 	return [self componentsSeparatedByString:delimiter];
 }

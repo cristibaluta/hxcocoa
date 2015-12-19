@@ -21,7 +21,7 @@
 - (void)stepTouched:(int)i;
 - (void)setStep:(int)j;
 - (void)_initWithFrame:(CGRect)frame;
-@property (nonatomic, strong) NSMutableArray  *steps;
+@property (nonatomic, strong) NSMutableArray<id>  *steps;
 @property (nonatomic) int currentStep;
 @property (nonatomic) id delegate;
 

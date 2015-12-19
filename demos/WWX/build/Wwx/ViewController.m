@@ -29,7 +29,7 @@
 	
 	[self setStep:3];
 }
-- (NSMutableArray *)selectedImagesUrls {
+- (NSMutableArray<id> *)selectedImagesUrls {
 	
 	return [self.photosPicker selectedImagesUrls];
 }
@@ -40,7 +40,7 @@
 	UIAlertView  *alert = [[UIAlertView alloc]  initWithTitle:@"My Videos" message:@"You've selected a movie, what next?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Play"];
 	[alert show];
 }
-- (void)photosPicked:(NSMutableArray *)urls {
+- (void)photosPicked:(NSMutableArray<id> *)urls {
 	
 }
 - (void)facebookAlbumPicked:(FBAlbum *)album {
