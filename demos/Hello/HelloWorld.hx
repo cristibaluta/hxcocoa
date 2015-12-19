@@ -3,9 +3,10 @@ import AppDelegate;
 
 class HelloWorld {
 	
-	// This is the standard way of starting an iOS app, and the only for now
+	// This is the standard way of starting an iOS app, and the only way
+	
 	public static function main() {
-		// Leave this blank
+		return new UIApplicationMain ( AppDelegate );
 	}
 	
 	public static function unusedMain(){}

@@ -45,10 +45,10 @@ extern class NSIndexSet extends NSObject implements NSCopying implements NSMutab
 	public function enumerateIndexesInRange( range:NSRange,  opts:NSEnumerationOptions,  block:Dynamic):Void;
 	public function addIndex( value:Int):Void;
 	public function indexLessThanOrEqualToIndex( value:Int):Int;
-	public function shiftIndexesStartingAtIndex( index:Int,  delta:Int):Void;
+	public function shiftIndexesStartingAtIndex( index:Int, delta:Int):Void;
 	public function lastIndex():Int;
 	public function intersectsIndexesInRange( range:NSRange):Bool;
-	public function indexesWithOptions( opts:NSEnumerationOptions,  predicate:Dynamic):NSIndexSet;
+	public function indexesWithOptions( opts:NSEnumerationOptions, predicate:Dynamic):NSIndexSet;
 	public function initWithIndexesInRange( range:NSRange):Dynamic;
 	public function firstIndex():Int;
 	public function isEqualToIndexSet( indexSet:NSIndexSet):Bool;
@@ -56,6 +56,6 @@ extern class NSIndexSet extends NSObject implements NSCopying implements NSMutab
 	public function addIndexesInRange( range:NSRange):Void;
 	public function enumerateIndexesUsingBlock( block:Dynamic):Void;
 	public function containsIndexesInRange( range:NSRange):Bool;
-	override public function init():Dynamic;
+	// override public function init():Dynamic;
 }
 
