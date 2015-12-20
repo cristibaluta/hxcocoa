@@ -11,7 +11,7 @@
 
 @interface CustomMapView : MKMapView 
 
-- (void)locate:(float)lat _long:(float)_long zoom:(float)zoom;
+- (void)locate:(CGFloat)lat _long:(CGFloat)_long zoom:(CGFloat)zoom;
 - (void)locateMe;
 - (void)locateLondon;
 

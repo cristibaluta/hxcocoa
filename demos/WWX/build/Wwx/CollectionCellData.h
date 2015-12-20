@@ -20,23 +20,23 @@ typedef enum {
 
 @interface CollectionCellData : NSObject 
 
-- (void)loadFinished:(UIImage *)image;
-- (void)loadImageData:(NSString *)url;
-- (void)loadImageFromUrl:(NSString *)url;
-- (void)loadImageCG:(NSURL *)url;
-- (void)loadImageFromLibrary:(NSURL *)url;
+- (void)loadFinished:(UIImage*)image;
+- (void)loadImageData:(NSString*)url;
+- (void)loadImageFromUrl:(NSString*)url;
+- (void)loadImageCG:(NSURL*)url;
+- (void)loadImageFromLibrary:(NSURL*)url;
 // Dynamic method defined with an objc method and a block property
-- (void)loadFinishedForIndexPath:(NSIndexPath *)indexPath;
-@property (nonatomic,copy) void(^hx_dyn_loadFinishedForIndexPath)(NSIndexPath *);
+- (void)loadFinishedForIndexPath:(NSIndexPath*)indexPath;
+@property (nonatomic, copy) void(^hx_dyn_loadFinishedForIndexPath)(NSIndexPath*);
 @property (nonatomic) id delegate;
-@property (nonatomic, strong) UIImage  *image;
-@property (nonatomic, strong) NSString  *sourceUrl;
-@property (nonatomic, strong) NSString  *thumbUrl;
-@property (nonatomic, strong) NSURL  *localurl;
-@property (nonatomic) ImageSourceType  *type;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSString *sourceUrl;
+@property (nonatomic, strong) NSString *thumbUrl;
+@property (nonatomic, strong) NSURL *localurl;
+@property (nonatomic) ImageSourceType *type;
 @property (nonatomic) BOOL isLoading;
 @property (nonatomic) BOOL selected;
-@property (nonatomic, strong) NSIndexPath  *indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 @end
 

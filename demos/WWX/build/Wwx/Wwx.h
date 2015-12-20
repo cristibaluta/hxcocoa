@@ -17,15 +17,15 @@
 @interface Wwx : UIResponder <UIApplicationDelegate>
 
 
-- (void)applicationWillResignActive:(UIApplication *)application;
-- (void)applicationDidBecomeActive:(UIApplication *)application;
-- (NSString *)getGHI;
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)didFinishLaunchingWithOptions;
-@property (nonatomic) int i;
-@property (nonatomic, strong) NSString  *str2;
-@property (nonatomic, strong) FBSession  *session;
-@property (nonatomic, strong) UIViewController  *viewController;
-@property (nonatomic, strong) UIWindow  *window;
+- (void)applicationWillResignActive:(UIApplication*)application;
+- (void)applicationDidBecomeActive:(UIApplication*)application;
+- (NSString*)getGHI;
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions;
+@property (nonatomic) NSInteger i;
+@property (nonatomic, strong) NSString *str2;
+@property (nonatomic, strong) FBSession *session;
+@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, strong) UIWindow *window;
 - (id)init;
 
 @end

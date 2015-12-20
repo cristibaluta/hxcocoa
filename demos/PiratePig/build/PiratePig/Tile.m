@@ -9,7 +9,7 @@
 
 @implementation Tile
 
-- (void)animationDidStop:(NSString *)animationID finished:(float)finished context:(id)context {
+- (void)animationDidStop:(NSString*)animationID finished:(CGFloat)finished context:(id)context {
 	
 	if ([animationID isEqualToString:@"fade_out"])  {
 		[self removeFromSuperview];
@@ -38,7 +38,7 @@
 	[UIView commitAnimations];
 	self.removed = YES;
 }
-- (void)moveTo:(float)duration targetX:(float)targetX targetY:(float)targetY {
+- (void)moveTo:(CGFloat)duration targetX:(CGFloat)targetX targetY:(CGFloat)targetY {
 	
 	self.moving = YES;
 	[UIView beginAnimations:@"move_to" context:nil];
@@ -63,12 +63,12 @@
 @synthesize removed;
 @synthesize moving;
 @synthesize column;
-- (id)init:(NSString *)imagePath {
+- (id)init:(NSString*)imagePath {
 	
 	self = [super init];
 	[Log trace:[@"crate new tile " stringByAppendingString:imagePath] infos:@{@"fileName":@"Tile.hx", @"lineNumber":@"15", @"className":@"Tile", @"methodName":@"new"}];
 	
-	UIImageView  *image = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:imagePath]];
+	UIImageView *image = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:imagePath]];
 	[self addSubview:image];
 	self.frame =  CGRectMake(image.frame.origin.x, image.frame.origin.y, image.frame.size.width, image.frame.size.height);
 	self.userInteractionEnabled = YES;

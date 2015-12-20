@@ -16,9 +16,9 @@
 - (void)dealloc;
 - (void)select:(BOOL)sel;
 - (id) initWithFrame:(CGRect)frame;
-@property (nonatomic) int index;
-@property (nonatomic, strong) UIImageView  *markImage;
-@property (nonatomic, strong) UIImageView  *imageView;
+@property (nonatomic) NSInteger index;
+@property (nonatomic, strong) UIImageView *markImage;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 

@@ -23,33 +23,33 @@
 
 @interface PhotosPickerController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
-+ (NSString *)identif;
-+ (void) setIdentif:(NSString *)val;
++ (NSString*)identif;
++ (void)setIdentif:(NSString*)val;
 - (void)dealloc;
 - (BOOL)canSwipeRight;
 - (BOOL)canSwipeLeft;
-- (void)loadFinishedForIndexPath:(NSIndexPath *)indexPath;
-- (void)startLoadingForIndexPath:(NSIndexPath *)indexPath;
-- (int)numberOfSectionsInCollectionView:(UICollectionView *)collectionView;
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView_ cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-- (int)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(int)section;
+- (void)loadFinishedForIndexPath:(NSIndexPath*)indexPath;
+- (void)startLoadingForIndexPath:(NSIndexPath*)indexPath;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView;
+- (void)collectionView:(UICollectionView*)collectionView didSelectItemAtIndexPath:(NSIndexPath*)indexPath;
+- (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView_ cellForItemAtIndexPath:(NSIndexPath*)indexPath;
+- (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section;
 - (void)printTime;
 - (BOOL)isFacebook;
-- (NSMutableArray<id> *)selectedImagesUrls;
+- (NSMutableArray<id>*)selectedImagesUrls;
 - (void)ready;
 - (void)inverseSelections;
-- (void)loadFacebookAlbum:(NSString *)albumId;
-- (void)loadLocalAlbum:(ALAssetsGroup *)album;
+- (void)loadFacebookAlbum:(NSString*)albumId;
+- (void)loadLocalAlbum:(ALAssetsGroup*)album;
 - (void)viewDidLoad;
 - (void)loadView;
-@property (nonatomic, strong) UICollectionView  *collectionView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, weak) id delegate;
-@property (nonatomic, strong) UIActivityIndicatorView  *activityView;
-@property (nonatomic, strong) UILabel  *timeLabel;
-@property (nonatomic, strong) CustomButton  *inverseButton;
-@property (nonatomic, strong) NSMutableArray<id>  *cells;
-@property (nonatomic, strong) ALAssetsLibrary  *library;
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
+@property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) CustomButton *inverseButton;
+@property (nonatomic, strong) NSMutableArray<id> *cells;
+@property (nonatomic, strong) ALAssetsLibrary *library;
 
 @end
 

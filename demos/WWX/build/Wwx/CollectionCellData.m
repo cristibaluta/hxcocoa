@@ -9,7 +9,7 @@
 
 @implementation CollectionCellData
 
-- (void)loadFinished:(UIImage *)image {
+- (void)loadFinished:(UIImage*)image {
 	
 	if (self.isLoading)  {
 		
@@ -18,44 +18,44 @@
 	}
 	[self loadFinishedForIndexPath:self.indexPath];
 }
-- (void)loadImageData:(NSString *)url {
+- (void)loadImageData:(NSString*)url {
 	
 	
-	NSData  *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
+	NSData *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
 	
-	UIImage  *img = [[UIImage alloc]  initWithData:imageData];
+	UIImage *img = [[UIImage alloc]  initWithData:imageData];
 	[self performSelectorOnMainThread:@selector(loadFinished:) withObject:img waitUntilDone:NO];
 }
-- (void)loadImageFromUrl:(NSString *)url {
+- (void)loadImageFromUrl:(NSString*)url {
 	
 	self.isLoading = YES;
 	[NSThread detachNewThreadSelector:@selector(loadImageData:) toTarget:self withObject:url];
 }
-- (void)loadImageCG:(NSURL *)url {
+- (void)loadImageCG:(NSURL*)url {
 	
 	
-	CollectionCellData  *_g = self;
-	id resultblock = ^(ALAsset  *myasset) {
+	CollectionCellData *_g = self;
+	id resultblock = ^(ALAsset *myasset) {
 		
 		
-		UIImage  *img = [UIImage imageWithCGImage:[myasset thumbnail]];
+		UIImage *img = [UIImage imageWithCGImage:[myasset thumbnail]];
 		[_g performSelectorOnMainThread:@selector(loadFinished:) withObject:img waitUntilDone:NO];
 	};
-	id failureblock = ^(NSError  *myerror) {
+	id failureblock = ^(NSError *myerror) {
 		
 		[Log trace:[@"Cant get image - %@" stringByAppendingString:[myerror localizedDescription]] infos:@{@"fileName":@"CollectionCellData.hx", @"lineNumber":@"39", @"className":@"CollectionCellData", @"methodName":@"loadImageCG"}];
 	};
 	
-	ALAssetsLibrary  *assetslibrary = [[ALAssetsLibrary alloc] init];
+	ALAssetsLibrary *assetslibrary = [[ALAssetsLibrary alloc] init];
 	[assetslibrary assetForURL:url resultBlock:resultblock failureBlock:failureblock];
 }
-- (void)loadImageFromLibrary:(NSURL *)url {
+- (void)loadImageFromLibrary:(NSURL*)url {
 	
 	self.isLoading = YES;
 	[NSThread detachNewThreadSelector:@selector(loadImageCG:) toTarget:self withObject:url];
 }
 // Dynamic method defined with an objc method and a block property
-- (void)loadFinishedForIndexPath:(NSIndexPath *)indexPath {
+- (void)loadFinishedForIndexPath:(NSIndexPath*)indexPath {
 	if ( hx_dyn_loadFinishedForIndexPath ) { hx_dyn_loadFinishedForIndexPath(indexPath); return; }
 }
 @synthesize hx_dyn_loadFinishedForIndexPath;

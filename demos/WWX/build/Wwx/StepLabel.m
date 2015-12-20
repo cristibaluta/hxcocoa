@@ -33,7 +33,7 @@
 		[UIView commitAnimations];
 	}
 }
-- (void)setIndex:(int)i {
+- (void)setIndex:(NSInteger)i {
 	
 	self.i = i;
 	self.label.text = @"1";

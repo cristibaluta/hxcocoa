@@ -9,7 +9,7 @@
 
 @implementation CustomMapView
 
-- (void)locate:(float)lat _long:(float)_long zoom:(float)zoom {
+- (void)locate:(CGFloat)lat _long:(CGFloat)_long zoom:(CGFloat)zoom {
 	
 	CLLocationCoordinate2D zoomLocation;
 	zoomLocation.latitude = lat;

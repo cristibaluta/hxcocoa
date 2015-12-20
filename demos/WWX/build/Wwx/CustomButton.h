@@ -16,10 +16,10 @@
 - (void)dealloc;
 - (void)select:(BOOL)v;
 - (void)_initWithFrame:(CGRect)frame;
-@property (nonatomic, strong) UIImageView  *image;
-@property (nonatomic, strong) UILabel  *label;
-@property (nonatomic, strong) UIView  *hitArea;
-@property (nonatomic, strong) UIView  *background;
+@property (nonatomic, strong) UIImageView *image;
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIView *hitArea;
+@property (nonatomic, strong) UIView *background;
 
 @end
 

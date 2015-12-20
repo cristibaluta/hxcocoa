@@ -13,9 +13,9 @@
 
 - (id)next;
 - (BOOL)hasNext;
-@property (nonatomic) int len;
-@property (nonatomic, strong) NSMutableArray<id>  *arr;
-@property (nonatomic) int p;
+@property (nonatomic) NSInteger len;
+@property (nonatomic, strong) NSMutableArray<id> *arr;
+@property (nonatomic) NSInteger p;
 - (id)init;
 
 @end

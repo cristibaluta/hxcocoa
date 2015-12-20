@@ -9,13 +9,13 @@
 
 @implementation Std
 
-+ (NSString *)string:(id)s {
++ (NSString*)string:(id)s {
 	
 	return [s description];
 }
-+ (int)_int:(float)x {
++ (NSInteger)_int:(CGFloat)x {
 	
-	return (int)x;
+	return (NSInteger)x;
 }
 
 @end

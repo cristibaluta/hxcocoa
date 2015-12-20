@@ -14,16 +14,16 @@
 
 @interface Tile : UIView 
 
-- (void)animationDidStop:(NSString *)animationID finished:(float)finished context:(id)context;
+- (void)animationDidStop:(NSString*)animationID finished:(CGFloat)finished context:(id)context;
 - (void)remove:(BOOL)animate;
-- (void)moveTo:(float)duration targetX:(float)targetX targetY:(float)targetY;
+- (void)moveTo:(CGFloat)duration targetX:(CGFloat)targetX targetY:(CGFloat)targetY;
 - (void)initialize;
-@property (nonatomic) int type;
-@property (nonatomic) int row;
+@property (nonatomic) NSInteger type;
+@property (nonatomic) NSInteger row;
 @property (nonatomic) BOOL removed;
 @property (nonatomic) BOOL moving;
-@property (nonatomic) int column;
-- (id)init:(NSString *)imagePath;
+@property (nonatomic) NSInteger column;
+- (id)init:(NSString*)imagePath;
 
 @end
 

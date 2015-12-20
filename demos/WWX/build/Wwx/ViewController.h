@@ -27,28 +27,28 @@
 - (void)pause;
 - (BOOL)shouldAutorotate;
 - (void)addExporter;
-- (NSMutableArray<id> *)selectedImagesUrls;
-- (void)selectMovieAtPath:(NSString *)path;
-- (void)photosPicked:(NSMutableArray<id> *)urls;
-- (void)facebookAlbumPicked:(FBAlbum *)album;
-- (void)localAlbumPicked:(ALAssetsGroup *)album;
+- (NSMutableArray<id>*)selectedImagesUrls;
+- (void)selectMovieAtPath:(NSString*)path;
+- (void)photosPicked:(NSMutableArray<id>*)urls;
+- (void)facebookAlbumPicked:(FBAlbum*)album;
+- (void)localAlbumPicked:(ALAssetsGroup*)album;
 - (void)enableSteps:(BOOL)b;
-- (void)stepTouched:(int)i;
-- (void)setStep:(int)j;
+- (void)stepTouched:(NSInteger)i;
+- (void)setStep:(NSInteger)j;
 - (void)rightGestureActioned;
 - (void)leftGestureActioned;
 - (void)viewDidLoad;
 - (void)loadView;
-@property (nonatomic, strong) NSString  *currentPath;
-@property (nonatomic, strong) UISwipeGestureRecognizer  *rightGesture;
-@property (nonatomic, strong) UISwipeGestureRecognizer  *leftGesture;
-@property (nonatomic, strong) PhotosPickerController  *photosPicker;
-@property (nonatomic, strong) AlbumPickerController  *albumPicker;
-@property (nonatomic, strong) StepsView  *stepsView;
-@property (nonatomic, strong) NSString  *currentAlbumName;
-@property (nonatomic) int currentStep;
-@property (nonatomic, strong) UINavigationController  *navigationController;
-@property (nonatomic, strong) ALAssetsLibrary  *assetslibrary;
+@property (nonatomic, strong) NSString *currentPath;
+@property (nonatomic, strong) UISwipeGestureRecognizer *rightGesture;
+@property (nonatomic, strong) UISwipeGestureRecognizer *leftGesture;
+@property (nonatomic, strong) PhotosPickerController *photosPicker;
+@property (nonatomic, strong) AlbumPickerController *albumPicker;
+@property (nonatomic, strong) StepsView *stepsView;
+@property (nonatomic, strong) NSString *currentAlbumName;
+@property (nonatomic) NSInteger currentStep;
+@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic, strong) ALAssetsLibrary *assetslibrary;
 
 @end
 

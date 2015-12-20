@@ -9,12 +9,12 @@
 
 @implementation PhotosPickerController
 
-static NSString * identif;
-+ (NSString *)identif {
+static NSString* identif;
++ (NSString*)identif {
 	if (identif == nil) identif = @"CollectionCellIdentifier";
 	return identif;
 }
-+ (void) setIdentif:(NSString *)hx_val {
++ (void) setIdentif:(NSString*)hx_val {
 	identif = hx_val;
 }
 - (void)dealloc {
@@ -42,41 +42,41 @@ static NSString * identif;
 	
 	return YES;
 }
-- (void)loadFinishedForIndexPath:(NSIndexPath *)indexPath {
+- (void)loadFinishedForIndexPath:(NSIndexPath*)indexPath {
 	
 	
-	PhotosPickerController  *_g = self;
+	PhotosPickerController *_g = self;
 	 dispatch_async( dispatch_get_main_queue(), ^() {
 		
 		
-		CollectionCell  *cell;
-		cell = (CollectionCell *)[_g.collectionView cellForItemAtIndexPath:indexPath];
+		CollectionCell *cell;
+		cell = (CollectionCell*)[_g.collectionView cellForItemAtIndexPath:indexPath];
 		
-		CollectionCellData  *celldata = [_g.cells hx_objectAtIndex:indexPath.item];
+		CollectionCellData *celldata = [_g.cells hx_objectAtIndex:indexPath.item];
 		cell.imageView.image = celldata.image;
 	});
 }
-- (void)startLoadingForIndexPath:(NSIndexPath *)indexPath {
+- (void)startLoadingForIndexPath:(NSIndexPath*)indexPath {
 	
 	
-	CollectionCellData  *celldata = [self.cells hx_objectAtIndex:indexPath.item];
+	CollectionCellData *celldata = [self.cells hx_objectAtIndex:indexPath.item];
 	if (celldata.image == nil)  {
 		
 	}
 }
-- (int)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
 	
 	return 1;
 }
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView*)collectionView didSelectItemAtIndexPath:(NSIndexPath*)indexPath {
 	
 	
-	CollectionCellData  *celldata = [self.cells hx_objectAtIndex:indexPath.item];
+	CollectionCellData *celldata = [self.cells hx_objectAtIndex:indexPath.item];
 	if (celldata.selected)  {
 		
 		
-		CollectionCell  *cell;
-		cell = (CollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+		CollectionCell *cell;
+		cell = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
 		[cell select:NO];
 		celldata.selected = NO;
 	}
@@ -84,23 +84,23 @@ static NSString * identif;
 		 {
 			
 			
-			CollectionCell  *cell1;
-			cell1 = (CollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+			CollectionCell *cell1;
+			cell1 = (CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
 			[cell1 select:YES];
 			celldata.selected = YES;
 		}
 	}
 	[self printTime];
 }
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView_ cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView_ cellForItemAtIndexPath:(NSIndexPath*)indexPath {
 	
 	
-	CollectionCell  *cell = [collectionView_ dequeueReusableCellWithReuseIdentifier:@"CollectionCellIdentifier" forIndexPath:indexPath];
+	CollectionCell *cell = [collectionView_ dequeueReusableCellWithReuseIdentifier:@"CollectionCellIdentifier" forIndexPath:indexPath];
 	
-	CollectionCellData  *celldata = [self.cells hx_objectAtIndex:indexPath.item];
+	CollectionCellData *celldata = [self.cells hx_objectAtIndex:indexPath.item];
 	cell.index = indexPath.item;
 	celldata.indexPath = indexPath;
-	celldata.hx_dyn_loadFinishedForIndexPath = ^(NSIndexPath  *indexPath){ [self loadFinishedForIndexPath:indexPath]; };
+	celldata.hx_dyn_loadFinishedForIndexPath = ^(NSIndexPath *indexPath){ [self loadFinishedForIndexPath:indexPath]; };
 	if (celldata.image == nil)  {
 		
 		cell.imageView.image = nil;
@@ -122,31 +122,31 @@ static NSString * identif;
 	[cell select:celldata.selected];
 	return cell;
 }
-- (int)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(int)section {
+- (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section {
 	
 	return self.cells.length;
 }
 - (void)printTime {
 	
-	int nr_of_active_cells = 0;
+	NSInteger nr_of_active_cells = 0;
 	 {
 		
-		int _g = 0;
+		NSInteger _g = 0;
 		
-		NSMutableArray<id>  *_g1 = self.cells;
+		NSMutableArray<id> *_g1 = self.cells;
 		while (_g < _g1.length)  {
 			
 			
-			CollectionCellData  *cell = [_g1 hx_objectAtIndex:_g];
+			CollectionCellData *cell = [_g1 hx_objectAtIndex:_g];
 			++_g;
 			if (cell.selected)  {
 				nr_of_active_cells++;
 			}
 		}
 	}
-	int videoDuration = 7 * nr_of_active_cells;
-	int min = floorf(videoDuration / 60);
-	int sec = ceilf(videoDuration - min * 60);
+	NSInteger videoDuration = 7 * nr_of_active_cells;
+	NSInteger min = floorf(videoDuration / 60);
+	NSInteger sec = ceilf(videoDuration - min * 60);
 }
 - (BOOL)isFacebook {
 	
@@ -155,19 +155,19 @@ static NSString * identif;
 	}
 	return NO;
 }
-- (NSMutableArray<id> *)selectedImagesUrls {
+- (NSMutableArray<id>*)selectedImagesUrls {
 	
 	
-	NSMutableArray<id>  *urls = [[NSMutableArray<id> alloc] init];
+	NSMutableArray<id> *urls = [[NSMutableArray<id> alloc] init];
 	 {
 		
-		int _g = 0;
+		NSInteger _g = 0;
 		
-		NSMutableArray<id>  *_g1 = self.cells;
+		NSMutableArray<id> *_g1 = self.cells;
 		while (_g < _g1.length)  {
 			
 			
-			CollectionCellData  *cell = [_g1 hx_objectAtIndex:_g];
+			CollectionCellData *cell = [_g1 hx_objectAtIndex:_g];
 			++_g;
 			if (cell.selected)  {
 				
@@ -192,36 +192,36 @@ static NSString * identif;
 	[self.inverseButton select:!self.inverseButton.selected];
 	 {
 		
-		int _g = 0;
+		NSInteger _g = 0;
 		
-		NSMutableArray<id>  *_g1 = self.cells;
+		NSMutableArray<id> *_g1 = self.cells;
 		while (_g < _g1.length)  {
 			
 			
-			CollectionCellData  *cell = [_g1 hx_objectAtIndex:_g];
+			CollectionCellData *cell = [_g1 hx_objectAtIndex:_g];
 			++_g;
 			cell.selected = !cell.selected;
 		}
 	}
 	
-	NSMutableArray<id>  *visibleCells = [self.collectionView visibleCells];
+	NSMutableArray<id> *visibleCells = [self.collectionView visibleCells];
 	 {
 		
-		int _g2 = 0;
+		NSInteger _g2 = 0;
 		while (_g2 < visibleCells.length)  {
 			
 			
-			UICollectionViewCell  *cell1 = [visibleCells hx_objectAtIndex:_g2];
+			UICollectionViewCell *cell1 = [visibleCells hx_objectAtIndex:_g2];
 			++_g2;
-			[ ((CollectionCell *)cell1) select:[self.cells hx_objectAtIndex: ((CollectionCell *)cell1).index].selected];
+			[ ((CollectionCell*)cell1) select:[self.cells hx_objectAtIndex: ((CollectionCell*)cell1).index].selected];
 		}
 	}
 	[self printTime];
 }
-- (void)loadFacebookAlbum:(NSString *)albumId {
+- (void)loadFacebookAlbum:(NSString*)albumId {
 	
 	
-	PhotosPickerController  *_g1 = self;
+	PhotosPickerController *_g1 = self;
 	self.activityView = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	CGRect rect = self.activityView.frame;
 	rect.origin.x = self.collectionView.frame.size.width / 2 - rect.size.width / 2;
@@ -230,22 +230,22 @@ static NSString * identif;
 	[self.collectionView addSubview:self.activityView];
 	[self.activityView startAnimating];
 	
-	FBRequest  *req = [FBRequest requestForGraphPath:[albumId stringByAppendingString:@"/photos?limit=500"]];
-	[req startWithCompletionHandler:^(FBRequestConnection  *connection, id result, NSError  *error) {
+	FBRequest *req = [FBRequest requestForGraphPath:[albumId stringByAppendingString:@"/photos?limit=500"]];
+	[req startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
 		
 		if (result != nil)  {
 			
 			
-			NSMutableArray<id>  *data = [result objectForKey:@"data"];
+			NSMutableArray<id> *data = [result objectForKey:@"data"];
 			 {
 				
-				int _g = 0;
+				NSInteger _g = 0;
 				while (_g < data.length)  {
 					
 					id obj = [data hx_objectAtIndex:_g];
 					++_g;
 					
-					CollectionCellData  *cell = [[CollectionCellData alloc] init];
+					CollectionCellData *cell = [[CollectionCellData alloc] init];
 					cell.thumbUrl = [obj objectForKey:@"picture"];
 					cell.sourceUrl = [obj objectForKey:@"source"];
 					cell.selected = YES;
@@ -262,22 +262,22 @@ static NSString * identif;
 		}
 	}];
 }
-- (void)loadLocalAlbum:(ALAssetsGroup *)album {
+- (void)loadLocalAlbum:(ALAssetsGroup*)album {
 	
 	
-	PhotosPickerController  *_g = self;
-	id groupEnumerator = ^(ALAsset  *asset, int index, BOOL stop) {
+	PhotosPickerController *_g = self;
+	id groupEnumerator = ^(ALAsset *asset, NSInteger index, BOOL stop) {
 		
 		if (asset != nil)  {
 			
 			
-			NSDictionary  *dict = [asset valueForProperty:ALAssetPropertyURLs];
+			NSDictionary *dict = [asset valueForProperty:ALAssetPropertyURLs];
 			
-			NSURL  *url = [dict objectForKey:@"public.jpeg"];
+			NSURL *url = [dict objectForKey:@"public.jpeg"];
 			if (url != nil)  {
 				
 				
-				CollectionCellData  *cell = [[CollectionCellData alloc] init];
+				CollectionCellData *cell = [[CollectionCellData alloc] init];
 				cell.localurl = url;
 				cell.selected = YES;
 				cell.type = Local;
@@ -302,7 +302,7 @@ static NSString * identif;
 	self.cells = [[NSMutableArray<id> alloc] init];
 	CGRect rect = CGRectMake(0,90,self.view.frame.size.width,self.view.frame.size.height - 90 - 50);
 	
-	UICollectionViewFlowLayout  *layout = [[UICollectionViewFlowLayout alloc] init];
+	UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
 	layout.itemSize =  CGSizeMake(80, 80);
 	layout.minimumInteritemSpacing = 0;
 	self.collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:layout];;

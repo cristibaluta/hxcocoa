@@ -17,13 +17,13 @@
 
 - (void)dealloc;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
-- (void)cacheImage:(NSData *)imageData;
-- (void)loadImageData:(NSString *)url;
-- (void)loadFacebookImage:(NSString *)imageURL;
-- (void)setLocalImage:(UIImage *)img;
-- (void)_initWithStyle:(UITableViewCellStyle *)style reuseIdentifier:(NSString *)reuseIdentifier;
-@property (nonatomic, strong) UILabel  *customTextLabel;
-@property (nonatomic, strong) UIImageView  *customImageView;
+- (void)cacheImage:(NSData*)imageData;
+- (void)loadImageData:(NSString*)url;
+- (void)loadFacebookImage:(NSString*)imageURL;
+- (void)setLocalImage:(UIImage*)img;
+- (void)_initWithStyle:(UITableViewCellStyle*)style reuseIdentifier:(NSString*)reuseIdentifier;
+@property (nonatomic, strong) UILabel *customTextLabel;
+@property (nonatomic, strong) UIImageView *customImageView;
 
 @end
 

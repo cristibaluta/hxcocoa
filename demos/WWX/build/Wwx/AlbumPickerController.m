@@ -20,19 +20,19 @@
 - (void)update {
 	
 	
-	AlbumPickerController  *_g = self;
+	AlbumPickerController *_g = self;
 	
-	FBRequest  *req = [FBRequest requestForGraphPath:@"me/albums"];
-	[req startWithCompletionHandler:^(FBRequestConnection  *connection, id result, NSError  *error) {
+	FBRequest *req = [FBRequest requestForGraphPath:@"me/albums"];
+	[req startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
 		
 		if (result != nil)  {
 			
 			_g.fb_albums = [[NSMutableArray<id> alloc] init];
 			
-			NSMutableArray<id>  *a = [result objectForKey:@"data"];
+			NSMutableArray<id> *a = [result objectForKey:@"data"];
 			 {
 				
-				int _g1 = 0;
+				NSInteger _g1 = 0;
 				while (_g1 < a.length)  {
 					
 					id obj = [a hx_objectAtIndex:_g1];
@@ -41,7 +41,7 @@
 						continue;
 					}
 					
-					FBAlbum  *album = [[FBAlbum alloc] init];
+					FBAlbum *album = [[FBAlbum alloc] init];
 					album.name = [obj objectForKey:@"name"];
 					album.nr = [obj objectForKey:@"count"];
 					album.coverPhoto = [obj objectForKey:@"cover_photo"];
@@ -59,11 +59,11 @@
 - (void)loginToFacebook {
 	
 	
-	AlbumPickerController  *_g = self;
+	AlbumPickerController *_g = self;
 	self.loadingFacebook = YES;
 	
-	NSMutableArray<id>  *permissions = [@[@"user_photos"] mutableCopy];
-	[FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession  *session, FBSessionState status, NSError  *error) {
+	NSMutableArray<id> *permissions = [@[@"user_photos"] mutableCopy];
+	[FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
 		
 		if (error == nil && status == FBSessionStateOpen)  {
 			[_g update];
@@ -77,21 +77,21 @@
 		}
 	}];
 }
-- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(int)section {
+- (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section {
 	
 	return 35;
 }
-- (UIView *)tableView:(UITableView *)tableView_ viewForHeaderInSection:(int)section {
+- (UIView*)tableView:(UITableView*)tableView_ viewForHeaderInSection:(NSInteger)section {
 	
 	
-	UIView  *v = [[UIView alloc] init];
+	UIView *v = [[UIView alloc] init];
 	v.frame = CGRectMake(0,0,tableView_.frame.size.width,35);
 	v.layer.cornerRadius = 4;
 	v.backgroundColor = [UIColor colorWithWhite:0.65 alpha:1];
 	
-	NSString  *symbol = @"";
+	NSString *symbol = @"";
 	
-	NSString  *title = @"";
+	NSString *title = @"";
 	if (self.movies.length > 0)  {
 		switch (section) {
 			case 0: {
@@ -131,10 +131,10 @@
 		}
 	}
 	
-	UIImageView  *img = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:symbol]];
+	UIImageView *img = [[UIImageView alloc]  initWithImage:[UIImage imageNamed:symbol]];
 	[v addSubview:img];
 	
-	UILabel  *label = [[UILabel alloc] init];
+	UILabel *label = [[UILabel alloc] init];
 	label.frame = CGRectMake(40,10,200,13);
 	label.backgroundColor = [UIColor clearColor];
 	label.textColor = [UIColor whiteColor];
@@ -143,7 +143,7 @@
 	[v addSubview:label];
 	return v;
 }
-- (int)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
 	
 	if (self.movies.length > 0)  {
 		return 3;
@@ -153,12 +153,12 @@
 	}
 	return 0;
 }
-- (void)tableView:(UITableView *)tableView_ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView*)tableView_ didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
 	
 	[Log trace:@"Row touched" infos:@{@"fileName":@"AlbumPickerController.hx", @"lineNumber":@"175", @"className":@"AlbumPickerController", @"methodName":@"didSelectRowAtIndexPath"}];
-	int row = indexPath.row;
-	int section = indexPath.section;
-	int shift;
+	NSInteger row = indexPath.row;
+	NSInteger section = indexPath.section;
+	NSInteger shift;
 	if (self.movies.length > 0)  {
 		shift = 1;
 	}
@@ -172,7 +172,7 @@
 		if (section == shift)  {
 			
 			
-			ALAssetsGroup  *group = [self.groups hx_objectAtIndex:row];
+			ALAssetsGroup *group = [self.groups hx_objectAtIndex:row];
 			[self localAlbumPicked:group];
 		}
 		else  {
@@ -195,25 +195,25 @@
 		}
 	}
 }
-- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
 	
 	return 80;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell*)tableView:(UITableView*)tableView_ cellForRowAtIndexPath:(NSIndexPath*)indexPath {
 	
 	
-	NSString  *identif = @"AlbumCellIdentifier";
+	NSString *identif = @"AlbumCellIdentifier";
 	
-	AlbumTableViewCell  *cell;
-	cell = (AlbumTableViewCell *)[tableView_ dequeueReusableCellWithIdentifier:identif];
+	AlbumTableViewCell *cell;
+	cell = (AlbumTableViewCell*)[tableView_ dequeueReusableCellWithIdentifier:identif];
 	if (cell == nil)  {
 		
 		cell = [[AlbumTableViewCell alloc] init];
 		[cell _initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identif];
 	}
-	int row = indexPath.row;
+	NSInteger row = indexPath.row;
 	cell.customImageView.image = nil;
-	int shift;
+	NSInteger shift;
 	if (self.movies.length > 0)  {
 		shift = 1;
 	}
@@ -229,7 +229,7 @@
 		if (indexPath.section == shift)  {
 			
 			
-			ALAssetsGroup  *group = [self.groups hx_objectAtIndex:row];
+			ALAssetsGroup *group = [self.groups hx_objectAtIndex:row];
 			cell.customTextLabel.text = [group valueForProperty:ALAssetsGroupPropertyName];
 			[cell setLocalImage:[UIImage imageWithCGImage:[group posterImage]]];
 		}
@@ -245,10 +245,10 @@
 					 {
 						
 						
-						FBAlbum  *album = [self.fb_albums hx_objectAtIndex:row];
+						FBAlbum *album = [self.fb_albums hx_objectAtIndex:row];
 						cell.customTextLabel.text = [[[album.name stringByAppendingString:@" ( "] stringByAppendingString:album.albumId] stringByAppendingString:@" )"];
 						
-						NSString  *url = [[[@"https://graph.facebook.com/" stringByAppendingString:album.albumId] stringByAppendingString:@"/picture?type=album&access_token="] stringByAppendingString:[FBSession activeSession].accessToken];
+						NSString *url = [[[@"https://graph.facebook.com/" stringByAppendingString:album.albumId] stringByAppendingString:@"/picture?type=album&access_token="] stringByAppendingString:[FBSession activeSession].accessToken];
 						[cell loadFacebookImage:url];
 					}
 				}
@@ -257,7 +257,7 @@
 	}
 	return cell;
 }
-- (int)tableView:(UITableView *)tableView numberOfRowsInSection:(int)section {
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
 	
 	if (self.movies.length > 0)  {
 		switch (section) {
@@ -305,7 +305,7 @@
 - (void)viewDidLoad {
 	
 	
-	AlbumPickerController  *_g = self;
+	AlbumPickerController *_g = self;
 	[Log trace:@"album picker did load" infos:@{@"fileName":@"AlbumPickerController.hx", @"lineNumber":@"43", @"className":@"AlbumPickerController", @"methodName":@"viewDidLoad"}];
 	[super viewDidLoad];
 	self.groups = [[NSMutableArray<id> alloc] init];
@@ -318,11 +318,11 @@
 	self.tableView.separatorColor = [UIColor darkGrayColor];
 	self.tableView.autoresizingMask = (((UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight) | UIViewAutoresizingFlexibleRightMargin) | UIViewAutoresizingFlexibleLeftMargin);
 	[self.view addSubview:self.tableView];
-	id failHandler = ^(NSError  *error) {
+	id failHandler = ^(NSError *error) {
 		
 		[Log trace:@"assets enumaeration failed" infos:@{@"fileName":@"AlbumPickerController.hx", @"lineNumber":@"60", @"className":@"AlbumPickerController", @"methodName":@"viewDidLoad"}];
 	};
-	id groupsEnumerator = ^(ALAssetsGroup  *group, BOOL stop) {
+	id groupsEnumerator = ^(ALAssetsGroup *group, BOOL stop) {
 		
 		if (group != nil)  {
 			
@@ -347,21 +347,21 @@
 	self.view.frame = frame;
 }
 // Dynamic method defined with an objc method and a block property
-- (void)selectMovieAtPath:(NSString *)path {
+- (void)selectMovieAtPath:(NSString*)path {
 	if ( hx_dyn_selectMovieAtPath ) { hx_dyn_selectMovieAtPath(path); return; }
 }
 @synthesize hx_dyn_selectMovieAtPath;
 
 // Dynamic method defined with an objc method and a block property
-- (void)facebookAlbumPicked:(FBAlbum *)album {
+- (void)facebookAlbumPicked:(FBAlbum*)album {
 	if ( hx_dyn_facebookAlbumPicked ) { hx_dyn_facebookAlbumPicked(album); return; }
 }
 @synthesize hx_dyn_facebookAlbumPicked;
 
 // Dynamic method defined with an objc method and a block property
-- (void)localAlbumPicked:(ALAssetsGroup *)album {
+- (void)localAlbumPicked:(ALAssetsGroup*)album {
 	if ( hx_dyn_localAlbumPicked ) { hx_dyn_localAlbumPicked(album); return; }
-	int x = 0;
+	NSInteger x = 0;
 }
 @synthesize hx_dyn_localAlbumPicked;
 

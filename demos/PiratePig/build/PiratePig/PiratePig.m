@@ -10,10 +10,10 @@
 @implementation PiratePig
 
 
-- (void)applicationWillResignActive:(UIApplication *)application {
+- (void)applicationWillResignActive:(UIApplication*)application {
 	
 }
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication*)application {
 	
 }
 - (void)construct {
@@ -22,12 +22,12 @@
 - (void)initialize {
 	
 }
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)didFinishLaunchingWithOptions {
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions {
 	
 	[Log trace:@"Start" infos:@{@"fileName":@"PiratePig.hx", @"lineNumber":@"31", @"className":@"PiratePig", @"methodName":@"application"}];
 	self.window = [[UIWindow alloc] init];
 	
-	UIScreen  *screen = [UIScreen mainScreen];
+	UIScreen *screen = [UIScreen mainScreen];
 	self.window.frame = screen.bounds;
 	self.view = [[UIView alloc] init];
 	self.viewController = [[UIViewController alloc] init];

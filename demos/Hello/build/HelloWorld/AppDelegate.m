@@ -9,21 +9,21 @@
 
 @implementation AppDelegate
 
-- (void)applicationWillResignActive:(UIApplication *)application {
+- (void)applicationWillResignActive:(UIApplication*)application {
 	
 }
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication*)application {
 	
 }
 - (void)locateLondon {
 	
 	[self.map locateLondon];
 }
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)didFinishLaunchingWithOptions {
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions {
 	
 	self.window = [[UIWindow alloc] init];
 	
-	UIScreen  *screen = [UIScreen mainScreen];
+	UIScreen *screen = [UIScreen mainScreen];
 	self.window.frame = screen.bounds;
 	self.view = [[UIView alloc] init];
 	self.view.frame = CGRectMake(0,0,self.window.frame.size.width,self.window.frame.size.height);
@@ -53,11 +53,11 @@
 	[self.window makeKeyAndVisible];
 	[Log trace:@"Great, it works!" infos:@{@"fileName":@"AppDelegate.hx", @"lineNumber":@"67", @"className":@"AppDelegate", @"methodName":@"application"}];
 	
-	NSString  *o_0 = @"1";
+	NSString *o_0 = @"1";
 	
-	NSString  *o_1 = @"2";
+	NSString *o_1 = @"2";
 	
-	NSString  *o_2 = @"3";
+	NSString *o_2 = @"3";
 	[Log trace:o_1 infos:@{@"fileName":@"AppDelegate.hx", @"lineNumber":@"70", @"className":@"AppDelegate", @"methodName":@"application"}];
 	return YES;
 }

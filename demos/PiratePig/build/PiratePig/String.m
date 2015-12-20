@@ -9,15 +9,15 @@
 
 @implementation NSString ( String )
 
-+ (NSString *)fromCharCode:(int)code {
++ (NSString*)fromCharCode:(NSInteger)code {
 	
 	return [NSMutableString stringWithFormat:@"%C", code];
 }
-- (NSString *)toString {
+- (NSString*)toString {
 	
 	return [self description];
 }
-- (NSString *)substring:(int)startIndex endIndex:(int)endIndex {
+- (NSString*)substring:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
 	
 	// Optional arguments
 	if (!endIndex) endIndex = nil;
@@ -45,13 +45,13 @@
 	}
 	if (startIndex > endIndex)  {
 		
-		int tmp = startIndex;
+		NSInteger tmp = startIndex;
 		startIndex = endIndex;
 		endIndex = tmp;
 	}
 	return [self substr:startIndex len:endIndex - startIndex];
 }
-- (NSString *)substr:(int)pos len:(int)len {
+- (NSString*)substr:(NSInteger)pos len:(NSInteger)len {
 	
 	// Optional arguments
 	if (!len) len = nil;
@@ -59,7 +59,7 @@
 	if (len == 0)  {
 		return @"";
 	}
-	int sl = self.length;
+	NSInteger sl = self.length;
 	if (len == nil)  {
 		len = sl;
 	}
@@ -89,11 +89,11 @@
 	}
 	return [self substringFromIndex:pos];
 }
-- (NSMutableArray<id> *)split:(NSString *)delimiter {
+- (NSMutableArray<id>*)split:(NSString*)delimiter {
 	
 	return [self componentsSeparatedByString:delimiter];
 }
-- (int)lastIndexOf:(NSString *)str startIndex:(int)startIndex {
+- (NSInteger)lastIndexOf:(NSString*)str startIndex:(NSInteger)startIndex {
 	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
@@ -110,7 +110,7 @@
 	};
 	return -1;
 }
-- (int)indexOf:(NSString *)str startIndex:(int)startIndex {
+- (NSInteger)indexOf:(NSString*)str startIndex:(NSInteger)startIndex {
 	
 	// Optional arguments
 	if (!startIndex) startIndex = nil;
@@ -127,25 +127,25 @@
 	};
 	return -1;
 }
-- (int)charCodeAt:(int)index {
+- (NSInteger)charCodeAt:(NSInteger)index {
 	
 	return [self characterAtIndex:index];
 }
-- (NSString *)charAt:(int)index {
+- (NSString*)charAt:(NSInteger)index {
 	
 	return nil;
 }
-- (NSString *)toLowerCase {
+- (NSString*)toLowerCase {
 	
 	return [self lowercaseString];
 }
-- (NSString *)toUpperCase {
+- (NSString*)toUpperCase {
 	
 	return [self uppercaseString];
 }
 // Please provide a getterBody for the property: length
 
-- (id)init:(NSString *)string {
+- (id)init:(NSString*)string {
 	
 	self = [super init];
 	return self;

@@ -16,16 +16,16 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-- (void)applicationWillResignActive:(UIApplication *)application;
-- (void)applicationDidBecomeActive:(UIApplication *)application;
+- (void)applicationWillResignActive:(UIApplication*)application;
+- (void)applicationDidBecomeActive:(UIApplication*)application;
 - (void)locateLondon;
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)didFinishLaunchingWithOptions;
-@property (nonatomic, strong) UIButton  *but;
-@property (nonatomic, strong) CustomMapView  *map;
-@property (nonatomic, strong) UILabel  *label;
-@property (nonatomic, strong) UIView  *view;
-@property (nonatomic, strong) UIViewController  *viewController;
-@property (nonatomic, strong) UIWindow  *window;
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions;
+@property (nonatomic, strong) UIButton *but;
+@property (nonatomic, strong) CustomMapView *map;
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIView *view;
+@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
 

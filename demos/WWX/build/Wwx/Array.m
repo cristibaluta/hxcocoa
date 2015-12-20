@@ -9,35 +9,35 @@
 
 @implementation NSMutableArray ( Array )
 
-- (id)hx_objectAtIndex:(int)index {
+- (id)hx_objectAtIndex:(NSInteger)index {
 	
 	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]];
 	id obj = [self objectAtIndex:index];
 	if ([obj isKindOfClass:[NSNull class]]) obj = nil;
 	return obj;
 }
-- (void)hx_replaceObjectAtIndex:(int)index withObject:(id)withObject {
+- (void)hx_replaceObjectAtIndex:(NSInteger)index withObject:(id)withObject {
 	
 	if (index >= [self count]) while ([self count] <= index) [self addObject:[NSNull null]];
 	[self replaceObjectAtIndex:index withObject:(withObject==nil?[NSNull null]:withObject)];
 }
-- (NSMutableArray<id> *)filter:(id)f {
+- (NSMutableArray<id>*)filter:(id)f {
 	
 	return nil;
 }
-- (NSMutableArray<id> *)map:(id)f {
+- (NSMutableArray<id>*)map:(id)f {
 	
 	return nil;
 }
 - (id)iterator {
 	
 	
-	HxIterator  *it = [[HxIterator alloc] init];
+	HxIterator *it = [[HxIterator alloc] init];
 	it.arr = self;
 	it.len = self.length;
 	return it;
 }
-- (NSMutableArray<id> *)splice:(int)pos len:(int)len {
+- (NSMutableArray<id>*)splice:(NSInteger)pos len:(NSInteger)len {
 	
 	NSArray *newArray = [self subarrayWithRange:NSMakeRange(pos, len)];
 	[self removeObjectsInArray:newArray];
@@ -46,7 +46,7 @@
 - (void)sort:(id)f {
 	
 }
-- (NSMutableArray<id> *)slice:(int)pos end:(int)end {
+- (NSMutableArray<id>*)slice:(NSInteger)pos end:(NSInteger)end {
 	
 	// Optional arguments
 	if (!end) end = nil;
@@ -79,7 +79,7 @@
 	
 	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:0];
 }
-- (int)push:(id)x {
+- (NSInteger)push:(id)x {
 	
 	[self addObject:(x!=nil?x:[NSNull null])];
 	return [self count];
@@ -94,47 +94,47 @@
 	[self removeLastObject];
 	return theLastObject;
 }
-- (NSString *)toString {
+- (NSString*)toString {
 	
 	return [NSMutableString stringWithString:[self description]];
 }
-- (NSString *)join:(NSString *)sep {
+- (NSString*)join:(NSString*)sep {
 	
 	return [NSMutableString stringWithString:[self componentsJoinedByString:sep]];
 }
-- (int)lastIndexOf:(id)x fromIndex:(int)fromIndex {
+- (NSInteger)lastIndexOf:(id)x fromIndex:(NSInteger)fromIndex {
 	
 	// Optional arguments
 	if (!fromIndex) fromIndex = nil;
 	
 	return 0;
 }
-- (int)indexOf:(id)x fromIndex:(int)fromIndex {
+- (NSInteger)indexOf:(id)x fromIndex:(NSInteger)fromIndex {
 	
 	// Optional arguments
 	if (!fromIndex) fromIndex = nil;
 	
 	return 0;
 }
-- (void)insert:(int)pos x:(id)x {
+- (void)insert:(NSInteger)pos x:(id)x {
 	
 	[self insertObject:(x!=nil?x:[NSNull null]) atIndex:pos];
 }
-- (NSMutableArray<id> *)copy {
+- (NSMutableArray<id>*)copy {
 	
 	return [NSMutableArray<id> arrayWithArray:self];
 }
-- (NSMutableArray<id> *)concat:(NSMutableArray<id> *)a {
+- (NSMutableArray<id>*)concat:(NSMutableArray<id>*)a {
 	
 	
-	NSMutableArray<id>  *b = [[NSMutableArray<id> alloc] init];
+	NSMutableArray<id> *b = [[NSMutableArray<id> alloc] init];
 	[b addObjectsFromArray:self];
 	[b addObjectsFromArray:a];
 	return b;
 }
 // Getters/setters for property: length
-- (int)length { return [self count]; }
-- (void) setLength:(int)val { nil; }
+- (NSInteger)length { return [self count]; }
+- (void) setLength:(NSInteger)val { nil; }
 
 - (id)init {
 	

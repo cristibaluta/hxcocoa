@@ -10,30 +10,30 @@
 @implementation Wwx
 
 
-- (void)applicationWillResignActive:(UIApplication *)application {
+- (void)applicationWillResignActive:(UIApplication*)application {
 	
 }
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication*)application {
 	
 }
-- (NSString *)getGHI {
+- (NSString*)getGHI {
 	
 	return @"GHI";
 }
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)didFinishLaunchingWithOptions {
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions {
 	
 	[Log trace:@"Start" infos:@{@"fileName":@"Wwx.hx", @"lineNumber":@"28", @"className":@"Wwx", @"methodName":@"application"}];
 	application.statusBarStyle = UIStatusBarStyleBlackTranslucent;
 	application.statusBarHidden = YES;
 	self.window = [[UIWindow alloc] init];
 	
-	UIScreen  *screen = [UIScreen mainScreen];
+	UIScreen *screen = [UIScreen mainScreen];
 	self.window.frame = screen.bounds;
 	self.viewController = [[ViewController alloc] init];
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
 	
-	NSString  *str = @"abc";
+	NSString *str = @"abc";
 	str = [NSString stringWithFormat:@"%@%@", str, @"def"];
 	str = [NSString stringWithFormat:@"%@%@", str, [self getGHI]];
 	self.str2 = @"abc";

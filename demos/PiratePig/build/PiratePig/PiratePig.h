@@ -16,17 +16,17 @@
 @interface PiratePig : UIResponder <UIApplicationDelegate>
 
 
-- (void)applicationWillResignActive:(UIApplication *)application;
-- (void)applicationDidBecomeActive:(UIApplication *)application;
+- (void)applicationWillResignActive:(UIApplication*)application;
+- (void)applicationDidBecomeActive:(UIApplication*)application;
 - (void)construct;
 - (void)initialize;
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)didFinishLaunchingWithOptions;
-@property (nonatomic, strong) PiratePigGame  *game;
-@property (nonatomic, strong) UIImageView  *footer;
-@property (nonatomic, strong) UIImageView  *background;
-@property (nonatomic, strong) UIView  *view;
-@property (nonatomic, strong) UIViewController  *viewController;
-@property (nonatomic, strong) UIWindow  *window;
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)didFinishLaunchingWithOptions;
+@property (nonatomic, strong) PiratePigGame *game;
+@property (nonatomic, strong) UIImageView *footer;
+@property (nonatomic, strong) UIImageView *background;
+@property (nonatomic, strong) UIView *view;
+@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
 

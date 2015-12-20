@@ -11,8 +11,8 @@
 
 @interface Std : NSObject
 
-+ (NSString *)string:(id)s;
-+ (int)_int:(float)x;
++ (NSString*)string:(id)s;
++ (NSInteger)_int:(CGFloat)x;
 
 @end
 

@@ -9,13 +9,13 @@
 
 @implementation StepsView
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)withEvent {
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)withEvent {
 	
 	
-	UITouch  *touch = [touches anyObject];
+	UITouch *touch = [touches anyObject];
 	CGPoint p = [touch locationInView:self];
 	
-	StepLabel  *s = [self.steps hx_objectAtIndex:self.currentStep];
+	StepLabel *s = [self.steps hx_objectAtIndex:self.currentStep];
 	if (p.x > s.frame.origin.x)  {
 		[self.delegate stepTouched:self.currentStep + 1];
 	}
@@ -23,25 +23,25 @@
 		[self.delegate stepTouched:self.currentStep - 1];
 	}
 	
-	NSString  *s1 = [@"a" stringByAppendingString:@"b"];
+	NSString *s1 = [@"a" stringByAppendingString:@"b"];
 }
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)withEvent {
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)withEvent {
 	
 }
-- (void)stepTouched:(int)i {
+- (void)stepTouched:(NSInteger)i {
 	
 	[self.delegate stepTouched:i];
 }
-- (void)setStep:(int)j {
+- (void)setStep:(NSInteger)j {
 	
 	self.currentStep = j;
 	 {
 		
-		int _g1 = 0;
-		int _g = self.steps.length;
+		NSInteger _g1 = 0;
+		NSInteger _g = self.steps.length;
 		while (_g1 < _g)  {
 			
-			int i = _g1++;
+			NSInteger i = _g1++;
 			[[self.steps hx_objectAtIndex:i] select:i == j];
 		}
 	}
@@ -50,7 +50,7 @@
 	
 	self.currentStep = 0;
 	
-	UIView  *background = [[UIView alloc] init];
+	UIView *background = [[UIView alloc] init];
 	background.frame = CGRectMake(0,20,frame.size.width,3);
 	background.backgroundColor = [UIColor darkGrayColor];
 	background.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -58,12 +58,12 @@
 	self.steps = [[NSMutableArray<id> alloc] init];
 	 {
 		
-		int _g = 0;
+		NSInteger _g = 0;
 		while (_g < 4)  {
 			
-			int i = _g++;
+			NSInteger i = _g++;
 			
-			StepLabel  *v = [[StepLabel alloc] init];
+			StepLabel *v = [[StepLabel alloc] init];
 			v.frame = CGRectMake(38 + 82 * i,21,40,40);
 			v.delegate = self;
 			v.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin);

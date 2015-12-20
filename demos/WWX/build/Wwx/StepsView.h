@@ -16,13 +16,13 @@
 
 @interface StepsView : UIView 
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)withEvent;
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)withEvent;
-- (void)stepTouched:(int)i;
-- (void)setStep:(int)j;
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)withEvent;
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)withEvent;
+- (void)stepTouched:(NSInteger)i;
+- (void)setStep:(NSInteger)j;
 - (void)_initWithFrame:(CGRect)frame;
-@property (nonatomic, strong) NSMutableArray<id>  *steps;
-@property (nonatomic) int currentStep;
+@property (nonatomic, strong) NSMutableArray<id> *steps;
+@property (nonatomic) NSInteger currentStep;
 @property (nonatomic) id delegate;
 
 @end

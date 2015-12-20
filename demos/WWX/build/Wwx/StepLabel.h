@@ -14,12 +14,12 @@
 @interface StepLabel : UIView 
 
 - (void)select:(BOOL)v;
-- (void)setIndex:(int)i;
+- (void)setIndex:(NSInteger)i;
 - (void)_initWithFrame:(CGRect)frame;
-@property (nonatomic) int i;
+@property (nonatomic) NSInteger i;
 @property (nonatomic) id delegate;
-@property (nonatomic, strong) UILabel  *label;
-@property (nonatomic, strong) UIView  *background;
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UIView *background;
 
 @end
 

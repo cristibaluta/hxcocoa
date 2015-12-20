@@ -12,19 +12,19 @@
 
 @interface NSString ( String )
 
-+ (NSString *)fromCharCode:(int)code;
-- (NSString *)toString;
-- (NSString *)substring:(int)startIndex endIndex:(int)endIndex;
-- (NSString *)substr:(int)pos len:(int)len;
-- (NSMutableArray<id> *)split:(NSString *)delimiter;
-- (int)lastIndexOf:(NSString *)str startIndex:(int)startIndex;
-- (int)indexOf:(NSString *)str startIndex:(int)startIndex;
-- (int)charCodeAt:(int)index;
-- (NSString *)charAt:(int)index;
-- (NSString *)toLowerCase;
-- (NSString *)toUpperCase;
-@property (nonatomic) int length;
-- (id)init:(NSString *)string;
++ (NSString*)fromCharCode:(NSInteger)code;
+- (NSString*)toString;
+- (NSString*)substring:(NSInteger)startIndex endIndex:(NSInteger)endIndex;
+- (NSString*)substr:(NSInteger)pos len:(NSInteger)len;
+- (NSMutableArray<id>*)split:(NSString*)delimiter;
+- (NSInteger)lastIndexOf:(NSString*)str startIndex:(NSInteger)startIndex;
+- (NSInteger)indexOf:(NSString*)str startIndex:(NSInteger)startIndex;
+- (NSInteger)charCodeAt:(NSInteger)index;
+- (NSString*)charAt:(NSInteger)index;
+- (NSString*)toLowerCase;
+- (NSString*)toUpperCase;
+@property (nonatomic) NSInteger length;
+- (id)init:(NSString*)string;
 
 @end
 

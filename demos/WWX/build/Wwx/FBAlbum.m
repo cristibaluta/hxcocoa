@@ -13,19 +13,19 @@
 	
 	[self onImageCached:self.image];
 }
-- (void)cacheImage:(NSData *)imageData {
+- (void)cacheImage:(NSData*)imageData {
 	
 	
-	UIImage  *image2 = [[UIImage alloc] init];
+	UIImage *image2 = [[UIImage alloc] init];
 	
-	UIImage  *image3 = [[UIImage alloc]  initWithData:imageData];
+	UIImage *image3 = [[UIImage alloc]  initWithData:imageData];
 	self.image = [[UIImage alloc]  initWithData:imageData];
 	[self dispatchLoadingEvent];
 }
-- (void)loadImageData:(NSString *)url {
+- (void)loadImageData:(NSString*)url {
 	
 	
-	NSData  *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
+	NSData *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
 	[self performSelectorOnMainThread:@selector(cacheImage:) withObject:imageData waitUntilDone:NO];
 }
 - (void)preload {
@@ -36,11 +36,11 @@
 		return;
 	}
 	
-	NSString  *url = [[@"https://graph.facebook.com/" stringByAppendingString:self.albumId] stringByAppendingString:@"/picture"];
+	NSString *url = [[@"https://graph.facebook.com/" stringByAppendingString:self.albumId] stringByAppendingString:@"/picture"];
 	[NSThread detachNewThreadSelector:@selector(loadImageData:) toTarget:self withObject:url];
 }
 // Dynamic method defined with an objc method and a block property
-- (void)onImageCached:(UIImage *)image {
+- (void)onImageCached:(UIImage*)image {
 	if ( hx_dyn_onImageCached ) { hx_dyn_onImageCached(image); return; }
 }
 @synthesize hx_dyn_onImageCached;

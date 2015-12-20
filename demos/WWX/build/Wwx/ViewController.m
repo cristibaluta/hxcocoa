@@ -29,21 +29,21 @@
 	
 	[self setStep:3];
 }
-- (NSMutableArray<id> *)selectedImagesUrls {
+- (NSMutableArray<id>*)selectedImagesUrls {
 	
 	return [self.photosPicker selectedImagesUrls];
 }
-- (void)selectMovieAtPath:(NSString *)path {
+- (void)selectMovieAtPath:(NSString*)path {
 	
 	self.currentPath = path;
 	
-	UIAlertView  *alert = [[UIAlertView alloc]  initWithTitle:@"My Videos" message:@"You've selected a movie, what next?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Play"];
+	UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"My Videos" message:@"You've selected a movie, what next?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Play"];
 	[alert show];
 }
-- (void)photosPicked:(NSMutableArray<id> *)urls {
+- (void)photosPicked:(NSMutableArray<id>*)urls {
 	
 }
-- (void)facebookAlbumPicked:(FBAlbum *)album {
+- (void)facebookAlbumPicked:(FBAlbum*)album {
 	
 	[Log trace:@"facebook album picked" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"160", @"className":@"ViewController", @"methodName":@"facebookAlbumPicked"}];
 	self.photosPicker = [[PhotosPickerController alloc] init];
@@ -53,7 +53,7 @@
 	self.currentAlbumName = album.name;
 	[self setStep:1];
 }
-- (void)localAlbumPicked:(ALAssetsGroup *)album {
+- (void)localAlbumPicked:(ALAssetsGroup*)album {
 	
 	[Log trace:@"local album picked" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"148", @"className":@"ViewController", @"methodName":@"localAlbumPicked"}];
 	self.photosPicker = [[PhotosPickerController alloc] init];
@@ -72,7 +72,7 @@
 		[self.view insertSubview:self.stepsView atIndex:0];
 	}
 }
-- (void)stepTouched:(int)i {
+- (void)stepTouched:(NSInteger)i {
 	
 	[Log trace:@">> touch step " infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"127", @"className":@"ViewController", @"methodName":@"stepTouched"}];
 	if (i < self.currentStep)  {
@@ -84,7 +84,7 @@
 		}
 	}
 }
-- (void)setStep:(int)j {
+- (void)setStep:(NSInteger)j {
 	
 	self.currentStep = j;
 	[self.stepsView setStep:j];
@@ -95,7 +95,7 @@
 	 {
 		
 		
-		UIViewController  *p = [self.navigationController popViewControllerAnimated:YES];
+		UIViewController *p = [self.navigationController popViewControllerAnimated:YES];
 		[p.view removeFromSuperview];
 		p = nil;
 		[self setStep:self.currentStep - 1];
@@ -106,7 +106,7 @@
 	[Log trace:@"swipe left" infos:@{@"fileName":@"ViewController.hx", @"lineNumber":@"94", @"className":@"ViewController", @"methodName":@"leftGestureActioned"}];
 	 {
 		
-		int _g = self.currentStep;
+		NSInteger _g = self.currentStep;
 		switch (_g) {
 			case 1: {
 				[self photosPicked:nil];
@@ -131,8 +131,8 @@
 	[self.stepsView setStep:self.currentStep];
 	self.albumPicker = [[AlbumPickerController alloc] init];
 	self.albumPicker.delegate = self;
-	self.albumPicker.hx_dyn_localAlbumPicked = ^(ALAssetsGroup  *album){ [self localAlbumPicked:album]; };
-	self.albumPicker.hx_dyn_facebookAlbumPicked = ^(FBAlbum  *album){ [self facebookAlbumPicked:album]; };
+	self.albumPicker.hx_dyn_localAlbumPicked = ^(ALAssetsGroup *album){ [self localAlbumPicked:album]; };
+	self.albumPicker.hx_dyn_facebookAlbumPicked = ^(FBAlbum *album){ [self facebookAlbumPicked:album]; };
 	self.navigationController = [[UINavigationController alloc] init];
 	self.navigationController.navigationBarHidden = YES;
 	self.navigationController.view.backgroundColor = [UIColor clearColor];
@@ -147,7 +147,7 @@
 	self.rightGesture.direction = UISwipeGestureRecognizerDirectionRight;
 	[self.navigationController.view addGestureRecognizer:self.rightGesture];
 	
-	Wwx  *appDelegate = (Wwx *)[UIApplication sharedApplication].delegate;
+	Wwx *appDelegate = (Wwx*)[UIApplication sharedApplication].delegate;
 }
 - (void)loadView {
 	
@@ -155,7 +155,7 @@
 	self.view = [[UIView alloc] init];
 	self.view.frame = frame;
 	
-	UIImage  *pattern = [UIImage imageNamed:@"BackgroundPattern"];
+	UIImage *pattern = [UIImage imageNamed:@"BackgroundPattern"];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:pattern];
 }
 @synthesize currentPath;

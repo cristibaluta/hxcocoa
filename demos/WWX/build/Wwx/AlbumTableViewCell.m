@@ -21,25 +21,25 @@
 	
 	[super setSelected:selected animated:animated];
 }
-- (void)cacheImage:(NSData *)imageData {
+- (void)cacheImage:(NSData*)imageData {
 	
 	self.customImageView.image = [[UIImage alloc]  initWithData:imageData];
 }
-- (void)loadImageData:(NSString *)url {
+- (void)loadImageData:(NSString*)url {
 	
 	
-	NSData  *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
+	NSData *imageData = [[NSData alloc]  initWithContentsOfURL:[NSURL URLWithString:url]];
 	[self performSelectorOnMainThread:@selector(cacheImage:) withObject:imageData waitUntilDone:NO];
 }
-- (void)loadFacebookImage:(NSString *)imageURL {
+- (void)loadFacebookImage:(NSString*)imageURL {
 	
 	[NSThread detachNewThreadSelector:@selector(loadImageData:) toTarget:self withObject:imageURL];
 }
-- (void)setLocalImage:(UIImage *)img {
+- (void)setLocalImage:(UIImage*)img {
 	
 	self.customImageView.image = img;
 }
-- (void)_initWithStyle:(UITableViewCellStyle *)style reuseIdentifier:(NSString *)reuseIdentifier {
+- (void)_initWithStyle:(UITableViewCellStyle*)style reuseIdentifier:(NSString*)reuseIdentifier {
 	
 	self.backgroundColor = [UIColor clearColor];
 	self.imageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -56,7 +56,7 @@
 	self.customTextLabel.adjustsFontSizeToFitWidth = YES;
 	[self.contentView addSubview:self.customTextLabel];
 	
-	UIView  *bg = [[UIView alloc] init];
+	UIView *bg = [[UIView alloc] init];
 	bg.frame =  CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 	bg.backgroundColor = [UIColor orangeColor];
 	self.selectedBackgroundView = bg;
